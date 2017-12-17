@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[[转载]达拉崩吧-OI版]]></title>
+    <url>%2F2017%2F12%2F16%2F%E8%BD%AC%E8%BD%BD-%E8%BE%BE%E6%8B%89%E5%B4%A9%E5%90%A7OI%E7%89%88%2F</url>
+    <content type="text"><![CDATA[达拉崩吧-OI版（转载）原文地址：点此查看很久很久以前 算法突然出现 带来导论 带走了智商又消失不见编程十分危险 世间谁最勇敢 一位懵逼儿赶来 大声喊 我要写出最高的树 打出最大的表 搜进最深的递归 把AC带回到面前 老师非常高兴 忙问他的技能 年轻人想了想 他说 老师我会 非确定性有穷状态决策自动机 再来一次 非确定性有穷状态决策自动机 是不是 非确定性有穷状态决策自动机 对对是 非确定性有穷状态决策自动机 懵逼无名少年 捧着算法导论 带着大家的希望 从学校里出发 战胜BUG来袭 获得调试神技 无数代码见证 他慢慢升级 偏远论坛角落 参与所有话题 一路排序 伴随指引前路的单链表 进入决赛考场 比赛和可怕难题 少年打开IDE 难题道 我是 Floyd区间DP均衡红黑树 再来一次 Floyd区间DP均衡红黑树 是不是 Kruskal一维DP二叉排序树 不对是 Floyd区间DP均衡红黑树 于是 非确定性有限状态决策自动机 打出 深度搜索模拟枚举单源最短路 应用 拓扑排序Trie结构Polya定律 套入 Dijkasta联通分量BellmanFord 最后 非确定性有限状态决策自动机 他使用了 IO优化树链剖分输出random 调用了 矩阵速幂虚二叉树行列式消元 完成了 凸包扫描后缀数组网络最大流 老师听说 非确定性有限状态决策自动机 他忘了写 #include freopen 就让 非确定性有限状态决策自动机 全手写 map/set稳定婚姻KMP实现 啦啦 懵逼少年 敲着键盘 Ctrl+V来几遍 他发明了一个算法 也在天天渐渐复杂 为了避免以后麻烦 算法叫做暴力法 它的全名十分难念 我不想说一遍]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[洛谷大事记]]></title>
+    <url>%2F2017%2F12%2F13%2F%E6%B4%9B%E8%B0%B7%E5%A4%A7%E4%BA%8B%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[洛谷里程碑2017-09-14 20:32 注册 2017-10-17 21:00 AC*1 2017-10-23 08:50 蓝名 2017-10-29 10:05 绿名 2017-11-01 20:07 AC*50 2017-11-19 16:37 新手村AC 2017-11-25 11:51 AC*100 2017-11-29 17:55 橙名]]></content>
+      <categories>
+        <category>编程</category>
+      </categories>
+      <tags>
+        <tag>洛谷</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[日常颓废]]></title>
+    <url>%2F2017%2F12%2F05%2F%E6%97%A5%E5%B8%B8%E9%A2%93%E5%BA%9F%2F</url>
+    <content type="text"><![CDATA[颓…颓废？？？ 啧啧。今天真的来写一写吧。明天也许是周三了吧（捂脸），久违的统练就要来了呢。 但一不小心就又开始了日常颓废。先是生物练习册错一大堆，数学练习册错一大堆。看了看背后正在落灰的算法导论。不是很令人开心的一天。不过今天达成了一个成就，把同桌成功拉去打了一会乒乓球。非常的有趣。 愿明天生物统练不爆炸。]]></content>
+      <categories>
+        <category>日常</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[测试一下]]></title>
+    <url>%2F2017%2F12%2F04%2F%E6%B5%8B%E8%AF%95%E4%B8%80%E4%B8%8B%2F</url>
+    <content type="text"><![CDATA[第一篇文章或许这就是我的第一篇文章了？？？ 瞎搞一番果然颇有乐趣哈哈哈哈.以后不定期更新题解和算法什么乱七八糟的，没准也有我的吐槽哈哈哈。]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2017%2F12%2F04%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
