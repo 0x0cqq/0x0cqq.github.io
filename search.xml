@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[【洛谷】P1043 数字游戏]]></title>
+    <url>%2F2017%2F12%2F23%2F%E3%80%90%E6%B4%9B%E8%B0%B7%E3%80%91P1043-%E6%95%B0%E5%AD%97%E6%B8%B8%E6%88%8F%2F</url>
+    <content type="text"><![CDATA[题目描述丁丁最近沉迷于一个数字游戏之中。这个游戏看似简单，但丁丁在研究了许多天之后却发觉原来在简单的规则下想要赢得这个游戏并不那么容易。游戏是这样的，在你面前有一圈整数（一共n个），你要按顺序将其分为m个部分，各部分内的数字相加，相加所得的m个结果对10取模后再相乘，最终得到一个数k。游戏的要求是使你所得的k最大或者最小。 例如，对于下面这圈数字（n=4，m=2）： 要求最小值时，((2-1) mod 10)×((4+3) mod 10)=1×7=7，要求最大值时，为((2+4+3) mod 10)×(-1 mod 10)=9×9=81。特别值得注意的是，无论是负数还是正数，对10取模的结果均为非负值。 丁丁请你编写程序帮他赢得这个游戏。 输入输出格式输入格式：输入文件第一行有两个整数，n（1≤n≤50）和m（1≤m≤9）。以下n行每行有个整数，其绝对值不大于104，按顺序给出圈中的数字，首尾相接。 输出格式：输出文件有两行，各包含一个非负整数。第一行是你程序得到的最小值，第二行是最大值。 输入输出样例输入样例#1：123454 243-12 输出样例#1：12781 说明很水的一道dp题目。只要知道断环为链剩下的也都不难。题解洛谷没给过，现在也找不到了，只有代码还剩了下来。代码里面也有注释，凑活看看也可以。 代码``` #include #include #include #include using namespace std; long long num[150],dp_1[150],dp_2[150];//_1放最大值,_2放最小值 int n,m; inline int mod(long long nnn){//mod函数，不解释 int w = int(floor(double(nnn)/10)); return nnn - w*10;} int main(){ scanf(“%d %d”,&amp;n,&amp;m); for(int i = 1;i&lt;=n;i++){//断环为链的准备 scanf(“%lld”,&amp;(num[i])); num[i+n] = num[i]; } for(int i = 1;i&lt;=2n;i++)//前缀和的处理 num[i] = num[i-1]+num[i]; //正经dp long long maxn = -1,minn = 0x3f3f3f3f; for(int s = 1;s&lt;=n;s++){//枚举起点 memset(dp_1,0,sizeof(dp_1));//清零dp数组 memset(dp_2,0,sizeof(dp_2)); for(int j = 0;j&lt;m;j++){//板子由少到多 for(int i = s;i&lt;=s+n;i++){//上一个插板子的地方 if(j == 0){//j==0的时候的处理，其实也可以叫初始化 dp_1[i] = dp_2[i] = mod(num[s+n]-num[i]); continue; } long long maxtmp = -1,mintmp = 0x3f3f3f3f;//对所有可能下一状态的遍历，并取最大或最小值 for(int x = i+1;x&lt;=s+n-j-1;x++){ maxtmp = max(maxtmp,dp_1[x]mod(num[x]-num[i])); mintmp = min(mintmp,dp_2[x]*mod(num[x]-num[i])); } dp_1[i] = maxtmp;//取最大最小值 dp_2[i] = mintmp; } } maxn = max(dp_1[s],maxn);//对于起点不同的最大最小值进行更新 minn = min(dp_2[s],minn); } printf(“%lld\n%lld\n”,minn,maxn);//开心的输出结果 return 0;}]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[可能是最简单的线段树介绍]]></title>
     <url>%2F2017%2F12%2F18%2F%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BB%8B%E7%BB%8D%2F</url>
     <content type="text"><![CDATA[看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握（to be finished）。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。 0x01 什么是线段树为了学习线段树这样一个数据结构，我们需要先搞明白这是一个什么东西。]]></content>
@@ -16,7 +21,7 @@
   <entry>
     <title><![CDATA[洛谷大事记]]></title>
     <url>%2F2017%2F12%2F13%2F%E6%B4%9B%E8%B0%B7%E5%A4%A7%E4%BA%8B%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[洛谷里程碑 2017-09-14 20:32 注册 2017-10-17 21:00 AC*1 2017-10-23 08:50 蓝名 2017-10-29 10:05 绿名 2017-11-01 20:07 AC*50 2017-11-19 16:37 新手村AC 2017-11-25 11:51 AC*100 2017-11-29 17:55 橙名 2017-12-17 22:28 AC*150]]></content>
+    <content type="text"><![CDATA[洛谷里程碑 2017-09-14 20:32 注册 2017-10-17 21:00 AC*1 2017-10-23 08:50 蓝名 2017-10-29 10:05 绿名 2017-11-01 20:07 AC*50 2017-11-19 16:37 新手村AC 2017-11-25 11:51 AC*100 2017-11-29 17:55 橙名 2017-12-17 22:28 AC*150 2017-12-22 21:03 提交*500]]></content>
       <categories>
         <category>编程</category>
       </categories>
