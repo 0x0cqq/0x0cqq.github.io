@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[可能是最简单的线段树介绍]]></title>
     <url>%2F2017%2F12%2F18%2F%E5%8F%AF%E8%83%BD%E6%98%AF%E6%9C%80%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%BF%E6%AE%B5%E6%A0%91%E4%BB%8B%E7%BB%8D%2F</url>
-    <content type="text"><![CDATA[看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。]]></content>
+    <content type="text"><![CDATA[看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握（to be finished）。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。 0x01 什么是线段树为了学习线段树这样一个数据结构，我们需要先搞明白这是一个什么东西。]]></content>
   </entry>
   <entry>
     <title><![CDATA[[转载]达拉崩吧-OI版]]></title>
