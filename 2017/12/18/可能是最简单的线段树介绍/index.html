@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="介绍," />
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握（to be finished）。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。">
+<meta name="description" content="看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握一些基本的算法。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。">
+<meta name="keywords" content="介绍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="可能是最简单的线段树介绍">
 <meta property="og:url" content="http://yoursite.com/2017/12/18/可能是最简单的线段树介绍/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握（to be finished）。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。">
+<meta property="og:description" content="看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握一些基本的算法。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-12-23T05:07:14.000Z">
+<meta property="og:updated_time" content="2017-12-24T11:00:41.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="可能是最简单的线段树介绍">
-<meta name="twitter:description" content="看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握（to be finished）。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。">
+<meta name="twitter:description" content="看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。 0x00 概述本文假设读者对基本编程知识已经有所了解，并能够熟练掌握一些基本的算法。本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。">
 
 
 
@@ -336,6 +337,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -369,9 +392,16 @@
 
       
         <p>看了网上的各种线段树介绍，实在是觉得有点复杂。所以先开一个坑，慢慢填。</p>
-<h2 id="0x00-概述"><a href="#0x00-概述" class="headerlink" title="0x00 概述"></a>0x00 概述</h2><p>本文假设读者对基本编程知识已经有所了解，并能够熟练掌握（to be finished）。<br>本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。</p>
+<h2 id="0x00-概述"><a href="#0x00-概述" class="headerlink" title="0x00 概述"></a>0x00 概述</h2><p>本文假设读者对基本编程知识已经有所了解，并能够熟练掌握一些基本的算法。<br>本文将从是什么、为什么、怎么做、有什么用这几个方面来介绍一下线段树这一重要的数据结构。</p>
 <a id="more"></a>
 <h2 id="0x01-什么是线段树"><a href="#0x01-什么是线段树" class="headerlink" title="0x01 什么是线段树"></a>0x01 什么是线段树</h2><p>为了学习线段树这样一个数据结构，我们需要先搞明白这是一个什么东西。</p>
+<p>线段树是一种二叉搜索树，与区间树相似，它将一个区间划分成一些区间，每个单元区间对应线段树中的一个叶结点。</p>
+<h2 id="0x02-线段树有什么用呢"><a href="#0x02-线段树有什么用呢" class="headerlink" title="0x02 线段树有什么用呢"></a>0x02 线段树有什么用呢</h2><p>一句话：在O(log n)的对数时间查询数组中某个区间内的最大值，最小值，以及区间内所有数的和；<br>并能够在对数时间内对一段连续的区间中的每一个数进行加减、乘除以及设置操作的一种数据结构。</p>
+<p>权且猜测读者已经了解了树状数组。在树状数组的学习中，我们会知道，树状数组的出现其实是为了平衡前缀和、普通数组这两种数据结构，它能做到的就是在O(log n)的对数时间内求一段区间的和，以及改变某个数的值。</p>
+<p>但是倘若需要对区间进行操作该怎么办呢？如果我将区间中的每一个数都进行操作的话，那么时间复杂度已经达到了O(n)，显然是我们不能承受之慢。这个时候，我们就需要下面即将介绍的——线段树。</p>
+<h2 id="0x03-怎么做到的呢"><a href="#0x03-怎么做到的呢" class="headerlink" title="0x03 怎么做到的呢"></a>0x03 怎么做到的呢</h2><p>这一部分主要分为以下几个部分</p>
+<p>说到线段树，就不得不说——</p>
+<h3 id="线段树的核心思想——懒惰（lazy）标记"><a href="#线段树的核心思想——懒惰（lazy）标记" class="headerlink" title="线段树的核心思想——懒惰（lazy）标记"></a>线段树的核心思想——懒惰（lazy）标记</h3><p>(to be finished)</p>
 
       
     </div>
@@ -387,6 +417,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/介绍/" rel="tag"># 介绍</a>
+          
+        </div>
+      
 
       
       
@@ -396,8 +432,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/12/16/转载-达拉崩吧OI版/" rel="next" title="[转载]达拉崩吧-OI版">
-                <i class="fa fa-chevron-left"></i> [转载]达拉崩吧-OI版
+              <a href="/2017/12/13/洛谷大事记/" rel="next" title="洛谷大事记">
+                <i class="fa fa-chevron-left"></i> 洛谷大事记
               </a>
             
           </div>
@@ -494,7 +530,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -516,7 +552,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -577,7 +613,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-概述"><span class="nav-number">1.</span> <span class="nav-text">0x00 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-什么是线段树"><span class="nav-number">2.</span> <span class="nav-text">0x01 什么是线段树</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0x00-概述"><span class="nav-number">1.</span> <span class="nav-text">0x00 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x01-什么是线段树"><span class="nav-number">2.</span> <span class="nav-text">0x01 什么是线段树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x02-线段树有什么用呢"><span class="nav-number">3.</span> <span class="nav-text">0x02 线段树有什么用呢</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0x03-怎么做到的呢"><span class="nav-number">4.</span> <span class="nav-text">0x03 怎么做到的呢</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线段树的核心思想——懒惰（lazy）标记"><span class="nav-number">4.1.</span> <span class="nav-text">线段树的核心思想——懒惰（lazy）标记</span></a></li></ol></li></ol></div>
             
 
           </div>
