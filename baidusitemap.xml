@@ -78,24 +78,6 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/2017/12/05/%E6%97%A5%E5%B8%B8%E9%A2%93%E5%BA%9F/</loc>
-    <lastmod>2018-01-15T03:05:32.000Z</lastmod>
-    <data>
-        <display>
-        <title>日常颓废</title>
-        <pubTime>2017-12-05T12:51:27.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="日常" url="http://blog.chenqiqian.com/categories/%E6%97%A5%E5%B8%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.chenqiqian.com/2017/12/13/%E6%B4%9B%E8%B0%B7%E5%A4%A7%E4%BA%8B%E8%AE%B0/</loc>
     <lastmod>2018-01-15T03:05:32.000Z</lastmod>
     <data>
@@ -109,6 +91,24 @@
            
              
               <breadCrumb title="编程" url="http://blog.chenqiqian.com/categories/%E7%BC%96%E7%A8%8B/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/2017/12/05/%E6%97%A5%E5%B8%B8%E9%A2%93%E5%BA%9F/</loc>
+    <lastmod>2018-01-15T03:05:32.000Z</lastmod>
+    <data>
+        <display>
+        <title>日常颓废</title>
+        <pubTime>2017-12-05T12:51:27.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.chenqiqian.com/categories/%E6%97%A5%E5%B8%B8/"/>
           
         </display>
     </data>
