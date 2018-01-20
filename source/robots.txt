@@ -6,6 +6,7 @@ Allow: /archives/
 Disallow: /vendors/
 Disallow: /js/
 Disallow: /css/
+Disallow: /lsy/
 Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
