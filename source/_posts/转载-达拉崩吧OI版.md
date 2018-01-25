@@ -1,8 +1,8 @@
 ---
 title: '[转载]达拉崩吧-OI版'
 date: 2017-12-16 14:55:42
-tags:
-categories: 编程
+tags: 歌曲
+categories: OI
 visible:
 ---
 

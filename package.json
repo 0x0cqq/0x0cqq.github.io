@@ -6,6 +6,7 @@
     "version": "3.4.2"
   },
   "dependencies": {
+    "clipboard": "^1.7.1",
     "gulp": "^3.9.1",
     "hexo": "^3.2.0",
     "hexo-black-cover": "^1.1.3",
