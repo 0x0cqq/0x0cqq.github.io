@@ -26,7 +26,8 @@
     "hexo-spoiler": "^1.4.4",
     "hexo-symbols-count-time": "^0.2.0",
     "hexo-wordcount": "^3.0.2",
-    "shelljs": "^0.8.0"
+    "shelljs": "^0.8.0",
+    "valine": "^1.1.9-beta3"
   },
   "devDependencies": {
     "gulp-babel": "^7.0.0",
