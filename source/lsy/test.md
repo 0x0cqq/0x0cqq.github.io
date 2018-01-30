@@ -5,6 +5,7 @@ tags:
 categories:
 sitemap: false
 visible: hide
+comments: false
 ---
 
 ## test
