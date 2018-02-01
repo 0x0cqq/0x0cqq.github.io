@@ -4,21 +4,6 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/20180201-undefined/</loc>
-    <lastmod>2018-02-01T06:23:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>「测试一下评论系统」</title>
-        <pubTime>2018-02-01T06:22:07.000Z</pubTime>
-        
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://blog.chenqiqian.com/20180131-noi2004-cashier/</loc>
     <lastmod>2018-02-01T05:35:42.000Z</lastmod>
     <data>
@@ -77,9 +62,9 @@
         <title>「洛谷P1043」数字游戏-dp</title>
         <pubTime>2017-12-23T05:15:19.000Z</pubTime>
         
-        <tag>题解</tag>
-         
         <tag>洛谷</tag>
+         
+        <tag>题解</tag>
          
          
            
