@@ -3,5 +3,6 @@ title: {{ title }}
 date: {{ date }}
 tags:
 categories:
-visible: 
+visible:
+urlname: {{ title }}
 ---

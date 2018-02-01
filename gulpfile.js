@@ -34,7 +34,7 @@ gulp.task("html",function() {
 gulp.task("default",['clean'],function() {
     gulp.start('css', 'js', 'html');
 });
-// det文件复制到public
+// dst文件复制到public
 gulp.task("mv",function() {
     return gulp.src("./dst/*")
     .pipe(shell([

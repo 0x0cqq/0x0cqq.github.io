@@ -8,6 +8,7 @@ tags:
 categories: OI
 visible:
 mathjax: true
+urlname: treap-note
 ---
 
 闲下来了，开始写一点学习笔记，也希望能给后人造福吧。
