@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>http://blog.chenqiqian.com/20180202-cqoi2014-sort/</loc>
+    <lastmod>2018-02-02T07:20:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>「CQOI2014」排序机械臂-Splay</title>
+        <pubTime>2018-02-02T07:12:44.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>平衡树</tag>
+         
+        <tag>Splay</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.chenqiqian.com/20180131-noi2004-cashier/</loc>
     <lastmod>2018-02-01T05:35:42.000Z</lastmod>
     <data>
@@ -15,9 +39,9 @@
          
         <tag>平衡树</tag>
          
-        <tag>题解</tag>
-         
         <tag>Splay</tag>
+         
+        <tag>题解</tag>
          
          
            
@@ -62,9 +86,9 @@
         <title>「洛谷P1043」数字游戏-dp</title>
         <pubTime>2017-12-23T05:15:19.000Z</pubTime>
         
-        <tag>洛谷</tag>
-         
         <tag>题解</tag>
+         
+        <tag>洛谷</tag>
          
          
            
