@@ -4,18 +4,140 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/20180202-cqoi2014-sort/</loc>
-    <lastmod>2018-02-02T07:20:04.000Z</lastmod>
+    <loc>http://blog.chenqiqian.com/20180205-mo-algorithm-1/</loc>
+    <lastmod>2018-02-05T13:25:01.000Z</lastmod>
     <data>
         <display>
-        <title>「CQOI2014」排序机械臂-Splay</title>
-        <pubTime>2018-02-02T07:12:44.000Z</pubTime>
+        <title>莫队算法学习笔记（一）</title>
+        <pubTime>2018-02-05T11:54:29.000Z</pubTime>
         
-        <tag>数据结构</tag>
+        <tag>笔记</tag>
          
-        <tag>平衡树</tag>
+        <tag>莫队</tag>
          
-        <tag>Splay</tag>
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171218-segment-tree/</loc>
+    <lastmod>2018-02-05T12:58:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>可能是最简单的线段树介绍</title>
+        <pubTime>2017-12-18T13:19:58.000Z</pubTime>
+        
+        <tag>介绍</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171213-luogu-milestone/</loc>
+    <lastmod>2018-02-05T12:58:06.000Z</lastmod>
+    <data>
+        <display>
+        <title>洛谷大事记</title>
+        <pubTime>2017-12-13T14:10:57.000Z</pubTime>
+        
+        <tag>洛谷</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180205-sdoi2009-necklace/</loc>
+    <lastmod>2018-02-05T12:56:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「SDOI2009」HH的项链-莫队or树状数组</title>
+        <pubTime>2018-02-05T10:11:47.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+        <tag>莫队</tag>
+         
+        <tag>树状数组</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180205-2018-FebWeek1/</loc>
+    <lastmod>2018-02-05T12:35:40.000Z</lastmod>
+    <data>
+        <display>
+        <title>2018-FebWeek1</title>
+        <pubTime>2018-02-05T11:05:57.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180128-2018-JanWeek4/</loc>
+    <lastmod>2018-02-05T11:13:21.000Z</lastmod>
+    <data>
+        <display>
+        <title>2018 JanWeek4&Month1</title>
+        <pubTime>2018-01-28T01:22:46.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171223-luogu-p1043/</loc>
+    <lastmod>2018-02-05T11:04:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>「洛谷P1043」数字游戏-dp</title>
+        <pubTime>2017-12-23T05:15:19.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+        <tag>洛谷</tag>
+         
+        <tag>动态规划</tag>
          
          
            
@@ -29,7 +151,7 @@
     
   <url>
     <loc>http://blog.chenqiqian.com/20180131-noi2004-cashier/</loc>
-    <lastmod>2018-02-01T05:35:42.000Z</lastmod>
+    <lastmod>2018-02-05T11:02:26.000Z</lastmod>
     <data>
         <display>
         <title>「NOI2004」郁闷的出纳员-Splay</title>
@@ -53,10 +175,35 @@
     </url>
 
     
+  <url>
+    <loc>http://blog.chenqiqian.com/20180202-cqoi2014-sort/</loc>
+    <lastmod>2018-02-05T11:02:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>「CQOI2014」排序机械臂-Splay</title>
+        <pubTime>2018-02-02T07:12:44.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>平衡树</tag>
+         
+        <tag>Splay</tag>
+         
+        <tag>题解</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>http://blog.chenqiqian.com/20180130-treap-note/</loc>
-    <lastmod>2018-02-01T05:33:56.000Z</lastmod>
+    <lastmod>2018-02-05T11:00:55.000Z</lastmod>
     <data>
         <display>
         <title>Treap学习笔记</title>
@@ -68,6 +215,8 @@
          
         <tag>Treap</tag>
          
+        <tag>笔记</tag>
+         
          
            
              
@@ -78,27 +227,6 @@
     </url>
 
     
-  <url>
-    <loc>http://blog.chenqiqian.com/20171223-luogo-p1043/</loc>
-    <lastmod>2018-02-01T05:33:35.000Z</lastmod>
-    <data>
-        <display>
-        <title>「洛谷P1043」数字游戏-dp</title>
-        <pubTime>2017-12-23T05:15:19.000Z</pubTime>
-        
-        <tag>题解</tag>
-         
-        <tag>洛谷</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>http://blog.chenqiqian.com/20171216-dalabengba-oi/</loc>
@@ -132,46 +260,6 @@
            
              
               <breadCrumb title="日常" url="http://blog.chenqiqian.com/categories/%E6%97%A5%E5%B8%B8/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20171213-luogu-milestone/</loc>
-    <lastmod>2018-02-01T05:30:39.000Z</lastmod>
-    <data>
-        <display>
-        <title>洛谷大事记</title>
-        <pubTime>2017-12-13T14:10:57.000Z</pubTime>
-        
-        <tag>洛谷</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20171218-segment-tree/</loc>
-    <lastmod>2018-02-01T05:29:54.000Z</lastmod>
-    <data>
-        <display>
-        <title>可能是最简单的线段树介绍</title>
-        <pubTime>2017-12-18T13:19:58.000Z</pubTime>
-        
-        <tag>介绍</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
           
         </display>
     </data>
@@ -226,24 +314,6 @@
         
          
            
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180128-2018-JanWeek4/</loc>
-    <lastmod>2018-02-01T05:28:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 JanWeek4&Month1</title>
-        <pubTime>2018-01-28T01:22:46.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
         </display>
     </data>
     </url>
