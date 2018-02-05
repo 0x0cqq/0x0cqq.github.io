@@ -5,6 +5,7 @@ tags:
 - 数据结构
 - 平衡树
 - Treap
+- 笔记
 categories: OI
 visible:
 mathjax: true

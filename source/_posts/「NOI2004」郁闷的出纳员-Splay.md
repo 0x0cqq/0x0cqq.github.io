@@ -20,7 +20,7 @@ urlname: noi2004-cashier
 
 ## 链接
 
-[LuoguP1486](https://www.luogu.org/problemnew/show/P1486)
+[Luogu P1486](https://www.luogu.org/problemnew/show/P1486)
 
 ## 题解
 
