@@ -6,10 +6,11 @@ tags:
 - 平衡树
 - Treap
 - 笔记
+- 模板
 categories: OI
 visible:
 mathjax: true
-urlname: treap-note
+urlname: treap-notes
 ---
 
 闲下来了，开始写一点学习笔记，也希望能给后人造福吧。
