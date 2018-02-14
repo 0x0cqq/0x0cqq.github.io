@@ -2,8 +2,8 @@
 title: 2018-FebWeek2
 urlname: 2018-FebWeek2
 date: 2018-02-11 16:28:27
-tags: 总结
-categories: 日常
+tags: 
+categories: 总结
 visible:
 ---
 
