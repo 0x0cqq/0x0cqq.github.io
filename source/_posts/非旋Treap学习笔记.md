@@ -18,13 +18,11 @@ visible:
 
 {%post_link Treap学习笔记 这篇文章 %}，介绍了基于旋转的$Treap$的基本概念等等，在这里不再赘述。
 
-
 ## 代码简述
 
 这里以[这道题](https://www.luogu.org/problemnew/show/P3391)题作为模板。
 
-
-### 节点定义
+### 节点的定义
 
 ```cpp
 struct node_t{
@@ -233,7 +231,7 @@ void reverse(int lb,int rb){
 
 也不太想说。主要就是要注意一点。我们在这里，要保证打过标记以后，这个节点的信息已然正确。这个在其他的例题里会比较令人舒服，可以减少一些$pushdown$。
 
-虽然这道题只有区间翻转，但是其他的区间操作也可以同理完成。$Splay$能做的，非旋$Treap$都能做，而且他还可以进行持久化，这是$Splay$比不了的。
+虽然这道题只有区间翻转，但是其他的区间操作也可以同理完成。$Splay$能做的，非旋$Treap$都能做，而且他还可以进行持久化，这是$Splay$比不了的。（然而我并不会写
 
 
 ## 完整代码
@@ -457,3 +455,13 @@ int main(){
 ## 例题
 
 {% post_link 「NOI2005」维护数列-非旋Treap 「NOI2005」维护数列 %}
+
+## 一些参考
+
+这里有一些讲非旋转$Treap$的博客：
+
+[Sengxian's Blog](https://blog.sengxian.com/algorithms/treap)
+
+[xehoth's Blog](https://blog.xehoth.cc/NoneRotatingTreap/)
+
+[Memphis's Blog](http://memphis.is-programmer.com/posts/46317.html)
