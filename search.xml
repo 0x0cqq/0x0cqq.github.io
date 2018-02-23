@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[输入输出优化模板]]></title>
+    <url>%2F20180223-IO-optimize%2F</url>
+    <content type="text"><![CDATA[直接贴了。依赖库stdio.h 和 ctype.h。 #include &lt;cstdio&gt;#include &lt;cctype&gt;namespace fast_io &#123; inline char read(); inline void read(int&amp;);// inline void read(char*); inline void print(char); inline void print(int);// inline void print(char*); inline void flush(); inline char read() &#123;// return getchar(); static const int IN_LEN = 1000000; static char buf[IN_LEN], *s, *t; return s==t?(((t=(s=buf)+fread(buf,1,IN_LEN,stdin))== s)?-1:*s++) : *s++; &#125; inline void read(int &amp;x) &#123; static bool iosig; static char c; for (iosig = false, c = read(); !isdigit(c); c = read()) &#123; if (c == '-') iosig = true; if (c == -1) return; &#125; for (x = 0; isdigit(c); c = read()) x = (x &lt;&lt; 1) + (x &lt;&lt; 3) + (c ^ '0'); if (iosig) x = -x; &#125; /* inline void read(char *a)&#123; static char c = read(); while(c!= -1&amp;&amp;c!=' '&amp;&amp;c!='\n')&#123; *a++ = c; c = read(); &#125; *a = 0; &#125;*/ const int OUT_LEN = 1000000; char obuf[OUT_LEN], *ooh = obuf; inline void print(char c) &#123; if (ooh == obuf + OUT_LEN) fwrite(obuf, 1, OUT_LEN, stdout), ooh = obuf; *ooh++ = c; &#125; inline void print(int x) &#123; static int buf[30], cnt; if (x == 0) &#123; print('0'); &#125; else &#123; if (x &lt; 0) print('-'), x = -x; for (cnt = 0; x; x /= 10) buf[++cnt] = x % 10 + 48; while (cnt) print((char)buf[cnt--]); &#125; &#125; /* inline void print(char *a)&#123; while(*a) print(*a++); &#125; */ inline void flush() &#123; fwrite(obuf, 1, ooh - obuf, stdout); &#125;&#125;using namespace fast_io;namespace normal_io&#123; inline void read(int &amp;x)&#123; scanf("%d",&amp;x); &#125; inline void print(int x)&#123; printf("%d",x); &#125; inline void print(char c)&#123; putchar(c); &#125;&#125;//using namespace normal_io;int main()&#123; int x; read(x); print(x); flush(); return 0;&#125;]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[2018-FebWeek3]]></title>
     <url>%2F20180218-2018-FebWeek3%2F</url>
     <content type="text"><![CDATA[2018年二月 第三周2018.2.12-2018.2.18 正文又是一个颓废的一周。啧啧。 这一周更是颓废着写作业，学了不知道有没有一点东西。写了一个$Treap$从早上调到晚上，然后才苟下来这么一道题。 实在是被作业所困很深。不过这一周开发了几个新技能。CF，LOJ，P站之类（咦这什么鬼。这也算是苦中偷趣。一切还是很有趣很有趣的。 回顾寒假，学了不少东西，但是更多的还是在各种奇怪的地方（比如玩手机的什么）浪费了不少的时间。以后也应该好好的珍惜时间，多写作业，多写程序，多学算法嘛。开始寒假的时候，还立下了洛谷AC300的Flag…然后…GG…这个寒假最多也就到60题了…而且省选级别的题也没做几道。 想到一句话： 身后有余忘缩手 眼前无路想回头 愿自己能够安然过到高三吧。 最近真的很忙。很抱歉。 来源：Pixiv TodoList这周完成 学了差分约束和强连通分量 ✔ 图论真可怕 写了一道无旋转Treap ✔ 太难啦 写完语文寒假作业 ✘ 失败…失败了… 下周完成 苟完…作业… 活到开学… 学…费用流…]]></content>
@@ -26,8 +37,8 @@
       <tags>
         <tag>数据结构</tag>
         <tag>平衡树</tag>
-        <tag>Treap</tag>
         <tag>题解</tag>
+        <tag>Treap</tag>
       </tags>
   </entry>
   <entry>
@@ -259,7 +270,7 @@
   <entry>
     <title><![CDATA[OI大事记]]></title>
     <url>%2F20171213-milestone%2F</url>
-    <content type="text"><![CDATA[里程碑 2017-10-17 21:00 Luogu AC*1 2017-10-23 08:50 Luogu 第一次蓝名 2017-10-29 10:05 Luogu 第一次绿名 2017-11-01 20:07 Luogu AC*50 2017-11-11 ~ 12 NOIp2017 tg观光游省二 2017-11-25 11:51 AC*100 2017-11-29 17:55 Luogu 第一次橙名 2017-12-17 22:28 Luogu AC*150 2017-12-22 21:03 Luogu 提交*500 2018-01-03 19:16 Luogu 第一次红名 2018-01-20 20:34 Luogu AC*200 2018-01-20 ~ 27 第一次BJWC 2018-02-09 ~ 21 Luogu 春令营 2018-02-14 15:44 Luogu AC*250]]></content>
+    <content type="text"><![CDATA[里程碑 2017-10-17 21:00 Luogu AC*1 2017-10-23 08:50 Luogu 第一次蓝名 2017-10-29 10:05 Luogu 第一次绿名 2017-11-01 20:07 Luogu AC*50 2017-11-11 ~ 12 NOIp2017 tg观光游省二 2017-11-25 11:51 Luogu AC*100 2017-11-29 17:55 Luogu 第一次橙名 2017-12-17 22:28 Luogu AC*150 2017-12-22 21:03 Luogu 提交*500 2018-01-03 19:16 Luogu 第一次红名 2018-01-20 20:34 Luogu AC*200 2018-01-20 ~ 27 第一次BJWC 2018-02-14 15:44 Luogu AC*250 2018-02-23 13:47 Luogu 提交*1000]]></content>
       <categories>
         <category>OI</category>
       </categories>
