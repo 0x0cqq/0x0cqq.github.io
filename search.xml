@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[2018 FebWeek4]]></title>
+    <url>%2F20180225-2018-FebWeek4%2F</url>
+    <content type="text"><![CDATA[2018年二月 第四周2018.2.19-2018.2.25 正文开学了。 该总结一下寒假了。 寒假刷题：点击切换显示状态 为了篇幅短小，只把不是水题的题放在这里。 Luogu刷题：状压dp： P1879 [USACO06NOV]玉米田Corn Fields P1896 [SCOI2005]互不侵犯King P1433 吃奶酪 P2704 [NOI2001]炮兵阵地 dp： P2577 [ZJOI2005]午餐 线段树： P2894 [USACO08FEB]酒店Hotel P1438 无聊的数列 P1558 色板游戏 T21778 过年 平衡树： P2073 送花 P2596 [ZJOI2006]书架 P1486 [NOI2004]郁闷的出纳员 P2234 [HNOI2002]营业额统计 P2286 [HNOI2004]宠物收养场 P3165 [CQOI2014]排序机械臂 P2042 [NOI2005]维护数列 并查集： P1396 营救 P1536 村村通 P1525 关押罪犯 P2024 食物链 P1197 [JSOI2008]星球大战 P1196 [NOI2002]银河英雄传说 最短路： P1342 请柬 P1629 邮递员送信 P1608 路径统计 生成树： P1195 口袋的天空 P2820 局域网 P1194 买礼物 差分约束： P1993 小 K 的农场 强连通分量： P1726 上白泽慧音 网络流： P2055 [ZJOI2009]假期的宿舍 P1231 教辅的组成 P2756 飞行员配对方案问题 P1345 [USACO5.4]奶牛的电信Telecowmunication 其他图论： P1268 树的重量 P1113 杂务 P3183 [HAOI2016]食物链 单调队列： P2032 扫描 莫队： P2709 小B的询问 P1972 [SDOI2009]HH的项链 P1494 [国家集训队]小Z的袜子 二分： P1314 聪明的质监员 数论： P1082 同余方程 模板： P3379 【模板】最近公共祖先（LCA） P3375 【模板】KM`P字符串匹配 P3369 【模板】普通平衡树（Treap/SBT） P3865 【模板】ST表 P3382 【模板】三分法 P3370 【模板】字符串哈希 P3391 【模板】文艺平衡树（Splay） P3376 【模板】网络最大流 P3386 【模板】二分图匹配 P3385 【模板】负环 一些水题： P1083 借教室 P1168 中位数 P4231 三步必杀 P1116 车厢重组 Codeforce： #462 #463 #464 （写完感觉好少啊） 活过报到了，耶！不过开学第一周也不是好熬过去的呢。 话说第一次考试考了rank1，然而出题人没做这套题，所以权当rank2吧。革命尚未成功，要直视和巨佬在图论、dp上的差距和距离，这个学期主要就要发展图论，dp，数学等方面的知识。 寒假后期感觉有点心有余而力不足，反而显得平时上学的时候学习效率更高。真是奇怪呢。不过这也在一方面上反映了寒假作业的毒瘤。毒瘤！ 不过课内的学习也不能放下，只好再压榨一点时间了。学习好也就这点不好，两边都难割舍，害怕毁掉课内，也害怕一年竞赛一场空。 「没有成绩时 学习不停止」 新学期，自勉，共勉。 TodoList下周完成 学费用流 活过这周 好好学课内啊 这学期完成（大略） 图论 树链剖分及相关 网络流相关 费用流 差分约束 缩点相关 … 数据结构 高级数据结构（veb啥的） … 字符串相关 数学 扩欧 逆元 FFT等多项式 … 奇奇怪怪的算法 博弈 研究春令营的课 （一时想不到了 还有啥啊） 说多不多，说少不少。]]></content>
+      <categories>
+        <category>总结</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[输入输出优化模板]]></title>
     <url>%2F20180223-IO-optimize%2F</url>
     <content type="text"><![CDATA[输入输出模板替代普通读写方式，可以在一定程度上加快程序运行速度。 直接贴了。依赖库stdio.h 和 ctype.h。 #include &lt;cstdio&gt;#include &lt;cctype&gt;namespace fast_io &#123; inline char read(); inline void read(int&amp;);// inline void read(char*); inline void print(char); inline void print(int);// inline void print(char*); inline void flush(); inline char read() &#123;// return getchar(); static const int IN_LEN = 1000000; static char buf[IN_LEN], *s, *t; return s==t?(((t=(s=buf)+fread(buf,1,IN_LEN,stdin))== s)?-1:*s++) : *s++; &#125; inline void read(int &amp;x) &#123; static bool iosig; static char c; for (iosig = false, c = read(); !isdigit(c); c = read()) &#123; if (c == '-') iosig = true; if (c == -1) return; &#125; for (x = 0; isdigit(c); c = read()) x = (x &lt;&lt; 1) + (x &lt;&lt; 3) + (c ^ '0'); if (iosig) x = -x; &#125; /* inline void read(char *a)&#123; static char c = read(); while(c!= -1&amp;&amp;c!=' '&amp;&amp;c!='\n')&#123; *a++ = c; c = read(); &#125; *a = 0; &#125;*/ const int OUT_LEN = 1000000; char obuf[OUT_LEN], *ooh = obuf; inline void print(char c) &#123; if (ooh == obuf + OUT_LEN) fwrite(obuf, 1, OUT_LEN, stdout), ooh = obuf; *ooh++ = c; &#125; inline void print(int x) &#123; static int buf[30], cnt; if (x == 0) &#123; print('0'); &#125; else &#123; if (x &lt; 0) print('-'), x = -x; for (cnt = 0; x; x /= 10) buf[++cnt] = x % 10 + 48; while (cnt) print((char)buf[cnt--]); &#125; &#125; /* inline void print(char *a)&#123; while(*a) print(*a++); &#125; */ inline void flush() &#123; fwrite(obuf, 1, ooh - obuf, stdout); &#125;&#125;using namespace fast_io;namespace normal_io&#123; inline void read(int &amp;x)&#123; scanf("%d",&amp;x); &#125; inline void print(int x)&#123; printf("%d",x); &#125; inline void print(char c)&#123; putchar(c); &#125;&#125;//using namespace normal_io;int main()&#123; int x; read(x); print(x); flush(); return 0;&#125;]]></content>
@@ -37,8 +45,8 @@
       <tags>
         <tag>数据结构</tag>
         <tag>平衡树</tag>
-        <tag>Treap</tag>
         <tag>题解</tag>
+        <tag>Treap</tag>
       </tags>
   </entry>
   <entry>
