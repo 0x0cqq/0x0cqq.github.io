@@ -4,8 +4,433 @@
 
     
   <url>
+    <loc>http://blog.chenqiqian.com/20180223-IO-optimize/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>输入输出优化模板</title>
+        <pubTime>2018-02-23T14:15:32.000Z</pubTime>
+        
+        <tag>模板</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+    
+    
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180217-nonerotatingtreap-notes/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>非旋Treap学习笔记</title>
+        <pubTime>2018-02-17T11:45:17.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>数据结构</tag>
+         
+        <tag>平衡树</tag>
+         
+        <tag>Treap</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171218-segment-tree/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>可能是最简单的线段树介绍</title>
+        <pubTime>2017-12-18T13:19:58.000Z</pubTime>
+        
+        <tag>介绍</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171205-20171205/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>日常颓废</title>
+        <pubTime>2017-12-05T12:51:27.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="日常" url="http://blog.chenqiqian.com/categories/%E6%97%A5%E5%B8%B8/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171204-test/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>测试一下</title>
+        <pubTime>2017-12-04T11:51:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180128-notes-for-test/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>考试前要看的东西</title>
+        <pubTime>2018-01-28T02:38:30.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180205-mo-algorithm-1/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>莫队算法学习笔记（一）</title>
+        <pubTime>2018-02-05T11:54:29.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>模板</tag>
+         
+        <tag>莫队</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171216-dalabengba-oi/</loc>
+    <lastmod>2018-03-03T13:02:09.000Z</lastmod>
+    <data>
+        <display>
+        <title>[转载]达拉崩吧-OI版</title>
+        <pubTime>2017-12-16T06:55:42.000Z</pubTime>
+        
+        <tag>歌曲</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180131-noi2004-cashier/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「NOI2004」郁闷的出纳员-Splay</title>
+        <pubTime>2018-01-31T13:05:48.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>平衡树</tag>
+         
+        <tag>Splay</tag>
+         
+        <tag>题解</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180217-noi2005-sequence/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「NOI2005」维护数列-非旋Treap</title>
+        <pubTime>2018-02-17T13:48:01.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>平衡树</tag>
+         
+        <tag>Treap</tag>
+         
+        <tag>题解</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180205-sdoi2009-necklace/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「SDOI2009」HH的项链-莫队or树状数组</title>
+        <pubTime>2018-02-05T10:11:47.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+        <tag>莫队</tag>
+         
+        <tag>树状数组</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180303-zjoi2007-count/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「ZJOI2007」报表统计-平衡树</title>
+        <pubTime>2018-03-03T10:29:17.000Z</pubTime>
+        
+        <tag>数据结构</tag>
+         
+        <tag>平衡树</tag>
+         
+        <tag>Treap</tag>
+         
+        <tag>题解</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180303-ZJOI2007-sync/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「ZJOI2007」时态同步-树形dp</title>
+        <pubTime>2018-03-03T10:30:16.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+        <tag>动态规划</tag>
+         
+        <tag>树形dp</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180208-zjoi2009-vacation/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「ZJOI2009」假期的宿舍-二分图匹配</title>
+        <pubTime>2018-02-07T23:48:00.000Z</pubTime>
+        
+        <tag>图论</tag>
+         
+        <tag>Dinic</tag>
+         
+        <tag>题解</tag>
+         
+        <tag>二分图匹配</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171223-luogu-p1043/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「洛谷P1043」数字游戏-dp</title>
+        <pubTime>2017-12-23T05:15:19.000Z</pubTime>
+        
+        <tag>题解</tag>
+         
+        <tag>动态规划</tag>
+         
+        <tag>洛谷</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180217-A-dream-of-Red-Mansions/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>「红楼一梦」</title>
+        <pubTime>2018-02-17T14:40:12.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="随笔" url="http://blog.chenqiqian.com/categories/%E9%9A%8F%E7%AC%94/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180125-bjwc2018-trip/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>冬令营旅游记</title>
+        <pubTime>2018-01-25T10:38:19.000Z</pubTime>
+        
+        <tag>冬令营</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180208-dinic-notes/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>Dinic学习笔记</title>
+        <pubTime>2018-02-08T06:31:15.000Z</pubTime>
+        
+        <tag>笔记</tag>
+         
+        <tag>图论</tag>
+         
+        <tag>Dinic</tag>
+         
+        <tag>模板</tag>
+         
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20171213-milestone/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
+    <data>
+        <display>
+        <title>OI大事记</title>
+        <pubTime>2017-12-13T14:10:57.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://blog.chenqiqian.com/20180130-treap-notes/</loc>
-    <lastmod>2018-03-03T12:31:16.000Z</lastmod>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
     <data>
         <display>
         <title>Treap学习笔记</title>
@@ -31,312 +456,9 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180113-2018-JanWeek2/</loc>
-    <lastmod>2018-03-03T12:25:56.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 JanWeek2</title>
-        <pubTime>2018-01-13T07:59:08.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180218-2018-FebWeek3/</loc>
-    <lastmod>2018-03-03T12:25:36.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 FebWeek3</title>
-        <pubTime>2018-02-18T09:45:58.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180211-2018-FebWeek2/</loc>
-    <lastmod>2018-03-03T12:25:31.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 FebWeek2</title>
-        <pubTime>2018-02-11T08:28:27.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180205-2018-FebWeek1/</loc>
-    <lastmod>2018-03-03T12:25:25.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 FebWeek1</title>
-        <pubTime>2018-02-05T11:05:57.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180225-2018-FebWeek4/</loc>
-    <lastmod>2018-03-03T12:24:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 FebWeek4</title>
-        <pubTime>2018-02-25T09:59:18.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180120-2018-JanWeek3/</loc>
-    <lastmod>2018-03-03T12:24:25.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 JanWeek3</title>
-        <pubTime>2018-01-20T13:17:20.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180128-2018-JanWeek4/</loc>
-    <lastmod>2018-03-03T12:24:17.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 JanWeek4</title>
-        <pubTime>2018-01-28T01:22:46.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180303-2018-MarWeek1/</loc>
-    <lastmod>2018-03-03T12:23:50.000Z</lastmod>
-    <data>
-        <display>
-        <title>2018 MarWeek1</title>
-        <pubTime>2018-03-03T10:07:20.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180303-ZJOI2007-sync/</loc>
-    <lastmod>2018-03-03T11:21:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ZJOI2007」时态同步-树形dp</title>
-        <pubTime>2018-03-03T10:30:16.000Z</pubTime>
-        
-        <tag>题解</tag>
-         
-        <tag>动态规划</tag>
-         
-        <tag>树形dp</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180303-zjoi2007-count/</loc>
-    <lastmod>2018-03-03T10:54:30.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ZJOI2007」报表统计-平衡树</title>
-        <pubTime>2018-03-03T10:29:17.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-        <tag>平衡树</tag>
-         
-        <tag>Treap</tag>
-         
-        <tag>题解</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180223-IO-optimize/</loc>
-    <lastmod>2018-02-24T01:17:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>输入输出优化模板</title>
-        <pubTime>2018-02-23T14:15:32.000Z</pubTime>
-        
-        <tag>模板</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20171213-milestone/</loc>
-    <lastmod>2018-02-23T09:15:57.000Z</lastmod>
-    <data>
-        <display>
-        <title>OI大事记</title>
-        <pubTime>2017-12-13T14:10:57.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180217-A-dream-of-Red-Mansions/</loc>
-    <lastmod>2018-02-18T11:29:01.000Z</lastmod>
-    <data>
-        <display>
-        <title>「红楼一梦」</title>
-        <pubTime>2018-02-17T14:40:12.000Z</pubTime>
-        
-         
-           
-             
-              <breadCrumb title="随笔" url="http://blog.chenqiqian.com/categories/%E9%9A%8F%E7%AC%94/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180217-nonerotatingtreap-notes/</loc>
-    <lastmod>2018-02-18T11:03:12.000Z</lastmod>
-    <data>
-        <display>
-        <title>非旋Treap学习笔记</title>
-        <pubTime>2018-02-17T11:45:17.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>数据结构</tag>
-         
-        <tag>平衡树</tag>
-         
-        <tag>Treap</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180217-noi2005-sequence/</loc>
-    <lastmod>2018-02-17T15:02:21.000Z</lastmod>
-    <data>
-        <display>
-        <title>「NOI2005」维护数列-非旋Treap</title>
-        <pubTime>2018-02-17T13:48:01.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-        <tag>平衡树</tag>
-         
-        <tag>Treap</tag>
-         
-        <tag>题解</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://blog.chenqiqian.com/20180103-grow/</loc>
-    <lastmod>2018-02-17T14:33:37.000Z</lastmod>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
     <data>
         <display>
         <title>“长大”</title>
@@ -352,205 +474,9 @@
     </url>
 
     
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180211-noi2002-hero/</loc>
-    <lastmod>2018-02-11T08:51:05.000Z</lastmod>
-    <data>
-        <display>
-        <title>「NOI2002」银河英雄传说-并查集</title>
-        <pubTime>2018-02-11T08:27:45.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-        <tag>题解</tag>
-         
-        <tag>并查集</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180208-zjoi2009-vacation/</loc>
-    <lastmod>2018-02-08T08:53:13.000Z</lastmod>
-    <data>
-        <display>
-        <title>「ZJOI2009」假期的宿舍-二分图匹配</title>
-        <pubTime>2018-02-07T23:48:00.000Z</pubTime>
-        
-        <tag>图论</tag>
-         
-        <tag>Dinic</tag>
-         
-        <tag>题解</tag>
-         
-        <tag>二分图匹配</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180205-mo-algorithm-1/</loc>
-    <lastmod>2018-02-08T07:37:46.000Z</lastmod>
-    <data>
-        <display>
-        <title>莫队算法学习笔记（一）</title>
-        <pubTime>2018-02-05T11:54:29.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>模板</tag>
-         
-        <tag>莫队</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180208-dinic-notes/</loc>
-    <lastmod>2018-02-08T07:37:25.000Z</lastmod>
-    <data>
-        <display>
-        <title>Dinic学习笔记</title>
-        <pubTime>2018-02-08T06:31:15.000Z</pubTime>
-        
-        <tag>笔记</tag>
-         
-        <tag>图论</tag>
-         
-        <tag>Dinic</tag>
-         
-        <tag>模板</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20171218-segment-tree/</loc>
-    <lastmod>2018-02-05T12:58:40.000Z</lastmod>
-    <data>
-        <display>
-        <title>可能是最简单的线段树介绍</title>
-        <pubTime>2017-12-18T13:19:58.000Z</pubTime>
-        
-        <tag>介绍</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180205-sdoi2009-necklace/</loc>
-    <lastmod>2018-02-05T12:56:08.000Z</lastmod>
-    <data>
-        <display>
-        <title>「SDOI2009」HH的项链-莫队or树状数组</title>
-        <pubTime>2018-02-05T10:11:47.000Z</pubTime>
-        
-        <tag>题解</tag>
-         
-        <tag>莫队</tag>
-         
-        <tag>树状数组</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20171223-luogu-p1043/</loc>
-    <lastmod>2018-02-05T11:04:10.000Z</lastmod>
-    <data>
-        <display>
-        <title>「洛谷P1043」数字游戏-dp</title>
-        <pubTime>2017-12-23T05:15:19.000Z</pubTime>
-        
-        <tag>题解</tag>
-         
-        <tag>洛谷</tag>
-         
-        <tag>动态规划</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://blog.chenqiqian.com/20180131-noi2004-cashier/</loc>
-    <lastmod>2018-02-05T11:02:26.000Z</lastmod>
-    <data>
-        <display>
-        <title>「NOI2004」郁闷的出纳员-Splay</title>
-        <pubTime>2018-01-31T13:05:48.000Z</pubTime>
-        
-        <tag>数据结构</tag>
-         
-        <tag>平衡树</tag>
-         
-        <tag>Splay</tag>
-         
-        <tag>题解</tag>
-         
-         
-           
-             
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
   <url>
     <loc>http://blog.chenqiqian.com/20180202-cqoi2014-sort/</loc>
-    <lastmod>2018-02-05T11:02:10.000Z</lastmod>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
     <data>
         <display>
         <title>「CQOI2014」排序机械臂-Splay</title>
@@ -575,14 +501,18 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/20171216-dalabengba-oi/</loc>
-    <lastmod>2018-02-01T05:33:00.000Z</lastmod>
+    <loc>http://blog.chenqiqian.com/20180211-noi2002-hero/</loc>
+    <lastmod>2018-03-03T13:02:08.000Z</lastmod>
     <data>
         <display>
-        <title>[转载]达拉崩吧-OI版</title>
-        <pubTime>2017-12-16T06:55:42.000Z</pubTime>
+        <title>「NOI2002」银河英雄传说-并查集</title>
+        <pubTime>2018-02-11T08:27:45.000Z</pubTime>
         
-        <tag>歌曲</tag>
+        <tag>数据结构</tag>
+         
+        <tag>题解</tag>
+         
+        <tag>并查集</tag>
          
          
            
@@ -595,17 +525,17 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/20171205-20171205/</loc>
-    <lastmod>2018-02-01T05:31:14.000Z</lastmod>
+    <loc>http://blog.chenqiqian.com/20180211-2018-FebWeek2/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
     <data>
         <display>
-        <title>日常颓废</title>
-        <pubTime>2017-12-05T12:51:27.000Z</pubTime>
+        <title>2018 FebWeek2</title>
+        <pubTime>2018-02-11T08:28:27.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="日常" url="http://blog.chenqiqian.com/categories/%E6%97%A5%E5%B8%B8/"/>
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -613,17 +543,17 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/20180128-notes-for-test/</loc>
-    <lastmod>2018-02-01T05:29:28.000Z</lastmod>
+    <loc>http://blog.chenqiqian.com/20180303-2018-MarWeek1/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
     <data>
         <display>
-        <title>考试前要看的东西</title>
-        <pubTime>2018-01-28T02:38:30.000Z</pubTime>
+        <title>2018 MarWeek1</title>
+        <pubTime>2018-03-03T10:07:20.000Z</pubTime>
         
          
            
              
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -631,19 +561,17 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/20180125-bjwc2018-trip/</loc>
-    <lastmod>2018-02-01T05:28:45.000Z</lastmod>
+    <loc>http://blog.chenqiqian.com/20180128-2018-JanWeek4/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
     <data>
         <display>
-        <title>冬令营旅游记</title>
-        <pubTime>2018-01-25T10:38:19.000Z</pubTime>
+        <title>2018 JanWeek4</title>
+        <pubTime>2018-01-28T01:22:46.000Z</pubTime>
         
-        <tag>冬令营</tag>
-         
          
            
              
-              <breadCrumb title="OI" url="http://blog.chenqiqian.com/categories/OI/"/>
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
           
         </display>
     </data>
@@ -651,20 +579,92 @@
 
     
   <url>
-    <loc>http://blog.chenqiqian.com/20171204-test/</loc>
-    <lastmod>2018-02-01T05:28:13.000Z</lastmod>
+    <loc>http://blog.chenqiqian.com/20180120-2018-JanWeek3/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
     <data>
         <display>
-        <title>测试一下</title>
-        <pubTime>2017-12-04T11:51:00.000Z</pubTime>
+        <title>2018 JanWeek3</title>
+        <pubTime>2018-01-20T13:17:20.000Z</pubTime>
         
          
            
+             
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
+          
         </display>
     </data>
     </url>
 
     
+  <url>
+    <loc>http://blog.chenqiqian.com/20180113-2018-JanWeek2/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>2018 JanWeek2</title>
+        <pubTime>2018-01-13T07:59:08.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
+  <url>
+    <loc>http://blog.chenqiqian.com/20180225-2018-FebWeek4/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>2018 FebWeek4</title>
+        <pubTime>2018-02-25T09:59:18.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
+  <url>
+    <loc>http://blog.chenqiqian.com/20180218-2018-FebWeek3/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>2018 FebWeek3</title>
+        <pubTime>2018-02-18T09:45:58.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://blog.chenqiqian.com/20180205-2018-FebWeek1/</loc>
+    <lastmod>2018-03-03T13:02:07.000Z</lastmod>
+    <data>
+        <display>
+        <title>2018 FebWeek1</title>
+        <pubTime>2018-02-05T11:05:57.000Z</pubTime>
+        
+         
+           
+             
+              <breadCrumb title="总结" url="http://blog.chenqiqian.com/categories/%E6%80%BB%E7%BB%93/"/>
+          
+        </display>
+    </data>
+    </url>
+
 </urlset>
