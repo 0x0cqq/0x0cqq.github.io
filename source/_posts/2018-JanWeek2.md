@@ -7,13 +7,14 @@ visible:
 urlname: 2018-JanWeek2
 ---
 
-## 2018年一月 第二周
-### 2018.1.7-2018.1.14
+2018年一月 第二周
+2018.1.7-2018.1.14
+
 <!-- more -->
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=34179200&auto=0&height=66"></iframe>
 
-### 写在前面
+## 写在前面
 莫名的就突然有一种做一做总结的欲望。
 想到爸爸。以前啊，总是能看到爸爸每周做一次周报，每月做一次月报，季报，年报，诸如此类。其实也未尝不是一种好想法吧。尤其对我这种健忘的人，以后只要看看这些总结，也就能知道一些好玩的事情了。
 
