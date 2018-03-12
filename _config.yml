@@ -90,8 +90,6 @@ search:
 
 algolia:
   applicationID: 'YB0BTS2M0Z'
-  apiKey: 'ed06c5c8c68942b095dcfcb22cda7f56'
-  adminApiKey: '6d5640701d8f66598b6cee509eff1ebc'
   indexName: 'blog'  
   chunkSize: 5000
   fields: 
