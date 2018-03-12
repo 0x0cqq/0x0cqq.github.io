@@ -88,16 +88,21 @@ search:
   format: html
   limit: 10000
 
+algolia:
+  applicationID: 'YB0BTS2M0Z'
+  apiKey: 'ed06c5c8c68942b095dcfcb22cda7f56'
+  adminApiKey: '6d5640701d8f66598b6cee509eff1ebc'
+  indexName: 'blog'  
+  chunkSize: 5000
+  fields: 
+    - title
+    - tags
+    - slug
+    - excerpt
+
 # Sitemap for searching engine
 sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
-
-#backup:
-#  type: git
-#  theme: hexo-theme-next
-#  message: update source
-#  repository:
-#    github: https://github.com/ChenQiqian/hexo-source.git
 
