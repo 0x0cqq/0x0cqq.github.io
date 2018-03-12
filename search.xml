@@ -113,10 +113,10 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
         <tag>数据结构</tag>
         <tag>平衡树</tag>
         <tag>Treap</tag>
+        <tag>笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -149,9 +149,9 @@
       </categories>
       <tags>
         <tag>笔记</tag>
+        <tag>模板</tag>
         <tag>图论</tag>
         <tag>Dinic</tag>
-        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
@@ -162,10 +162,10 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>图论</tag>
-        <tag>Dinic</tag>
         <tag>题解</tag>
+        <tag>图论</tag>
         <tag>二分图匹配</tag>
+        <tag>Dinic</tag>
       </tags>
   </entry>
   <entry>
@@ -238,11 +238,11 @@
         <category>OI</category>
       </categories>
       <tags>
-        <tag>笔记</tag>
-        <tag>模板</tag>
         <tag>数据结构</tag>
         <tag>平衡树</tag>
         <tag>Treap</tag>
+        <tag>笔记</tag>
+        <tag>模板</tag>
       </tags>
   </entry>
   <entry>
