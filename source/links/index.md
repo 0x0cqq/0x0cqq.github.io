@@ -70,7 +70,7 @@ date: 2018-02-14 16:06:53
 
 {% raw %}
 <div class="md-links" style="none;">
-    <a href="https://memset0.scris.top" title="memset0的博客" target="_blank">
+    <a href="https://memset0.cf" title="memset0的博客" target="_blank">
         <li class="md-links-item">
             <img src="/images/friends/memset0.jpg" alt="memset0" width="72px">
             <span class="md-links-title">memset0</span><br>
