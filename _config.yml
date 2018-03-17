@@ -88,8 +88,10 @@ search:
   format: html
   limit: 10000
 
+
 algolia:
   applicationID: 'YB0BTS2M0Z'
+  apiKey: 'ed06c5c8c68942b095dcfcb22cda7f56'
   indexName: 'blog'  
   chunkSize: 5000
   fields: 
