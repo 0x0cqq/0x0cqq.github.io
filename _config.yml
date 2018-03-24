@@ -6,9 +6,10 @@
 title: Chen's Blog
 subtitle: 记录时光与梦想
 description: Stay simple. Stay naïve.
+keywords: "博客, chenqiqian,Chen's Blog"
 author: Chen Qiqian
-language: zh-Hans
-timezone: 
+language: zh-CN
+timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -32,7 +33,7 @@ new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
-filename_case: 0
+filename_case: 1
 render_drafts: false
 post_asset_folder: true
 relative_link: false
@@ -72,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next-reloaded
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,28 +82,18 @@ deploy:
   repo: https://github.com/ChenQiqian/ChenQiqian.github.io.git
   branch: master
 
-# Search System
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-
-
-algolia:
-  applicationID: 'YB0BTS2M0Z'
-  apiKey: 'ed06c5c8c68942b095dcfcb22cda7f56'
-  indexName: 'blog'  
-  chunkSize: 5000
-  fields: 
-    - title
-    - tags
-    - slug
-    - excerpt
-
 # Sitemap for searching engine
 sitemap:
   path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
 
+# below is user setting
+
+# Algolia search
+# $ export HEXO_ALGOLIA_INDEXING_KEY='ed06c5c8c68942b095dcfcb22cda7f56'
+algolia:
+  applicationID: 'YB0BTS2M0Z'
+  apiKey: 'ed06c5c8c68942b095dcfcb22cda7f56'
+  indexName: 'blog'  
+  chunkSize: 5000

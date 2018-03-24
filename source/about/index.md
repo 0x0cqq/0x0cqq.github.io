@@ -1,5 +1,5 @@
 ---
-title: about
+title: 关于我
 date: 2017-12-04 21:37:41
 ---
 
@@ -15,4 +15,7 @@ date: 2017-12-04 21:37:41
 
 \(≧▽≦)/
 
-联系方式：`qiqianchen@126.com`
+联系方式：
++  qiqianchen@126.com
++  qiqianchen@gmail.com
+
