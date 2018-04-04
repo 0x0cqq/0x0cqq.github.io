@@ -13,7 +13,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.chenqiqian.com
+url: https://blog.chenqiqian.com
 root: /
 permalink: :year:month:day-:urlname/
 permalink_defaults:
@@ -89,6 +89,7 @@ baidusitemap:
   path: baidusitemap.xml
 
 # below is user setting
+
 
 # Algolia search
 # $ export HEXO_ALGOLIA_INDEXING_KEY='ed06c5c8c68942b095dcfcb22cda7f56'
