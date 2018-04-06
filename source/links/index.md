@@ -3,7 +3,7 @@ title: 友情链接
 date: 2018-02-14 16:06:53
 ---
 
-如果有想加神犇的欢迎留言。
+如果有想加的神犇欢迎留言。
 
 {% raw %}
 <style>
@@ -58,7 +58,7 @@ line-height: 35px;
 <div class="md-links" style="none;">
 <a href="http://blog.chenqiqian.com" title="Chen's Blog" target="_blank">
 <li class="md-links-item">
-<img src="/images/friends/chenqiqian.jpg" alt="ChenQiqian" width="72px">
+<img src="/images/friends/chenqiqian.jpg" alt="Chen Qiqian" width="72px">
 <span class="md-links-title">Chen's Blog</span><br>
 <span>记录时光与梦想</span>
 </li>
