@@ -1,4 +1,83 @@
-<!DOCTYPE html><html class="theme-next gemini use-motion" lang=zh-CN><head><meta charset=UTF-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width, initial-scale=1, maximum-scale=2"><meta name=theme-color content=#222><meta http-equiv=Cache-Control content=no-transform><meta http-equiv=Cache-Control content=no-siteapp><meta name=google-site-verification content=google10e62edab32bec8a.html><link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel=stylesheet type=text/css><link href="/css/main.css?v=6.0.6" rel=stylesheet type=text/css><link rel=apple-touch-icon sizes=180x180 href="/apple-touch-icon.png?v=6.0.6"><link rel=icon type=image/png sizes=32x32 href="/favicon-32x32.png?v=6.0.6"><link rel=icon type=image/png sizes=16x16 href="/favicon-16x16.png?v=6.0.6"><link rel=mask-icon href="/safari-pinned-tab.svg?v=6.0.6" color=#222><link rel=manifest href=/manifest.json><meta name=msapplication-config content=/browserconfig.xml><script type=text/javascript id=hexo.configurations>
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="google10e62edab32bec8a.html" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.0.6" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=6.0.6">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=6.0.6">
+
+
+  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6.0.6" color="#222">
+
+
+  <link rel="manifest" href="/manifest.json">
+
+
+  <meta name="msapplication-config" content="/browserconfig.xml" />
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
@@ -18,11 +97,55 @@
       labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
-</script><meta name=description content="有一个长度为$n$的整数序列，并且有以下三种操作： $INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后 $MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值 $MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）"><meta name=keywords content=数据结构,平衡树,Treap,题解><meta property=og:type content=article><meta property=og:title content=「ZJOI2007」报表统计-平衡树><meta property=og:url content=https://blog.chenqiqian.com/20180303-zjoi2007-count/index.html><meta property=og:site_name content="Chen&#39;s Blog"><meta property=og:description content="有一个长度为$n$的整数序列，并且有以下三种操作： $INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后 $MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值 $MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）"><meta property=og:locale content=zh-CN><meta property=og:updated_time content=2018-03-14T14:21:54.000Z><meta name=twitter:card content=summary><meta name=twitter:title content=「ZJOI2007」报表统计-平衡树><meta name=twitter:description content="有一个长度为$n$的整数序列，并且有以下三种操作： $INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后 $MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值 $MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）"><link rel=canonical href="https://blog.chenqiqian.com/20180303-zjoi2007-count/"><script type=text/javascript id=page.configurations>
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="有一个长度为$n$的整数序列，并且有以下三种操作：  $INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后  $MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值  $MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）">
+<meta name="keywords" content="数据结构,平衡树,Treap,题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「ZJOI2007」报表统计-平衡树">
+<meta property="og:url" content="https://blog.chenqiqian.com/20180303-zjoi2007-count/index.html">
+<meta property="og:site_name" content="Chen&#39;s Blog">
+<meta property="og:description" content="有一个长度为$n$的整数序列，并且有以下三种操作：  $INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后  $MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值  $MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-14T14:21:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="「ZJOI2007」报表统计-平衡树">
+<meta name="twitter:description" content="有一个长度为$n$的整数序列，并且有以下三种操作：  $INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后  $MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值  $MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）">
+
+
+
+
+
+
+  <link rel="canonical" href="https://blog.chenqiqian.com/20180303-zjoi2007-count/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
   CONFIG.page = {
     sidebar: "",
   };
-</script><title>「ZJOI2007」报表统计-平衡树 | Chen's Blog</title><noscript><style type=text/css>
+</script>
+
+  <title>「ZJOI2007」报表统计-平衡树 | Chen's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
     .use-motion .motion-element,
     .use-motion .brand,
     .use-motion .menu-item,
@@ -45,7 +168,714 @@
       .logo-line-before i { left: initial; }
       .logo-line-after i { right: initial; }
     }
-  </style></noscript></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-CN><div class="container sidebar-position-left page-post-detail"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-wrapper><div class=site-meta><div class=custom-logo-site-title><a href="/" class=brand rel=start><span class=logo-line-before><i></i></span> <span class=site-title>Chen's Blog</span> <span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>记录时光与梦想</p></div><div class=site-nav-toggle><button aria-label=切换导航栏><span class=btn-bar></span> <span class=btn-bar></span> <span class=btn-bar></span></button></div></div><nav class=site-nav><ul id=menu class=menu><li class="menu-item menu-item-home"><a href="/" rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel=section><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel=section><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-board"><a href="/board/" rel=section><i class="menu-item-icon fa fa-fw fa-clipboard"></i><br>留言板</a></li><li class="menu-item menu-item-links"><a href="/links/" rel=section><i class="menu-item-icon fa fa-fw fa-link"></i><br>友链</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="algolia-popup popup search-popup"><div class=algolia-search><div class=algolia-search-input-icon><i class="fa fa-search"></i></div><div class=algolia-search-input id=algolia-search-input></div></div><div class=algolia-results><div id=algolia-stats></div><div id=algolia-hits></div><div id=algolia-pagination class=algolia-pagination></div></div><span class=popup-btn-close><i class="fa fa-times-circle"></i></span></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><div id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><div class=post-block><link itemprop=mainEntityOfPage href="https://blog.chenqiqian.com/20180303-zjoi2007-count/"><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=name content="Chen Qiqian"><meta itemprop=description><meta itemprop=image content=/images/avatar.jpg></span> <span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="Chen's Blog"></span><header class=post-header><h1 class=post-title itemprop="name headline">「ZJOI2007」报表统计-平衡树</h1><div class=post-meta><span class=post-time><span class=post-meta-item-icon><i class="fa fa-calendar-o"></i></span> <span class=post-meta-item-text>发表于</span><time title=创建于 itemprop="dateCreated datePublished" datetime=2018-03-03T18:29:17+08:00>2018-03-03</time><span class=post-meta-divider>|</span> <span class=post-meta-item-icon><i class="fa fa-calendar-check-o"></i></span> <span class=post-meta-item-text>更新于：</span><time title=更新于 itemprop=dateModified datetime=2018-03-14T22:21:54+08:00>2018-03-14</time></span> <span class=post-category><span class=post-meta-divider>|</span> <span class=post-meta-item-icon><i class="fa fa-folder-o"></i></span> <span class=post-meta-item-text>分类于</span> <span itemprop=about itemscope itemtype=http://schema.org/Thing><a href="/categories/OI/" itemprop=url rel=index><span itemprop=name>OI</span></a></span></span> <span class=post-meta-divider>|</span> <span class=post-meta-item-icon><i class="fa fa-eye"></i> 阅读次数： <span class=busuanzi-value id=busuanzi_value_page_pv></span></span></div></header><div class=post-body itemprop=articleBody><p>有一个长度为$n$的整数序列，并且有以下三种操作：</p><ul><li><p>$INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后</p></li><li><p>$MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值</p></li><li><p>$MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）</p></li></ul><a id=more></a><h2 id=链接><a href=#链接 class=headerlink title=链接></a>链接</h2><p><a href=https://www.luogu.org/problemnew/show/P1110 target=_blank rel=noopener>Luogu P1110</a></p><h2 id=题解><a href=#题解 class=headerlink title=题解></a>题解</h2><p>一道近乎于裸的<code>Treap</code>，然而由于我十分蒟蒻而且好久没敲<code>Treap</code>，调了两个小时才调完。</p><hr><p>这道题我们维护两棵平衡树，一颗$b$记录所有相邻数的差的绝对值，一颗$b$记录所有的数；一个列表，记录每个块的最前面和最后面的数。我们注意到询问三的结果随插入的数不增，所以只需要维护一个最小值$minn$就可以了。</p><hr><ul><li><p>$insert$ 操作：首先根据列表内容从$b$里删除对应位置块间两数的差，然后把插入后多出来的相邻元素差，这个数与这一块结尾，下一块最前面的数的差分别插入平衡树$b$，注意<code>i == n</code>时需要特判；并把插入的数加到$a$里面，根据其与前驱后继的差更新$minn$，注意需要判断一下是否这个数已经在平衡树里面存在。</p></li><li><p>相邻元素的差值最小值：直接在$b$里求最小值并输出。</p></li><li><p>排序后的最小差值：直接输出$minn$。</p></li></ul><h2 id=代码><a href=#代码 class=headerlink title=代码></a>代码</h2><div><div class=fold_hider><div class="close hider_title">点击切换显示状态</div></div><div class=fold><figure class="highlight cpp"><table><tr><td class=code><pre><span class=line><span class=meta>#<span class=meta-keyword>include</span> <span class=meta-string>&lt;cstdio&gt;</span></span></span><br><span class=line><span class=meta>#<span class=meta-keyword>include</span> <span class=meta-string>&lt;algorithm&gt;</span></span></span><br><span class=line><span class=meta>#<span class=meta-keyword>include</span> <span class=meta-string>&lt;cstdlib&gt;</span></span></span><br><span class=line><span class=meta>#<span class=meta-keyword>include</span> <span class=meta-string>&lt;cctype&gt;</span></span></span><br><span class=line><span class=keyword>using</span> <span class=keyword>namespace</span> <span class=built_in>std</span>;</span><br><span class=line></span><br><span class=line><span class=keyword>namespace</span> fast_io &#123;</span><br><span class=line>    ...<span class=comment>//隐去快读模版</span></span><br><span class=line>&#125;<span class=keyword>using</span> <span class=keyword>namespace</span> fast_io;</span><br><span class=line></span><br><span class=line><span class=keyword>namespace</span> normal_io&#123;</span><br><span class=line>    <span class=function><span class=keyword>inline</span> <span class=keyword>char</span> <span class=title>read</span><span class=params>()</span></span>&#123;</span><br><span class=line>        <span class=keyword>return</span> getchar();</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>inline</span> <span class=keyword>void</span> <span class=title>read</span><span class=params>(<span class=keyword>char</span> *c)</span></span>&#123;</span><br><span class=line>    	<span class=built_in>scanf</span>(<span class=string>"%s"</span>,c);</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>inline</span> <span class=keyword>void</span> <span class=title>read</span><span class=params>(<span class=keyword>int</span> &amp;x)</span></span>&#123;</span><br><span class=line>        <span class=built_in>scanf</span>(<span class=string>"%d"</span>,&amp;x);</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>inline</span> <span class=keyword>void</span> <span class=title>print</span><span class=params>(<span class=keyword>int</span> x)</span></span>&#123;</span><br><span class=line>        <span class=built_in>printf</span>(<span class=string>"%d"</span>,x);</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>inline</span> <span class=keyword>void</span> <span class=title>print</span><span class=params>(<span class=keyword>char</span> x)</span></span>&#123;</span><br><span class=line>        <span class=built_in>putchar</span>(x);</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>inline</span> <span class=keyword>void</span> <span class=title>flush</span><span class=params>()</span></span>&#123;</span><br><span class=line>        <span class=keyword>return</span>;</span><br><span class=line>    &#125;</span><br><span class=line>&#125;<span class=keyword>using</span> <span class=keyword>namespace</span> normal_io;</span><br><span class=line></span><br><span class=line><span class=class><span class=keyword>struct</span> <span class=title>treap</span>&#123;</span></span><br><span class=line>    <span class=class><span class=keyword>struct</span> <span class=title>node</span>&#123;</span></span><br><span class=line>        <span class=keyword>int</span> val,p,cnt;</span><br><span class=line>        node* son[<span class=number>2</span>];</span><br><span class=line>    &#125;;</span><br><span class=line>    <span class=keyword>const</span> <span class=keyword>static</span> <span class=keyword>int</span> MAXN = <span class=number>1000000</span>;</span><br><span class=line>    <span class=keyword>int</span> treapcnt;</span><br><span class=line>    node pool[MAXN],*null,*root;</span><br><span class=line>    treap()&#123;</span><br><span class=line>        treapcnt = <span class=number>0</span>;</span><br><span class=line>        newnode(null);</span><br><span class=line>        srand(<span class=number>19260817</span>);</span><br><span class=line>        null-&gt;val = <span class=number>-0x3f3f3f3f</span>;</span><br><span class=line>        null-&gt;p = <span class=number>2147483647</span>;</span><br><span class=line>        null-&gt;cnt = <span class=number>0</span>;</span><br><span class=line>        root = null;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>void</span> <span class=title>rotate</span><span class=params>(node *&amp;r,<span class=keyword>int</span> tmp)</span></span>&#123;</span><br><span class=line>        node *t = r-&gt;son[<span class=number>1</span>-tmp];</span><br><span class=line>        r-&gt;son[<span class=number>1</span>-tmp] = t-&gt;son[tmp];</span><br><span class=line>        t-&gt;son[tmp] = r;</span><br><span class=line>        r = t;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>void</span> <span class=title>newnode</span><span class=params>(node *&amp;r)</span></span>&#123;</span><br><span class=line>        r = &amp;pool[treapcnt++];</span><br><span class=line>        r-&gt;son[<span class=number>0</span>] = r-&gt;son[<span class=number>1</span>] = null;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=keyword>void</span> __insert(node *&amp;r,<span class=keyword>int</span> v)&#123;</span><br><span class=line>        <span class=keyword>if</span>(r == null)&#123;</span><br><span class=line>            newnode(r);</span><br><span class=line>            r-&gt;val = v;r-&gt;p = rand();r-&gt;cnt = <span class=number>1</span>;</span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>else</span>&#123;</span><br><span class=line>            <span class=keyword>if</span>(r-&gt;val == v)</span><br><span class=line>                r-&gt;cnt++;</span><br><span class=line>            <span class=keyword>else</span>&#123;</span><br><span class=line>                <span class=keyword>int</span> tmp = v &gt; r-&gt;val;</span><br><span class=line>                __insert(r-&gt;son[tmp],v);</span><br><span class=line>                <span class=keyword>if</span>(r-&gt;son[tmp]-&gt;p &lt; r-&gt;p)</span><br><span class=line>                    rotate(r,<span class=number>1</span>-tmp);</span><br><span class=line>            &#125;</span><br><span class=line>        &#125;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function>node *<span class=title>find</span><span class=params>(node *r,<span class=keyword>int</span> t)</span></span>&#123;</span><br><span class=line>        <span class=keyword>while</span>(r-&gt;son[t]!=null)</span><br><span class=line>            r = r-&gt;son[t];</span><br><span class=line>        <span class=keyword>return</span> r;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=keyword>void</span> __erase(node *&amp;r,<span class=keyword>int</span> v)&#123;</span><br><span class=line>        <span class=keyword>if</span>(r-&gt;val == v)&#123;</span><br><span class=line>            <span class=keyword>if</span>(r-&gt;cnt &gt; <span class=number>1</span>)</span><br><span class=line>                r-&gt;cnt--;</span><br><span class=line>            <span class=keyword>else</span>&#123;</span><br><span class=line>                <span class=keyword>if</span>(r-&gt;son[<span class=number>0</span>] == null&amp;&amp;r-&gt;son[<span class=number>1</span>] == null)&#123;</span><br><span class=line>                    r = null;<span class=keyword>return</span>;</span><br><span class=line>                &#125;</span><br><span class=line>                <span class=keyword>else</span>&#123;</span><br><span class=line>                    <span class=keyword>int</span> tt = r-&gt;son[<span class=number>0</span>]-&gt;p &gt; r-&gt;son[<span class=number>1</span>]-&gt;p;</span><br><span class=line>                    rotate(r,<span class=number>1</span>-tt);</span><br><span class=line>                    __erase(r,v);</span><br><span class=line>                &#125;</span><br><span class=line>            &#125;</span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>else</span>&#123;</span><br><span class=line>            <span class=keyword>int</span> tmp = v &gt; r-&gt;val;</span><br><span class=line>            __erase(r-&gt;son[tmp],v);</span><br><span class=line>        &#125;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function>node *<span class=title>nei</span><span class=params>(<span class=keyword>int</span> v,<span class=keyword>int</span> t)</span></span>&#123;</span><br><span class=line>        node* nown = root,*last = null;</span><br><span class=line>        <span class=keyword>while</span>(nown!=null&amp;&amp;nown-&gt;val!=v)&#123;</span><br><span class=line>            <span class=comment>//printf("2\n");</span></span><br><span class=line>            <span class=keyword>int</span> tmp = v &gt; nown-&gt;val;</span><br><span class=line>            <span class=keyword>if</span>(tmp!=t) last = nown;</span><br><span class=line>            nown = nown-&gt;son[tmp];</span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>if</span>(nown-&gt;son[t]!=null)&#123;</span><br><span class=line>            last = find(nown-&gt;son[t],<span class=number>1</span>-t);</span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>return</span> last;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>bool</span> <span class=title>find</span><span class=params>(<span class=keyword>int</span> v)</span></span>&#123;</span><br><span class=line>        node *r = root;</span><br><span class=line>        <span class=keyword>while</span>(r!=null&amp;&amp;r-&gt;val!=v)&#123;</span><br><span class=line>            <span class=keyword>int</span> tmp = v &gt; r-&gt;val;</span><br><span class=line>            r = r-&gt;son[tmp];</span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>return</span> r != null;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=keyword>inline</span> <span class=keyword>void</span> __print(node *r,<span class=keyword>int</span> depth = <span class=number>0</span>)&#123;</span><br><span class=line>    	<span class=keyword>if</span>(r == null) <span class=keyword>return</span>;</span><br><span class=line>    	<span class=keyword>else</span>&#123;</span><br><span class=line>        	__print(r-&gt;son[<span class=number>0</span>],depth+<span class=number>1</span>);</span><br><span class=line>        	<span class=keyword>for</span>(<span class=keyword>int</span> i = <span class=number>0</span>;i&lt;depth;i++) <span class=built_in>putchar</span>(<span class=string>' '</span>);</span><br><span class=line>        	<span class=built_in>printf</span>(<span class=string>"val:%d cnt:%d P:%d son?:%d %d\n"</span>,r-&gt;val,r-&gt;cnt,r-&gt;p,r-&gt;son[<span class=number>0</span>]!=null,r-&gt;son[<span class=number>1</span>]!=null);</span><br><span class=line>        	__print(r-&gt;son[<span class=number>1</span>],depth+<span class=number>1</span>);</span><br><span class=line>    	&#125;</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>void</span> <span class=title>insert</span><span class=params>(<span class=keyword>int</span> v)</span></span>&#123;</span><br><span class=line>        __insert(root,v);</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>void</span> <span class=title>erase</span><span class=params>(<span class=keyword>int</span> v)</span></span>&#123;</span><br><span class=line>        __erase(root,v);</span><br><span class=line>    &#125;</span><br><span class=line>    <span class=function><span class=keyword>void</span> <span class=title>print</span><span class=params>()</span></span>&#123;</span><br><span class=line>        __print(root);</span><br><span class=line>    &#125;</span><br><span class=line>&#125;;</span><br><span class=line><span class=comment>//以上treap常规模版</span></span><br><span class=line></span><br><span class=line>treap a,b;</span><br><span class=line><span class=keyword>const</span> <span class=keyword>int</span> MAXN = <span class=number>1000000</span>;</span><br><span class=line></span><br><span class=line><span class=keyword>int</span> head[MAXN],tail[MAXN],minn,n,m;</span><br><span class=line><span class=comment>//a是所有数，b是所有相邻数差值</span></span><br><span class=line><span class=comment>//head记录此块最前数，tail记录最后数。</span></span><br><span class=line></span><br><span class=line><span class=function><span class=keyword>void</span> <span class=title>init</span><span class=params>()</span></span>&#123;</span><br><span class=line>    minn = <span class=number>0x3f3f3f3f</span>;</span><br><span class=line>    read(n),read(m);</span><br><span class=line>    <span class=keyword>static</span> <span class=keyword>int</span> tmp[MAXN];</span><br><span class=line>    <span class=keyword>for</span>(<span class=keyword>int</span> i = <span class=number>1</span>;i&lt;=n;i++)&#123;</span><br><span class=line>        <span class=keyword>int</span> t;read(t);</span><br><span class=line>        a.insert(t);</span><br><span class=line>        head[i] = tail[i] = tmp[i] = t;</span><br><span class=line>    &#125;</span><br><span class=line>    sort(tmp+<span class=number>1</span>,tmp+n+<span class=number>1</span>);</span><br><span class=line>    <span class=keyword>for</span>(<span class=keyword>int</span> i = <span class=number>2</span>;i&lt;=n;i++)&#123;</span><br><span class=line>        <span class=comment>//更新初始的两个查询答案</span></span><br><span class=line>        b.insert(<span class=built_in>abs</span>(head[i]-head[i<span class=number>-1</span>]));</span><br><span class=line>        minn = min(minn,tmp[i]-tmp[i<span class=number>-1</span>]);</span><br><span class=line>    &#125;</span><br><span class=line>&#125;</span><br><span class=line></span><br><span class=line><span class=function><span class=keyword>void</span> <span class=title>solve</span><span class=params>()</span></span>&#123;</span><br><span class=line>    <span class=keyword>char</span> op[<span class=number>20</span>];<span class=keyword>int</span> x,y;</span><br><span class=line>    <span class=keyword>for</span>(<span class=keyword>int</span> i = <span class=number>1</span>;i&lt;=m;i++)&#123;</span><br><span class=line>        read(op);</span><br><span class=line>        <span class=keyword>if</span>(op[<span class=number>4</span>] == <span class=string>'G'</span>)&#123;</span><br><span class=line>            print(b.find(b.root,<span class=number>0</span>)-&gt;val),print(<span class=string>'\n'</span>);</span><br><span class=line>            <span class=comment>//寻找最小相邻元素差值</span></span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>else</span> <span class=keyword>if</span>(op[<span class=number>4</span>] == <span class=string>'S'</span>)&#123;</span><br><span class=line>            print(minn),print(<span class=string>'\n'</span>);</span><br><span class=line>            <span class=comment>//寻找排序元素差值</span></span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>else</span> <span class=keyword>if</span>(op[<span class=number>4</span>] == <span class=string>'R'</span>)&#123;</span><br><span class=line>            read(x),read(y);</span><br><span class=line>            <span class=keyword>if</span>(x != n)&#123;</span><br><span class=line>                b.erase(<span class=built_in>abs</span>(head[x+<span class=number>1</span>]-tail[x]));</span><br><span class=line>                b.insert(<span class=built_in>abs</span>(head[x+<span class=number>1</span>]-y));</span><br><span class=line>            &#125;</span><br><span class=line>            b.insert(<span class=built_in>abs</span>(tail[x]-y));</span><br><span class=line>            tail[x] = y;</span><br><span class=line>            <span class=comment>//更新查询2答案</span></span><br><span class=line>            <span class=keyword>if</span>(a.find(y)) minn = <span class=number>0</span>;</span><br><span class=line>            <span class=keyword>else</span>&#123;</span><br><span class=line>                <span class=keyword>int</span> low = a.nei(y,<span class=number>0</span>)-&gt;val,up = a.nei(y,<span class=number>1</span>)-&gt;val;</span><br><span class=line>                minn = min(minn,min(<span class=built_in>abs</span>(y-low),<span class=built_in>abs</span>(up-y)));</span><br><span class=line>            &#125;</span><br><span class=line>            a.insert(y);</span><br><span class=line>            <span class=comment>//更新查询3答案</span></span><br><span class=line>        &#125;</span><br><span class=line>        <span class=keyword>else</span> <span class=keyword>if</span>(op[<span class=number>4</span>] ==<span class=string>'P'</span>)&#123;</span><br><span class=line>            a.print();</span><br><span class=line>            <span class=built_in>printf</span>(<span class=string>"------------------------\n"</span>);</span><br><span class=line>            b.print();</span><br><span class=line>            <span class=comment>//调试用</span></span><br><span class=line>        &#125;</span><br><span class=line>        <span class=comment>//printf("Finish\n");</span></span><br><span class=line>    &#125;</span><br><span class=line>    </span><br><span class=line>&#125;</span><br><span class=line></span><br><span class=line><span class=function><span class=keyword>int</span> <span class=title>main</span><span class=params>()</span></span>&#123;</span><br><span class=line>    init();</span><br><span class=line>    solve();</span><br><span class=line>    flush();</span><br><span class=line>    <span class=keyword>return</span> <span class=number>0</span>;</span><br><span class=line>&#125;</span><br></pre></td></tr></table></figure></div></div></div><div><ul class=post-copyright><li class=post-copyright-author><strong>本文作者：</strong>Chen Qiqian</li><li class=post-copyright-link><strong>本文链接：</strong> <a href="https://blog.chenqiqian.com/20180303-zjoi2007-count/" title=「ZJOI2007」报表统计-平衡树>https://blog.chenqiqian.com/20180303-zjoi2007-count/</a></li><li class=post-copyright-license><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target=_blank>CC BY-NC-SA 4.0</a> 许可协议。转载请在明显位置注明出处！</li></ul></div><footer class=post-footer><div class=post-tags><a href="/tags/数据结构/" rel=tag># 数据结构</a> <a href="/tags/平衡树/" rel=tag># 平衡树</a> <a href="/tags/Treap/" rel=tag># Treap</a> <a href="/tags/题解/" rel=tag># 题解</a></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href="/20180303-2018-MarWeek1/" rel=next title="2018 MarWeek1"><i class="fa fa-chevron-left"></i> 2018 MarWeek1</a></div><span class=post-nav-divider></span><div class="post-nav-prev post-nav-item"><a href="/20180303-ZJOI2007-sync/" rel=prev title=「ZJOI2007」时态同步-树形dp>「ZJOI2007」时态同步-树形dp <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class=post-spread></div></div></div><div id=gitalk-container></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>文章目录</li><li class=sidebar-nav-overview data-target=site-overview-wrap>站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class=site-overview><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/images/avatar.jpg alt="Chen Qiqian"><p class=site-author-name itemprop=name>Chen Qiqian</p><p class="site-description motion-element" itemprop=description>Stay simple. Stay naïve.</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class=site-state-item-count>64</span> <span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/index.html><span class=site-state-item-count>4</span> <span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/index.html><span class=site-state-item-count>37</span> <span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/ChenQiqian target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>GitHub</a></span> <span class=links-of-author-item><a href=mailto:qiqianchen@126.com target=_blank title=E-Mail><i class="fa fa-fw fa-envelope"></i>E-Mail</a></span> <span class=links-of-author-item><a href="https://www.instagram.com/qiqianchen/" target=_blank title=Instagram><i class="fa fa-fw fa-instagram"></i>Instagram</a></span> <span class=links-of-author-item><a href="https://www.luogu.org/space/show?uid=57601" target=_blank title=Luogu><i class="fa fa-fw fa-globe"></i>Luogu</a></span> <span class=links-of-author-item><a href=http://codeforces.com/profile/Chenqiqian target=_blank title=Codeforces><i class="fa fa-fw fa-globe"></i>Codeforces</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class=post-toc><div class=post-toc-content><ol class=nav><li class="nav-item nav-level-2"><a class=nav-link href=#链接><span class=nav-number>1.</span> <span class=nav-text>链接</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#题解><span class=nav-number>2.</span> <span class=nav-text>题解</span></a></li><li class="nav-item nav-level-2"><a class=nav-link href=#代码><span class=nav-number>3.</span> <span class=nav-text>代码</span></a></li></ol></div></div></section><div class=back-to-top><i class="fa fa-arrow-up"></i> <span id=scrollpercent><span>0</span>%</span></div></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright>&copy; 2017 &mdash; <span itemprop=copyrightYear>2018</span> <span class=with-love id=animate><i class="fa fa-user"></i></span> <span class=author itemprop=copyrightHolder>Chen Qiqian</span></div><div class=powered-by>由 <a class=theme-link target=_blank href=https://hexo.io>Hexo</a> 强力驱动</div><span class=post-meta-divider>|</span><div class=theme-info>主题 &mdash; <a class=theme-link target=_blank href=https://github.com/theme-next/hexo-theme-next>NexT.Gemini</a> v6.0.6</div><span>|</span> <span id=showDays></span><div class=footer-custom>Hosted by <a target=_blank rel="external nofollow" href=https://pages.github.com><b>Github Pages</b></a></div><script>
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> 
+
+<div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chen's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">记录时光与梦想</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+          
+  <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-board">
+    <a href="/board/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-clipboard"></i> <br />留言板</a>
+</li>
+
+      
+        
+        
+          
+  <li class="menu-item menu-item-links">
+    <a href="/links/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-link"></i> <br />友链</a>
+</li>
+
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20180303-zjoi2007-count/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Qiqian">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">「ZJOI2007」报表统计-平衡树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-03T18:29:17+08:00">2018-03-03</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于：</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-03-14T22:21:54+08:00">2018-03-14</time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>有一个长度为$n$的整数序列，并且有以下三种操作：</p>
+<ul>
+<li><p>$INSERT\ i\ k$：在原数列的第$i$个数后面添加一个新数$k$；如果原数列的第$i$个数已经添加了若干数，则添加在这些数的最后</p>
+</li>
+<li><p>$MIN\ GAP$：查询相邻两个数的之间差值（绝对值）的最小值</p>
+</li>
+<li><p>$MIN\ SORT\ GAP$：查询所有数中最接近的两个数的差值（绝对值）</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P1110" target="_blank" rel="noopener">Luogu P1110</a></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>一道近乎于裸的<code>Treap</code>，然而由于我十分蒟蒻而且好久没敲<code>Treap</code>，调了两个小时才调完。</p>
+<hr>
+<p>这道题我们维护两棵平衡树，一颗$b$记录所有相邻数的差的绝对值，一颗$b$记录所有的数；一个列表，记录每个块的最前面和最后面的数。我们注意到询问三的结果随插入的数不增，所以只需要维护一个最小值$minn$就可以了。</p>
+<hr>
+<ul>
+<li><p>$insert$ 操作：首先根据列表内容从$b$里删除对应位置块间两数的差，然后把插入后多出来的相邻元素差，这个数与这一块结尾，下一块最前面的数的差分别插入平衡树$b$，注意<code>i == n</code>时需要特判；并把插入的数加到$a$里面，根据其与前驱后继的差更新$minn$，注意需要判断一下是否这个数已经在平衡树里面存在。</p>
+</li>
+<li><p>相邻元素的差值最小值：直接在$b$里求最小值并输出。</p>
+</li>
+<li><p>排序后的最小差值：直接输出$minn$。</p>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> fast_io &#123;</span><br><span class="line">    ...<span class="comment">//隐去快读模版</span></span><br><span class="line">&#125;<span class="keyword">using</span> <span class="keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> normal_io&#123;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">read</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">char</span> *c)</span></span>&#123;</span><br><span class="line">    	<span class="built_in">scanf</span>(<span class="string">"%s"</span>,c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span>&#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">char</span> x)</span></span>&#123;</span><br><span class="line">        <span class="built_in">putchar</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">flush</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="keyword">using</span> <span class="keyword">namespace</span> normal_io;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">treap</span>&#123;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">        <span class="keyword">int</span> val,p,cnt;</span><br><span class="line">        node* son[<span class="number">2</span>];</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">int</span> MAXN = <span class="number">1000000</span>;</span><br><span class="line">    <span class="keyword">int</span> treapcnt;</span><br><span class="line">    node pool[MAXN],*null,*root;</span><br><span class="line">    treap()&#123;</span><br><span class="line">        treapcnt = <span class="number">0</span>;</span><br><span class="line">        newnode(null);</span><br><span class="line">        srand(<span class="number">19260817</span>);</span><br><span class="line">        null-&gt;val = <span class="number">-0x3f3f3f3f</span>;</span><br><span class="line">        null-&gt;p = <span class="number">2147483647</span>;</span><br><span class="line">        null-&gt;cnt = <span class="number">0</span>;</span><br><span class="line">        root = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">rotate</span><span class="params">(node *&amp;r,<span class="keyword">int</span> tmp)</span></span>&#123;</span><br><span class="line">        node *t = r-&gt;son[<span class="number">1</span>-tmp];</span><br><span class="line">        r-&gt;son[<span class="number">1</span>-tmp] = t-&gt;son[tmp];</span><br><span class="line">        t-&gt;son[tmp] = r;</span><br><span class="line">        r = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">newnode</span><span class="params">(node *&amp;r)</span></span>&#123;</span><br><span class="line">        r = &amp;pool[treapcnt++];</span><br><span class="line">        r-&gt;son[<span class="number">0</span>] = r-&gt;son[<span class="number">1</span>] = null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> __insert(node *&amp;r,<span class="keyword">int</span> v)&#123;</span><br><span class="line">        <span class="keyword">if</span>(r == null)&#123;</span><br><span class="line">            newnode(r);</span><br><span class="line">            r-&gt;val = v;r-&gt;p = rand();r-&gt;cnt = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(r-&gt;val == v)</span><br><span class="line">                r-&gt;cnt++;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">int</span> tmp = v &gt; r-&gt;val;</span><br><span class="line">                __insert(r-&gt;son[tmp],v);</span><br><span class="line">                <span class="keyword">if</span>(r-&gt;son[tmp]-&gt;p &lt; r-&gt;p)</span><br><span class="line">                    rotate(r,<span class="number">1</span>-tmp);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">node *<span class="title">find</span><span class="params">(node *r,<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(r-&gt;son[t]!=null)</span><br><span class="line">            r = r-&gt;son[t];</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> __erase(node *&amp;r,<span class="keyword">int</span> v)&#123;</span><br><span class="line">        <span class="keyword">if</span>(r-&gt;val == v)&#123;</span><br><span class="line">            <span class="keyword">if</span>(r-&gt;cnt &gt; <span class="number">1</span>)</span><br><span class="line">                r-&gt;cnt--;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(r-&gt;son[<span class="number">0</span>] == null&amp;&amp;r-&gt;son[<span class="number">1</span>] == null)&#123;</span><br><span class="line">                    r = null;<span class="keyword">return</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="keyword">int</span> tt = r-&gt;son[<span class="number">0</span>]-&gt;p &gt; r-&gt;son[<span class="number">1</span>]-&gt;p;</span><br><span class="line">                    rotate(r,<span class="number">1</span>-tt);</span><br><span class="line">                    __erase(r,v);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = v &gt; r-&gt;val;</span><br><span class="line">            __erase(r-&gt;son[tmp],v);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function">node *<span class="title">nei</span><span class="params">(<span class="keyword">int</span> v,<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">        node* nown = root,*last = null;</span><br><span class="line">        <span class="keyword">while</span>(nown!=null&amp;&amp;nown-&gt;val!=v)&#123;</span><br><span class="line">            <span class="comment">//printf("2\n");</span></span><br><span class="line">            <span class="keyword">int</span> tmp = v &gt; nown-&gt;val;</span><br><span class="line">            <span class="keyword">if</span>(tmp!=t) last = nown;</span><br><span class="line">            nown = nown-&gt;son[tmp];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(nown-&gt;son[t]!=null)&#123;</span><br><span class="line">            last = find(nown-&gt;son[t],<span class="number">1</span>-t);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> last;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">        node *r = root;</span><br><span class="line">        <span class="keyword">while</span>(r!=null&amp;&amp;r-&gt;val!=v)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = v &gt; r-&gt;val;</span><br><span class="line">            r = r-&gt;son[tmp];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r != null;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">void</span> __print(node *r,<span class="keyword">int</span> depth = <span class="number">0</span>)&#123;</span><br><span class="line">    	<span class="keyword">if</span>(r == null) <span class="keyword">return</span>;</span><br><span class="line">    	<span class="keyword">else</span>&#123;</span><br><span class="line">        	__print(r-&gt;son[<span class="number">0</span>],depth+<span class="number">1</span>);</span><br><span class="line">        	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;depth;i++) <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line">        	<span class="built_in">printf</span>(<span class="string">"val:%d cnt:%d P:%d son?:%d %d\n"</span>,r-&gt;val,r-&gt;cnt,r-&gt;p,r-&gt;son[<span class="number">0</span>]!=null,r-&gt;son[<span class="number">1</span>]!=null);</span><br><span class="line">        	__print(r-&gt;son[<span class="number">1</span>],depth+<span class="number">1</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">        __insert(root,v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">erase</span><span class="params">(<span class="keyword">int</span> v)</span></span>&#123;</span><br><span class="line">        __erase(root,v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">        __print(root);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//以上treap常规模版</span></span><br><span class="line"></span><br><span class="line">treap a,b;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1000000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> head[MAXN],tail[MAXN],minn,n,m;</span><br><span class="line"><span class="comment">//a是所有数，b是所有相邻数差值</span></span><br><span class="line"><span class="comment">//head记录此块最前数，tail记录最后数。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    minn = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line">    read(n),read(m);</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> tmp[MAXN];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> t;read(t);</span><br><span class="line">        a.insert(t);</span><br><span class="line">        head[i] = tail[i] = tmp[i] = t;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(tmp+<span class="number">1</span>,tmp+n+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="comment">//更新初始的两个查询答案</span></span><br><span class="line">        b.insert(<span class="built_in">abs</span>(head[i]-head[i<span class="number">-1</span>]));</span><br><span class="line">        minn = min(minn,tmp[i]-tmp[i<span class="number">-1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> op[<span class="number">20</span>];<span class="keyword">int</span> x,y;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        read(op);</span><br><span class="line">        <span class="keyword">if</span>(op[<span class="number">4</span>] == <span class="string">'G'</span>)&#123;</span><br><span class="line">            print(b.find(b.root,<span class="number">0</span>)-&gt;val),print(<span class="string">'\n'</span>);</span><br><span class="line">            <span class="comment">//寻找最小相邻元素差值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(op[<span class="number">4</span>] == <span class="string">'S'</span>)&#123;</span><br><span class="line">            print(minn),print(<span class="string">'\n'</span>);</span><br><span class="line">            <span class="comment">//寻找排序元素差值</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(op[<span class="number">4</span>] == <span class="string">'R'</span>)&#123;</span><br><span class="line">            read(x),read(y);</span><br><span class="line">            <span class="keyword">if</span>(x != n)&#123;</span><br><span class="line">                b.erase(<span class="built_in">abs</span>(head[x+<span class="number">1</span>]-tail[x]));</span><br><span class="line">                b.insert(<span class="built_in">abs</span>(head[x+<span class="number">1</span>]-y));</span><br><span class="line">            &#125;</span><br><span class="line">            b.insert(<span class="built_in">abs</span>(tail[x]-y));</span><br><span class="line">            tail[x] = y;</span><br><span class="line">            <span class="comment">//更新查询2答案</span></span><br><span class="line">            <span class="keyword">if</span>(a.find(y)) minn = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">int</span> low = a.nei(y,<span class="number">0</span>)-&gt;val,up = a.nei(y,<span class="number">1</span>)-&gt;val;</span><br><span class="line">                minn = min(minn,min(<span class="built_in">abs</span>(y-low),<span class="built_in">abs</span>(up-y)));</span><br><span class="line">            &#125;</span><br><span class="line">            a.insert(y);</span><br><span class="line">            <span class="comment">//更新查询3答案</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(op[<span class="number">4</span>] ==<span class="string">'P'</span>)&#123;</span><br><span class="line">            a.print();</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"------------------------\n"</span>);</span><br><span class="line">            b.print();</span><br><span class="line">            <span class="comment">//调试用</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//printf("Finish\n");</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    solve();</span><br><span class="line">    flush();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Chen Qiqian</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.chenqiqian.com/20180303-zjoi2007-count/" title="「ZJOI2007」报表统计-平衡树">https://blog.chenqiqian.com/20180303-zjoi2007-count/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请在明显位置注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+          
+            <a href="/tags/平衡树/" rel="tag"># 平衡树</a>
+          
+            <a href="/tags/Treap/" rel="tag"># Treap</a>
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20180303-2018-MarWeek1/" rel="next" title="2018 MarWeek1">
+                <i class="fa fa-chevron-left"></i> 2018 MarWeek1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/20180303-ZJOI2007-sync/" rel="prev" title="「ZJOI2007」时态同步-树形dp">
+                「ZJOI2007」时态同步-树形dp <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div id="gitalk-container"></div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Chen Qiqian" />
+            
+              <p class="site-author-name" itemprop="name">Chen Qiqian</p>
+              <p class="site-description motion-element" itemprop="description">Stay simple. Stay naïve.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">68</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/ChenQiqian" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:qiqianchen@126.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.instagram.com/qiqianchen/" target="_blank" title="Instagram"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.luogu.org/space/show?uid=57601" target="_blank" title="Luogu"><i class="fa fa-fw fa-globe"></i>Luogu</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://codeforces.com/profile/Chenqiqian" target="_blank" title="Codeforces"><i class="fa fa-fw fa-globe"></i>Codeforces</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate"> 
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chen Qiqian</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.0.6</div>
+
+
+
+  <span>   |   </span> <span id="showDays"></span><div class="footer-custom">Hosted by <a target="_blank" rel="external nofollow" href="https://pages.github.com"><b>Github Pages</b></a></div>
+
+
+<script>
   var seconds = 1000;
   var minutes = seconds * 60;
   var hours = minutes * 60;
@@ -69,11 +899,162 @@
     var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
       document.getElementById('showDays').innerHTML="本站已运行 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
   }, 1000);
-</script><div class=busuanzi-count><script async src=https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=site-uv title=总访客量><i class="fa fa-user"></i> <span class=busuanzi-value id=busuanzi_value_site_uv></span></span> <span class=site-pv title=总访问量><i class="fa fa-eye"></i> <span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div></div></footer></div><script type=text/javascript>
+</script>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
   if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   }
-</script><script type=text/javascript src="/lib/jquery/index.js?v=2.1.3"></script><script type=text/javascript src="/lib/velocity/velocity.min.js?v=1.2.1"></script><script type=text/javascript src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script><script type=text/javascript src=/lib/canvas-nest/canvas-nest.min.js></script><script type=text/javascript src="/js/src/utils.js?v=6.0.6"></script><script type=text/javascript src="/js/src/motion.js?v=6.0.6"></script><script type=text/javascript src="/js/src/affix.js?v=6.0.6"></script><script type=text/javascript src="/js/src/schemes/pisces.js?v=6.0.6"></script><script type=text/javascript src="/js/src/scrollspy.js?v=6.0.6"></script><script type=text/javascript src="/js/src/post-details.js?v=6.0.6"></script><script type=text/javascript src="/js/src/bootstrap.js?v=6.0.6"></script><link rel=stylesheet href=https://unpkg.com/gitalk/dist/gitalk.css><script src=https://unpkg.com/gitalk/dist/gitalk.min.js></script><script type=text/javascript>
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.0.6"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.0.6"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.0.6"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.0.6"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.0.6"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.0.6"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+   <script type="text/javascript">
         var gitalk = new Gitalk({
           clientID: '5f341a60e20fc743f2bd',
           clientSecret: '9cf2a0e2f35f5dcb83777eb8c9b56641ac735acb',
@@ -84,4 +1065,79 @@
           distractionFreeMode: 'false'
         })
         gitalk.render('gitalk-container')           
-       </script><link rel=stylesheet href=/lib/algolia-instant-search/instantsearch.min.css><script src=/lib/algolia-instant-search/instantsearch.min.js></script><script src="/js/src/algolia-search.js?v=6.0.6"></script><script type=text/x-mathjax-config>MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] } });</script><script type=text/x-mathjax-config>MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i; for (i=0; i < all.length; i += 1) { all[i].SourceElement().parentNode.className += ' has-jax'; } });</script><script type=text/javascript src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><script type=text/javascript src="/js/src/js.cookie.js?v=6.0.6"></script><script type=text/javascript src="/js/src/scroll-cookie.js?v=6.0.6"></script></body></html>
+       </script>
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=6.0.6"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.0.6"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.0.6"></script>
+
+
+  
+
+  
+
+</body>
+</html>
