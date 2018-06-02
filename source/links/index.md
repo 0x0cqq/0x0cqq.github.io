@@ -70,7 +70,7 @@ line-height: 35px;
 
 {% raw %}
 <div class="md-links" style="none;">
-<a href="https://memset0.cf" title="memset0的博客" target="_blank">
+<a href="https://memset0.cn" title="memset0的博客" target="_blank">
 <li class="md-links-item">
 <img src="/images/friends/memset0.jpg" alt="memset0" width="72px">
 <span class="md-links-title">memset0</span><br>
@@ -79,3 +79,59 @@ line-height: 35px;
 </a>
 </div>
 {% endraw %}
+
+
+## 对我的OI有很大帮助的神犇
+
+虽然他们可能并不知道。
+
+{% raw %}
+<div>
+<div class="md-links" style="none;">
+<a href="https://xehoth.cc" title="xehoth" target="_blank">
+<li class="md-links-item">
+<img src="/images/friends/xehoth.png" alt="xehoth" width="72px">
+<span class="md-links-title">xehoth</span><br>
+<span>明日は明日の风が吹く</span>
+</li>
+</a>
+</div>
+</div>
+{% endraw %}
+
+- - -
+
+{% raw %}
+<div>
+<div class="md-links" style="none;">
+<a href="https://men.ci/" title="Menci" target="_blank">
+<li class="md-links-item">
+<img src="/images/friends/Menci.png" alt="Menci" width="72px">
+<span class="md-links-title">Menci</span><br>
+<span>眉眼如初，岁月如故</span>
+</li>
+</a>
+</div>
+</div>
+{% endraw %}
+
+- - -
+
+{% raw %}
+<div>
+<div class="md-links" style="none;">
+<a href="https://hzwer.com/" title="hzwer" target="_blank">
+<li class="md-links-item">
+<img src="/images/friends/hzwer.jpg" alt="hzwer" width="72px">
+<span class="md-links-title">hzwer</span><br>
+<span></span>
+</li>
+</a>
+</div>
+</div>
+{% endraw %}
+
+
+
+
+
