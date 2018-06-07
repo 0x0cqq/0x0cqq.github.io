@@ -3,7 +3,7 @@ title: Splay学习笔记
 urlname: Splay-note
 date: 2018-06-02 22:29:18
 tags:
-- 学习笔记
+- 笔记
 - Splay
 - 平衡树
 - 数据结构

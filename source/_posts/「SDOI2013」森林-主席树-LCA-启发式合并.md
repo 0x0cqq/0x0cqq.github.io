@@ -5,7 +5,7 @@ date: 2018-05-21 20:10:00
 tags:
 - 题解
 - 可持久化线段树
-- LCA
+- 最近公共祖先
 - 启发式合并
 categories: OI
 visible:

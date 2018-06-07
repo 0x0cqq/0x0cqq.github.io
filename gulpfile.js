@@ -29,15 +29,15 @@ gulp.task("html",function() {
     .pipe(minifyHtml())
     .pipe(gulp.dest("./dst/"));
 });
-// 设置默认任务，command line下输入gulp执行
-// clean任务执行完成了才会去运行其他的任务，在gulp.start()里的任务执行的顺序是不确定的，所以将要在它们之前执行的任务写在数组里面
-gulp.task("default",['clean'],function() {
-    gulp.start('css', 'js', 'html');
-});
 // dst文件复制到public
 gulp.task("mv",function() {
     return gulp.src("./dst/*")
     .pipe(shell([
         "cp -r ./dst/* ./public/"
     ]));
+});
+// 设置默认任务，command line下输入gulp执行
+// clean任务执行完成了才会去运行其他的任务，在gulp.start()里的任务执行的顺序是不确定的，所以将要在它们之前执行的任务写在数组里面
+gulp.task("default",['clean'],function() {
+    gulp.start('css', 'js', 'html');
 });
