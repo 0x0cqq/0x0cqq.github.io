@@ -7,4 +7,3 @@ gulp clean
 hexo g
 gulp
 gulp mv
-hexo s
