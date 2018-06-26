@@ -1,7 +1,8 @@
 ---
 title: Hello World
-urlname: hello-world
 date: 2017-12-01 00:00:00
+urlname: Hello-world
+description: $Hello\ the\ cruel\ world.$
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
@@ -41,16 +42,42 @@ $ hexo deploy
 
 More info: [Deployment](https://hexo.io/docs/deployment.html)
 
-### test fold
+## Some other features
+
+### Code
+
+```python
+a = eval(input())
+b = eval(input())
+print(a+b)
+```
+
+### Math
+
+$$
+x^2+y^2=1\\
+\sin^2 x + \cos^2 x = 1\\
+E = mc^2\\
+a_i = a_{i-1} + a_{i-2}
+$$
+
+### Fold
 
 {% fold %}
+```c
+#include <stdio.h>
 
+int main(){
+	int a,b;
+	scanf("%d %d",&a,&b);
+	printf("%d\n",a+b);
+	return 0;
+}
 ```
-test
-```
-
 {% endfold %}
 
-### test spoiler
+### Spoiler
 
-{% spoiler test %}
+2333
+
+{% spoiler test for spoiler %}

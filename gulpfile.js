@@ -1,43 +1,60 @@
-// npm install gulp-shell gulp-clean gulp-minify-html gulp-minify-css gulp-uglify gulp-notify --save-dev   
-var gulp = require('gulp'),
-    clean = require('gulp-clean'),
-    minifyCss = require('gulp-minify-css'),
-    minifyHtml = require('gulp-minify-html'),
-    uglify = require('gulp-uglify'),
-    notify = require('gulp-notify'),
-    shell = require('gulp-shell');
-//清空dest文件夹
-gulp.task("clean",function() {
-    return gulp.src("./dst/*")
-    .pipe(clean());
+var gulp = require('gulp');
+    minifycss = require('gulp-clean-css');
+    uglify = require('gulp-uglify');
+    htmlmin = require('gulp-htmlmin');
+    htmlclean = require('gulp-htmlclean');
+    imagemin = require('gulp-imagemin');
+
+// 压缩 public 目录内 css
+gulp.task('minify-css', function() {
+    return gulp.src('./public/**/*.css')
+        .pipe(minifycss({
+           advanced: true,//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
+           compatibility: 'ie7',//保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
+           keepBreaks: true,//类型：Boolean 默认：false [是否保留换行]
+           keepSpecialComments: '*'
+           //保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀
+        }))
+        .pipe(gulp.dest('./public'));
 });
-// 压缩css文件，已压缩文件不用再压缩
-gulp.task("css",function() {
-    return gulp.src(["public/**/*.css","!public/**/*.min.css"])
-    .pipe(minifyCss({compatibility: "ie8"}))
-    .pipe(gulp.dest("./dst/"));   
+
+// 压缩 public 目录内 html
+gulp.task('minify-html', function() {
+  return gulp.src('./public/**/*.html')
+    .pipe(htmlclean())
+    .pipe(htmlmin({
+        removeComments: true,//清除 HTML 注释
+        collapseWhitespace: true,//压缩 HTML
+        collapseBooleanAttributes: true,//省略布尔属性的值 <input checked="true"/> ==> <input />
+        removeEmptyAttributes: true,//删除所有空格作属性值 <input id="" /> ==> <input />
+        removeScriptTypeAttributes: true,//删除 <script> 的 type="text/javascript"
+        removeStyleLinkTypeAttributes: true,//删除 <style> 和 <link> 的 type="text/css"
+        minifyJS: true,//压缩页面 JS
+        minifyCSS: true//压缩页面 CSS
+    }))
+    .pipe(gulp.dest('./public'))
 });
-// 压缩js文件
-gulp.task("js",function() {
-    return gulp.src(["public/**/*.js","!public/**/*.min.js"])
-    .pipe(uglify())
-    .pipe(gulp.dest("./dst/"));
+
+// 压缩 public/js 目录内 js
+gulp.task('minify-js', function() {
+    return gulp.src('./public/**/*.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('./public'));
 });
-// 压缩html文件
-gulp.task("html",function() {
-    return gulp.src("public/**/*.html")
-    .pipe(minifyHtml())
-    .pipe(gulp.dest("./dst/"));
+
+// 压缩 public/uploads 目录内图片
+gulp.task('minify-images', function() {
+    gulp.src('./public/uploads/**/*.*')
+        .pipe(imagemin({
+           optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
+           progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+           interlaced: false, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+           multipass: false, //类型：Boolean 默认：false 多次优化svg直到完全优化
+        }))
+        .pipe(gulp.dest('./public/uploads'));
 });
-// dst文件复制到public
-gulp.task("mv",function() {
-    return gulp.src("./dst/*")
-    .pipe(shell([
-        "cp -r ./dst/* ./public/"
-    ]));
-});
-// 设置默认任务，command line下输入gulp执行
-// clean任务执行完成了才会去运行其他的任务，在gulp.start()里的任务执行的顺序是不确定的，所以将要在它们之前执行的任务写在数组里面
-gulp.task("default",['clean'],function() {
-    gulp.start('css', 'js', 'html');
-});
+
+// 执行 gulp 命令时执行的任务
+gulp.task('default', [
+    'minify-html','minify-css','minify-js','minify-images'
+]);

@@ -1,8 +1,8 @@
 ---
 title: {{ title }}
-date: {{ date }}
 urlname: {{ title }}
+date: {{ date }}
 tags:
 categories: 
-visible:
+visible: 
 ---
