@@ -1,6 +1,6 @@
 ---
 title: 「NOI2005」维护数列-非旋Treap
-urlname: noi2005-sequence
+urlname: NOI2005-sequence
 date: 2018-02-17 21:48:01
 tags:
 - 题解

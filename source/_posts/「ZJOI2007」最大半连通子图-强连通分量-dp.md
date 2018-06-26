@@ -1,6 +1,6 @@
 ---
 title: 「ZJOI2007」最大半连通子图-强连通分量-dp
-urlname: zjoi2007-semi-connected
+urlname: ZJOI2007-semi-connected
 date: 2018-04-05 16:54:05
 tags:
 - 题解

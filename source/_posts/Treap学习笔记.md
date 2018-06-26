@@ -60,7 +60,7 @@ urlname: treap-notes
 
 后继同理。
 
-插入、删除等以上操作的期望时间复杂度都是$O(\log {n})$，因为树的期望高度h是$\log {n}$。
+插入、删除等以上操作的期望时间复杂度都是$O(\log {n})$，因为树的期望高度h是$\log {n}$。
 
 
 ## 代码
@@ -80,13 +80,15 @@ struct treap{
     };
     int treapcnt;
     node_t pool[siz<<1],*root,*null;
+    //...
+}
 ```
 
 在这里采用了模板的定义方法。T为一个模版类。需要注意这里的T模板要有小于运算符。
 
-对于每一个节点，我们维护以下几个信息：关键字，随机优先值，以其为根的二叉搜索树的大小，和这个关键字的数量，左儿子和右儿子的指针。默认0为左，1为右。
+对于每一个节点，我们维护以下几个信息：关键字，随机优先值，以其为根的二叉搜索树的大小，和这个关键字的数量，左儿子和右儿子的指针。默认0为左，1为右。
 
-在结构体的变量中，我们维护了一个静态内存池，内存池已经使用的数量，根节点的指针，以及一个虚的空节点。
+在结构体的变量中，我们维护了一个静态内存池，内存池已经使用的数量，根节点的指针，以及一个虚的空节点。
 
 在这里自己定义一个空节点的好处主要是可以避免`NULL`导致的`segmentation fault`，以及让函数编写变得更加简单。
 
@@ -131,7 +133,7 @@ find_minormax函数在这里完成对以r为根节点的树上最大或最小节
 ```
 
 结构体的初始化不难，有几点需要注意：
-
+
 + 空指针的`size`需要为0
 + 空指针的随机值需要**足够大**（最大堆中足够小，最好是maxint，否则有可能在之后的删除操作中被转上去，然后树就断了
 + 最好srand一下
@@ -475,7 +477,138 @@ int main(){
     return 0;
 }
 ```
+{% endfold %}
 
+update:数组版代码
+{% fold %}
+```cpp
+#include <bits/stdc++.h>
+#define maxint 2147483647
+using namespace std;
+
+const int MAXN = 200000;
+
+struct treap{
+    int val[MAXN],p[MAXN],son[MAXN][2];
+    int siz[MAXN],cnt[MAXN];
+    int root,treapcnt;
+    int newnode(int v){
+        int x = ++treapcnt;
+        son[x][0] = son[x][1] = 0;
+        val[x] = v;cnt[x] = 1;p[x] = rand();
+        return x;
+    }
+    void update(int x){
+        siz[x] = cnt[x]+siz[son[x][1]]+siz[son[x][0]];
+    }
+    void rotate(int &x,int t){
+        int y = son[x][t];
+        son[x][t] = son[y][1-t];
+        son[y][1-t] = x;
+        update(x),update(y);
+        x = y;
+    }
+    treap(){
+        srand(19260817);
+        treapcnt = root = 0;
+        p[0] = maxint;
+    }
+    void __insert(int &x,int v){
+        if(x){
+            if(val[x] == v)
+                cnt[x]++;
+            else{
+                int t = v > val[x];
+                __insert(son[x][t],v);
+                if(p[son[x][t]] < p[x])
+                    rotate(x,t);
+            }
+        }
+        else
+            x = newnode(v);
+        update(x);
+    }
+    void __erase(int &x,int v){
+        if(val[x] == v){
+            if(cnt[x])
+                cnt[x]--;
+            else{
+                if(son[x][0] == 0 && son[x][1] == 0){
+                    x = 0;return;
+                }
+                int t = p[son[x][0]] > p[son[x][1]];
+                rotate(x,t);
+                __erase(x,v);
+            }
+        }
+        else{
+            int t = val[x] < v;
+            __erase(son[x][t],v);
+        }
+        update(x);
+    }
+    int get_kth(int k){
+        int x = root;
+        while(true){
+            if(k<=siz[son[x][0]])
+                x = son[x][0];
+            else{
+                k -= siz[son[x][0]] + cnt[x];
+                if(k<=0) return val[x];
+                else x = son[x][1];
+            }
+        }
+    }
+    int get_rank(int v){
+        int x = root,ans = 0;
+        while(x){
+            if(v < val[x])
+                x = son[x][0];
+            else if(v > val[x])
+                ans+=siz[son[x][0]]+cnt[x],x = son[x][1];
+            else
+                ans+=siz[son[x][0]],x = 0;
+        }
+        return ans;
+    }
+    void __print(int x,int dep){
+        if(dep == 0)
+            printf("-------------------\n");
+        if(x == 0) return;
+        __print(son[x][0],dep+1);
+        for(int i = 0;i<dep;i++) putchar(' ');
+        printf("v:%d p:%d siz:%d cnt:%d son:%d %d\n",val[x],p[x],siz[x],cnt[x],son[x][0],son[x][1]);
+        __print(son[x][1],dep+1);
+        if(dep == 0)
+            printf("---------------------\n");
+    }
+    void insert(int v){__insert(root,v);}
+    void erase(int v){__erase(root,v);}
+    int upper(int v){return get_kth(get_rank(v+1)+1);}
+    int lower(int v){return get_kth(get_rank(v));}
+    void print(){__print(root,0);}
+};
+
+treap a;
+
+int n,op,v;
+
+
+int main(){
+    scanf("%d",&n);
+    for(int i = 1;i<=n;i++){
+        scanf("%d %d",&op,&v);
+        if(op == 1) a.insert(v);
+        else if(op == 2) a.erase(v);
+        else if(op == 3) printf("%d\n",a.get_rank(v)+1);
+        else if(op == 4) printf("%d\n",a.get_kth(v));
+        else if(op == 5) printf("%d\n",a.lower(v));
+        else if(op == 6) printf("%d\n",a.upper(v));
+        else if(op == 0) a.print(),--i;
+    }
+    return 0;
+}
+```
 {% endfold %}
 
 ## 例题

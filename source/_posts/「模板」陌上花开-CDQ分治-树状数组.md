@@ -1,6 +1,6 @@
 ---
 title: 「模板」陌上花开-CDQ分治+树状数组
-urlname: flowers
+urlname: template-flowers
 date: 2018-06-06 19:16:30
 tags:
 - 题解

@@ -8,7 +8,7 @@ tags:
 - Splay
 categories: OI
 visible:
-urlname: noi2004-cashier
+urlname: NOI2004-cashier
 ---
 
 维护一个数列。

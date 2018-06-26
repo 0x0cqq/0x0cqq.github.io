@@ -1,6 +1,6 @@
 ---
 title: 「CQOI2011」动态逆序对-CDQ分治
-urlname: cqoi2011-inverse
+urlname: CQOI2011-inverse
 date: 2018-06-07 20:58:32
 tags:
 - 题解 

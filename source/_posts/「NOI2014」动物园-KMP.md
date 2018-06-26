@@ -1,6 +1,6 @@
 ---
 title: 「NOI2014」动物园-KMP
-urlname: noi2014-zoo
+urlname: NOI2014-zoo
 date: 2018-04-05 16:55:40
 tags:
 - 题解

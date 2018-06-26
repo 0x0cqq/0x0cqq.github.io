@@ -1,6 +1,6 @@
 ---
 title: 「LNOI2014」LCA-树链剖分-差分
-urlname: lnoi2014-lca
+urlname: LNOI2014-lca
 date: 2018-06-02 21:23:25
 tags:
 categories:

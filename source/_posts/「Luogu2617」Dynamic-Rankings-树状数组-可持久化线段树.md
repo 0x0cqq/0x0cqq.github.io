@@ -1,6 +1,6 @@
 ---
 title: 「Luogu2617」Dynamic Rankings-树状数组-可持久化线段树
-urlname: luogu2617-Dynamic-Rankings
+urlname: luogu-2617
 date: 2018-05-12 18:05:36
 tags:
 categories:

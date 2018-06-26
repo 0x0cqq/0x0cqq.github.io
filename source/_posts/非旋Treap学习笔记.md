@@ -1,6 +1,6 @@
 ---
 title: 非旋Treap学习笔记
-urlname: nonerotatingtreap-notes
+urlname: none-rotating-treap-notes
 date: 2018-02-17 19:45:17
 tags:
 - Treap

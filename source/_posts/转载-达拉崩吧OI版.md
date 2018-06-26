@@ -1,10 +1,10 @@
 ---
-title: '[转载]达拉崩吧-OI版'
+title: "[转载]达拉崩吧-OI版"
+urlname: dalabengba-oi
 date: 2017-12-16 14:55:42
 tags: 歌曲
 categories: OI
 visible:
-urlname: dalabengba-oi
 ---
 
 ## 原文地址：[点此查看](https://www.luogu.org/discuss/show?postid=29677)
@@ -20,7 +20,7 @@ urlname: dalabengba-oi
 
 我要写出最高的树 打出最大的表
 
-搜进最深的递归 把AC带回到面前
+搜进最深的递归 把`AC`带回到面前
 
 老师非常高兴 忙问他的技能
 
@@ -38,7 +38,7 @@ urlname: dalabengba-oi
 
 带着大家的希望 从学校里出发
 
-战胜BUG来袭 获得调试神技
+战胜`BUG`来袭 获得调试神技
 
 无数代码见证 他慢慢升级
 
@@ -48,27 +48,27 @@ urlname: dalabengba-oi
 
 进入决赛考场 比赛和可怕难题
 
-少年打开IDE 难题道
+少年打开`IDE` 难题道
 
-我是 Floyd区间DP均衡红黑树
+我是 `Floyd`区间`DP`均衡红黑树
 
-再来一次 Floyd区间DP均衡红黑树
+再来一次 `Floyd`区间`DP`均衡红黑树
 
-是不是 Kruskal一维DP二叉排序树
+是不是 `Kruskal`一维`DP`二叉排序树
 
-不对是 Floyd区间DP均衡红黑树
+不对是 `Floyd`区间`DP`均衡红黑树
 
 于是 非确定性有限状态决策自动机
 
 打出 深度搜索模拟枚举单源最短路
 
-应用 拓扑排序Trie结构Polya定律
+应用 拓扑排序`Trie`结构`Polya`定律
 
-套入 Dijkasta联通分量BellmanFord
+套入 `Dijkasta`联通分量`BellmanFord`
 
 最后 非确定性有限状态决策自动机
 
-他使用了 IO优化树链剖分输出random
+他使用了 `IO`优化树链剖分输出`random`
 
 调用了 矩阵速幂虚二叉树行列式消元
 
@@ -76,13 +76,13 @@ urlname: dalabengba-oi
 
 老师听说 非确定性有限状态决策自动机
 
-他忘了写 #include<stdio> freopen
+他忘了写 `#include<stdio> freopen`
 
 就让 非确定性有限状态决策自动机
 
-全手写 map/set稳定婚姻KMP实现
+全手写 `map/set`稳定婚姻`KMP`实现
 
-啦啦 懵逼少年 敲着键盘 Ctrl+V来几遍
+啦啦 懵逼少年 敲着键盘 `Ctrl+V`来几遍
 
 他发明了一个算法 也在天天渐渐复杂
 

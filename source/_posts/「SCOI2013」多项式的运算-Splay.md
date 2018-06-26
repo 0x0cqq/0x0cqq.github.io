@@ -1,9 +1,13 @@
 ---
 title: 「SCOI2013」多项式的运算-Splay
-urlname: scoi2013-function
+urlname: SCOI2013-function
 date: 2018-06-01 21:12:47
 tags:
-categories:
+- 题解
+- Splay
+- 数据结构
+- 平衡树
+categories: OI
 visible:
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: 「CQOI2014」排序机械臂-Splay
-urlname: cqoi2014-sort
+urlname: CQOI2014-sort
 date: 2018-02-02 15:12:44
 tags:
 - 数据结构

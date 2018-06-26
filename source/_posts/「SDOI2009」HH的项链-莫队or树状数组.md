@@ -1,6 +1,6 @@
 ---
 title: 「SDOI2009」HH的项链-莫队or树状数组
-urlname: sdoi2009-necklace
+urlname: SDOI2009-necklace
 date: 2018-02-05 18:11:47
 tags:
 - 莫队
