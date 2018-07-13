@@ -6,7 +6,7 @@ categories: OI
 visible: hide
 urlname: milestone
 ---
-## 里程碑
+**一些里程碑**
 <!-- more -->
 
 2017-10-17 21:00 Luogu AC*1
@@ -17,7 +17,7 @@ urlname: milestone
 
 2017-11-01 20:07 Luogu AC*50
 
-2017-11-11 ~ 12   NOIp2017 tg观光游省二
+2017-11-11 ~ 12  NOIp2017 tg观光游省二
 
 2017-11-25 11:51 Luogu AC*100
 
@@ -31,13 +31,15 @@ urlname: milestone
 
 2018-01-20 20:34 Luogu AC*200
 
-2018-01-20 ~ 27   BJWC2018旅游
+2018-01-20 ~ 27  BJWC2018旅游
 
 2018-02-14 15:44 Luogu AC*250
 
-2018-02-23 13:47 Luogu 提交*1000
+2018-02-23 13:47 Luogu 提交*1k
 
 2018-04-05 16:45 Luogu AC*300
 
-2018-04-01 ~ 15 BJOI2018旅游
+2018-04-01 ~ 15  BJOI2018旅游
+
+2018-06-30 19:42 Luogu AC*400
 
