@@ -60,7 +60,7 @@ line-height: 35px;
 <li class="md-links-item">
 <img src="/images/friends/chenqiqian.jpg" alt="Chen Qiqian" width="72px">
 <span class="md-links-title">Chen's Blog</span><br>
-<span>记录时光与梦想</span>
+<span>记录时光与梦想</span>
 </li>
 </a>
 </div>
@@ -77,6 +77,22 @@ line-height: 35px;
 <span>一个有思想的博客</span>
 </li>
 </a>
+</div>
+{% endraw %}
+
+- - -
+
+{% raw %}
+<div>
+<div class="md-links" style="none;">
+<a href="http://www.cnblogs.com/Ning-Mew/" title="Ning-Mew" target="_blank">
+<li class="md-links-item">
+<img src="/images/friends/Ning_Mew.png" alt="Ning-Mew" width="72px">
+<span class="md-links-title">Ning-Mew</span><br>
+<span></span>
+</li>
+</a>
+</div>
 </div>
 {% endraw %}
 
