@@ -952,6 +952,13 @@ span.spoiler.revealed {
           
           
 
+  <hr style="margin:15px">
+  <div>
+    <h4 style="margin: 5px"> &#x4E00;&#x8A00;&#xFF08;&#x30D2;&#x30C8;&#x30B3;&#x30C8;&#xFF09;</h4>
+    <p id="hitokoto_quote" style="line-height:150%;padding-left: auto;padding-right: auto;margin: 5px">:D &#x83B7;&#x53D6;&#x4E2D;...</p>
+    <p id="hitokoto_from" style="line-height:100%;margin: 10px;padding-right: auto" align="right">:D &#x83B7;&#x53D6;&#x4E2D;...</p>
+  </div>
+
         </div>
       </section>
 
@@ -1132,8 +1139,6 @@ span.spoiler.revealed {
 
 
 
-  
-
 
 
 
@@ -1159,11 +1164,6 @@ span.spoiler.revealed {
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
@@ -1402,6 +1402,28 @@ span.spoiler.revealed {
     })
   </script>
 
+
+  
+<script>
+  fetch('https://v1.hitokoto.cn/?c=d')
+    .then(function (res){
+      return res.json();
+    })
+    .then(function (data) {
+      var hitokoto = document.getElementById('hitokoto_quote');
+      var from = document.getElementById('hitokoto_from');
+      hitokoto.innerText = data.hitokoto;
+      if(data.from){
+        from.innerText = "——" + data.from;
+      }
+      else{
+        from.style.display='none';
+      }
+    })
+    .catch(function (err) {
+      console.error(err);
+    })
+</script>
 
 </body>
 </html>
