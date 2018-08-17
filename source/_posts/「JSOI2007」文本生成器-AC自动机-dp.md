@@ -6,7 +6,7 @@ tags:
 - 题解
 - 字符串
 - AC自动机
-- dp
+- 动态规划
 categories: OI
 visible:
 ---

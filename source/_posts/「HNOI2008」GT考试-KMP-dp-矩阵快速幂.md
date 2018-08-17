@@ -3,7 +3,11 @@ title: 「HNOI2008」GT考试-KMP+dp+矩阵快速幂
 urlname: HNOI2008-GTexams
 date: 2018-08-09 11:19:09
 tags:
-categories:
+- 题解
+- 动态规划
+- KMP
+- 矩阵快速幂
+categories: OI
 visible:
 ---
 

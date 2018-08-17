@@ -3,7 +3,7 @@ title: 「SCOI2008」奖励关-期望dp
 urlname: SCOI2008-award
 date: 2018-08-03 19:39:32
 tags:
-- dp
+- 动态规划
 - 期望dp
 - 题解
 categories: OI

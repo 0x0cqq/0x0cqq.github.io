@@ -4,7 +4,7 @@ urlname: SDOI2009-walk
 date: 2018-08-09 10:41:45
 tags:
 - 矩阵快速幂
-- dp
+- 动态规划
 - 题解
 - 图论
 categories: OI
