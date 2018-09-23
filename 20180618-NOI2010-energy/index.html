@@ -152,18 +152,18 @@
 
 
 
-  <meta name="description" content="给定两个整数$n$,$m$，对于平面上的整点${(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。">
+  <meta name="description" content="给定两个整数$n$,$m$，对于平面上的整点$\{(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z\}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。">
 <meta name="keywords" content="题解,数学,最大公约数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「NOI2010」能量采集-简单数学">
 <meta property="og:url" content="https://blog.chenqiqian.com/20180618-NOI2010-energy/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="给定两个整数$n$,$m$，对于平面上的整点${(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。">
+<meta property="og:description" content="给定两个整数$n$,$m$，对于平面上的整点$\{(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z\}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2018-06-26T03:06:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「NOI2010」能量采集-简单数学">
-<meta name="twitter:description" content="给定两个整数$n$,$m$，对于平面上的整点${(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。">
+<meta name="twitter:description" content="给定两个整数$n$,$m$，对于平面上的整点$\{(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z\}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。">
 
 
 
@@ -560,7 +560,7 @@
       
 
       
-        <p>给定两个整数$n$,$m$，对于平面上的整点${(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。</p>
+        <p>给定两个整数$n$,$m$，对于平面上的整点$\{(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z\}$。若$(x,y)$与$(0,0)$的连线上有$k$个整点（不包括$(0,0),(n,m)$），则产生的贡献为$2k+1$。求所有满足条件的点的贡献总和。</p>
 <a id="more"></a>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P1447" target="_blank" rel="noopener">Luogu P1447</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>给出一个结论：<strong>从$(0,0)$到$(n,m)$的线路上，有$gcd(n,m)-1$个整点(不包括$(0,0),(n,m)$)</strong>。想一想很好明白：令t是n,m的公因数$(\frac {n}{t},\frac {m}{t})$就相当于步长，$m,n$一定时$t$越大，步长越小，整点就越多。$gcd(n,m)$是$n,m$的最大公因数，所以就是最多整点的个数了。</p>
@@ -724,7 +724,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">153</span>
+                    <span class="site-state-item-count">154</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -916,7 +916,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">78</span>
+                      
+                    
+                    <span class="site-state-item-count">79</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1029,7 +1031,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">476k</span>
+    <span title="站点总字数">480k</span>
   
 
   
@@ -1040,7 +1042,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">14:26</span>
+    <span title="站点阅读时长">14:32</span>
   
 </div>
 

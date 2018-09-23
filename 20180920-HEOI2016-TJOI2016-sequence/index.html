@@ -556,7 +556,7 @@
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们可以发现，如果 $x$ 位置的变化能够影响到经过它的最长不降子序列，那么需要关心的只有两个值：该点可能变化到的最小值 $\min_x$ 与可能变化到的最大值 $\max_x$ 。所以我们只需要存储每个位置的 $\min_x$ 和 $\max_x$ 即可。</p>
 <p>然后我们发现这个东西可以用 $O(n^2)$ 的朴素 $dp$ 来完成对 $\text{LIS}$ 的计算。</p>
 <p>方程为（其中 $a_0 = max_0 = min_0 = - \inf$）：</p>
-<p>$$<br>dp[i] =<br>\left{<br>\begin{aligned}{}<br>&amp;0&amp;,\;&amp;\text{if } i = 0\\<br>&amp;\max_{j=0}^{i-1}{(dp[j] + 1)}&amp;,\;&amp; \text{if } \text{max}_j \leq a_i \text{ and } a_j \leq \text{min}_i<br>\end{aligned}<br>\right.<br>$$</p>
+<p>$$<br>dp[i] =<br>\left\{<br>\begin{aligned}{}<br>&amp;0&amp;,\;&amp;\text{if } i = 0\\<br>&amp;\max_{j=0}^{i-1}{(dp[j] + 1)}&amp;,\;&amp; \text{if } \text{max}_j \leq a_i \text{ and } a_j \leq \text{min}_i<br>\end{aligned}<br>\right.<br>$$</p>
 <p>发现 $\text{max}_j \leq a_i$ 且 $a_j \leq \text{min}_i$ 事实上是一个二维的偏序关系，所以我们可以用 $\text{CDQ}$ 分治计算满足该条件的 $dp$ 最大值。</p>
 <p>但是这里有一个与普通 $\text{CDQ}$ 不相同的地方，我们必须要计算完在 $i$ 前面的 $dp$ 值，才能开始计算 $dp[i]$。</p>
 <p>所以这里的 $\text{CDQ}$ 分治应当做一些微小的更改。</p>
@@ -628,8 +628,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/23330101-about-blog/" rel="prev" title="【置顶】关于这个博客的一切">
-                【置顶】关于这个博客的一切 <i class="fa fa-chevron-right"></i>
+              <a href="/20180923-POI2015-Myjnie/" rel="prev" title="「POI2015」Myjnie-区间dp">
+                「POI2015」Myjnie-区间dp <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -715,7 +715,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">153</span>
+                    <span class="site-state-item-count">154</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -907,7 +907,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">78</span>
+                      
+                    
+                    <span class="site-state-item-count">79</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1020,7 +1022,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">476k</span>
+    <span title="站点总字数">480k</span>
   
 
   
@@ -1031,7 +1033,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">14:26</span>
+    <span title="站点阅读时长">14:32</span>
   
 </div>
 

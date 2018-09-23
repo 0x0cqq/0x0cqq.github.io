@@ -556,8 +556,8 @@
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>​ $\text{CDQ}$ 分治优化 $dp$​ 。</p>
 <p>这是一个三维偏序问题。</p>
 <p>如果我们令 $a_i$ 为第 $i$ 个导弹的高度， $b_i$ 为第 $i$ 个导弹的速度，$dp[i]$ 为以第 $i$ 个结尾的导弹能拦截的最大数量， $sum[i]$ 为以第 $i$ 个导弹为结尾能够拦截最大导弹数的方案数，那么我们有如下的转移：</p>
-<p>$$<br>dp[i] =<br>\left{<br>\begin{aligned}{}<br>&amp;0&amp;,\;&amp;\text{if } i = 0\\<br>&amp;\max_{j=0}^{i-1}{(dp[j] + 1)}&amp;,\;&amp; \text{if } a_j \geq a_i \text{ and } b_j \geq b_i<br>\end{aligned}<br>\right.<br>$$</p>
-<p>$$<br>sum[i] =<br>\left{<br>\begin{aligned}{}<br>&amp;1&amp;,\;&amp;\text{if } i = 0\\<br>&amp;\sum_{j=0}^{i-1}{sum[j]}&amp;,\;&amp;  \text{if } a_j \geq a_i \text{ and } b_j \geq b_i \text{ and }dp[j] = dp[i]-1<br>\end{aligned}<br>\right.<br>$$</p>
+<p>$$<br>dp[i] =<br>\left\{<br>\begin{aligned}{}<br>&amp;0&amp;,\;&amp;\text{if } i = 0\\<br>&amp;\max_{j=0}^{i-1}{(dp[j] + 1)}&amp;,\;&amp; \text{if } a_j \geq a_i \text{ and } b_j \geq b_i<br>\end{aligned}<br>\right.<br>$$</p>
+<p>$$<br>sum[i] =<br>\left\{<br>\begin{aligned}{}<br>&amp;1&amp;,\;&amp;\text{if } i = 0\\<br>&amp;\sum_{j=0}^{i-1}{sum[j]}&amp;,\;&amp;  \text{if } a_j \geq a_i \text{ and } b_j \geq b_i \text{ and }dp[j] = dp[i]-1<br>\end{aligned}<br>\right.<br>$$</p>
 <p>我们设 $M = \max_{i=1}^n dp[i]$，那么我们可以计算出所有的长度为最长值的序列的个数，就是：</p>
 <p>$$<br>tot = \sum_{i=1}^{n} [dp[i] = M] \times sum[i]<br>$$</p>
 <p>然后我们只要计算出每个点经过的路径条数就可以了。</p>
@@ -723,7 +723,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">153</span>
+                    <span class="site-state-item-count">154</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -915,7 +915,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">78</span>
+                      
+                    
+                    <span class="site-state-item-count">79</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1028,7 +1030,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">476k</span>
+    <span title="站点总字数">480k</span>
   
 
   
@@ -1039,7 +1041,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">14:26</span>
+    <span title="站点阅读时长">14:32</span>
   
 </div>
 

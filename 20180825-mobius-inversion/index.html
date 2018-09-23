@@ -583,7 +583,7 @@
 <p>可以发现，如果我们枚举每个质数，再将所有的该质数的倍数的<code>g[i * prime[j]] += mu[i]</code>都加上去。</p>
 <p>由于枚举倍数的调和级数 $\frac{n}{1} + \frac{n}{2} + \cdots + \frac{n}{n} = O(\ln n + r)$ ,所以这个枚举过程的复杂度是 $O(n \ln n)$ 的。</p>
 <p>注意到这个 $h(x)$ 应当也是一个积性函数，所以事实上可以在线性素数筛的时候直接计算出 $h(x)$ 的值，这个过程就是 $O(n)$ 的。</p>
-<h2 id="NOI2010-能量采集"><a href="#NOI2010-能量采集" class="headerlink" title="[NOI2010]能量采集"></a>[NOI2010]能量采集</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给定两个整数$n,m$，对于平面上的整点 ${(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z}$ 。若 $(x,y)$  与 $(0,0)$ 的连线上有 $k$ 个整点（不包括 $(0,0)$ , $(n,m)$），则产生的贡献为 $2k+1$ 。求所有满足条件的点的贡献总和。</p>
+<h2 id="NOI2010-能量采集"><a href="#NOI2010-能量采集" class="headerlink" title="[NOI2010]能量采集"></a>[NOI2010]能量采集</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给定两个整数$n,m$，对于平面上的整点 $\{(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z\}$ 。若 $(x,y)$  与 $(0,0)$ 的连线上有 $k$ 个整点（不包括 $(0,0)$ , $(n,m)$），则产生的贡献为 $2k+1$ 。求所有满足条件的点的贡献总和。</p>
 <hr>
 <h3 id="解法-1"><a href="#解法-1" class="headerlink" title="解法"></a>解法</h3><p>一个结论：从 $(0,0)$ 到 $(n,m)$ 的线路上，有 $\gcd(n,m)-1$ 个整点(不包括 $(0,0)$ , $(n,m)$ )。</p>
 <p>想一想很好明白：令 $t$ 是 $n,m$ 的公因数 $(\frac {n}{t} , \frac {m}{t})$ 就相当于步长， $m,n$ 一定时 $t$ 越大，步长越小，整点就越多。 $\gcd(n,m)$ 是 $n$ ,$ m$ 的最大公因数，所以就是最多整点的个数了。</p>
@@ -820,7 +820,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">153</span>
+                    <span class="site-state-item-count">154</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1012,7 +1012,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">78</span>
+                      
+                    
+                    <span class="site-state-item-count">79</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1125,7 +1127,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">476k</span>
+    <span title="站点总字数">480k</span>
   
 
   
@@ -1136,7 +1138,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">14:26</span>
+    <span title="站点阅读时长">14:32</span>
   
 </div>
 
