@@ -160,7 +160,7 @@
 <meta property="og:site_name" content="Chen&#39;s Blog">
 <meta property="og:description" content="垃圾 CCF毁我青春">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-11T15:21:04.094Z">
+<meta property="og:updated_time" content="2018-11-25T06:56:28.655Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NOIp2018 游记&amp;题解">
 <meta name="twitter:description" content="垃圾 CCF毁我青春">
@@ -446,12 +446,24 @@
                 
               
 
-              <time title="创建时间：2018-11-11 23:12:52 / 修改时间：23:21:04" itemprop="dateCreated datePublished" datetime="2018-11-11T23:12:52+08:00">2018-11-11</time>
+              <time title="创建时间：2018-11-11 23:12:52" itemprop="dateCreated datePublished" datetime="2018-11-11T23:12:52+08:00">2018-11-11</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-11-25 14:56:28" itemprop="dateModified" datetime="2018-11-25T14:56:28+08:00">2018-11-25</time>
               
             
           </span>
@@ -514,7 +526,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.9k</span>
+                <span title="本文字数">6k</span>
               
 
               
@@ -566,7 +578,7 @@
 <p>正确性似乎十分显然，你不可能找到一个更小的方案来覆盖了。</p>
 <p>赛后得知该题是NOIp2013原题，似乎模拟赛里我还做过这道题（不过当时还WA了</p>
 <p>耗时5分钟。</p>
-<p>期望得分：100，实际得分：？？？</p>
+<p>期望得分：100，实际得分：100</p>
 <h3 id="T2：货币系统"><a href="#T2：货币系统" class="headerlink" title="T2：货币系统"></a>T2：货币系统</h3><h4 id="题面-1"><a href="#题面-1" class="headerlink" title="题面"></a>题面</h4><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
 <p>在网友的国度中共有  $n$  种不同面额的货币，第  $i$  种货币的面额为  $a[i]$ ，你可以假设每一种货币都有无穷多张。为了方便，我们把货币种数为  $n$ 、面额数组为  $a[1..n]$  的货币系统记作  $(n,a)$。</p>
 <p>在一个完善的货币系统中，每一个非负整数的金额  $x$  都应该可以被表示出，即对每一个非负整数  $x$ ，都存在  $n$ 个非负整数  $t[i]$  满足  $a[i] \times t[i]$  的和为  xx。然而， 在网友的国度中，货币系统可能是不完善的，即可能存在金额 $x$ 不能被该货币系统表示出。例如在货币系统  $n=3$,  $a=[2,5,9]$ 中，金额  $1,3$  就无法被表示出来。</p>
@@ -582,7 +594,7 @@
 <p>扫描数组用低位更新高位即可。</p>
 <p>时间复杂度$O(T \times n \cdot \text{MAXV})$。</p>
 <p>此时刚刚 9:05 。</p>
-<p>期望得分：100，实际得分：？？？</p>
+<p>期望得分：100，实际得分：100</p>
 <h3 id="T3：赛道修建"><a href="#T3：赛道修建" class="headerlink" title="T3：赛道修建"></a>T3：赛道修建</h3><p>也还算一道好题吧，只不过位置非常尴尬…(来自一个几乎想对算法然后挂掉的选手的怨念)</p>
 <h4 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h4><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
 <p>C 城将要举办一系列的赛车比赛。在比赛前，需要在城内修建  $m$  条赛道。</p>
@@ -601,11 +613,11 @@
 <p>还有一种是再二分的处理。</p>
 <p>先考虑如何线性计算出最多的贡献，就是用双指针贪心即可，固定的是大的链。然后我们二分往回的边是哪条，显然有单调性，然后每次线性计算下是否贡献能达到最大值就可以了。</p>
 <p>时间复杂度：$O(n \log^2 n)$。</p>
-<p>期望得分： $55-80$，实际得分：？？？</p>
+<p>期望得分： $55-80$，实际得分：50</p>
 <h3 id="Day1总结"><a href="#Day1总结" class="headerlink" title="Day1总结"></a>Day1总结</h3><p>做完前两题恍然觉得自己变强了好多啊，轻松一天200+…结果第三题死活没调出来。回家写了写，发现考场上错误的算法（又写了一遍仍然没过大样例…）Luogu/nowcoder自测也能拿95…我为什么要rand…我是不是傻子…</p>
 <p>Day 2之后刷知乎发现出题人 immortalCO 又说数据很弱…</p>
 <p>暴怒…</p>
-<p>期望得分：100+100+55~80 = 255~280，实际得分：？？？</p>
+<p>期望得分：100+100+55~80 = 255~280，实际得分：100+100+50 = 250</p>
 <h2 id="Day-2"><a href="#Day-2" class="headerlink" title="Day 2"></a>Day 2</h2><p>考试前某神仙在pyq里面调侃：Day1 一时爽，Day2 火葬场。</p>
 <p>感觉又要被禁赛一年了。</p>
 <h3 id="T1：旅行"><a href="#T1：旅行" class="headerlink" title="T1：旅行"></a>T1：旅行</h3><h4 id="题面-2"><a href="#题面-2" class="headerlink" title="题面"></a>题面</h4><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
@@ -627,7 +639,7 @@
 <p>$O(n^2)$ 的话，枚举断边，dfs即可…最后判下全部到达即可。</p>
 <p>我们还发现一点，这里需要对边排序来保证复杂度，如果我们每次都遍历在sort很有可能TLE…所以我们在外面逆序sort好后再加边即可…</p>
 <p>然后赛后自测的是否发现自己很有可能有个地方忘开两倍数组…感觉自己要凉… -= 32 分…不过luogu自测上面都能过最后三个点，也不知道为什么…</p>
-<p>期望分数：68-100（万一我开了2倍呢…），实际得分：？？？</p>
+<p>期望分数：68-100（万一我开了2倍呢…），实际得分：100</p>
 <h3 id="T2：填数游戏"><a href="#T2：填数游戏" class="headerlink" title="T2：填数游戏"></a>T2：填数游戏</h3><h4 id="题面-3"><a href="#题面-3" class="headerlink" title="题面"></a>题面</h4><p>麻烦死了，不复制了，链接：<a href="https://www.luogu.org/problemnew/show/P5023" target="_blank" rel="noopener"><strong>Luogu P5023</strong>  填数游戏</a></p>
 <h4 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h4><p>考场上一看数据范围：高啊，一看就是状压dp+矩阵快速幂…于是推了推转移矩阵 码码码 * n…然后发现 <code>n=3,m=3</code> 都过不了…纠结一个小时也没能调完…咕咕咕…最后写了一个暴力搜索和 n = 2 的特殊情况…考后听各路神仙做法都不太一样…</p>
 <p>目前听到的一种做法是这样的…</p>
@@ -636,7 +648,7 @@
 <p> 具体没写呢…最好的方法貌似是打表？等过几天再来填。</p>
 <p>考场上大概只有50分可以拿到。其实机灵点可以发现 n = 3,m=4和n=3,m=5 的规律的，然后大概可以多拿 $15$ 分..?</p>
 <p><a href="https://www.zhihu.com/question/293059610/answer/529373474" target="_blank" rel="noopener">wxh的做法</a></p>
-<p>期望得分：50，实际得分：？？？</p>
+<p>期望得分：50，实际得分：20（模数多打一个0的悲伤QAQ）</p>
 <h3 id="T3：保卫王国"><a href="#T3：保卫王国" class="headerlink" title="T3：保卫王国"></a>T3：保卫王国</h3><p>又tm一道树形dp…</p>
 <h4 id="题面："><a href="#题面：" class="headerlink" title="题面："></a>题面：</h4><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
 <p>Z 国有 $n$ 座城市，$n - 1$ 条双向道路，每条双向道路连接两座城市，且任意两座城市 都能通过若干条道路相互到达。</p>
@@ -653,10 +665,10 @@
 <p>该题貌似目前还没有人能给我完全讲明白…机房学长讲了一遍动态dp但是我也没太搞懂只听明白链上的情况，也就是线段树维护转移矩阵（一般比较小）做到快速的修改。</p>
 <p>好像还可以倍增做，也可以用虚树的思想。我都不会，以后慢慢补（咕咕.jpeg）。</p>
 <p>写了个最坏 $O(n^2)$ 暴力也不知道对不对。</p>
-<p>期望得分：44，实际得分：？？？</p>
+<p>期望得分：44，实际得分：44</p>
 <h3 id="Day2总结"><a href="#Day2总结" class="headerlink" title="Day2总结"></a>Day2总结</h3><p>完全没有区分度的一天…偏偏我还挂题了…太年轻了啊…考试结束一个小时前开始佛系检查…还没发现自己的数组开小…</p>
 <p>实名举报T2和T3样例太小…感觉很虚啊qaq</p>
-<p>期望得分：68~100 + 50 + 44 = 162~194，实际得分：？+ ？+ ？= ？？？</p>
+<p>期望得分：68~100 + 50 + 44 = 162~194，实际得分：100 + 20 + 44 = 164</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>难度大约是 $T1-T2-T4-T3-T5-T6$ 递增吧…</p>
 <p>这个 noip 咋回事啊…感觉区分度简直跟 NOI Day2 似的，会的大家都能打，不会的（基本上）没人能做…</p>
 <p>某神仙：“这不就是比谁FST少吗？”</p>
@@ -666,8 +678,11 @@
 <p>如果一切都按照最好的实力发挥，我是有希望上500的，可现在也只能在 400 下挣扎。恐怕也是自己太年轻老作死吧，这种事情也怨不得别人，但是组题人还是可以骂的…</p>
 <p>考试结束前紧张了一会，发现自己挂题后紧张了一会…不过现在也都释然了…这算什么大事啊，省选AK照样A队稳稳的2333况且文化课也不是上不了清华啊233</p>
 <hr>
-<p>最后大概期望得分：255+162 = 417… 再给一些特殊事件发生的空间的话…恐怕会在350/360左右…这个分数好尴尬啊…估计省选什么的是要凉了23333等出分了再来upd吧</p>
+<p>最后大概期望得分：255+162 = 417…这个分数好尴尬啊…估计省选什么的是要凉了23333等出分了再来upd吧</p>
 <p>另，CCF换少爷机了…这就是报名费+=200的理由吗233333</p>
+<h3 id="出分后update"><a href="#出分后update" class="headerlink" title="出分后update"></a>出分后update</h3><p>自己菜也不能怪别人啊qaq</p>
+<p>不过打错模数50-&gt;20分…大样例不过80分硬让我调成50的事情嘛…也不知道该说什么…如果IOI赛制恐怕不会有这些奇怪的事情…不过也没那么多如果啊qaq</p>
+<p>省选大约还要继续划水…现在还是十分迷茫…</p>
 
       
     </div>
@@ -727,8 +742,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/23330101-about-blog/" rel="prev" title="【置顶】关于这个博客的一切">
-                【置顶】关于这个博客的一切 <i class="fa fa-chevron-right"></i>
+              <a href="/20181125-JSOI2008-sphere/" rel="prev" title="「JSOI2008」球形空间产生器-高斯消元">
+                「JSOI2008」球形空间产生器-高斯消元 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -814,7 +829,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">174</span>
+                    <span class="site-state-item-count">175</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1090,7 +1105,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-0"><span class="nav-number">1.</span> <span class="nav-text">Day 0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-number">2.</span> <span class="nav-text">Day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1：铺设道路"><span class="nav-number">2.1.</span> <span class="nav-text">T1：铺设道路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面"><span class="nav-number">2.1.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解"><span class="nav-number">2.1.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2：货币系统"><span class="nav-number">2.2.</span> <span class="nav-text">T2：货币系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3：赛道修建"><span class="nav-number">2.3.</span> <span class="nav-text">T3：赛道修建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题意"><span class="nav-number">2.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day1总结"><span class="nav-number">2.4.</span> <span class="nav-text">Day1总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2"><span class="nav-number">3.</span> <span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1：旅行"><span class="nav-number">3.1.</span> <span class="nav-text">T1：旅行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-3"><span class="nav-number">3.1.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2：填数游戏"><span class="nav-number">3.2.</span> <span class="nav-text">T2：填数游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面-3"><span class="nav-number">3.2.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-4"><span class="nav-number">3.2.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3：保卫王国"><span class="nav-number">3.3.</span> <span class="nav-text">T3：保卫王国</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面："><span class="nav-number">3.3.1.</span> <span class="nav-text">题面：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-5"><span class="nav-number">3.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day2总结"><span class="nav-number">3.4.</span> <span class="nav-text">Day2总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-0"><span class="nav-number">1.</span> <span class="nav-text">Day 0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-1"><span class="nav-number">2.</span> <span class="nav-text">Day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1：铺设道路"><span class="nav-number">2.1.</span> <span class="nav-text">T1：铺设道路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面"><span class="nav-number">2.1.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解"><span class="nav-number">2.1.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2：货币系统"><span class="nav-number">2.2.</span> <span class="nav-text">T2：货币系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3：赛道修建"><span class="nav-number">2.3.</span> <span class="nav-text">T3：赛道修建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题意"><span class="nav-number">2.3.1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day1总结"><span class="nav-number">2.4.</span> <span class="nav-text">Day1总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Day-2"><span class="nav-number">3.</span> <span class="nav-text">Day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#T1：旅行"><span class="nav-number">3.1.</span> <span class="nav-text">T1：旅行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面-2"><span class="nav-number">3.1.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-3"><span class="nav-number">3.1.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T2：填数游戏"><span class="nav-number">3.2.</span> <span class="nav-text">T2：填数游戏</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面-3"><span class="nav-number">3.2.1.</span> <span class="nav-text">题面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-4"><span class="nav-number">3.2.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#T3：保卫王国"><span class="nav-number">3.3.</span> <span class="nav-text">T3：保卫王国</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题面："><span class="nav-number">3.3.1.</span> <span class="nav-text">题面：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#题解-5"><span class="nav-number">3.3.2.</span> <span class="nav-text">题解</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Day2总结"><span class="nav-number">3.4.</span> <span class="nav-text">Day2总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#出分后update"><span class="nav-number">4.1.</span> <span class="nav-text">出分后update</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1131,7 +1146,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">540k</span>
+    <span title="站点总字数">543k</span>
   
 
   
@@ -1142,7 +1157,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">16:23</span>
+    <span title="站点阅读时长">16:27</span>
   
 </div>
 
