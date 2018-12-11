@@ -160,7 +160,7 @@
 <meta property="og:site_name" content="Chen&#39;s Blog">
 <meta property="og:description" content="你正在玩一个关于长度为 $n$ 的非负整数序列的游戏。这个游戏中你需要把序列分成 $k + 1$ 个非空的块。为了得到 $k + 1$ 块，你需要重复下面的操作 $k$ 次：  选择一个有超过一个元素的块（初始时你只有一块，即整个序列） 选择两个相邻元素把这个块从中间分开，得到两个非空的块。    每次操作后你将获得那两个新产生的块的元素和的乘积的分数。你想要最大化最后的总得分。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T02:14:14.184Z">
+<meta property="og:updated_time" content="2018-12-11T13:15:23.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「APIO2014」序列分割-动态规划-斜率优化">
 <meta name="twitter:description" content="你正在玩一个关于长度为 $n$ 的非负整数序列的游戏。这个游戏中你需要把序列分成 $k + 1$ 个非空的块。为了得到 $k + 1$ 块，你需要重复下面的操作 $k$ 次：  选择一个有超过一个元素的块（初始时你只有一块，即整个序列） 选择两个相邻元素把这个块从中间分开，得到两个非空的块。    每次操作后你将获得那两个新产生的块的元素和的乘积的分数。你想要最大化最后的总得分。">
@@ -463,7 +463,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-25 10:14:14" itemprop="dateModified" datetime="2018-11-25T10:14:14+08:00">2018-11-25</time>
+                <time title="修改时间：2018-12-11 21:15:23" itemprop="dateModified" datetime="2018-12-11T21:15:23+08:00">2018-12-11</time>
               
             
           </span>
@@ -572,7 +572,7 @@
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3648" target="_blank" rel="noopener">Luogu P3648</a><br>$$<br>a(b+c) + bc = ab+ac+bc = (a+b)c + ab \rightarrow \text{三个数怎么切结果都一样}\\<br>a(b+c+d) + (bc+cd+ad) = ab + ac + ad + bc + bd + cd = (a+b+c)d + (ab+bc+ac)<br>$$<br>这个式子再推广的话，就告诉我们：切割方案的分数只与切割的位置有关。</p>
 <p>令 $dp[i][w]$ 为前 $i$ 个数字切割w次能拿到的最小值 所以我们可以写出状态转移方程：<br>$$<br>dp[i][w] = \max_{j=1}^{i-1}(dp[j][w-1] + sum[j] \times (sum[i]-sum[j]))<br>$$<br>然后如果 $k$ 比 $j$ 优秀，则有：<br>$$<br>dp[j][w-1] + sum[j] \times (sum[i]-sum[j]) &lt; dp[k][w-1] + sum[k] \times (sum[i]-sum[k])\\<br>\frac{(dp[j][w-1]-{sum[j]}^2)-(dp[k][w-1]-{sum[k]}^2)}{sum[j]-sum[k]} &gt; -sum[i]\\<br>$$<br>现在我们需要考虑 $sum[j] = sum[k]$ 的情况，我们注意到这个时候应该是 $ k$ 一定是不比 $j$ 坏的，但是我们由于要输出方案中，不能切在开头的位置，所以我们要尽量往后切，就必须令 $k$ 比 $j$ 优，就应该让这个式子返回无穷大。</p>
 <p>因为 $sum$ 是单调的，就可以单调队列维护凸包了。</p>
-<p> 输出路径的话，就直接维护一个决策点，沿着决策点往回跳，然后输出就可以了。</p>
+<p>输出路径的话，就直接维护一个决策点，沿着决策点往回跳，然后输出就可以了。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ld long double</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">110000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line">ll num[MAXN],sum[MAXN],a[MAXN],b[MAXN];</span><br><span class="line"><span class="keyword">int</span> last[MAXN][<span class="number">210</span>];</span><br><span class="line">ll *dp,*now;</span><br><span class="line"></span><br><span class="line"><span class="function">ld <span class="title">calc</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(sum[i] == sum[j]) <span class="keyword">return</span> <span class="number">1e18</span>;</span><br><span class="line">  <span class="keyword">return</span> (ld)(dp[i]-sum[i]*sum[i]-dp[j]+sum[j]*sum[j])/(ld)(sum[i]-sum[j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;k);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;sum[i]);</span><br><span class="line">    sum[i] += sum[i<span class="number">-1</span>];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> q[MAXN];</span><br><span class="line">  dp = a,now = b;</span><br><span class="line">  <span class="keyword">int</span> fi = <span class="number">0</span>,la = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>;x&lt;=k;x++)&#123;</span><br><span class="line">    fi = la = <span class="number">0</span>;q[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">      <span class="keyword">while</span>(fi &lt; la &amp;&amp; calc(q[fi],q[fi+<span class="number">1</span>]) &gt;= -sum[i]) fi++;</span><br><span class="line">      now[i] = dp[q[fi]] + (sum[i]-sum[q[fi]])*sum[q[fi]];</span><br><span class="line">      last[i][x] = q[fi];</span><br><span class="line">      <span class="keyword">while</span>(fi &lt; la &amp;&amp; calc(q[la<span class="number">-1</span>],q[la]) &lt;= calc(q[la],i)) la--;</span><br><span class="line">      q[++la] = i;</span><br><span class="line">    &#125;</span><br><span class="line">    swap(dp,now);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,dp[n]);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = k,t = n;i&gt;=<span class="number">1</span>;--i)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d "</span>,last[t][i]);</span><br><span class="line">    t = last[t][i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -724,7 +724,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">178</span>
+                    <span class="site-state-item-count">179</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -932,7 +932,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">86</span>
+                      
+                    
+                    <span class="site-state-item-count">87</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1045,7 +1047,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">550k</span>
+    <span title="站点总字数">553k</span>
   
 
   
@@ -1056,7 +1058,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">16:40</span>
+    <span title="站点阅读时长">16:45</span>
   
 </div>
 
