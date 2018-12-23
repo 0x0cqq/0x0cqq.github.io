@@ -44,3 +44,9 @@ urlname: milestone
 2018-06-30 19:42 Luogu AC*400
 
 2018-08-28 17:35 Luogu AC*500
+
+2018-11-10~11 NOIp2018 省一滚粗
+
+2018-11-25 22:46 Luogu AC*600
+
+2018-12-15 Codeforces 第一次紫名
