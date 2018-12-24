@@ -152,25 +152,25 @@
 
 
 
-  <meta name="description" content="Dinic算法是一种用于网络流中最大流的增广路算法，其时间复杂度为$O(n^2 \times m)$，但大多数情况下会远远优于此时间复杂度。">
-<meta name="keywords" content="笔记,模板,图论,Dinic">
+  <meta name="description" content="Bertown 大街可以抽象为一条数轴。在数轴上有 $10^9$ 个巴士站。站点按照它们在数轴上的顺序从 $1$ 到 $10^9$ 的整数编号。这个城市有 $n$ 辆公共汽车。每天第 $i$ 个公共汽车从 $s_i$ 位置出发，到 $f_i$ 位置停止（ $s_i &amp;lt; f_i$ ），它在所有位于 $s_i$ 与  $f_i$ 的中间站点停靠并且仅在晚上返回。公共汽车在时间 $t_i$ 开始行">
+<meta name="keywords" content="题解,数据结构,线段树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dinic学习笔记">
-<meta property="og:url" content="https://blog.chenqiqian.com/20180208-dinic-notes/index.html">
+<meta property="og:title" content="「CF160E」Buses and People-线段树">
+<meta property="og:url" content="https://blog.chenqiqian.com/20181224-CF160E/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="Dinic算法是一种用于网络流中最大流的增广路算法，其时间复杂度为$O(n^2 \times m)$，但大多数情况下会远远优于此时间复杂度。">
+<meta property="og:description" content="Bertown 大街可以抽象为一条数轴。在数轴上有 $10^9$ 个巴士站。站点按照它们在数轴上的顺序从 $1$ 到 $10^9$ 的整数编号。这个城市有 $n$ 辆公共汽车。每天第 $i$ 个公共汽车从 $s_i$ 位置出发，到 $f_i$ 位置停止（ $s_i &amp;lt; f_i$ ），它在所有位于 $s_i$ 与  $f_i$ 的中间站点停靠并且仅在晚上返回。公共汽车在时间 $t_i$ 开始行">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T02:14:13.900Z">
+<meta property="og:updated_time" content="2018-12-24T15:59:32.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dinic学习笔记">
-<meta name="twitter:description" content="Dinic算法是一种用于网络流中最大流的增广路算法，其时间复杂度为$O(n^2 \times m)$，但大多数情况下会远远优于此时间复杂度。">
+<meta name="twitter:title" content="「CF160E」Buses and People-线段树">
+<meta name="twitter:description" content="Bertown 大街可以抽象为一条数轴。在数轴上有 $10^9$ 个巴士站。站点按照它们在数轴上的顺序从 $1$ 到 $10^9$ 的整数编号。这个城市有 $n$ 辆公共汽车。每天第 $i$ 个公共汽车从 $s_i$ 位置出发，到 $f_i$ 位置停止（ $s_i &amp;lt; f_i$ ），它在所有位于 $s_i$ 与  $f_i$ 的中间站点停靠并且仅在晚上返回。公共汽车在时间 $t_i$ 开始行">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.chenqiqian.com/20180208-dinic-notes/"/>
+  <link rel="canonical" href="https://blog.chenqiqian.com/20181224-CF160E/"/>
 
 
 
@@ -180,7 +180,7 @@
   };
 </script>
 
-  <title>Dinic学习笔记 | Chen's Blog</title>
+  <title>「CF160E」Buses and People-线段树 | Chen's Blog</title>
   
 
 
@@ -404,7 +404,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20180208-dinic-notes/">
+    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20181224-CF160E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chen Qiqian">
@@ -421,7 +421,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Dinic学习笔记
+          <h2 class="post-title" itemprop="name headline">「CF160E」Buses and People-线段树
               
             
           </h2>
@@ -446,24 +446,12 @@
                 
               
 
-              <time title="创建时间：2018-02-08 14:31:15" itemprop="dateCreated datePublished" datetime="2018-02-08T14:31:15+08:00">2018-02-08</time>
+              <time title="创建时间：2018-12-24 23:57:34 / 修改时间：23:59:32" itemprop="dateCreated datePublished" datetime="2018-12-24T23:57:34+08:00">2018-12-24</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-25 10:14:13" itemprop="dateModified" datetime="2018-11-25T10:14:13+08:00">2018-11-25</time>
               
             
           </span>
@@ -492,11 +480,11 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/20180208-dinic-notes/#comments" itemprop="discussionUrl">
+                <a href="/20181224-CF160E/#comments" itemprop="discussionUrl">
                   <span class="post-meta-item-icon">
                     <i class="fa fa-comment-o"></i>
                   </span>
-                  <span class="post-comments-count gitment-comments-count" data-xid="/20180208-dinic-notes/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/20181224-CF160E/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -526,7 +514,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.3k</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -540,7 +528,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -560,40 +548,20 @@
       
 
       
-        <p>Dinic算法是一种用于网络流中最大流的增广路算法，其时间复杂度为$O(n^2 \times m)$，但大多数情况下会远远优于此时间复杂度。</p>
+        <p>Bertown 大街可以抽象为一条数轴。在数轴上有 $10^9$ 个巴士站。站点按照它们在数轴上的顺序从 $1$ 到 $10^9$ 的整数编号。这个城市有 $n$ 辆公共汽车。每天第 $i$ 个公共汽车从 $s_i$ 位置出发，到 $f_i$ 位置停止（ $s_i &lt; f_i$ ），它在所有位于 $s_i$ 与  $f_i$ 的中间站点停靠并且仅在晚上返回。公共汽车在时间 $t_i$ 开始行驶，并且它也在时间 $t_i$ 完成行驶（行驶、停靠都是瞬间的）。所有公共汽车的开始时间 $t_i$ 都不同。公交车有无限的容量。</p>
+<p>Bertown 有很多居民。今天第 $i$ 个人要从 $l_i$ 位置出发到 $r_i$ 位置结束（ $l_i &lt; r_i$ ）；第 $i$ 个人在时间 $b_i$ 进入他的出发位置（ $l_i$ ）。一方面，每个人都希望尽快到达目的地，另一方面，他不想换乘公交车。</p>
+<p>也就是：为第 $i$ 个人挑选的公交汽车 $j$ ，满足 $s_j≤l_i$, $r_i≤f_j$ 和 $b_i≤t_j$ 的条件下，$t_j$ 最小。</p>
+<p>你的任务是确定每个人今天是否可以到达目的地，如果可以，找到每个人将乘坐的公交车的号码，不可以则输出 $-1$ 。</p>
 <a id="more"></a>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>从Menci神犇的<a href="https://oi.men.ci/dinic-notes/" target="_blank" rel="noopener">博客</a>复制而来。我觉得这写的是很好的一篇介绍，除了代码风格不太喜欢。</p>
-<ul>
-<li><p>容量： ${capacity}(e)$ 表示一条有向边 $e(u,v)$ 的最大允许的流量。</p>
-</li>
-<li><p>流量： ${flow}(e)$ 表示一条有向边 $e(u,v)$ 总容量中已被占用的流量。</p>
-</li>
-<li><p>剩余容量（残量）：即 $capacity(e)−flow(e)$，表示当前时刻某条有向边 $e(u,v)$ 总流量中未被占用的部分。</p>
-</li>
-<li><p>反向边：原图中每一条有向边在残量网络中都有对应的反向边，反向边的容量为$0$，容量的变化与原边相反；『反向边』的概念是相对的，即一条边的反向边的反向边是它本身。</p>
-</li>
-<li><p>残量网络：在原图的基础之上，添加每条边对应的反向边，并储存每条边的当前流量。残量网络会在算法进行的过程中被修改。</p>
-</li>
-<li><p>增广路（augmenting path）：残量网络中从源点到汇点的一条路径，增广路上所有边中最小的剩余容量为增广流量。</p>
-</li>
-<li><p>增广（augmenting）：在残量网络中寻找一条增广路，并将增广路上所有边的流量加上增广流量的过程。</p>
-</li>
-<li><p>层次： $level(u)$ 表示节点 $u$ 在层次图中与源点的距离。</p>
-</li>
-<li><p>层次图：在原残量网络中按照每个节点的层次来分层，只保留相邻两层的节点的图，满载（即流量等于容量）的边不存在于层次图中。</p>
-</li>
-</ul>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>用文字叙述大概如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 建立以出发点为源点的层次图（即源点到各店的距离）</span><br><span class="line">2. 在层次图&amp;残量网络中寻找增广路，并增广流量</span><br><span class="line">3. 重复2直到找不到增广路</span><br><span class="line">4. 重复123直到不存在层次图</span><br></pre></td></tr></table></figure>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>建立层次图使用bfs，而寻找增广路则是使用dfs递归增广。<br>具体实现的时候也有一定的技巧，在代码里面有注释。</p>
-<p>反向边存在的意义是什么呢？形象来说其实就是给你一个后悔的机会，往一边流去之后还能再回来。注意反向边的容量在我这里初始为0。</p>
-<p>有一个优化就是当前弧优化。这个优化是很显而易见的。如果这条边在当前层次图下找不到路，那么这条边在当前层次图内就再也不会用到。所以我们单开一个cur数组，记录目前遍历到的边，这样就可以进行优化。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>以<a href="https://www.luogu.org/problemnew/show/P3376" target="_blank" rel="noopener">Luogu P3376</a>为例</p>
-<div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> from,to,flow,cap;</span><br><span class="line">    <span class="keyword">int</span> next;</span><br><span class="line">&#125;edge[<span class="number">201000</span>];</span><br><span class="line"><span class="keyword">int</span> fir[<span class="number">10100</span>],dis[<span class="number">10100</span>],cur[<span class="number">10100</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,s,t,tot = <span class="number">2</span>;<span class="comment">//tot从2开始是最舒服的，既可以直接异或，后面的终止条件也不用想来想去。</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="built_in">memset</span>(dis,<span class="number">0</span>,<span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="built_in">memcpy</span>(cur,fir,<span class="keyword">sizeof</span>(fir));<span class="comment">//清空当前边</span></span><br><span class="line">    q.push(s);dis[s] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> nown = q.front();q.pop();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> nowe = fir[nown];nowe!=<span class="number">0</span>;nowe = edge[nowe].next)&#123;</span><br><span class="line">            <span class="keyword">int</span> v = edge[nowe].to;</span><br><span class="line">            <span class="keyword">if</span>(dis[v] == <span class="number">0</span> &amp;&amp; edge[nowe].cap &gt; edge[nowe].flow)&#123;</span><br><span class="line">                <span class="comment">//两个条件：未遍历而且边可以增广</span></span><br><span class="line">                dis[v] = dis[nown]+<span class="number">1</span>;</span><br><span class="line">                q.push(v);</span><br><span class="line">                <span class="comment">//由于我们只沿最短路增广，所以这里就可以直接break掉了。</span></span><br><span class="line">                <span class="keyword">if</span>(v == t)</span><br><span class="line">                    <span class="keyword">return</span> dis[t];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dis[t];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> nown,<span class="keyword">int</span> limit = <span class="number">0x3f3f3f3f</span>)</span></span>&#123;</span><br><span class="line">    <span class="comment">//找到终点或没得可找 这个优化很重要</span></span><br><span class="line">    <span class="keyword">if</span>(nown == t || limit == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> limit;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> &amp;nowe = cur[nown];nowe!=<span class="number">0</span>;nowe = edge[nowe].next)&#123;</span><br><span class="line">        <span class="comment">//这里有当前弧优化</span></span><br><span class="line">        <span class="keyword">int</span> v = edge[nowe].to;</span><br><span class="line">        <span class="keyword">if</span>(dis[v] == dis[nown]+<span class="number">1</span> &amp;&amp; edge[nowe].flow &lt; edge[nowe].cap)&#123;</span><br><span class="line">            <span class="comment">//满足层次图条件(沿着最短路)</span></span><br><span class="line">            <span class="keyword">int</span> f = dfs(v,min(edge[nowe].cap-edge[nowe].flow,limit));</span><br><span class="line">            <span class="keyword">if</span>(f&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="comment">//更改当前边</span></span><br><span class="line">                edge[nowe].flow+=f;</span><br><span class="line">                edge[nowe^<span class="number">1</span>].flow-=f;</span><br><span class="line">                <span class="keyword">return</span> f;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dinic</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>,f;</span><br><span class="line">    <span class="keyword">while</span>(bfs())&#123;<span class="comment">//bfs是步骤1</span></span><br><span class="line">        <span class="keyword">while</span>( (f = dfs(s)) &gt; <span class="number">0</span>)<span class="comment">//dfs是步骤2</span></span><br><span class="line">            ans+=f;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">    edge[tot].from = a;edge[tot].to = b;</span><br><span class="line">    edge[tot].cap = c;edge[tot].flow = <span class="number">0</span>;</span><br><span class="line">    edge[tot].next = fir[a];fir[a] = tot;</span><br><span class="line">    tot++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d %d"</span>,&amp;n,&amp;m,&amp;s,&amp;t);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;m;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> a,b,c;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">        addedge(a,b,c);</span><br><span class="line">        addedge(b,a,<span class="number">0</span>);<span class="comment">//需要加反向边</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dinic());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我只想到了一个sb的线段树套set的 $O(n \log^2 n)$ 的做法，但 tutorial 给出了一个 $O((n+m) \log (n+m))$ 的优秀做法。</p>
+<p>我们在这里从 $t$ 从小往大处理，按时间顺序加入每个人；加入车的时候只需要判断哪些人可以被这个车带走，然后这个车就是这些人的答案。</p>
+<p>我们考虑使用一个线段树维护这个所有人。我们根据 $l[i]$ 从小到大建立这个树，每个位置放置一个人，维护区间的 $r[i]$ 最小值及出现位置。</p>
+<p>当我们加入一个 $s_i,f_i$ 的车的时候，我们只需要在所有 $l[i]$ 大于 $s[i]$ 的部分中，找到一个 $r[i]$ 最小的人，把它删掉，然后持续到找不到这个人即可。最后还在树里面的都是无法乘车的人。</p>
+<p>这个方法很好啊，比我树套树不知道高到哪里去了…</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; pii;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">210000</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">B</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> l,r,t,id;</span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> B &amp;x)<span class="keyword">const</span>&#123;<span class="keyword">return</span> t &lt; x.t;&#125;</span><br><span class="line">&#125;bus[MAXN],p[MAXN];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(B &amp;x,B &amp;y)</span></span>&#123;<span class="keyword">return</span> x.l &lt; y.l;&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> minn,pos,id;</span><br><span class="line">  <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> Node &amp;x)<span class="keyword">const</span>&#123;<span class="keyword">return</span> minn &lt; x.minn;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line">pii LL[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> SegTree&#123;</span><br><span class="line">  Node t[MAXN&lt;&lt;<span class="number">2</span>];</span><br><span class="line">  <span class="meta">#<span class="meta-keyword">define</span> lson (nown&lt;&lt;1)</span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">define</span> rson (nown&lt;&lt;1|1)</span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">define</span> mid ((l+r)/2)</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> nown,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> *id)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l == r)&#123;</span><br><span class="line">      t[nown] = (Node)&#123;inf,l,id[l]&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      build(lson,l,mid,id),build(rson,mid+<span class="number">1</span>,r,id);</span><br><span class="line">      t[nown] = min(t[lson],t[rson]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> nown,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> pos,<span class="keyword">int</span> v)</span></span>&#123;<span class="comment">//change v</span></span><br><span class="line">    <span class="keyword">if</span>(l == r)</span><br><span class="line">      t[nown].minn = v;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(pos &lt;= mid) update(lson,l,mid,pos,v);</span><br><span class="line">      <span class="keyword">if</span>(pos &gt;= mid+<span class="number">1</span>) update(rson,mid+<span class="number">1</span>,r,pos,v);</span><br><span class="line">      t[nown] = min(t[lson],t[rson]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function">Node <span class="title">query</span><span class="params">(<span class="keyword">int</span> nown,<span class="keyword">int</span> l,<span class="keyword">int</span> r,<span class="keyword">int</span> ql,<span class="keyword">int</span> qr)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr)</span><br><span class="line">      <span class="keyword">return</span> t[nown];</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      Node ans = (Node)&#123;inf,<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">      <span class="keyword">if</span>(ql &lt;= mid) ans = min(ans,query(lson,l,mid,ql,qr));</span><br><span class="line">      <span class="keyword">if</span>(qr &gt;= mid+<span class="number">1</span>) ans = min(ans,query(rson,mid+<span class="number">1</span>,r,ql,qr));</span><br><span class="line">      <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="meta">#<span class="meta-keyword">undef</span> lson</span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">undef</span> rson</span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">undef</span> mid</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;bus[i].l,&amp;bus[i].r,&amp;bus[i].t);</span><br><span class="line">    bus[i].id = i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d %d %d"</span>,&amp;p[i].l,&amp;p[i].r,&amp;p[i].t);</span><br><span class="line">    LL[i] = make_pair(p[i].l,i);</span><br><span class="line">    p[i].id = i;</span><br><span class="line">  &#125;</span><br><span class="line">  sort(LL+<span class="number">1</span>,LL+m+<span class="number">1</span>);</span><br><span class="line">  sort(p+<span class="number">1</span>,p+m+<span class="number">1</span>),sort(bus+<span class="number">1</span>,bus+n+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> xx[MAXN];</span><br><span class="line"><span class="keyword">int</span> tmp[MAXN],pos[MAXN],ans[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=m;i++) </span><br><span class="line">    tmp[i] = LL[i].second,xx[i] = LL[i].first,pos[LL[i].second] = i;</span><br><span class="line">  SegTree::build(<span class="number">1</span>,<span class="number">1</span>,m,tmp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_person</span><span class="params">(<span class="keyword">int</span> now)</span></span>&#123;</span><br><span class="line">  SegTree::update(<span class="number">1</span>,<span class="number">1</span>,m,pos[p[now].id],p[now].r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_bus</span><span class="params">(<span class="keyword">int</span> now)</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> L = lower_bound(xx+<span class="number">1</span>,xx+m+<span class="number">1</span>,bus[now].l) - xx;</span><br><span class="line">  <span class="keyword">if</span>(L == m+<span class="number">1</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    Node t = SegTree::query(<span class="number">1</span>,<span class="number">1</span>,m,L,m);</span><br><span class="line">    <span class="keyword">if</span>(t.minn &gt; bus[now].r) <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">      ans[t.id] = bus[now].id;</span><br><span class="line">      SegTree::update(<span class="number">1</span>,<span class="number">1</span>,m,t.pos,inf);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> nx = <span class="number">1</span>,ny = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(nx == (n+<span class="number">1</span>)) <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">if</span>((nx != n+<span class="number">1</span> &amp;&amp; ny == m+<span class="number">1</span>) || bus[nx].t &lt; p[ny].t )</span><br><span class="line">      add_bus(nx++);<span class="comment">// 新加入人？新加入车？</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">      add_person(ny++);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=m;i++) <span class="built_in">printf</span>(<span class="string">"%d "</span>,ans[i] == <span class="number">0</span>?<span class="number">-1</span>:ans[i]);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  build();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
-
       
     </div>
 
@@ -614,7 +582,7 @@
     <strong>本文作者： </strong>Chen Qiqian</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.chenqiqian.com/20180208-dinic-notes/" title="Dinic学习笔记">https://blog.chenqiqian.com/20180208-dinic-notes/</a>
+    <a href="https://blog.chenqiqian.com/20181224-CF160E/" title="「CF160E」Buses and People-线段树">https://blog.chenqiqian.com/20181224-CF160E/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -627,13 +595,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/笔记/" rel="tag"># 笔记</a>
+            <a href="/tags/题解/" rel="tag"># 题解</a>
           
-            <a href="/tags/模板/" rel="tag"># 模板</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
-            <a href="/tags/图论/" rel="tag"># 图论</a>
-          
-            <a href="/tags/Dinic/" rel="tag"># Dinic</a>
+            <a href="/tags/线段树/" rel="tag"># 线段树</a>
           
         </div>
       
@@ -646,8 +612,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20180208-ZJOI2009-vacation/" rel="next" title="「ZJOI2009」假期的宿舍-二分图匹配">
-                <i class="fa fa-chevron-left"></i> 「ZJOI2009」假期的宿舍-二分图匹配
+              <a href="/20181223-CF115E/" rel="next" title="「CF115E」Linear Kingdom Races-dp+线段树优化">
+                <i class="fa fa-chevron-left"></i> 「CF115E」Linear Kingdom Races-dp+线段树优化
               </a>
             
           </div>
@@ -656,8 +622,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/20180211-NOI2002-hero/" rel="prev" title="「NOI2002」银河英雄传说-并查集">
-                「NOI2002」银河英雄传说-并查集 <i class="fa fa-chevron-right"></i>
+              <a href="/23330101-about-blog/" rel="prev" title="【置顶】关于这个博客的一切">
+                【置顶】关于这个博客的一切 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1029,7 +995,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>
