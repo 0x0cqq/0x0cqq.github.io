@@ -152,23 +152,25 @@
 
 
 
-  <meta name="description" content="Stay simple. Stay naïve.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chen&#39;s Blog">
-<meta property="og:url" content="https://blog.chenqiqian.com/tags/分层图/index.html">
+  <meta name="description" content="题意给定一个长度为 $n$ 的数组，我们要从中找出两个不相交（不含邮相同元素的）的子序列，要求每个子序列的任意两个相邻元素的差的绝对值为 $1$ 或 在模 $7$ 意义下相同。请你求出这两个子序列长度和的最大值。">
+<meta name="keywords" content="题解,动态规划">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「CF813D」Two Melodies-简单dp">
+<meta property="og:url" content="https://blog.chenqiqian.com/20190129-CF813D/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="Stay simple. Stay naïve.">
+<meta property="og:description" content="题意给定一个长度为 $n$ 的数组，我们要从中找出两个不相交（不含邮相同元素的）的子序列，要求每个子序列的任意两个相邻元素的差的绝对值为 $1$ 或 在模 $7$ 意义下相同。请你求出这两个子序列长度和的最大值。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-28T23:11:33.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chen&#39;s Blog">
-<meta name="twitter:description" content="Stay simple. Stay naïve.">
+<meta name="twitter:title" content="「CF813D」Two Melodies-简单dp">
+<meta name="twitter:description" content="题意给定一个长度为 $n$ 的数组，我们要从中找出两个不相交（不含邮相同元素的）的子序列，要求每个子序列的任意两个相邻元素的差的绝对值为 $1$ 或 在模 $7$ 意义下相同。请你求出这两个子序列长度和的最大值。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.chenqiqian.com/tags/分层图/"/>
+  <link rel="canonical" href="https://blog.chenqiqian.com/20190129-CF813D/"/>
 
 
 
@@ -178,7 +180,7 @@
   };
 </script>
 
-  <title>标签: 分层图 | Chen's Blog</title>
+  <title>「CF813D」Two Melodies-简单dp | Chen's Blog</title>
   
 
 
@@ -225,7 +227,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,7 +284,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -382,90 +384,284 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>分层图<small>标签</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20190129-CF813D/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Qiqian">
+      <meta itemprop="description" content="Stay simple. Stay naïve.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chen's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/20181026-JLOI2011-flight/" itemprop="url">
-              
-                <span itemprop="name">「JLOI2011」飞行路线-分层图最短路</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">「CF813D」Two Melodies-简单dp
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-10-26T23:29:36+08:00"
-              content="2018-10-26" >
-          10-26
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
 
+              
+                
+              
+
+              <time title="创建时间：2019-01-29 07:10:48 / 修改时间：07:11:33" itemprop="dateCreated datePublished" datetime="2019-01-29T07:10:48+08:00">2019-01-29</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/20190129-CF813D/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-icon">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/20190129-CF813D/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>给定一个长度为 $n$ 的数组，我们要从中找出两个不相交（不含邮相同元素的）的子序列，要求每个子序列的任意两个相邻元素的差的绝对值为 $1$ 或 在模 $7$ 意义下相同。请你求出这两个子序列长度和的最大值。</p>
+<a id="more"></a>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>令 $dp[x][y]$ 表示第一个子序列最后一个元素取到 $x$ ，第二个子序列的最后一个元素取到 $y$ 的最大的和。</p>
+<ol>
+<li>$x &lt; y$<br>令 $dp[x][y] = dp[y][x]$</li>
+<li>$x = y$<br>显然 $dp[x][y] = 0$</li>
+<li>$x &gt; y$<br>$$<br>dp[x][y] = \max_{0 \le i &lt; x,i \neq y}(dp[i][y]+1)<br>$$<br>其中 $i$ 到 $x$ 满足如上条件。</li>
+</ol>
+<p>前两个的正确性很好理解，第三个的正确性如何保证呢？我们考虑到虽然我们只更新了第一个，但是我们第一种情况也就交换了两个子序列，所以事实上我们也可以算更新了两个子序列的。</p>
+<p>我们这样转移是 $O(n^3)$ 的，不能通过本题。</p>
+<p>我们可以优化这个 dp 。我们按照第一维 $y$ 从小到大，第二维 $x$ 从小到大更新。</p>
+<p>对于每个 y ，我们可以维护两个数组 $\text{maxmod[j]},\text{maxnum[j]}$，分别代表在当前 $y$ 中，（当前计算到 $dp[x][y]$），满足 $0 \le i &lt; x$ 且 $i \neq y$ 的最大的 dp 值，而且这些 $a[i]$ 在模 7 的余数（或本身数值）为 $j$ 。</p>
+<p>我们发现这样的转移就变成了 $O(1)$ 的。</p>
+<p>所以，最后的时间复杂度就变成了 $O(n^2)$ 。 </p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">5100</span>,MAXC = <span class="number">110000</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,a[MAXN];</span><br><span class="line"><span class="keyword">int</span> dp[MAXN][MAXN];<span class="comment">// dp[x][y]</span></span><br><span class="line"><span class="keyword">int</span> maxnum[MAXC],maxmod[<span class="number">7</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = <span class="number">-1e9</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;MAXC;i++) maxnum[i] = <span class="number">-1e9</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> y = <span class="number">0</span>;y&lt;=n;y++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>;x&lt;=n;x++) maxnum[a[x]] = <span class="number">-1e9</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;<span class="number">7</span>;i++) maxmod[i] = <span class="number">-1e9</span>;</span><br><span class="line">    dp[<span class="number">0</span>][y] = dp[y][<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>;x &lt;= y<span class="number">-1</span>;x++)&#123;</span><br><span class="line">      dp[x][y] = dp[y][x];</span><br><span class="line">      maxnum[a[x]] = max(maxnum[a[x]],dp[x][y]);</span><br><span class="line">      maxmod[a[x] % <span class="number">7</span>] = max(maxmod[a[x] % <span class="number">7</span>],dp[x][y]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = y+<span class="number">1</span>;x&lt;=n;x++)&#123;</span><br><span class="line">      dp[x][y] = <span class="number">-1e9</span>;</span><br><span class="line">      dp[x][y] = max(dp[x][y],maxnum[a[x]<span class="number">-1</span>] + <span class="number">1</span>);</span><br><span class="line">      dp[x][y] = max(dp[x][y],maxnum[a[x]+<span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">      dp[x][y] = max(dp[x][y],maxmod[a[x]%<span class="number">7</span>] + <span class="number">1</span>);</span><br><span class="line">      dp[x][y] = max(dp[x][y],dp[<span class="number">0</span>][y] + <span class="number">1</span>);</span><br><span class="line">      maxnum[a[x]] = max(maxnum[a[x]],dp[x][y]);</span><br><span class="line">      maxmod[a[x] % <span class="number">7</span>] = max(maxmod[a[x] % <span class="number">7</span>],dp[x][y]);   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> x = <span class="number">1</span>;x&lt;=n;x++)&#123;</span><br><span class="line">      ans = max(ans,dp[x][y]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Chen Qiqian</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.chenqiqian.com/20190129-CF813D/" title="「CF813D」Two Melodies-简单dp">https://blog.chenqiqian.com/20190129-CF813D/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20190126-NOI2006-benefit/" rel="next" title="「NOI2006」最大获利-网络流-最大权闭合子图">
+                <i class="fa fa-chevron-left"></i> 「NOI2006」最大获利-网络流-最大权闭合子图
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/23330101-about-blog/" rel="prev" title="【置顶】关于这个博客的一切">
+                【置顶】关于这个博客的一切 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -486,8 +682,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -789,6 +994,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">1.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -997,6 +1218,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -1038,6 +1263,30 @@
 
     
 
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname,
+            owner: 'ChenQiqian',
+            repo: 'comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
+            
+                client_id: 'd406e366deef7658dac9'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
     
 
 
