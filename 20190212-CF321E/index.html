@@ -152,25 +152,25 @@
 
 
 
-  <meta name="description" content="你的公司需要提供$n$类产品，其中第$i$类产品共需要$C_{i}$件。公司共有$m$名员工。员工能够制造的产品种类有所区别，我们用一个由$0$和$1$组成的$m\times n$的矩阵$\mathbb {A}$来描述每名员工能够制造哪些产品。 对于员工$i$，给出$S_i$。定义他的愤怒值与他制作的产品数量之间的函数是一个$S_i+1$段的分段函数。设$T_{i,0}=0$,$T_{i,S_{i">
-<meta name="keywords" content="题解,图论,费用流">
+  <meta name="description" content="Ciel 狐狸在游乐园里排队等待上摩天轮。现在有 $n$ 个人按编号顺次在队列里，有 $m$ 条船，第 $i$ 条船到时，前 $q_{i}$ 个人可以上船。保证 $\sum q_i = n$。 人总是不愿意和陌生人上同一条船的，当第 $i$ 个人与第 $j$ 个人处于同一条船上时，会产生 $u_{i,j}$ 的沮丧值。请你求出最小的沮丧值和。一条船上的人两两都会产生沮丧值，不会计算这个沮丧值两次。">
+<meta name="keywords" content="题解,动态规划,wqs二分,决策单调性">
 <meta property="og:type" content="article">
-<meta property="og:title" content="「SDOI2011」工作安排-费用流">
-<meta property="og:url" content="https://blog.chenqiqian.com/20180406-SDOI2011-arrange/index.html">
+<meta property="og:title" content="「CF321E」Ciel and Gondolas-wqs二分+决策单调性">
+<meta property="og:url" content="https://blog.chenqiqian.com/20190212-CF321E/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="你的公司需要提供$n$类产品，其中第$i$类产品共需要$C_{i}$件。公司共有$m$名员工。员工能够制造的产品种类有所区别，我们用一个由$0$和$1$组成的$m\times n$的矩阵$\mathbb {A}$来描述每名员工能够制造哪些产品。 对于员工$i$，给出$S_i$。定义他的愤怒值与他制作的产品数量之间的函数是一个$S_i+1$段的分段函数。设$T_{i,0}=0$,$T_{i,S_{i">
+<meta property="og:description" content="Ciel 狐狸在游乐园里排队等待上摩天轮。现在有 $n$ 个人按编号顺次在队列里，有 $m$ 条船，第 $i$ 条船到时，前 $q_{i}$ 个人可以上船。保证 $\sum q_i = n$。 人总是不愿意和陌生人上同一条船的，当第 $i$ 个人与第 $j$ 个人处于同一条船上时，会产生 $u_{i,j}$ 的沮丧值。请你求出最小的沮丧值和。一条船上的人两两都会产生沮丧值，不会计算这个沮丧值两次。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T02:14:14.356Z">
+<meta property="og:updated_time" content="2019-02-12T14:15:09.354Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="「SDOI2011」工作安排-费用流">
-<meta name="twitter:description" content="你的公司需要提供$n$类产品，其中第$i$类产品共需要$C_{i}$件。公司共有$m$名员工。员工能够制造的产品种类有所区别，我们用一个由$0$和$1$组成的$m\times n$的矩阵$\mathbb {A}$来描述每名员工能够制造哪些产品。 对于员工$i$，给出$S_i$。定义他的愤怒值与他制作的产品数量之间的函数是一个$S_i+1$段的分段函数。设$T_{i,0}=0$,$T_{i,S_{i">
+<meta name="twitter:title" content="「CF321E」Ciel and Gondolas-wqs二分+决策单调性">
+<meta name="twitter:description" content="Ciel 狐狸在游乐园里排队等待上摩天轮。现在有 $n$ 个人按编号顺次在队列里，有 $m$ 条船，第 $i$ 条船到时，前 $q_{i}$ 个人可以上船。保证 $\sum q_i = n$。 人总是不愿意和陌生人上同一条船的，当第 $i$ 个人与第 $j$ 个人处于同一条船上时，会产生 $u_{i,j}$ 的沮丧值。请你求出最小的沮丧值和。一条船上的人两两都会产生沮丧值，不会计算这个沮丧值两次。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.chenqiqian.com/20180406-SDOI2011-arrange/"/>
+  <link rel="canonical" href="https://blog.chenqiqian.com/20190212-CF321E/"/>
 
 
 
@@ -180,7 +180,7 @@
   };
 </script>
 
-  <title>「SDOI2011」工作安排-费用流 | Chen's Blog</title>
+  <title>「CF321E」Ciel and Gondolas-wqs二分+决策单调性 | Chen's Blog</title>
   
 
 
@@ -404,7 +404,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20180406-SDOI2011-arrange/">
+    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20190212-CF321E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chen Qiqian">
@@ -421,7 +421,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">「SDOI2011」工作安排-费用流
+          <h2 class="post-title" itemprop="name headline">「CF321E」Ciel and Gondolas-wqs二分+决策单调性
               
             
           </h2>
@@ -446,24 +446,12 @@
                 
               
 
-              <time title="创建时间：2018-04-06 20:00:38" itemprop="dateCreated datePublished" datetime="2018-04-06T20:00:38+08:00">2018-04-06</time>
+              <time title="创建时间：2019-02-12 22:07:23 / 修改时间：22:15:09" itemprop="dateCreated datePublished" datetime="2019-02-12T22:07:23+08:00">2019-02-12</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-25 10:14:14" itemprop="dateModified" datetime="2018-11-25T10:14:14+08:00">2018-11-25</time>
               
             
           </span>
@@ -492,11 +480,11 @@
             
               <span class="post-comments-count">
                 <span class="post-meta-divider">|</span>
-                <a href="/20180406-SDOI2011-arrange/#comments" itemprop="discussionUrl">
+                <a href="/20190212-CF321E/#comments" itemprop="discussionUrl">
                   <span class="post-meta-item-icon">
                     <i class="fa fa-comment-o"></i>
                   </span>
-                  <span class="post-comments-count gitment-comments-count" data-xid="/20180406-SDOI2011-arrange/" itemprop="commentsCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/20190212-CF321E/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -526,7 +514,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4k</span>
+                <span title="本文字数">2.9k</span>
               
 
               
@@ -540,7 +528,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -560,25 +548,17 @@
       
 
       
-        <p>你的公司需要提供$n$类产品，其中第$i$类产品共需要$C_{i}$件。公司共有$m$名员工。员工能够制造的产品种类有所区别，我们用一个由$0$和$1$组成的$m\times n$的矩阵$\mathbb {A}$来描述每名员工能够制造哪些产品。</p>
-<p>对于员工$i$，给出$S_i$。定义他的愤怒值与他制作的产品数量之间的函数是一个$S_i+1$段的分段函数。设$T_{i,0}=0$,$T_{i,S_{i+1}}=+\infty$，那么当他制造第$[T_{i,j-1}+1,T_{i,j}]$件产品时，每件产品会使他的愤怒值增加$W_{i,j}$， $1\leq j\leq S_{i+1}$。保证$0&lt;W_{i,j} &lt; W_{i,j+1}, \; 0 &lt; T_{i,j} &lt; T_{i,j+1}$。</p>
-<p>你的任务是制定出一个产品的分配方案，使得订单条件被满足，并且所有员工的愤怒值之和最小。</p>
+        <p>Ciel 狐狸在游乐园里排队等待上摩天轮。现在有 $n$ 个人按编号顺次在队列里，有 $m$ 条船，第 $i$ 条船到时，前 $q_{i}$ 个人可以上船。保证 $\sum q_i = n$。 人总是不愿意和陌生人上同一条船的，当第 $i$ 个人与第 $j$ 个人处于同一条船上时，会产生 $u_{i,j}$ 的沮丧值。请你求出最小的沮丧值和。一条船上的人两两都会产生沮丧值，不会计算这个沮丧值两次。</p>
 <a id="more"></a>
-<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P2488" target="_blank" rel="noopener">Luogu P2488</a></p>
-<p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2245" target="_blank" rel="noopener">BZOJ 2245</a></p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>一道费用流的题目。</p>
-<p>每个产品的数量可以用一条边来限制，主要需要满足的就是愤怒值分段函数式的结构。</p>
-<p>注意到每个人的愤怒值的分段函数与做了具体哪类产品无关，所以我们可以在人这边的边上动点手脚。我们可以拆边，按段来拆边，每段给一条边，通过容量来满足分段的要求。</p>
-<p>具体建图：</p>
-<p>令$1$至$m$为$m$个员工所代表的点，$m+1$至$m+n$为$n$类产品代表的点，$s$为源点，$t$为汇点。</p>
-<p>对于$A$矩阵，如果$A_{i,j}$是$1$，那么我们就连一条起点为$i$，终点为$m+j$，容量为$+\infty$，费用为$0$的边。</p>
-<p>对于第$i$个商品种类，我们连一条起点为$m+i$，终点为$t$，容量为$C_{i}$，费用为$0$的边。</p>
-<p>对于第$i$个人，我们连$S_{i}+1$条边，起点均为$s$，终点均为$i$，令第$j$条边的容量为$S_{i,j}-S_{i,j-1}$，$j \in [1,S_{i}+1]$，费用为$W_{i,j}$。</p>
-<p>跑最小费用最大流，得到的费用即为结果。</p>
-<p>注意需要开$long long$…</p>
-<p>值得一提的是，由于我有一个$j$写成了$i$，导致我绝望的找了$15$分钟的$bug$…令人窒息。</p>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="http://codeforces.com/problemset/problem/321/E" target="_blank" rel="noopener">Codeforces</a></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们注意到我们有一个简单的转移方程：</p>
+<p>$$<br>dp[i][j] = \min_{1 \le p &lt; i}(dp[p][j-1] + g(p+1,j))<br>$$</p>
+<p>其中 $g(i,j)$ 表示从 $i$ 到 $j$ 中选中所有人需要耗费的代价。</p>
+<p>这个东西的复杂度是 $O(n^2m)$ ， 我们可以用决策单调性优化到 $O(nm \log n)$ ，但是这个不足以过掉该题，我们可以使用 wqs 二分 + 决策单调性优化到 $O(n \log n \log m)$ 。</p>
+<p>需要注意的是这里的代价应当是负的，也就是我们需要加上代价。（差不多啦</p>
+<p>需要读入优化。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> fast_io &#123;</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;<span class="keyword">using</span> <span class="keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX = <span class="number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">1000</span>,MAXM = <span class="number">200000</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> from,to;</span><br><span class="line">    <span class="keyword">int</span> flow,cap;</span><br><span class="line">    <span class="keyword">int</span> cost;</span><br><span class="line">    <span class="keyword">int</span> nex;</span><br><span class="line">&#125;edge[MAXM];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,s,t,ecnt = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> fir[MAXN],pree[MAXN];</span><br><span class="line">ll dis[MAXN];<span class="keyword">int</span> instack[MAXN];</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c,<span class="keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    <span class="comment">//printf("%lld %lld %lld %lld\n",a,b,c,d);</span></span><br><span class="line">    edge[ecnt].from = a,edge[ecnt].to = b;</span><br><span class="line">    edge[ecnt].cap = c,edge[ecnt].flow = <span class="number">0</span>;</span><br><span class="line">    edge[ecnt].cost = d,edge[ecnt].nex = fir[a];</span><br><span class="line">    fir[a] = ecnt++;</span><br><span class="line">    edge[ecnt].from = b,edge[ecnt].to = a;</span><br><span class="line">    edge[ecnt].cap = <span class="number">0</span>,edge[ecnt].flow = <span class="number">0</span>;</span><br><span class="line">    edge[ecnt].cost = -d,edge[ecnt].nex = fir[b];</span><br><span class="line">    fir[b] = ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">spfa</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(!q.empty()) q.pop();</span><br><span class="line">    <span class="built_in">memset</span>(dis,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(dis));</span><br><span class="line">    dis[s] = <span class="number">0</span>;q.push(s);</span><br><span class="line">    <span class="keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        <span class="keyword">int</span> nown = q.front();q.pop();</span><br><span class="line">        instack[nown] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">            Edge e = edge[nowe];</span><br><span class="line">            <span class="keyword">if</span>(dis[e.to] &gt; dis[nown] + e.cost &amp;&amp; e.cap &gt; e.flow)&#123;</span><br><span class="line">                dis[e.to] = dis[nown] + e.cost;</span><br><span class="line">                pree[e.to] = nowe;</span><br><span class="line">                <span class="keyword">if</span>(instack[e.to] == <span class="number">0</span>)&#123;</span><br><span class="line">                    instack[e.to] = <span class="number">1</span>;</span><br><span class="line">                    q.push(e.to);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dis[t] &lt; <span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">argument</span><span class="params">(ll &amp;sumf,ll &amp;sumc)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nown = t,nowe,delta = MAX;</span><br><span class="line">    <span class="keyword">while</span>(nown!=s)&#123;</span><br><span class="line">        nowe = pree[nown];</span><br><span class="line">        delta = min(delta,edge[nowe].cap - edge[nowe].flow);</span><br><span class="line">        nown = edge[nowe].from;</span><br><span class="line">    &#125;</span><br><span class="line">    nown = t;</span><br><span class="line">    <span class="keyword">while</span>(nown!=s)&#123;</span><br><span class="line">        nowe = pree[nown];</span><br><span class="line">        edge[nowe].flow+=delta,edge[nowe^<span class="number">1</span>].flow-=delta;</span><br><span class="line">        nown = edge[nowe].from;</span><br><span class="line">    &#125;</span><br><span class="line">    sumf+=delta,sumc+=delta*dis[t];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">min_cost_flow</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ll f = <span class="number">0</span>,c = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(spfa())</span><br><span class="line">        argument(f,c);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    read(m),read(n);</span><br><span class="line">    s = m+n+<span class="number">1</span>,t = m+n+<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        read(tmp);</span><br><span class="line">        addedge(m+i,t,tmp,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            read(tmp);</span><br><span class="line">            <span class="keyword">if</span>(tmp)</span><br><span class="line">                addedge(i,m+j,MAX,<span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> b[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        read(tmp);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=tmp;j++)</span><br><span class="line">            read(b[j]);</span><br><span class="line">        b[<span class="number">0</span>] = <span class="number">0</span>;b[tmp+<span class="number">1</span>] = MAX;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=tmp+<span class="number">1</span>;j++)&#123;</span><br><span class="line">            <span class="keyword">int</span> w;read(w);</span><br><span class="line">            addedge(s,i,b[j]-b[j<span class="number">-1</span>],w);</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    min_cost_flow();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">namespace</span> fast_io &#123;</span><br><span class="line">  <span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">read</span><span class="params">()</span></span>&#123;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keyword">int</span> IN_LEN=<span class="number">1000000</span>;<span class="keyword">static</span> <span class="keyword">char</span> buf[IN_LEN],*s,*t;<span class="keyword">return</span> s==t?(((t=(s=buf)+fread(buf,<span class="number">1</span>,IN_LEN,<span class="built_in">stdin</span>))==s)?<span class="number">-1</span>:*s++) : *s++;&#125;</span><br><span class="line">  <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span></span>&#123;<span class="keyword">static</span> <span class="keyword">bool</span> iosig;<span class="keyword">static</span> <span class="keyword">char</span> c;<span class="keyword">for</span> (iosig=<span class="literal">false</span>,c=read();!<span class="built_in">isdigit</span>(c);c=read())&#123;<span class="keyword">if</span>(c==<span class="string">'-'</span>)iosig=<span class="literal">true</span>;<span class="keyword">if</span>(c==<span class="number">-1</span>)<span class="keyword">return</span>;&#125;<span class="keyword">for</span>(x=<span class="number">0</span>;<span class="built_in">isdigit</span>(c);c=read())x=((x+(x&lt;&lt;<span class="number">2</span>))&lt;&lt;<span class="number">1</span>)+(c^<span class="string">'0'</span>);<span class="keyword">if</span>(iosig)x=-x;&#125;</span><br><span class="line">&#125;<span class="keyword">using</span> <span class="keyword">namespace</span> fast_io;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">4100</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">char</span> tmp[MAXN*<span class="number">2</span>];</span><br><span class="line"><span class="keyword">int</span> a[MAXN][MAXN],s[MAXN][MAXN];<span class="comment">// 前 i 个与前 j 个的答案</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">G</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;<span class="comment">// 第 x 个到第 y 个的答案，x &lt;= y</span></span><br><span class="line">  <span class="keyword">return</span> (s[y][y] - <span class="number">2</span> * s[x<span class="number">-1</span>][y] + s[x<span class="number">-1</span>][x<span class="number">-1</span>])/<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> dp[MAXN],siz[MAXN],fi,la;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span>&#123;</span></span><br><span class="line">  <span class="keyword">int</span> p,l,r;</span><br><span class="line">  Node(<span class="keyword">int</span> _p = <span class="number">0</span>,<span class="keyword">int</span> _l = <span class="number">0</span>,<span class="keyword">int</span> _r = <span class="number">0</span>)&#123;p = _p,l = _l,r = _r;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">Node q[MAXN];<span class="comment">//[fi,la]</span></span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">reset</span><span class="params">()</span></span>&#123;dp[<span class="number">0</span>] = siz[<span class="number">0</span>] = la = <span class="number">0</span>;fi = <span class="number">1</span>;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cal</span><span class="params">(<span class="keyword">int</span> now,<span class="keyword">int</span> last,<span class="keyword">int</span> k)</span></span>&#123;<span class="keyword">return</span> dp[last] + G(last+<span class="number">1</span>,now) + k;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> k)</span></span>&#123;<span class="comment">// k 为代价，每个都加上一个 k ，因为斜率是负数</span></span><br><span class="line">  <span class="comment">// 不限分段个数，考虑 dp[i] 为前 i 个分若干段的最小值，每分一段要加一个 k x</span></span><br><span class="line">  reset();</span><br><span class="line">  q[++la] = Node(<span class="number">0</span>,<span class="number">1</span>,n);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">while</span>(fi &lt; la &amp;&amp; q[fi].r &lt; i) fi++;</span><br><span class="line">    dp[i] = cal(i,q[fi].p,k),siz[i] = siz[q[fi].p] + <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 为什么对新来的这么不友好？？？</span></span><br><span class="line">    <span class="keyword">if</span>(cal(n,q[la].p,k) &lt;= cal(n,i,k)) <span class="keyword">continue</span>;</span><br><span class="line">    <span class="keyword">while</span>(fi &lt; la &amp;&amp; cal(q[la].l,q[la].p,k) &gt; cal(q[la].l,i,k)) la--;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> L = q[la].l,R = q[la].r + <span class="number">1</span>;<span class="comment">// 二分决策点</span></span><br><span class="line">    <span class="keyword">while</span>(L!=R)&#123;</span><br><span class="line">      <span class="keyword">int</span> mid = (L+R)/<span class="number">2</span>;</span><br><span class="line">      <span class="keyword">if</span>(cal(mid,q[la].p,k) &gt; cal(mid,i,k))</span><br><span class="line">        R = mid;</span><br><span class="line">      <span class="keyword">else</span></span><br><span class="line">        L = mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q[la].r = L<span class="number">-1</span>;</span><br><span class="line">    q[++la] = Node(i,L,n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 最优分几段？</span></span><br><span class="line">  <span class="keyword">return</span> siz[n];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  read(n),read(m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">      read(a[i][j]);</span><br><span class="line">      s[i][j] = s[i<span class="number">-1</span>][j] + s[i][j<span class="number">-1</span>] - s[i<span class="number">-1</span>][j<span class="number">-1</span>] + a[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> L = <span class="number">0</span>,R = s[n][n];</span><br><span class="line">  <span class="keyword">while</span>(L != R)&#123;</span><br><span class="line">    <span class="keyword">int</span> mid = (L+R)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span>(check(mid) &lt;= m) R = mid;</span><br><span class="line">    <span class="keyword">else</span>                L = mid+<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  check(L);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dp[n] - L*m);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 </div></div>
       
@@ -601,7 +581,7 @@
     <strong>本文作者： </strong>Chen Qiqian</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.chenqiqian.com/20180406-SDOI2011-arrange/" title="「SDOI2011」工作安排-费用流">https://blog.chenqiqian.com/20180406-SDOI2011-arrange/</a>
+    <a href="https://blog.chenqiqian.com/20190212-CF321E/" title="「CF321E」Ciel and Gondolas-wqs二分+决策单调性">https://blog.chenqiqian.com/20190212-CF321E/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -616,9 +596,11 @@
           
             <a href="/tags/题解/" rel="tag"># 题解</a>
           
-            <a href="/tags/图论/" rel="tag"># 图论</a>
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
           
-            <a href="/tags/费用流/" rel="tag"># 费用流</a>
+            <a href="/tags/wqs二分/" rel="tag"># wqs二分</a>
+          
+            <a href="/tags/决策单调性/" rel="tag"># 决策单调性</a>
           
         </div>
       
@@ -631,8 +613,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/20180405-ac_automaton-notes/" rel="next" title="AC自动机学习笔记">
-                <i class="fa fa-chevron-left"></i> AC自动机学习笔记
+              <a href="/20190211-CF877F/" rel="next" title="「CF877F」Ann and Books-莫队">
+                <i class="fa fa-chevron-left"></i> 「CF877F」Ann and Books-莫队
               </a>
             
           </div>
@@ -641,8 +623,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/20180408-2018-AprWeek2/" rel="prev" title="2018 AprWeek2">
-                2018 AprWeek2 <i class="fa fa-chevron-right"></i>
+              <a href="/23330101-about-blog/" rel="prev" title="【置顶】关于这个博客的一切">
+                【置顶】关于这个博客的一切 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
