@@ -152,24 +152,25 @@
 
 
 
-  <meta name="description" content="Stay simple. Stay naïve.  恭喜你！发现了一个蒟蒻的Blog。 某高中开始学OI的蒟蒻。现就读北京某高中高二。 不定期更新。  NOIP2017省二滚粗 BJWC2018爆零滚粗 BJOI2018爆零滚粗 NOIP2018省一滚粗 BJWC2018？取消了 BJOI2019？ （NOI2019）？ (≧▽≦)/ 联系方式：  qiqianchen@126.com qi">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="https://blog.chenqiqian.com/about/index.html">
+  <meta name="description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \f">
+<meta name="keywords" content="题解,动态规划,状压dp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「CF543C」Remembering Strings-状态压缩dp">
+<meta property="og:url" content="https://blog.chenqiqian.com/20190215-CF543C/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="Stay simple. Stay naïve.  恭喜你！发现了一个蒟蒻的Blog。 某高中开始学OI的蒟蒻。现就读北京某高中高二。 不定期更新。  NOIP2017省二滚粗 BJWC2018爆零滚粗 BJOI2018爆零滚粗 NOIP2018省一滚粗 BJWC2018？取消了 BJOI2019？ （NOI2019）？ (≧▽≦)/ 联系方式：  qiqianchen@126.com qi">
+<meta property="og:description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \f">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-12-23T14:37:44.000Z">
+<meta property="og:updated_time" content="2019-02-15T08:32:15.570Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="Stay simple. Stay naïve.  恭喜你！发现了一个蒟蒻的Blog。 某高中开始学OI的蒟蒻。现就读北京某高中高二。 不定期更新。  NOIP2017省二滚粗 BJWC2018爆零滚粗 BJOI2018爆零滚粗 NOIP2018省一滚粗 BJWC2018？取消了 BJOI2019？ （NOI2019）？ (≧▽≦)/ 联系方式：  qiqianchen@126.com qi">
+<meta name="twitter:title" content="「CF543C」Remembering Strings-状态压缩dp">
+<meta name="twitter:description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \f">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.chenqiqian.com/about/"/>
+  <link rel="canonical" href="https://blog.chenqiqian.com/20190215-CF543C/"/>
 
 
 
@@ -179,7 +180,7 @@
   };
 </script>
 
-  <title>关于我 | Chen's Blog</title>
+  <title>「CF543C」Remembering Strings-状态压缩dp | Chen's Blog</title>
   
 
 
@@ -275,7 +276,7 @@
         
         
           
-          <li class="menu-item menu-item-about menu-item-active">
+          <li class="menu-item menu-item-about">
     <a href="/about/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
   </li>
@@ -383,99 +384,271 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20190215-CF543C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chen Qiqian">
+      <meta itemprop="description" content="Stay simple. Stay naïve.">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chen's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">关于我</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="500" height="100" src="//music.163.com/outchain/player?type=2&id=429460239&auto=0&height=100"></iframe>
-
-<blockquote>
-<p>Stay simple. Stay naïve.</p>
-</blockquote>
-<p>恭喜你！发现了一个蒟蒻的Blog。</p>
-<p>某高中开始学OI的蒟蒻。现就读北京某高中高二。</p>
-<p>不定期更新。</p>
-<hr>
-<p>NOIP2017省二滚粗</p>
-<p>BJWC2018爆零滚粗</p>
-<p>BJOI2018爆零滚粗</p>
-<p>NOIP2018省一滚粗</p>
-<p><del>BJWC2018？取消了</del></p>
-<p>BJOI2019？</p>
-<p>（NOI2019）？</p>
-<p>(≧▽≦)/</p>
-<p>联系方式：</p>
-<ul>
-<li><a href="mailto:qiqianchen@126.com" target="_blank" rel="noopener">qiqianchen@126.com</a></li>
-<li><a href="mailto:qiqianchen@gmail.com" target="_blank" rel="noopener">qiqianchen@gmail.com</a></li>
-</ul>
-
+          <h2 class="post-title" itemprop="name headline">「CF543C」Remembering Strings-状态压缩dp
+              
+            
+          </h2>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-15 16:30:51 / 修改时间：16:32:15" itemprop="dateCreated datePublished" datetime="2019-02-15T16:30:51+08:00">2019-02-15</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <a href="/20190215-CF543C/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-icon">
+                    <i class="fa fa-comment-o"></i>
+                  </span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/20190215-CF543C/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。<br>矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。</p>
+<p>现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。</p>
+<p>即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \forall i \in [1,n],s_{xj} \neq s_{ij}$ 。</p>
+<p>求把所有字符串修改成满足上述要求的字符串的最小代价是多少？</p>
+<p>数据范围： $1 \le n,m \le 20,1\le a_{ij} \le 10^6$ 。</p>
+<a id="more"></a>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们发现，无论其他字符串是什么情况，我们总能找到在这一位没有用过的字符，这也是后面dp正确性的保障。</p>
+<p>我们状态压缩一波，令 $dp[S]$ 表示在 $S$ 中为 $1$ 的这些都已经好记了的情况下，想要好记还需要多少代价。</p>
+<p>我们注意到，它们的更改应当是不会干扰的（我都改到从没人用过的），所以我们每次都考虑最靠左的不是 $1$ 的位置，把它变成 $1$ 。我们依次考虑每列，我们有两种办法：</p>
+<ol>
+<li>把这个字符串的这个字符改了</li>
+<li>把这个字符串这个位置上所有拥有和它一样的字符的字符串的这个位置都改掉，只剩下一个 a 最大的</li>
+</ol>
+<p>分类讨论转移即可。</p>
+<p>时间复杂度 $O(m 2 ^ n)$ 。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">21</span>,MAXN = (<span class="number">1</span>&lt;&lt;N);</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n,m,dp[MAXN];</span><br><span class="line"><span class="keyword">int</span> a[N][N];<span class="keyword">char</span> s[N][N];</span><br><span class="line"><span class="keyword">int</span> ss[N][N],ms[N][N];<span class="comment">// ss 与 s[i][j] 同列相同的集合列表, ms ... 减去最大的 </span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%s"</span>,s[i]+<span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">      <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i][j]);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      ss[i][j] = (<span class="number">1</span>&lt;&lt;(i<span class="number">-1</span>));</span><br><span class="line">      ms[i][j] = a[i][j];<span class="keyword">int</span> sum = a[i][j];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>;k&lt;=n;k++)<span class="keyword">if</span>(i != k)&#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i][j] == s[k][j])&#123;</span><br><span class="line">          ss[i][j] |= (<span class="number">1</span>&lt;&lt;(k<span class="number">-1</span>));</span><br><span class="line">          ms[i][j] = max(a[k][j],ms[i][j]);</span><br><span class="line">          sum += a[k][j];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      ms[i][j] = sum - ms[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> S)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(dp[S] &lt; inf) <span class="keyword">return</span> dp[S];</span><br><span class="line">  <span class="keyword">if</span>(S == (<span class="number">1</span>&lt;&lt;n)<span class="number">-1</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> ans = inf,low;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>((S &amp; (<span class="number">1</span>&lt;&lt;(i<span class="number">-1</span>))) == <span class="number">0</span>)&#123;</span><br><span class="line">      low = i;<span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">    ans = min(ans,min(</span><br><span class="line">        dfs(S|(<span class="number">1</span>&lt;&lt;(low<span class="number">-1</span>))) + a[low][j],</span><br><span class="line">        dfs(S|ss[low][j])   + ms[low][j]));</span><br><span class="line">  <span class="keyword">return</span> dp[S] = ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  <span class="built_in">memset</span>(dp,<span class="number">0x3f</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,dfs(<span class="number">0</span>));  </span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</div></div>
       
     </div>
+
     
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Chen Qiqian</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.chenqiqian.com/20190215-CF543C/" title="「CF543C」Remembering Strings-状态压缩dp">https://blog.chenqiqian.com/20190215-CF543C/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/题解/" rel="tag"># 题解</a>
+          
+            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+          
+            <a href="/tags/状压dp/" rel="tag"># 状压dp</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20190212-CF321E/" rel="next" title="「CF321E」Ciel and Gondolas-wqs二分+决策单调性">
+                <i class="fa fa-chevron-left"></i> 「CF321E」Ciel and Gondolas-wqs二分+决策单调性
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/23330101-about-blog/" rel="prev" title="【置顶】关于这个博客的一切">
+                【置顶】关于这个博客的一切 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    
-    
-    
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -512,8 +685,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -816,6 +998,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">1.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
