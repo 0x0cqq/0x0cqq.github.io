@@ -61,7 +61,7 @@ Dinic算法是一种用于网络流中最大流的增广路算法，其时间复
 
 以[Luogu P3376](https://www.luogu.org/problemnew/show/P3376)为例
 
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -150,4 +150,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+

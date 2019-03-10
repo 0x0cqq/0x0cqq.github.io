@@ -55,7 +55,7 @@ $$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cctype>
@@ -185,4 +185,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+

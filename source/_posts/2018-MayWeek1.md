@@ -36,7 +36,7 @@ visible:
 
 ## Todolist
 ### 本周刷题
-{% fold %}
+
 + [SDOI2006]保安站岗 
     - 树形dp
 + [POI2007]MEG-Megalopolis 
@@ -59,7 +59,7 @@ visible:
 + [Luogu P3834] 【模板】可持久化线段树 1
 + [POI2014]KUR-Couriers 
     - 可持久化权值线段树（主席树）
-{% endfold %}
+
 
 ### 本周完成
 + 若干dp的题目 ✔

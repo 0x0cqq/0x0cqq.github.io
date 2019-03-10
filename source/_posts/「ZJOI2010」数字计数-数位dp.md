@@ -38,7 +38,7 @@ $$dp[i][10] = \sum_{w = 1}^{10} dp[i-1][w]$$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 using namespace std;
@@ -137,5 +137,5 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 

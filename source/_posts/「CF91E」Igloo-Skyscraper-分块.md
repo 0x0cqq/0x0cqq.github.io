@@ -44,7 +44,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define inf 1e18
@@ -170,4 +170,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

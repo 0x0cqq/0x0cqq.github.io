@@ -38,7 +38,7 @@ BSGS算法介绍： [Miskcoo's Blog](http://blog.miskcoo.com/2015/05/discrete-lo
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <map>
@@ -130,4 +130,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

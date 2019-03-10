@@ -27,7 +27,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -128,4 +128,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

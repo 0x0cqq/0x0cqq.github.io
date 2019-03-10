@@ -52,7 +52,7 @@ $g[l][r][k] = \max_{w = k}^{n} (f[l][r][w])$意为这个区间中最小值大于
 
 ## 代码 
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <map>
@@ -147,4 +147,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

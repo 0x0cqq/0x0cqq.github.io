@@ -27,7 +27,7 @@ $\text{fhq Treap}$  模拟即可。
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -104,5 +104,5 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 

@@ -44,7 +44,7 @@ visible:
 另外还有就是我写的时候还因为少`push_down`了几次被坑了一下。不过最后一次过评测还是蛮开心的。
 
 ## 代码
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <algorithm>
@@ -179,4 +179,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+

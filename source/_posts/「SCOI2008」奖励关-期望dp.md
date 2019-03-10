@@ -42,7 +42,7 @@ $$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <algorithm>
@@ -81,4 +81,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

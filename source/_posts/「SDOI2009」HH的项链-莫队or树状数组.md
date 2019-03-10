@@ -56,7 +56,7 @@ visible:
 
 莫队代码：
 
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -119,13 +119,13 @@ int main(){
 }
 ```
 
-{% endfold %}
+
 
 - - -
 
 离散化+树状数组代码：
 
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -189,4 +189,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+

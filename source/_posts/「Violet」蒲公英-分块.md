@@ -50,7 +50,7 @@ visible:
 ## 代码
 
 做法一：
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cstring>
@@ -189,10 +189,10 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 
 做法二：
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -320,4 +320,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+

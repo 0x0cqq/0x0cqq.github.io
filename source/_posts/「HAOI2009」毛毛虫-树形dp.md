@@ -37,7 +37,7 @@ $d[x] = \max(d[v]) + in[x]$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <vector>
@@ -93,4 +93,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

@@ -40,7 +40,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define inf 0x3f3f3f3f
@@ -99,4 +99,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

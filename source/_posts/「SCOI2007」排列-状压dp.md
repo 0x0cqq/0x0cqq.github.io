@@ -35,7 +35,6 @@ $\text{dfs}$ 即可，时间复杂度为 $O(n2^n \times d)$，事实上跑不满
 
 ## 代码
 
-{% fold%}
 ```cpp
 #include <cstdio>
 #include <cstring>
@@ -90,4 +89,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

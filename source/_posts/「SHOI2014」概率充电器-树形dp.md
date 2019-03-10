@@ -58,7 +58,7 @@ $$
 ## 代码
 
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 using namespace std;
@@ -136,4 +136,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

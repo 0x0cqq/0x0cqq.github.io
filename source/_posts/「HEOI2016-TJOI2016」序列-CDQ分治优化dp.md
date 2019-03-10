@@ -57,7 +57,7 @@ $$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 // luogu-judger-enable-o2
 #include <cstdio>
@@ -195,4 +195,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

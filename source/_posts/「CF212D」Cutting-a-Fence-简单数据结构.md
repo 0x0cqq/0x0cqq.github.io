@@ -47,7 +47,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 
 ```cpp
 #include <bits/stdc++.h>
@@ -131,4 +131,4 @@ signed main(){
 }
 ```
 
-{% endfold %}
+

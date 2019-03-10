@@ -44,7 +44,7 @@ $\text{BSGS}$ 模版题，甚至连分类讨论都没有...
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cmath>
@@ -121,5 +121,5 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+
 

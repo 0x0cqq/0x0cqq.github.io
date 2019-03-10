@@ -45,7 +45,7 @@ $LCT$只能维护点权，所以我们把边换成点，每次$link$或者$cat$�
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <algorithm>
@@ -202,4 +202,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

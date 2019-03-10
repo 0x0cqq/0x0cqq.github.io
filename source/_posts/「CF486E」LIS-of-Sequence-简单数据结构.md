@@ -50,7 +50,7 @@ visible:
 
 中间有一段复制的，所以事实上要写的也没多少呢...
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define ll long long
@@ -145,4 +145,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

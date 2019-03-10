@@ -53,7 +53,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -131,10 +131,10 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 - - -
 
-{% fold %}
+
 ```cpp
 // 非本人创作
 #include<bits/stdc++.h>
@@ -173,4 +173,4 @@ int main(){
     for(i=1;i<N;++i)if(ans[i])printf("%d %lld\n",i,ans[i]);
 }
 ```
-{% endfold %}
+

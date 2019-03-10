@@ -89,7 +89,7 @@ $$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cmath>
@@ -181,6 +181,6 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+
 
 

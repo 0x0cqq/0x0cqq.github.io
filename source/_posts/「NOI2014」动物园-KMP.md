@@ -46,7 +46,7 @@ visible:
 
 + AC代码：
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cstring>
@@ -98,12 +98,12 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 
 
 + 另附50分代码：
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cstring>
@@ -151,4 +151,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

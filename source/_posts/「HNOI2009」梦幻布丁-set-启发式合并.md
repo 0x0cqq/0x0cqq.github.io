@@ -41,7 +41,7 @@ $n$个布丁摆成一行，每个布丁最开始都有一个颜色$c_i$，进行
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <algorithm>
@@ -105,4 +105,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

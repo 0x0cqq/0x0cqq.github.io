@@ -51,7 +51,7 @@ urlname: NOI2004-cashier
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #define MAX 0x3f3f3f3f
@@ -227,4 +227,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+

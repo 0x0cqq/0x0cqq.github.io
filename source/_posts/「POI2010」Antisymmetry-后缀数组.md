@@ -36,7 +36,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 // Code By Chen Qiqian on 2018.08.10
 #include <cstdio>
@@ -141,4 +141,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

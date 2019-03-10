@@ -61,7 +61,7 @@ $t[i]$ 单调递增，那么我们一旦 $k$ 比 $j$ 优，那么 $k$ 就在之�
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define ll long long
@@ -128,4 +128,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

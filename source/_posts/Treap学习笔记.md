@@ -326,7 +326,7 @@ Treap的删除和插入其实很像，只不过递归的位置相反。插入是
 
 题目：[洛谷P3369 普通平衡树](https://www.luogu.org/problemnew/show/P3369)
 
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -477,10 +477,10 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 
 update:数组版代码
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define maxint 2147483647
@@ -609,7 +609,7 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 
 ## 例题
 

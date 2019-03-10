@@ -38,7 +38,7 @@ $$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 // Code By Chen Qiqian on 2018.10.13
 #include <cstdio>
@@ -193,4 +193,4 @@ signed main(){
   return 0;
 }
 ```
-{% endfold %}
+

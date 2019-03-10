@@ -36,7 +36,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cstring>
@@ -130,7 +130,7 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+
 
 
 

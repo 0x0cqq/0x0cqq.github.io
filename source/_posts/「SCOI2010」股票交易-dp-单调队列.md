@@ -45,7 +45,7 @@ $$
 ## 代码
 
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -108,6 +108,6 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 
 在写下这个题解的时候，这的确是第100篇博文了。祝贺一下自己。

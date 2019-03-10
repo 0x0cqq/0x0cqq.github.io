@@ -55,7 +55,7 @@ $$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define ll long long
@@ -172,4 +172,4 @@ signed main(){
   return 0;
 }
 ```
-{% endfold %}
+

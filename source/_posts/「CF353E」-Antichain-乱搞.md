@@ -43,7 +43,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define ui unsigned 
@@ -91,4 +91,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

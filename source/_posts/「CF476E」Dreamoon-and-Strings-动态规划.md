@@ -38,7 +38,7 @@ $p[i][j]$ 表示如上条件下的代价是多少。
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 using namespace std;
@@ -119,4 +119,4 @@ int main(){
   return 0;
 }
 ```
-{% endfold %}
+

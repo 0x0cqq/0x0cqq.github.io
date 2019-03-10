@@ -99,7 +99,7 @@ node merge(node u,node v):
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cctype>
@@ -179,7 +179,7 @@ signed main(){
 }
 ```
 
-{% endfold %}
+
 
 
 

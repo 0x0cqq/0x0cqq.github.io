@@ -37,7 +37,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <algorithm>
@@ -94,4 +94,4 @@ int main(){
 }
 
 ```
-{% endfold %}
+

@@ -236,7 +236,7 @@ void reverse(int lb,int rb){
 
 ## 完整代码
 
-{% fold %}
+
 
 ```cpp
 #include <bits/stdc++.h>
@@ -448,7 +448,7 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 
 这种$Treap$还有一个别名，叫做$FHQ Treap$，好像是因为这个的发明者是我校神犇范浩强吧（并不清楚。
 

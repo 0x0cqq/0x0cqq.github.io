@@ -64,7 +64,7 @@ visible:
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstring>
 #include <cstdio>
@@ -169,4 +169,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

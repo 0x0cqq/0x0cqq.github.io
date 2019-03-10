@@ -48,7 +48,7 @@ $JSOI$交给队员$ZYX$一个任务，编制一个称之为“文本生成器”
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <cstring>
@@ -140,4 +140,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

@@ -87,7 +87,7 @@ $f$ 数组也可以用滚动数组优化。
 
 ## 代码
 
- {% fold %}
+ 
 
 ```
 #include <cstdio>
@@ -171,4 +171,4 @@ int main(){
 
 
 
-{% endfold %}
+

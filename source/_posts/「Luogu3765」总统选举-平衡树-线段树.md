@@ -52,7 +52,7 @@ $$O((n+\sum_{i = 1}^{n} {k_i}) \log {n})$$
 
 ## 代码
 
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -240,4 +240,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+

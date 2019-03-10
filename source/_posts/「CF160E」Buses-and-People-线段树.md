@@ -34,7 +34,7 @@ Bertown 有很多居民。今天第 $i$ 个人要从 $l_i$ 位置出发到 $r_i$
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <bits/stdc++.h>
 #define inf 0x3f3f3f3f
@@ -155,4 +155,4 @@ int main(){
 }
 
 ```
-{% endfold %}
+

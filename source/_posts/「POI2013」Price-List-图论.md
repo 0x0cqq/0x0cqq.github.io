@@ -48,7 +48,7 @@ visible:
 
 具体证明如下：
 
-{% fold %}
+
 首先，时间复杂度约等于遍历的边的数量，所以我们只需要考虑那些遍历了却没被删掉的边的数量。
 
 对于每一个节点$x$，由他开始只会进行一次遍历再二次遍历中，没被删掉的边只有一种，就是在二次遍历中遍历到了一个仍然与$x$距离为$1$的点，也就是一个三元环。
@@ -58,7 +58,7 @@ $$
 \sum_{v \in V} \min(deg(v)^2,m) \leq \sum_{v \in V} \sqrt{deg(v)^2 \cdot m} = \sqrt {m} \sum_{v \in V} deg(v) = O(m \sqrt{m})
 $$
 - - -
-{% endfold %}
+
 
 参考：
 [CSDN](https://blog.csdn.net/commonc/article/details/51643519)
@@ -69,7 +69,7 @@ orz出题人...
 
 ## 代码
 
-{% fold %}
+
 ```cpp
 #include <cstdio>
 #include <queue>
@@ -186,4 +186,4 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+

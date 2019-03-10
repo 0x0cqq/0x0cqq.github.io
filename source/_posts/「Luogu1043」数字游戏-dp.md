@@ -31,7 +31,7 @@ update: 这是我写的第一篇题解啦！
 
 ## 代码
 
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -84,5 +84,5 @@ int main(){
     return 0;
 }
 ```
-{% endfold %}
+
 

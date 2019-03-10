@@ -40,7 +40,7 @@ visible:
 $LCA$ 我用了树链剖分来求，顺带处理深度。
 
 ## 代码
-{% fold %}
+
 
 ```cpp
 #include <cstdio>
@@ -174,4 +174,4 @@ int main(){
 }
 ```
 
-{% endfold %}
+
