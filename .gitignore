@@ -5,3 +5,6 @@ node_modules/
 public/
 .deploy*/
 .DS_Store
+.DS_Store
+*/.DS_Store
+themes/.DS_Store
