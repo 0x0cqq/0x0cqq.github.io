@@ -1,158 +1,13 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html  lang="zh">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
+    <meta charset="utf-8">
+<title>「SDOI2008」递归数列-矩阵快速幂 - Chen&#39;s Blog</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-  <meta name="google-site-verification" content="google10e62edab32bec8a.html" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Verdana:300,300italic,400,400italic,700,700italic|Consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=6.3.0">
-
-
-  <link rel="mask-icon" href="/safari-pinned-tab.svg?v=6.3.0" color="#222">
-
-
-  <link rel="manifest" href="/manifest.json">
-
-
-  <meta name="msapplication-config" content="/browserconfig.xml" />
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '6.3.0',
-    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: 'YB0BTS2M0Z',
-      apiKey: 'ed06c5c8c68942b095dcfcb22cda7f56',
-      indexName: 'blog',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"搜索...","hits_empty":"没有找到关于: ${query} 的结果","hits_stats":"在 ${time} ms 内 搜索到 ${hits} 条结果"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="一个由自然数组成的数列按下式定义： 对于 $i \leq k$ ：$a_i = b_i$ 对于 $i &amp;gt; k$  : $a_i = c_1a_{i-1} + c_2a_{i-2} + … + c_ka_{i-k}$ 其中 $b_j$ 和 $c_j$ （ $1 \leq j \leq k$）是给定的自然数。写一个程序，给定自然数 $m \leq n$, 计算 $a_m + a_{m+1} +">
+    <meta name="description" content="一个由自然数组成的数列按下式定义： 对于 $i \leq k$ ：$a_i = b_i$ 对于 $i &amp;gt; k$  : $a_i = c_1a_{i-1} + c_2a_{i-2} + … + c_ka_{i-k}$ 其中 $b_j$ 和 $c_j$ （ $1 \leq j \leq k$）是给定的自然数。写一个程序，给定自然数 $m \leq n$, 计算 $a_m + a_{m+1} +">
 <meta name="keywords" content="题解,数学,矩阵快速幂">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「SDOI2008」递归数列-矩阵快速幂">
@@ -160,7 +15,7 @@
 <meta property="og:site_name" content="Chen&#39;s Blog">
 <meta property="og:description" content="一个由自然数组成的数列按下式定义： 对于 $i \leq k$ ：$a_i = b_i$ 对于 $i &amp;gt; k$  : $a_i = c_1a_{i-1} + c_2a_{i-2} + … + c_ka_{i-k}$ 其中 $b_j$ 和 $c_j$ （ $1 \leq j \leq k$）是给定的自然数。写一个程序，给定自然数 $m \leq n$, 计算 $a_m + a_{m+1} +">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-25T02:14:14.353Z">
+<meta property="og:updated_time" content="2019-03-09T13:42:45.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「SDOI2008」递归数列-矩阵快速幂">
 <meta name="twitter:description" content="一个由自然数组成的数列按下式定义： 对于 $i \leq k$ ：$a_i = b_i$ 对于 $i &amp;gt; k$  : $a_i = c_1a_{i-1} + c_2a_{i-2} + … + c_ka_{i-k}$ 其中 $b_j$ 和 $c_j$ （ $1 \leq j \leq k$）是给定的自然数。写一个程序，给定自然数 $m \leq n$, 计算 $a_m + a_{m+1} +">
@@ -170,397 +25,164 @@
 
 
 
-  <link rel="canonical" href="https://blog.chenqiqian.com/20181101-SDOI2008-sequence/"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.7.2/css/bulma.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,600|Source+Code+Pro">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css">
 
 
+    
+    
+    
+    <style>body>.footer,body>.navbar,body>.section{opacity:0}</style>
+    
 
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
+    
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css">
+    
+
+    
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.css">
+
+
+    
+    
+    
+    
+
+<link rel="stylesheet" href="/css/back-to-top.css">
+
+
+    
+    
+<script async src="https://www.googletagmanager.com/gtag/js?id=google10e62edab32bec8a.html"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'google10e62edab32bec8a.html');
 </script>
 
-  <title>「SDOI2008」递归数列-矩阵快速幂 | Chen's Blog</title>
-  
+
+    
+    
+    
+    
+
+    
+    
+<link rel="stylesheet" href="/css/progressbar.css">
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
+
+    
+    
+    
+
+    
+    
+    
+        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+
+    
 
 
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
-
+<link rel="stylesheet" href="/css/style.css">
 </head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Chen's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-    
-      
-        <h1 class="site-subtitle" itemprop="description">记录时光与梦想</h1>
-      
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-board">
-    <a href="/board/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-clipboard"></i> <br />留言板</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-links">
-    <a href="/links/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-link"></i> <br />友链</a>
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
+<body class="is-3-column">
+    <nav class="navbar navbar-main">
+    <div class="container">
+        <div class="navbar-brand is-flex-center">
+            <a class="navbar-item navbar-logo" href="https://www.chenqiqian.com">
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
+                <img src="/images/avatar_1.png" alt="「SDOI2008」递归数列-矩阵快速幂" height="28">
             
-
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.chenqiqian.com/20181101-SDOI2008-sequence/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Chen Qiqian">
-      <meta itemprop="description" content="Stay simple. Stay naïve.">
-      <meta itemprop="image" content="/images/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Chen's Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">「SDOI2008」递归数列-矩阵快速幂
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-01 23:50:47" itemprop="dateCreated datePublished" datetime="2018-11-01T23:50:47+08:00">2018-11-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-11-25 10:14:14" itemprop="dateModified" datetime="2018-11-25T10:14:14+08:00">2018-11-25</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/OI/" itemprop="url" rel="index"><span itemprop="name">OI</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <a href="/20181101-SDOI2008-sequence/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-icon">
-                    <i class="fa fa-comment-o"></i>
-                  </span>
-                  <span class="post-comments-count gitment-comments-count" data-xid="/20181101-SDOI2008-sequence/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon"
-            >
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">3.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">6 分钟</span>
-              
-            </div>
-          
-
-          
-
+            </a>
         </div>
-      </header>
+        <div class="navbar-menu">
+            
+            <div class="navbar-start">
+                
+                <a class="navbar-item"
+                href="/">主页</a>
+                
+                <a class="navbar-item"
+                href="/archives">归档</a>
+                
+                <a class="navbar-item"
+                href="/categories">分类</a>
+                
+                <a class="navbar-item"
+                href="/tags">标签</a>
+                
+                <a class="navbar-item"
+                href="/links">友链</a>
+                
+                <a class="navbar-item"
+                href="/board">留言板</a>
+                
+                <a class="navbar-item"
+                href="/about">关于</a>
+                
+            </div>
+            
+            <div class="navbar-end">
+                
+                
+                
+                <a class="navbar-item search" title="搜索" href="javascript:;">
+                    <i class="fas fa-search"></i>
+                </a>
+                
+            </div>
+        </div>
+    </div>
+</nav>
     
-
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>一个由自然数组成的数列按下式定义：</p>
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2018-11-01T15:50:47.000Z">2018-11-01</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    3 分钟 读完 (大约 470 个字)
+                </span>
+                
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                「SDOI2008」递归数列-矩阵快速幂
+            
+        </h1>
+        <div class="content">
+            <p>一个由自然数组成的数列按下式定义：</p>
 <p>对于 $i \leq k$ ：$a_i = b_i$</p>
 <p>对于 $i &gt; k$  : $a_i = c_1a_{i-1} + c_2a_{i-2} + … + c_ka_{i-k}$</p>
 <p>其中 $b_j$ 和 $c_j$ （ $1 \leq j \leq k$）是给定的自然数。写一个程序，给定自然数 $m \leq n$, 计算 $a_m + a_{m+1} + a_{m+2} + … + a_n$, 并输出它除以给定自然数 $p$ 的余数的值。</p>
@@ -579,908 +201,2418 @@
 <p>我们有</p>
 <p>$$<br>Z^{n-k} \times C = M_{n}<br>$$</p>
 <p>矩阵快速幂即可。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><div><div class="fold_hider"><div class="close hider_title">点击切换显示状态</div></div><div class="fold">
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">ll N,M,K,P,S;</span><br><span class="line">ll b[MAXN],c[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Matrix</span>&#123;</span></span><br><span class="line">  ll num[MAXN][MAXN];</span><br><span class="line">  Matrix(<span class="keyword">int</span> op = <span class="number">0</span>)&#123;</span><br><span class="line">    <span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span>(num));</span><br><span class="line">    <span class="keyword">if</span>(op)&#123;<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;MAXN;i++) num[i][i] = <span class="number">1</span>;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ll* <span class="keyword">operator</span> [] (<span class="keyword">const</span> <span class="keyword">int</span> n)&#123;</span><br><span class="line">    <span class="keyword">return</span> num[n];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">Matrix <span class="title">mul</span><span class="params">(Matrix &amp;_x,Matrix &amp;_y)</span></span>&#123;</span><br><span class="line">  Matrix ans;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=S;i++)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>;j&lt;=S;j++)&#123;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>;k&lt;=S;k++)&#123;</span><br><span class="line">        ans[i][j] += _x[i][k] * _y[k][j];</span><br><span class="line">      &#125;</span><br><span class="line">      ans[i][j] %= P;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">Matrix <span class="title">pow</span><span class="params">(Matrix x,ll k)</span></span>&#123;</span><br><span class="line">  <span class="function">Matrix <span class="title">ans</span><span class="params">(<span class="number">1</span>)</span></span>;</span><br><span class="line">  <span class="keyword">for</span>(ll i = k;i;i&gt;&gt;=<span class="number">1</span>,x = mul(x,x))&#123;</span><br><span class="line">    <span class="keyword">if</span>(i &amp; <span class="number">1</span>) ans = mul(ans,x);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Matrix Z,C;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;K);</span><br><span class="line">  S = K+<span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=K;i++)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;b[i]);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=K;i++)</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;c[i]);</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%lld %lld %lld"</span>,&amp;M,&amp;N,&amp;P);</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=K;i++)</span><br><span class="line">    b[i] %= P,c[i] %= P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(ll x)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span>(x &lt;= K)&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=x;i++)</span><br><span class="line">      ans += b[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span>&#123;</span><br><span class="line">    Matrix a = <span class="built_in">pow</span>(Z,x-K);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=S;i++)</span><br><span class="line">      ans += C[i][<span class="number">1</span>] * a[<span class="number">1</span>][i]; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> ans % P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">()</span></span>&#123;</span><br><span class="line">  ll sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    C[S-i+<span class="number">1</span>][<span class="number">1</span>] = b[i];</span><br><span class="line">    sum += b[i];</span><br><span class="line">  &#125;</span><br><span class="line">  C[<span class="number">1</span>][<span class="number">1</span>] = sum % P;</span><br><span class="line">  Z[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    Z[<span class="number">1</span>][i+<span class="number">1</span>] = c[i];</span><br><span class="line">    Z[<span class="number">2</span>][i+<span class="number">1</span>] = c[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    Z[i+<span class="number">1</span>][i] = <span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  build();</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,((query(N)-query(M<span class="number">-1</span>))%P+P)%P);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</div></div>
-
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>Chen Qiqian</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://blog.chenqiqian.com/20181101-SDOI2008-sequence/" title="「SDOI2008」递归数列-矩阵快速幂">https://blog.chenqiqian.com/20181101-SDOI2008-sequence/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/题解/" rel="tag"># 题解</a>
-          
-            <a href="/tags/数学/" rel="tag"># 数学</a>
-          
-            <a href="/tags/矩阵快速幂/" rel="tag"># 矩阵快速幂</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/20181026-HEOI2016-TJOI2016-tree/" rel="next" title="「HEOI2016/TJOI2016」树-线段树">
-                <i class="fa fa-chevron-left"></i> 「HEOI2016/TJOI2016」树-线段树
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20181103-HNOI2007-diamond/" rel="prev" title="「HNOI2007」梦幻岛宝珠-背包dp">
-                「HNOI2007」梦幻岛宝珠-背包dp <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
-    </div>
-
-  
-
-
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">20</span>;</span><br><span class="line"></span><br><span class="line">ll N,M,K,P,S;</span><br><span class="line">ll b[MAXN],c[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Matrix</span>&#123;</span></span><br><span class="line">  ll num[MAXN][MAXN];</span><br><span class="line">  Matrix(<span class="hljs-keyword">int</span> op = <span class="hljs-number">0</span>)&#123;</span><br><span class="line">    <span class="hljs-built_in">memset</span>(num,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(num));</span><br><span class="line">    <span class="hljs-keyword">if</span>(op)&#123;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;MAXN;i++) num[i][i] = <span class="hljs-number">1</span>;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ll* <span class="hljs-keyword">operator</span> [] (<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> n)&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> num[n];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">Matrix <span class="hljs-title">mul</span><span class="hljs-params">(Matrix &amp;_x,Matrix &amp;_y)</span></span>&#123;</span><br><span class="line">  Matrix ans;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=S;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=S;j++)&#123;</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>;k&lt;=S;k++)&#123;</span><br><span class="line">        ans[i][j] += _x[i][k] * _y[k][j];</span><br><span class="line">      &#125;</span><br><span class="line">      ans[i][j] %= P;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">Matrix <span class="hljs-title">pow</span><span class="hljs-params">(Matrix x,ll k)</span></span>&#123;</span><br><span class="line">  <span class="hljs-function">Matrix <span class="hljs-title">ans</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(ll i = k;i;i&gt;&gt;=<span class="hljs-number">1</span>,x = mul(x,x))&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i &amp; <span class="hljs-number">1</span>) ans = mul(ans,x);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Matrix Z,C;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld"</span>,&amp;K);</span><br><span class="line">  S = K+<span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld"</span>,&amp;b[i]);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld"</span>,&amp;c[i]);</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld %lld %lld"</span>,&amp;M,&amp;N,&amp;P);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)</span><br><span class="line">    b[i] %= P,c[i] %= P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(ll x)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">if</span>(x &lt;= K)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=x;i++)</span><br><span class="line">      ans += b[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">    Matrix a = <span class="hljs-built_in">pow</span>(Z,x-K);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=S;i++)</span><br><span class="line">      ans += C[i][<span class="hljs-number">1</span>] * a[<span class="hljs-number">1</span>][i]; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans % P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  ll sum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    C[S-i+<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = b[i];</span><br><span class="line">    sum += b[i];</span><br><span class="line">  &#125;</span><br><span class="line">  C[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = sum % P;</span><br><span class="line">  Z[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    Z[<span class="hljs-number">1</span>][i+<span class="hljs-number">1</span>] = c[i];</span><br><span class="line">    Z[<span class="hljs-number">2</span>][i+<span class="hljs-number">1</span>] = c[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    Z[i+<span class="hljs-number">1</span>][i] = <span class="hljs-number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  build();</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,((query(N)-query(M<span class="hljs-number">-1</span>))%P+P)%P);</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/avatar.jpg"
-                alt="Chen Qiqian" />
-            
-              <p class="site-author-name" itemprop="name">Chen Qiqian</p>
-              <p class="site-description motion-element" itemprop="description">Stay simple. Stay naïve.</p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">211</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/数学/">数学</a>, <a class="has-link-grey -link" href="/tags/矩阵快速幂/">矩阵快速幂</a>, <a class="has-link-grey -link" href="/tags/题解/">题解</a>
                 </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">5</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">95</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/ChenQiqian" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:qiqianchen@126.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.instagram.com/qiqianchen/" target="_blank" title="Instagram" rel="external nofollow"><i class="fa fa-fw fa-instagram"></i>Instagram</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.luogu.org/space/show?uid=57601" target="_blank" title="Luogu" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>Luogu</a>
-                  
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://codeforces.com/profile/Chenqiqian" target="_blank" title="Codeforces" rel="external nofollow"><i class="fa fa-fw fa-globe"></i>Codeforces</a>
-                  
-                </span>
-              
             </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-  <hr style="margin:15px">
-  <div>
-    <h4 style="margin: 5px"> 一言（ヒトコト）</h4>
-    <p id="hitokoto_quote" style="line-height:150%;padding-left: auto;padding-right: auto;margin: 5px">:D 获取中...</p>
-    <p id="hitokoto_from" style="line-height:100%;margin: 10px;padding-right: auto" align="right">:D 获取中...</p>
-  </div>
-
         </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#链接"><span class="nav-number">1.</span> <span class="nav-text">链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题解"><span class="nav-number">2.</span> <span class="nav-text">题解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
-        </div>
-      
-
+        
+        
+        
     </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Chen Qiqian</span>
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点总字数：</span>
-    
-    <span title="站点总字数">647k</span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">19:36</span>
-  
-</div>
-
-
-  
-
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Gemini</a> v6.3.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="hosted-info">搭载于 <a class="theme-link" target="_blank" rel="external nofollow" href="https://pages.github.com"> Github Pages </a></div>
-
-
-
-  <script>
-    var seconds = 1000;var minutes = seconds * 60;
-    var hours = minutes * 60;var days = hours * 24;var years = days * 365;
-    var birthDay = Date.UTC(2017,12,01,00,00,00);
-    setInterval(function() {
-      var today = new Date();
-      var todayYear = today.getFullYear();
-      var todayMonth = today.getMonth()+1;
-      var todayDate = today.getDate();
-      var todayHour = today.getHours();
-      var todayMinute = today.getMinutes();
-      var todaySecond = today.getSeconds();
-      var now = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-      var diff = now - birthDay;
-      var diffYears = Math.floor(diff/years);
-      var diffDays = Math.floor((diff/days)-diffYears*365);
-      var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-      var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-      var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-        document.getElementById('showDays').innerHTML="本站已存活 "+diffYears+" 年 "+diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
-    }, 1000);
-  </script><div class="showDays"><span id="showDays"></span></div>
-
-
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="总访客量">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="site-pv" title="总访问量">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
 </div>
 
 
 
 
 
-
-
-
-
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
         
-      </div>
-    </footer>
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/20181103-HNOI2007-diamond/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">「HNOI2007」梦幻岛宝珠-背包dp</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/20181026-HEOI2016-TJOI2016-tree/">
+                <span class="level-item">「HEOI2016/TJOI2016」树-线段树</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
-    
 
-    
 
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		id: '20181101-SDOI2008-sequence/',
+		owner: 'ChenQiqian',
+		repo: 'comments',
+		oauth: {
+			client_id: 'd406e366deef7658dac9',
+			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
+		},
+	})
+	gitment.render('comment-container')
 </script>
 
+    </div>
+</div>
+</div>
+                
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-<!-- LOCAL: You can save these files to your site and update links -->
+<div class="column is-4-tablet is-4-desktop is-3-widescreen  has-order-1 column-left ">
     
         
-        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
-        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
-    
-<!-- END LOCAL -->
-
-    
-
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitmint({
-            id: window.location.pathname,
-            owner: 'ChenQiqian',
-            repo: 'comments',
+<div class="card widget">
+    <div class="card-content">
+        <nav class="level">
+            <div class="level-item has-text-centered">
+                <div>
+                    
+                        <figure class="image container is-128x128 has-mb-6">
+                            <img class="is-rounded" src="/images/avatar.jpg" alt="Chen Qiqian">
+                        </figure>
+                    
+                    
+                    <p class="is-size-4 is-block">
+                        Chen Qiqian
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-block">
+                        记录时光与梦想
+                    </p>
+                    
+                    
+                    <p class="is-size-6 is-flex is-flex-center has-text-grey">
+                        <i class="fas fa-map-marker-alt has-mr-7"></i>
+                        <span>Beijing,China</span>
+                    </p>
+                    
+                </div>
+            </div>
+        </nav>
+        <nav class="level is-mobile">
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        文章
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        212
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        分类
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        5
+                    </p>
+                </div>
+            </div>
+            <div class="level-item has-text-centered is-marginless">
+                <div>
+                    <p class="heading">
+                        标签
+                    </p>
+                    <p class="title has-text-weight-normal">
+                        96
+                    </p>
+                </div>
+            </div>
+        </nav>
+        <div class="level">
+            <a class="level-item button is-link is-rounded" href="http://github.com/ChenQiqian" target="_blank">
+                关注我</a>
+        </div>
+        
+        
+        <div class="level is-mobile">
             
-            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Github" href="http://github.com/Chenqiqian">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
             
-            oauth: {
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+                
+                <i class="fab fa-instagram"></i>
+                
+            </a>
             
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+                
+                <i class="fab fa-terminal"></i>
+                
+            </a>
             
-                client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
+            <a class="level-item button is-white is-marginless" target="_blank"
+                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+                
+                <i class="fab fa-terminal"></i>
+                
+            </a>
             
-                client_id: 'd406e366deef7658dac9'
-            }});
-        gitment.render('gitment-container');
-      }
+        </div>
+        
+    </div>
+</div>
+    
+        
+    
+        
 
-      
-      renderGitment();
-      
-      </script>
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            链接
+        </h3>
+        <ul class="menu-list">
+        
+            <li>
+                <a class="level is-mobile" href="https://www.luogu.org" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Luogu</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">www.luogu.org</span>
+                    </span>
+                </a>
+            </li>
+        
+            <li>
+                <a class="level is-mobile" href="https://codeforces.com/" target="_blank">
+                    <span class="level-left">
+                        <span class="level-item">Codeforces</span>
+                    </span>
+                    <span class="level-right">
+                        <span class="level-item tag">codeforces.com</span>
+                    </span>
+                </a>
+            </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+
+
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                分类
+            </h3>
+            <ul class="menu-list">
+            <li>
+        <a class="level is-marginless" href="/categories/OI/">
+            <span class="level-start">
+                <span class="level-item">OI</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">169</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/总结/">
+            <span class="level-start">
+                <span class="level-item">总结</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">23</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/技术/">
+            <span class="level-start">
+                <span class="level-item">技术</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/日常/">
+            <span class="level-start">
+                <span class="level-item">日常</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">1</span>
+            </span>
+        </a></li><li>
+        <a class="level is-marginless" href="/categories/随笔/">
+            <span class="level-start">
+                <span class="level-item">随笔</span>
+            </span>
+            <span class="level-end">
+                <span class="level-item tag">10</span>
+            </span>
+        </a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            标签云
+        </h3>
+        <a href="/tags/0-1分数规划/" style="font-size: 10px;">0/1分数规划</a> <a href="/tags/AC自动机/" style="font-size: 12.5px;">AC自动机</a> <a href="/tags/BSGS算法/" style="font-size: 11.25px;">BSGS算法</a> <a href="/tags/CDQ分治/" style="font-size: 12.5px;">CDQ分治</a> <a href="/tags/Dinic/" style="font-size: 10.63px;">Dinic</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/KMP/" style="font-size: 11.25px;">KMP</a> <a href="/tags/Link-Cut-Tree-LCT/" style="font-size: 11.25px;">Link Cut Tree(LCT)</a> <a href="/tags/Lucas定理/" style="font-size: 10px;">Lucas定理</a> <a href="/tags/Splay/" style="font-size: 12.5px;">Splay</a> <a href="/tags/Treap/" style="font-size: 13.13px;">Treap</a> <a href="/tags/set/" style="font-size: 10.63px;">set</a> <a href="/tags/wqs二分/" style="font-size: 10px;">wqs二分</a> <a href="/tags/中国剩余定理/" style="font-size: 10px;">中国剩余定理</a> <a href="/tags/主席树/" style="font-size: 11.88px;">主席树</a> <a href="/tags/乱搞/" style="font-size: 10.63px;">乱搞</a> <a href="/tags/二分图匹配/" style="font-size: 10.63px;">二分图匹配</a> <a href="/tags/二分查找/" style="font-size: 10px;">二分查找</a> <a href="/tags/二分答案/" style="font-size: 10px;">二分答案</a> <a href="/tags/作文/" style="font-size: 10px;">作文</a> <a href="/tags/冬令营/" style="font-size: 10px;">冬令营</a> <a href="/tags/决策单调性/" style="font-size: 10.63px;">决策单调性</a> <a href="/tags/分块/" style="font-size: 12.5px;">分块</a> <a href="/tags/分层图/" style="font-size: 10px;">分层图</a> <a href="/tags/动态树/" style="font-size: 11.88px;">动态树</a> <a href="/tags/动态规划/" style="font-size: 18.75px;">动态规划</a> <a href="/tags/区间dp/" style="font-size: 10px;">区间dp</a> <a href="/tags/单调栈/" style="font-size: 10px;">单调栈</a> <a href="/tags/单调队列/" style="font-size: 11.88px;">单调队列</a> <a href="/tags/可持久化主席树/" style="font-size: 10px;">可持久化主席树</a> <a href="/tags/可持久化线段树/" style="font-size: 11.88px;">可持久化线段树</a> <a href="/tags/后缀数组/" style="font-size: 14.38px;">后缀数组</a> <a href="/tags/后缀自动机/" style="font-size: 10px;">后缀自动机</a> <a href="/tags/启发式合并/" style="font-size: 10.63px;">启发式合并</a> <a href="/tags/回文自动机/" style="font-size: 10px;">回文自动机</a> <a href="/tags/图解/" style="font-size: 10px;">图解</a> <a href="/tags/图论/" style="font-size: 16.88px;">图论</a> <a href="/tags/基环树/" style="font-size: 10px;">基环树</a> <a href="/tags/字符串/" style="font-size: 17.5px;">字符串</a> <a href="/tags/容斥原理/" style="font-size: 10px;">容斥原理</a> <a href="/tags/对偶图/" style="font-size: 10px;">对偶图</a> <a href="/tags/左偏树/" style="font-size: 11.25px;">左偏树</a> <a href="/tags/差分/" style="font-size: 10.63px;">差分</a> <a href="/tags/平衡树/" style="font-size: 15px;">平衡树</a> <a href="/tags/并查集/" style="font-size: 11.88px;">并查集</a> <a href="/tags/强连通分量/" style="font-size: 10px;">强连通分量</a> <a href="/tags/快速傅立叶变换/" style="font-size: 10px;">快速傅立叶变换</a> <a href="/tags/快速幂/" style="font-size: 10px;">快速幂</a> <a href="/tags/扩展欧几里得/" style="font-size: 10px;">扩展欧几里得</a> <a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/摘录/" style="font-size: 10px;">摘录</a> <a href="/tags/数位dp/" style="font-size: 10.63px;">数位dp</a> <a href="/tags/数学/" style="font-size: 15.63px;">数学</a> <a href="/tags/数据结构/" style="font-size: 19.38px;">数据结构</a> <a href="/tags/数论/" style="font-size: 13.75px;">数论</a> <a href="/tags/数论函数/" style="font-size: 10px;">数论函数</a> <a href="/tags/整体二分/" style="font-size: 10.63px;">整体二分</a> <a href="/tags/斜率优化/" style="font-size: 11.88px;">斜率优化</a> <a href="/tags/最大公约数/" style="font-size: 10px;">最大公约数</a> <a href="/tags/最大权闭合子图/" style="font-size: 10px;">最大权闭合子图</a> <a href="/tags/最短路/" style="font-size: 11.25px;">最短路</a> <a href="/tags/最近公共祖先/" style="font-size: 10.63px;">最近公共祖先</a> <a href="/tags/期望/" style="font-size: 13.13px;">期望</a> <a href="/tags/期望dp/" style="font-size: 10.63px;">期望dp</a> <a href="/tags/杜教筛/" style="font-size: 10px;">杜教筛</a> <a href="/tags/树套树/" style="font-size: 10.63px;">树套树</a> <a href="/tags/树形dp/" style="font-size: 13.75px;">树形dp</a> <a href="/tags/树形结构/" style="font-size: 16.25px;">树形结构</a> <a href="/tags/树状数组/" style="font-size: 11.25px;">树状数组</a> <a href="/tags/树的直径/" style="font-size: 11.88px;">树的直径</a> <a href="/tags/树链剖分/" style="font-size: 12.5px;">树链剖分</a> <a href="/tags/模板/" style="font-size: 13.13px;">模板</a> <a href="/tags/欧拉函数/" style="font-size: 10px;">欧拉函数</a> <a href="/tags/歌曲/" style="font-size: 10px;">歌曲</a> <a href="/tags/游记/" style="font-size: 10.63px;">游记</a> <a href="/tags/点分治/" style="font-size: 11.25px;">点分治</a> <a href="/tags/状压dp/" style="font-size: 11.88px;">状压dp</a> <a href="/tags/生成树/" style="font-size: 10px;">生成树</a> <a href="/tags/省选/" style="font-size: 10px;">省选</a> <a href="/tags/瞎搞/" style="font-size: 10px;">瞎搞</a> <a href="/tags/矩阵快速幂/" style="font-size: 12.5px;">矩阵快速幂</a> <a href="/tags/笔记/" style="font-size: 14.38px;">笔记</a> <a href="/tags/线性基/" style="font-size: 10px;">线性基</a> <a href="/tags/线段树/" style="font-size: 18.13px;">线段树</a> <a href="/tags/线段树合并/" style="font-size: 10.63px;">线段树合并</a> <a href="/tags/网络流/" style="font-size: 11.88px;">网络流</a> <a href="/tags/背包/" style="font-size: 10.63px;">背包</a> <a href="/tags/莫比乌斯反演/" style="font-size: 10px;">莫比乌斯反演</a> <a href="/tags/莫队/" style="font-size: 13.13px;">莫队</a> <a href="/tags/虚树/" style="font-size: 10.63px;">虚树</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/费用流/" style="font-size: 11.88px;">费用流</a> <a href="/tags/递推/" style="font-size: 10px;">递推</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a> <a href="/tags/高斯消元/" style="font-size: 11.25px;">高斯消元</a>
+    </div>
+</div>
+
+    
+    
+        <div class="column-right-shadow is-hidden-widescreen ">
+        
+            
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2332-12-31T16:00:00.000Z">2333-01-01</time></div>
+                    <a href="/23330101-about-blog/" class="has-link-black-ter is-size-6">【置顶】关于这个博客的一切</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-10T04:25:53.000Z">2019-03-10</time></div>
+                    <a href="/20190310-longest-double-palindrome/" class="has-link-black-ter is-size-6">「国家集训队」最长双回文子串-回文自动机</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-03T15:07:28.000Z">2019-03-03</time></div>
+                    <a href="/20190303-CF875E/" class="has-link-black-ter is-size-6">「CF875E」Delivery Club-二分+贪心</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-02T04:20:52.000Z">2019-03-02</time></div>
+                    <a href="/20190302-CF353E/" class="has-link-black-ter is-size-6">「CF353E」 Antichain-乱搞</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-02T04:19:10.000Z">2019-03-02</time></div>
+                    <a href="/20190302-CF581F/" class="has-link-black-ter is-size-6">「CF581F」 Zublicanes and Mumocrates - 树形dp</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2333/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2333</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">9</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">27</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">16</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">22</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+        
+            <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/0-1分数规划/">
+                        <span class="tag">0/1分数规划</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AC自动机/">
+                        <span class="tag">AC自动机</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BSGS算法/">
+                        <span class="tag">BSGS算法</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CDQ分治/">
+                        <span class="tag">CDQ分治</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Dinic/">
+                        <span class="tag">Dinic</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/KMP/">
+                        <span class="tag">KMP</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Link-Cut-Tree-LCT/">
+                        <span class="tag">Link Cut Tree(LCT)</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Lucas定理/">
+                        <span class="tag">Lucas定理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Splay/">
+                        <span class="tag">Splay</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Treap/">
+                        <span class="tag">Treap</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/set/">
+                        <span class="tag">set</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wqs二分/">
+                        <span class="tag">wqs二分</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/中国剩余定理/">
+                        <span class="tag">中国剩余定理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/主席树/">
+                        <span class="tag">主席树</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/乱搞/">
+                        <span class="tag">乱搞</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/二分图匹配/">
+                        <span class="tag">二分图匹配</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/二分查找/">
+                        <span class="tag">二分查找</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/二分答案/">
+                        <span class="tag">二分答案</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/作文/">
+                        <span class="tag">作文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/冬令营/">
+                        <span class="tag">冬令营</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/决策单调性/">
+                        <span class="tag">决策单调性</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分块/">
+                        <span class="tag">分块</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分层图/">
+                        <span class="tag">分层图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/动态树/">
+                        <span class="tag">动态树</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/动态规划/">
+                        <span class="tag">动态规划</span>
+                        <span class="tag is-grey">39</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/区间dp/">
+                        <span class="tag">区间dp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调队列/">
+                        <span class="tag">单调队列</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/可持久化主席树/">
+                        <span class="tag">可持久化主席树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/可持久化线段树/">
+                        <span class="tag">可持久化线段树</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/后缀数组/">
+                        <span class="tag">后缀数组</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/后缀自动机/">
+                        <span class="tag">后缀自动机</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/启发式合并/">
+                        <span class="tag">启发式合并</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/回文自动机/">
+                        <span class="tag">回文自动机</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/图解/">
+                        <span class="tag">图解</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/图论/">
+                        <span class="tag">图论</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/基环树/">
+                        <span class="tag">基环树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/字符串/">
+                        <span class="tag">字符串</span>
+                        <span class="tag is-grey">19</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/容斥原理/">
+                        <span class="tag">容斥原理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/对偶图/">
+                        <span class="tag">对偶图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/左偏树/">
+                        <span class="tag">左偏树</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/差分/">
+                        <span class="tag">差分</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/平衡树/">
+                        <span class="tag">平衡树</span>
+                        <span class="tag is-grey">13</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/并查集/">
+                        <span class="tag">并查集</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/强连通分量/">
+                        <span class="tag">强连通分量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/快速傅立叶变换/">
+                        <span class="tag">快速傅立叶变换</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/快速幂/">
+                        <span class="tag">快速幂</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/扩展欧几里得/">
+                        <span class="tag">扩展欧几里得</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/拓扑排序/">
+                        <span class="tag">拓扑排序</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/排序/">
+                        <span class="tag">排序</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/摘录/">
+                        <span class="tag">摘录</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数位dp/">
+                        <span class="tag">数位dp</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数学/">
+                        <span class="tag">数学</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数据结构/">
+                        <span class="tag">数据结构</span>
+                        <span class="tag is-grey">52</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数论/">
+                        <span class="tag">数论</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数论函数/">
+                        <span class="tag">数论函数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/整体二分/">
+                        <span class="tag">整体二分</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/斜率优化/">
+                        <span class="tag">斜率优化</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最大公约数/">
+                        <span class="tag">最大公约数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最大权闭合子图/">
+                        <span class="tag">最大权闭合子图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最短路/">
+                        <span class="tag">最短路</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最近公共祖先/">
+                        <span class="tag">最近公共祖先</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/期望/">
+                        <span class="tag">期望</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/期望dp/">
+                        <span class="tag">期望dp</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/杜教筛/">
+                        <span class="tag">杜教筛</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树套树/">
+                        <span class="tag">树套树</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树形dp/">
+                        <span class="tag">树形dp</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树形结构/">
+                        <span class="tag">树形结构</span>
+                        <span class="tag is-grey">16</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树的直径/">
+                        <span class="tag">树的直径</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树链剖分/">
+                        <span class="tag">树链剖分</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模板/">
+                        <span class="tag">模板</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/欧拉函数/">
+                        <span class="tag">欧拉函数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/歌曲/">
+                        <span class="tag">歌曲</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/游记/">
+                        <span class="tag">游记</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/点分治/">
+                        <span class="tag">点分治</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/状压dp/">
+                        <span class="tag">状压dp</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/生成树/">
+                        <span class="tag">生成树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/省选/">
+                        <span class="tag">省选</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/瞎搞/">
+                        <span class="tag">瞎搞</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/矩阵快速幂/">
+                        <span class="tag">矩阵快速幂</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线性基/">
+                        <span class="tag">线性基</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
+                        <span class="tag is-grey">20</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树合并/">
+                        <span class="tag">线段树合并</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网络流/">
+                        <span class="tag">网络流</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/背包/">
+                        <span class="tag">背包</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/莫比乌斯反演/">
+                        <span class="tag">莫比乌斯反演</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/莫队/">
+                        <span class="tag">莫队</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/虚树/">
+                        <span class="tag">虚树</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/贪心/">
+                        <span class="tag">贪心</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/费用流/">
+                        <span class="tag">费用流</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/递推/">
+                        <span class="tag">递推</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/题解/">
+                        <span class="tag">题解</span>
+                        <span class="tag is-grey">150</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/高斯消元/">
+                        <span class="tag">高斯消元</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+        
+        </div>
+    
+</div>
+
+                
+
+
+
+
+<div class="column is-4-tablet is-4-desktop is-3-widescreen is-hidden-touch is-hidden-desktop-only has-order-3 column-right ">
+    
+        
+<div class="card widget">
+    <div class="card-content">
+        <h3 class="menu-label">
+            最新文章
+        </h3>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2332-12-31T16:00:00.000Z">2333-01-01</time></div>
+                    <a href="/23330101-about-blog/" class="has-link-black-ter is-size-6">【置顶】关于这个博客的一切</a>
+                    <p class="is-size-7 is-uppercase">
+                        
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-10T04:25:53.000Z">2019-03-10</time></div>
+                    <a href="/20190310-longest-double-palindrome/" class="has-link-black-ter is-size-6">「国家集训队」最长双回文子串-回文自动机</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-03T15:07:28.000Z">2019-03-03</time></div>
+                    <a href="/20190303-CF875E/" class="has-link-black-ter is-size-6">「CF875E」Delivery Club-二分+贪心</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-02T04:20:52.000Z">2019-03-02</time></div>
+                    <a href="/20190302-CF353E/" class="has-link-black-ter is-size-6">「CF353E」 Antichain-乱搞</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="media">
+            
+            <div class="media-content">
+                <div class="content">
+                    <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-03-02T04:19:10.000Z">2019-03-02</time></div>
+                    <a href="/20190302-CF581F/" class="has-link-black-ter is-size-6">「CF581F」 Zublicanes and Mumocrates - 树形dp</a>
+                    <p class="is-size-7 is-uppercase">
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                    </p>
+                </div>
+            </div>
+        </article>
+        
+    </div>
+</div>
+
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+        <h3 class="menu-label">
+            归档
+        </h3>
+        <ul class="menu-list">
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2333/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2333</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">1</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">5</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">7</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2019/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2019</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">9</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/11/">
+                <span class="level-start">
+                    <span class="level-item">十一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/10/">
+                <span class="level-start">
+                    <span class="level-item">十月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/09/">
+                <span class="level-start">
+                    <span class="level-item">九月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/08/">
+                <span class="level-start">
+                    <span class="level-item">八月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">27</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/07/">
+                <span class="level-start">
+                    <span class="level-item">七月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">16</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/06/">
+                <span class="level-start">
+                    <span class="level-item">六月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">22</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/05/">
+                <span class="level-start">
+                    <span class="level-item">五月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">17</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/04/">
+                <span class="level-start">
+                    <span class="level-item">四月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">18</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/03/">
+                <span class="level-start">
+                    <span class="level-item">三月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">11</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/02/">
+                <span class="level-start">
+                    <span class="level-item">二月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">14</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2018/01/">
+                <span class="level-start">
+                    <span class="level-item">一月 2018</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">8</span>
+                </span>
+            </a>
+        </li>
+        
+        <li>
+            <a class="level is-marginless" href="/archives/2017/12/">
+                <span class="level-start">
+                    <span class="level-item">十二月 2017</span>
+                </span>
+                <span class="level-end">
+                    <span class="level-item tag">6</span>
+                </span>
+            </a>
+        </li>
+        
+        </ul>
+        </div>
+    </div>
+</div>
+    
+        <div class="card widget">
+    <div class="card-content">
+        <div class="menu">
+            <h3 class="menu-label">
+                标签
+            </h3>
+            <div class="field is-grouped is-grouped-multiline">
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/0-1分数规划/">
+                        <span class="tag">0/1分数规划</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/AC自动机/">
+                        <span class="tag">AC自动机</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/BSGS算法/">
+                        <span class="tag">BSGS算法</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/CDQ分治/">
+                        <span class="tag">CDQ分治</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Dinic/">
+                        <span class="tag">Dinic</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Hexo/">
+                        <span class="tag">Hexo</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/KMP/">
+                        <span class="tag">KMP</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Link-Cut-Tree-LCT/">
+                        <span class="tag">Link Cut Tree(LCT)</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Lucas定理/">
+                        <span class="tag">Lucas定理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Splay/">
+                        <span class="tag">Splay</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/Treap/">
+                        <span class="tag">Treap</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/set/">
+                        <span class="tag">set</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/wqs二分/">
+                        <span class="tag">wqs二分</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/中国剩余定理/">
+                        <span class="tag">中国剩余定理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/主席树/">
+                        <span class="tag">主席树</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/乱搞/">
+                        <span class="tag">乱搞</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/二分图匹配/">
+                        <span class="tag">二分图匹配</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/二分查找/">
+                        <span class="tag">二分查找</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/二分答案/">
+                        <span class="tag">二分答案</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/作文/">
+                        <span class="tag">作文</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/冬令营/">
+                        <span class="tag">冬令营</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/决策单调性/">
+                        <span class="tag">决策单调性</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分块/">
+                        <span class="tag">分块</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/分层图/">
+                        <span class="tag">分层图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/动态树/">
+                        <span class="tag">动态树</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/动态规划/">
+                        <span class="tag">动态规划</span>
+                        <span class="tag is-grey">39</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/区间dp/">
+                        <span class="tag">区间dp</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/单调队列/">
+                        <span class="tag">单调队列</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/可持久化主席树/">
+                        <span class="tag">可持久化主席树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/可持久化线段树/">
+                        <span class="tag">可持久化线段树</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/后缀数组/">
+                        <span class="tag">后缀数组</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/后缀自动机/">
+                        <span class="tag">后缀自动机</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/启发式合并/">
+                        <span class="tag">启发式合并</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/回文自动机/">
+                        <span class="tag">回文自动机</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/图解/">
+                        <span class="tag">图解</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/图论/">
+                        <span class="tag">图论</span>
+                        <span class="tag is-grey">18</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/基环树/">
+                        <span class="tag">基环树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/字符串/">
+                        <span class="tag">字符串</span>
+                        <span class="tag is-grey">19</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/容斥原理/">
+                        <span class="tag">容斥原理</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/对偶图/">
+                        <span class="tag">对偶图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/左偏树/">
+                        <span class="tag">左偏树</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/差分/">
+                        <span class="tag">差分</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/平衡树/">
+                        <span class="tag">平衡树</span>
+                        <span class="tag is-grey">13</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/并查集/">
+                        <span class="tag">并查集</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/强连通分量/">
+                        <span class="tag">强连通分量</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/快速傅立叶变换/">
+                        <span class="tag">快速傅立叶变换</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/快速幂/">
+                        <span class="tag">快速幂</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/扩展欧几里得/">
+                        <span class="tag">扩展欧几里得</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/拓扑排序/">
+                        <span class="tag">拓扑排序</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/排序/">
+                        <span class="tag">排序</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/摘录/">
+                        <span class="tag">摘录</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数位dp/">
+                        <span class="tag">数位dp</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数学/">
+                        <span class="tag">数学</span>
+                        <span class="tag is-grey">14</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数据结构/">
+                        <span class="tag">数据结构</span>
+                        <span class="tag is-grey">52</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数论/">
+                        <span class="tag">数论</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/数论函数/">
+                        <span class="tag">数论函数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/整体二分/">
+                        <span class="tag">整体二分</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/斜率优化/">
+                        <span class="tag">斜率优化</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最大公约数/">
+                        <span class="tag">最大公约数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最大权闭合子图/">
+                        <span class="tag">最大权闭合子图</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最短路/">
+                        <span class="tag">最短路</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/最近公共祖先/">
+                        <span class="tag">最近公共祖先</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/期望/">
+                        <span class="tag">期望</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/期望dp/">
+                        <span class="tag">期望dp</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/杜教筛/">
+                        <span class="tag">杜教筛</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树套树/">
+                        <span class="tag">树套树</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树形dp/">
+                        <span class="tag">树形dp</span>
+                        <span class="tag is-grey">7</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树形结构/">
+                        <span class="tag">树形结构</span>
+                        <span class="tag is-grey">16</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树的直径/">
+                        <span class="tag">树的直径</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/树链剖分/">
+                        <span class="tag">树链剖分</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/模板/">
+                        <span class="tag">模板</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/欧拉函数/">
+                        <span class="tag">欧拉函数</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/歌曲/">
+                        <span class="tag">歌曲</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/游记/">
+                        <span class="tag">游记</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/点分治/">
+                        <span class="tag">点分治</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/状压dp/">
+                        <span class="tag">状压dp</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/生成树/">
+                        <span class="tag">生成树</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/省选/">
+                        <span class="tag">省选</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/瞎搞/">
+                        <span class="tag">瞎搞</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/矩阵快速幂/">
+                        <span class="tag">矩阵快速幂</span>
+                        <span class="tag is-grey">5</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
+                        <span class="tag is-grey">10</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线性基/">
+                        <span class="tag">线性基</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
+                        <span class="tag is-grey">20</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/线段树合并/">
+                        <span class="tag">线段树合并</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/网络流/">
+                        <span class="tag">网络流</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/背包/">
+                        <span class="tag">背包</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/莫比乌斯反演/">
+                        <span class="tag">莫比乌斯反演</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/莫队/">
+                        <span class="tag">莫队</span>
+                        <span class="tag is-grey">6</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/虚树/">
+                        <span class="tag">虚树</span>
+                        <span class="tag is-grey">2</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/贪心/">
+                        <span class="tag">贪心</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/费用流/">
+                        <span class="tag">费用流</span>
+                        <span class="tag is-grey">4</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/递推/">
+                        <span class="tag">递推</span>
+                        <span class="tag is-grey">1</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/题解/">
+                        <span class="tag">题解</span>
+                        <span class="tag is-grey">150</span>
+                    </a>
+                </div>
+                
+                <div class="control">
+                    <a class="tags has-addons" href="/tags/高斯消元/">
+                        <span class="tag">高斯消元</span>
+                        <span class="tag is-grey">3</span>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    
+    
+</div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+    <div class="container">
+        <div class="level">
+            <div class="level-start has-text-centered-mobile">
+                <a class="footer-logo is-block has-mb-6" href="https://www.chenqiqian.com">
+                
+                    <img src="/images/avatar_1.png" alt="「SDOI2008」递归数列-矩阵快速幂" height="28">
+                
+                </a>
+                <p class="is-size-7">
+                &copy; 2019 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
+                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
+                </p>
+            </div>
+            <div class="level-end">
+            
+                <div class="field has-addons is-flex-center-mobile has-mt-5-mobile is-flex-wrap is-flex-middle">
+                
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Creative Commons" href="https://creativecommons.org/">
+                        
+                        <i class="fab fa-creative-commons"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/">
+                        
+                        <i class="fab fa-creative-commons-by"></i>
+                        
+                    </a>
+                </p>
+                
+                <p class="control">
+                    <a class="button is-white is-large" target="_blank" title="Download on GitHub" href="http://github.com/ppoffice/hexo-theme-icarus">
+                        
+                        <i class="fab fa-github"></i>
+                        
+                    </a>
+                </p>
+                
+                </div>
+            
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
+<script>moment.locale("zh-CN");</script>
+
+
+    
+    
+    
+    <script src="/js/animation.js"></script>
     
 
-
-
-
-
-
-  
-
-
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=6.3.0"></script>
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
     
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script>
+    <script src="/js/gallery.js" defer></script>
+    
+
+    
+    
+
+<div id="outdated">
+    <h6>Your browser is out-of-date!</h6>
+    <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
+            my browser now </a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        outdatedBrowser({
+            bgColor: '#f25648',
+            color: '#ffffff',
+            lowerThan: 'flex'
+        });
     });
 </script>
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
+
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    MathJax.Hub.Config({
+        'HTML-CSS': {
+            matchFontHeight: false
+        },
+        SVG: {
+            matchFontHeight: false
+        },
+        CommonHTML: {
+            matchFontHeight: false
+        },
+        tex2jax: {
+            inlineMath: [
+                ['$','$'],
+                ['\\(','\\)']
+            ]
         }
     });
+});
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
     
-  
+    
+
+<a id="back-to-top" title="回到顶端" href="javascript:;">
+    <i class="fas fa-chevron-up"></i>
+</a>
+<script src="/js/back-to-top.js" defer></script>
 
 
-  
-  
+    
+    
 
-  
+    
+    
+    
+    
 
-  
+    
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script>
+    <script src="/js/clipboard.js" defer></script>
+    
 
-  
+    
+    
+    
 
-  
-
-  
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      background-color: #eee;
-      background-image: linear-gradient(#fcfcfc, #eee);
-      border: 1px solid #d5d5d5;
-      border-radius: 3px;
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      right: 4px;
-      top: 8px;
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function (i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap')
-      $(e).after($wrap)
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
-        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
-        
-          if(result)$(this).text('复制成功')
-          else $(this).text('复制失败')
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
+    
 
 
-  
+<script src="/js/main.js" defer></script>
+
+    
+    <div class="searchbox ins-search">
+    <div class="searchbox-container ins-search-container">
+        <div class="searchbox-input-wrapper">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="searchbox-result-wrapper ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
 <script>
-  fetch('https://v1.hitokoto.cn/?c=d')
-    .then(function (res){
-      return res.json();
-    })
-    .then(function (data) {
-      var hitokoto = document.getElementById('hitokoto_quote');
-      var from = document.getElementById('hitokoto_from');
-      hitokoto.innerText = data.hitokoto;
-      if(data.from){
-        from.innerText = "——" + data.from;
-      }
-      else{
-        from.style.display='none';
-      }
-    })
-    .catch(function (err) {
-      console.error(err);
-    })
+    (function (window) {
+        var INSIGHT_CONFIG = {
+            TRANSLATION: {
+                POSTS: '文章',
+                PAGES: '页面',
+                CATEGORIES: '分类',
+                TAGS: '标签',
+                UNTITLED: '(无标题)',
+            },
+            CONTENT_URL: '/content.json',
+        };
+        window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+    })(window);
 </script>
-
+<script src="/js/insight.js" defer></script>
+<link rel="stylesheet" href="/css/search.css">
+<link rel="stylesheet" href="/css/insight.css">
+    
 </body>
 </html>
