@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.chenqiqian.com/20180524-new-gaokao/</loc>
+    
+    <lastmod>2019-03-16T01:28:16.530Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.chenqiqian.com/20190109-CF68D/</loc>
     
     <lastmod>2019-03-16T01:11:54.568Z</lastmod>
@@ -1304,14 +1311,14 @@
   </url>
   
   <url>
-    <loc>https://blog.chenqiqian.com/20171216-dalabengba-oi/</loc>
+    <loc>https://blog.chenqiqian.com/20180223-IO-optimize/</loc>
     
     <lastmod>2018-11-25T02:14:15.386Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.chenqiqian.com/20180223-IO-optimize/</loc>
+    <loc>https://blog.chenqiqian.com/20171216-dalabengba-oi/</loc>
     
     <lastmod>2018-11-25T02:14:15.386Z</lastmod>
     
@@ -1356,13 +1363,6 @@
     <loc>https://blog.chenqiqian.com/20171204-test/</loc>
     
     <lastmod>2018-11-25T02:14:15.083Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.chenqiqian.com/20180524-new-gaokao/</loc>
-    
-    <lastmod>2018-11-25T02:14:15.074Z</lastmod>
     
   </url>
   
