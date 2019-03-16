@@ -3,10 +3,11 @@ title: 「CF68D」Half-decay tree-期望瞎搞题
 urlname: CF68D
 date: 2019-01-09 19:23:03
 tags:
-- 题解
 - 期望
 - 树形结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

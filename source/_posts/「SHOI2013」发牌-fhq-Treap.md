@@ -3,11 +3,12 @@ title: 「SHOI2013」发牌-fhq Treap
 urlname: SHOI2013-card
 date: 2018-10-15 21:59:15
 tags:
-- 题解
 - 数据结构
 - 平衡树
 - Treap
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

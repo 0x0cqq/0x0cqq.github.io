@@ -15,6 +15,8 @@ visible:
 
 现在，你的任务就是随着边的添加，动态的回答小强对于某些边的负载的询问。
 
+<!-- more -->
+
 ## 链接
 
 [Luogu P4219](https://www.luogu.org/problemnew/show/P4219)

@@ -3,10 +3,11 @@ title: 「BZOJ4278」[ONTAK2015]Tasowanie-后缀数组
 urlname: BZOJ4278-Tasowanie
 date: 2018-08-14 19:56:00
 tags:
-- 题解
 - 后缀数组
 - 字符串
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

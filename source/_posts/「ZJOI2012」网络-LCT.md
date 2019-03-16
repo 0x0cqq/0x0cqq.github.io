@@ -3,12 +3,12 @@ title: 「ZJOI2012」网络-LCT
 urlname: ZJOI2012-network
 date: 2018-08-03 19:41:40
 tags:
-- 题解
 - 数据结构
 - 树形结构
-- Link Cut Tree(LCT)
 - 动态树
-categories: OI
+categories:
+- OI
+- 题解
 visible:
 ---
 

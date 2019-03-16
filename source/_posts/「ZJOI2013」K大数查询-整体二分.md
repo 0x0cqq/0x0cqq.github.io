@@ -3,10 +3,11 @@ title: 「ZJOI2013」K大数查询-整体二分
 urlname: ZJOI2013-kth
 date: 2018-06-06 19:17:02
 tags:
-- 题解
 - 整体二分
 - 数据结构
-categories: OI
+categories:
+- OI
+- 题解
 visible:
 ---
 

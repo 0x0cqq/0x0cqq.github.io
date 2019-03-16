@@ -3,10 +3,11 @@ title: 「BOI2007」Mokia-CDQ分治套CDQ分治
 urlname: BOI2007-Mokia
 date: 2018-09-17 21:55:21
 tags:
-- 题解
 - CDQ分治
 - 数据结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

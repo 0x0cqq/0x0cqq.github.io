@@ -3,10 +3,11 @@ title: 「ZJOI2012」小蓝的好友-Treap
 urlname: ZJOI2012-friend
 date: 2018-08-16 21:24:02
 tags:
-- 题解
 - 数据结构
 - Treap
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

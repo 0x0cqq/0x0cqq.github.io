@@ -3,11 +3,12 @@ title: 「SHOI2014」概率充电器-树形dp
 urlname: SHOI2014-charger
 date: 2018-10-18 19:50:03
 tags:
-- 题解
 - 树形dp
 - 期望
 - 树形结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

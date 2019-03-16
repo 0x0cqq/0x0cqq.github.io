@@ -3,11 +3,12 @@ title: 「SHOI2012」随机树-期望dp
 urlname: SHOI2012-tree
 date: 2018-07-19 20:07:12
 tags:
-- 题解
 - 数学
 - 期望
 - 树形结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 
