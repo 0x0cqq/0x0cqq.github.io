@@ -2,21 +2,23 @@
 <html  lang="zh">
 <head>
     <meta charset="utf-8">
-<title>标签: 贪心 - Chen&#39;s Blog</title>
+<title>「SPOJ16549」QTREE6-LCT - Chen&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
 
 
-    <meta name="description" content="Stay simple. Stay naïve.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Chen&#39;s Blog">
-<meta property="og:url" content="https://blog.chenqiqian.com/tags/贪心/index.html">
+    <meta name="description" content="给你一棵 $n$ 个点的树，编号 $1$~$n$ 。每个点可以是黑色，可以是白色。初始时所有点都是黑色。有两种操作：  0 u ：询问有多少个节点 $v$ 满足路径 $u$ 到 $v$ 上所有节点（包括端点）都拥有相同的颜色 1 u ：翻转 $u$ 的颜色">
+<meta name="keywords" content="数据结构,动态树">
+<meta property="og:type" content="article">
+<meta property="og:title" content="「SPOJ16549」QTREE6-LCT">
+<meta property="og:url" content="https://blog.chenqiqian.com/20190317-SPOJ16549-QTREE6/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="Stay simple. Stay naïve.">
+<meta property="og:description" content="给你一棵 $n$ 个点的树，编号 $1$~$n$ 。每个点可以是黑色，可以是白色。初始时所有点都是黑色。有两种操作：  0 u ：询问有多少个节点 $v$ 满足路径 $u$ 到 $v$ 上所有节点（包括端点）都拥有相同的颜色 1 u ：翻转 $u$ 的颜色">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-17T05:05:08.602Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chen&#39;s Blog">
-<meta name="twitter:description" content="Stay simple. Stay naïve.">
+<meta name="twitter:title" content="「SPOJ16549」QTREE6-LCT">
+<meta name="twitter:description" content="给你一棵 $n$ 个点的树，编号 $1$~$n$ 。每个点可以是黑色，可以是白色。初始时所有点都是黑色。有两种操作：  0 u ：询问有多少个节点 $v$ 满足路径 $u$ 到 $v$ 上所有节点（包括端点）都拥有相同的颜色 1 u ：翻转 $u$ 的颜色">
 
 
 
@@ -99,7 +101,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="https://www.chenqiqian.com">
             
-                <img src="/images/avatar_1.png" alt="Chen&#39;s Blog" height="28">
+                <img src="/images/avatar_1.png" alt="「SPOJ16549」QTREE6-LCT" height="28">
             
             </a>
         </div>
@@ -147,57 +149,63 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">贪心</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    <div class="card">
     
     <div class="card-content article ">
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2019-03-03T15:07:28.000Z">2019-03-03</time>
+                <time class="level-item has-text-grey" datetime="2019-03-17T04:58:44.000Z">2019-03-17</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/OI/">OI</a>
+                <a class="has-link-grey -link" href="/categories/OI/">OI</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/OI/题解/">题解</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    5 分钟 读完 (大约 716 个字)
+                    5 分钟 读完 (大约 743 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/20190303-CF875E/">「CF875E」Delivery Club-二分+贪心</a>
+                「SPOJ16549」QTREE6-LCT
             
         </h1>
         <div class="content">
-            <p>有两个快递员，分别在 $s_1, s_2(0\le s_1,s_2\le 10^9)$ 位置。现在有 $n(1\le n\le 100000)$ 个任务，需要依次完成，每个任务用一个整数 $x_i$ 表示要将货物送到 $x_i$ 位置，让任何一个快递员到 $x_i$ 都可以。</p>
-<p>由于快递员之间需要有对讲机联系，请你设计一种方案使得两个快递员之间的最长距离最短。</p>
+            <p>给你一棵 $n$ 个点的树，编号 $1$~$n$ 。每个点可以是黑色，可以是白色。初始时所有点都是黑色。有两种操作：</p>
+<ul>
+<li><code>0 u</code> ：询问有多少个节点 $v$ 满足路径 $u$ 到 $v$ 上所有节点（包括端点）都拥有相同的颜色</li>
+<li><code>1 u</code> ：翻转 $u$ 的颜色</li>
+</ul>
+<a id="more"></a>
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/SP16549" target="_blank" rel="noopener">Luogu</a></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我就不想用两个 LCT 做！</p>
+<p>然后在 BZOJ 上就被卡常了…无所谓了！</p>
+<p>我们考虑类似 QTREE457 ，维护一下虚子的联通块情况即可。需要注意的是，代表一个 $splay$ 的颜色应该是最左侧的颜色，也就是代码中的 <code>lc[x]</code> 。</p>
+<p>套路也是相同的，<code>push_up</code> 会写的稍微麻烦点，<code>access</code> 要考虑虚子的变化对维护的虚子信息的影响。</p>
+<p>时间复杂度: $O(n\log n)$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">110000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">LCT</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> c[MAXN][<span class="hljs-number">2</span>],f[MAXN];</span><br><span class="line">  <span class="hljs-keyword">int</span> w[MAXN];<span class="hljs-comment">// 代表颜色 0白 1黑</span></span><br><span class="line">  <span class="hljs-keyword">int</span> lc[MAXN],rc[MAXN];<span class="hljs-comment">// 代表当前splay子树的最左侧和最右侧的颜色</span></span><br><span class="line">  <span class="hljs-keyword">int</span> lsum[MAXN],rsum[MAXN];<span class="hljs-comment">// 代表左侧的连痛块和右侧的联通块的大小，</span></span><br><span class="line">  <span class="hljs-keyword">int</span> vsum[MAXN][<span class="hljs-number">2</span>],siz[MAXN][<span class="hljs-number">2</span>];<span class="hljs-comment">// 根节点的虚子树，根节点颜色为 0/1 的大小</span></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) w[i] = <span class="hljs-number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">noroot</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<span class="hljs-keyword">return</span> c[f[x]][<span class="hljs-number">0</span>]==x||c[f[x]][<span class="hljs-number">1</span>]==x;&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">push_up</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ls (c[x][0])</span></span><br><span class="line">    <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> rs (c[x][1])</span></span><br><span class="line">    siz[x][<span class="hljs-number">0</span>] = siz[ls][<span class="hljs-number">0</span>] + siz[rs][<span class="hljs-number">0</span>] + (w[x]==<span class="hljs-number">0</span>);</span><br><span class="line">    siz[x][<span class="hljs-number">1</span>] = siz[ls][<span class="hljs-number">1</span>] + siz[rs][<span class="hljs-number">1</span>] + (w[x]==<span class="hljs-number">1</span>);</span><br><span class="line">    lc[x] = ls?lc[ls]:w[x],rc[x] = rs?rc[rs]:w[x];</span><br><span class="line">    <span class="hljs-keyword">int</span> xl = <span class="hljs-number">1</span> + vsum[x][w[x]] + (rc[ls]==w[x]?rsum[ls]:<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">int</span> xr = <span class="hljs-number">1</span> + vsum[x][w[x]] + (lc[rs]==w[x]?lsum[rs]:<span class="hljs-number">0</span>);</span><br><span class="line">    lsum[x] = lsum[ls],rsum[x] = rsum[rs];</span><br><span class="line">    <span class="hljs-keyword">if</span>(!ls || (!siz[ls][<span class="hljs-number">1</span>-lc[ls]] &amp;&amp; lc[ls] == w[x])) lsum[x] += xr;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!rs || (!siz[rs][<span class="hljs-number">1</span>-rc[rs]] &amp;&amp; rc[rs] == w[x])) rsum[x] += xl;</span><br><span class="line">    <span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> ls</span></span><br><span class="line">    <span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> rs</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rotate</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> y = f[x],z = f[y],t = (c[y][<span class="hljs-number">1</span>]==x),w = (c[x][<span class="hljs-number">1</span>-t]);</span><br><span class="line">    <span class="hljs-keyword">if</span>(noroot(y)) c[z][c[z][<span class="hljs-number">1</span>]==y] = x;</span><br><span class="line">    c[x][<span class="hljs-number">1</span>-t] = y,c[y][t] = w;</span><br><span class="line">    <span class="hljs-keyword">if</span>(w) f[w] = y;</span><br><span class="line">    f[x] = z,f[y] = x;</span><br><span class="line">    push_up(y);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">splay</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(noroot(x))&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> y = f[x],z = f[y];</span><br><span class="line">      <span class="hljs-keyword">if</span>(noroot(y))&#123;</span><br><span class="line">        (c[y][<span class="hljs-number">1</span>]==x)^(c[z][<span class="hljs-number">1</span>]==y)?rotate(x):rotate(y);</span><br><span class="line">      &#125;rotate(x);</span><br><span class="line">    &#125;push_up(x);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">access</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> y = <span class="hljs-number">0</span>;x;x = f[y=x])&#123;</span><br><span class="line">      splay(x);</span><br><span class="line">      vsum[x][lc[c[x][<span class="hljs-number">1</span>]]] += lsum[c[x][<span class="hljs-number">1</span>]];</span><br><span class="line">      vsum[x][lc[y]] -= lsum[y]; </span><br><span class="line">      c[x][<span class="hljs-number">1</span>] = y,push_up(x);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;access(x),splay(x),w[x] ^= <span class="hljs-number">1</span>,push_up(x);&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;access(x),splay(x);<span class="hljs-keyword">return</span> rsum[x];&#125;</span><br><span class="line">&#125;T;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> to,nex;</span><br><span class="line">&#125;edge[MAXN*<span class="hljs-number">2</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> fir[MAXN],ecnt = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addedge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)</span></span>&#123;</span><br><span class="line">  edge[ecnt] = (Edge)&#123;b,fir[a]&#125;;</span><br><span class="line">  fir[a] = ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> e = fir[x];e;e = edge[e].nex)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> v = edge[e].to;</span><br><span class="line">    <span class="hljs-keyword">if</span>(v == fa) <span class="hljs-keyword">continue</span>;</span><br><span class="line">    dfs(v,x);</span><br><span class="line">    T.f[v] = x,T.vsum[x][T.w[v]] += T.lsum[v];</span><br><span class="line">  &#125;</span><br><span class="line">  T.push_up(x);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);T.init(n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> a,b;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">    addedge(a,b),addedge(b,a);</span><br><span class="line">  &#125;</span><br><span class="line">  dfs(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> op,x;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;op,&amp;x);</span><br><span class="line">    <span class="hljs-keyword">if</span>(op == <span class="hljs-number">0</span>) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,T.query(x));</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(op == <span class="hljs-number">1</span>) T.modify(x);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init(),solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/20190303-CF875E/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/动态树/">动态树</a>, <a class="has-link-grey -link" href="/tags/数据结构/">数据结构</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -207,9 +215,51 @@
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        <div class="level-start">
+            <a class="level level-item has-link-grey  article-nav-prev" href="/23330101-about-blog/">
+                <i class="level-item fas fa-chevron-left"></i>
+                <span class="level-item">【置顶】关于这个博客的一切</span>
+            </a>
+        </div>
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/20190316-SPOJ913-QTREE2/">
+                <span class="level-item">「SPOJ913」QTREE2-LCT</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="comment-container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+	var gitment = new Gitment({
+		id: '20190317-SPOJ16549-QTREE6/',
+		owner: 'ChenQiqian',
+		repo: 'comments',
+		oauth: {
+			client_id: 'd406e366deef7658dac9',
+			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
+		},
+	})
+	gitment.render('comment-container')
+</script>
+
+    </div>
+</div>
 </div>
                 
 
@@ -2383,7 +2433,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="https://www.chenqiqian.com">
                 
-                    <img src="/images/avatar_1.png" alt="Chen&#39;s Blog" height="28">
+                    <img src="/images/avatar_1.png" alt="「SPOJ16549」QTREE6-LCT" height="28">
                 
                 </a>
                 <p class="is-size-7">
