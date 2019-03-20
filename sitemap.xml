@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.chenqiqian.com/20190320-loj6004/</loc>
+    
+    <lastmod>2019-03-20T13:18:37.398Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.chenqiqian.com/20190320-loj6003/</loc>
+    
+    <lastmod>2019-03-20T12:51:16.405Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.chenqiqian.com/20190319-loj6002/</loc>
     
-    <lastmod>2019-03-19T15:04:23.996Z</lastmod>
+    <lastmod>2019-03-20T12:46:01.001Z</lastmod>
     
   </url>
   
@@ -1353,14 +1367,14 @@
   </url>
   
   <url>
-    <loc>https://blog.chenqiqian.com/20180223-IO-optimize/</loc>
+    <loc>https://blog.chenqiqian.com/20171216-dalabengba-oi/</loc>
     
     <lastmod>2018-11-25T02:14:15.386Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.chenqiqian.com/20171216-dalabengba-oi/</loc>
+    <loc>https://blog.chenqiqian.com/20180223-IO-optimize/</loc>
     
     <lastmod>2018-11-25T02:14:15.386Z</lastmod>
     
@@ -1395,14 +1409,14 @@
   </url>
   
   <url>
-    <loc>https://blog.chenqiqian.com/20171204-test/</loc>
+    <loc>https://blog.chenqiqian.com/20171205-tuifei/</loc>
     
     <lastmod>2018-11-25T02:14:15.083Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.chenqiqian.com/20171205-tuifei/</loc>
+    <loc>https://blog.chenqiqian.com/20171204-test/</loc>
     
     <lastmod>2018-11-25T02:14:15.083Z</lastmod>
     
