@@ -1,6 +1,6 @@
 ---
 title: 「SPOJ913」QTREE2-LCT
-urlname: SPOJ913-QTREE2
+urlname: SPOJ913-QTREE2-LCT
 date: 2019-03-16 09:01:31
 tags:
 - 动态树

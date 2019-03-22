@@ -1,6 +1,6 @@
 ---
 title: 「SPOJ2666」QTREE4-LCT
-urlname: SPOJ2666-QTREE4
+urlname: SPOJ2666-QTREE4-LCT
 date: 2019-03-12 20:51:57
 tags:
 - 数据结构
