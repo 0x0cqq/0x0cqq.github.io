@@ -7,18 +7,18 @@
 
 
 
-    <meta name="description" content="给定正整数序列 $x_1 \sim x_n$ ，以下递增子序列均为非严格递增。  计算其最长递增子序列的长度 $s$ 。  计算从给定的序列中最多可取出多少个长度为 $s$ 的递增子序列。  如果允许在取出的序列中多次使用 $x_1$ 和 $x_n$ ，则从给定序列中最多可取出多少个长度为 $s$ 的递增子序列。   链接LOJ6005 题解这个问题需要用dp和网络流搭配解决。 第一问：直接 $O">
+    <meta name="description" content="给定正整数序列 $x_1 \sim x_n$ ，以下递增子序列均为非严格递增。  计算其最长递增子序列的长度 $s$ 。  计算从给定的序列中最多可取出多少个长度为 $s$ 的递增子序列。  如果允许在取出的序列中多次使用 $x_1$ 和 $x_n$ ，则从给定序列中最多可取出多少个长度为 $s$ 的递增子序列。">
 <meta name="keywords" content="图论,网络流,网络流 24 题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「网络流 24 题」最长递增子序列-dp+网络最大流">
 <meta property="og:url" content="https://blog.chenqiqian.com/20190321-loj6005/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="给定正整数序列 $x_1 \sim x_n$ ，以下递增子序列均为非严格递增。  计算其最长递增子序列的长度 $s$ 。  计算从给定的序列中最多可取出多少个长度为 $s$ 的递增子序列。  如果允许在取出的序列中多次使用 $x_1$ 和 $x_n$ ，则从给定序列中最多可取出多少个长度为 $s$ 的递增子序列。   链接LOJ6005 题解这个问题需要用dp和网络流搭配解决。 第一问：直接 $O">
+<meta property="og:description" content="给定正整数序列 $x_1 \sim x_n$ ，以下递增子序列均为非严格递增。  计算其最长递增子序列的长度 $s$ 。  计算从给定的序列中最多可取出多少个长度为 $s$ 的递增子序列。  如果允许在取出的序列中多次使用 $x_1$ 和 $x_n$ ，则从给定序列中最多可取出多少个长度为 $s$ 的递增子序列。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-21T15:10:49.806Z">
+<meta property="og:updated_time" content="2019-03-24T15:14:05.102Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「网络流 24 题」最长递增子序列-dp+网络最大流">
-<meta name="twitter:description" content="给定正整数序列 $x_1 \sim x_n$ ，以下递增子序列均为非严格递增。  计算其最长递增子序列的长度 $s$ 。  计算从给定的序列中最多可取出多少个长度为 $s$ 的递增子序列。  如果允许在取出的序列中多次使用 $x_1$ 和 $x_n$ ，则从给定序列中最多可取出多少个长度为 $s$ 的递增子序列。   链接LOJ6005 题解这个问题需要用dp和网络流搭配解决。 第一问：直接 $O">
+<meta name="twitter:description" content="给定正整数序列 $x_1 \sim x_n$ ，以下递增子序列均为非严格递增。  计算其最长递增子序列的长度 $s$ 。  计算从给定的序列中最多可取出多少个长度为 $s$ 的递增子序列。  如果允许在取出的序列中多次使用 $x_1$ 和 $x_n$ ，则从给定序列中最多可取出多少个长度为 $s$ 的递增子序列。">
 
 
 
@@ -164,7 +164,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 667 个字)
+                    4 分钟 读完 (大约 668 个字)
                 </span>
                 
                 
@@ -191,6 +191,7 @@
 <li><p>如果允许在取出的序列中多次使用 $x_1$ 和 $x_n$ ，则从给定序列中最多可取出多少个长度为 $s$ 的递增子序列。</p>
 </li>
 </ol>
+<a id="more"></a>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://loj.ac/problem/6005" target="_blank" rel="noopener">LOJ6005</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这个问题需要用dp和网络流搭配解决。</p>
 <p>第一问：直接 $O(n^2)$ dp 即可。</p>
