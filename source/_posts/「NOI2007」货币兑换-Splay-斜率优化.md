@@ -3,12 +3,13 @@ title: 「NOI2007」货币兑换-Splay+斜率优化
 urlname: NOI2007-cash
 date: 2018-08-28 22:59:54
 tags:
-- 题解
 - Splay
 - 平衡树
 - 斜率优化
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

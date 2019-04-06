@@ -5,8 +5,9 @@ date: 2018-02-05 18:11:47
 tags:
 - 莫队
 - 树状数组
+categories: 
+- OI
 - 题解
-categories: OI
 visible:
 ---
 

@@ -3,15 +3,19 @@ title: 「Luogu2617」Dynamic Rankings-树状数组-可持久化线段树
 urlname: luogu-2617
 date: 2018-05-12 18:05:36
 tags:
+- 数据结构
+- 可持久化线段树
 categories:
+- OI
+- 题解
 visible:
 ---
 
-给定一个含有$n$个数的序列$\{a_n\}$，回答询问或执行操作：
+给定一个含有 $n$ 个数的序列 $\{a_n\}$ ，回答询问或执行操作：
 
-+ `Q i j k` （$1\leq i\leq j\leq n, 1\leq k\leq j-i+1$）表示询问$a[i],a[i+1]......a[j]$中第$k$小的数。
++ `Q i j k` （$1\leq i\leq j\leq n, 1\leq k\leq j-i+1$）表示询问$a[i],a[i+1]......a[j]$中第 $k$ 小的数。
 
-+ `C i t` ($1 \leq i \leq n,0\leq t \leq 10^{9}$)表示把$a[i]$改变成为$t$。
++ `C i t` ($1 \leq i \leq n,0\leq t \leq 10^{9}$)表示把 $a[i]$ 改变成为 $t$ 。
 
 <!-- more -->
 

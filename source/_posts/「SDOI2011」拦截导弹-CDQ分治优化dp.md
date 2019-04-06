@@ -3,11 +3,12 @@ title: 「SDOI2011」拦截导弹-CDQ分治优化dp
 urlname: SDOI2011-missile
 date: 2018-09-20 20:08:40
 tags:
-- 题解
 - CDQ分治
 - 树状数组
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

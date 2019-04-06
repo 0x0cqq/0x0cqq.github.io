@@ -3,11 +3,12 @@ title: 「SDOI2010」古代猪文-Lucas+CRT
 urlname: SDOI2010-pig
 date: 2018-10-23 22:58:36
 tags:
-- 题解
 - 中国剩余定理
 - Lucas定理
 - 数论
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

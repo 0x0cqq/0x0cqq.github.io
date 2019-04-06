@@ -3,10 +3,11 @@ title: 「HAOI2009」毛毛虫-树形dp
 urlname: HAOI2009-worm
 date: 2018-06-06 19:08:55
 tags:
-- 题解
 - 树形dp
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

@@ -3,11 +3,12 @@ title: 「HNOI2014」世界树-虚树+树形dp
 urlname: HNOI2014-worldtree
 date: 2018-10-21 22:29:12
 tags:
-- 题解
 - 虚树
 - 树形结构
 - 树形dp
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

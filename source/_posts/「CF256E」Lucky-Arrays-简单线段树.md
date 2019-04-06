@@ -3,10 +3,11 @@ title: 「CF256E」Lucky Arrays-简单线段树
 urlname: CF256E
 date: 2018-12-27 20:51:00
 tags:
-- 题解
 - 数据结构
 - 线段树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

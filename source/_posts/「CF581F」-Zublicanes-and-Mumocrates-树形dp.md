@@ -3,10 +3,11 @@ title: 「CF581F」 Zublicanes and Mumocrates - 树形dp
 urlname: CF581F
 date: 2019-03-02 12:19:10
 tags:
-- 题解
 - 动态规划
 - 树形dp
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

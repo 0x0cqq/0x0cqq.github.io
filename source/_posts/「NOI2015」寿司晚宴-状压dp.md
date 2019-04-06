@@ -3,17 +3,12 @@ title: 「NOI2015」寿司晚宴-状压dp
 urlname: NOI2015-dinner
 date: 2018-08-28 22:58:15
 tags:
-- 题解
 - 动态规划
 - 状压dp
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
-
-
-
-
-
-
 ---
 
 为了庆祝 $NOI$ 的成功开幕，主办方为大家准备了一场寿司晚宴。小 $G$ 和小 $W$ 作为参加 $NOI$ 的选手，也被邀请参加了寿司晚宴。

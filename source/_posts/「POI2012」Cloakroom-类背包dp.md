@@ -3,10 +3,11 @@ title: 「POI2012」Cloakroom-类背包dp
 urlname: POI2012-Cloakroom
 date: 2018-08-16 21:26:17
 tags:
-- 题解
 - 动态规划
 - 背包
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

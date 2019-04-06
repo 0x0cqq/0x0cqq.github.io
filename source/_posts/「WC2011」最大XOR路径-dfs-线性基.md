@@ -3,10 +3,11 @@ title: 「WC2011」最大XOR路径-dfs+线性基
 urlname: WC2011-xor
 date: 2018-11-27 23:12:14
 tags:
-- 题解
 - 数学
 - 线性基
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

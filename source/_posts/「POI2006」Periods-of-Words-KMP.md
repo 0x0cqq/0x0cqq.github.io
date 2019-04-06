@@ -3,10 +3,11 @@ title: 「POI2006」Periods of Words-KMP
 urlname: POI2006-okr
 date: 2018-08-14 19:50:59
 tags:
-- 题解
 - 字符串
 - KMP
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

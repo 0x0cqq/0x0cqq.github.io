@@ -3,11 +3,12 @@ title: 「SDOI2013」森林-主席树+LCA+启发式合并
 urlname: SDOI2013-forest
 date: 2018-05-21 20:10:00
 tags:
-- 题解
 - 可持久化线段树
 - 最近公共祖先
 - 启发式合并
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

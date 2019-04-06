@@ -3,11 +3,12 @@ title: 「POI2000」病毒-AC自动机
 urlname: POI2000-virus
 date: 2018-08-09 11:03:59
 tags:
-- 题解
 - AC自动机
 - 字符串
 - 图论
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

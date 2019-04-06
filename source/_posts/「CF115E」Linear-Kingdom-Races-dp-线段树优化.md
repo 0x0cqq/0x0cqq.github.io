@@ -3,11 +3,12 @@ title: 「CF115E」Linear Kingdom Races-dp+线段树优化
 urlname: CF115E
 date: 2018-12-23 22:26:23
 tags:
-- 题解
 - 动态规划
 - 数据结构
 - 线段树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

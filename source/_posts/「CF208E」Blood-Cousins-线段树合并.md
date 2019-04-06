@@ -3,19 +3,18 @@ title: 「CF208E」Blood Cousins-线段树合并
 urlname: CF208E
 date: 2018-12-25 21:08:48
 tags:
-- 题解
 - 数据结构
 - 树形结构
 - 线段树合并
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 
 给你一片森林，每次询问一个点与多少个点拥有共同的 $K$ 级祖先
 
 <!-- more -->
-
-
 
 ## 题解
 

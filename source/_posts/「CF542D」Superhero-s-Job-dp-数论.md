@@ -3,10 +3,11 @@ title: 「CF542D」Superhero's Job - dp + 数论
 urlname: CF542D
 date: 2019-03-02 12:17:18
 tags:
-- 题解
 - 动态规划
 - 数学
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

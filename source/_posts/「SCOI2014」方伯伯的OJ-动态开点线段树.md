@@ -3,10 +3,11 @@ title: 「SCOI2014」方伯伯的OJ-动态开点线段树
 urlname: SCOI2014-onlinejudge
 date: 2018-10-03 23:35:33
 tags:
-- 题解
 - 数据结构
 - 线段树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 方伯伯正在做他的 OJ 。现在他在处理 OJ 上的用户排名问题。 OJ 上注册了 $n$ 个用户，编号为 $1$ ～ $n$ ，一开始他们按照编号排名。

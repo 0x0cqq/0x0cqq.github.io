@@ -7,7 +7,9 @@ tags:
 - 主席树
 - 字符串
 - 数据结构
-categories:
+categories: 
+- OI
+- 题解
 visible:
 ---
 

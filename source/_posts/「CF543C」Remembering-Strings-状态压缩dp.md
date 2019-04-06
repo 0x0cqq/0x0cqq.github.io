@@ -4,9 +4,10 @@ urlname: CF543C
 date: 2019-02-15 16:30:51
 tags:
 - 动态规划
-- 题解
 - 状压dp
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

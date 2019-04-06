@@ -3,10 +3,11 @@ title: 「POI2010」Antisymmetry-后缀数组
 urlname: POI2010-Antisymmetry
 date: 2018-08-11 19:25:24
 tags:
-- 题解
 - 字符串
 - 后缀数组
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

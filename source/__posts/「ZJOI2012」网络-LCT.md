@@ -6,8 +6,7 @@ tags:
 - 题解
 - 数据结构
 - 树形结构
-- Link Cut Tree(LCT)
-- 动态树
+- LCT
 categories: OI
 visible:
 ---

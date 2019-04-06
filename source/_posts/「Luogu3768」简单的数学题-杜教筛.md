@@ -6,7 +6,9 @@ tags:
 - 数论
 - 数论函数
 - 杜教筛
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

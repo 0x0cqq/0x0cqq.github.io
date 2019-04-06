@@ -3,11 +3,16 @@ title: 「LNOI2014」LCA-树链剖分-差分
 urlname: LNOI2014-lca
 date: 2018-06-02 21:23:25
 tags:
+- 数据结构
+- 树链剖分
+- 差分
 categories:
+- OI
+- 题解
 visible:
 ---
 
-给出一个$n$个节点的有根树。有$q$次询问，每次询问给出$l,r,z$，求$\sum_{l \leq i \leq r}dep[LCA(i,z)]$。
+给出一个 $n$ 个节点的有根树。有 $q$ 次询问，每次询问给出 $l,r,z$ ，求 $\sum_{l \leq i \leq r}dep[LCA(i,z)]$ 。
 
 <!-- more -->
 

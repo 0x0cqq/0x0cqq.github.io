@@ -3,10 +3,11 @@ title: 「HEOI2016/TJOI2016」序列-CDQ分治优化dp
 urlname: HEOI2016-TJOI2016-sequence
 date: 2018-09-20 20:09:29
 tags:
-- 题解
 - CDQ分治
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

@@ -3,11 +3,12 @@ title: 「Luogu3765」总统选举-平衡树-线段树
 urlname: luogu-3765
 date: 2018-04-25 23:30:25
 tags:
-- 题解
 - 数据结构
 - 平衡树
 - 线段树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

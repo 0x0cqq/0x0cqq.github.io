@@ -3,9 +3,10 @@ title: 「CF212D」Cutting a Fence-简单数据结构
 urlname: CF212D
 date: 2018-12-26 19:36:56
 tags:
-- 题解
 - 数据结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

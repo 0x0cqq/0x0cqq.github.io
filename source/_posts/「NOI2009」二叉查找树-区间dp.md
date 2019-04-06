@@ -3,10 +3,11 @@ title: 「NOI2009」二叉查找树-区间dp
 urlname: NOI2009-binary
 date: 2018-04-28 20:21:18
 tags:
-- 题解
 - 动态规划
 - 平衡树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

@@ -3,11 +3,12 @@ title: 「CF86C」Genetic engineering-AC自动机+dp
 urlname: CF86C
 date: 2019-01-09 19:18:07
 tags:
-- 题解
 - 字符串
 - 动态规划
 - AC自动机
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

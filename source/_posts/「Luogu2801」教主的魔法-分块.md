@@ -3,10 +3,11 @@ title: 「Luogu 2801」教主的魔法-分块
 urlname: luogu-2801
 date: 2018-09-09 20:00:07
 tags: 
-- 题解
 - 分块
 - 数据结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

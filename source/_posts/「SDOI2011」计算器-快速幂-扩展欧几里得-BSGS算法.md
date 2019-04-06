@@ -3,12 +3,13 @@ title: 「SDOI2011」计算器-快速幂+扩展欧几里得+BSGS算法
 urlname: SDOI2011-calculator
 date: 2018-09-11 20:54:56
 tags:
-- 题解
 - 数论
 - 快速幂
 - 扩展欧几里得
 - BSGS算法
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

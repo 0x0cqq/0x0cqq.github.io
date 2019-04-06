@@ -5,13 +5,12 @@ date: 2018-06-16 11:36:51
 tags:
 - 题解
 - 数据结构
-- 动态树
-- Link Cut Tree(LCT)
+- LCT
 categories: OI
 visible:
 ---
 
-给定一个$n$个点$m$条边的无向图，每条边有两个权值$a_i,b_i$。请你找到一条从$1 \rightarrow n$ 的道路，令道路上所有边的集合为$S$，使$ans = \max(a_i)+\max(b_j),i,j \in S$最小，求出这个最小值$ans$。
+给定一个 $n$ 个点 $m$ 条边的无向图，每条边有两个权值 $a_i,b_i$ 。请你找到一条从 $1 \rightarrow n$ 的道路，令道路上所有边的集合为 $S$ ，使 $ans = \max(a_i)+\max(b_j),i,j \in S$ 最小，求出这个最小值 $ans$ 。
 
 <!-- more -->
 

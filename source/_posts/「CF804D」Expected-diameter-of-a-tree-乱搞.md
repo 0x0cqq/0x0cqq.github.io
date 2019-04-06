@@ -3,10 +3,11 @@ title: 「CF804D」Expected diameter of a tree-树的直径+乱搞
 urlname: CF804D
 date: 2019-02-15 22:20:30
 tags:
-- 题解
 - 乱搞
 - 树的直径
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

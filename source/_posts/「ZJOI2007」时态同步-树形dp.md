@@ -3,10 +3,11 @@ title: 「ZJOI2007」时态同步-树形dp
 urlname: ZJOI2007-sync
 date: 2018-03-03 18:30:16
 tags:
-- 题解
 - 动态规划
 - 树形dp
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

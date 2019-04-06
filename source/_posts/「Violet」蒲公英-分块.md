@@ -3,13 +3,15 @@ title: 「Violet」蒲公英-分块
 urlname: violet-dandelions
 date: 2018-03-31 11:30:45
 tags:
-- 题解
 - 分块
-categories: OI
+- 数据结构
+categories: 
+- OI
+- 题解
 visible:
 ---
 
-给定一个数列${a\_n}$，$m$次询问在$[l,r]$区间内的最小众数。
+给定一个数列 ${a\_n}$ ，$m$ 次询问在 $[l,r]$ 区间内的最小众数。
 强制在线。
 
 <!-- more -->

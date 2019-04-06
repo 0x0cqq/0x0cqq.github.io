@@ -3,10 +3,11 @@ title: 「CF311B」Cats Transport-斜率优化dp
 urlname: CF311B
 date: 2018-12-27 20:55:16
 tags:
-- 题解
 - 动态规划
 - 斜率优化
-categories: OI 
+categories: 
+- OI
+- 题解 
 visible:
 ---
 

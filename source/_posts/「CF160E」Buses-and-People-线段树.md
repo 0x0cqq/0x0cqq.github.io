@@ -6,7 +6,9 @@ tags:
 - 题解
 - 数据结构
 - 线段树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

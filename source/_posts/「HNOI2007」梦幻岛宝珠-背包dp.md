@@ -3,10 +3,11 @@ title: 「HNOI2007」梦幻岛宝珠-背包dp
 urlname: HNOI2007-diamond
 date: 2018-11-03 09:57:05
 tags:
-- 题解
 - 动态规划
 - 背包
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

@@ -3,11 +3,12 @@ title: 「TJOI2015」棋盘-状压dp+矩阵快速幂
 urlname: TJOI2015-board
 date: 2018-10-04 21:43:30
 tags:
-- 题解
 - 状压dp
 - 动态规划
 - 矩阵快速幂
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

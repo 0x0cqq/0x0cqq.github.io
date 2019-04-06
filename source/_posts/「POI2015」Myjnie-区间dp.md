@@ -3,10 +3,11 @@ title: 「POI2015」Myjnie-区间dp
 urlname: POI2015-Myjnie
 date: 2018-09-23 19:32:19
 tags:
-- 题解
 - 动态规划
 - 区间dp
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

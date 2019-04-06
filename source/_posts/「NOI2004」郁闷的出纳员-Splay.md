@@ -2,11 +2,12 @@
 title: 「NOI2004」郁闷的出纳员-Splay
 date: 2018-01-31 21:05:48
 tags:
-- 题解
 - 数据结构
 - 平衡树
 - Splay
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 urlname: NOI2004-cashier
 ---

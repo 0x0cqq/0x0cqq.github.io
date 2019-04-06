@@ -4,8 +4,9 @@ urlname: CF476E
 date: 2019-02-11 23:23:18
 tags:
 - 动态规划
+categories: 
+- OI
 - 题解
-categories: OI
 visible:
 ---
 

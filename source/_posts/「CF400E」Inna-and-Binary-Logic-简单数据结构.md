@@ -3,9 +3,10 @@ title: 「CF400E」Inna and Binary Logic-简单数据结构
 urlname: CF400E
 date: 2018-12-31 15:39:18
 tags:
-- 题解
 - 数据结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

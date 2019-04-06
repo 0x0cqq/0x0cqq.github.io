@@ -3,10 +3,11 @@ title: 「POI2015」Kinoman-线段树
 urlname: POI2015-Kinoman
 date: 2018-12-10 19:50:32
 tags:
-- 题解
 - 数据结构
 - 线段树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

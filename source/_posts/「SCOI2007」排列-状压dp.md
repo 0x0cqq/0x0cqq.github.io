@@ -3,14 +3,15 @@ title: 「SCOI2007」排列-状压dp
 urlname: SCOI2007-permutation
 date: 2018-10-02 09:35:55
 tags:
-- 题解
 - 状压dp
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 
-给一个数字串 $s$ 和正整数 $d$ , 统计 $s$ 有多少种不同的排列能被 $d$ 整除（可以有前导 $0$）。
+给一个数字串 $s$ 和正整数 $d$ , 统计 $s$ 有多少种不同的排列能被 $d$ 整除（可以有前导 $0$ ）。
 
 <!-- more -->
 

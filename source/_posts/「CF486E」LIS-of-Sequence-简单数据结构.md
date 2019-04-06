@@ -4,9 +4,10 @@ urlname: CF486E
 date: 2019-01-01 13:13:38
 tags:
 - 动态规划
-- 题解
 - 数据结构
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

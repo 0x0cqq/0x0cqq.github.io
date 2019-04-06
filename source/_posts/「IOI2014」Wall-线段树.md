@@ -3,10 +3,11 @@ title: 「IOI2014」Wall-线段树
 urlname: IOI2014-Wall
 date: 2018-07-17 19:51:27
 tags:
-- 题解
 - 数据结构
 - 线段树
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

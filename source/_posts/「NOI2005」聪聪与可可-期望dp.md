@@ -3,10 +3,11 @@ title: 「NOI2005」聪聪与可可-期望dp
 urlname: NOI2005-clever-and-cute
 date: 2018-10-02 09:37:40
 tags:
-- 题解
 - 动态规划
 - 期望dp
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

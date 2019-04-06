@@ -3,11 +3,12 @@ title: 「CF321E」Ciel and Gondolas-wqs二分+决策单调性
 urlname: CF321E
 date: 2019-02-12 22:07:23
 tags:
-- 题解
 - 动态规划
 - wqs二分
 - 决策单调性
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

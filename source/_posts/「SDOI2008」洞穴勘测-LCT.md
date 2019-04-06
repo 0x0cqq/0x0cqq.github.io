@@ -5,9 +5,10 @@ date: 2018-05-12 18:06:09
 tags:
 - 题解
 - 数据结构
-- 动态树
-- Link Cut Tree(LCT)
-categories: OI
+- LCT
+categories: 
+- OI
+- 题解
 visible:
 ---
 

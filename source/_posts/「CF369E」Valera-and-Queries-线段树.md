@@ -3,11 +3,12 @@ title: 「CF369E」Valera and Queries-线段树
 urlname: CF369E
 date: 2018-12-29 23:41:25
 tags:
-- 题解
 - 数据结构
 - 线段树
 - 树套树
-categories: OI 
+categories: 
+- OI
+- 题解 
 visible:
 ---
 

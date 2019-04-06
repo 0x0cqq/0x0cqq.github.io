@@ -3,10 +3,11 @@ title: 「HNOI2011」XOR和路径-高斯消元
 urlname: HNOI2011-XOR
 date: 2018-10-02 09:39:42
 tags:
-- 题解
 - 期望
 - 高斯消元
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

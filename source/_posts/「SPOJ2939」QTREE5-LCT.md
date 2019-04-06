@@ -4,7 +4,7 @@ urlname: SPOJ26374-QTREE5-LCT
 date: 2019-03-18 22:36:52
 tags:
 - 数据结构
-- 动态树
+- LCT
 categories:
 - OI
 - 题解

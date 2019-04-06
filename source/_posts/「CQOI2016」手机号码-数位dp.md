@@ -3,10 +3,11 @@ title: 「CQOI2016」手机号码-数位dp
 urlname: CQOI2016-phone
 date: 2018-06-19 21:59:36
 tags:
-- 题解
 - 数位dp
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

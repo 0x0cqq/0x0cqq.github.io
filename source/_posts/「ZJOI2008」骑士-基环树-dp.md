@@ -3,10 +3,11 @@ title: 「ZJOI2008」骑士-基环树+dp
 urlname: ZJOI2008-knight
 date: 2018-11-27 23:11:53
 tags:
-- 题解
 - 基环树
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

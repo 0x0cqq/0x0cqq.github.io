@@ -3,12 +3,13 @@ title: 「SDOI2011」消耗战-虚树+树形dp
 urlname: SDOI2011-war
 date: 2018-10-15 21:52:56
 tags:
-- 题解
 - 树形结构
 - 虚树
 - 树形dp
 - 动态规划
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

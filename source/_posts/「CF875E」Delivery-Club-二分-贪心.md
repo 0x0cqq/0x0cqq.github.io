@@ -3,9 +3,10 @@ title: 「CF875E」Delivery Club-二分+贪心
 urlname: CF875E
 date: 2019-03-03 23:07:28
 tags:
-- 题解
 - 贪心
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

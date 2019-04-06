@@ -3,13 +3,14 @@ title: 「POI2014」Salad Bar-瞎搞
 urlname: POI2014-Salad-Bar
 date: 2018-08-16 21:23:22
 tags:
-- 题解
 - 瞎搞
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 
-有一个长度为$n$的字符串，每一位只会是 $\text{p}$ 或 $\text{j}$ 。求一个最长子串，使得不管是从左往右还是从右往左取，都保证每时每刻已取出的 $\text{p}$ 的个数不小于 $\text{j}$ 的个数。
+有一个长度为 $n$ 的字符串，每一位只会是 $\text{p}$ 或 $\text{j}$ 。求一个最长子串，使得不管是从左往右还是从右往左取，都保证每时每刻已取出的 $\text{p}$ 的个数不小于 $\text{j}$ 的个数。
 
 <!-- more -->
 

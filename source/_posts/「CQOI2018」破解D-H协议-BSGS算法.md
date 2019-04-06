@@ -1,14 +1,14 @@
-
 ---
 title: 「CQOI2018」破解D-H协议-BSGS算法
 urlname: CQOI2018-crack
 date: 2018-09-14 22:43:37
 tags:
-- 题解
 - 数学
 - 数论
 - BSGS算法
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

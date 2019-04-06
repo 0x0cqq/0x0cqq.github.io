@@ -3,10 +3,11 @@ title: 「SDOI2013」随机数生成器-BSGS算法
 urlname: SDOI2013-random
 date: 2018-09-11 20:54:20
 tags:
-- 题解
 - 数论
 - BSGS算法
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 小 $W$ 喜欢读书，尤其喜欢读《约翰克里斯朵夫》。最近小W准备读一本新书，这本书一共有 $P$ 页，页码范围为 $0 ... P-1$。

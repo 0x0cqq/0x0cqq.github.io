@@ -4,7 +4,7 @@ urlname: BJOI2014-mixture
 date: 2019-03-11 21:09:49
 tags:
 - 数据结构
-- 动态树
+- LCT
 categories:
 - OI
 - 题解

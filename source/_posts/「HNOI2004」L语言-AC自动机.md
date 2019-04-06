@@ -3,10 +3,11 @@ title: 「HNOI2004」L语言-AC自动机
 urlname: HNOI2004-language
 date: 2018-09-09 20:11:35
 tags:
-- 题解
 - 字符串
 - AC自动机
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 
 ---

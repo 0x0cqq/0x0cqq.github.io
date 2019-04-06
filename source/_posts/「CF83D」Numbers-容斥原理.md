@@ -3,10 +3,11 @@ title: 「CF83D」Numbers-容斥原理
 urlname: CF83D
 date: 2019-01-09 19:17:41
 tags:
-- 题解
 - 数论
 - 容斥原理
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 

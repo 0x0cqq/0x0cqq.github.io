@@ -3,10 +3,11 @@ title: 「CF877F」Ann and Books-莫队
 urlname: CF877F
 date: 2019-02-11 23:39:31
 tags:
-- 题解
 - 数据结构
 - 莫队
 categories:
+- OI
+- 题解
 visible:
 ---
 
