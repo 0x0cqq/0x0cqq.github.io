@@ -6,8 +6,9 @@ tags:
 - 数据结构
 - 平衡树
 - Splay
+categories: 
+- OI
 - 题解
-categories: OI
 visible:
 ---
 

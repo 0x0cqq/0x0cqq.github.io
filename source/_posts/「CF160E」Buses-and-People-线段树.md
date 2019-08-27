@@ -3,7 +3,6 @@ title: 「CF160E」Buses and People-线段树
 urlname: CF160E
 date: 2018-12-24 23:57:34
 tags:
-- 题解
 - 数据结构
 - 线段树
 categories: 

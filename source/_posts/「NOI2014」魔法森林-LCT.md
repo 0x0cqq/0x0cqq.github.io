@@ -3,10 +3,11 @@ title: 「NOI2014」魔法森林-LCT
 urlname: NOI2014-forest
 date: 2018-06-16 11:36:51
 tags:
-- 题解
 - 数据结构
 - LCT
-categories: OI
+categories: 
+- OI
+- 题解
 visible:
 ---
 
