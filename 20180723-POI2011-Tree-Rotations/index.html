@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「POI2011」Tree Rotations-线段树合并 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -184,6 +177,7 @@
         <div class="content">
             <p>现在有一棵二叉树，所有非叶子节点都有两个孩子。在每个叶子节点上有一个权值(有 $n$ 个叶子节点，满足这些权值为 $1…n$ 的一个排列)。可以任意交换每个非叶子节点的左右孩子。<br>要求进行一系列交换，使得最终所有叶子节点的权值按照前序遍历序写出来，逆序对个数最少。</p>
 <a id="more"></a>
+
 <p><strong>输入方式：</strong></p>
 <p>第一行一个整数n；</p>
 <p>下面每行，一个数x；</p>
@@ -199,6 +193,7 @@
 <p>我们在这里假设我们可以在$O(1)$的时间里面合并两个树的叶子的信息，并从线段树的两个子树O(1)的得到更大的区间的信息（区间合并），其实这也是线段树的基础。</p>
 <p>我们其实可以暴力的写出合并的伪代码：</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">node merge(node u,node v):</span><br><span class="line">    <span class="hljs-keyword">if</span> u,v 中存在一个节点为空节点:</span><br><span class="line">        <span class="hljs-keyword">return</span> 另一个节点 <span class="hljs-comment">// O(1)</span></span><br><span class="line">    <span class="hljs-keyword">if</span> u,v 均为叶节点:</span><br><span class="line">        <span class="hljs-keyword">return</span> 合并u,v 两个叶节点 <span class="hljs-comment">// O(1)</span></span><br><span class="line">    </span><br><span class="line">    u.leftchild = merge(u.leftchild,v.leftchild) </span><br><span class="line"></span><br><span class="line">    u.rightchild = merge(u.rightchild,v.rightchild) </span><br><span class="line"></span><br><span class="line">    合并 u.leftchild 和 u.rightchild 的信息为 u <span class="hljs-comment">// O(1)</span></span><br><span class="line"></span><br><span class="line">    <span class="hljs-keyword">return</span> u</span><br></pre></td></tr></table></figure>
+
 <p>线段树合并的过程也可以很容易的可持久化，只需要把上面的代码中后面的几个$u$修改成一个新创建的$w$即可。</p>
 <hr>
 <p>关于复杂度，可以显而易见的注意到，<code>merge</code>两个动态开点线段树的时候，其复杂度与公共节点的数量成正比，也就是减少的节点数目。</p>
@@ -217,6 +212,7 @@
 <p>第一行一个数$n$，表示该二叉树的叶节点的个数；<br>下面若干行，每行一个数$x$：<br>如果$x = 0$，表示这个节点不是叶节点，递归地向下读入其左孩子和右孩子的信息；<br>如果$x \neq 0$，表示这个节点是叶节点，权值为$x$。</p>
 </blockquote>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mid ((l+r)&gt;&gt;1)</span></span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> SIZE = <span class="hljs-number">1024</span>*<span class="hljs-number">1024</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> *s,*t,ibuf[SIZE];</span><br><span class="line">    <span class="hljs-keyword">if</span>(s == t) t = (s=ibuf) + fread(ibuf,<span class="hljs-number">1</span>,SIZE,<span class="hljs-built_in">stdin</span>);</span><br><span class="line">    <span class="hljs-keyword">return</span> s == t ? <span class="hljs-number">-1</span>:(*s++);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(T &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> iosig = <span class="hljs-number">0</span>;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> ch;</span><br><span class="line">    <span class="hljs-keyword">for</span>(ch = read(),iosig = <span class="hljs-number">0</span>;!<span class="hljs-built_in">isdigit</span>(ch);ch = read())&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(ch == <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span>(ch ==<span class="hljs-string">'-'</span>) iosig = <span class="hljs-number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(x = <span class="hljs-number">0</span>;<span class="hljs-built_in">isdigit</span>(ch);ch =read())</span><br><span class="line">        x = (((x&lt;&lt;<span class="hljs-number">2</span>)+x)&lt;&lt;<span class="hljs-number">1</span>) + (ch^<span class="hljs-number">48</span>);</span><br><span class="line">    <span class="hljs-keyword">if</span>(iosig) x = -x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">inline</span> ll <span class="hljs-title">min</span><span class="hljs-params">(ll a,ll b)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> a &gt; b?b : a;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">210000</span>;</span><br><span class="line">ll ANS = <span class="hljs-number">0</span>,ans1 = <span class="hljs-number">0</span>,ans2 = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> n,pos;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> sumn,ls,rs;</span><br><span class="line">&#125;aa[MAXN*<span class="hljs-number">30</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!nown) nown = ++cnt;</span><br><span class="line">    aa[nown].sumn++;</span><br><span class="line">    <span class="hljs-keyword">if</span>(l == r) <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(pos &lt;= mid)</span><br><span class="line">        update(aa[nown].ls,l,mid);</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        update(aa[nown].rs,mid+<span class="hljs-number">1</span>,r);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;lx,<span class="hljs-keyword">int</span> rx)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!lx || !rx)&#123;lx=lx+rx;<span class="hljs-keyword">return</span>;&#125;</span><br><span class="line">    aa[lx].sumn += aa[rx].sumn;</span><br><span class="line">    ans1 += (ll)aa[aa[lx].rs].sumn*aa[aa[rx].ls].sumn;</span><br><span class="line">    ans2 += (ll)aa[aa[lx].ls].sumn*aa[aa[rx].rs].sumn;</span><br><span class="line">    merge(aa[lx].ls,aa[rx].ls);</span><br><span class="line">    merge(aa[lx].rs,aa[rx].rs);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> t,ls,rs;x = <span class="hljs-number">0</span>;</span><br><span class="line">    read(t);</span><br><span class="line">    <span class="hljs-keyword">if</span>(!t)&#123;</span><br><span class="line">        solve(ls),solve(rs);</span><br><span class="line">        ans1 = ans2 = <span class="hljs-number">0</span>;</span><br><span class="line">        x = ls;merge(x,rs);</span><br><span class="line">        ANS += min(ans1,ans2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">        pos = t,update(x,<span class="hljs-number">1</span>,n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="hljs-keyword">int</span> t = <span class="hljs-number">0</span>;</span><br><span class="line">    solve(t);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,ANS);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -260,29 +256,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180723-POI2011-Tree-Rotations/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -315,7 +288,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -361,29 +334,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2590,9 +2559,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2740,7 +2708,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

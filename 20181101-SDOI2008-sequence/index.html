@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「SDOI2008」递归数列-矩阵快速幂 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -189,19 +182,21 @@
 <p>对于 100% 的测试数据：</p>
 <p>$1 \leq k \leq 15,1 \leq m \leq n \leq 10^{18},0 \le b_1, b_2,… b_k, c_1, c_2,…, c_k \leq 10^9,1 \leq p \leq 10^8$</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P2461" target="_blank" rel="noopener">Luogu P2461</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>$$<br>a_i = \sum _{j=1}^{k} c_k a_{j-k}<br>$$</p>
 <p>构造一个矩阵</p>
-<p>$$<br>M_i<br>=\begin{bmatrix}<br>S_i  \\<br>a_i  \\<br>a_{i-1}\\<br> \vdots\\<br>a_{i-k+2}\\<br>a_{i-k+1}\\<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>M_i<br>=\begin{bmatrix}<br>S_i  \<br>a_i  \<br>a_{i-1}\<br> \vdots\<br>a_{i-k+2}\<br>a_{i-k+1}\<br>\end{bmatrix}<br>$$</p>
 <p>转移矩阵为：</p>
-<p>$$<br>Z<br>=\begin{bmatrix}<br>1 &amp; c_{1} &amp; c_{2} &amp; \cdots &amp; c_{k-1}   &amp; c_{k}  \\<br>0 &amp; c_{1} &amp; c_{2} &amp; \cdots &amp; c_{k-1}   &amp; c_{k} \\<br>0 &amp; 1 &amp; 0  &amp; \cdots &amp; 0 &amp; 0\\<br> \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; 0   &amp; 0\\<br>0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\<br>0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  &amp; 0 \\<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>Z<br>=\begin{bmatrix}<br>1 &amp; c_{1} &amp; c_{2} &amp; \cdots &amp; c_{k-1}   &amp; c_{k}  \<br>0 &amp; c_{1} &amp; c_{2} &amp; \cdots &amp; c_{k-1}   &amp; c_{k} \<br>0 &amp; 1 &amp; 0  &amp; \cdots &amp; 0 &amp; 0\<br> \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; 0   &amp; 0\<br>0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \<br>0 &amp; 0 &amp; 0 &amp; 0 &amp; 1  &amp; 0 \<br>\end{bmatrix}<br>$$</p>
 <p>初始的矩阵为</p>
-<p>$$<br>C<br>=\begin{bmatrix}<br>S_k\\<br>b_k \\<br>b_{k-1}\\<br> \vdots\\<br>b_{2}\\<br>b_{1} \\<br>\end{bmatrix}<br>$$</p>
-<p>$$<br>Z \times C = M_{k+1}\\<br>Z \times M_i = M_{i+1}\\<br>$$</p>
+<p>$$<br>C<br>=\begin{bmatrix}<br>S_k\<br>b_k \<br>b_{k-1}\<br> \vdots\<br>b_{2}\<br>b_{1} \<br>\end{bmatrix}<br>$$</p>
+<p>$$<br>Z \times C = M_{k+1}\<br>Z \times M_i = M_{i+1}\<br>$$</p>
 <p>我们有</p>
 <p>$$<br>Z^{n-k} \times C = M_{n}<br>$$</p>
 <p>矩阵快速幂即可。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">20</span>;</span><br><span class="line"></span><br><span class="line">ll N,M,K,P,S;</span><br><span class="line">ll b[MAXN],c[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Matrix</span>&#123;</span></span><br><span class="line">  ll num[MAXN][MAXN];</span><br><span class="line">  Matrix(<span class="hljs-keyword">int</span> op = <span class="hljs-number">0</span>)&#123;</span><br><span class="line">    <span class="hljs-built_in">memset</span>(num,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(num));</span><br><span class="line">    <span class="hljs-keyword">if</span>(op)&#123;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;MAXN;i++) num[i][i] = <span class="hljs-number">1</span>;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  ll* <span class="hljs-keyword">operator</span> [] (<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> n)&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> num[n];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">Matrix <span class="hljs-title">mul</span><span class="hljs-params">(Matrix &amp;_x,Matrix &amp;_y)</span></span>&#123;</span><br><span class="line">  Matrix ans;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=S;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=S;j++)&#123;</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>;k&lt;=S;k++)&#123;</span><br><span class="line">        ans[i][j] += _x[i][k] * _y[k][j];</span><br><span class="line">      &#125;</span><br><span class="line">      ans[i][j] %= P;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">Matrix <span class="hljs-title">pow</span><span class="hljs-params">(Matrix x,ll k)</span></span>&#123;</span><br><span class="line">  <span class="hljs-function">Matrix <span class="hljs-title">ans</span><span class="hljs-params">(<span class="hljs-number">1</span>)</span></span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(ll i = k;i;i&gt;&gt;=<span class="hljs-number">1</span>,x = mul(x,x))&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i &amp; <span class="hljs-number">1</span>) ans = mul(ans,x);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Matrix Z,C;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld"</span>,&amp;K);</span><br><span class="line">  S = K+<span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld"</span>,&amp;b[i]);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld"</span>,&amp;c[i]);</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld %lld %lld"</span>,&amp;M,&amp;N,&amp;P);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)</span><br><span class="line">    b[i] %= P,c[i] %= P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(ll x)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">if</span>(x &lt;= K)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=x;i++)</span><br><span class="line">      ans += b[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">    Matrix a = <span class="hljs-built_in">pow</span>(Z,x-K);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=S;i++)</span><br><span class="line">      ans += C[i][<span class="hljs-number">1</span>] * a[<span class="hljs-number">1</span>][i]; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans % P;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  ll sum = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    C[S-i+<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = b[i];</span><br><span class="line">    sum += b[i];</span><br><span class="line">  &#125;</span><br><span class="line">  C[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = sum % P;</span><br><span class="line">  Z[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    Z[<span class="hljs-number">1</span>][i+<span class="hljs-number">1</span>] = c[i];</span><br><span class="line">    Z[<span class="hljs-number">2</span>][i+<span class="hljs-number">1</span>] = c[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;i&lt;=K;i++)&#123;</span><br><span class="line">    Z[i+<span class="hljs-number">1</span>][i] = <span class="hljs-number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  build();</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,((query(N)-query(M<span class="hljs-number">-1</span>))%P+P)%P);</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -245,29 +240,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20181101-SDOI2008-sequence/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -300,7 +272,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -346,29 +318,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2575,9 +2543,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2725,7 +2692,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

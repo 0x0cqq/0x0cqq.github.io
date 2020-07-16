@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CTSC2018」混合果汁-整体二分 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -186,12 +179,14 @@
 <p>商店里有 $n$ 种果汁，编号为 $0,1,\cdots,n-1$ 。$i$  号果汁的美味度是 $d_i$ ，每升价格为 $p_i$​ 。小 R 在制作混合果汁时，还有一些特殊的规定，即在一瓶混合果汁中，$i$  号果汁最多只能添加 $l_i$ 升。</p>
 <p>现在有 $m$ 个小朋友过来找小 R 要混合果汁喝，他们都希望小 R 用商店里的果汁制作成一瓶混合果汁。其中，第 $j$ 个小朋友希望他得到的混合果汁总价格不大于 $g_j$ ，体积不小于 $L_j$​ 。在上述这些限制条件下，小朋友们还希望混合果汁的美味度尽可能地高，一瓶混合果汁的美味度等于所有参与混合的果汁的美味度的最小值。请你计算每个小朋友能喝到的最美味的混合果汁的美味度。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P4602" target="_blank" rel="noopener">Luogu P4602</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这个题可以整体二分。</p>
 <p>对 $d$ 进行 $\text{sort}$ 后，我们可以用 $\text{multiset}$ 维护前缀的果汁按照 $p$ 排序之后的顺序，然后把当前询问按照 $g$ 排序，逐步加入每种果汁，判断是否可以达成  $l$ 的体积作为二分依据。</p>
 <p>假装复杂度大约是 $O(n \log^2 n)$。</p>
 <p>反正可过。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Code By Chen Qiqian on 2018.10.16</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">210000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span></span><br><span class="line">  ll d,p,l;</span><br><span class="line">  <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-keyword">const</span> Node &amp;a)<span class="hljs-keyword">const</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(d != a.d)</span><br><span class="line">      <span class="hljs-keyword">return</span> d &gt; a.d;</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      <span class="hljs-keyword">return</span> p &lt; a.p;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;t[MAXN];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;a,<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;b)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(t[a].p != t[b].p)</span><br><span class="line">    <span class="hljs-keyword">return</span> t[a].p &lt; t[b].p;</span><br><span class="line">  <span class="hljs-keyword">else</span></span><br><span class="line">    <span class="hljs-keyword">return</span> t[a].l &lt; t[b].l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Query</span>&#123;</span></span><br><span class="line">  ll g,l,id;</span><br><span class="line">&#125;q[MAXN];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> ans[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    ll a,b,c;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld %lld %lld"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    t[i] = (Node)&#123;a,b,c&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  sort(t+<span class="hljs-number">1</span>,t+n+<span class="hljs-number">1</span>);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld %lld"</span>,&amp;q[i].g,&amp;q[i].l);</span><br><span class="line">    q[i].id = i;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> a1[MAXN],a2[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">T</span>&#123;</span></span><br><span class="line">  ll p,l;</span><br><span class="line">  <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (<span class="hljs-keyword">const</span> T &amp;w)<span class="hljs-keyword">const</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(p != w.p)</span><br><span class="line">      <span class="hljs-keyword">return</span> p &lt; w.p;</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      <span class="hljs-keyword">return</span> l &lt; w.l;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">multiset</span>&lt;T&gt; K;</span><br><span class="line"><span class="hljs-keyword">int</span> pos = <span class="hljs-number">0</span>;<span class="hljs-comment">//[1,pos]</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp2</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> a,<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> b)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> q[a].g &lt; q[b].g;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *a,<span class="hljs-keyword">int</span> n1,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;<span class="hljs-comment">// *a 存储询问编号 在 [l,r] 果汁内二分</span></span><br><span class="line">  <span class="hljs-keyword">if</span>(n1 == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;</span><br><span class="line">  <span class="hljs-keyword">if</span>(l == r)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n1;i++)</span><br><span class="line">      ans[q[a[i]].id] = t[l].d;</span><br><span class="line">    <span class="hljs-keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// 寻找到最小的需要的 n</span></span><br><span class="line">  <span class="hljs-comment">// d 按从大到小排序</span></span><br><span class="line">  <span class="hljs-keyword">int</span> mid = (l+r)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-comment">//判断 1 -&gt; mid 区间是否可以满足限制 (g_i,l_i)</span></span><br><span class="line">  <span class="hljs-comment">//维护multiset使其可以包括 [1,mid] 所有果汁</span></span><br><span class="line">  <span class="hljs-keyword">while</span>(pos &lt; mid)&#123;</span><br><span class="line">    pos++;</span><br><span class="line">    K.insert((T)&#123;t[pos].p,t[pos].l&#125;);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">while</span>(pos &gt; mid)&#123;</span><br><span class="line">    K.erase(K.lower_bound((T)&#123;t[pos].p,t[pos].l&#125;));</span><br><span class="line">    pos--;</span><br><span class="line">  &#125;</span><br><span class="line">  ll G = <span class="hljs-number">0</span>,L = <span class="hljs-number">0</span>,acnt = <span class="hljs-number">0</span>,bcnt = <span class="hljs-number">0</span>;</span><br><span class="line">  sort(a,a+n1,cmp2);</span><br><span class="line">  <span class="hljs-built_in">multiset</span>&lt;T&gt;::iterator it = K.begin();</span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> xp it-&gt;p</span></span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> xl it-&gt;l</span></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n1;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(it != K.end() &amp;&amp; G + xp * xl &lt;= q[a[i]].g)&#123;</span><br><span class="line">      G += xp * xl,L += xl;</span><br><span class="line">      it++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(L &gt;= q[a[i]].l ||</span><br><span class="line">      (it != K.end() &amp;&amp; (q[a[i]].l-L) * xp + G &lt;= q[a[i]].g))</span><br><span class="line">      a1[acnt++] = a[i];</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      a2[bcnt++] = a[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">memcpy</span>(a,a1,<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>)*acnt),<span class="hljs-built_in">memcpy</span>(a+acnt,a2,<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>)*bcnt);</span><br><span class="line">  solve(a,acnt,l,mid),solve(a+acnt,bcnt,mid+<span class="hljs-number">1</span>,r);</span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> xp</span></span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> xl</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> qq[MAXN];</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)</span><br><span class="line">    qq[i] = i;</span><br><span class="line">  t[n+<span class="hljs-number">1</span>].d=<span class="hljs-number">-1</span>;t[n+<span class="hljs-number">1</span>].p=<span class="hljs-number">0</span>;t[n+<span class="hljs-number">1</span>].l=<span class="hljs-number">1e18</span>;++n;</span><br><span class="line">  solve(qq+<span class="hljs-number">1</span>,m,<span class="hljs-number">1</span>,n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,ans[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -235,29 +230,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20181017-CTSC2018-mix/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -290,7 +262,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -336,29 +308,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2565,9 +2533,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2715,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CF321E」Ciel and Gondolas-wqs二分+决策单调性 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -184,6 +177,7 @@
         <div class="content">
             <p>Ciel 狐狸在游乐园里排队等待上摩天轮。现在有 $n$ 个人按编号顺次在队列里，有 $m$ 条船，第 $i$ 条船到时，前 $q_{i}$ 个人可以上船。保证 $\sum q_i = n$。 人总是不愿意和陌生人上同一条船的，当第 $i$ 个人与第 $j$ 个人处于同一条船上时，会产生 $u_{i,j}$ 的沮丧值。请你求出最小的沮丧值和。一条船上的人两两都会产生沮丧值，不会计算这个沮丧值两次。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="http://codeforces.com/problemset/problem/321/E" target="_blank" rel="noopener">Codeforces</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们注意到我们有一个简单的转移方程：</p>
 <p>$$<br>dp[i][j] = \min_{1 \le p &lt; i}(dp[p][j-1] + g(p+1,j))<br>$$</p>
@@ -192,6 +186,7 @@
 <p>需要注意的是这里的代价应当是负的，也就是我们需要加上代价。（差不多啦</p>
 <p>需要读入优化。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io &#123;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> IN_LEN=<span class="hljs-number">1000000</span>;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> buf[IN_LEN],*s,*t;<span class="hljs-keyword">return</span> s==t?(((t=(s=buf)+fread(buf,<span class="hljs-number">1</span>,IN_LEN,<span class="hljs-built_in">stdin</span>))==s)?<span class="hljs-number">-1</span>:*s++) : *s++;&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span></span>&#123;<span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> iosig;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> c;<span class="hljs-keyword">for</span> (iosig=<span class="hljs-literal">false</span>,c=read();!<span class="hljs-built_in">isdigit</span>(c);c=read())&#123;<span class="hljs-keyword">if</span>(c==<span class="hljs-string">'-'</span>)iosig=<span class="hljs-literal">true</span>;<span class="hljs-keyword">if</span>(c==<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span>;&#125;<span class="hljs-keyword">for</span>(x=<span class="hljs-number">0</span>;<span class="hljs-built_in">isdigit</span>(c);c=read())x=((x+(x&lt;&lt;<span class="hljs-number">2</span>))&lt;&lt;<span class="hljs-number">1</span>)+(c^<span class="hljs-string">'0'</span>);<span class="hljs-keyword">if</span>(iosig)x=-x;&#125;</span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">4100</span>;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"><span class="hljs-keyword">char</span> tmp[MAXN*<span class="hljs-number">2</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> a[MAXN][MAXN],s[MAXN][MAXN];<span class="hljs-comment">// 前 i 个与前 j 个的答案</span></span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">G</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span></span>&#123;<span class="hljs-comment">// 第 x 个到第 y 个的答案，x &lt;= y</span></span><br><span class="line">  <span class="hljs-keyword">return</span> (s[y][y] - <span class="hljs-number">2</span> * s[x<span class="hljs-number">-1</span>][y] + s[x<span class="hljs-number">-1</span>][x<span class="hljs-number">-1</span>])/<span class="hljs-number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-keyword">int</span> dp[MAXN],siz[MAXN],fi,la;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> p,l,r;</span><br><span class="line">  Node(<span class="hljs-keyword">int</span> _p = <span class="hljs-number">0</span>,<span class="hljs-keyword">int</span> _l = <span class="hljs-number">0</span>,<span class="hljs-keyword">int</span> _r = <span class="hljs-number">0</span>)&#123;p = _p,l = _l,r = _r;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">Node q[MAXN];<span class="hljs-comment">//[fi,la]</span></span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">reset</span><span class="hljs-params">()</span></span>&#123;dp[<span class="hljs-number">0</span>] = siz[<span class="hljs-number">0</span>] = la = <span class="hljs-number">0</span>;fi = <span class="hljs-number">1</span>;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">int</span> now,<span class="hljs-keyword">int</span> last,<span class="hljs-keyword">int</span> k)</span></span>&#123;<span class="hljs-keyword">return</span> dp[last] + G(last+<span class="hljs-number">1</span>,now) + k;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k)</span></span>&#123;<span class="hljs-comment">// k 为代价，每个都加上一个 k ，因为斜率是负数</span></span><br><span class="line">  <span class="hljs-comment">// 不限分段个数，考虑 dp[i] 为前 i 个分若干段的最小值，每分一段要加一个 k x</span></span><br><span class="line">  reset();</span><br><span class="line">  q[++la] = Node(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(fi &lt; la &amp;&amp; q[fi].r &lt; i) fi++;</span><br><span class="line">    dp[i] = cal(i,q[fi].p,k),siz[i] = siz[q[fi].p] + <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-comment">// 为什么对新来的这么不友好？？？</span></span><br><span class="line">    <span class="hljs-keyword">if</span>(cal(n,q[la].p,k) &lt;= cal(n,i,k)) <span class="hljs-keyword">continue</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(fi &lt; la &amp;&amp; cal(q[la].l,q[la].p,k) &gt; cal(q[la].l,i,k)) la--;</span><br><span class="line"> </span><br><span class="line">    <span class="hljs-keyword">int</span> L = q[la].l,R = q[la].r + <span class="hljs-number">1</span>;<span class="hljs-comment">// 二分决策点</span></span><br><span class="line">    <span class="hljs-keyword">while</span>(L!=R)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> mid = (L+R)/<span class="hljs-number">2</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(cal(mid,q[la].p,k) &gt; cal(mid,i,k))</span><br><span class="line">        R = mid;</span><br><span class="line">      <span class="hljs-keyword">else</span></span><br><span class="line">        L = mid+<span class="hljs-number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    q[la].r = L<span class="hljs-number">-1</span>;</span><br><span class="line">    q[++la] = Node(i,L,n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// 最优分几段？</span></span><br><span class="line">  <span class="hljs-keyword">return</span> siz[n];</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  read(n),read(m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">      read(a[i][j]);</span><br><span class="line">      s[i][j] = s[i<span class="hljs-number">-1</span>][j] + s[i][j<span class="hljs-number">-1</span>] - s[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>] + a[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> L = <span class="hljs-number">0</span>,R = s[n][n];</span><br><span class="line">  <span class="hljs-keyword">while</span>(L != R)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> mid = (L+R)/<span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(check(mid) &lt;= m) R = mid;</span><br><span class="line">    <span class="hljs-keyword">else</span>                L = mid+<span class="hljs-number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  check(L);</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,dp[n] - L*m);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -235,29 +230,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190212-CF321E/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -290,7 +262,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -336,29 +308,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2565,9 +2533,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2715,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

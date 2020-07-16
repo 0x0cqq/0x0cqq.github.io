@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>可持久化线段树学习笔记 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -91,7 +91,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -113,26 +113,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -188,16 +181,17 @@
         <div class="content">
             <p>可持久化线段树，是一种可以进行可持久化操作的线段树，具有优越的时间复杂度。</p>
 <a id="more"></a>
+
 <h2 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h2><p>相信看这篇文章的人很熟悉什么是线段树了，就不在这里胡扯了。</p>
-<p><img src="segtree.png" alt=""></p>
+<p><img src="segtree.png"></p>
 <p>如上就是线段树的基本结构。</p>
 <h2 id="可持久化？"><a href="#可持久化？" class="headerlink" title="可持久化？"></a>可持久化？</h2><p>简单来说，可持久化就是能够在修改的时候，保留下原来的数据结构的样子的一种数据结构。比如说，对于上图，如果线段树维护的是区间和，这个时候我们要修改某个数的大小，就会使一条链上的信息全部改变，并且我们失去了这次修改之前的线段树的信息。</p>
 <p>那么对于线段树来说，怎么样才能做到可持久化呢？</p>
 <h3 id="可持久化的思路"><a href="#可持久化的思路" class="headerlink" title="可持久化的思路"></a>可持久化的思路</h3><p>假设这个线段树维护的是区间和。</p>
 <p>一种非常简单的思路：为了维护修改之前的信息，每次修改我重新建一棵线段树不就好了？？？但是如果仔细想一想，建一棵线段树的时间复杂度是O(n)，空间复杂度O(n)，如果有n次修改，最后的时间复杂度O(n^2)，空间复杂度也是O(n^2)，GG。</p>
-<p><img src="segtree1.png" alt=""></p>
+<p><img src="segtree1.png"></p>
 <p>观察上图，显然可以<strong>发现单点修改会改变的只会有这一条链上的节点的值</strong>，所以我们就会自然想到，能不能只维护这一条链呢？</p>
-<p><img src="segtree2.png" alt=""></p>
+<p><img src="segtree2.png"></p>
 <p>但是单独维护一条链很傻，而且很多线段树上的操作进行起来也很复杂。所以可以把这条链嵌到线段树上，比如我们修改位置4，那么修改出来的链就是红色节点，而我们也需要把它其他的地方连到原来的线段树上。</p>
 <p>这个时候，我们就发现只要我们掌握着根结点，我们就可以当所有其他线段树都是不存在的一样，做普通线段树的查询操作。</p>
 <p>主要的可持久化操作的思想大概如上。总结来说的话，就是只更改需要更改的部分，其他的不管它，保持树形结构完整性就可以了。其他的可持久化数据结构如可持久化Trie树和平衡树，思想都是类似的。</p>
@@ -259,29 +253,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180524-prsegtree-note/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -314,7 +285,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -360,29 +331,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2589,9 +2556,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2739,7 +2705,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

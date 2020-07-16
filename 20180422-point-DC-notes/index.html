@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>点分治学习笔记 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K \; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。">
+    <meta name="description" content="点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K ; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。">
 <meta name="keywords" content="笔记,树形结构,点分治">
 <meta property="og:type" content="article">
 <meta property="og:title" content="点分治学习笔记">
 <meta property="og:url" content="https://blog.chenqiqian.com/20180422-point-DC-notes/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K \; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。">
+<meta property="og:description" content="点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K ; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-09T13:42:45.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="点分治学习笔记">
-<meta name="twitter:description" content="点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K \; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。">
+<meta name="twitter:description" content="点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K ; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -182,8 +175,9 @@
             
         </h1>
         <div class="content">
-            <p>点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K \; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。</p>
+            <p>点分治是一种主要在树上的分治，可以在解决一些树上特定条件的路径的问题。其复杂度与大部分分治类似，大概是$O(K ; \log{n})$（$K$为除分治步骤之外的时间复杂度的多项式）。</p>
 <a id="more"></a>
+
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>点分治感性的来说，其实就需要考虑一件事情：如何把树上路径问题转换成过根结点的路径问题。</p>
 <p><strong>定理:树上所有的路径可以分为过根结点的路径和不过根结点的路径。</strong></p>
 <p>对于根结点来说，我们处理完过根结点的路径，剩下所有的路径都不会过根结点了。所以我们可以把根节点和与根结点相连的边均删掉，然后对于新产生的子树，剩下的路径应该都在其中，就可以对子树进行分治处理。</p>
@@ -192,15 +186,19 @@
 <p>每一次都先把这个点标记成已经访问过，然后对于这个点去寻找</p>
 <p>代码如下：</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown)</span></span>&#123;</span><br><span class="line">    work(nown);</span><br><span class="line">    vis[nown] = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = edge[nowe].to;</span><br><span class="line">        <span class="hljs-keyword">if</span>(vis[v]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        f[rt = <span class="hljs-number">0</span>] = sz = siz[v];<span class="hljs-comment">//初始化rt</span></span><br><span class="line">        getroot(v,rt);<span class="hljs-comment">//找到该子树的重心</span></span><br><span class="line">        solve(rt);<span class="hljs-comment">//递归解决问题</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="work"><a href="#work" class="headerlink" title="work"></a><code>work</code></h3><p><code>work</code>函数就是完成对于当前的子树中所有过根的节点的处理。这个函数没有具体的样子，因题而异。</p>
 <p>照我目前的理解，主要的思路就是：dfs，想办法拼起来两条同时过根节点而且端点不在一个子树里面的节点。</p>
 <h3 id="getroot"><a href="#getroot" class="headerlink" title="getroot"></a><code>getroot</code></h3><p>首先，为了保证我们分出去的子树的规模尽量的一致，我们每次都需要把当前的树的重心作为根节点，然后完成上段所述的事情。</p>
 <p>在这里，寻找重心其实就是找哪个点作根的时候剩下的最大子树的大小最小…代码如下：</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">//vis==1 代表已经处理过（不在当前子树中）</span></span><br><span class="line"><span class="hljs-comment">//f[nown] 储存这个点作根时剩下的最大子树的大小</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getroot</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    siz[nown] = <span class="hljs-number">1</span>,f[nown] = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = edge[nowe].to;</span><br><span class="line">        <span class="hljs-keyword">if</span>(vis[v] || v == fa) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        getroot(v,nown);</span><br><span class="line">        siz[nown] += siz[v];</span><br><span class="line">        f[nown] = max(f[nown],siz[v]);</span><br><span class="line">    &#125;</span><br><span class="line">    f[nown] = max(f[nown],sz - siz[nown]);</span><br><span class="line">    <span class="hljs-keyword">if</span>(f[nown] &lt; f[rt]) rt = nown;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>不是很难。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>以<a href="https://www.luogu.org/problemnew/show/P3806" target="_blank" rel="noopener">Luogu P3806</a> 为例。<br>（其实这个题…比模版还是要多一些的…复杂度是 $O(n \log{n} \log{n})$</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">110000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io &#123;</span><br><span class="line">    <span class="hljs-comment">//...</span></span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> from,to;</span><br><span class="line">    <span class="hljs-keyword">int</span> len,nex;</span><br><span class="line">&#125;edge[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> ecnt = <span class="hljs-number">1</span>;<span class="hljs-keyword">int</span> fir[MAXN];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addedge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b,<span class="hljs-keyword">int</span> l)</span></span>&#123;</span><br><span class="line">    edge[ecnt] = (Edge)&#123;a,b,l,fir[a]&#125;;</span><br><span class="line">    fir[a] = ecnt++;</span><br><span class="line">    edge[ecnt] = (Edge)&#123;b,a,l,fir[b]&#125;;</span><br><span class="line">    fir[b] = ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">//-----</span></span><br><span class="line"><span class="hljs-keyword">int</span> n,m,q[MAXN],ans[MAXN];</span><br><span class="line"><span class="hljs-comment">//-----</span></span><br><span class="line"><span class="hljs-keyword">int</span> f[MAXN],vis[MAXN],siz[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> rt,sz;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> d,f;</span><br><span class="line">    <span class="hljs-keyword">bool</span> <span class="hljs-keyword">operator</span> &lt; (node a)<span class="hljs-keyword">const</span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> d &lt; a.d;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;dep[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> num;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> b = <span class="hljs-number">1</span>,e = num;</span><br><span class="line">    <span class="hljs-keyword">while</span>(e!=b)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> mid = (b+e)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span>(dep[mid].d &gt;= d) e = mid;</span><br><span class="line">        <span class="hljs-keyword">else</span> b = mid + <span class="hljs-number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-comment">//-----</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getroot</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    siz[nown] = <span class="hljs-number">1</span>,f[nown] = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = edge[nowe].to;</span><br><span class="line">        <span class="hljs-keyword">if</span>(vis[v] || v == fa) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        getroot(v,nown);</span><br><span class="line">        siz[nown] += siz[v];</span><br><span class="line">        f[nown] = max(f[nown],siz[v]);</span><br><span class="line">    &#125;</span><br><span class="line">    f[nown] = max(f[nown],sz - siz[nown]);</span><br><span class="line">    <span class="hljs-keyword">if</span>(f[nown] &lt; f[rt]) rt = nown;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> fa,<span class="hljs-keyword">int</span> wh,<span class="hljs-keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    dep[++num] = (node)&#123;d,wh&#125;;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = edge[nowe].to,l = edge[nowe].len;</span><br><span class="line">        <span class="hljs-keyword">if</span>(vis[v] || v == fa) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        dfs(v,nown,wh,d+l);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown)</span></span>&#123;</span><br><span class="line">    num = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = edge[nowe].to,l = edge[nowe].len;</span><br><span class="line">        <span class="hljs-keyword">if</span>(vis[v]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        dfs(v,nown,v,l);</span><br><span class="line">    &#125;</span><br><span class="line">    dep[++num] = (node)&#123;<span class="hljs-number">0</span>,<span class="hljs-number">0</span>&#125;;</span><br><span class="line">    sort(dep+<span class="hljs-number">1</span>,dep+num+<span class="hljs-number">1</span>);</span><br><span class="line">    <span class="hljs-comment">//二分查找 并判断对于每个ans是否有符合的答案</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(ans[i]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        <span class="hljs-keyword">int</span> l = <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span>(l &lt; num &amp;&amp; dep[l].d + dep[num].d &lt; q[i])</span><br><span class="line">            l++;</span><br><span class="line">        <span class="hljs-keyword">while</span>(l &lt; num &amp;&amp; <span class="hljs-number">2</span>*dep[l].d &lt; q[i])&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(ans[i]) <span class="hljs-keyword">break</span>;</span><br><span class="line">            <span class="hljs-keyword">int</span> t = q[i]-dep[l].d,r = search(t);</span><br><span class="line">            <span class="hljs-keyword">while</span>(r &lt;= num &amp;&amp; dep[r].d == t &amp;&amp; dep[l].f == dep[r].f)</span><br><span class="line">                r++;</span><br><span class="line">            ans[i] |= (dep[r].d == t);</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown)</span></span>&#123;</span><br><span class="line">    vis[nown] = <span class="hljs-number">1</span>;</span><br><span class="line">    work(nown);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = edge[nowe].to;</span><br><span class="line">        <span class="hljs-keyword">if</span>(vis[v]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        f[rt = <span class="hljs-number">0</span>] = sz = siz[v];</span><br><span class="line">        getroot(v,rt);</span><br><span class="line">        solve(rt);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    read(n),read(m);</span><br><span class="line">    <span class="hljs-keyword">int</span> a,b,c;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)&#123;</span><br><span class="line">        read(a),read(b),read(c);</span><br><span class="line">        addedge(a,b,c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)</span><br><span class="line">        read(q[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    f[rt = <span class="hljs-number">0</span>] = sz = n;</span><br><span class="line">    getroot(<span class="hljs-number">1</span>,rt);</span><br><span class="line">    solve(rt);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(ans[i]) print(<span class="hljs-string">'A'</span>),print(<span class="hljs-string">'Y'</span>),print(<span class="hljs-string">'E'</span>);</span><br><span class="line">        <span class="hljs-keyword">else</span> print(<span class="hljs-string">'N'</span>),print(<span class="hljs-string">'A'</span>),print(<span class="hljs-string">'Y'</span>);</span><br><span class="line">        print(<span class="hljs-string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    solve();</span><br><span class="line">    flush();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><a href="/20180422-clever-and-cute/" title="[国家集训队]聪聪可可">[国家集训队]聪聪可可</a>
+
 <p><a href="https://www.luogu.org/problemnew/show/P2664" target="_blank" rel="noopener">[Luogu P2664]树上游戏</a></p>
 
         </div>
@@ -245,29 +243,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180422-point-DC-notes/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -300,7 +275,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -346,29 +321,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2575,9 +2546,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2725,7 +2695,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

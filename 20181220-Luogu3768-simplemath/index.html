@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「Luogu3768」简单的数学题-杜教筛 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="求$$\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))~mod~p$$其中 $n &amp;lt; 10^{10}$。">
+    <meta name="description" content="求$$\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))modp$$其中 $n &amp;lt; 10^{10}$。">
 <meta name="keywords" content="数论,数论函数,杜教筛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「Luogu3768」简单的数学题-杜教筛">
 <meta property="og:url" content="https://blog.chenqiqian.com/20181220-Luogu3768-simplemath/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="求$$\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))~mod~p$$其中 $n &amp;lt; 10^{10}$。">
+<meta property="og:description" content="求$$\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))modp$$其中 $n &amp;lt; 10^{10}$。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-30T04:06:11.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「Luogu3768」简单的数学题-杜教筛">
-<meta name="twitter:description" content="求$$\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))~mod~p$$其中 $n &amp;lt; 10^{10}$。">
+<meta name="twitter:description" content="求$$\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))modp$$其中 $n &amp;lt; 10^{10}$。">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -182,34 +175,37 @@
             
         </h1>
         <div class="content">
-            <p>求<br>$$<br>\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))~mod~p<br>$$<br>其中 $n &lt; 10^{10}$。</p>
+            <p>求<br>$$<br>\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))<del>mod</del>p<br>$$<br>其中 $n &lt; 10^{10}$。</p>
 <a id="more"></a>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>$$<br>ans =\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))~mod~p\\<br>=\sum_{d=1}^n d\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}ijd^2[\gcd(i,j) == 1]\\<br>=\sum_{d=1}^n d^3 \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}ij[\gcd(i,j) == 1]\\<br>$$</p>
+
+
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>$$<br>ans =\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))<del>mod</del>p\<br>=\sum_{d=1}^n d\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}ijd^2[\gcd(i,j) == 1]\<br>=\sum_{d=1}^n d^3 \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}ij[\gcd(i,j) == 1]\<br>$$</p>
 <p>如果我们令</p>
-<p>$$<br>f(d) = \sum_{i=1}^{n}\sum_{j=1}^{n}ij[\gcd(i,j) == d]\\<br>g(d) = \sum_{d|k} f(k) = d^2\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor} ij\\<br>g(d) = d^2{\left[\frac{\lfloor\frac{n}{d}\rfloor(\lfloor\frac{n}{d}\rfloor + 1)}{2}\right]}^2<br>$$</p>
+<p>$$<br>f(d) = \sum_{i=1}^{n}\sum_{j=1}^{n}ij[\gcd(i,j) == d]\<br>g(d) = \sum_{d|k} f(k) = d^2\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor} ij\<br>g(d) = d^2{\left[\frac{\lfloor\frac{n}{d}\rfloor(\lfloor\frac{n}{d}\rfloor + 1)}{2}\right]}^2<br>$$</p>
 <p>令 $sum(x) = \frac{x(x+1)}{2}$，原式化为：</p>
 <p>$$<br>g(d) = d^2 \cdot sum(\lfloor\frac{n}{d}\rfloor)^2<br>$$</p>
 <p>就有：</p>
-<p>$$<br>f(d) = \sum_{d|k} \mu(k) g(\frac{k}{d})\\<br>f(1) = \sum_{i=1}^n \mu (i) g(i)\\<br>f(1) = \sum_{i=1}^n \mu (i) i^2 sum(\lfloor\frac{n}{i}\rfloor)^2<br>$$</p>
+<p>$$<br>f(d) = \sum_{d|k} \mu(k) g(\frac{k}{d})\<br>f(1) = \sum_{i=1}^n \mu (i) g(i)\<br>f(1) = \sum_{i=1}^n \mu (i) i^2 sum(\lfloor\frac{n}{i}\rfloor)^2<br>$$</p>
 <p>那么：</p>
 <p>$$<br>ans = \sum_{d=1}^n d^3 \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \mu (i) i^2 sum(\lfloor\frac{n}{di}\rfloor)^2<br>$$</p>
 <p>枚举 $id = T$，则有</p>
-<p>$$<br>ans = \sum_{T = 1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 \sum_{d|T} d^3 \mu(\frac{T}{d}) \times {(\frac{T}{d})}^2\\<br>= \sum_{T=1}^n T^2 sum(\lfloor\frac{n}{T}\rfloor)^2 \sum_{d|T} d \mu(\frac{T}{d}) \\<br>$$</p>
+<p>$$<br>ans = \sum_{T = 1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 \sum_{d|T} d^3 \mu(\frac{T}{d}) \times {(\frac{T}{d})}^2\<br>= \sum_{T=1}^n T^2 sum(\lfloor\frac{n}{T}\rfloor)^2 \sum_{d|T} d \mu(\frac{T}{d}) \<br>$$</p>
 <p>有 $id*\mu = \varphi$ ， 所以</p>
-<p>$$<br>ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 T^2 \varphi(T) \\<br>$$</p>
+<p>$$<br>ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 T^2 \varphi(T) \<br>$$</p>
 <p>令 $f(x) = x^2 \varphi(x)$，我们就有<br>$$<br>ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)<br>$$</p>
 <p>注意到 $\lfloor\frac{n}{T}\rfloor$  只有根号个取值，所以我们想要处理出 $f(T)$ 的前缀和。</p>
 <p>杜教筛：</p>
 <p>$$<br>S(n) = \sum_{i=1}^{n} h(i) - \sum_{d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)<br>$$</p>
 <p>如果我们令 $g(n) = n^2$ ，那么 </p>
-<p>$$<br>h(i) = (g*f)(i)=\sum_{d|i}f(d)g(\frac{i}{d})=\sum_{d|i}d^2\varphi(d){(\frac{i}{d})}^2\\<br>= \sum_{d|i}\varphi(d)i^2 = i^3\\<br>$$</p>
+<p>$$<br>h(i) = (g*f)(i)=\sum_{d|i}f(d)g(\frac{i}{d})=\sum_{d|i}d^2\varphi(d){(\frac{i}{d})}^2\<br>= \sum_{d|i}\varphi(d)i^2 = i^3\<br>$$</p>
 <p>又因为<br>$$<br>\sum_{i=1}^n i^3 = \left[\frac{n(n+1)}{2}\right]^2<br>$$</p>
 <p>所以我们就有</p>
-<p>$$<br>S(n) = \sum_{i=1}^{n} h(i) - \sum_{d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)\\<br>= \left[\frac{n(n+1)}{2}\right]^2 - \sum_{d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\<br>$$</p>
+<p>$$<br>S(n) = \sum_{i=1}^{n} h(i) - \sum_{d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)\<br>= \left[\frac{n(n+1)}{2}\right]^2 - \sum_{d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\<br>$$</p>
 <p>综上：</p>
-<p>$$<br>ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)\\<br>S(n) = \left[\frac{n(n+1)}{2}\right]^2 - \sum_{d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\<br>$$</p>
+<p>$$<br>ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)\<br>S(n) = \left[\frac{n(n+1)}{2}\right]^2 - \sum_{d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\<br>$$</p>
 <p>代码实现一定要多取模…</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">8500000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">pow</span><span class="hljs-params">(ll x,ll k,ll p)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(ll i = k;i;i&gt;&gt;=<span class="hljs-number">1</span>,x = (x*x)%p) <span class="hljs-keyword">if</span>(i &amp; <span class="hljs-number">1</span>) ans = (ans*x)%p;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">inv</span><span class="hljs-params">(ll x,ll p)</span></span>&#123;<span class="hljs-keyword">return</span> <span class="hljs-built_in">pow</span>(x,p<span class="hljs-number">-2</span>,p);&#125;</span><br><span class="line"></span><br><span class="line">ll p,n,rev_6,rev_2;</span><br><span class="line"><span class="hljs-built_in">map</span>&lt;ll,ll&gt; s;</span><br><span class="line">ll pre_s[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sieve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">static</span> ll prime[MAXN],phi[MAXN],cnt = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> vis[MAXN];</span><br><span class="line">  phi[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;i&lt;=MAXN<span class="hljs-number">-1</span>;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(vis[i] == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">      prime[++cnt] = i;</span><br><span class="line">      phi[i] = i<span class="hljs-number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;i * prime[j] &lt;= MAXN<span class="hljs-number">-1</span> &amp;&amp; j&lt;=cnt;j++)&#123;</span><br><span class="line">      vis[i*prime[j]] = <span class="hljs-number">1</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(i % prime[j] == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        phi[i*prime[j]] = phi[i] * (prime[j]);</span><br><span class="line">        <span class="hljs-keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        phi[i*prime[j]] = phi[i] * (prime[j]<span class="hljs-number">-1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=MAXN<span class="hljs-number">-1</span>;i++)&#123;</span><br><span class="line">    pre_s[i] = phi[i]%p * i % p * i % p;</span><br><span class="line">    pre_s[i] += pre_s[i<span class="hljs-number">-1</span>];</span><br><span class="line">    pre_s[i] %= p;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">sum</span><span class="hljs-params">(ll x)</span></span>&#123;x%=p;<span class="hljs-keyword">return</span> x%p *(x+<span class="hljs-number">1</span>)%p *rev_2%p;&#125;</span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">sums</span><span class="hljs-params">(ll x)</span></span>&#123;x%=p;<span class="hljs-keyword">return</span> x%p *(x+<span class="hljs-number">1</span>)%p *(x+x+<span class="hljs-number">1</span>)%p *rev_6%p;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">S</span><span class="hljs-params">(ll n)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(n &lt; MAXN) <span class="hljs-keyword">return</span> pre_s[n];</span><br><span class="line">  <span class="hljs-keyword">if</span>(s.count(n))<span class="hljs-keyword">return</span> s[n];</span><br><span class="line">  ll ans = sum(n)%p;</span><br><span class="line">  ans = ans*ans%p;</span><br><span class="line">  <span class="hljs-keyword">for</span>(ll l = <span class="hljs-number">2</span>,r;l &lt;= n;l = r+<span class="hljs-number">1</span>)&#123;</span><br><span class="line">    r = (n/(n/l));</span><br><span class="line">    ans -= S(n/l)%p * (sums(r) - sums(l<span class="hljs-number">-1</span>)+p)%p;</span><br><span class="line">    ans = ans % p;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> s[n] = ans % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld %lld"</span>,&amp;p,&amp;n);</span><br><span class="line">  rev_6 = inv(<span class="hljs-number">6</span>,p),rev_2 = inv(<span class="hljs-number">2</span>,p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">calc</span><span class="hljs-params">(ll n)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(ll l = <span class="hljs-number">1</span>,r;l &lt;= n;l = r+<span class="hljs-number">1</span>)&#123;</span><br><span class="line">    r = (n/(n/l));</span><br><span class="line">    ll tmp = (S(r) - S(l<span class="hljs-number">-1</span>) + p) % p;</span><br><span class="line">    ll summ = sum(n/l) %p;</span><br><span class="line">    ans += summ%p * summ%p * tmp%p;</span><br><span class="line">    ans %= p;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  sieve();</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,calc(n));</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -253,29 +249,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20181220-Luogu3768-simplemath/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -308,7 +281,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -354,29 +327,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2583,9 +2552,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2733,7 +2701,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>莫比乌斯反演入门题目-题解 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -184,56 +177,57 @@
         <div class="content">
             <p>以下有几道莫比乌斯反演入门题的详尽版的题解（公式推演）。</p>
 <a id="more"></a>
+
 <h2 id="POI2007-ZAP-Queries"><a href="#POI2007-ZAP-Queries" class="headerlink" title="[POI2007]ZAP-Queries"></a>[POI2007]ZAP-Queries</h2><h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>求：<br>$$<br>\sum_{i=1}^n \sum_{j=1}^m [\gcd(i,j)=d]<br>$$</p>
 <hr>
-<h3 id="解法1"><a href="#解法1" class="headerlink" title="解法1"></a>解法1</h3><p>倒一倒式子：<br>$$<br>\text{ans} = \sum_{i=1}^n \sum_{j=1}^m [\gcd(i,j)=d]\\<br>=\sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j)=1]\\<br>$$</p>
-<p>设<br>$$<br>f(d) = \sum_{i=1}^{x}\sum_{j=1}^{y} [\gcd(i,j)=d]\\<br>$$</p>
+<h3 id="解法1"><a href="#解法1" class="headerlink" title="解法1"></a>解法1</h3><p>倒一倒式子：<br>$$<br>\text{ans} = \sum_{i=1}^n \sum_{j=1}^m [\gcd(i,j)=d]\<br>=\sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j)=1]\<br>$$</p>
+<p>设<br>$$<br>f(d) = \sum_{i=1}^{x}\sum_{j=1}^{y} [\gcd(i,j)=d]\<br>$$</p>
 <p>若：<br>$$<br>g(d) = \sum_{d|k} f(k)<br>$$</p>
 <p>则可以发现 $g(d) = \lfloor \frac{x}{d} \rfloor \cdot \lfloor \frac{y}{d} \rfloor$</p>
 <p>反演得：<br>$$<br>f(d) = \sum_{d|k} \mu(\frac{k}{d}) g(k)<br>$$</p>
 <p>那么：<br>$$<br>f(1) = \sum_{k=1}^{\min(x,y)} \mu(k) g(k)<br>$$</p>
-<p>所以：<br>$$<br>\text{ans} = f(1) = \sum_{k=1}^{\min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor)} \mu(k) g(k)\\<br>= \sum_{k=1}^{\min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor)} \mu(k) \cdot \lfloor \frac{x}{d} \rfloor \lfloor \frac{y}{d} \rfloor\\<br>$$</p>
+<p>所以：<br>$$<br>\text{ans} = f(1) = \sum_{k=1}^{\min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor)} \mu(k) g(k)\<br>= \sum_{k=1}^{\min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor)} \mu(k) \cdot \lfloor \frac{x}{d} \rfloor \lfloor \frac{y}{d} \rfloor\<br>$$</p>
 <p>可以利用整除分块，单次查询时间时间复杂度 $O(\sqrt n)$。所以时间复杂度是 $O(n + T\sqrt n)$ 。</p>
 <h2 id="HAOI2011-Problem-b"><a href="#HAOI2011-Problem-b" class="headerlink" title="[HAOI2011]Problem b"></a>[HAOI2011]Problem b</h2><h3 id="题意-1"><a href="#题意-1" class="headerlink" title="题意"></a>题意</h3><p>求：<br>$$<br>\sum_{x=a}^b \sum_{y=c}^d [gcd(x,y)=d]<br>$$</p>
 <hr>
-<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>设：<br>$$<br>\text{ans} = F(a,b,c,d) = \sum_{x=a}^b \sum_{y=c}^d [gcd(x,y)=d],\\<br>G(n,m) = \sum_{x=1}^n \sum_{y=1}^m [gcd(x,y)=d]<br>$$<br>利用容斥原理，可以发现这个式子可以转化成<br>$$<br>F(a,b,c,d) \\= G(b,d) - G(a-1,d) - G(b,c-1) + G(a-1,c-1)<br>$$<br>然后每一个 $G(n,m)$ 都可以按照上题的单次 $O(\sqrt n)$ 的做法求出。所以时间复杂度是 $O(n + T\sqrt n)$ 。</p>
-<h2 id="YY的GCD"><a href="#YY的GCD" class="headerlink" title="YY的GCD"></a>YY的GCD</h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>求：<br>$$<br>\sum_{i=1}^{k} \sum_{x=1}^n \sum_{y=1}^m [gcd(i,j)=p_i]\\<br>$$</p>
+<h3 id="解法"><a href="#解法" class="headerlink" title="解法"></a>解法</h3><p>设：<br>$$<br>\text{ans} = F(a,b,c,d) = \sum_{x=a}^b \sum_{y=c}^d [gcd(x,y)=d],\<br>G(n,m) = \sum_{x=1}^n \sum_{y=1}^m [gcd(x,y)=d]<br>$$<br>利用容斥原理，可以发现这个式子可以转化成<br>$$<br>F(a,b,c,d) \= G(b,d) - G(a-1,d) - G(b,c-1) + G(a-1,c-1)<br>$$<br>然后每一个 $G(n,m)$ 都可以按照上题的单次 $O(\sqrt n)$ 的做法求出。所以时间复杂度是 $O(n + T\sqrt n)$ 。</p>
+<h2 id="YY的GCD"><a href="#YY的GCD" class="headerlink" title="YY的GCD"></a>YY的GCD</h2><h3 id="题意-2"><a href="#题意-2" class="headerlink" title="题意"></a>题意</h3><p>求：<br>$$<br>\sum_{i=1}^{k} \sum_{x=1}^n \sum_{y=1}^m [gcd(i,j)=p_i]\<br>$$</p>
 <hr>
-<h3 id="解法1-1"><a href="#解法1-1" class="headerlink" title="解法1"></a>解法1</h3><p>$$<br>\sum_{i=1}^{k} \sum_{x=1}^n \sum_{y=1}^m [gcd(i,j)=p_i]\\<br>= \sum_{i=1}^k \sum_{x=1}^{\lfloor \frac{n}{p_i} \rfloor} \sum_{y=1} ^{\lfloor \frac{m}{p_i}\rfloor}<br>[gcd(i,j)=1]<br>$$</p>
+<h3 id="解法1-1"><a href="#解法1-1" class="headerlink" title="解法1"></a>解法1</h3><p>$$<br>\sum_{i=1}^{k} \sum_{x=1}^n \sum_{y=1}^m [gcd(i,j)=p_i]\<br>= \sum_{i=1}^k \sum_{x=1}^{\lfloor \frac{n}{p_i} \rfloor} \sum_{y=1} ^{\lfloor \frac{m}{p_i}\rfloor}<br>[gcd(i,j)=1]<br>$$</p>
 <p>设<br>$$<br>f(k) = \sum_{i=1}^n \sum_{j=1}^m [gcd(i,j)=k]<br>$$</p>
 <p>若<br>$$<br>g(k) = \sum_{k|d} f(d)<br>= \lfloor \frac{n}{k} \rfloor \cdot \lfloor \frac{m}{k} \rfloor<br>$$</p>
 <p>莫比乌斯反演得</p>
-<p>$$<br>f(k) = \sum_{k|d} \mu(\frac{d}{k}) g(d)<br>= \sum_{i = 1}^{\lfloor \frac{\min(n,m)}{k} \rfloor}\mu(i)g(ik)\\<br>= \sum_{i = 1}^{\lfloor \frac{\min(n,m)}{k} \rfloor}\mu(i) \lfloor \frac{n}{ik} \rfloor \cdot \lfloor \frac{m}{ik} \rfloor<br>$$</p>
+<p>$$<br>f(k) = \sum_{k|d} \mu(\frac{d}{k}) g(d)<br>= \sum_{i = 1}^{\lfloor \frac{\min(n,m)}{k} \rfloor}\mu(i)g(ik)\<br>= \sum_{i = 1}^{\lfloor \frac{\min(n,m)}{k} \rfloor}\mu(i) \lfloor \frac{n}{ik} \rfloor \cdot \lfloor \frac{m}{ik} \rfloor<br>$$</p>
 <p>所以</p>
 <p>$$<br>f(1) = \sum_{i = 1}^{ \min(n,m) }\mu(i) \cdot \lfloor \frac{n}{i} \rfloor \cdot \lfloor \frac{m}{i} \rfloor<br>$$</p>
 <p>则原式：</p>
-<p>$$<br>\sum_{i=1}^k \sum_{x=1}^{\lfloor \frac{n}{p_i} \rfloor} \sum_{y=1} ^{\lfloor \frac{m}{p_i}\rfloor}<br>[gcd(i,j)=1]\\<br>= \sum_{i=1}^k \sum_{d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(d) \cdot \lfloor \frac{n}{d p_i} \rfloor \cdot \lfloor \frac{m}{dp_i} \rfloor\\<br>$$</p>
-<p>设$T_i = d p_i$，则有：<br>原式<br>$$<br>\sum_{i=1}^k \sum_{d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(d) \cdot \lfloor \frac{n}{d p_i} \rfloor \cdot \lfloor \frac{m}{dp_i} \rfloor\\<br>= \sum_{i=1}^k \sum_{d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(\frac{T_i}{p_i}) \cdot \lfloor \frac{n}{T_i} \rfloor \cdot \lfloor \frac{m}{T_i} \rfloor\\<br>= \sum_{i=1}^k \sum_{p_i | T}\mu(\frac{T}{p_i}) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor\\<br>= \sum_{T=1}^{\min(n,m)} \sum_{p_i|T} \mu(\frac{T}{p_i}) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor\\<br>= \sum_{T=1}^{\min(n,m)} \lfloor \frac{n}{T} \rfloor \lfloor \frac{m}{T} \rfloor \sum_{p_i|T} \mu(\frac{T}{p_i}) \\<br>$$</p>
+<p>$$<br>\sum_{i=1}^k \sum_{x=1}^{\lfloor \frac{n}{p_i} \rfloor} \sum_{y=1} ^{\lfloor \frac{m}{p_i}\rfloor}<br>[gcd(i,j)=1]\<br>= \sum_{i=1}^k \sum_{d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(d) \cdot \lfloor \frac{n}{d p_i} \rfloor \cdot \lfloor \frac{m}{dp_i} \rfloor\<br>$$</p>
+<p>设$T_i = d p_i$，则有：<br>原式<br>$$<br>\sum_{i=1}^k \sum_{d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(d) \cdot \lfloor \frac{n}{d p_i} \rfloor \cdot \lfloor \frac{m}{dp_i} \rfloor\<br>= \sum_{i=1}^k \sum_{d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(\frac{T_i}{p_i}) \cdot \lfloor \frac{n}{T_i} \rfloor \cdot \lfloor \frac{m}{T_i} \rfloor\<br>= \sum_{i=1}^k \sum_{p_i | T}\mu(\frac{T}{p_i}) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor\<br>= \sum_{T=1}^{\min(n,m)} \sum_{p_i|T} \mu(\frac{T}{p_i}) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor\<br>= \sum_{T=1}^{\min(n,m)} \lfloor \frac{n}{T} \rfloor \lfloor \frac{m}{T} \rfloor \sum_{p_i|T} \mu(\frac{T}{p_i}) \<br>$$</p>
 <p>令<br>$$<br>h(x) = \sum_{p_i|x} \mu(\frac{x}{p_i})<br>$$</p>
 <p>所以原式化为：</p>
-<p>$$<br>\sum_{T=1}^{\min(n,m)} \lfloor \frac{n}{T} \rfloor \lfloor \frac{m}{T} \rfloor \sum_{p_i|T} \mu(\frac{T}{p_i}) \\<br>= \sum_{i=1}^{\min(n,m)} \lfloor \frac{n}{i} \rfloor \lfloor \frac{m}{i} \rfloor h(i)<br>$$</p>
+<p>$$<br>\sum_{T=1}^{\min(n,m)} \lfloor \frac{n}{T} \rfloor \lfloor \frac{m}{T} \rfloor \sum_{p_i|T} \mu(\frac{T}{p_i}) \<br>= \sum_{i=1}^{\min(n,m)} \lfloor \frac{n}{i} \rfloor \lfloor \frac{m}{i} \rfloor h(i)<br>$$</p>
 <p>只需要求出 $h(i)$ 的前缀和，我们就可以 $O(\sqrt{n})$ 整除分块算出。</p>
 <p>观察<br>$$<br>h(x) = \sum_{p_i|x} \mu(\frac{x}{p_i})<br>$$</p>
 <p>可以发现，如果我们枚举每个质数，再将所有的该质数的倍数的<code>g[i * prime[j]] += mu[i]</code>都加上去。</p>
 <p>由于枚举倍数的调和级数 $\frac{n}{1} + \frac{n}{2} + \cdots + \frac{n}{n} = O(\ln n + r)$ ,所以这个枚举过程的复杂度是 $O(n \ln n)$ 的。</p>
 <p>注意到这个 $h(x)$ 应当也是一个积性函数，所以事实上可以在线性素数筛的时候直接计算出 $h(x)$ 的值，这个过程就是 $O(n)$ 的。</p>
-<h2 id="NOI2010-能量采集"><a href="#NOI2010-能量采集" class="headerlink" title="[NOI2010]能量采集"></a>[NOI2010]能量采集</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给定两个整数$n,m$，对于平面上的整点 $\{(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z\}$ 。若 $(x,y)$  与 $(0,0)$ 的连线上有 $k$ 个整点（不包括 $(0,0)$ , $(n,m)$），则产生的贡献为 $2k+1$ 。求所有满足条件的点的贡献总和。</p>
+<h2 id="NOI2010-能量采集"><a href="#NOI2010-能量采集" class="headerlink" title="[NOI2010]能量采集"></a>[NOI2010]能量采集</h2><h3 id="题意-3"><a href="#题意-3" class="headerlink" title="题意"></a>题意</h3><p>给定两个整数$n,m$，对于平面上的整点 ${(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z}$ 。若 $(x,y)$  与 $(0,0)$ 的连线上有 $k$ 个整点（不包括 $(0,0)$ , $(n,m)$），则产生的贡献为 $2k+1$ 。求所有满足条件的点的贡献总和。</p>
 <hr>
 <h3 id="解法-1"><a href="#解法-1" class="headerlink" title="解法"></a>解法</h3><p>一个结论：从 $(0,0)$ 到 $(n,m)$ 的线路上，有 $\gcd(n,m)-1$ 个整点(不包括 $(0,0)$ , $(n,m)$ )。</p>
 <p>想一想很好明白：令 $t$ 是 $n,m$ 的公因数 $(\frac {n}{t} , \frac {m}{t})$ 就相当于步长， $m,n$ 一定时 $t$ 越大，步长越小，整点就越多。 $\gcd(n,m)$ 是 $n$ ,$ m$ 的最大公因数，所以就是最多整点的个数了。</p>
 <p>所以问题转化为：<br>求<br>$$<br>\sum_{i = 1}^{n} \sum_{j = 1}^{m}2\times \gcd(n,m)-1<br>$$<br>的值。</p>
 <p>我们进行一些微小的变换：</p>
-<p>$$<br>\sum_{i = 1}^{n} \sum_{j = 1}^{m}2\times \gcd(n,m)-1\\<br>= (2 \sum_{i = 1}^{n} \sum_{j = 1}^{m}\gcd(n,m)) - n \times m<br>$$</p>
+<p>$$<br>\sum_{i = 1}^{n} \sum_{j = 1}^{m}2\times \gcd(n,m)-1\<br>= (2 \sum_{i = 1}^{n} \sum_{j = 1}^{m}\gcd(n,m)) - n \times m<br>$$</p>
 <p>问题转化为求：<br>$$<br>\sum_{i = 1}^{n} \sum_{j = 1}^{m}\gcd(n,m)<br>$$</p>
 <hr>
-<p>$$<br>\text{ans} = \sum_{i = 1}^{n} \sum_{j = 1}^{m}\gcd(n,m)\\<br>= \sum_{d=1}^{\min(n,m)} d \times (\sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j)=1])\\<br>$$</p>
+<p>$$<br>\text{ans} = \sum_{i = 1}^{n} \sum_{j = 1}^{m}\gcd(n,m)\<br>= \sum_{d=1}^{\min(n,m)} d \times (\sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j)=1])\<br>$$</p>
 <p>设：</p>
 <p>$$<br>f(d) = \sum_{i=1}^{x} \sum_{j=1}^{y} [\gcd(i,j)=d]<br>$$</p>
 <p>由第一题，可以发现：</p>
 <p>$$<br>f(1) = \sum_{i = 1}^{ \min(x,y) }\mu(i) \cdot \lfloor \frac{x}{i} \rfloor \cdot \lfloor \frac{y}{i} \rfloor<br>$$</p>
 <p>回代得：</p>
-<p>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \times (\sum_{i = 1}^{ \min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor) }\mu(i) \cdot \lfloor \frac{n}{id} \rfloor \cdot \lfloor \frac{m}{id} \rfloor)\\<br>$$</p>
-<p>设 $T = id$，可以得到：<br>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \times (\sum_{i = 1}^{ \min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor) }\mu(i) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor)\\<br>$$</p>
+<p>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \times (\sum_{i = 1}^{ \min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor) }\mu(i) \cdot \lfloor \frac{n}{id} \rfloor \cdot \lfloor \frac{m}{id} \rfloor)\<br>$$</p>
+<p>设 $T = id$，可以得到：<br>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \times (\sum_{i = 1}^{ \min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor) }\mu(i) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor)\<br>$$</p>
 <p>改为枚举 $T$，得到：<br>$$<br>\text{ans} = \sum_{T=1}^{\min(n,m)} \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor (\sum_{d|T} \mu(\frac{T}{d}) \cdot d)<br>$$</p>
 <p>如果令：<br>$$<br>h(T) = \sum_{d|T} \mu(\frac{T}{d}) \cdot d<br>$$</p>
 <p>发现 $h(T)$ 是一个积性函数，所以可以 $O(n)$ 线性筛出来， 然后就可以得到：</p>
@@ -244,20 +238,20 @@
 <p>这题亦可 $O(n \log n)$ 手动模拟容斥原理。</p>
 <h2 id="国家集训队-Crash的数字表格"><a href="#国家集训队-Crash的数字表格" class="headerlink" title="[国家集训队]Crash的数字表格"></a>[国家集训队]Crash的数字表格</h2><h3 id="题意-4"><a href="#题意-4" class="headerlink" title="题意"></a>题意</h3><p>求：<br>$$<br>\sum_{x=1}^{n} \sum_{y=1}^{m} \text{lcm}(x,y)<br>$$<br>数据范围： $n,m \leq 10^7$ </p>
 <hr>
-<h3 id="解法1-O-n"><a href="#解法1-O-n" class="headerlink" title="解法1 $O(n)$"></a>解法1 $O(n)$</h3><p>$$<br>\sum_{x=1}^{n} \sum_{y=1}^{m} \text{lcm}(x,y)\\<br>= \sum_{x=1}^{n} \sum_{y=1}^{m} \frac{xy}{\gcd(x,y)}<br>$$</p>
-<p>我们可以枚举 $\gcd(x,y)$ 的值 $d$ ，然后就把式子化成：<br>$$<br>\sum_{x=1}^{n} \sum_{y=1}^{m} \frac{xy}{\gcd(x,y)}\\<br>= \sum_{d=1}^{\min(n,m)}\sum_{x=1}^{n} \sum_{y=1}^m \frac{xy}{d} [\gcd(x,y) = d]\\<br>= \sum_{d=1}^{\min(n,m)} d \; \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} ij[\gcd(i,j)=1]\\<br>$$</p>
-<p>设：<br>$$<br>F(x,y) = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[\gcd(i,j)=1]\\<br>$$</p>
+<h3 id="解法1-O-n"><a href="#解法1-O-n" class="headerlink" title="解法1 $O(n)$"></a>解法1 $O(n)$</h3><p>$$<br>\sum_{x=1}^{n} \sum_{y=1}^{m} \text{lcm}(x,y)\<br>= \sum_{x=1}^{n} \sum_{y=1}^{m} \frac{xy}{\gcd(x,y)}<br>$$</p>
+<p>我们可以枚举 $\gcd(x,y)$ 的值 $d$ ，然后就把式子化成：<br>$$<br>\sum_{x=1}^{n} \sum_{y=1}^{m} \frac{xy}{\gcd(x,y)}\<br>= \sum_{d=1}^{\min(n,m)}\sum_{x=1}^{n} \sum_{y=1}^m \frac{xy}{d} [\gcd(x,y) = d]\<br>= \sum_{d=1}^{\min(n,m)} d ; \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} ij[\gcd(i,j)=1]\<br>$$</p>
+<p>设：<br>$$<br>F(x,y) = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[\gcd(i,j)=1]\<br>$$</p>
 <p>则：<br>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \cdot F(\lfloor \frac{n}{d}\rfloor,\lfloor \frac{m}{d}\rfloor)<br>$$</p>
 <hr>
 <p>设：<br>$$<br>h(x,y) = \sum_{i=1}^x \sum_{j=1}^y ij<br>= \frac{x(x+1)}{2} \cdot \frac{y(y+1)}{2}<br>$$</p>
 <p>$h(x,y)$ 可以 $O(1)$ 计算得到。</p>
 <hr>
 <p>我们进行莫比乌斯反演，尝试求出 $F(x,y)$ 的值：</p>
-<p>（以下默认上界分别为 $x,y$）<br>设<br>$$<br>f(d) = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[\gcd(i,j)=d],g(d) = \sum_{d|k} f(k)\\<br>$$</p>
+<p>（以下默认上界分别为 $x,y$）<br>设<br>$$<br>f(d) = \sum_{i=1}^{x} \sum_{j=1}^{y} ij[\gcd(i,j)=d],g(d) = \sum_{d|k} f(k)\<br>$$</p>
 <p>我们发现， $g(d)$ 事实上可以表示为：</p>
 <p>$$<br>g(d) = d^2 \times \sum_{i=1}^{\lfloor \frac{x}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{y}{d} \rfloor} ij = d^2 \times h(\lfloor \frac{x}{d} \rfloor, \lfloor \frac{y}{d} \rfloor)<br>$$</p>
 <p>经过反演：</p>
-<p>$$<br>f(d) = \sum_{d|k} \mu(\frac{k}{d}) g(k)\\<br>= \sum_{d|k} \mu(\frac{k}{d}) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)<br>$$</p>
+<p>$$<br>f(d) = \sum_{d|k} \mu(\frac{k}{d}) g(k)\<br>= \sum_{d|k} \mu(\frac{k}{d}) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)<br>$$</p>
 <p>所以：</p>
 <p>$$<br>f(1) = \sum_{k=1}^{\min(x,y)} \mu(k) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)<br>$$</p>
 <p>那么，<br>$$<br>F(x,y) = f(1) = \sum_{k=1}^{\min(x,y)} \mu(k) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)<br>$$</p>
@@ -265,7 +259,7 @@
 <p>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \cdot F(\lfloor \frac{n}{d}\rfloor,\lfloor \frac{m}{d}\rfloor)<br>$$</p>
 <p>我们发现，这里对于所有的 $d$ 来说， $\lfloor \frac{n}{d}\rfloor$ 与 $\lfloor \frac{m}{d}\rfloor$ 也最多分别有 $\sqrt{n}$ 个取值，所以我们最多只需要计算 $O(\sqrt{n})$ 次 $F(x,y)$ ，所以最后的时间复杂度是 $O(n)$。</p>
 <h3 id="解法2-O-n-T-sqrt-n"><a href="#解法2-O-n-T-sqrt-n" class="headerlink" title="解法2 $O(n + T\sqrt {n})$"></a>解法2 $O(n + T\sqrt {n})$</h3><p>我们有<br>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \cdot F(\lfloor \frac{n}{d}\rfloor,\lfloor \frac{m}{d}\rfloor)<br>$$</p>
-<p>又：<br>$$<br>F(x,y) = \sum_{k=1}^{\min(x,y)} \mu(k) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)\\<br>$$</p>
+<p>又：<br>$$<br>F(x,y) = \sum_{k=1}^{\min(x,y)} \mu(k) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)\<br>$$</p>
 <p>代入得：<br>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \cdot \sum_{k=1}^{\min(\lfloor \frac{n}{d}\rfloor,\lfloor \frac{m}{d}\rfloor)} \mu(k) \cdot  k^2 \cdot h(\lfloor \frac{n}{dk} \rfloor, \lfloor \frac{m}{dk} \rfloor)<br>$$</p>
 <p>设 $dk = T$，则有：</p>
 <p>$$<br>\text{ans} = \sum_{d=1}^{\min(n,m)} d \cdot \sum_{k=1}^{\min(\lfloor \frac{n}{d}\rfloor,\lfloor \frac{m}{d}\rfloor)} \mu(k) \cdot  k^2 \cdot h(\lfloor \frac{n}{T} \rfloor, \lfloor \frac{m}{T} \rfloor)<br>$$</p>
@@ -280,31 +274,31 @@
 <h3 id="解法-2"><a href="#解法-2" class="headerlink" title="解法"></a>解法</h3><p>我们有如下结论：</p>
 <p>$$<br>d(ij) = \sum_{x|i} \sum_{y|j} [\gcd(x,y) = 1]<br>$$</p>
 <p>证明：</p>
-<p>我们对 $i$ 和 $j$ 两个数做唯一分解 ，得到：<br>$$<br>i = {p_1}^{a_1} \times {p_2}^{a_2} \times  \cdots \times {p_n}^{a_n}\\<br>j = {p_1}^{b_1} \times {p_2}^{b_2} \times  \cdots \times {p_n}^{b_n}\\<br>$$</p>
+<p>我们对 $i$ 和 $j$ 两个数做唯一分解 ，得到：<br>$$<br>i = {p_1}^{a_1} \times {p_2}^{a_2} \times  \cdots \times {p_n}^{a_n}\<br>j = {p_1}^{b_1} \times {p_2}^{b_2} \times  \cdots \times {p_n}^{b_n}\<br>$$</p>
 <p>所以我们知道<br>$$<br>d(ij) = \prod_{x=1}^n {(a_x + b_x + 1)}<br>$$</p>
 <p>我们需要证明，分别从 $i$ 和 $j$ 中选择两个互质的约数的方案数也等于上式。</p>
 <p>我们发现，在约数的构造中，不同质因子的选取是独立的。所以我们只需要考虑一个质因子的选取方案数，然后把所有质因子做一个连乘即可。</p>
 <p>因为不能有公共的因子，所以对 $p_1$ 这个质因子来说，我们可以正好找出 $a_1+b_1+1$ 种选取方法，分别为：</p>
-<p>$$<br>(1,0),(2,0),\cdots,(a_1,0)\\<br>(0,1),(0,2),\cdots,(0,b_1)\\<br>(0,0)<br>$$</p>
+<p>$$<br>(1,0),(2,0),\cdots,(a_1,0)\<br>(0,1),(0,2),\cdots,(0,b_1)\<br>(0,0)<br>$$</p>
 <p>可以证明，这些不同的的选取可以保证我们选择的因数不会完全相同。</p>
 <p>所以可以证明：<br>$$<br>d(ij) = \sum_{x|i} \sum_{y|j} [\gcd(x,y) = 1]<br>$$</p>
 <hr>
 <p>原式：</p>
-<p>$$<br>\sum^N_{i=1}\sum^M_{j=1}d(ij)\\<br>= \sum^N_{i=1}\sum^M_{j=1}\sum_{x|i} \sum_{y|j} [\gcd(x,y) = 1]\\<br>= \sum_{x=1}^N\sum_{y=1}^M\sum_{x|i} \sum_{y|j} [\gcd(x,y) = 1]\\<br>= \sum_{x=1}^N\sum_{y=1}^M [\gcd(x,y) = 1] \sum_{x|i} \sum_{y|j} 1\\<br>= \sum_{x=1}^N\sum_{y=1}^M [\gcd(x,y) = 1] \lfloor \frac{N}{x} \rfloor \lfloor \frac{M}{y} \rfloor\\<br>$$</p>
-<p>设<br>$$<br>f(d) = \sum_{x=1}^N\sum_{y=1}^M [\gcd(x,y) = d] \lfloor \frac{N}{x} \rfloor \lfloor \frac{M}{y} \rfloor\\<br>$$</p>
+<p>$$<br>\sum^N_{i=1}\sum^M_{j=1}d(ij)\<br>= \sum^N_{i=1}\sum^M_{j=1}\sum_{x|i} \sum_{y|j} [\gcd(x,y) = 1]\<br>= \sum_{x=1}^N\sum_{y=1}^M\sum_{x|i} \sum_{y|j} [\gcd(x,y) = 1]\<br>= \sum_{x=1}^N\sum_{y=1}^M [\gcd(x,y) = 1] \sum_{x|i} \sum_{y|j} 1\<br>= \sum_{x=1}^N\sum_{y=1}^M [\gcd(x,y) = 1] \lfloor \frac{N}{x} \rfloor \lfloor \frac{M}{y} \rfloor\<br>$$</p>
+<p>设<br>$$<br>f(d) = \sum_{x=1}^N\sum_{y=1}^M [\gcd(x,y) = d] \lfloor \frac{N}{x} \rfloor \lfloor \frac{M}{y} \rfloor\<br>$$</p>
 <p>若<br>$$<br>g(d) = \sum_{d|i} f(i)<br>$$</p>
 <p>可以发现，此时 $x,y$ 为所有 $d$ 的倍数，所以：<br>$$<br>g(d) = \sum_{i=1}^{\lfloor \frac{N}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{M}{d} \rfloor} \lfloor \frac{N}{id} \rfloor \lfloor \frac{M}{jd} \rfloor<br>$$</p>
 <p>进行一步反演：<br>$$<br>f(d) = \sum_{d|k} \mu(\frac{k}{d}) g(k)<br>$$</p>
 <p>则：</p>
-<p>$$<br>f(1) = \sum_{k=1}^{\min(n,m)} \mu(k) g(k)\\<br>=  \sum_{k=1}^{\min(n,m)} \mu(k) \sum_{i=1}^{\lfloor \frac{N}{k} \rfloor} \sum_{j=1}^{\lfloor \frac{M}{k} \rfloor} \lfloor \frac{N}{ik} \rfloor \lfloor \frac{M}{jk} \rfloor\\<br>= \sum_{k=1}^{\min(n,m)} \mu(k) (\sum_{i=1}^{\lfloor \frac{N}{k} \rfloor}\lfloor \frac{N}{ik} \rfloor) (\sum_{j=1}^{\lfloor \frac{M}{k} \rfloor}  \lfloor \frac{M}{jk} \rfloor)\\<br>$$</p>
+<p>$$<br>f(1) = \sum_{k=1}^{\min(n,m)} \mu(k) g(k)\<br>=  \sum_{k=1}^{\min(n,m)} \mu(k) \sum_{i=1}^{\lfloor \frac{N}{k} \rfloor} \sum_{j=1}^{\lfloor \frac{M}{k} \rfloor} \lfloor \frac{N}{ik} \rfloor \lfloor \frac{M}{jk} \rfloor\<br>= \sum_{k=1}^{\min(n,m)} \mu(k) (\sum_{i=1}^{\lfloor \frac{N}{k} \rfloor}\lfloor \frac{N}{ik} \rfloor) (\sum_{j=1}^{\lfloor \frac{M}{k} \rfloor}  \lfloor \frac{M}{jk} \rfloor)\<br>$$</p>
 <p>我们发现：</p>
 <p>$$<br>\sum_{x=1}^nd(x) = \sum_{i=1}^{n}\lfloor \frac{n}{i} \rfloor<br>$$</p>
 <p>所以：</p>
-<p>$$<br>\text{ans} = \sum_{k=1}^{\min(n,m)} \mu(k) (\sum_{i=1}^{\lfloor \frac{N}{k} \rfloor}\lfloor \frac{N}{ik} \rfloor) (\sum_{j=1}^{\lfloor \frac{M}{k} \rfloor}  \lfloor \frac{M}{jk} \rfloor)\\<br>= \sum_{k=1}^{\min(n,m)} \mu(k) \sum_{i=1}^{\lfloor \frac{N}{k} \rfloor}d(i) \sum_{j=1}^{\lfloor \frac{M}{k} \rfloor}  d(j)\\<br>$$</p>
+<p>$$<br>\text{ans} = \sum_{k=1}^{\min(n,m)} \mu(k) (\sum_{i=1}^{\lfloor \frac{N}{k} \rfloor}\lfloor \frac{N}{ik} \rfloor) (\sum_{j=1}^{\lfloor \frac{M}{k} \rfloor}  \lfloor \frac{M}{jk} \rfloor)\<br>= \sum_{k=1}^{\min(n,m)} \mu(k) \sum_{i=1}^{\lfloor \frac{N}{k} \rfloor}d(i) \sum_{j=1}^{\lfloor \frac{M}{k} \rfloor}  d(j)\<br>$$</p>
 <p>令：</p>
 <p>$$<br>h(x) = \sum_{i=1}^x d(i)<br>$$</p>
 <p>则：</p>
-<p>$$<br>\text{ans} = \sum_{k=1}^{\min(n,m)} \mu(k) \cdot h(\lfloor \frac{N}{k} \rfloor) \cdot h(\lfloor \frac{M}{k} \rfloor)\\<br>$$</p>
+<p>$$<br>\text{ans} = \sum_{k=1}^{\min(n,m)} \mu(k) \cdot h(\lfloor \frac{N}{k} \rfloor) \cdot h(\lfloor \frac{M}{k} \rfloor)\<br>$$</p>
 <p>我们发现 $d(i)$ 是一个积性函数，可以 $O(n)$ 线性筛，然后 $h(x)$ 可以 $O(n)$ 前缀和，然后就可以 $O(\sqrt n)$ 整除分块单次出解。</p>
 
         </div>
@@ -349,29 +343,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180825-mobius-inversion/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -404,7 +375,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -450,29 +421,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2679,9 +2646,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2829,7 +2795,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

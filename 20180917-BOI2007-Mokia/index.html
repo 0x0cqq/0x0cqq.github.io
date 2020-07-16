@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「BOI2007」Mokia-CDQ分治套CDQ分治 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -219,6 +212,7 @@
 <p>我们考虑到，如果在前 $x-1$ 个维度其有任意一个维度被划分到了一个区间，那么他们就会共同进入一次分治，那么这两个询问/查询之间的影响就会在子问题里面被解决，所以我们这样做的正确性是可以保证的。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">300000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,qaq;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">T</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> id,op,a,b,add,ans,part;</span><br><span class="line">  <span class="hljs-comment">//add = 1/-1</span></span><br><span class="line">  T()&#123;</span><br><span class="line">    id = op = a = b = add = ans = part = <span class="hljs-number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  T(<span class="hljs-keyword">int</span> _id,<span class="hljs-keyword">int</span> _op,<span class="hljs-keyword">int</span> _a,<span class="hljs-keyword">int</span> _b,<span class="hljs-keyword">int</span> _add,<span class="hljs-keyword">int</span> _ans = <span class="hljs-number">0</span>,<span class="hljs-keyword">int</span> _p = <span class="hljs-number">0</span>)&#123;</span><br><span class="line">    id = _id,op = _op,a = _a,b = _b,add = _add,ans = _ans,part = _p;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;t[MAXN];<span class="hljs-keyword">int</span> tot;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> ans[MAXN],vis[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> cdq[MAXN],tmp1d[MAXN],tmp2d[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> LEFT = <span class="hljs-number">0</span>,RIGHT = <span class="hljs-number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CDQ2d</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *w,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;<span class="hljs-comment">//对第二维(a) 分治，对第三维 (b) 合并</span></span><br><span class="line">  <span class="hljs-comment">// 这里给出序列 w 的时候应该其第一维坐标 (a) 已经有序</span></span><br><span class="line">  <span class="hljs-keyword">if</span>(l == r) <span class="hljs-keyword">return</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> mid = (l+r)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">  CDQ2d(w,l,mid),CDQ2d(w,mid+<span class="hljs-number">1</span>,r);<span class="hljs-comment">//递归解决子问题</span></span><br><span class="line">  <span class="hljs-keyword">int</span> L = l,R = mid+<span class="hljs-number">1</span>,c = l;<span class="hljs-comment">//现在左边第二维全部小于右边</span></span><br><span class="line">  <span class="hljs-keyword">int</span> tmp = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-comment">// 跨越维度的分治只需要考虑 (L,b1) 对 (R,b2) 的影响，剩余的在1d的分治里面已经解决</span></span><br><span class="line">  <span class="hljs-comment">// 更高维度的分治同理，只需要考虑 (L,...,L,b1) 对 (R,...,R,b2) 的影响；</span></span><br><span class="line">  <span class="hljs-comment">// 第一维相同的在 1d 里面解决，第二维相同的在 2d 里面解决</span></span><br><span class="line">  <span class="hljs-keyword">while</span>(c &lt;= r)&#123;<span class="hljs-comment">// 对第三维度进行归并排序</span></span><br><span class="line">    <span class="hljs-keyword">if</span>(R &gt; r || (L&lt;=mid &amp;&amp; t[w[L]].b &lt;= t[w[R]].b))&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(t[w[L]].part == LEFT &amp;&amp; t[w[L]].op == <span class="hljs-number">1</span>) tmp += t[w[L]].add;</span><br><span class="line">      tmp2d[c++] = w[L++];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(t[w[R]].part == RIGHT &amp;&amp; t[w[R]].op == <span class="hljs-number">2</span>) t[w[R]].ans += tmp;</span><br><span class="line">      tmp2d[c++] = w[R++];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = l;i&lt;=r;i++) w[i] = tmp2d[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CDQ1d</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *w,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;<span class="hljs-comment">//对第一维（隐去）分治，对第二维合并</span></span><br><span class="line">  <span class="hljs-keyword">if</span>(l == r) <span class="hljs-keyword">return</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> mid = (l+r)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">  CDQ1d(w,l,mid),CDQ1d(w,mid+<span class="hljs-number">1</span>,r);<span class="hljs-comment">// 递归解决子问题</span></span><br><span class="line">  <span class="hljs-keyword">int</span> L = l,R = mid+<span class="hljs-number">1</span>,c = l;</span><br><span class="line">  <span class="hljs-keyword">while</span>(c &lt;= r)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(R &gt; r || (L &lt;= mid &amp;&amp; t[w[L]].a &lt;= t[w[R]].a))<span class="hljs-comment">// 对第二维进行归并</span></span><br><span class="line">      t[w[L]].part = LEFT,tmp1d[c++] = w[L++];</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      t[w[R]].part = RIGHT,tmp1d[c++] = w[R++];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = l;i&lt;=r;i++) w[i] = tmp1d[i];<span class="hljs-comment">// tmp1d相当于复制的一份</span></span><br><span class="line">  CDQ2d(tmp1d,l,r);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;qaq,&amp;n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> op,x,y,x1,y1,v;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;op);</span><br><span class="line">    <span class="hljs-keyword">if</span>(op == <span class="hljs-number">3</span>)&#123;<span class="hljs-keyword">break</span>;&#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(op == <span class="hljs-number">1</span>)&#123;</span><br><span class="line">      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d"</span>,&amp;x,&amp;y,&amp;v);</span><br><span class="line">      t[++tot] = T(i,<span class="hljs-number">1</span>,x,y,v);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(op == <span class="hljs-number">2</span>)&#123;</span><br><span class="line">      vis[i] = <span class="hljs-number">1</span>;</span><br><span class="line">      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d %d"</span>,&amp;x,&amp;y,&amp;x1,&amp;y1);</span><br><span class="line">      t[++tot] = T(i,<span class="hljs-number">2</span>,x<span class="hljs-number">-1</span>,y<span class="hljs-number">-1</span>,<span class="hljs-number">1</span>);</span><br><span class="line">      t[++tot] = T(i,<span class="hljs-number">2</span>,x<span class="hljs-number">-1</span>,y1,<span class="hljs-number">-1</span>);</span><br><span class="line">      t[++tot] = T(i,<span class="hljs-number">2</span>,x1,y<span class="hljs-number">-1</span>,<span class="hljs-number">-1</span>);</span><br><span class="line">      t[++tot] = T(i,<span class="hljs-number">2</span>,x1,y1,<span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;<span class="hljs-keyword">return</span>;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=tot;i++)&#123;</span><br><span class="line">    cdq[i] = i;</span><br><span class="line">  &#125;</span><br><span class="line">  CDQ1d(cdq,<span class="hljs-number">1</span>,tot);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=tot;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(vis[t[i].id])</span><br><span class="line">      ans[t[i].id] += t[i].add * t[i].ans;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=tot;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(vis[i])&#123;</span><br><span class="line">      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,ans[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+
         </div>
         
         <div class="level is-size-7 is-uppercase">
@@ -261,29 +255,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180917-BOI2007-Mokia/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -316,7 +287,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -362,29 +333,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2591,9 +2558,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2741,7 +2707,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

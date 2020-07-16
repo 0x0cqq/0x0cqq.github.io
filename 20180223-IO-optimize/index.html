@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>输入输出优化模板 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -186,8 +179,10 @@
 <a id="more"></a>
 <p>依赖库<code>stdio.h</code> 和 <code>ctype.h</code>。</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io &#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-comment">//return getchar();</span></span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> IN_LEN = <span class="hljs-number">1000000</span>;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> buf[IN_LEN], *s, *t;</span><br><span class="line">        <span class="hljs-keyword">return</span> s==t?(((t=(s=buf)+fread(buf,<span class="hljs-number">1</span>,IN_LEN,<span class="hljs-built_in">stdin</span>))== s)?<span class="hljs-number">-1</span>:*s++) : *s++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> iosig;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> c;</span><br><span class="line">        <span class="hljs-keyword">for</span> (iosig = <span class="hljs-literal">false</span>, c = read(); !<span class="hljs-built_in">isdigit</span>(c); c = read()) &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (c == <span class="hljs-string">'-'</span>) iosig = <span class="hljs-literal">true</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span> (c == <span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span> (x = <span class="hljs-number">0</span>; <span class="hljs-built_in">isdigit</span>(c); c = read())</span><br><span class="line">            x = ((x+(x&lt;&lt;<span class="hljs-number">2</span>))&lt;&lt;<span class="hljs-number">1</span>) + (c ^ <span class="hljs-string">'0'</span>);</span><br><span class="line">        <span class="hljs-keyword">if</span> (iosig) x = -x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *a)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> c = read();</span><br><span class="line">        <span class="hljs-keyword">while</span>(c!= <span class="hljs-number">-1</span>&amp;&amp;(c == <span class="hljs-string">' '</span>||c!=<span class="hljs-string">'\r'</span>||c ==<span class="hljs-string">'\n'</span>))</span><br><span class="line">            c = read();</span><br><span class="line">        <span class="hljs-keyword">while</span>(c!= <span class="hljs-number">-1</span>&amp;&amp;c!=<span class="hljs-string">' '</span>&amp;&amp;c!=<span class="hljs-string">'\r'</span>&amp;&amp;c!=<span class="hljs-string">'\n'</span>)</span><br><span class="line">            *a++ = c,c = read();</span><br><span class="line">        *a = <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> OUT_LEN = <span class="hljs-number">1000000</span>;</span><br><span class="line">    <span class="hljs-keyword">char</span> obuf[OUT_LEN], *ooh = obuf;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">char</span> c)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span> (ooh == obuf + OUT_LEN) fwrite(obuf, <span class="hljs-number">1</span>, OUT_LEN, <span class="hljs-built_in">stdout</span>), ooh = obuf;</span><br><span class="line">        *ooh++ = c;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> buf[<span class="hljs-number">30</span>], cnt;</span><br><span class="line">        <span class="hljs-keyword">if</span> (x == <span class="hljs-number">0</span>)</span><br><span class="line">            print(<span class="hljs-string">'0'</span>);</span><br><span class="line">        <span class="hljs-keyword">else</span> &#123;</span><br><span class="line">            <span class="hljs-keyword">if</span> (x &lt; <span class="hljs-number">0</span>) print(<span class="hljs-string">'-'</span>), x = -x;</span><br><span class="line">            <span class="hljs-keyword">for</span> (cnt = <span class="hljs-number">0</span>; x; x /= <span class="hljs-number">10</span>) buf[++cnt] = x % <span class="hljs-number">10</span> + <span class="hljs-number">48</span>;</span><br><span class="line">            <span class="hljs-keyword">while</span> (cnt) print((<span class="hljs-keyword">char</span>)buf[cnt--]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *a)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(*a) print(*a++);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flush</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        fwrite(obuf, <span class="hljs-number">1</span>, ooh - obuf, <span class="hljs-built_in">stdout</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> normal_io&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> getchar();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">char</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-built_in">putchar</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flush</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="hljs-comment">//using namespace normal_io;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x;</span><br><span class="line">    read(x);</span><br><span class="line">    print(x);</span><br><span class="line">    flush();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="short版"><a href="#short版" class="headerlink" title="short版"></a>short版</h2><p>update at 20180405</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io &#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> IN_LEN=<span class="hljs-number">1000000</span>;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> buf[IN_LEN],*s,*t;<span class="hljs-keyword">return</span> s==t?(((t=(s=buf)+fread(buf,<span class="hljs-number">1</span>,IN_LEN,<span class="hljs-built_in">stdin</span>))==s)?<span class="hljs-number">-1</span>:*s++) : *s++;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span></span>&#123;<span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> iosig;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> c;<span class="hljs-keyword">for</span> (iosig=<span class="hljs-literal">false</span>,c=read();!<span class="hljs-built_in">isdigit</span>(c);c=read())&#123;<span class="hljs-keyword">if</span>(c==<span class="hljs-string">'-'</span>)iosig=<span class="hljs-literal">true</span>;<span class="hljs-keyword">if</span>(c==<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span>;&#125;<span class="hljs-keyword">for</span>(x=<span class="hljs-number">0</span>;<span class="hljs-built_in">isdigit</span>(c);c=read())x=((x+(x&lt;&lt;<span class="hljs-number">2</span>))&lt;&lt;<span class="hljs-number">1</span>)+(c^<span class="hljs-string">'0'</span>);<span class="hljs-keyword">if</span>(iosig)x=-x;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *a)</span></span>&#123;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> c = read();<span class="hljs-keyword">while</span>(c!=<span class="hljs-number">-1</span>&amp;&amp;(c==<span class="hljs-string">' '</span>||c==<span class="hljs-string">'\n'</span>||c==<span class="hljs-string">'\r'</span>))c=read();<span class="hljs-keyword">while</span>(c!=<span class="hljs-number">-1</span>&amp;&amp;c!=<span class="hljs-string">'\r'</span>&amp;&amp;c!=<span class="hljs-string">' '</span>&amp;&amp;c!=<span class="hljs-string">'\n'</span>) *a++=c,c=read();*a=<span class="hljs-number">0</span>;&#125;</span><br><span class="line">    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> OUT_LEN=<span class="hljs-number">1000000</span>;<span class="hljs-keyword">char</span> obuf[OUT_LEN],*ooh=obuf;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">char</span> c)</span></span>&#123;<span class="hljs-keyword">if</span>(ooh==obuf+OUT_LEN) fwrite(obuf,<span class="hljs-number">1</span>,OUT_LEN,<span class="hljs-built_in">stdout</span>),ooh=obuf;*ooh++ = c;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> buf[<span class="hljs-number">30</span>],cnt;<span class="hljs-keyword">if</span>(x==<span class="hljs-number">0</span>)print(<span class="hljs-string">'0'</span>);<span class="hljs-keyword">else</span>&#123;<span class="hljs-keyword">if</span>(x&lt;<span class="hljs-number">0</span>)print(<span class="hljs-string">'-'</span>),x=-x;<span class="hljs-keyword">for</span>(cnt=<span class="hljs-number">0</span>;x;x/=<span class="hljs-number">10</span>)buf[++cnt]=x%<span class="hljs-number">10</span>+<span class="hljs-number">48</span>;<span class="hljs-keyword">while</span> (cnt) print((<span class="hljs-keyword">char</span>)buf[cnt--]);&#125;&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *a)</span></span>&#123;<span class="hljs-keyword">while</span>(*a) print(*a++);&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flush</span><span class="hljs-params">()</span></span>&#123;fwrite(obuf,<span class="hljs-number">1</span>,ooh-obuf,<span class="hljs-built_in">stdout</span>);&#125;</span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> normal_io&#123;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> getchar();&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span></span>&#123;<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;x);&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,x);&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">char</span> x)</span></span>&#123;<span class="hljs-built_in">putchar</span>(x);&#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flush</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span>;&#125;</span><br><span class="line">&#125;<span class="hljs-comment">//using namespace normal_io;</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x;</span><br><span class="line">    read(x);</span><br><span class="line">    print(x);</span><br><span class="line">    flush();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -231,29 +226,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180223-IO-optimize/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -286,7 +258,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -332,29 +304,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2561,9 +2529,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2711,7 +2678,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

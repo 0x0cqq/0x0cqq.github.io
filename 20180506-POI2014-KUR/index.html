@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「POI2014」KUR-Couriers-主席树 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="给一个数列 $\{a_n\}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。">
+    <meta name="description" content="给一个数列 ${a_n}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。">
 <meta name="keywords" content="数据结构,线段树,主席树,可持久化线段树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「POI2014」KUR-Couriers-主席树">
 <meta property="og:url" content="https://blog.chenqiqian.com/20180506-POI2014-KUR/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="给一个数列 $\{a_n\}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。">
+<meta property="og:description" content="给一个数列 ${a_n}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-06T12:15:07.533Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「POI2014」KUR-Couriers-主席树">
-<meta name="twitter:description" content="给一个数列 $\{a_n\}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。">
+<meta name="twitter:description" content="给一个数列 ${a_n}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -182,8 +175,9 @@
             
         </h1>
         <div class="content">
-            <p>给一个数列 $\{a_n\}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。</p>
+            <p>给一个数列 ${a_n}$ ，每次询问区间 $[l,r]$ 内有没有一个数出现次数超过一半。如果有，输出这个数，如果没有，输出 $0$ 。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3567" target="_blank" rel="noopener">Luogu P3567</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>主席树的模版…然而蒟蒻如我居然并看不出来怎么做…不过现在对权值线段树也更了解了呢。</p>
 <p>普通的建立一颗主席树。每个节点维护该区间内权值总和。</p>
@@ -191,6 +185,7 @@
 <p>其实就是总统选举那道题的弱化版。</p>
 <p>很简单。然而我更菜。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mid ((l+r)&gt;&gt;1)</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pp pair<span class="hljs-meta-string">&lt;int,int&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io &#123;</span><br><span class="line">    <span class="hljs-comment">//...</span></span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">600000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> prSegTree&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> val[MAXN*<span class="hljs-number">20</span>];<span class="hljs-keyword">int</span> ls[MAXN*<span class="hljs-number">20</span>],rs[MAXN*<span class="hljs-number">20</span>];</span><br><span class="line">    <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        nown = cnt++;</span><br><span class="line">        <span class="hljs-keyword">if</span>(l == r)</span><br><span class="line">            val[nown] = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            build(ls[nown],l,mid);</span><br><span class="line">            build(rs[nown],mid+<span class="hljs-number">1</span>,r);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;nown,<span class="hljs-keyword">int</span> pre,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> pos,<span class="hljs-keyword">int</span> d)</span></span>&#123;</span><br><span class="line">        nown = cnt++;val[nown] = val[pre]+d;</span><br><span class="line">        ls[nown] = ls[pre];rs[nown] = rs[pre];</span><br><span class="line">        <span class="hljs-keyword">if</span>(l == r)</span><br><span class="line">            <span class="hljs-keyword">return</span>;</span><br><span class="line">        <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(pos &lt;= mid)</span><br><span class="line">                update(ls[nown],ls[pre],l,mid,pos,d);</span><br><span class="line">            <span class="hljs-keyword">if</span>(mid+<span class="hljs-number">1</span> &lt;= pos)</span><br><span class="line">                update(rs[nown],rs[pre],mid+<span class="hljs-number">1</span>,r,pos,d);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nowl,<span class="hljs-keyword">int</span> nowr,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> limit)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(l == r)</span><br><span class="line">            <span class="hljs-keyword">return</span> l;</span><br><span class="line">        <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(val[ls[nowr]] - val[ls[nowl]]&gt;=limit)</span><br><span class="line">                <span class="hljs-keyword">return</span> query(ls[nowl],ls[nowr],l,mid,limit);</span><br><span class="line">            <span class="hljs-keyword">if</span>(val[rs[nowr]] - val[rs[nowl]]&gt;=limit)</span><br><span class="line">                <span class="hljs-keyword">return</span> query(rs[nowl],rs[nowr],mid+<span class="hljs-number">1</span>,r,limit);</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"><span class="hljs-keyword">int</span> root[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    read(n),read(m);</span><br><span class="line">    prSegTree::build(root[<span class="hljs-number">0</span>],<span class="hljs-number">1</span>,n);</span><br><span class="line">    <span class="hljs-keyword">int</span> tmp;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        read(tmp);</span><br><span class="line">        root[i] = root[i<span class="hljs-number">-1</span>];</span><br><span class="line">        prSegTree::update(root[i],root[i<span class="hljs-number">-1</span>],<span class="hljs-number">1</span>,n,tmp,<span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> l,r;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        read(l),read(r);</span><br><span class="line">        print(prSegTree::query(root[l<span class="hljs-number">-1</span>],root[r],<span class="hljs-number">1</span>,n,(r-l+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>+<span class="hljs-number">1</span>)),print(<span class="hljs-string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    solve();</span><br><span class="line">    flush();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -234,29 +229,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180506-POI2014-KUR/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -289,7 +261,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -335,29 +307,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2564,9 +2532,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2714,7 +2681,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

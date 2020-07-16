@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CF540E」Infinite Inversions-动态开点线段树 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -186,6 +179,7 @@
 <p>对这个序列执行 $n$ 次交换操作。每次一个操作，给出两个整数 $a,b$，交换位置 $a$ 和 $b$ 处的元素。 </p>
 <p>你的任务是在所有操作结束后，输出最终序列的逆序对个数，即满足 $i &lt; j$ 且 $p_i &gt; p_j$ 的有序数对 $(i,j)$ 的数量。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://codeforces.com/problemset/problem/540/E" target="_blank" rel="noopener">Codeforces</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们发现，两个没有经过任何交换的位置之间是不可能产生逆序对的，可能产生逆序对的只有：</p>
 <ul>
@@ -203,6 +197,7 @@
 <p>维护扫描线，和动态开点线段树，可以在 $O(n \log V)$ 时间内解决。</p>
 <p>最后时间复杂度： $O(n (\log V + \log n))$，空间 $O(n \log V)$</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">101000</span>,logn = <span class="hljs-number">35</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">SegTree</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> sumn[MAXN*logn],ls[MAXN*logn],rs[MAXN*logn],cnt = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mid ((l+r)/2)</span></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> pos,<span class="hljs-keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!nown) nown = ++cnt;</span><br><span class="line">    <span class="hljs-keyword">if</span>(l == r)</span><br><span class="line">      sumn[nown] += v;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      sumn[nown] += v;</span><br><span class="line">      <span class="hljs-keyword">if</span>(pos &lt;= mid) update(ls[nown],l,mid,pos,v);</span><br><span class="line">      <span class="hljs-keyword">if</span>(pos &gt;= mid+<span class="hljs-number">1</span>) update(rs[nown],mid+<span class="hljs-number">1</span>,r,pos,v);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> ql,<span class="hljs-keyword">int</span> qr)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(ql &gt; qr) <span class="hljs-keyword">return</span> qr - ql + <span class="hljs-number">1</span>;<span class="hljs-comment">//以便后面和负数区间对掉，其余部分最多只会差1，返回0没有锅</span></span><br><span class="line">    <span class="hljs-keyword">if</span>(!nown) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr)</span><br><span class="line">      <span class="hljs-keyword">return</span> sumn[nown];</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(ql &lt;= mid) ans += query(ls[nown],l,mid,ql,qr);</span><br><span class="line">      <span class="hljs-keyword">if</span>(qr &gt;= mid+<span class="hljs-number">1</span>) ans += query(rs[nown],mid+<span class="hljs-number">1</span>,r,ql,qr);</span><br><span class="line">      <span class="hljs-keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;T1,T2;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,MAX = <span class="hljs-number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">map</span>&lt;<span class="hljs-keyword">int</span>,<span class="hljs-keyword">int</span>&gt; S; <span class="hljs-comment">// pos-&gt;val</span></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getval</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<span class="hljs-keyword">return</span> S.count(x)?S[x]:x;&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">void</span> _swap(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> va = getval(a),vb = getval(b);</span><br><span class="line">  S[a] = vb,S[b] = va;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> a,b;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">    _swap(a,b);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll ans = <span class="hljs-number">0</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> rt1,rt2;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it = S.begin();it!=S.end();it++)&#123;</span><br><span class="line">    T1.update(rt1,<span class="hljs-number">1</span>,MAX,it-&gt;first,<span class="hljs-number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it = S.begin();it!=S.end();it++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> p = it-&gt;first,v = it-&gt;second;</span><br><span class="line">    ans += ((p<span class="hljs-number">-1</span>)-(v+<span class="hljs-number">1</span>)+<span class="hljs-number">1</span>) - T1.query(rt1,<span class="hljs-number">1</span>,MAX,v+<span class="hljs-number">1</span>,p<span class="hljs-number">-1</span>);<span class="hljs-comment">//前面比他大的</span></span><br><span class="line">    ans += ((v<span class="hljs-number">-1</span>)-(p+<span class="hljs-number">1</span>)+<span class="hljs-number">1</span>) - T1.query(rt1,<span class="hljs-number">1</span>,MAX,p+<span class="hljs-number">1</span>,v<span class="hljs-number">-1</span>);<span class="hljs-comment">//后面比他小的</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> it = S.begin();it!=S.end();it++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> v = it-&gt;second;</span><br><span class="line">    ans += T2.query(rt2,<span class="hljs-number">1</span>,MAX,v+<span class="hljs-number">1</span>,MAX);</span><br><span class="line">    T2.update(rt2,<span class="hljs-number">1</span>,MAX,v,<span class="hljs-number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -246,29 +241,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190101-CF540E/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -301,7 +273,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -347,29 +319,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2576,9 +2544,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2726,7 +2693,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

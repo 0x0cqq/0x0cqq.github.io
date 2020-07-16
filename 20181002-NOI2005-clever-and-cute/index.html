@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「NOI2005」聪聪与可可-期望dp - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -187,6 +180,7 @@
 <p>在每个时间单位，假设聪聪先走，可可后走。在某一时刻，若聪聪和可可位于同一个景点，则可怜的可可就被吃掉了。</p>
 <p>请求出平均情况下，聪聪用几个时间单位就可能吃到可可。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P4206" target="_blank" rel="noopener">Luogu P4206</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>有趣的期望dp。</p>
 <p>我们注意到，如果我们知道可可和聪聪的位置，那么聪聪的两次移动我们都是唯一的。</p>
@@ -194,6 +188,7 @@
 <p>现在我们就可以进行转移了。</p>
 <p>设 $dp[u][v]$ 为聪聪在 $u$ ，可可在 $v$ 时的期望步数，然后转移即可。注意到我们需要遍历 $v$ 这个点对应的所有的边，但是无向图的话，所有的边会被遍历两遍，所以对于每个 $v$ ，转移是 $O(n)$ 的，然后转移的复杂度也是 $O(n^2)$ 。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1100</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m,s,t;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; edge[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> dis[MAXN][MAXN],near[MAXN][MAXN];</span><br><span class="line"><span class="hljs-keyword">double</span> dp[MAXN][MAXN];</span><br><span class="line"><span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d %d"</span>,&amp;n,&amp;m,&amp;s,&amp;t);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> u,v;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;u,&amp;v);</span><br><span class="line">    edge[u].push_back(v);</span><br><span class="line">    edge[v].push_back(u);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">bfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> st)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">while</span>(!q.empty()) q.pop();</span><br><span class="line">  q.push(st);dis[st][st] = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">while</span>(!q.empty())&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> nown = q.front();q.pop();</span><br><span class="line">    <span class="hljs-comment">// printf("%d\n",nown);</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> i = <span class="hljs-number">0</span>;i&lt;edge[nown].size();i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> v = edge[nown][i];</span><br><span class="line">      <span class="hljs-comment">// printf("  v:%d\n",v);</span></span><br><span class="line">      <span class="hljs-keyword">if</span>(dis[st][v] == <span class="hljs-number">0</span> &amp;&amp; v != st)&#123;</span><br><span class="line">        dis[st][v] = dis[st][nown] + <span class="hljs-number">1</span>;</span><br><span class="line">        q.push(v);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_near</span><span class="hljs-params">(<span class="hljs-keyword">int</span> to)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nown = <span class="hljs-number">1</span>;nown&lt;=n;nown++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(nown == to) <span class="hljs-keyword">continue</span>;<span class="hljs-comment">//cautious</span></span><br><span class="line">    near[nown][to] = <span class="hljs-number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> i = <span class="hljs-number">0</span>;i&lt;edge[nown].size();i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> v = edge[nown][i];</span><br><span class="line">      <span class="hljs-keyword">if</span>(dis[v][to] &lt; dis[nown][to] &amp;&amp; near[nown][to] &gt; v)&#123;</span><br><span class="line">        near[nown][to] = v;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u,<span class="hljs-keyword">int</span> v)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> uu = u,vv = v;</span><br><span class="line">  <span class="hljs-keyword">if</span>(dp[uu][vv] != <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> dp[u][v];</span><br><span class="line">  <span class="hljs-keyword">if</span>(u == v) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">if</span>(near[u][v] == v || near[near[u][v]][v] == v)&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> dp[u][v] = <span class="hljs-number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  u = near[near[u][v]][v];</span><br><span class="line">  <span class="hljs-keyword">double</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> i = <span class="hljs-number">0</span>;i&lt;edge[v].size();i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> to = edge[v][i];</span><br><span class="line">    ans += (dfs(u,to)+<span class="hljs-number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  ans += dfs(u,v)+<span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">return</span> dp[uu][vv] = ans/(edge[v].size()+<span class="hljs-number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) bfs(i);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) get_near(i);</span><br><span class="line">  <span class="hljs-keyword">double</span> ans = dfs(s,t);</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.3lf\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -237,29 +232,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20181002-NOI2005-clever-and-cute/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -292,7 +264,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -338,29 +310,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2567,9 +2535,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2717,7 +2684,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

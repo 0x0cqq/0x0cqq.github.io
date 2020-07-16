@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「TJOI2017」DNA-后缀数组 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -184,10 +177,12 @@
         <div class="content">
             <p>加里敦大学的生物研究所发现了决定人喜不喜欢吃藕的基因序列 $S$ ,有这个序列的碱基序列就会表现出喜欢吃藕的性状，但是研究人员发现对碱基序列 $S$ ,任意修改其中不超过 $3$ 个碱基，依然能够表现出吃藕的性状。现在研究人员想知道这个基因在 DNA 链 $S0$ 上的位置。所以你需要统计在一个表现出吃藕性状的人的 DNA 序列 $S0$ 上，有多少个连续子串可能是该基因，即有多少个 $S0$ 的连续子串修改小于等于三个字母能够变成 $S$ 。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3763" target="_blank" rel="noopener">Luogu P3763</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>先把两个串拼到一起，然后处理出后缀数组，建立出RMQ的ST表。然后对于每一位都判断是否满足条件即可，即往后取三个LCP，然后判断长度关系即可。</p>
 <p>时间复杂度O(n)。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">210000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> SA&#123;</span><br><span class="line"><span class="hljs-keyword">int</span> sa[MAXN],rk[MAXN],ht[MAXN],s[MAXN&lt;&lt;<span class="hljs-number">1</span>],t[MAXN&lt;&lt;<span class="hljs-number">1</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> p[MAXN],b[MAXN],cur[MAXN];</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pushS(x) sa[cur[s[x]]--] = x</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> pushL(x) sa[cur[s[x]]++] = x</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> inducedSort(v)\</span></span><br><span class="line">    fill_n(b,m,<span class="hljs-number">0</span>),fill_n(sa,n,<span class="hljs-number">-1</span>);\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) b[s[i]]++;\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;m;j++) b[j]+=b[j<span class="hljs-number">-1</span>];\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;m;j++) cur[j] = b[j]<span class="hljs-number">-1</span>;\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=n1<span class="hljs-number">-1</span>;~i;--i) pushS(v[i]);\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;m;j++) cur[j] = b[j<span class="hljs-number">-1</span>];\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;n;i++) <span class="hljs-keyword">if</span>(sa[i]&gt;<span class="hljs-number">0</span> &amp;&amp; t[sa[i]<span class="hljs-number">-1</span>]) pushL(sa[i]<span class="hljs-number">-1</span>);\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;m;j++) cur[j] = b[j]<span class="hljs-number">-1</span>;\</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=n<span class="hljs-number">-1</span>;~i;--i) <span class="hljs-keyword">if</span>(sa[i]&gt;<span class="hljs-number">0</span> &amp;&amp; !t[sa[i]<span class="hljs-number">-1</span>]) pushS(sa[i]<span class="hljs-number">-1</span>);</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sais</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> m,<span class="hljs-keyword">int</span> *s,<span class="hljs-keyword">int</span> *t,<span class="hljs-keyword">int</span> *p)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> n1 = t[n<span class="hljs-number">-1</span>] = <span class="hljs-number">0</span>,ch = rk[<span class="hljs-number">0</span>] = <span class="hljs-number">-1</span>,*s1 = s+n;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=n<span class="hljs-number">-2</span>;~i;--i) t[i] = s[i]==s[i+<span class="hljs-number">1</span>]?t[i+<span class="hljs-number">1</span>]:s[i]&gt;s[i+<span class="hljs-number">1</span>];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;n;i++) rk[i] = (t[i<span class="hljs-number">-1</span>]&amp;&amp;!t[i])?(p[n1] = i,n1++):<span class="hljs-number">-1</span>;</span><br><span class="line">    inducedSort(p);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>,x,y;i&lt;n;i++)<span class="hljs-keyword">if</span>(~(x=rk[sa[i]]))&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(ch&lt;<span class="hljs-number">1</span>||p[x+<span class="hljs-number">1</span>]-p[x]!=p[y+<span class="hljs-number">1</span>]-p[y]) ch++;</span><br><span class="line">        <span class="hljs-keyword">else</span> <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=p[x],k=p[y];j&lt;=p[x+<span class="hljs-number">1</span>];j++,k++)</span><br><span class="line">            <span class="hljs-keyword">if</span>((s[j]&lt;&lt;<span class="hljs-number">1</span>|t[j]) != (s[k]&lt;&lt;<span class="hljs-number">1</span>|t[k]))&#123;ch++;<span class="hljs-keyword">break</span>;&#125;</span><br><span class="line">        s1[y=x] = ch;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(ch+<span class="hljs-number">1</span> &lt; n1) sais(n1,ch+<span class="hljs-number">1</span>,s1,t+n,p+n1);</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n1;i++) sa[s1[i]] = i;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n1;i++) s1[i] = p[sa[i]];</span><br><span class="line">    inducedSort(s1);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">mapChartoInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">const</span> T *str)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> m = *max_element(str,str+n);</span><br><span class="line">    fill_n(rk,m+<span class="hljs-number">1</span>,<span class="hljs-number">0</span>);<span class="hljs-comment">//+1!!!</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) rk[str[i]] = <span class="hljs-number">1</span>;<span class="hljs-comment">//=1!</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;j&lt;m;j++) rk[j+<span class="hljs-number">1</span>] += rk[j]; </span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) s[i] = rk[str[i]]<span class="hljs-number">-1</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> rk[m];</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-comment">// str[n] yange zidianxu zuixiao</span></span><br><span class="line"><span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> T&gt;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">suffixArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">const</span> T *str)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> m = mapChartoInt(++n,str);</span><br><span class="line">    sais(n,m,s,t,p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getHeight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">// 这里的循环一定要到a！</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;=n;i++) rk[sa[i]] = i;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>,h = ht[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> j = sa[rk[i]<span class="hljs-number">-1</span>];</span><br><span class="line">        <span class="hljs-keyword">while</span>(i+h&lt;n &amp;&amp; j+h&lt;n &amp;&amp; s[i+h] == s[j+h]) h++;</span><br><span class="line">        <span class="hljs-keyword">if</span>(ht[rk[i]] = h) --h;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,x,y;</span><br><span class="line"><span class="hljs-keyword">char</span> s[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> ST&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> st[<span class="hljs-number">20</span>][MAXN];</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> *num)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) st[<span class="hljs-number">0</span>][i] = num[i];</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>,t = <span class="hljs-number">2</span>;t&lt;=n;j++,t&lt;&lt;=<span class="hljs-number">1</span>)</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i+(t&gt;&gt;<span class="hljs-number">1</span>)&lt;=n;i++)</span><br><span class="line">                st[j][i] = min(st[j<span class="hljs-number">-1</span>][i],st[j<span class="hljs-number">-1</span>][i+(t&gt;&gt;<span class="hljs-number">1</span>)]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> t = log2(r-l+<span class="hljs-number">1</span>);</span><br><span class="line">        <span class="hljs-keyword">return</span> min(st[t][l],st[t][r-(<span class="hljs-number">1</span>&lt;&lt;t)+<span class="hljs-number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s);</span><br><span class="line">    x = <span class="hljs-built_in">strlen</span>(s);</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s+x);</span><br><span class="line">    n = <span class="hljs-built_in">strlen</span>(s);</span><br><span class="line">    y = n-x;</span><br><span class="line">    s[n] = <span class="hljs-string">'A'</span><span class="hljs-number">-1</span>;</span><br><span class="line">    SA::suffixArray(n,s);</span><br><span class="line">    SA::getHeight(n);</span><br><span class="line">    ST::build(n,SA::ht);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lcp</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a == b) <span class="hljs-keyword">return</span> n - a + <span class="hljs-number">1</span>;</span><br><span class="line">    a = SA::rk[a],b = SA::rk[b];</span><br><span class="line">    <span class="hljs-keyword">if</span>(a &gt; b) swap(a,b);</span><br><span class="line">    <span class="hljs-keyword">return</span> ST::query(a+<span class="hljs-number">1</span>,b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">judge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>,len = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(len &lt; y)&#123;</span><br><span class="line">        len += lcp(p+len,x+len);</span><br><span class="line">        <span class="hljs-keyword">if</span>(cnt &gt;= <span class="hljs-number">3</span> &amp;&amp; len &lt; y) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">        len++,cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;=x-y;i++)</span><br><span class="line">        <span class="hljs-keyword">if</span>(judge(i)) ans++;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> T;<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;T);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=T;i++)</span><br><span class="line">        init(),solve();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -231,29 +226,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180623-TJOI2017-DNA/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -286,7 +258,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -332,29 +304,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2561,9 +2529,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2711,7 +2678,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

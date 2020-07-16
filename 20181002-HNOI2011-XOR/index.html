@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「HNOI2011」XOR和路径-高斯消元 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -183,14 +176,17 @@
         </h1>
         <div class="content">
             <p>给定一个无向连通图，其节点编号为 $1$ 到 $N$，其边的权值为非负整数。试求出一条从 $1$ 号节点到 $N$ 号节点的路径，使得该路径上经过的边的权值的 “ $\text{XOR}$ 和” 最大。该路径可以重复经过某些节点或边，当一条边在路径中出现多次时，其权值在计算 “$\text{XOR}$ 和” 时也要被重复计算相应多的次数。</p>
-<p>直接求解上述问题比较困难，于是你决定使用非完美算法。具体来说，从 $1$ 号节点开始，以相等的概率，随机选择与当前节点相关联的某条边，并沿这条边走到下一个节点，重复这个过程，直到走到 $N$ 号节点为止，便得到一条从 $1$ 号节点到 $N$ 号节点的路径。显然得到每条这样的路径的概率是不同的，并且每条这样的路径的 “ $\text{XOR}$ 和” 也不一样。现在请你求出该算法得到的路径的 “ $\text{XOR}$ 和” 的期望值。<br><a id="more"></a></p>
+<p>直接求解上述问题比较困难，于是你决定使用非完美算法。具体来说，从 $1$ 号节点开始，以相等的概率，随机选择与当前节点相关联的某条边，并沿这条边走到下一个节点，重复这个过程，直到走到 $N$ 号节点为止，便得到一条从 $1$ 号节点到 $N$ 号节点的路径。显然得到每条这样的路径的概率是不同的，并且每条这样的路径的 “ $\text{XOR}$ 和” 也不一样。现在请你求出该算法得到的路径的 “ $\text{XOR}$ 和” 的期望值。</p>
+<a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3211" target="_blank" rel="noopener">Luogu P3211</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>注意到每位独立，所以我们可以考虑分别考虑每位再进行相加。</p>
 <p>具体来说，如果我们用 $P[i]$ 表示在 $i$ 号节点时，到达 $N$ 号节点时该位为 $1$ 的概率，那么我们有如下转移：</p>
-<p>$$<br>P[i] =<br>\left\{<br>\begin{aligned}{}<br>&amp;\sum_{\text{i,j have a edge}} \frac{P[j]}{d[i]}&amp;,i \neq N\\<br>&amp;1&amp;,i = N<br>\end{aligned}<br>\right.<br>$$ </p>
+<p>$$<br>P[i] =<br>\left{<br>\begin{aligned}{}<br>&amp;\sum_{\text{i,j have a edge}} \frac{P[j]}{d[i]}&amp;,i \neq N\<br>&amp;1&amp;,i = N<br>\end{aligned}<br>\right.<br>$$ </p>
 <p>其中 $d[i]$ 为 $i$ 节点度数。</p>
 <p>高斯消元即可。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> eps = <span class="hljs-number">1e-7</span>;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">110</span>,MAXM = <span class="hljs-number">11000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> to,len;</span><br><span class="line">  <span class="hljs-keyword">int</span> nex;</span><br><span class="line">&#125;edge[MAXM*<span class="hljs-number">2</span>];<span class="hljs-keyword">int</span> ecnt = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> fir[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addedge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u,<span class="hljs-keyword">int</span> v,<span class="hljs-keyword">int</span> c)</span></span>&#123;</span><br><span class="line">  edge[ecnt] = (Edge)&#123;v,c,fir[u]&#125;;</span><br><span class="line">  fir[u] = ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"><span class="hljs-keyword">double</span> de[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> u,v,c;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d"</span>,&amp;u,&amp;v,&amp;c);</span><br><span class="line">    addedge(u,v,c);de[u]++;</span><br><span class="line">    <span class="hljs-keyword">if</span>(u!=v)&#123;</span><br><span class="line">      addedge(v,u,c);de[v]++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">gauss</span><span class="hljs-params">(<span class="hljs-keyword">double</span> a[MAXN][MAXN],<span class="hljs-keyword">int</span> n)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> r = i;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = i+<span class="hljs-number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(a[j][i]) &gt; <span class="hljs-built_in">fabs</span>(a[r][i])) </span><br><span class="line">        r = j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(r != i)&#123;</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=n+<span class="hljs-number">1</span>;j++)</span><br><span class="line">        swap(a[i][j],a[r][j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(<span class="hljs-built_in">fabs</span>(a[i][i]) &lt; eps) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=n;j++)<span class="hljs-keyword">if</span>(j!=i)&#123;</span><br><span class="line">      <span class="hljs-keyword">double</span> t = a[j][i]/a[i][i];</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>;k&lt;=n+<span class="hljs-number">1</span>;k++)&#123;</span><br><span class="line">        a[j][k] -= a[i][k] * t;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">    a[i][n+<span class="hljs-number">1</span>]/=a[i][i],a[i][i] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">double</span> ju[MAXN][MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> num[MAXN];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">double</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;<span class="hljs-number">30</span>;i++)&#123;</span><br><span class="line">    <span class="hljs-comment">// printf("i:%d\n",i);</span></span><br><span class="line">    <span class="hljs-built_in">memset</span>(ju,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(ju));</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nown = <span class="hljs-number">1</span>;nown&lt;=n;nown++)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;</span><br><span class="line">      ju[nown][nown] = <span class="hljs-number">1</span>;</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> v = edge[nowe].to,l = edge[nowe].len;</span><br><span class="line">        <span class="hljs-keyword">if</span>((l &amp; (<span class="hljs-number">1</span>&lt;&lt;i)) == <span class="hljs-number">0</span>)</span><br><span class="line">          ju[nown][v] += <span class="hljs-number">-1</span>/de[nown];</span><br><span class="line">        <span class="hljs-keyword">else</span></span><br><span class="line">          ju[nown][v] += <span class="hljs-number">1</span>/de[nown],cnt++;</span><br><span class="line">      &#125;</span><br><span class="line">      ju[nown][n+<span class="hljs-number">1</span>] = cnt/de[nown];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) ju[n][i] = <span class="hljs-number">0</span>;</span><br><span class="line">    ju[n][n] = <span class="hljs-number">1</span>,ju[n][n+<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;</span><br><span class="line">    gauss(ju,n);</span><br><span class="line">    ans += ju[<span class="hljs-number">1</span>][n+<span class="hljs-number">1</span>] * <span class="hljs-built_in">pow</span>(<span class="hljs-number">2</span>,i);</span><br><span class="line">    <span class="hljs-comment">// printf("--------------------\n");</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.3lf\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -234,29 +230,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20181002-HNOI2011-XOR/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -289,7 +262,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -335,29 +308,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2564,9 +2533,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2714,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「HEOI2016/TJOI2016」序列-CDQ分治优化dp - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -186,11 +179,12 @@
 <p>现在佳媛姐姐已经研究出了所有变化的可能性，她想请教你，能否选出一个子序列，使得在任意一种变化中，这个子序列都是不降的？请你告诉她这个子序列的最长长度即可 。</p>
 <p>注意：每种变化最多只有一个值发生变化。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P4093" target="_blank" rel="noopener">Luogu P4093</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们可以发现，如果 $x$ 位置的变化能够影响到经过它的最长不降子序列，那么需要关心的只有两个值：该点可能变化到的最小值 $\min_x$ 与可能变化到的最大值 $\max_x$ 。所以我们只需要存储每个位置的 $\min_x$ 和 $\max_x$ 即可。</p>
 <p>然后我们发现这个东西可以用 $O(n^2)$ 的朴素 $dp$ 来完成对 $\text{LIS}$ 的计算。</p>
 <p>方程为（其中 $a_0 = max_0 = min_0 = - \inf$）：</p>
-<p>$$<br>dp[i] =<br>\left\{<br>\begin{aligned}{}<br>&amp;0&amp;,\;&amp;\text{if } i = 0\\<br>&amp;\max_{j=0}^{i-1}{(dp[j] + 1)}&amp;,\;&amp; \text{if } \text{max}_j \leq a_i \text{ and } a_j \leq \text{min}_i<br>\end{aligned}<br>\right.<br>$$</p>
+<p>$$<br>dp[i] =<br>\left{<br>\begin{aligned}{}<br>&amp;0&amp;,;&amp;\text{if } i = 0\<br>&amp;\max_{j=0}^{i-1}{(dp[j] + 1)}&amp;,;&amp; \text{if } \text{max}_j \leq a_i \text{ and } a_j \leq \text{min}_i<br>\end{aligned}<br>\right.<br>$$</p>
 <p>发现 $\text{max}_j \leq a_i$ 且 $a_j \leq \text{min}_i$ 事实上是一个二维的偏序关系，所以我们可以用 $\text{CDQ}$ 分治计算满足该条件的 $dp$ 最大值。</p>
 <p>但是这里有一个与普通 $\text{CDQ}$ 不相同的地方，我们必须要计算完在 $i$ 前面的 $dp$ 值，才能开始计算 $dp[i]$。</p>
 <p>所以这里的 $\text{CDQ}$ 分治应当做一些微小的更改。</p>
@@ -199,6 +193,7 @@
 <p>最近 $\text{CDQ}$ 老写错字母emmm 大约没救了…</p>
 <p>时间复杂度 $O(n \log ^2 n)$ 。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">210000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">T</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> id,op,a,b;</span><br><span class="line">  T()&#123;id=op=a=b=<span class="hljs-number">0</span>;&#125;</span><br><span class="line">  T(<span class="hljs-keyword">int</span> _id,<span class="hljs-keyword">int</span> _op,<span class="hljs-keyword">int</span> _a,<span class="hljs-keyword">int</span> _b)&#123;</span><br><span class="line">    id = _id,op = _op,a = _a,b = _b;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// op = 1 -&gt; (max_j,a_j) 修改</span></span><br><span class="line">  <span class="hljs-comment">// op = 2 -&gt; (a_i,min_i) 查询</span></span><br><span class="line">&#125;q[MAXN];<span class="hljs-keyword">int</span> tot;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">BIT</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> maxn[MAXN];</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lowbit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> x &amp; (-x);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(x &lt;= <span class="hljs-number">100000</span>)&#123;</span><br><span class="line">      maxn[x] = max(maxn[x],v);</span><br><span class="line">      x += lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(x &gt;= <span class="hljs-number">1</span>)&#123;</span><br><span class="line">      ans = max(ans,maxn[x]);</span><br><span class="line">      x -= lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> ans;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(x &lt;= <span class="hljs-number">100000</span>)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(maxn[x] == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;</span><br><span class="line">      maxn[x] = <span class="hljs-number">0</span>;</span><br><span class="line">      x += lowbit(x);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;S;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"><span class="hljs-keyword">int</span> dp[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> num[MAXN],maxn[MAXN],minn[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;num[i]);</span><br><span class="line">    maxn[i] = minn[i] = num[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x,v;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;x,&amp;v);</span><br><span class="line">    minn[x] = min(minn[x],v);</span><br><span class="line">    maxn[x] = max(maxn[x],v);</span><br><span class="line">  &#125;</span><br><span class="line">  q[++tot] = T(<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,-inf,<span class="hljs-number">1</span>);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    q[++tot] = T(i,<span class="hljs-number">2</span>,num[i],minn[i]);</span><br><span class="line">    q[++tot] = T(i,<span class="hljs-number">1</span>,maxn[i],num[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp1d</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(q[x].a != q[y].a)&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> q[x].a &lt; q[y].a;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> q[x].id &lt; q[y].id;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmpid</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(q[x].id != q[y].id)&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> q[x].id &lt; q[y].id;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> q[x].op &gt; q[y].op;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> cdq[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> tmp1d[MAXN];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CDQ</span><span class="hljs-params">(<span class="hljs-keyword">int</span> *w,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;</span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ql q[w[L]]</span></span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> qr q[w[R]]</span></span><br><span class="line">  <span class="hljs-keyword">if</span>(l == r) <span class="hljs-keyword">return</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> mid = (l+r)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">  CDQ(w,l,mid);</span><br><span class="line">  sort(w+l,w+mid+<span class="hljs-number">1</span>,cmp1d),sort(w+mid+<span class="hljs-number">1</span>,w+r+<span class="hljs-number">1</span>,cmp1d);</span><br><span class="line">  <span class="hljs-keyword">int</span> L = l,R = mid+<span class="hljs-number">1</span>,c = l;</span><br><span class="line">  <span class="hljs-keyword">while</span>(c &lt;= r)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(R &gt; r ||(L &lt;= mid &amp;&amp; ql.a &lt;= qr.a))&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(ql.op == <span class="hljs-number">1</span>)</span><br><span class="line">        S.update(ql.b,dp[ql.id]);</span><br><span class="line">      tmp1d[c++] = L++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(qr.op == <span class="hljs-number">2</span>)&#123;</span><br><span class="line">        <span class="hljs-comment">//printf("%d qr.id:%d\n",w[R],qr.id);</span></span><br><span class="line">        <span class="hljs-keyword">int</span> t = S.query(qr.b);</span><br><span class="line">        dp[qr.id] = max(dp[qr.id],t+<span class="hljs-number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      tmp1d[c++] = R++;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = l;i&lt;=mid;i++) S.clear(q[w[i]].b);</span><br><span class="line">  sort(w+l,w+r+<span class="hljs-number">1</span>,cmpid);</span><br><span class="line">  CDQ(w,mid+<span class="hljs-number">1</span>,r);</span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> ql</span></span><br><span class="line">  <span class="hljs-meta">#<span class="hljs-meta-keyword">undef</span> qr</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=tot;i++) cdq[i] = i;</span><br><span class="line">  CDQ(cdq,<span class="hljs-number">1</span>,tot);</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    ans = max(ans,dp[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -242,29 +237,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180920-HEOI2016-TJOI2016-sequence/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -297,7 +269,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -343,29 +315,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2572,9 +2540,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2722,7 +2689,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

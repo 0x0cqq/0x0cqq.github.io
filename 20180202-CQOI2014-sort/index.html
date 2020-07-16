@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-<title>&#x300C;CQOI2014&#x300D;&#x6392;&#x5E8F;&#x673A;&#x68B0;&#x81C2;-Splay - Chen&apos;s Blog</title>
+<title>「CQOI2014」排序机械臂-Splay - Chen&#39;s Blog</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="&amp;#x7EF4;&amp;#x62A4;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E8F;&amp;#x5217;&amp;#xFF0C;&amp;#x7B2C; $i$ &amp;#x6B21;&amp;#x64CD;&amp;#x4F5C;&amp;#x65F6;&amp;#x5BFB;&amp;#x627E;&amp;#x7B2C;i&amp;#x5C0F;&amp;#x7684;&amp;#x6570;&amp;#x7684;&amp;#x6240;&amp;#x5728;&amp;#x4F4D;&amp;#x7F6E; $P_i$,&amp;#x">
-<meta name="keywords" content="Splay,&#x5E73;&#x8861;&#x6811;,&#x6570;&#x636E;&#x7ED3;&#x6784;">
+    <meta name="description" content="维护一个序列，第 $i$ 次操作时寻找第i小的数的所在位置 $P_i$,并将 $(P_{i-1},P_{i}]$ 的区间翻转。 如果有相同的数，必须保证排序后它们的相对位置关系与初始时相同。">
+<meta name="keywords" content="Splay,平衡树,数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="&#x300C;CQOI2014&#x300D;&#x6392;&#x5E8F;&#x673A;&#x68B0;&#x81C2;-Splay">
+<meta property="og:title" content="「CQOI2014」排序机械臂-Splay">
 <meta property="og:url" content="https://blog.chenqiqian.com/20180202-CQOI2014-sort/index.html">
-<meta property="og:site_name" content="Chen&apos;s Blog">
-<meta property="og:description" content="&amp;#x7EF4;&amp;#x62A4;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E8F;&amp;#x5217;&amp;#xFF0C;&amp;#x7B2C; $i$ &amp;#x6B21;&amp;#x64CD;&amp;#x4F5C;&amp;#x65F6;&amp;#x5BFB;&amp;#x627E;&amp;#x7B2C;i&amp;#x5C0F;&amp;#x7684;&amp;#x6570;&amp;#x7684;&amp;#x6240;&amp;#x5728;&amp;#x4F4D;&amp;#x7F6E; $P_i$,&amp;#x">
+<meta property="og:site_name" content="Chen&#39;s Blog">
+<meta property="og:description" content="维护一个序列，第 $i$ 次操作时寻找第i小的数的所在位置 $P_i$,并将 $(P_{i-1},P_{i}]$ 的区间翻转。 如果有相同的数，必须保证排序后它们的相对位置关系与初始时相同。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://blog.chenqiqian.com/20180202-CQOI2014-sort/explanation.png">
 <meta property="og:updated_time" content="2019-04-09T14:58:24.140Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="&#x300C;CQOI2014&#x300D;&#x6392;&#x5E8F;&#x673A;&#x68B0;&#x81C2;-Splay">
-<meta name="twitter:description" content="&amp;#x7EF4;&amp;#x62A4;&amp;#x4E00;&amp;#x4E2A;&amp;#x5E8F;&amp;#x5217;&amp;#xFF0C;&amp;#x7B2C; $i$ &amp;#x6B21;&amp;#x64CD;&amp;#x4F5C;&amp;#x65F6;&amp;#x5BFB;&amp;#x627E;&amp;#x7B2C;i&amp;#x5C0F;&amp;#x7684;&amp;#x6570;&amp;#x7684;&amp;#x6240;&amp;#x5728;&amp;#x4F4D;&amp;#x7F6E; $P_i$,&amp;#x">
+<meta name="twitter:title" content="「CQOI2014」排序机械臂-Splay">
+<meta name="twitter:description" content="维护一个序列，第 $i$ 次操作时寻找第i小的数的所在位置 $P_i$,并将 $(P_{i-1},P_{i}]$ 的区间翻转。 如果有相同的数，必须保证排序后它们的相对位置关系与初始时相同。">
 <meta name="twitter:image" content="https://blog.chenqiqian.com/20180202-CQOI2014-sort/explanation.png">
 
 
@@ -96,7 +96,19 @@
 
 
 <link rel="stylesheet" href="/css/style.css">
-<style type="text/css">span.spoiler {
+
+<script type="text/javascript">
+window.addEventListener("load", function(){
+    var spoiler = document.getElementsByClassName("spoiler");
+    for(var i=0; i<spoiler.length; ++i){
+        spoiler[i].addEventListener("click", function(){
+            this.classList.toggle("revealed");
+        });
+    }
+});
+</script>
+<style type="text/css">
+span.spoiler {
     color: rgba(0, 0, 0, 0);
     background-color: rgba(0, 0, 0, 0);
     text-shadow: grey 0px 0px 10px;
@@ -111,22 +123,15 @@ span.spoiler:hover {
 span.spoiler.revealed {
     text-shadow: grey 0px 0px 0px;
 }
-</style><script type="text/javascript">window.addEventListener("load", function(){
-    var spoiler = document.getElementsByClassName("spoiler");
-    for(var i = 0; i < spoiler.length; ++i) {
-        spoiler[i].addEventListener("click", function() {
-            this.classList.toggle("revealed");
-        });
-    }
-});
-</script></head>
+</style>
+</head>
 <body class="is-3-column">
     <nav class="navbar navbar-main">
     <div class="container">
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="https://www.chenqiqian.com">
             
-                <img src="/images/avatar_1.png" alt="&#x300C;CQOI2014&#x300D;&#x6392;&#x5E8F;&#x673A;&#x68B0;&#x81C2;-Splay" height="28">
+                <img src="/images/avatar_1.png" alt="「CQOI2014」排序机械臂-Splay" height="28">
             
             </a>
         </div>
@@ -134,19 +139,19 @@ span.spoiler.revealed {
             
             <div class="navbar-start">
                 
-                <a class="navbar-item" href="/">&#x4E3B;&#x9875;</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item" href="/archives">&#x5F52;&#x6863;</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item" href="/categories">&#x5206;&#x7C7B;</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item" href="/tags">&#x6807;&#x7B7E;</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item" href="/links">&#x53CB;&#x94FE;</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item" href="/board">&#x7559;&#x8A00;&#x677F;</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item" href="/about">&#x5173;&#x4E8E;</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -154,7 +159,7 @@ span.spoiler.revealed {
                 
                 
                 
-                <a class="navbar-item search" title="&#x641C;&#x7D22;" href="javascript:;">
+                <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
                 </a>
                 
@@ -175,20 +180,20 @@ span.spoiler.revealed {
                 <time class="level-item has-text-grey" datetime="2018-02-02T07:12:44.000Z">2018-02-02</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/OI/">OI</a>&#xA0;/&#xA0;<a class="has-link-grey -link" href="/categories/OI/&#x9898;&#x89E3;/">&#x9898;&#x89E3;</a>
+                <a class="has-link-grey -link" href="/categories/OI/">OI</a>&nbsp;/&nbsp;<a class="has-link-grey -link" href="/categories/OI/题解/">题解</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    7 &#x5206;&#x949F; &#x8BFB;&#x5B8C; (&#x5927;&#x7EA6; 993 &#x4E2A;&#x5B57;)
+                    7 分钟 读完 (大约 993 个字)
                 </span>
                 
                 
                 <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
                     <i class="far fa-eye"></i>
-                    <span id="busuanzi_value_page_pv">0</span>&#x6B21;&#x8BBF;&#x95EE;
+                    <span id="busuanzi_value_page_pv">0</span>次访问
                 </span>
                 
             </div>
@@ -196,29 +201,31 @@ span.spoiler.revealed {
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                &#x300C;CQOI2014&#x300D;&#x6392;&#x5E8F;&#x673A;&#x68B0;&#x81C2;-Splay
+                「CQOI2014」排序机械臂-Splay
             
         </h1>
         <div class="content">
-            <p>&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x5E8F;&#x5217;&#xFF0C;&#x7B2C; $i$ &#x6B21;&#x64CD;&#x4F5C;&#x65F6;&#x5BFB;&#x627E;&#x7B2C;i&#x5C0F;&#x7684;&#x6570;&#x7684;&#x6240;&#x5728;&#x4F4D;&#x7F6E; $P_i$,&#x5E76;&#x5C06; $(P_{i-1},P_{i}]$ &#x7684;&#x533A;&#x95F4;&#x7FFB;&#x8F6C;&#x3002;</p>
-<p>&#x5982;&#x679C;&#x6709;&#x76F8;&#x540C;&#x7684;&#x6570;&#xFF0C;&#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x6392;&#x5E8F;&#x540E;&#x5B83;&#x4EEC;&#x7684;&#x76F8;&#x5BF9;&#x4F4D;&#x7F6E;&#x5173;&#x7CFB;&#x4E0E;&#x521D;&#x59CB;&#x65F6;&#x76F8;&#x540C;&#x3002;</p>
+            <p>维护一个序列，第 $i$ 次操作时寻找第i小的数的所在位置 $P_i$,并将 $(P_{i-1},P_{i}]$ 的区间翻转。</p>
+<p>如果有相同的数，必须保证排序后它们的相对位置关系与初始时相同。</p>
 <a id="more"></a>
-<h2 id="&#x94FE;&#x63A5;"><a href="#&#x94FE;&#x63A5;" class="headerlink" title="&#x94FE;&#x63A5;"></a>&#x94FE;&#x63A5;</h2><p><a href="https://www.luogu.org/problemnew/show/P3165" target="_blank" rel="noopener">Luogu P3165</a></p>
-<h2 id="&#x9898;&#x89E3;"><a href="#&#x9898;&#x89E3;" class="headerlink" title="&#x9898;&#x89E3;"></a>&#x9898;&#x89E3;</h2><p>&#x8FD9;&#x9053;&#x9898;&#x7684;&#x5927;&#x610F;&#x662F;&#x533A;&#x95F4;&#x5BFB;&#x627E;&#xFF0C;&#x533A;&#x95F4;&#x7FFB;&#x8F6C;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;Splay&#x6765;&#x505A;&#xFF0C;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;$size$&#x503C;&#x548C;&#x533A;&#x95F4;&#x7FFB;&#x8F6C;&#x7684;$rev$&#x6807;&#x8BB0;&#x3002;<span class="spoiler">&#x867D;&#x7136;&#x6211;&#x524D;&#x51E0;&#x5929;&#x8FD8;&#x8BF4;&#x518D;&#x4E5F;&#x4E0D;&#x7528;Splay&#x4E86;&#xFF08;&#x9003;&#x3002;
+
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3165" target="_blank" rel="noopener">Luogu P3165</a></p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>这道题的大意是区间寻找，区间翻转，所以我们可以用Splay来做，维护一个$size$值和区间翻转的$rev$标记。<span class="spoiler">虽然我前几天还说再也不用Splay了（逃。
 </span></p>
-<p>&#x6CE8;&#x610F;&#x5230;&#x6BCF;&#x6B21;&#x64CD;&#x4F5C;&#x90FD;&#x4F1A;&#x4F7F;&#x7B2C;$i$&#x4E2A;&#x6570;&#x6392;&#x5E8F;&#x5B8C;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x6BCF;&#x6B21;&#x7684;$P_{i}$&#x4E8B;&#x5B9E;&#x4E0A;&#x5C31;&#x662F;&#x6570;&#x7EC4;&#x4E0B;&#x6807;&#x7684;$i-1$&#x3002;</p>
+<p>注意到每次操作都会使第$i$个数排序完成，所以我们每次的$P_{i}$事实上就是数组下标的$i-1$。</p>
 <hr>
-<p>&#x5BF9;&#x4E8E;&#x533A;&#x95F4;&#x7684;&#x5BFB;&#x627E;&#xFF0C;&#x6211;&#x4EEC;&#x6CE8;&#x610F;&#x5230;&#x53EF;&#x4EE5;&#x5728;&#x5F00;&#x59CB;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#x7B2C;$i$&#x5C0F;&#x7684;&#x6570;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x628A;&#x4ED6;&#x4EEC;&#x7684;&#x6307;&#x9488;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x91CC;&#x9762;&#x3002;</p>
-<p><img src="explanation.png" alt="&#x770B;&#x4E0D;&#x5230;&#x7684;&#x8BDD;&#x5047;&#x88C5;&#x6709;&#x56FE;&#x5427;"></p>
-<p>&#x7136;&#x540E;&#x5728;&#x67E5;&#x8BE2;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5148;&#x628A;&#x7B2C;$i-1$&#x5927;&#x7684;&#x8282;&#x70B9;splay&#x5230;&#x6839;&#xFF1B;&#x627E;&#x5230;&#x7B2C;$i$&#x5C0F;&#x7684;&#x6570;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x6307;&#x9488;&#xFF0C;&#x5BFB;&#x627E;&#x5176;&#x5728;&#x6392;&#x5E8F;&#x4E8C;&#x53C9;&#x6811;&#x4E2D;&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#xFF08;&#x56FE;&#x4E2D;&#x7EA2;&#x8272;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x540E;&#x7EE7;splay&#x5230;&#x6839;&#x7684;&#x53F3;&#x5B50;&#x6811;&#x3002;</p>
-<p>&#x4F46;&#x6CE8;&#x610F;&#x5728;&#x5B9E;&#x9645;&#x67E5;&#x627E;&#x4E2D;&#xFF0C;&#x56E0;&#x4E3A;&#x5BFB;&#x627E;&#x540E;&#x7EE7;&#x4F1A;&#x7834;&#x574F;&#x6839;&#x7ED3;&#x70B9;&#xFF0C;&#x6240;&#x4EE5;&#x8981;&#x5148;&#x627E;&#x5230;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x5B8C;&#x6210;&#x4E0A;&#x8FF0;&#x64CD;&#x4F5C;&#x3002;</p>
-<p>&#x7136;&#x540E;&#x5173;&#x4E8E;&#x4F4D;&#x7F6E;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x6839;&#x8282;&#x70B9;&#x5DE6;&#x8FB9;&#xFF08;&#x5305;&#x62EC;&#x6839;&#x7ED3;&#x70B9;&#xFF09;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x56FE;&#x4E2D;&#x7684;&#x7EFF;&#x8272;&#x90E8;&#x5206;&#x5E94;&#x5F53;&#x6709;$i-1$&#x4E2A;&#x6570;&#xFF0C;&#x800C;&#x5176;&#x4ED6;&#x5728;$i$&#x5DE6;&#x8FB9;&#xFF08;&#x5305;&#x62EC;$i$&#xFF09;&#x7684;&#x6570;&#x5E94;&#x8BE5;&#x5C31;&#x662F;&#x56FE;&#x4E2D;&#x7684;&#x84DD;&#x8272;&#x90E8;&#x5206;&#xFF0C;&#x6240;&#x4EE5;&#x53EA;&#x8981;&#x5C06;&#x84DD;&#x8272;&#x90E8;&#x5206;&#x7684;$size$&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;$i-1$&#x5C31;&#x662F;&#x6BCF;&#x4E00;&#x6B21;&#x64CD;&#x4F5C;&#x7684;&#x7ED3;&#x679C;</p>
+<p>对于区间的寻找，我们注意到可以在开始的时候就记录下来第$i$小的数的位置，也就是把他们的指针存在一个数组里面。</p>
+<p><img src="explanation.png" alt="看不到的话假装有图吧"></p>
+<p>然后在查询的时候，先把第$i-1$大的节点splay到根；找到第$i$小的数对应的节点指针，寻找其在排序二叉树中的后继节点（图中红色节点），然后把后继splay到根的右子树。</p>
+<p>但注意在实际查找中，因为寻找后继会破坏根结点，所以要先找到后继节点，然后再完成上述操作。</p>
+<p>然后关于位置，我们可以看出，根节点左边（包括根结点），也就是图中的绿色部分应当有$i-1$个数，而其他在$i$左边（包括$i$）的数应该就是图中的蓝色部分，所以只要将蓝色部分的$size$加上一个$i-1$就是每一次操作的结果</p>
 <hr>
-<p>&#x7FFB;&#x8F6C;&#x5C31;&#x662F;&#x5E38;&#x89C4;&#x7684;&#x533A;&#x95F4;&#x7FFB;&#x8F6C;&#xFF0C;&#x6253;&#x6807;&#x8BB0;pushdown&#x4EC0;&#x4E48;&#x7684;&#x3002;</p>
+<p>翻转就是常规的区间翻转，打标记pushdown什么的。</p>
 <hr>
-<p>&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x6EE1;&#x8DB3;&#x4E00;&#x4E9B;&#x5B83;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x6211;&#x8FD8;&#x4E8B;&#x5148;&#x505A;&#x4E86;&#x79BB;&#x6563;&#x5316;&#x7684;&#x5904;&#x7406;&#x3002;&#xFF08;&#x5176;&#x5B9E;&#x5E76;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x7528;</p>
-<p>&#x53E6;&#x5916;&#x8FD8;&#x6709;&#x5C31;&#x662F;&#x6211;&#x5199;&#x7684;&#x65F6;&#x5019;&#x8FD8;&#x56E0;&#x4E3A;&#x5C11;<code>push_down</code>&#x4E86;&#x51E0;&#x6B21;&#x88AB;&#x5751;&#x4E86;&#x4E00;&#x4E0B;&#x3002;&#x4E0D;&#x8FC7;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x8FC7;&#x8BC4;&#x6D4B;&#x8FD8;&#x662F;&#x86EE;&#x5F00;&#x5FC3;&#x7684;&#x3002;</p>
-<h2 id="&#x4EE3;&#x7801;"><a href="#&#x4EE3;&#x7801;" class="headerlink" title="&#x4EE3;&#x7801;"></a>&#x4EE3;&#x7801;</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">wupin</span>{</span></span><br><span class="line">    <span class="hljs-keyword">int</span> id,h;</span><br><span class="line">}w[<span class="hljs-number">100100</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">splay_t</span>{</span></span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node_t</span>{</span></span><br><span class="line">        <span class="hljs-keyword">int</span> val,size;</span><br><span class="line">        <span class="hljs-keyword">bool</span> rev;</span><br><span class="line">        <span class="hljs-keyword">node_t</span> *p,*son[<span class="hljs-number">2</span>],**root,**null;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">get_p</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">return</span> p-&gt;son[<span class="hljs-number">1</span>] == <span class="hljs-keyword">this</span>;}</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-keyword">node_t</span> **root,<span class="hljs-keyword">node_t</span> **null)</span></span>{<span class="hljs-keyword">this</span>-&gt;null = null,<span class="hljs-keyword">this</span>-&gt;root = root;}</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lsize</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">return</span> son[<span class="hljs-number">0</span>]-&gt;size;} <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rsize</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">return</span> son[<span class="hljs-number">1</span>]-&gt;size;}</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">()</span></span>{size = lsize()+rsize()+<span class="hljs-number">1</span>;}</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">link</span><span class="hljs-params">(<span class="hljs-keyword">node_t</span> *dst,<span class="hljs-keyword">int</span> tmp)</span></span>{</span><br><span class="line">            dst-&gt;son[tmp] = <span class="hljs-keyword">this</span>;</span><br><span class="line">            <span class="hljs-keyword">this</span>-&gt;p = dst;</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push_down</span><span class="hljs-params">()</span></span>{</span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> == *null) <span class="hljs-keyword">return</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span>(rev){</span><br><span class="line">                swap(son[<span class="hljs-number">0</span>],son[<span class="hljs-number">1</span>]);</span><br><span class="line">                son[<span class="hljs-number">0</span>]-&gt;rev^=<span class="hljs-number">1</span>,son[<span class="hljs-number">1</span>]-&gt;rev^=<span class="hljs-number">1</span>;</span><br><span class="line">                rev = <span class="hljs-number">0</span>;</span><br><span class="line">            }</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">rotate</span><span class="hljs-params">()</span></span>{</span><br><span class="line">            p-&gt;push_down(),push_down();</span><br><span class="line">            <span class="hljs-keyword">node_t</span> *rp = p;<span class="hljs-keyword">bool</span> re = get_p();</span><br><span class="line">            link(rp-&gt;p,rp-&gt;get_p());</span><br><span class="line">            son[<span class="hljs-number">1</span>-re]-&gt;link(rp,re);</span><br><span class="line">            rp-&gt;link(<span class="hljs-keyword">this</span>,<span class="hljs-number">1</span>-re);</span><br><span class="line">            rp-&gt;update(),update();</span><br><span class="line">            <span class="hljs-keyword">if</span>(p == *null) *root = <span class="hljs-keyword">this</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> node_t* <span class="hljs-title">splay</span><span class="hljs-params">(<span class="hljs-keyword">node_t</span> *tar = <span class="hljs-literal">NULL</span>)</span></span>{</span><br><span class="line">            <span class="hljs-keyword">if</span>(tar == <span class="hljs-literal">NULL</span>) tar = *null;</span><br><span class="line">            p-&gt;push_down(),push_down();</span><br><span class="line">            <span class="hljs-keyword">while</span>(p!=tar){</span><br><span class="line">                <span class="hljs-keyword">if</span>(p-&gt;p == tar)</span><br><span class="line">                    rotate();</span><br><span class="line">                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(p-&gt;get_p() == get_p())</span><br><span class="line">                    p-&gt;rotate(),rotate();</span><br><span class="line">                <span class="hljs-keyword">else</span></span><br><span class="line">                    rotate(),rotate();</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;</span><br><span class="line">        }</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> node_t *<span class="hljs-title">upper</span><span class="hljs-params">()</span></span>{</span><br><span class="line">            splay();</span><br><span class="line">            <span class="hljs-keyword">node_t</span> *r = son[<span class="hljs-number">1</span>];</span><br><span class="line">            <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>){</span><br><span class="line">                r-&gt;push_down();</span><br><span class="line">                <span class="hljs-keyword">if</span>(r-&gt;son[<span class="hljs-number">0</span>] == *null) <span class="hljs-keyword">break</span>;</span><br><span class="line">                r = r-&gt;son[<span class="hljs-number">0</span>];</span><br><span class="line">            }</span><br><span class="line">            <span class="hljs-keyword">return</span> r;</span><br><span class="line">        }</span><br><span class="line">    };</span><br><span class="line">    <span class="hljs-keyword">int</span> cnt;</span><br><span class="line">    <span class="hljs-keyword">node_t</span> pool[<span class="hljs-number">110000</span>],*to[<span class="hljs-number">110000</span>],*null,*root;</span><br><span class="line">    <span class="hljs-keyword">splay_t</span>(){</span><br><span class="line">        cnt = <span class="hljs-number">0</span>;</span><br><span class="line">        null = newnode();</span><br><span class="line">        null-&gt;size = <span class="hljs-number">0</span>;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">node_t</span> *newnode(<span class="hljs-keyword">int</span> val = <span class="hljs-number">0</span>){</span><br><span class="line">        <span class="hljs-keyword">node_t</span> *r = &amp;pool[cnt++];</span><br><span class="line">        r-&gt;init(&amp;root,&amp;null);</span><br><span class="line">        r-&gt;val = val,r-&gt;size = <span class="hljs-number">1</span>,r-&gt;rev = <span class="hljs-number">0</span>;</span><br><span class="line">        r-&gt;p = r-&gt;son[<span class="hljs-number">0</span>] = r-&gt;son[<span class="hljs-number">1</span>] = null;</span><br><span class="line">        <span class="hljs-keyword">return</span> r;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-keyword">node_t</span>* build(wupin *a,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r){</span><br><span class="line">        <span class="hljs-keyword">if</span>(l&gt;r) <span class="hljs-keyword">return</span> null;</span><br><span class="line">        <span class="hljs-keyword">int</span> mid = (l+r)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">node_t</span> *ret = newnode(a[mid].h);</span><br><span class="line">        to[a[mid].h] = ret;</span><br><span class="line">        build(a,l,mid<span class="hljs-number">-1</span>)-&gt;link(ret,<span class="hljs-number">0</span>);</span><br><span class="line">        build(a,mid+<span class="hljs-number">1</span>,r)-&gt;link(ret,<span class="hljs-number">1</span>);</span><br><span class="line">        ret-&gt;update();</span><br><span class="line">        <span class="hljs-keyword">return</span> ret;</span><br><span class="line">    }</span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">splay_t</span> s;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp1</span><span class="hljs-params">(wupin a,wupin b)</span></span>{<span class="hljs-keyword">return</span> a.id&lt;b.id;}</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp2</span><span class="hljs-params">(wupin a,wupin b)</span></span>{</span><br><span class="line">    <span class="hljs-keyword">if</span>(a.h!=b.h) <span class="hljs-keyword">return</span> a.h&lt;b.h;</span><br><span class="line">    <span class="hljs-keyword">else</span>         <span class="hljs-keyword">return</span> a.id&lt;b.id;</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">find</span><span class="hljs-params">()</span></span>{</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++){</span><br><span class="line">        <span class="hljs-comment">//&#x627E;&#x5230;&#x5E94;&#x64CD;&#x4F5C;&#x8282;&#x70B9;&#x7684;&#x540E;&#x7EE7;</span></span><br><span class="line">        <span class="hljs-keyword">splay_t</span>::<span class="hljs-keyword">node_t</span> *rbound = s.to[i]-&gt;upper();</span><br><span class="line">        <span class="hljs-comment">//&#x628A;&#x524D;&#x9762;&#x5F52;&#x4F4D;&#x597D;&#x7684;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x65CB;&#x5230;&#x6839;&#x8282;&#x70B9;</span></span><br><span class="line">        s.to[i<span class="hljs-number">-1</span>]-&gt;splay();</span><br><span class="line">        <span class="hljs-comment">//&#x628A;&#x540E;&#x7EE7;&#x65CB;&#x8F6C;&#x5230;&#x6839;&#x8282;&#x70B9;&#x7684;&#x53F3;&#x513F;&#x5B50;</span></span><br><span class="line">        rbound-&gt;splay(s.to[i<span class="hljs-number">-1</span>]);</span><br><span class="line">        <span class="hljs-comment">//&#x6253;&#x5370;&#x4F4D;&#x7F6E;</span></span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d &quot;</span>,i + rbound-&gt;lsize()<span class="hljs-number">-1</span>);</span><br><span class="line">        <span class="hljs-comment">//&#x6DFB;&#x52A0;lazy&#x6807;&#x8BB0;</span></span><br><span class="line">        rbound-&gt;son[<span class="hljs-number">0</span>]-&gt;rev^=<span class="hljs-number">1</span>;</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>{</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++){</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>,&amp;w[i].h);</span><br><span class="line">        w[i].id = i;</span><br><span class="line">    }</span><br><span class="line">    <span class="hljs-comment">//&#x9884;&#x5904;&#x7406;</span></span><br><span class="line">    sort(w+<span class="hljs-number">1</span>,w+n+<span class="hljs-number">1</span>,cmp2);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">        w[i].h = i;</span><br><span class="line">    sort(w+<span class="hljs-number">1</span>,w+n+<span class="hljs-number">1</span>,cmp1);</span><br><span class="line">    w[<span class="hljs-number">0</span>].h = <span class="hljs-number">0</span>;</span><br><span class="line">    w[n+<span class="hljs-number">1</span>].h = n+<span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-comment">//&#x6B63;&#x5F0F;&#x64CD;&#x4F5C;</span></span><br><span class="line">    s.root = s.build(w,<span class="hljs-number">0</span>,n+<span class="hljs-number">1</span>);</span><br><span class="line">    find();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<p>为了方便满足一些它的要求，我还事先做了离散化的处理。（其实并没有什么用</p>
+<p>另外还有就是我写的时候还因为少<code>push_down</code>了几次被坑了一下。不过最后一次过评测还是蛮开心的。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">wupin</span>&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> id,h;</span><br><span class="line">&#125;w[<span class="hljs-number">100100</span>];</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">splay_t</span>&#123;</span></span><br><span class="line">    <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node_t</span>&#123;</span></span><br><span class="line">        <span class="hljs-keyword">int</span> val,size;</span><br><span class="line">        <span class="hljs-keyword">bool</span> rev;</span><br><span class="line">        <span class="hljs-keyword">node_t</span> *p,*son[<span class="hljs-number">2</span>],**root,**null;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">get_p</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> p-&gt;son[<span class="hljs-number">1</span>] == <span class="hljs-keyword">this</span>;&#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-keyword">node_t</span> **root,<span class="hljs-keyword">node_t</span> **null)</span></span>&#123;<span class="hljs-keyword">this</span>-&gt;null = null,<span class="hljs-keyword">this</span>-&gt;root = root;&#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">lsize</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> son[<span class="hljs-number">0</span>]-&gt;size;&#125; <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">rsize</span><span class="hljs-params">()</span></span>&#123;<span class="hljs-keyword">return</span> son[<span class="hljs-number">1</span>]-&gt;size;&#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">()</span></span>&#123;size = lsize()+rsize()+<span class="hljs-number">1</span>;&#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">link</span><span class="hljs-params">(<span class="hljs-keyword">node_t</span> *dst,<span class="hljs-keyword">int</span> tmp)</span></span>&#123;</span><br><span class="line">            dst-&gt;son[tmp] = <span class="hljs-keyword">this</span>;</span><br><span class="line">            <span class="hljs-keyword">this</span>-&gt;p = dst;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push_down</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span> == *null) <span class="hljs-keyword">return</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span>(rev)&#123;</span><br><span class="line">                swap(son[<span class="hljs-number">0</span>],son[<span class="hljs-number">1</span>]);</span><br><span class="line">                son[<span class="hljs-number">0</span>]-&gt;rev^=<span class="hljs-number">1</span>,son[<span class="hljs-number">1</span>]-&gt;rev^=<span class="hljs-number">1</span>;</span><br><span class="line">                rev = <span class="hljs-number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">rotate</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">            p-&gt;push_down(),push_down();</span><br><span class="line">            <span class="hljs-keyword">node_t</span> *rp = p;<span class="hljs-keyword">bool</span> re = get_p();</span><br><span class="line">            link(rp-&gt;p,rp-&gt;get_p());</span><br><span class="line">            son[<span class="hljs-number">1</span>-re]-&gt;link(rp,re);</span><br><span class="line">            rp-&gt;link(<span class="hljs-keyword">this</span>,<span class="hljs-number">1</span>-re);</span><br><span class="line">            rp-&gt;update(),update();</span><br><span class="line">            <span class="hljs-keyword">if</span>(p == *null) *root = <span class="hljs-keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> node_t* <span class="hljs-title">splay</span><span class="hljs-params">(<span class="hljs-keyword">node_t</span> *tar = <span class="hljs-literal">NULL</span>)</span></span>&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(tar == <span class="hljs-literal">NULL</span>) tar = *null;</span><br><span class="line">            p-&gt;push_down(),push_down();</span><br><span class="line">            <span class="hljs-keyword">while</span>(p!=tar)&#123;</span><br><span class="line">                <span class="hljs-keyword">if</span>(p-&gt;p == tar)</span><br><span class="line">                    rotate();</span><br><span class="line">                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(p-&gt;get_p() == get_p())</span><br><span class="line">                    p-&gt;rotate(),rotate();</span><br><span class="line">                <span class="hljs-keyword">else</span></span><br><span class="line">                    rotate(),rotate();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-function"><span class="hljs-keyword">inline</span> node_t *<span class="hljs-title">upper</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">            splay();</span><br><span class="line">            <span class="hljs-keyword">node_t</span> *r = son[<span class="hljs-number">1</span>];</span><br><span class="line">            <span class="hljs-keyword">while</span>(<span class="hljs-literal">true</span>)&#123;</span><br><span class="line">                r-&gt;push_down();</span><br><span class="line">                <span class="hljs-keyword">if</span>(r-&gt;son[<span class="hljs-number">0</span>] == *null) <span class="hljs-keyword">break</span>;</span><br><span class="line">                r = r-&gt;son[<span class="hljs-number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">return</span> r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="hljs-keyword">int</span> cnt;</span><br><span class="line">    <span class="hljs-keyword">node_t</span> pool[<span class="hljs-number">110000</span>],*to[<span class="hljs-number">110000</span>],*null,*root;</span><br><span class="line">    <span class="hljs-keyword">splay_t</span>()&#123;</span><br><span class="line">        cnt = <span class="hljs-number">0</span>;</span><br><span class="line">        null = newnode();</span><br><span class="line">        null-&gt;size = <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">node_t</span> *newnode(<span class="hljs-keyword">int</span> val = <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">node_t</span> *r = &amp;pool[cnt++];</span><br><span class="line">        r-&gt;init(&amp;root,&amp;null);</span><br><span class="line">        r-&gt;val = val,r-&gt;size = <span class="hljs-number">1</span>,r-&gt;rev = <span class="hljs-number">0</span>;</span><br><span class="line">        r-&gt;p = r-&gt;son[<span class="hljs-number">0</span>] = r-&gt;son[<span class="hljs-number">1</span>] = null;</span><br><span class="line">        <span class="hljs-keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">node_t</span>* build(wupin *a,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(l&gt;r) <span class="hljs-keyword">return</span> null;</span><br><span class="line">        <span class="hljs-keyword">int</span> mid = (l+r)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">node_t</span> *ret = newnode(a[mid].h);</span><br><span class="line">        to[a[mid].h] = ret;</span><br><span class="line">        build(a,l,mid<span class="hljs-number">-1</span>)-&gt;link(ret,<span class="hljs-number">0</span>);</span><br><span class="line">        build(a,mid+<span class="hljs-number">1</span>,r)-&gt;link(ret,<span class="hljs-number">1</span>);</span><br><span class="line">        ret-&gt;update();</span><br><span class="line">        <span class="hljs-keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">splay_t</span> s;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp1</span><span class="hljs-params">(wupin a,wupin b)</span></span>&#123;<span class="hljs-keyword">return</span> a.id&lt;b.id;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp2</span><span class="hljs-params">(wupin a,wupin b)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a.h!=b.h) <span class="hljs-keyword">return</span> a.h&lt;b.h;</span><br><span class="line">    <span class="hljs-keyword">else</span>         <span class="hljs-keyword">return</span> a.id&lt;b.id;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">find</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="hljs-comment">//找到应操作节点的后继</span></span><br><span class="line">        <span class="hljs-keyword">splay_t</span>::<span class="hljs-keyword">node_t</span> *rbound = s.to[i]-&gt;upper();</span><br><span class="line">        <span class="hljs-comment">//把前面归位好的最后一个节点旋到根节点</span></span><br><span class="line">        s.to[i<span class="hljs-number">-1</span>]-&gt;splay();</span><br><span class="line">        <span class="hljs-comment">//把后继旋转到根节点的右儿子</span></span><br><span class="line">        rbound-&gt;splay(s.to[i<span class="hljs-number">-1</span>]);</span><br><span class="line">        <span class="hljs-comment">//打印位置</span></span><br><span class="line">        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>,i + rbound-&gt;lsize()<span class="hljs-number">-1</span>);</span><br><span class="line">        <span class="hljs-comment">//添加lazy标记</span></span><br><span class="line">        rbound-&gt;son[<span class="hljs-number">0</span>]-&gt;rev^=<span class="hljs-number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;w[i].h);</span><br><span class="line">        w[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">//预处理</span></span><br><span class="line">    sort(w+<span class="hljs-number">1</span>,w+n+<span class="hljs-number">1</span>,cmp2);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">        w[i].h = i;</span><br><span class="line">    sort(w+<span class="hljs-number">1</span>,w+n+<span class="hljs-number">1</span>,cmp1);</span><br><span class="line">    w[<span class="hljs-number">0</span>].h = <span class="hljs-number">0</span>;</span><br><span class="line">    w[n+<span class="hljs-number">1</span>].h = n+<span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-comment">//正式操作</span></span><br><span class="line">    s.root = s.build(w,<span class="hljs-number">0</span>,n+<span class="hljs-number">1</span>);</span><br><span class="line">    find();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -226,7 +233,7 @@ span.spoiler.revealed {
             <div class="level-start">
                 <div class="level-item">
                     <span class="is-size-6 has-text-grey has-mr-7">#</span>
-                    <a class="has-link-grey -link" href="/tags/Splay/">Splay</a>, <a class="has-link-grey -link" href="/tags/&#x5E73;&#x8861;&#x6811;/">&#x5E73;&#x8861;&#x6811;</a>, <a class="has-link-grey -link" href="/tags/&#x6570;&#x636E;&#x7ED3;&#x6784;/">&#x6570;&#x636E;&#x7ED3;&#x6784;</a>
+                    <a class="has-link-grey -link" href="/tags/Splay/">Splay</a>, <a class="has-link-grey -link" href="/tags/平衡树/">平衡树</a>, <a class="has-link-grey -link" href="/tags/数据结构/">数据结构</a>
                 </div>
             </div>
         </div>
@@ -246,14 +253,14 @@ span.spoiler.revealed {
         <div class="level-start">
             <a class="level level-item has-link-grey  article-nav-prev" href="/20180205-SDOI2009-necklace/">
                 <i class="level-item fas fa-chevron-left"></i>
-                <span class="level-item">&#x300C;SDOI2009&#x300D;HH&#x7684;&#x9879;&#x94FE;-&#x83AB;&#x961F;or&#x6811;&#x72B6;&#x6570;&#x7EC4;</span>
+                <span class="level-item">「SDOI2009」HH的项链-莫队or树状数组</span>
             </a>
         </div>
         
         
         <div class="level-end">
             <a class="level level-item has-link-grey  article-nav-next" href="/20180131-NOI2004-cashier/">
-                <span class="level-item">&#x300C;NOI2004&#x300D;&#x90C1;&#x95F7;&#x7684;&#x51FA;&#x7EB3;&#x5458;-Splay</span>
+                <span class="level-item">「NOI2004」郁闷的出纳员-Splay</span>
                 <i class="level-item fas fa-chevron-right"></i>
             </a>
         </div>
@@ -262,29 +269,6 @@ span.spoiler.revealed {
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">&#x8BC4;&#x8BBA;</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180202-CQOI2014-sort/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -311,13 +295,13 @@ span.spoiler.revealed {
                     
                     
                     <p class="is-size-6 is-block">
-                        &#x8BB0;&#x5F55;&#x65F6;&#x5149;&#x4E0E;&#x68A6;&#x60F3;
+                        记录时光与梦想
                     </p>
                     
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -327,7 +311,7 @@ span.spoiler.revealed {
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        &#x6587;&#x7AE0;
+                        文章
                     </p>
                     <p class="title has-text-weight-normal">
                         244
@@ -337,7 +321,7 @@ span.spoiler.revealed {
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        &#x5206;&#x7C7B;
+                        分类
                     </p>
                     <p class="title has-text-weight-normal">
                         8
@@ -347,7 +331,7 @@ span.spoiler.revealed {
             <div class="level-item has-text-centered is-marginless">
                 <div>
                     <p class="heading">
-                        &#x6807;&#x7B7E;
+                        标签
                     </p>
                     <p class="title has-text-weight-normal">
                         101
@@ -357,7 +341,7 @@ span.spoiler.revealed {
         </nav>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="http://github.com/ChenQiqian" target="_blank">
-                &#x5173;&#x6CE8;&#x6211;</a>
+                关注我</a>
         </div>
         
         
@@ -400,7 +384,7 @@ span.spoiler.revealed {
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            &#x94FE;&#x63A5;
+            链接
         </h3>
         <ul class="menu-list">
         
@@ -438,7 +422,7 @@ span.spoiler.revealed {
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                &#x5206;&#x7C7B;
+                分类
             </h3>
             <ul class="menu-list">
             <li>
@@ -450,57 +434,57 @@ span.spoiler.revealed {
                 <span class="level-item tag">203</span>
             </span>
         </a><ul><li>
-        <a class="level is-marginless" href="/categories/OI/&#x5B66;&#x4E60;&#x7B14;&#x8BB0;/">
+        <a class="level is-marginless" href="/categories/OI/学习笔记/">
             <span class="level-start">
-                <span class="level-item">&#x5B66;&#x4E60;&#x7B14;&#x8BB0;</span>
+                <span class="level-item">学习笔记</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/OI/&#x9898;&#x89E3;/">
+        <a class="level is-marginless" href="/categories/OI/题解/">
             <span class="level-start">
-                <span class="level-item">&#x9898;&#x89E3;</span>
+                <span class="level-item">题解</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">182</span>
             </span>
         </a></li></ul></li><li>
-        <a class="level is-marginless" href="/categories/&#x603B;&#x7ED3;/">
+        <a class="level is-marginless" href="/categories/总结/">
             <span class="level-start">
-                <span class="level-item">&#x603B;&#x7ED3;</span>
+                <span class="level-item">总结</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">23</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/&#x6280;&#x672F;/">
+        <a class="level is-marginless" href="/categories/技术/">
             <span class="level-start">
-                <span class="level-item">&#x6280;&#x672F;</span>
+                <span class="level-item">技术</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/&#x65E5;&#x5E38;/">
+        <a class="level is-marginless" href="/categories/日常/">
             <span class="level-start">
-                <span class="level-item">&#x65E5;&#x5E38;</span>
+                <span class="level-item">日常</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/&#x6E38;&#x8BB0;/">
+        <a class="level is-marginless" href="/categories/游记/">
             <span class="level-start">
-                <span class="level-item">&#x6E38;&#x8BB0;</span>
+                <span class="level-item">游记</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">1</span>
             </span>
         </a></li><li>
-        <a class="level is-marginless" href="/categories/&#x968F;&#x7B14;/">
+        <a class="level is-marginless" href="/categories/随笔/">
             <span class="level-start">
-                <span class="level-item">&#x968F;&#x7B14;</span>
+                <span class="level-item">随笔</span>
             </span>
             <span class="level-end">
                 <span class="level-item tag">11</span>
@@ -515,9 +499,9 @@ span.spoiler.revealed {
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            &#x6807;&#x7B7E;&#x4E91;
+            标签云
         </h3>
-        <a href="/tags/0-1&#x5206;&#x6570;&#x89C4;&#x5212;/" style="font-size: 10px;">0/1&#x5206;&#x6570;&#x89C4;&#x5212;</a> <a href="/tags/2-SAT/" style="font-size: 10.63px;">2-SAT</a> <a href="/tags/AC&#x81EA;&#x52A8;&#x673A;/" style="font-size: 12.5px;">AC&#x81EA;&#x52A8;&#x673A;</a> <a href="/tags/BSGS&#x7B97;&#x6CD5;/" style="font-size: 11.25px;">BSGS&#x7B97;&#x6CD5;</a> <a href="/tags/CDQ&#x5206;&#x6CBB;/" style="font-size: 12.5px;">CDQ&#x5206;&#x6CBB;</a> <a href="/tags/Dinic/" style="font-size: 10.63px;">Dinic</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/KMP/" style="font-size: 11.25px;">KMP</a> <a href="/tags/LCT/" style="font-size: 15px;">LCT</a> <a href="/tags/Lucas&#x5B9A;&#x7406;/" style="font-size: 10px;">Lucas&#x5B9A;&#x7406;</a> <a href="/tags/Splay/" style="font-size: 12.5px;">Splay</a> <a href="/tags/Treap/" style="font-size: 13.13px;">Treap</a> <a href="/tags/Trie/" style="font-size: 10px;">Trie</a> <a href="/tags/dfs&#x5E8F;/" style="font-size: 10px;">dfs&#x5E8F;</a> <a href="/tags/set/" style="font-size: 10.63px;">set</a> <a href="/tags/wqs&#x4E8C;&#x5206;/" style="font-size: 10px;">wqs&#x4E8C;&#x5206;</a> <a href="/tags/&#x4E2D;&#x56FD;&#x5269;&#x4F59;&#x5B9A;&#x7406;/" style="font-size: 10px;">&#x4E2D;&#x56FD;&#x5269;&#x4F59;&#x5B9A;&#x7406;</a> <a href="/tags/&#x4E3B;&#x5E2D;&#x6811;/" style="font-size: 11.88px;">&#x4E3B;&#x5E2D;&#x6811;</a> <a href="/tags/&#x4E71;&#x641E;/" style="font-size: 10.63px;">&#x4E71;&#x641E;</a> <a href="/tags/&#x4E8C;&#x5206;&#x56FE;/" style="font-size: 11.88px;">&#x4E8C;&#x5206;&#x56FE;</a> <a href="/tags/&#x4E8C;&#x5206;&#x56FE;&#x5339;&#x914D;/" style="font-size: 10.63px;">&#x4E8C;&#x5206;&#x56FE;&#x5339;&#x914D;</a> <a href="/tags/&#x4E8C;&#x5206;&#x67E5;&#x627E;/" style="font-size: 10px;">&#x4E8C;&#x5206;&#x67E5;&#x627E;</a> <a href="/tags/&#x4E8C;&#x5206;&#x7B54;&#x6848;/" style="font-size: 10px;">&#x4E8C;&#x5206;&#x7B54;&#x6848;</a> <a href="/tags/&#x4F5C;&#x6587;/" style="font-size: 10px;">&#x4F5C;&#x6587;</a> <a href="/tags/&#x51AC;&#x4EE4;&#x8425;/" style="font-size: 10px;">&#x51AC;&#x4EE4;&#x8425;</a> <a href="/tags/&#x51B3;&#x7B56;&#x5355;&#x8C03;&#x6027;/" style="font-size: 10.63px;">&#x51B3;&#x7B56;&#x5355;&#x8C03;&#x6027;</a> <a href="/tags/&#x5206;&#x5757;/" style="font-size: 12.5px;">&#x5206;&#x5757;</a> <a href="/tags/&#x5206;&#x5C42;&#x56FE;/" style="font-size: 10px;">&#x5206;&#x5C42;&#x56FE;</a> <a href="/tags/&#x52A8;&#x6001;&#x89C4;&#x5212;/" style="font-size: 19.38px;">&#x52A8;&#x6001;&#x89C4;&#x5212;</a> <a href="/tags/&#x533A;&#x95F4;dp/" style="font-size: 10px;">&#x533A;&#x95F4;dp</a> <a href="/tags/&#x5355;&#x8C03;&#x6808;/" style="font-size: 10px;">&#x5355;&#x8C03;&#x6808;</a> <a href="/tags/&#x5355;&#x8C03;&#x961F;&#x5217;/" style="font-size: 11.88px;">&#x5355;&#x8C03;&#x961F;&#x5217;</a> <a href="/tags/&#x53EF;&#x6301;&#x4E45;&#x5316;&#x4E3B;&#x5E2D;&#x6811;/" style="font-size: 10px;">&#x53EF;&#x6301;&#x4E45;&#x5316;&#x4E3B;&#x5E2D;&#x6811;</a> <a href="/tags/&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7EBF;&#x6BB5;&#x6811;/" style="font-size: 13.13px;">&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7EBF;&#x6BB5;&#x6811;</a> <a href="/tags/&#x540E;&#x7F00;&#x6570;&#x7EC4;/" style="font-size: 14.38px;">&#x540E;&#x7F00;&#x6570;&#x7EC4;</a> <a href="/tags/&#x540E;&#x7F00;&#x81EA;&#x52A8;&#x673A;/" style="font-size: 10px;">&#x540E;&#x7F00;&#x81EA;&#x52A8;&#x673A;</a> <a href="/tags/&#x542F;&#x53D1;&#x5F0F;&#x5408;&#x5E76;/" style="font-size: 10.63px;">&#x542F;&#x53D1;&#x5F0F;&#x5408;&#x5E76;</a> <a href="/tags/&#x56DE;&#x6587;&#x81EA;&#x52A8;&#x673A;/" style="font-size: 10px;">&#x56DE;&#x6587;&#x81EA;&#x52A8;&#x673A;</a> <a href="/tags/&#x56FE;&#x8BBA;/" style="font-size: 18.75px;">&#x56FE;&#x8BBA;</a> <a href="/tags/&#x57FA;&#x73AF;&#x6811;/" style="font-size: 10px;">&#x57FA;&#x73AF;&#x6811;</a> <a href="/tags/&#x5B57;&#x7B26;&#x4E32;/" style="font-size: 17.5px;">&#x5B57;&#x7B26;&#x4E32;</a> <a href="/tags/&#x5BB9;&#x65A5;&#x539F;&#x7406;/" style="font-size: 10px;">&#x5BB9;&#x65A5;&#x539F;&#x7406;</a> <a href="/tags/&#x5BF9;&#x5076;&#x56FE;/" style="font-size: 10px;">&#x5BF9;&#x5076;&#x56FE;</a> <a href="/tags/&#x5DE6;&#x504F;&#x6811;/" style="font-size: 11.25px;">&#x5DE6;&#x504F;&#x6811;</a> <a href="/tags/&#x5DEE;&#x5206;/" style="font-size: 11.25px;">&#x5DEE;&#x5206;</a> <a href="/tags/&#x5E73;&#x8861;&#x6811;/" style="font-size: 15.63px;">&#x5E73;&#x8861;&#x6811;</a> <a href="/tags/&#x5E76;&#x67E5;&#x96C6;/" style="font-size: 12.5px;">&#x5E76;&#x67E5;&#x96C6;</a> <a href="/tags/&#x5F3A;&#x8FDE;&#x901A;&#x5206;&#x91CF;/" style="font-size: 10px;">&#x5F3A;&#x8FDE;&#x901A;&#x5206;&#x91CF;</a> <a href="/tags/&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;/" style="font-size: 10px;">&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;</a> <a href="/tags/&#x5FEB;&#x901F;&#x5E42;/" style="font-size: 10px;">&#x5FEB;&#x901F;&#x5E42;</a> <a href="/tags/&#x6269;&#x5C55;&#x6B27;&#x51E0;&#x91CC;&#x5F97;/" style="font-size: 10px;">&#x6269;&#x5C55;&#x6B27;&#x51E0;&#x91CC;&#x5F97;</a> <a href="/tags/&#x62D3;&#x6251;&#x6392;&#x5E8F;/" style="font-size: 10px;">&#x62D3;&#x6251;&#x6392;&#x5E8F;</a> <a href="/tags/&#x6392;&#x5E8F;/" style="font-size: 10px;">&#x6392;&#x5E8F;</a> <a href="/tags/&#x641C;&#x7D22;/" style="font-size: 10px;">&#x641C;&#x7D22;</a> <a href="/tags/&#x6458;&#x5F55;/" style="font-size: 10px;">&#x6458;&#x5F55;</a> <a href="/tags/&#x6570;&#x4F4D;dp/" style="font-size: 10.63px;">&#x6570;&#x4F4D;dp</a> <a href="/tags/&#x6570;&#x5B66;/" style="font-size: 16.88px;">&#x6570;&#x5B66;</a> <a href="/tags/&#x6570;&#x636E;&#x7ED3;&#x6784;/" style="font-size: 20px;">&#x6570;&#x636E;&#x7ED3;&#x6784;</a> <a href="/tags/&#x6570;&#x8BBA;/" style="font-size: 14.38px;">&#x6570;&#x8BBA;</a> <a href="/tags/&#x6570;&#x8BBA;&#x51FD;&#x6570;/" style="font-size: 10px;">&#x6570;&#x8BBA;&#x51FD;&#x6570;</a> <a href="/tags/&#x6574;&#x4F53;&#x4E8C;&#x5206;/" style="font-size: 10.63px;">&#x6574;&#x4F53;&#x4E8C;&#x5206;</a> <a href="/tags/&#x659C;&#x7387;&#x4F18;&#x5316;/" style="font-size: 11.88px;">&#x659C;&#x7387;&#x4F18;&#x5316;</a> <a href="/tags/&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;/" style="font-size: 10px;">&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;</a> <a href="/tags/&#x6700;&#x5927;&#x6743;&#x95ED;&#x5408;&#x5B50;&#x56FE;/" style="font-size: 10.63px;">&#x6700;&#x5927;&#x6743;&#x95ED;&#x5408;&#x5B50;&#x56FE;</a> <a href="/tags/&#x6700;&#x77ED;&#x8DEF;/" style="font-size: 11.88px;">&#x6700;&#x77ED;&#x8DEF;</a> <a href="/tags/&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;/" style="font-size: 10.63px;">&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;</a> <a href="/tags/&#x671F;&#x671B;/" style="font-size: 13.13px;">&#x671F;&#x671B;</a> <a href="/tags/&#x671F;&#x671B;dp/" style="font-size: 10.63px;">&#x671F;&#x671B;dp</a> <a href="/tags/&#x675C;&#x6559;&#x7B5B;/" style="font-size: 10px;">&#x675C;&#x6559;&#x7B5B;</a> <a href="/tags/&#x6811;&#x5957;&#x6811;/" style="font-size: 10.63px;">&#x6811;&#x5957;&#x6811;</a> <a href="/tags/&#x6811;&#x5F62;dp/" style="font-size: 13.75px;">&#x6811;&#x5F62;dp</a> <a href="/tags/&#x6811;&#x5F62;&#x7ED3;&#x6784;/" style="font-size: 17.5px;">&#x6811;&#x5F62;&#x7ED3;&#x6784;</a> <a href="/tags/&#x6811;&#x72B6;&#x6570;&#x7EC4;/" style="font-size: 11.25px;">&#x6811;&#x72B6;&#x6570;&#x7EC4;</a> <a href="/tags/&#x6811;&#x7684;&#x76F4;&#x5F84;/" style="font-size: 11.88px;">&#x6811;&#x7684;&#x76F4;&#x5F84;</a> <a href="/tags/&#x6811;&#x94FE;&#x5256;&#x5206;/" style="font-size: 13.13px;">&#x6811;&#x94FE;&#x5256;&#x5206;</a> <a href="/tags/&#x6A21;&#x677F;/" style="font-size: 13.13px;">&#x6A21;&#x677F;</a> <a href="/tags/&#x6B27;&#x62C9;&#x51FD;&#x6570;/" style="font-size: 10px;">&#x6B27;&#x62C9;&#x51FD;&#x6570;</a> <a href="/tags/&#x6B4C;&#x66F2;/" style="font-size: 10px;">&#x6B4C;&#x66F2;</a> <a href="/tags/&#x6E38;&#x8BB0;/" style="font-size: 10.63px;">&#x6E38;&#x8BB0;</a> <a href="/tags/&#x70B9;&#x5206;&#x6CBB;/" style="font-size: 11.25px;">&#x70B9;&#x5206;&#x6CBB;</a> <a href="/tags/&#x72B6;&#x538B;dp/" style="font-size: 11.88px;">&#x72B6;&#x538B;dp</a> <a href="/tags/&#x751F;&#x6210;&#x6811;/" style="font-size: 10px;">&#x751F;&#x6210;&#x6811;</a> <a href="/tags/&#x7701;&#x9009;/" style="font-size: 10px;">&#x7701;&#x9009;</a> <a href="/tags/&#x778E;&#x641E;/" style="font-size: 10px;">&#x778E;&#x641E;</a> <a href="/tags/&#x77E9;&#x9635;&#x5FEB;&#x901F;&#x5E42;/" style="font-size: 12.5px;">&#x77E9;&#x9635;&#x5FEB;&#x901F;&#x5E42;</a> <a href="/tags/&#x7B14;&#x8BB0;/" style="font-size: 14.38px;">&#x7B14;&#x8BB0;</a> <a href="/tags/&#x7EBF;&#x6027;&#x57FA;/" style="font-size: 10.63px;">&#x7EBF;&#x6027;&#x57FA;</a> <a href="/tags/&#x7EBF;&#x6BB5;&#x6811;/" style="font-size: 18.13px;">&#x7EBF;&#x6BB5;&#x6811;</a> <a href="/tags/&#x7EBF;&#x6BB5;&#x6811;&#x5206;&#x6CBB;/" style="font-size: 11.25px;">&#x7EBF;&#x6BB5;&#x6811;&#x5206;&#x6CBB;</a> <a href="/tags/&#x7EBF;&#x6BB5;&#x6811;&#x5408;&#x5E76;/" style="font-size: 10.63px;">&#x7EBF;&#x6BB5;&#x6811;&#x5408;&#x5E76;</a> <a href="/tags/&#x7F51;&#x7EDC;&#x6D41;/" style="font-size: 16.25px;">&#x7F51;&#x7EDC;&#x6D41;</a> <a href="/tags/&#x7F51;&#x7EDC;&#x6D41;-24-&#x9898;/" style="font-size: 14.38px;">&#x7F51;&#x7EDC;&#x6D41; 24 &#x9898;</a> <a href="/tags/&#x80CC;&#x5305;/" style="font-size: 10.63px;">&#x80CC;&#x5305;</a> <a href="/tags/&#x83AB;&#x6BD4;&#x4E4C;&#x65AF;&#x53CD;&#x6F14;/" style="font-size: 10px;">&#x83AB;&#x6BD4;&#x4E4C;&#x65AF;&#x53CD;&#x6F14;</a> <a href="/tags/&#x83AB;&#x961F;/" style="font-size: 13.13px;">&#x83AB;&#x961F;</a> <a href="/tags/&#x865A;&#x6811;/" style="font-size: 10.63px;">&#x865A;&#x6811;</a> <a href="/tags/&#x8D2A;&#x5FC3;/" style="font-size: 10px;">&#x8D2A;&#x5FC3;</a> <a href="/tags/&#x8D39;&#x7528;&#x6D41;/" style="font-size: 13.75px;">&#x8D39;&#x7528;&#x6D41;</a> <a href="/tags/&#x9012;&#x63A8;/" style="font-size: 10px;">&#x9012;&#x63A8;</a> <a href="/tags/&#x9898;&#x89E3;/" style="font-size: 10.63px;">&#x9898;&#x89E3;</a> <a href="/tags/&#x9AD8;&#x65AF;&#x6D88;&#x5143;/" style="font-size: 11.25px;">&#x9AD8;&#x65AF;&#x6D88;&#x5143;</a>
+        <a href="/tags/0-1分数规划/" style="font-size: 10px;">0/1分数规划</a> <a href="/tags/2-SAT/" style="font-size: 10.63px;">2-SAT</a> <a href="/tags/AC自动机/" style="font-size: 12.5px;">AC自动机</a> <a href="/tags/BSGS算法/" style="font-size: 11.25px;">BSGS算法</a> <a href="/tags/CDQ分治/" style="font-size: 12.5px;">CDQ分治</a> <a href="/tags/Dinic/" style="font-size: 10.63px;">Dinic</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/KMP/" style="font-size: 11.25px;">KMP</a> <a href="/tags/LCT/" style="font-size: 15px;">LCT</a> <a href="/tags/Lucas定理/" style="font-size: 10px;">Lucas定理</a> <a href="/tags/Splay/" style="font-size: 12.5px;">Splay</a> <a href="/tags/Treap/" style="font-size: 13.13px;">Treap</a> <a href="/tags/Trie/" style="font-size: 10px;">Trie</a> <a href="/tags/dfs序/" style="font-size: 10px;">dfs序</a> <a href="/tags/set/" style="font-size: 10.63px;">set</a> <a href="/tags/wqs二分/" style="font-size: 10px;">wqs二分</a> <a href="/tags/中国剩余定理/" style="font-size: 10px;">中国剩余定理</a> <a href="/tags/主席树/" style="font-size: 11.88px;">主席树</a> <a href="/tags/乱搞/" style="font-size: 10.63px;">乱搞</a> <a href="/tags/二分图/" style="font-size: 11.88px;">二分图</a> <a href="/tags/二分图匹配/" style="font-size: 10.63px;">二分图匹配</a> <a href="/tags/二分查找/" style="font-size: 10px;">二分查找</a> <a href="/tags/二分答案/" style="font-size: 10px;">二分答案</a> <a href="/tags/作文/" style="font-size: 10px;">作文</a> <a href="/tags/冬令营/" style="font-size: 10px;">冬令营</a> <a href="/tags/决策单调性/" style="font-size: 10.63px;">决策单调性</a> <a href="/tags/分块/" style="font-size: 12.5px;">分块</a> <a href="/tags/分层图/" style="font-size: 10px;">分层图</a> <a href="/tags/动态规划/" style="font-size: 19.38px;">动态规划</a> <a href="/tags/区间dp/" style="font-size: 10px;">区间dp</a> <a href="/tags/单调栈/" style="font-size: 10px;">单调栈</a> <a href="/tags/单调队列/" style="font-size: 11.88px;">单调队列</a> <a href="/tags/可持久化主席树/" style="font-size: 10px;">可持久化主席树</a> <a href="/tags/可持久化线段树/" style="font-size: 13.13px;">可持久化线段树</a> <a href="/tags/后缀数组/" style="font-size: 14.38px;">后缀数组</a> <a href="/tags/后缀自动机/" style="font-size: 10px;">后缀自动机</a> <a href="/tags/启发式合并/" style="font-size: 10.63px;">启发式合并</a> <a href="/tags/回文自动机/" style="font-size: 10px;">回文自动机</a> <a href="/tags/图论/" style="font-size: 18.75px;">图论</a> <a href="/tags/基环树/" style="font-size: 10px;">基环树</a> <a href="/tags/字符串/" style="font-size: 17.5px;">字符串</a> <a href="/tags/容斥原理/" style="font-size: 10px;">容斥原理</a> <a href="/tags/对偶图/" style="font-size: 10px;">对偶图</a> <a href="/tags/左偏树/" style="font-size: 11.25px;">左偏树</a> <a href="/tags/差分/" style="font-size: 11.25px;">差分</a> <a href="/tags/平衡树/" style="font-size: 15.63px;">平衡树</a> <a href="/tags/并查集/" style="font-size: 12.5px;">并查集</a> <a href="/tags/强连通分量/" style="font-size: 10px;">强连通分量</a> <a href="/tags/快速傅立叶变换/" style="font-size: 10px;">快速傅立叶变换</a> <a href="/tags/快速幂/" style="font-size: 10px;">快速幂</a> <a href="/tags/扩展欧几里得/" style="font-size: 10px;">扩展欧几里得</a> <a href="/tags/拓扑排序/" style="font-size: 10px;">拓扑排序</a> <a href="/tags/排序/" style="font-size: 10px;">排序</a> <a href="/tags/搜索/" style="font-size: 10px;">搜索</a> <a href="/tags/摘录/" style="font-size: 10px;">摘录</a> <a href="/tags/数位dp/" style="font-size: 10.63px;">数位dp</a> <a href="/tags/数学/" style="font-size: 16.88px;">数学</a> <a href="/tags/数据结构/" style="font-size: 20px;">数据结构</a> <a href="/tags/数论/" style="font-size: 14.38px;">数论</a> <a href="/tags/数论函数/" style="font-size: 10px;">数论函数</a> <a href="/tags/整体二分/" style="font-size: 10.63px;">整体二分</a> <a href="/tags/斜率优化/" style="font-size: 11.88px;">斜率优化</a> <a href="/tags/最大公约数/" style="font-size: 10px;">最大公约数</a> <a href="/tags/最大权闭合子图/" style="font-size: 10.63px;">最大权闭合子图</a> <a href="/tags/最短路/" style="font-size: 11.88px;">最短路</a> <a href="/tags/最近公共祖先/" style="font-size: 10.63px;">最近公共祖先</a> <a href="/tags/期望/" style="font-size: 13.13px;">期望</a> <a href="/tags/期望dp/" style="font-size: 10.63px;">期望dp</a> <a href="/tags/杜教筛/" style="font-size: 10px;">杜教筛</a> <a href="/tags/树套树/" style="font-size: 10.63px;">树套树</a> <a href="/tags/树形dp/" style="font-size: 13.75px;">树形dp</a> <a href="/tags/树形结构/" style="font-size: 17.5px;">树形结构</a> <a href="/tags/树状数组/" style="font-size: 11.25px;">树状数组</a> <a href="/tags/树的直径/" style="font-size: 11.88px;">树的直径</a> <a href="/tags/树链剖分/" style="font-size: 13.13px;">树链剖分</a> <a href="/tags/模板/" style="font-size: 13.13px;">模板</a> <a href="/tags/欧拉函数/" style="font-size: 10px;">欧拉函数</a> <a href="/tags/歌曲/" style="font-size: 10px;">歌曲</a> <a href="/tags/游记/" style="font-size: 10.63px;">游记</a> <a href="/tags/点分治/" style="font-size: 11.25px;">点分治</a> <a href="/tags/状压dp/" style="font-size: 11.88px;">状压dp</a> <a href="/tags/生成树/" style="font-size: 10px;">生成树</a> <a href="/tags/省选/" style="font-size: 10px;">省选</a> <a href="/tags/瞎搞/" style="font-size: 10px;">瞎搞</a> <a href="/tags/矩阵快速幂/" style="font-size: 12.5px;">矩阵快速幂</a> <a href="/tags/笔记/" style="font-size: 14.38px;">笔记</a> <a href="/tags/线性基/" style="font-size: 10.63px;">线性基</a> <a href="/tags/线段树/" style="font-size: 18.13px;">线段树</a> <a href="/tags/线段树分治/" style="font-size: 11.25px;">线段树分治</a> <a href="/tags/线段树合并/" style="font-size: 10.63px;">线段树合并</a> <a href="/tags/网络流/" style="font-size: 16.25px;">网络流</a> <a href="/tags/网络流-24-题/" style="font-size: 14.38px;">网络流 24 题</a> <a href="/tags/背包/" style="font-size: 10.63px;">背包</a> <a href="/tags/莫比乌斯反演/" style="font-size: 10px;">莫比乌斯反演</a> <a href="/tags/莫队/" style="font-size: 13.13px;">莫队</a> <a href="/tags/虚树/" style="font-size: 10.63px;">虚树</a> <a href="/tags/贪心/" style="font-size: 10px;">贪心</a> <a href="/tags/费用流/" style="font-size: 13.75px;">费用流</a> <a href="/tags/递推/" style="font-size: 10px;">递推</a> <a href="/tags/题解/" style="font-size: 10.63px;">题解</a> <a href="/tags/高斯消元/" style="font-size: 11.25px;">高斯消元</a>
     </div>
 </div>
 
@@ -529,7 +513,7 @@ span.spoiler.revealed {
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            &#x6700;&#x65B0;&#x6587;&#x7AE0;
+            最新文章
         </h3>
         
         <article class="media">
@@ -537,7 +521,7 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2332-12-31T16:00:00.000Z">2333-01-01</time></div>
-                    <a href="/23330101-about-blog/" class="has-link-black-ter is-size-6">&#x3010;&#x7F6E;&#x9876;&#x3011;&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x535A;&#x5BA2;&#x7684;&#x4E00;&#x5207;</a>
+                    <a href="/23330101-about-blog/" class="has-link-black-ter is-size-6">【置顶】关于这个博客的一切</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -550,7 +534,7 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-24T14:13:06.000Z">2019-08-24</time></div>
-                    <a href="/20190824-first-mind/" class="has-link-black-ter is-size-6">&#x300C;&#x521D;&#x5FC3;&#x300D;</a>
+                    <a href="/20190824-first-mind/" class="has-link-black-ter is-size-6">「初心」</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -563,9 +547,9 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-21T13:39:12.000Z">2019-04-21</time></div>
-                    <a href="/20190421-BJOI2019/" class="has-link-black-ter is-size-6">BJOI2019&#x9000;&#x5F79;&#x8BB0;</a>
+                    <a href="/20190421-BJOI2019/" class="has-link-black-ter is-size-6">BJOI2019退役记</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/&#x6E38;&#x8BB0;/">&#x6E38;&#x8BB0;</a>
+                        <a class="has-link-grey -link" href="/categories/游记/">游记</a>
                     </p>
                 </div>
             </div>
@@ -576,9 +560,9 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-10T12:57:59.000Z">2019-04-10</time></div>
-                    <a href="/20190410-SCOI2005-knight/" class="has-link-black-ter is-size-6">&#x300C;SCOI2005&#x300D;&#x9A91;&#x58EB;&#x7CBE;&#x795E;-&#x641C;&#x7D22;</a>
+                    <a href="/20190410-SCOI2005-knight/" class="has-link-black-ter is-size-6">「SCOI2005」骑士精神-搜索</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/&#x9898;&#x89E3;/">&#x9898;&#x89E3;</a>
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/题解/">题解</a>
                     </p>
                 </div>
             </div>
@@ -589,9 +573,9 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-09T14:51:59.000Z">2019-04-09</time></div>
-                    <a href="/20190409-JSOI2010-feast/" class="has-link-black-ter is-size-6">&#x300C;JSOI2010&#x300D;&#x6EE1;&#x6C49;&#x5168;&#x5E2D;-2-SAT</a>
+                    <a href="/20190409-JSOI2010-feast/" class="has-link-black-ter is-size-6">「JSOI2010」满汉全席-2-SAT</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/&#x9898;&#x89E3;/">&#x9898;&#x89E3;</a>
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/题解/">题解</a>
                     </p>
                 </div>
             </div>
@@ -605,14 +589,14 @@ span.spoiler.revealed {
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            &#x5F52;&#x6863;
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2333/01/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E00;&#x6708; 2333</span>
+                    <span class="level-item">一月 2333</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -623,7 +607,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
-                    <span class="level-item">&#x516B;&#x6708; 2019</span>
+                    <span class="level-item">八月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -634,7 +618,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">&#x56DB;&#x6708; 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -645,7 +629,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E09;&#x6708; 2019</span>
+                    <span class="level-item">三月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">28</span>
@@ -656,7 +640,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E8C;&#x6708; 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">7</span>
@@ -667,7 +651,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E00;&#x6708; 2019</span>
+                    <span class="level-item">一月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">9</span>
@@ -678,7 +662,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/12/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x4E8C;&#x6708; 2018</span>
+                    <span class="level-item">十二月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">14</span>
@@ -689,7 +673,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x4E00;&#x6708; 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -700,7 +684,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/10/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x6708; 2018</span>
+                    <span class="level-item">十月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">17</span>
@@ -711,7 +695,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E5D;&#x6708; 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">14</span>
@@ -722,7 +706,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">&#x516B;&#x6708; 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">27</span>
@@ -733,7 +717,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/07/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E03;&#x6708; 2018</span>
+                    <span class="level-item">七月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">16</span>
@@ -744,7 +728,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/06/">
                 <span class="level-start">
-                    <span class="level-item">&#x516D;&#x6708; 2018</span>
+                    <span class="level-item">六月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">22</span>
@@ -755,7 +739,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/05/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E94;&#x6708; 2018</span>
+                    <span class="level-item">五月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">17</span>
@@ -766,7 +750,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/04/">
                 <span class="level-start">
-                    <span class="level-item">&#x56DB;&#x6708; 2018</span>
+                    <span class="level-item">四月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">18</span>
@@ -777,7 +761,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/03/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E09;&#x6708; 2018</span>
+                    <span class="level-item">三月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">11</span>
@@ -788,7 +772,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/02/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E8C;&#x6708; 2018</span>
+                    <span class="level-item">二月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">14</span>
@@ -799,7 +783,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/01/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E00;&#x6708; 2018</span>
+                    <span class="level-item">一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -810,7 +794,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2017/12/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x4E8C;&#x6708; 2017</span>
+                    <span class="level-item">十二月 2017</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -827,13 +811,13 @@ span.spoiler.revealed {
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                &#x6807;&#x7B7E;
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/0-1&#x5206;&#x6570;&#x89C4;&#x5212;/">
-                        <span class="tag">0/1&#x5206;&#x6570;&#x89C4;&#x5212;</span>
+                    <a class="tags has-addons" href="/tags/0-1分数规划/">
+                        <span class="tag">0/1分数规划</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -846,22 +830,22 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/AC&#x81EA;&#x52A8;&#x673A;/">
-                        <span class="tag">AC&#x81EA;&#x52A8;&#x673A;</span>
+                    <a class="tags has-addons" href="/tags/AC自动机/">
+                        <span class="tag">AC自动机</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/BSGS&#x7B97;&#x6CD5;/">
-                        <span class="tag">BSGS&#x7B97;&#x6CD5;</span>
+                    <a class="tags has-addons" href="/tags/BSGS算法/">
+                        <span class="tag">BSGS算法</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/CDQ&#x5206;&#x6CBB;/">
-                        <span class="tag">CDQ&#x5206;&#x6CBB;</span>
+                    <a class="tags has-addons" href="/tags/CDQ分治/">
+                        <span class="tag">CDQ分治</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
@@ -895,8 +879,8 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Lucas&#x5B9A;&#x7406;/">
-                        <span class="tag">Lucas&#x5B9A;&#x7406;</span>
+                    <a class="tags has-addons" href="/tags/Lucas定理/">
+                        <span class="tag">Lucas定理</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -923,8 +907,8 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/dfs&#x5E8F;/">
-                        <span class="tag">dfs&#x5E8F;</span>
+                    <a class="tags has-addons" href="/tags/dfs序/">
+                        <span class="tag">dfs序</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -937,603 +921,603 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/wqs&#x4E8C;&#x5206;/">
-                        <span class="tag">wqs&#x4E8C;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/wqs二分/">
+                        <span class="tag">wqs二分</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E2D;&#x56FD;&#x5269;&#x4F59;&#x5B9A;&#x7406;/">
-                        <span class="tag">&#x4E2D;&#x56FD;&#x5269;&#x4F59;&#x5B9A;&#x7406;</span>
+                    <a class="tags has-addons" href="/tags/中国剩余定理/">
+                        <span class="tag">中国剩余定理</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E3B;&#x5E2D;&#x6811;/">
-                        <span class="tag">&#x4E3B;&#x5E2D;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/主席树/">
+                        <span class="tag">主席树</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E71;&#x641E;/">
-                        <span class="tag">&#x4E71;&#x641E;</span>
+                    <a class="tags has-addons" href="/tags/乱搞/">
+                        <span class="tag">乱搞</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x56FE;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/二分图/">
+                        <span class="tag">二分图</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x56FE;&#x5339;&#x914D;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x56FE;&#x5339;&#x914D;</span>
+                    <a class="tags has-addons" href="/tags/二分图匹配/">
+                        <span class="tag">二分图匹配</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x67E5;&#x627E;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x67E5;&#x627E;</span>
+                    <a class="tags has-addons" href="/tags/二分查找/">
+                        <span class="tag">二分查找</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x7B54;&#x6848;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x7B54;&#x6848;</span>
+                    <a class="tags has-addons" href="/tags/二分答案/">
+                        <span class="tag">二分答案</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4F5C;&#x6587;/">
-                        <span class="tag">&#x4F5C;&#x6587;</span>
+                    <a class="tags has-addons" href="/tags/作文/">
+                        <span class="tag">作文</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x51AC;&#x4EE4;&#x8425;/">
-                        <span class="tag">&#x51AC;&#x4EE4;&#x8425;</span>
+                    <a class="tags has-addons" href="/tags/冬令营/">
+                        <span class="tag">冬令营</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x51B3;&#x7B56;&#x5355;&#x8C03;&#x6027;/">
-                        <span class="tag">&#x51B3;&#x7B56;&#x5355;&#x8C03;&#x6027;</span>
+                    <a class="tags has-addons" href="/tags/决策单调性/">
+                        <span class="tag">决策单调性</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5206;&#x5757;/">
-                        <span class="tag">&#x5206;&#x5757;</span>
+                    <a class="tags has-addons" href="/tags/分块/">
+                        <span class="tag">分块</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5206;&#x5C42;&#x56FE;/">
-                        <span class="tag">&#x5206;&#x5C42;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/分层图/">
+                        <span class="tag">分层图</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x52A8;&#x6001;&#x89C4;&#x5212;/">
-                        <span class="tag">&#x52A8;&#x6001;&#x89C4;&#x5212;</span>
+                    <a class="tags has-addons" href="/tags/动态规划/">
+                        <span class="tag">动态规划</span>
                         <span class="tag is-grey">39</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x533A;&#x95F4;dp/">
-                        <span class="tag">&#x533A;&#x95F4;dp</span>
+                    <a class="tags has-addons" href="/tags/区间dp/">
+                        <span class="tag">区间dp</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5355;&#x8C03;&#x6808;/">
-                        <span class="tag">&#x5355;&#x8C03;&#x6808;</span>
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5355;&#x8C03;&#x961F;&#x5217;/">
-                        <span class="tag">&#x5355;&#x8C03;&#x961F;&#x5217;</span>
+                    <a class="tags has-addons" href="/tags/单调队列/">
+                        <span class="tag">单调队列</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x53EF;&#x6301;&#x4E45;&#x5316;&#x4E3B;&#x5E2D;&#x6811;/">
-                        <span class="tag">&#x53EF;&#x6301;&#x4E45;&#x5316;&#x4E3B;&#x5E2D;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/可持久化主席树/">
+                        <span class="tag">可持久化主席树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7EBF;&#x6BB5;&#x6811;/">
-                        <span class="tag">&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7EBF;&#x6BB5;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/可持久化线段树/">
+                        <span class="tag">可持久化线段树</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x540E;&#x7F00;&#x6570;&#x7EC4;/">
-                        <span class="tag">&#x540E;&#x7F00;&#x6570;&#x7EC4;</span>
+                    <a class="tags has-addons" href="/tags/后缀数组/">
+                        <span class="tag">后缀数组</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x540E;&#x7F00;&#x81EA;&#x52A8;&#x673A;/">
-                        <span class="tag">&#x540E;&#x7F00;&#x81EA;&#x52A8;&#x673A;</span>
+                    <a class="tags has-addons" href="/tags/后缀自动机/">
+                        <span class="tag">后缀自动机</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x542F;&#x53D1;&#x5F0F;&#x5408;&#x5E76;/">
-                        <span class="tag">&#x542F;&#x53D1;&#x5F0F;&#x5408;&#x5E76;</span>
+                    <a class="tags has-addons" href="/tags/启发式合并/">
+                        <span class="tag">启发式合并</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x56DE;&#x6587;&#x81EA;&#x52A8;&#x673A;/">
-                        <span class="tag">&#x56DE;&#x6587;&#x81EA;&#x52A8;&#x673A;</span>
+                    <a class="tags has-addons" href="/tags/回文自动机/">
+                        <span class="tag">回文自动机</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x56FE;&#x8BBA;/">
-                        <span class="tag">&#x56FE;&#x8BBA;</span>
+                    <a class="tags has-addons" href="/tags/图论/">
+                        <span class="tag">图论</span>
                         <span class="tag is-grey">32</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x57FA;&#x73AF;&#x6811;/">
-                        <span class="tag">&#x57FA;&#x73AF;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/基环树/">
+                        <span class="tag">基环树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5B57;&#x7B26;&#x4E32;/">
-                        <span class="tag">&#x5B57;&#x7B26;&#x4E32;</span>
+                    <a class="tags has-addons" href="/tags/字符串/">
+                        <span class="tag">字符串</span>
                         <span class="tag is-grey">19</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5BB9;&#x65A5;&#x539F;&#x7406;/">
-                        <span class="tag">&#x5BB9;&#x65A5;&#x539F;&#x7406;</span>
+                    <a class="tags has-addons" href="/tags/容斥原理/">
+                        <span class="tag">容斥原理</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5BF9;&#x5076;&#x56FE;/">
-                        <span class="tag">&#x5BF9;&#x5076;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/对偶图/">
+                        <span class="tag">对偶图</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5DE6;&#x504F;&#x6811;/">
-                        <span class="tag">&#x5DE6;&#x504F;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/左偏树/">
+                        <span class="tag">左偏树</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5DEE;&#x5206;/">
-                        <span class="tag">&#x5DEE;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/差分/">
+                        <span class="tag">差分</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5E73;&#x8861;&#x6811;/">
-                        <span class="tag">&#x5E73;&#x8861;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/平衡树/">
+                        <span class="tag">平衡树</span>
                         <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5E76;&#x67E5;&#x96C6;/">
-                        <span class="tag">&#x5E76;&#x67E5;&#x96C6;</span>
+                    <a class="tags has-addons" href="/tags/并查集/">
+                        <span class="tag">并查集</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5F3A;&#x8FDE;&#x901A;&#x5206;&#x91CF;/">
-                        <span class="tag">&#x5F3A;&#x8FDE;&#x901A;&#x5206;&#x91CF;</span>
+                    <a class="tags has-addons" href="/tags/强连通分量/">
+                        <span class="tag">强连通分量</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;/">
-                        <span class="tag">&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;</span>
+                    <a class="tags has-addons" href="/tags/快速傅立叶变换/">
+                        <span class="tag">快速傅立叶变换</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5FEB;&#x901F;&#x5E42;/">
-                        <span class="tag">&#x5FEB;&#x901F;&#x5E42;</span>
+                    <a class="tags has-addons" href="/tags/快速幂/">
+                        <span class="tag">快速幂</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6269;&#x5C55;&#x6B27;&#x51E0;&#x91CC;&#x5F97;/">
-                        <span class="tag">&#x6269;&#x5C55;&#x6B27;&#x51E0;&#x91CC;&#x5F97;</span>
+                    <a class="tags has-addons" href="/tags/扩展欧几里得/">
+                        <span class="tag">扩展欧几里得</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x62D3;&#x6251;&#x6392;&#x5E8F;/">
-                        <span class="tag">&#x62D3;&#x6251;&#x6392;&#x5E8F;</span>
+                    <a class="tags has-addons" href="/tags/拓扑排序/">
+                        <span class="tag">拓扑排序</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6392;&#x5E8F;/">
-                        <span class="tag">&#x6392;&#x5E8F;</span>
+                    <a class="tags has-addons" href="/tags/排序/">
+                        <span class="tag">排序</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x641C;&#x7D22;/">
-                        <span class="tag">&#x641C;&#x7D22;</span>
+                    <a class="tags has-addons" href="/tags/搜索/">
+                        <span class="tag">搜索</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6458;&#x5F55;/">
-                        <span class="tag">&#x6458;&#x5F55;</span>
+                    <a class="tags has-addons" href="/tags/摘录/">
+                        <span class="tag">摘录</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x4F4D;dp/">
-                        <span class="tag">&#x6570;&#x4F4D;dp</span>
+                    <a class="tags has-addons" href="/tags/数位dp/">
+                        <span class="tag">数位dp</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x5B66;/">
-                        <span class="tag">&#x6570;&#x5B66;</span>
+                    <a class="tags has-addons" href="/tags/数学/">
+                        <span class="tag">数学</span>
                         <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x636E;&#x7ED3;&#x6784;/">
-                        <span class="tag">&#x6570;&#x636E;&#x7ED3;&#x6784;</span>
+                    <a class="tags has-addons" href="/tags/数据结构/">
+                        <span class="tag">数据结构</span>
                         <span class="tag is-grey">68</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x8BBA;/">
-                        <span class="tag">&#x6570;&#x8BBA;</span>
+                    <a class="tags has-addons" href="/tags/数论/">
+                        <span class="tag">数论</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x8BBA;&#x51FD;&#x6570;/">
-                        <span class="tag">&#x6570;&#x8BBA;&#x51FD;&#x6570;</span>
+                    <a class="tags has-addons" href="/tags/数论函数/">
+                        <span class="tag">数论函数</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6574;&#x4F53;&#x4E8C;&#x5206;/">
-                        <span class="tag">&#x6574;&#x4F53;&#x4E8C;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/整体二分/">
+                        <span class="tag">整体二分</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x659C;&#x7387;&#x4F18;&#x5316;/">
-                        <span class="tag">&#x659C;&#x7387;&#x4F18;&#x5316;</span>
+                    <a class="tags has-addons" href="/tags/斜率优化/">
+                        <span class="tag">斜率优化</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;/">
-                        <span class="tag">&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;</span>
+                    <a class="tags has-addons" href="/tags/最大公约数/">
+                        <span class="tag">最大公约数</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x5927;&#x6743;&#x95ED;&#x5408;&#x5B50;&#x56FE;/">
-                        <span class="tag">&#x6700;&#x5927;&#x6743;&#x95ED;&#x5408;&#x5B50;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/最大权闭合子图/">
+                        <span class="tag">最大权闭合子图</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x77ED;&#x8DEF;/">
-                        <span class="tag">&#x6700;&#x77ED;&#x8DEF;</span>
+                    <a class="tags has-addons" href="/tags/最短路/">
+                        <span class="tag">最短路</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;/">
-                        <span class="tag">&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;</span>
+                    <a class="tags has-addons" href="/tags/最近公共祖先/">
+                        <span class="tag">最近公共祖先</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x671F;&#x671B;/">
-                        <span class="tag">&#x671F;&#x671B;</span>
+                    <a class="tags has-addons" href="/tags/期望/">
+                        <span class="tag">期望</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x671F;&#x671B;dp/">
-                        <span class="tag">&#x671F;&#x671B;dp</span>
+                    <a class="tags has-addons" href="/tags/期望dp/">
+                        <span class="tag">期望dp</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x675C;&#x6559;&#x7B5B;/">
-                        <span class="tag">&#x675C;&#x6559;&#x7B5B;</span>
+                    <a class="tags has-addons" href="/tags/杜教筛/">
+                        <span class="tag">杜教筛</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x5957;&#x6811;/">
-                        <span class="tag">&#x6811;&#x5957;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/树套树/">
+                        <span class="tag">树套树</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x5F62;dp/">
-                        <span class="tag">&#x6811;&#x5F62;dp</span>
+                    <a class="tags has-addons" href="/tags/树形dp/">
+                        <span class="tag">树形dp</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x5F62;&#x7ED3;&#x6784;/">
-                        <span class="tag">&#x6811;&#x5F62;&#x7ED3;&#x6784;</span>
+                    <a class="tags has-addons" href="/tags/树形结构/">
+                        <span class="tag">树形结构</span>
                         <span class="tag is-grey">19</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x72B6;&#x6570;&#x7EC4;/">
-                        <span class="tag">&#x6811;&#x72B6;&#x6570;&#x7EC4;</span>
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x7684;&#x76F4;&#x5F84;/">
-                        <span class="tag">&#x6811;&#x7684;&#x76F4;&#x5F84;</span>
+                    <a class="tags has-addons" href="/tags/树的直径/">
+                        <span class="tag">树的直径</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x94FE;&#x5256;&#x5206;/">
-                        <span class="tag">&#x6811;&#x94FE;&#x5256;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/树链剖分/">
+                        <span class="tag">树链剖分</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6A21;&#x677F;/">
-                        <span class="tag">&#x6A21;&#x677F;</span>
+                    <a class="tags has-addons" href="/tags/模板/">
+                        <span class="tag">模板</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6B27;&#x62C9;&#x51FD;&#x6570;/">
-                        <span class="tag">&#x6B27;&#x62C9;&#x51FD;&#x6570;</span>
+                    <a class="tags has-addons" href="/tags/欧拉函数/">
+                        <span class="tag">欧拉函数</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6B4C;&#x66F2;/">
-                        <span class="tag">&#x6B4C;&#x66F2;</span>
+                    <a class="tags has-addons" href="/tags/歌曲/">
+                        <span class="tag">歌曲</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6E38;&#x8BB0;/">
-                        <span class="tag">&#x6E38;&#x8BB0;</span>
+                    <a class="tags has-addons" href="/tags/游记/">
+                        <span class="tag">游记</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x70B9;&#x5206;&#x6CBB;/">
-                        <span class="tag">&#x70B9;&#x5206;&#x6CBB;</span>
+                    <a class="tags has-addons" href="/tags/点分治/">
+                        <span class="tag">点分治</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x72B6;&#x538B;dp/">
-                        <span class="tag">&#x72B6;&#x538B;dp</span>
+                    <a class="tags has-addons" href="/tags/状压dp/">
+                        <span class="tag">状压dp</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x751F;&#x6210;&#x6811;/">
-                        <span class="tag">&#x751F;&#x6210;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/生成树/">
+                        <span class="tag">生成树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7701;&#x9009;/">
-                        <span class="tag">&#x7701;&#x9009;</span>
+                    <a class="tags has-addons" href="/tags/省选/">
+                        <span class="tag">省选</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x778E;&#x641E;/">
-                        <span class="tag">&#x778E;&#x641E;</span>
+                    <a class="tags has-addons" href="/tags/瞎搞/">
+                        <span class="tag">瞎搞</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x77E9;&#x9635;&#x5FEB;&#x901F;&#x5E42;/">
-                        <span class="tag">&#x77E9;&#x9635;&#x5FEB;&#x901F;&#x5E42;</span>
+                    <a class="tags has-addons" href="/tags/矩阵快速幂/">
+                        <span class="tag">矩阵快速幂</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7B14;&#x8BB0;/">
-                        <span class="tag">&#x7B14;&#x8BB0;</span>
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6027;&#x57FA;/">
-                        <span class="tag">&#x7EBF;&#x6027;&#x57FA;</span>
+                    <a class="tags has-addons" href="/tags/线性基/">
+                        <span class="tag">线性基</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6BB5;&#x6811;/">
-                        <span class="tag">&#x7EBF;&#x6BB5;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
                         <span class="tag is-grey">22</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6BB5;&#x6811;&#x5206;&#x6CBB;/">
-                        <span class="tag">&#x7EBF;&#x6BB5;&#x6811;&#x5206;&#x6CBB;</span>
+                    <a class="tags has-addons" href="/tags/线段树分治/">
+                        <span class="tag">线段树分治</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6BB5;&#x6811;&#x5408;&#x5E76;/">
-                        <span class="tag">&#x7EBF;&#x6BB5;&#x6811;&#x5408;&#x5E76;</span>
+                    <a class="tags has-addons" href="/tags/线段树合并/">
+                        <span class="tag">线段树合并</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7F51;&#x7EDC;&#x6D41;/">
-                        <span class="tag">&#x7F51;&#x7EDC;&#x6D41;</span>
+                    <a class="tags has-addons" href="/tags/网络流/">
+                        <span class="tag">网络流</span>
                         <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7F51;&#x7EDC;&#x6D41;-24-&#x9898;/">
-                        <span class="tag">&#x7F51;&#x7EDC;&#x6D41; 24 &#x9898;</span>
+                    <a class="tags has-addons" href="/tags/网络流-24-题/">
+                        <span class="tag">网络流 24 题</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x80CC;&#x5305;/">
-                        <span class="tag">&#x80CC;&#x5305;</span>
+                    <a class="tags has-addons" href="/tags/背包/">
+                        <span class="tag">背包</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x83AB;&#x6BD4;&#x4E4C;&#x65AF;&#x53CD;&#x6F14;/">
-                        <span class="tag">&#x83AB;&#x6BD4;&#x4E4C;&#x65AF;&#x53CD;&#x6F14;</span>
+                    <a class="tags has-addons" href="/tags/莫比乌斯反演/">
+                        <span class="tag">莫比乌斯反演</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x83AB;&#x961F;/">
-                        <span class="tag">&#x83AB;&#x961F;</span>
+                    <a class="tags has-addons" href="/tags/莫队/">
+                        <span class="tag">莫队</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x865A;&#x6811;/">
-                        <span class="tag">&#x865A;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/虚树/">
+                        <span class="tag">虚树</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x8D2A;&#x5FC3;/">
-                        <span class="tag">&#x8D2A;&#x5FC3;</span>
+                    <a class="tags has-addons" href="/tags/贪心/">
+                        <span class="tag">贪心</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x8D39;&#x7528;&#x6D41;/">
-                        <span class="tag">&#x8D39;&#x7528;&#x6D41;</span>
+                    <a class="tags has-addons" href="/tags/费用流/">
+                        <span class="tag">费用流</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x9012;&#x63A8;/">
-                        <span class="tag">&#x9012;&#x63A8;</span>
+                    <a class="tags has-addons" href="/tags/递推/">
+                        <span class="tag">递推</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x9898;&#x89E3;/">
-                        <span class="tag">&#x9898;&#x89E3;</span>
+                    <a class="tags has-addons" href="/tags/题解/">
+                        <span class="tag">题解</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x9AD8;&#x65AF;&#x6D88;&#x5143;/">
-                        <span class="tag">&#x9AD8;&#x65AF;&#x6D88;&#x5143;</span>
+                    <a class="tags has-addons" href="/tags/高斯消元/">
+                        <span class="tag">高斯消元</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
@@ -1558,7 +1542,7 @@ span.spoiler.revealed {
 <div class="card widget">
     <div class="card-content">
         <h3 class="menu-label">
-            &#x6700;&#x65B0;&#x6587;&#x7AE0;
+            最新文章
         </h3>
         
         <article class="media">
@@ -1566,7 +1550,7 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2332-12-31T16:00:00.000Z">2333-01-01</time></div>
-                    <a href="/23330101-about-blog/" class="has-link-black-ter is-size-6">&#x3010;&#x7F6E;&#x9876;&#x3011;&#x5173;&#x4E8E;&#x8FD9;&#x4E2A;&#x535A;&#x5BA2;&#x7684;&#x4E00;&#x5207;</a>
+                    <a href="/23330101-about-blog/" class="has-link-black-ter is-size-6">【置顶】关于这个博客的一切</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1579,7 +1563,7 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-08-24T14:13:06.000Z">2019-08-24</time></div>
-                    <a href="/20190824-first-mind/" class="has-link-black-ter is-size-6">&#x300C;&#x521D;&#x5FC3;&#x300D;</a>
+                    <a href="/20190824-first-mind/" class="has-link-black-ter is-size-6">「初心」</a>
                     <p class="is-size-7 is-uppercase">
                         
                     </p>
@@ -1592,9 +1576,9 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-21T13:39:12.000Z">2019-04-21</time></div>
-                    <a href="/20190421-BJOI2019/" class="has-link-black-ter is-size-6">BJOI2019&#x9000;&#x5F79;&#x8BB0;</a>
+                    <a href="/20190421-BJOI2019/" class="has-link-black-ter is-size-6">BJOI2019退役记</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/&#x6E38;&#x8BB0;/">&#x6E38;&#x8BB0;</a>
+                        <a class="has-link-grey -link" href="/categories/游记/">游记</a>
                     </p>
                 </div>
             </div>
@@ -1605,9 +1589,9 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-10T12:57:59.000Z">2019-04-10</time></div>
-                    <a href="/20190410-SCOI2005-knight/" class="has-link-black-ter is-size-6">&#x300C;SCOI2005&#x300D;&#x9A91;&#x58EB;&#x7CBE;&#x795E;-&#x641C;&#x7D22;</a>
+                    <a href="/20190410-SCOI2005-knight/" class="has-link-black-ter is-size-6">「SCOI2005」骑士精神-搜索</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/&#x9898;&#x89E3;/">&#x9898;&#x89E3;</a>
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/题解/">题解</a>
                     </p>
                 </div>
             </div>
@@ -1618,9 +1602,9 @@ span.spoiler.revealed {
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2019-04-09T14:51:59.000Z">2019-04-09</time></div>
-                    <a href="/20190409-JSOI2010-feast/" class="has-link-black-ter is-size-6">&#x300C;JSOI2010&#x300D;&#x6EE1;&#x6C49;&#x5168;&#x5E2D;-2-SAT</a>
+                    <a href="/20190409-JSOI2010-feast/" class="has-link-black-ter is-size-6">「JSOI2010」满汉全席-2-SAT</a>
                     <p class="is-size-7 is-uppercase">
-                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/&#x9898;&#x89E3;/">&#x9898;&#x89E3;</a>
+                        <a class="has-link-grey -link" href="/categories/OI/">OI</a> / <a class="has-link-grey -link" href="/categories/OI/题解/">题解</a>
                     </p>
                 </div>
             </div>
@@ -1634,14 +1618,14 @@ span.spoiler.revealed {
     <div class="card-content">
         <div class="menu">
         <h3 class="menu-label">
-            &#x5F52;&#x6863;
+            归档
         </h3>
         <ul class="menu-list">
         
         <li>
             <a class="level is-marginless" href="/archives/2333/01/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E00;&#x6708; 2333</span>
+                    <span class="level-item">一月 2333</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1652,7 +1636,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/08/">
                 <span class="level-start">
-                    <span class="level-item">&#x516B;&#x6708; 2019</span>
+                    <span class="level-item">八月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">1</span>
@@ -1663,7 +1647,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/04/">
                 <span class="level-start">
-                    <span class="level-item">&#x56DB;&#x6708; 2019</span>
+                    <span class="level-item">四月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -1674,7 +1658,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/03/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E09;&#x6708; 2019</span>
+                    <span class="level-item">三月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">28</span>
@@ -1685,7 +1669,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/02/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E8C;&#x6708; 2019</span>
+                    <span class="level-item">二月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">7</span>
@@ -1696,7 +1680,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2019/01/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E00;&#x6708; 2019</span>
+                    <span class="level-item">一月 2019</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">9</span>
@@ -1707,7 +1691,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/12/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x4E8C;&#x6708; 2018</span>
+                    <span class="level-item">十二月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">14</span>
@@ -1718,7 +1702,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/11/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x4E00;&#x6708; 2018</span>
+                    <span class="level-item">十一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -1729,7 +1713,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/10/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x6708; 2018</span>
+                    <span class="level-item">十月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">17</span>
@@ -1740,7 +1724,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/09/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E5D;&#x6708; 2018</span>
+                    <span class="level-item">九月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">14</span>
@@ -1751,7 +1735,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/08/">
                 <span class="level-start">
-                    <span class="level-item">&#x516B;&#x6708; 2018</span>
+                    <span class="level-item">八月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">27</span>
@@ -1762,7 +1746,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/07/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E03;&#x6708; 2018</span>
+                    <span class="level-item">七月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">16</span>
@@ -1773,7 +1757,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/06/">
                 <span class="level-start">
-                    <span class="level-item">&#x516D;&#x6708; 2018</span>
+                    <span class="level-item">六月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">22</span>
@@ -1784,7 +1768,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/05/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E94;&#x6708; 2018</span>
+                    <span class="level-item">五月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">17</span>
@@ -1795,7 +1779,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/04/">
                 <span class="level-start">
-                    <span class="level-item">&#x56DB;&#x6708; 2018</span>
+                    <span class="level-item">四月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">18</span>
@@ -1806,7 +1790,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/03/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E09;&#x6708; 2018</span>
+                    <span class="level-item">三月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">11</span>
@@ -1817,7 +1801,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/02/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E8C;&#x6708; 2018</span>
+                    <span class="level-item">二月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">14</span>
@@ -1828,7 +1812,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2018/01/">
                 <span class="level-start">
-                    <span class="level-item">&#x4E00;&#x6708; 2018</span>
+                    <span class="level-item">一月 2018</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">8</span>
@@ -1839,7 +1823,7 @@ span.spoiler.revealed {
         <li>
             <a class="level is-marginless" href="/archives/2017/12/">
                 <span class="level-start">
-                    <span class="level-item">&#x5341;&#x4E8C;&#x6708; 2017</span>
+                    <span class="level-item">十二月 2017</span>
                 </span>
                 <span class="level-end">
                     <span class="level-item tag">6</span>
@@ -1856,13 +1840,13 @@ span.spoiler.revealed {
     <div class="card-content">
         <div class="menu">
             <h3 class="menu-label">
-                &#x6807;&#x7B7E;
+                标签
             </h3>
             <div class="field is-grouped is-grouped-multiline">
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/0-1&#x5206;&#x6570;&#x89C4;&#x5212;/">
-                        <span class="tag">0/1&#x5206;&#x6570;&#x89C4;&#x5212;</span>
+                    <a class="tags has-addons" href="/tags/0-1分数规划/">
+                        <span class="tag">0/1分数规划</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1875,22 +1859,22 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/AC&#x81EA;&#x52A8;&#x673A;/">
-                        <span class="tag">AC&#x81EA;&#x52A8;&#x673A;</span>
+                    <a class="tags has-addons" href="/tags/AC自动机/">
+                        <span class="tag">AC自动机</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/BSGS&#x7B97;&#x6CD5;/">
-                        <span class="tag">BSGS&#x7B97;&#x6CD5;</span>
+                    <a class="tags has-addons" href="/tags/BSGS算法/">
+                        <span class="tag">BSGS算法</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/CDQ&#x5206;&#x6CBB;/">
-                        <span class="tag">CDQ&#x5206;&#x6CBB;</span>
+                    <a class="tags has-addons" href="/tags/CDQ分治/">
+                        <span class="tag">CDQ分治</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
@@ -1924,8 +1908,8 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/Lucas&#x5B9A;&#x7406;/">
-                        <span class="tag">Lucas&#x5B9A;&#x7406;</span>
+                    <a class="tags has-addons" href="/tags/Lucas定理/">
+                        <span class="tag">Lucas定理</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1952,8 +1936,8 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/dfs&#x5E8F;/">
-                        <span class="tag">dfs&#x5E8F;</span>
+                    <a class="tags has-addons" href="/tags/dfs序/">
+                        <span class="tag">dfs序</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
@@ -1966,603 +1950,603 @@ span.spoiler.revealed {
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/wqs&#x4E8C;&#x5206;/">
-                        <span class="tag">wqs&#x4E8C;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/wqs二分/">
+                        <span class="tag">wqs二分</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E2D;&#x56FD;&#x5269;&#x4F59;&#x5B9A;&#x7406;/">
-                        <span class="tag">&#x4E2D;&#x56FD;&#x5269;&#x4F59;&#x5B9A;&#x7406;</span>
+                    <a class="tags has-addons" href="/tags/中国剩余定理/">
+                        <span class="tag">中国剩余定理</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E3B;&#x5E2D;&#x6811;/">
-                        <span class="tag">&#x4E3B;&#x5E2D;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/主席树/">
+                        <span class="tag">主席树</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E71;&#x641E;/">
-                        <span class="tag">&#x4E71;&#x641E;</span>
+                    <a class="tags has-addons" href="/tags/乱搞/">
+                        <span class="tag">乱搞</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x56FE;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/二分图/">
+                        <span class="tag">二分图</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x56FE;&#x5339;&#x914D;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x56FE;&#x5339;&#x914D;</span>
+                    <a class="tags has-addons" href="/tags/二分图匹配/">
+                        <span class="tag">二分图匹配</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x67E5;&#x627E;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x67E5;&#x627E;</span>
+                    <a class="tags has-addons" href="/tags/二分查找/">
+                        <span class="tag">二分查找</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4E8C;&#x5206;&#x7B54;&#x6848;/">
-                        <span class="tag">&#x4E8C;&#x5206;&#x7B54;&#x6848;</span>
+                    <a class="tags has-addons" href="/tags/二分答案/">
+                        <span class="tag">二分答案</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x4F5C;&#x6587;/">
-                        <span class="tag">&#x4F5C;&#x6587;</span>
+                    <a class="tags has-addons" href="/tags/作文/">
+                        <span class="tag">作文</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x51AC;&#x4EE4;&#x8425;/">
-                        <span class="tag">&#x51AC;&#x4EE4;&#x8425;</span>
+                    <a class="tags has-addons" href="/tags/冬令营/">
+                        <span class="tag">冬令营</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x51B3;&#x7B56;&#x5355;&#x8C03;&#x6027;/">
-                        <span class="tag">&#x51B3;&#x7B56;&#x5355;&#x8C03;&#x6027;</span>
+                    <a class="tags has-addons" href="/tags/决策单调性/">
+                        <span class="tag">决策单调性</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5206;&#x5757;/">
-                        <span class="tag">&#x5206;&#x5757;</span>
+                    <a class="tags has-addons" href="/tags/分块/">
+                        <span class="tag">分块</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5206;&#x5C42;&#x56FE;/">
-                        <span class="tag">&#x5206;&#x5C42;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/分层图/">
+                        <span class="tag">分层图</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x52A8;&#x6001;&#x89C4;&#x5212;/">
-                        <span class="tag">&#x52A8;&#x6001;&#x89C4;&#x5212;</span>
+                    <a class="tags has-addons" href="/tags/动态规划/">
+                        <span class="tag">动态规划</span>
                         <span class="tag is-grey">39</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x533A;&#x95F4;dp/">
-                        <span class="tag">&#x533A;&#x95F4;dp</span>
+                    <a class="tags has-addons" href="/tags/区间dp/">
+                        <span class="tag">区间dp</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5355;&#x8C03;&#x6808;/">
-                        <span class="tag">&#x5355;&#x8C03;&#x6808;</span>
+                    <a class="tags has-addons" href="/tags/单调栈/">
+                        <span class="tag">单调栈</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5355;&#x8C03;&#x961F;&#x5217;/">
-                        <span class="tag">&#x5355;&#x8C03;&#x961F;&#x5217;</span>
+                    <a class="tags has-addons" href="/tags/单调队列/">
+                        <span class="tag">单调队列</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x53EF;&#x6301;&#x4E45;&#x5316;&#x4E3B;&#x5E2D;&#x6811;/">
-                        <span class="tag">&#x53EF;&#x6301;&#x4E45;&#x5316;&#x4E3B;&#x5E2D;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/可持久化主席树/">
+                        <span class="tag">可持久化主席树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7EBF;&#x6BB5;&#x6811;/">
-                        <span class="tag">&#x53EF;&#x6301;&#x4E45;&#x5316;&#x7EBF;&#x6BB5;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/可持久化线段树/">
+                        <span class="tag">可持久化线段树</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x540E;&#x7F00;&#x6570;&#x7EC4;/">
-                        <span class="tag">&#x540E;&#x7F00;&#x6570;&#x7EC4;</span>
+                    <a class="tags has-addons" href="/tags/后缀数组/">
+                        <span class="tag">后缀数组</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x540E;&#x7F00;&#x81EA;&#x52A8;&#x673A;/">
-                        <span class="tag">&#x540E;&#x7F00;&#x81EA;&#x52A8;&#x673A;</span>
+                    <a class="tags has-addons" href="/tags/后缀自动机/">
+                        <span class="tag">后缀自动机</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x542F;&#x53D1;&#x5F0F;&#x5408;&#x5E76;/">
-                        <span class="tag">&#x542F;&#x53D1;&#x5F0F;&#x5408;&#x5E76;</span>
+                    <a class="tags has-addons" href="/tags/启发式合并/">
+                        <span class="tag">启发式合并</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x56DE;&#x6587;&#x81EA;&#x52A8;&#x673A;/">
-                        <span class="tag">&#x56DE;&#x6587;&#x81EA;&#x52A8;&#x673A;</span>
+                    <a class="tags has-addons" href="/tags/回文自动机/">
+                        <span class="tag">回文自动机</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x56FE;&#x8BBA;/">
-                        <span class="tag">&#x56FE;&#x8BBA;</span>
+                    <a class="tags has-addons" href="/tags/图论/">
+                        <span class="tag">图论</span>
                         <span class="tag is-grey">32</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x57FA;&#x73AF;&#x6811;/">
-                        <span class="tag">&#x57FA;&#x73AF;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/基环树/">
+                        <span class="tag">基环树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5B57;&#x7B26;&#x4E32;/">
-                        <span class="tag">&#x5B57;&#x7B26;&#x4E32;</span>
+                    <a class="tags has-addons" href="/tags/字符串/">
+                        <span class="tag">字符串</span>
                         <span class="tag is-grey">19</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5BB9;&#x65A5;&#x539F;&#x7406;/">
-                        <span class="tag">&#x5BB9;&#x65A5;&#x539F;&#x7406;</span>
+                    <a class="tags has-addons" href="/tags/容斥原理/">
+                        <span class="tag">容斥原理</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5BF9;&#x5076;&#x56FE;/">
-                        <span class="tag">&#x5BF9;&#x5076;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/对偶图/">
+                        <span class="tag">对偶图</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5DE6;&#x504F;&#x6811;/">
-                        <span class="tag">&#x5DE6;&#x504F;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/左偏树/">
+                        <span class="tag">左偏树</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5DEE;&#x5206;/">
-                        <span class="tag">&#x5DEE;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/差分/">
+                        <span class="tag">差分</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5E73;&#x8861;&#x6811;/">
-                        <span class="tag">&#x5E73;&#x8861;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/平衡树/">
+                        <span class="tag">平衡树</span>
                         <span class="tag is-grey">13</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5E76;&#x67E5;&#x96C6;/">
-                        <span class="tag">&#x5E76;&#x67E5;&#x96C6;</span>
+                    <a class="tags has-addons" href="/tags/并查集/">
+                        <span class="tag">并查集</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5F3A;&#x8FDE;&#x901A;&#x5206;&#x91CF;/">
-                        <span class="tag">&#x5F3A;&#x8FDE;&#x901A;&#x5206;&#x91CF;</span>
+                    <a class="tags has-addons" href="/tags/强连通分量/">
+                        <span class="tag">强连通分量</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;/">
-                        <span class="tag">&#x5FEB;&#x901F;&#x5085;&#x7ACB;&#x53F6;&#x53D8;&#x6362;</span>
+                    <a class="tags has-addons" href="/tags/快速傅立叶变换/">
+                        <span class="tag">快速傅立叶变换</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x5FEB;&#x901F;&#x5E42;/">
-                        <span class="tag">&#x5FEB;&#x901F;&#x5E42;</span>
+                    <a class="tags has-addons" href="/tags/快速幂/">
+                        <span class="tag">快速幂</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6269;&#x5C55;&#x6B27;&#x51E0;&#x91CC;&#x5F97;/">
-                        <span class="tag">&#x6269;&#x5C55;&#x6B27;&#x51E0;&#x91CC;&#x5F97;</span>
+                    <a class="tags has-addons" href="/tags/扩展欧几里得/">
+                        <span class="tag">扩展欧几里得</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x62D3;&#x6251;&#x6392;&#x5E8F;/">
-                        <span class="tag">&#x62D3;&#x6251;&#x6392;&#x5E8F;</span>
+                    <a class="tags has-addons" href="/tags/拓扑排序/">
+                        <span class="tag">拓扑排序</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6392;&#x5E8F;/">
-                        <span class="tag">&#x6392;&#x5E8F;</span>
+                    <a class="tags has-addons" href="/tags/排序/">
+                        <span class="tag">排序</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x641C;&#x7D22;/">
-                        <span class="tag">&#x641C;&#x7D22;</span>
+                    <a class="tags has-addons" href="/tags/搜索/">
+                        <span class="tag">搜索</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6458;&#x5F55;/">
-                        <span class="tag">&#x6458;&#x5F55;</span>
+                    <a class="tags has-addons" href="/tags/摘录/">
+                        <span class="tag">摘录</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x4F4D;dp/">
-                        <span class="tag">&#x6570;&#x4F4D;dp</span>
+                    <a class="tags has-addons" href="/tags/数位dp/">
+                        <span class="tag">数位dp</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x5B66;/">
-                        <span class="tag">&#x6570;&#x5B66;</span>
+                    <a class="tags has-addons" href="/tags/数学/">
+                        <span class="tag">数学</span>
                         <span class="tag is-grey">18</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x636E;&#x7ED3;&#x6784;/">
-                        <span class="tag">&#x6570;&#x636E;&#x7ED3;&#x6784;</span>
+                    <a class="tags has-addons" href="/tags/数据结构/">
+                        <span class="tag">数据结构</span>
                         <span class="tag is-grey">68</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x8BBA;/">
-                        <span class="tag">&#x6570;&#x8BBA;</span>
+                    <a class="tags has-addons" href="/tags/数论/">
+                        <span class="tag">数论</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6570;&#x8BBA;&#x51FD;&#x6570;/">
-                        <span class="tag">&#x6570;&#x8BBA;&#x51FD;&#x6570;</span>
+                    <a class="tags has-addons" href="/tags/数论函数/">
+                        <span class="tag">数论函数</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6574;&#x4F53;&#x4E8C;&#x5206;/">
-                        <span class="tag">&#x6574;&#x4F53;&#x4E8C;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/整体二分/">
+                        <span class="tag">整体二分</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x659C;&#x7387;&#x4F18;&#x5316;/">
-                        <span class="tag">&#x659C;&#x7387;&#x4F18;&#x5316;</span>
+                    <a class="tags has-addons" href="/tags/斜率优化/">
+                        <span class="tag">斜率优化</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;/">
-                        <span class="tag">&#x6700;&#x5927;&#x516C;&#x7EA6;&#x6570;</span>
+                    <a class="tags has-addons" href="/tags/最大公约数/">
+                        <span class="tag">最大公约数</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x5927;&#x6743;&#x95ED;&#x5408;&#x5B50;&#x56FE;/">
-                        <span class="tag">&#x6700;&#x5927;&#x6743;&#x95ED;&#x5408;&#x5B50;&#x56FE;</span>
+                    <a class="tags has-addons" href="/tags/最大权闭合子图/">
+                        <span class="tag">最大权闭合子图</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x77ED;&#x8DEF;/">
-                        <span class="tag">&#x6700;&#x77ED;&#x8DEF;</span>
+                    <a class="tags has-addons" href="/tags/最短路/">
+                        <span class="tag">最短路</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;/">
-                        <span class="tag">&#x6700;&#x8FD1;&#x516C;&#x5171;&#x7956;&#x5148;</span>
+                    <a class="tags has-addons" href="/tags/最近公共祖先/">
+                        <span class="tag">最近公共祖先</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x671F;&#x671B;/">
-                        <span class="tag">&#x671F;&#x671B;</span>
+                    <a class="tags has-addons" href="/tags/期望/">
+                        <span class="tag">期望</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x671F;&#x671B;dp/">
-                        <span class="tag">&#x671F;&#x671B;dp</span>
+                    <a class="tags has-addons" href="/tags/期望dp/">
+                        <span class="tag">期望dp</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x675C;&#x6559;&#x7B5B;/">
-                        <span class="tag">&#x675C;&#x6559;&#x7B5B;</span>
+                    <a class="tags has-addons" href="/tags/杜教筛/">
+                        <span class="tag">杜教筛</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x5957;&#x6811;/">
-                        <span class="tag">&#x6811;&#x5957;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/树套树/">
+                        <span class="tag">树套树</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x5F62;dp/">
-                        <span class="tag">&#x6811;&#x5F62;dp</span>
+                    <a class="tags has-addons" href="/tags/树形dp/">
+                        <span class="tag">树形dp</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x5F62;&#x7ED3;&#x6784;/">
-                        <span class="tag">&#x6811;&#x5F62;&#x7ED3;&#x6784;</span>
+                    <a class="tags has-addons" href="/tags/树形结构/">
+                        <span class="tag">树形结构</span>
                         <span class="tag is-grey">19</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x72B6;&#x6570;&#x7EC4;/">
-                        <span class="tag">&#x6811;&#x72B6;&#x6570;&#x7EC4;</span>
+                    <a class="tags has-addons" href="/tags/树状数组/">
+                        <span class="tag">树状数组</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x7684;&#x76F4;&#x5F84;/">
-                        <span class="tag">&#x6811;&#x7684;&#x76F4;&#x5F84;</span>
+                    <a class="tags has-addons" href="/tags/树的直径/">
+                        <span class="tag">树的直径</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6811;&#x94FE;&#x5256;&#x5206;/">
-                        <span class="tag">&#x6811;&#x94FE;&#x5256;&#x5206;</span>
+                    <a class="tags has-addons" href="/tags/树链剖分/">
+                        <span class="tag">树链剖分</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6A21;&#x677F;/">
-                        <span class="tag">&#x6A21;&#x677F;</span>
+                    <a class="tags has-addons" href="/tags/模板/">
+                        <span class="tag">模板</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6B27;&#x62C9;&#x51FD;&#x6570;/">
-                        <span class="tag">&#x6B27;&#x62C9;&#x51FD;&#x6570;</span>
+                    <a class="tags has-addons" href="/tags/欧拉函数/">
+                        <span class="tag">欧拉函数</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6B4C;&#x66F2;/">
-                        <span class="tag">&#x6B4C;&#x66F2;</span>
+                    <a class="tags has-addons" href="/tags/歌曲/">
+                        <span class="tag">歌曲</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x6E38;&#x8BB0;/">
-                        <span class="tag">&#x6E38;&#x8BB0;</span>
+                    <a class="tags has-addons" href="/tags/游记/">
+                        <span class="tag">游记</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x70B9;&#x5206;&#x6CBB;/">
-                        <span class="tag">&#x70B9;&#x5206;&#x6CBB;</span>
+                    <a class="tags has-addons" href="/tags/点分治/">
+                        <span class="tag">点分治</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x72B6;&#x538B;dp/">
-                        <span class="tag">&#x72B6;&#x538B;dp</span>
+                    <a class="tags has-addons" href="/tags/状压dp/">
+                        <span class="tag">状压dp</span>
                         <span class="tag is-grey">4</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x751F;&#x6210;&#x6811;/">
-                        <span class="tag">&#x751F;&#x6210;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/生成树/">
+                        <span class="tag">生成树</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7701;&#x9009;/">
-                        <span class="tag">&#x7701;&#x9009;</span>
+                    <a class="tags has-addons" href="/tags/省选/">
+                        <span class="tag">省选</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x778E;&#x641E;/">
-                        <span class="tag">&#x778E;&#x641E;</span>
+                    <a class="tags has-addons" href="/tags/瞎搞/">
+                        <span class="tag">瞎搞</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x77E9;&#x9635;&#x5FEB;&#x901F;&#x5E42;/">
-                        <span class="tag">&#x77E9;&#x9635;&#x5FEB;&#x901F;&#x5E42;</span>
+                    <a class="tags has-addons" href="/tags/矩阵快速幂/">
+                        <span class="tag">矩阵快速幂</span>
                         <span class="tag is-grey">5</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7B14;&#x8BB0;/">
-                        <span class="tag">&#x7B14;&#x8BB0;</span>
+                    <a class="tags has-addons" href="/tags/笔记/">
+                        <span class="tag">笔记</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6027;&#x57FA;/">
-                        <span class="tag">&#x7EBF;&#x6027;&#x57FA;</span>
+                    <a class="tags has-addons" href="/tags/线性基/">
+                        <span class="tag">线性基</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6BB5;&#x6811;/">
-                        <span class="tag">&#x7EBF;&#x6BB5;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/线段树/">
+                        <span class="tag">线段树</span>
                         <span class="tag is-grey">22</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6BB5;&#x6811;&#x5206;&#x6CBB;/">
-                        <span class="tag">&#x7EBF;&#x6BB5;&#x6811;&#x5206;&#x6CBB;</span>
+                    <a class="tags has-addons" href="/tags/线段树分治/">
+                        <span class="tag">线段树分治</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7EBF;&#x6BB5;&#x6811;&#x5408;&#x5E76;/">
-                        <span class="tag">&#x7EBF;&#x6BB5;&#x6811;&#x5408;&#x5E76;</span>
+                    <a class="tags has-addons" href="/tags/线段树合并/">
+                        <span class="tag">线段树合并</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7F51;&#x7EDC;&#x6D41;/">
-                        <span class="tag">&#x7F51;&#x7EDC;&#x6D41;</span>
+                    <a class="tags has-addons" href="/tags/网络流/">
+                        <span class="tag">网络流</span>
                         <span class="tag is-grey">15</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x7F51;&#x7EDC;&#x6D41;-24-&#x9898;/">
-                        <span class="tag">&#x7F51;&#x7EDC;&#x6D41; 24 &#x9898;</span>
+                    <a class="tags has-addons" href="/tags/网络流-24-题/">
+                        <span class="tag">网络流 24 题</span>
                         <span class="tag is-grey">10</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x80CC;&#x5305;/">
-                        <span class="tag">&#x80CC;&#x5305;</span>
+                    <a class="tags has-addons" href="/tags/背包/">
+                        <span class="tag">背包</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x83AB;&#x6BD4;&#x4E4C;&#x65AF;&#x53CD;&#x6F14;/">
-                        <span class="tag">&#x83AB;&#x6BD4;&#x4E4C;&#x65AF;&#x53CD;&#x6F14;</span>
+                    <a class="tags has-addons" href="/tags/莫比乌斯反演/">
+                        <span class="tag">莫比乌斯反演</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x83AB;&#x961F;/">
-                        <span class="tag">&#x83AB;&#x961F;</span>
+                    <a class="tags has-addons" href="/tags/莫队/">
+                        <span class="tag">莫队</span>
                         <span class="tag is-grey">6</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x865A;&#x6811;/">
-                        <span class="tag">&#x865A;&#x6811;</span>
+                    <a class="tags has-addons" href="/tags/虚树/">
+                        <span class="tag">虚树</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x8D2A;&#x5FC3;/">
-                        <span class="tag">&#x8D2A;&#x5FC3;</span>
+                    <a class="tags has-addons" href="/tags/贪心/">
+                        <span class="tag">贪心</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x8D39;&#x7528;&#x6D41;/">
-                        <span class="tag">&#x8D39;&#x7528;&#x6D41;</span>
+                    <a class="tags has-addons" href="/tags/费用流/">
+                        <span class="tag">费用流</span>
                         <span class="tag is-grey">7</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x9012;&#x63A8;/">
-                        <span class="tag">&#x9012;&#x63A8;</span>
+                    <a class="tags has-addons" href="/tags/递推/">
+                        <span class="tag">递推</span>
                         <span class="tag is-grey">1</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x9898;&#x89E3;/">
-                        <span class="tag">&#x9898;&#x89E3;</span>
+                    <a class="tags has-addons" href="/tags/题解/">
+                        <span class="tag">题解</span>
                         <span class="tag is-grey">2</span>
                     </a>
                 </div>
                 
                 <div class="control">
-                    <a class="tags has-addons" href="/tags/&#x9AD8;&#x65AF;&#x6D88;&#x5143;/">
-                        <span class="tag">&#x9AD8;&#x65AF;&#x6D88;&#x5143;</span>
+                    <a class="tags has-addons" href="/tags/高斯消元/">
+                        <span class="tag">高斯消元</span>
                         <span class="tag is-grey">3</span>
                     </a>
                 </div>
@@ -2584,16 +2568,16 @@ span.spoiler.revealed {
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="https://www.chenqiqian.com">
                 
-                    <img src="/images/avatar_1.png" alt="&#x300C;CQOI2014&#x300D;&#x6392;&#x5E8F;&#x673A;&#x68B0;&#x81C2;-Splay" height="28">
+                    <img src="/images/avatar_1.png" alt="「CQOI2014」排序机械臂-Splay" height="28">
                 
                 </a>
                 <p class="is-size-7">
-                &#xA9; 2019 Chen Qiqian&#xA0;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &amp; <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
-                &#x5171;<span id="busuanzi_value_site_uv">0</span>&#x4E2A;&#x8BBF;&#x5BA2;
+                共<span id="busuanzi_value_site_uv">0</span>个访客
                 </span>
                 
                 </p>
@@ -2659,7 +2643,7 @@ span.spoiler.revealed {
     <h6>Your browser is out-of-date!</h6>
     <p>Update your browser to view this website correctly. <a id="btnUpdateBrowser" href="http://outdatedbrowser.com/">Update
             my browser now </a></p>
-    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&#xD7;</a></p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/outdatedbrowser@1.1.5/outdatedbrowser/outdatedbrowser.min.js" defer></script>
 <script>
@@ -2701,7 +2685,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     
 
-<a id="back-to-top" title="&#x56DE;&#x5230;&#x9876;&#x7AEF;" href="javascript:;">
+<a id="back-to-top" title="回到顶端" href="javascript:;">
     <i class="fas fa-chevron-up"></i>
 </a>
 <script src="/js/back-to-top.js" defer></script>
@@ -2737,7 +2721,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="&#x60F3;&#x8981;&#x67E5;&#x627E;&#x4EC0;&#x4E48;...">
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「SCOI2005」骑士精神-搜索 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -89,7 +89,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -111,26 +111,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -185,8 +178,9 @@
         </h1>
         <div class="content">
             <p>在一个 $5 \times 5$ 的棋盘上有 $12$ 个白色的骑士和 $12$ 个黑色的骑士， 且有一个空位。在任何时候一个骑士都能按照骑士的走法（它可以走到和它横坐标相差为 $1$ ，纵坐标相差为 $2$ 或者横坐标相差为 $2$ ，纵坐标相差为 $1$ 的格子）移动到空位上。 给定一个初始的棋盘，怎样才能经过移动变成如下目标棋盘： 为了体现出骑士精神，他们必须以最少的步数完成任务。</p>
-<p><img src="https://lydsy.com/JudgeOnline/upload/201303/aa.jpg" alt=""></p>
+<p><img src="https://lydsy.com/JudgeOnline/upload/201303/aa.jpg"></p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P2324" target="_blank" rel="noopener">Luogu P2324</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>IDA*…</p>
 <p>其实就是</p>
@@ -197,6 +191,7 @@
 <p>看起来是吧…</p>
 <p>好像 A* 就是用估价函数 + 优先队列优化？</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">8</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n = <span class="hljs-number">5</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> t[N][N];</span><br><span class="line"><span class="hljs-keyword">char</span> s[N][N];<span class="hljs-keyword">int</span> a[N][N];</span><br><span class="line"><span class="hljs-keyword">int</span> mv[<span class="hljs-number">8</span>][<span class="hljs-number">2</span>] = &#123;&#123;<span class="hljs-number">1</span>,<span class="hljs-number">-2</span>&#125;,&#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>&#125;,&#123;<span class="hljs-number">2</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-number">2</span>,<span class="hljs-number">-1</span>&#125;,&#123;<span class="hljs-number">-2</span>,<span class="hljs-number">1</span>&#125;,&#123;<span class="hljs-number">-2</span>,<span class="hljs-number">-1</span>&#125;,&#123;<span class="hljs-number">-1</span>,<span class="hljs-number">-2</span>&#125;,&#123;<span class="hljs-number">-1</span>,<span class="hljs-number">2</span>&#125;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s[i]+<span class="hljs-number">1</span>);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">      a[i][j] = s[i][j] == <span class="hljs-string">'*'</span>? <span class="hljs-number">-1</span> : s[i][j] - <span class="hljs-string">'0'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> maxd = <span class="hljs-number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> dep,<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y,<span class="hljs-keyword">int</span> left,<span class="hljs-keyword">int</span> last)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(dep + left &gt; maxd + <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-comment">// 考虑到我们最后一次一定是直接把剩余的格子减小 2，这么说感觉题解大部分是错的</span></span><br><span class="line">  <span class="hljs-comment">// hack数据：</span></span><br><span class="line">  <span class="hljs-comment">/* </span></span><br><span class="line"><span class="hljs-comment">  1</span></span><br><span class="line"><span class="hljs-comment">  11111</span></span><br><span class="line"><span class="hljs-comment">  01111</span></span><br><span class="line"><span class="hljs-comment">  00*11</span></span><br><span class="line"><span class="hljs-comment">  00001</span></span><br><span class="line"><span class="hljs-comment">  00000</span></span><br><span class="line"><span class="hljs-comment">  答案：0</span></span><br><span class="line"><span class="hljs-comment">  有的题解会输出 “-1”</span></span><br><span class="line"><span class="hljs-comment">  */</span> </span><br><span class="line">  <span class="hljs-keyword">if</span>(left == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; <span class="hljs-number">8</span>;i++)<span class="hljs-keyword">if</span>(i != <span class="hljs-number">7</span> - last)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> nx = x + mv[i][<span class="hljs-number">0</span>],ny = y + mv[i][<span class="hljs-number">1</span>];</span><br><span class="line">    <span class="hljs-keyword">if</span>(nx &lt; <span class="hljs-number">1</span> || nx &gt; n || ny &lt; <span class="hljs-number">1</span> || ny &gt; n) <span class="hljs-keyword">continue</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> newleft = left;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a[x][y]==t[x][y])     newleft++;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a[nx][ny]==t[nx][ny]) newleft++;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a[x][y]==t[nx][ny])   newleft--;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a[nx][ny]==t[x][y])   newleft--;</span><br><span class="line">    swap(a[x][y],a[nx][ny]);</span><br><span class="line">    <span class="hljs-keyword">if</span>(dfs(dep+<span class="hljs-number">1</span>,nx,ny,newleft,i)) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;</span><br><span class="line">    swap(a[x][y],a[nx][ny]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> tx,ty,tleft = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(a[i][j] != t[i][j]) tleft++;</span><br><span class="line">      <span class="hljs-keyword">if</span>(a[i][j] == <span class="hljs-number">-1</span>) tx = i,ty = j;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(maxd = <span class="hljs-number">0</span>;maxd &lt;= <span class="hljs-number">15</span>;maxd++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(dfs(<span class="hljs-number">0</span>,tx,ty,tleft,<span class="hljs-number">-1</span>)) <span class="hljs-keyword">return</span> (<span class="hljs-keyword">void</span>)(<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,maxd)); </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"-1\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  t[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]=t[<span class="hljs-number">1</span>][<span class="hljs-number">2</span>]=t[<span class="hljs-number">1</span>][<span class="hljs-number">3</span>]=t[<span class="hljs-number">1</span>][<span class="hljs-number">4</span>]=t[<span class="hljs-number">1</span>][<span class="hljs-number">5</span>]=t[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>]=<span class="hljs-number">1</span>;</span><br><span class="line">  t[<span class="hljs-number">2</span>][<span class="hljs-number">3</span>]=t[<span class="hljs-number">2</span>][<span class="hljs-number">4</span>]=t[<span class="hljs-number">2</span>][<span class="hljs-number">5</span>]=t[<span class="hljs-number">3</span>][<span class="hljs-number">4</span>]=t[<span class="hljs-number">3</span>][<span class="hljs-number">5</span>]=t[<span class="hljs-number">4</span>][<span class="hljs-number">5</span>]=<span class="hljs-number">1</span>;</span><br><span class="line">  t[<span class="hljs-number">2</span>][<span class="hljs-number">1</span>]=t[<span class="hljs-number">3</span>][<span class="hljs-number">1</span>]=t[<span class="hljs-number">3</span>][<span class="hljs-number">2</span>]=t[<span class="hljs-number">4</span>][<span class="hljs-number">1</span>]=t[<span class="hljs-number">4</span>][<span class="hljs-number">2</span>]=t[<span class="hljs-number">4</span>][<span class="hljs-number">3</span>]=<span class="hljs-number">0</span>;</span><br><span class="line">  t[<span class="hljs-number">4</span>][<span class="hljs-number">4</span>]=t[<span class="hljs-number">5</span>][<span class="hljs-number">1</span>]=t[<span class="hljs-number">5</span>][<span class="hljs-number">2</span>]=t[<span class="hljs-number">5</span>][<span class="hljs-number">3</span>]=t[<span class="hljs-number">5</span>][<span class="hljs-number">4</span>]=t[<span class="hljs-number">5</span>][<span class="hljs-number">5</span>]=<span class="hljs-number">0</span>;</span><br><span class="line">  t[<span class="hljs-number">3</span>][<span class="hljs-number">3</span>]=<span class="hljs-number">-1</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> T;<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;T);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=T;i++)&#123;</span><br><span class="line">    init(),solve();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -240,29 +235,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190410-SCOI2005-knight/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -295,7 +267,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -341,29 +313,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2570,9 +2538,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2720,7 +2687,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

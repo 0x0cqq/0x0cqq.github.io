@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「NOI2009」诗人小G-动态规划+决策单调性 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -186,6 +179,7 @@
 <p>一首诗包含了若干个句子，对于一些连续的短句，可以将它们用空格隔开并放在一行中，注意一行中可以放的句子数目是没有限制的。小 $\text{G}$ 给每首诗定义了一个行标准长度（行的长度为一行中符号的总个数），他希望排版后每行的长度都和行标准长度相差不远。显然排版时，<strong>不应改变原有的句子顺序</strong>，并且小 $\text{G}$ 不允许把一个句子分在两行或者更多的行内。在满足上面两个条件的情况下，小 $\text{G}$ 对于排版中的每行定义了一个不协调度, 为这行的实际长度与行标准长度差值绝对值的 $P$ 次方，而一个排版的不协调度为所有行不协调度的总和。</p>
 <p>小 $\text{G}$ 最近又作了几首诗，现在请你对这首诗进行排版，使得排版后的诗尽量协调（即不协调度尽量小），并把排版的结果告诉他。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P1912" target="_blank" rel="noopener">Luogu P1912</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>没看见加粗的话…因而疯狂不会做，然后回家仔细读题…</p>
 <p>然后还是不会做。</p>
@@ -194,6 +188,7 @@
 <p>用队列维护一个决策队列，用三元组 $(p,l,r)$ ，代表在 $[l,r]$ 区间中的最有决策点都是 $p$ ，类似：$11122333356 \rightarrow (1,1,3) + (2,4,5) + (3,6,9) + (5,10,10) + (6,11,11)$ ，然后每次从后往前 $pop$ ，直到不能 $pop$ 掉整段之后再去二分看最后一块具体的分界线在哪里，然后在每次查询之前要把  $r &lt; i-1$ 的区间给 $pop$ 掉。</p>
 <p>路径的话记录决策点即可。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="hljs-comment">//#define ll long long</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long double</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">110000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">pow</span><span class="hljs-params">(ll x,<span class="hljs-keyword">int</span> p)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=p;i++) ans *= x;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> p,l,r;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,l,p;</span><br><span class="line"><span class="hljs-keyword">char</span> s[MAXN][<span class="hljs-number">50</span>];</span><br><span class="line">ll sum[MAXN],dp[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> last[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">calc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> dp[j] + <span class="hljs-built_in">pow</span>(<span class="hljs-built_in">fabs</span>(sum[i] - sum[j] - l - <span class="hljs-number">1</span>),p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> now,<span class="hljs-keyword">int</span> last)</span></span>&#123;</span><br><span class="line">  <span class="hljs-comment">// 找到在[l,r]区间内符合 now 决策比 last 优的最前面的位置 </span></span><br><span class="line">  <span class="hljs-comment">// last,...,last,[now],now</span></span><br><span class="line">  <span class="hljs-keyword">while</span>(l!=r)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> mid = (l+r)&gt;&gt;<span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(calc(mid,last) &gt; calc(mid,now))</span><br><span class="line">      r = mid;</span><br><span class="line">    <span class="hljs-keyword">else</span></span><br><span class="line">      l = mid+<span class="hljs-number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d"</span>,&amp;n,&amp;l,&amp;p);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s[i]);</span><br><span class="line">    sum[i] = <span class="hljs-built_in">strlen</span>(s[i]);</span><br><span class="line">    sum[i] += sum[i<span class="hljs-number">-1</span>] + <span class="hljs-number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">static</span> Node q[MAXN];</span><br><span class="line">  <span class="hljs-built_in">memset</span>(dp,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(dp));</span><br><span class="line">  <span class="hljs-built_in">memset</span>(last,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(last));</span><br><span class="line">  <span class="hljs-keyword">int</span> fi=<span class="hljs-number">0</span>,la=<span class="hljs-number">1</span>;q[<span class="hljs-number">0</span>] = (Node)&#123;<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,n&#125;;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(fi != la &amp;&amp; q[fi].r &lt;= i<span class="hljs-number">-1</span>) fi++;</span><br><span class="line">    <span class="hljs-keyword">int</span> j = q[fi].p;</span><br><span class="line">    dp[i] = calc(i,j);last[i] = j;</span><br><span class="line">    <span class="hljs-keyword">if</span>(calc(n,q[la<span class="hljs-number">-1</span>].p) &lt; calc(n,i)) <span class="hljs-keyword">continue</span>;<span class="hljs-comment">// 在n处i都不优于q[la-1].p</span></span><br><span class="line">    <span class="hljs-keyword">while</span>(fi != la &amp;&amp; calc(q[la<span class="hljs-number">-1</span>].l,q[la<span class="hljs-number">-1</span>].p) &gt; calc(q[la<span class="hljs-number">-1</span>].l,i)) la--;</span><br><span class="line">    <span class="hljs-comment">// pop 掉整个尾段的条件：i 点在 q[la-1].l 甚至都是一个更优的决策点</span></span><br><span class="line">    <span class="hljs-keyword">if</span>(fi==la) q[la++] = (Node)&#123;i,i+<span class="hljs-number">1</span>,n&#125;;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      Node &amp;t = q[la<span class="hljs-number">-1</span>];</span><br><span class="line">      <span class="hljs-keyword">int</span> x = find(t.l,n,i,t.p);</span><br><span class="line">      t.r = x<span class="hljs-number">-1</span>;</span><br><span class="line">      q[la++] = (Node)&#123;i,x,n&#125;;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">output</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(dp[n] &gt; <span class="hljs-number">1e18</span>)</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Too hard to arrange\n"</span>);</span><br><span class="line">  <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> route[MAXN];</span><br><span class="line">    <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>,now = n;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span>)(dp[n]));</span><br><span class="line">    <span class="hljs-keyword">while</span>(now != <span class="hljs-number">0</span>)&#123;</span><br><span class="line">      route[++cnt] = now;</span><br><span class="line">      now = last[now];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>,t=cnt;i&lt;=n;i++)&#123;</span><br><span class="line">      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%s"</span>,s[i]);</span><br><span class="line">      <span class="hljs-keyword">if</span>(i!=route[t]) <span class="hljs-built_in">putchar</span>(<span class="hljs-string">' '</span>);</span><br><span class="line">      <span class="hljs-keyword">else</span> <span class="hljs-built_in">putchar</span>(<span class="hljs-string">'\n'</span>),t--;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"--------------------\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> T;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;T);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=T;i++)&#123;</span><br><span class="line">    init();</span><br><span class="line">    solve();</span><br><span class="line">    output();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -237,29 +232,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180824-NOI2009-poet/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -292,7 +264,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -338,29 +310,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2567,9 +2535,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2717,7 +2684,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

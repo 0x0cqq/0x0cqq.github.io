@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CTSC2012」熟悉的文章-广义后缀自动机 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -183,17 +176,19 @@
         </h1>
         <div class="content">
             <p>为了有说服力地向阿米巴展示阿米巴的作文是多么让人觉得“眼熟”，小强想出了一个评定作文 “熟悉程度”的量化指标：$L_0$ .小强首先将作文转化成一个 $01$ 串。之后，小强搜集了各路名家的文章，同样分别转化成 $01$ 串后，整理出一个包含了 $M$ 个 $01$ 串的“ 标准作文库 ”。</p>
-<p>小强认为：如果一个 $01$ 串长度不少于 $L$ 且在 标准作文库 中的某个串里出现过（即，它是 标准作文库 的 某个串 的一个 连续子串 ），那么它是“ 熟悉 ”的。对于一篇作文（一个 $01$ 串）A，如果能够把 A 分割成若干段子串，其中“ 熟悉 ” 的子串的 长度总和 不少于 A 总长度的 $90\%$，那么称 A 是 “ 熟悉的文章 ”。 $L_0$ 是能够让 $A$ 成为 “ 熟悉的文章 ” 的 所有 $L$ 的最大值 （如果不存在这样的 $L$ ，那么规定 $L_0 = 0$ ）。</p>
+<p>小强认为：如果一个 $01$ 串长度不少于 $L$ 且在 标准作文库 中的某个串里出现过（即，它是 标准作文库 的 某个串 的一个 连续子串 ），那么它是“ 熟悉 ”的。对于一篇作文（一个 $01$ 串）A，如果能够把 A 分割成若干段子串，其中“ 熟悉 ” 的子串的 长度总和 不少于 A 总长度的 $90%$，那么称 A 是 “ 熟悉的文章 ”。 $L_0$ 是能够让 $A$ 成为 “ 熟悉的文章 ” 的 所有 $L$ 的最大值 （如果不存在这样的 $L$ ，那么规定 $L_0 = 0$ ）。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P4022" target="_blank" rel="noopener">Luogu P4022</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们注意到首先外面可以套一个二分，单调性显然成立。</p>
 <p>我们需要对这个地方所有的标准作文库建立一个广义 SAM （或者串一起也可以，基本上是等价的）。</p>
-<p>然后我们的问题变成了存在性问题：是否存在一种分割方案，其中熟悉的子串的长度均不小于 $L$  且在标准作文库里面出现过，且和大于 $90\%$ 。</p>
+<p>然后我们的问题变成了存在性问题：是否存在一种分割方案，其中熟悉的子串的长度均不小于 $L$  且在标准作文库里面出现过，且和大于 $90%$ 。</p>
 <p>我们用一个 $dp[i]$ 表示在这种限制下在 $[1,i]$ 的子串的最大的熟悉的长度，然后我们明显有一个 $O(n^2)$ 的解法（需要预处理我们要判断的作文的每个位置在广义SAM上能够最长匹配的长度，这里用在SAM上跑+暴力跳 Fail 树，判断当前最长是不是在你要符合的区间，理论时间复杂度 $O(n \log n)$，不会证明）。</p>
 <p>猜测存在决策单调性，事实上的确成立。用单调队列维护即可。</p>
 <p>所以时间复杂度大约是： $O(n \log n)$ ~ $O(n \log^2 n)$ $\approx O(\text{能过})$ 。</p>
 <p>后缀自动机的题啊，感觉时间复杂度对就行了，比如NOID1T3。多妙啊！</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">2100000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> SAM&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> c[MAXN][<span class="hljs-number">2</span>],l[MAXN],fa[MAXN],cnt,last,rt;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;rt = last = ++cnt;&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">newnode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;l[++cnt] = x;<span class="hljs-keyword">return</span> cnt;&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">ins</span><span class="hljs-params">(<span class="hljs-keyword">int</span> p,<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(c[p][x])&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> q = c[p][x];</span><br><span class="line">      <span class="hljs-keyword">if</span>(l[q] == l[p] + <span class="hljs-number">1</span>) last = q;</span><br><span class="line">      <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> nq = newnode(l[p]+<span class="hljs-number">1</span>);last = nq;</span><br><span class="line">        <span class="hljs-built_in">memcpy</span>(c[nq],c[q],<span class="hljs-keyword">sizeof</span>(c[q]));</span><br><span class="line">        fa[nq] = fa[q];fa[q] = nq;</span><br><span class="line">        <span class="hljs-keyword">for</span>(;c[p][x] == q;p = fa[p]) c[p][x] = nq;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> np = newnode(l[p]+<span class="hljs-number">1</span>);last = np;</span><br><span class="line">      <span class="hljs-keyword">for</span>(;p &amp;&amp; (!c[p][x]);p = fa[p]) c[p][x] = np;</span><br><span class="line">      <span class="hljs-keyword">if</span>(!p) fa[np] = rt;</span><br><span class="line">      <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> q = c[p][x];</span><br><span class="line">        <span class="hljs-keyword">if</span>(l[q] == l[p]+<span class="hljs-number">1</span>) fa[np] = q;</span><br><span class="line">        <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">          <span class="hljs-keyword">int</span> nq = newnode(l[p]+<span class="hljs-number">1</span>);</span><br><span class="line">          <span class="hljs-built_in">memcpy</span>(c[nq],c[q],<span class="hljs-keyword">sizeof</span>(c[q]));</span><br><span class="line">          fa[nq] = fa[q];fa[q] = fa[np] = nq;</span><br><span class="line">          <span class="hljs-keyword">for</span>(;c[p][x] == q;p = fa[p]) c[p][x] = nq;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> last;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ins</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> n = <span class="hljs-built_in">strlen</span>(s),p = rt;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) p = ins(p,s[i]-<span class="hljs-string">'0'</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">calmax</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> *s,<span class="hljs-keyword">int</span> *res)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> now = rt,cur = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> x = s[i] - <span class="hljs-string">'0'</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(c[now][x])&#123;</span><br><span class="line">        cur++,now = c[now][x];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        <span class="hljs-keyword">while</span>(now &amp;&amp; !c[now][x]) now = fa[now];</span><br><span class="line">        <span class="hljs-keyword">if</span>(now == <span class="hljs-number">0</span>) now = rt,cur = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">else</span> cur = l[now] + <span class="hljs-number">1</span>,now = c[now][x];</span><br><span class="line">      &#125;</span><br><span class="line">      res[i+<span class="hljs-number">1</span>] = cur;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"><span class="hljs-keyword">char</span> s[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> maxlen[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> dp[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> q[MAXN],fi,la;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> L)</span></span>&#123;<span class="hljs-comment">// 长度为 L 的情况下是否可以实现</span></span><br><span class="line">  fi = <span class="hljs-number">0</span>,la = <span class="hljs-number">-1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; L;i++) dp[i] = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = L;i &lt;= n;i++)&#123;</span><br><span class="line">    <span class="hljs-comment">// printf("%d:%d\n",i,maxlen[i]);</span></span><br><span class="line">    dp[i] = dp[i<span class="hljs-number">-1</span>];</span><br><span class="line">    <span class="hljs-keyword">while</span>(fi &lt;= la &amp;&amp; dp[q[la]] + (i-q[la]) &lt;= dp[i-L] + (i-(i-L))) la--;</span><br><span class="line">    q[++la] = i-L;</span><br><span class="line">    <span class="hljs-keyword">while</span>(fi &lt;= la &amp;&amp; q[fi] &lt; i - maxlen[i]) fi++;</span><br><span class="line">    <span class="hljs-keyword">if</span>(fi &lt;= la)</span><br><span class="line">      dp[i] = max(dp[i],dp[q[fi]] + (i-q[fi]));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-comment">// printf("%d\n",dp[n]);</span></span><br><span class="line">  <span class="hljs-keyword">return</span> dp[n] * <span class="hljs-number">10</span> &gt;= n * <span class="hljs-number">9</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">cal</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *s)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> n = <span class="hljs-built_in">strlen</span>(s);</span><br><span class="line">  SAM::calmax(n,s,maxlen);</span><br><span class="line">  <span class="hljs-keyword">int</span> L = <span class="hljs-number">1</span>,R = <span class="hljs-number">1000000</span>;</span><br><span class="line">  <span class="hljs-keyword">while</span>(L != R)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> mid = (L+R+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!check(n,mid))&#123;</span><br><span class="line">      R = mid<span class="hljs-number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      L = mid;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> L;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m); </span><br><span class="line">  SAM::init();</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i &lt;= m;i++)&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s);</span><br><span class="line">    SAM::ins(s);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,cal(s));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -237,29 +232,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190118-CTSC2012-familiar/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -292,7 +264,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -338,29 +310,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2567,9 +2535,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2717,7 +2684,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

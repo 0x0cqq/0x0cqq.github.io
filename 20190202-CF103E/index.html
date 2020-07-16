@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CF103E」Buying Sets-霍尔定理-网络流-最小权闭合子图 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -186,6 +179,7 @@
 <p>现在请你从中选出 $k$ （$k$ 为任意 $0$ 到 $n$ 中的整数）个集合，满足这 $k$ 个集合的并集的大小为 $k$ ，询问这 $k$ 个集合的权值和最小值。</p>
 <p>保证从这 $n$ 选出任意 $x$ 个集合，他们的并集大小不小于 $k$ 。</p>
 <a id="more"></a>  
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://codeforces.com/problemset/problem/103/E" target="_blank" rel="noopener">Codeforces</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>熟悉二分图那套理论的同学很快就会发现，题目中给出的条件：任意 $k(1 \le k \le n)$ 个集合的并集的大小都不小于 $k$ ，可以转化成霍尔定理的一方面的表述。</p>
 <p>我们建立一个二分图 $G_1$ ，左边放上所有的集合，右边放上所有的数，把左侧每个集合向其拥有的数连一条边，那么这个时候，根据霍尔定理，这个二分图存在一个左侧所有节点都在匹配中的匹配（这个图中右侧也只有 $n$ 个节点，所以事实上是一个完美匹配）。</p>
@@ -193,6 +187,7 @@
 <p>这个时候我们发现，任意选 $k$ 个集合，我们都可以得到这 $k$ 个集合并集的一个子集，就是由这 $k$ 个集合的 $c_i$ 构成的集合。这个时候我们已经不能有任何其他的数加入，如果我们选择了第 $i$ 个集合，那么我们对于第 $i$ 个集合，对于除了 $c_i$ 的元素 $t$ ，我们都必须选择 $c_j = t$ 的 $j$ 集合，才能保证不多出来元素。</p>
 <p>这个时候，我们就有了一个新模型， 仔细观察的话，就会发现其实是一个最小权闭合子图的模型，可以用最小割模型来解决，网上也有许多资料，在这里就不重复了。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">610</span>,inf = <span class="hljs-number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,w[MAXN];</span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; G[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> from,to;</span><br><span class="line">  <span class="hljs-keyword">int</span> cap,flow;</span><br><span class="line">  <span class="hljs-keyword">int</span> nex;</span><br><span class="line">&#125;edge[MAXN*MAXN*<span class="hljs-number">2</span>];</span><br><span class="line"><span class="hljs-keyword">int</span> fir[MAXN],ecnt = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">addedge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b,<span class="hljs-keyword">int</span> c)</span></span>&#123;</span><br><span class="line">  edge[ecnt] = (Edge)&#123;a,b,c,<span class="hljs-number">0</span>,fir[a]&#125;;</span><br><span class="line">  fir[a] = ecnt++;</span><br><span class="line">  edge[ecnt] = (Edge)&#123;b,a,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,fir[b]&#125;;</span><br><span class="line">  fir[b] = ecnt++;</span><br><span class="line">  <span class="hljs-keyword">return</span> ecnt - <span class="hljs-number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> dis[MAXN];</span><br><span class="line"><span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">bfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> s,<span class="hljs-keyword">int</span> t)</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">memset</span>(dis,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(dis));</span><br><span class="line">  <span class="hljs-keyword">while</span>(!q.empty()) q.pop();</span><br><span class="line">  dis[s] = <span class="hljs-number">1</span>;q.push(s);</span><br><span class="line">  <span class="hljs-keyword">while</span>(!q.empty())&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> nown = q.front();q.pop();</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> v = edge[nowe].to;</span><br><span class="line">      <span class="hljs-keyword">if</span>(dis[v] == <span class="hljs-number">0</span> &amp;&amp; edge[nowe].cap &gt; edge[nowe].flow)&#123;</span><br><span class="line">        dis[v] = dis[nown] + <span class="hljs-number">1</span>;</span><br><span class="line">        q.push(v);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> dis[t] != <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> t,<span class="hljs-keyword">int</span> limit = inf)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(nown == t || limit == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> limit;</span><br><span class="line">  <span class="hljs-keyword">int</span> sumf = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> v = edge[nowe].to;</span><br><span class="line">    <span class="hljs-keyword">if</span>(dis[v] == dis[nown] + <span class="hljs-number">1</span> &amp;&amp; edge[nowe].cap &gt; edge[nowe].flow)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> f = dfs(v,t,min(limit,edge[nowe].cap - edge[nowe].flow));</span><br><span class="line">      <span class="hljs-keyword">if</span>(f)&#123;</span><br><span class="line">        edge[nowe].flow += f,edge[nowe^<span class="hljs-number">1</span>].flow -= f;</span><br><span class="line">        sumf += f,limit -= f;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(limit == <span class="hljs-number">0</span>) <span class="hljs-keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> sumf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dinic</span><span class="hljs-params">(<span class="hljs-keyword">int</span> s,<span class="hljs-keyword">int</span> t)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">while</span>(bfs(s,t)) ans += dfs(s,t);</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> m;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;m);</span><br><span class="line">    <span class="hljs-keyword">while</span>(m--)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> x;<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;x);</span><br><span class="line">      G[i].push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;w[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; E[MAXN];<span class="hljs-keyword">int</span> c[MAXN],back[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_matching</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> S = <span class="hljs-number">0</span>,T = <span class="hljs-number">2</span>*n+<span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    addedge(S,i,<span class="hljs-number">1</span>),addedge(i+n,T,<span class="hljs-number">1</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> j : G[i])</span><br><span class="line">      E[i].push_back(addedge(i,j+n,<span class="hljs-number">1</span>));</span><br><span class="line">  &#125;</span><br><span class="line">  dinic(S,T);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">unsigned</span> x = <span class="hljs-number">0</span>;x &lt; G[i].size();x++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(edge[E[i][x]].flow == <span class="hljs-number">1</span>)&#123;</span><br><span class="line">        c[i] = G[i][x];</span><br><span class="line">        back[G[i][x]] = i;</span><br><span class="line">        <span class="hljs-keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  get_matching();</span><br><span class="line">  ecnt = <span class="hljs-number">2</span>;<span class="hljs-built_in">memset</span>(fir,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(fir));</span><br><span class="line">  <span class="hljs-keyword">int</span> S = n+<span class="hljs-number">1</span>,T = S+<span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    w[i] = -w[i];</span><br><span class="line">    <span class="hljs-keyword">if</span>(w[i] &gt; <span class="hljs-number">0</span>) addedge(S,i, w[i]),ans += w[i];</span><br><span class="line">    <span class="hljs-keyword">else</span>         addedge(i,T,-w[i]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> j : G[i])<span class="hljs-keyword">if</span>(j != c[i])</span><br><span class="line">      addedge(i,back[j],inf);</span><br><span class="line">  &#125;</span><br><span class="line">  ans -= dinic(S,T);</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,-ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -236,29 +231,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190202-CF103E/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -291,7 +263,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -337,29 +309,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2566,9 +2534,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2716,7 +2683,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

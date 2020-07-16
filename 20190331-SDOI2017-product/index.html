@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「SDOI2017」数字表格-数论 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + fn - 2$ 。 Doris 用老师的超级计算机生成了一个 $n \times m$ 的表格，第 $i$ 行第 $j$ 列的格子中的数是 $f[\gcd(i, j)]$，其中 $\gcd(i, j)$ 表示 $i$ 与 $j">
+    <meta name="description" content="Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + f[n - 2](n \geq 2)$ 。 Doris 用老师的超级计算机生成了一个 $n \times m$ 的表格，第 $i$ 行第 $j$ 列的格子中的数是 $f[\gcd(i, j)]$，其中 $\gcd(i, j)$">
 <meta name="keywords" content="数学,数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「SDOI2017」数字表格-数论">
 <meta property="og:url" content="https://blog.chenqiqian.com/20190331-SDOI2017-product/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + fn - 2$ 。 Doris 用老师的超级计算机生成了一个 $n \times m$ 的表格，第 $i$ 行第 $j$ 列的格子中的数是 $f[\gcd(i, j)]$，其中 $\gcd(i, j)$ 表示 $i$ 与 $j">
+<meta property="og:description" content="Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + f[n - 2](n \geq 2)$ 。 Doris 用老师的超级计算机生成了一个 $n \times m$ 的表格，第 $i$ 行第 $j$ 列的格子中的数是 $f[\gcd(i, j)]$，其中 $\gcd(i, j)$">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-31T13:53:01.922Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「SDOI2017」数字表格-数论">
-<meta name="twitter:description" content="Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + fn - 2$ 。 Doris 用老师的超级计算机生成了一个 $n \times m$ 的表格，第 $i$ 行第 $j$ 列的格子中的数是 $f[\gcd(i, j)]$，其中 $\gcd(i, j)$ 表示 $i$ 与 $j">
+<meta name="twitter:description" content="Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + f[n - 2](n \geq 2)$ 。 Doris 用老师的超级计算机生成了一个 $n \times m$ 的表格，第 $i$ 行第 $j$ 列的格子中的数是 $f[\gcd(i, j)]$，其中 $\gcd(i, j)$">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -182,16 +175,18 @@
             
         </h1>
         <div class="content">
-            <p>Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + f<a href="n \geq 2">n - 2</a>$ 。</p>
+            <p>Doris 刚刚学习了 fibnacci 数列，用 $f[i]$ 表示数列的第 $i$ 项，那么： $f[0] = 0,f[1] = 1,f[n] = f[n - 1] + f[n - 2](n \geq 2)$ 。</p>
 <p>Doris 用老师的超级计算机生成了一个 $n \times m$ 的表格，第 $i$ 行第 $j$ 列的格子中的数是 $f[\gcd(i, j)]$，其中 $\gcd(i, j)$ 表示 $i$ 与 $j$ 的最大公约数。</p>
 <p>Doris 的表格中共有 $n \times m$ 个数，她想知道这些数的乘积是多少。</p>
 <p>这些数的乘积实在是太大了，所以 Doris 只想知道乘积对 $1000000007$ 取模后的结果。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3704" target="_blank" rel="noopener">Luogu P3704</a></p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>令 $fib(i)$ 为斐波那契数列的第 $i$ 项，我们要求的是：<br>$$<br>\prod_{i=1}^n \prod_{j=1}^m fib(\gcd(i,j))<br>$$<br>推推式子（不妨设 $n \le m$）：<br>$$<br>\prod_{i=1}^n \prod_{j=1}^m fib(\gcd(i,j))\\<br>= \prod_{d=1}^n fib(d)^{g(d)}<br>$$<br>其中 ：<br>$$<br>g(d) = \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \sum_{j=1}^{\lfloor\frac{m}{d}\rfloor} [\gcd(i,j) = 1]\\<br>= \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \sum_{j=1}^{\lfloor\frac{m}{d}\rfloor} \sum_{k | \gcd(i,j)} \mu(k)\\<br>= \sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k) \lfloor \frac{\lfloor\frac{n}{d}\rfloor} {k}\rfloor \lfloor \frac{\lfloor\frac{m}{d}\rfloor} {k}\rfloor\\<br>= \sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor\\<br>$$<br>以上是我会的全部…</p>
-<p>我们令 $T = kd$ ，然后直接代到最外面：<br>$$<br>sum = \prod_{d=1}^{n} fib(d)^{\sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\<br>= \prod_{k=1}^{n} \prod_{d = 1}^{\lfloor\frac{n}{k}\rfloor}fib(d)^{\mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\<br>=\prod_{T=1}^n \prod_{k | T} fib(\frac{T}{k})^{\mu(k)\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}<br>$$<br>然后我们如果令：<br>$$<br>f(T) = \prod_{k|T} fib(\frac{T}{k})^{\mu(k)}<br>$$<br>原来的式子就表示为：<br>$$<br>sum = \prod_{T=1}^n {f(T)}^{\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}<br>$$<br>$O(n\log n)$ 搞出来 $f$ 的取值，然后胡逼分块即可。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>令 $fib(i)$ 为斐波那契数列的第 $i$ 项，我们要求的是：<br>$$<br>\prod_{i=1}^n \prod_{j=1}^m fib(\gcd(i,j))<br>$$<br>推推式子（不妨设 $n \le m$）：<br>$$<br>\prod_{i=1}^n \prod_{j=1}^m fib(\gcd(i,j))\<br>= \prod_{d=1}^n fib(d)^{g(d)}<br>$$<br>其中 ：<br>$$<br>g(d) = \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \sum_{j=1}^{\lfloor\frac{m}{d}\rfloor} [\gcd(i,j) = 1]\<br>= \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \sum_{j=1}^{\lfloor\frac{m}{d}\rfloor} \sum_{k | \gcd(i,j)} \mu(k)\<br>= \sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k) \lfloor \frac{\lfloor\frac{n}{d}\rfloor} {k}\rfloor \lfloor \frac{\lfloor\frac{m}{d}\rfloor} {k}\rfloor\<br>= \sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor\<br>$$<br>以上是我会的全部…</p>
+<p>我们令 $T = kd$ ，然后直接代到最外面：<br>$$<br>sum = \prod_{d=1}^{n} fib(d)^{\sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\<br>= \prod_{k=1}^{n} \prod_{d = 1}^{\lfloor\frac{n}{k}\rfloor}fib(d)^{\mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\<br>=\prod_{T=1}^n \prod_{k | T} fib(\frac{T}{k})^{\mu(k)\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}<br>$$<br>然后我们如果令：<br>$$<br>f(T) = \prod_{k|T} fib(\frac{T}{k})^{\mu(k)}<br>$$<br>原来的式子就表示为：<br>$$<br>sum = \prod_{T=1}^n {f(T)}^{\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}<br>$$<br>$O(n\log n)$ 搞出来 $f$ 的取值，然后胡逼分块即可。</p>
 <p>时间复杂度：$O(n \log n + T \sqrt n)$</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1010000</span>,mod = <span class="hljs-number">1e9</span>+<span class="hljs-number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">qpow</span><span class="hljs-params">(ll x,ll k)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(lli= k;i;i&gt;&gt;=<span class="hljs-number">1</span>,x = (x*x)%mod) <span class="hljs-keyword">if</span>(i &amp; <span class="hljs-number">1</span>) ans = ans * x % mod;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">int</span> mu[MAXN],f[MAXN],fib[MAXN],inv[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> sum[MAXN],sinv[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sieve</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;</span><br><span class="line">  <span class="hljs-comment">// \sum_&#123;d | n&#125; \mu(d) = [n=1]</span></span><br><span class="line">  <span class="hljs-comment">// mu(n) = [n=1] - \sum_&#123;d &lt; n,d | n&#125; mu(d)</span></span><br><span class="line">  mu[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(inti= <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(intj= i+i;j&lt;=n;j+=i) mu[j] -= mu[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(inti= <span class="hljs-number">0</span>;i&lt;=n;i++)&#123;f[i] = <span class="hljs-number">1</span>;&#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(inti= <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    fib[i] = i==<span class="hljs-number">1</span>? <span class="hljs-number">1</span> : fib[i<span class="hljs-number">-1</span>] + fib[i<span class="hljs-number">-2</span>];</span><br><span class="line">    <span class="hljs-keyword">if</span>(fib[i] &gt;= mod) fib[i] -= mod; </span><br><span class="line">    inv[i] = qpow(fib[i],mod<span class="hljs-number">-2</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span>(intj= i,k = <span class="hljs-number">1</span>;j&lt;=n;j+=i,k++)&#123;</span><br><span class="line">      f[j] = <span class="hljs-number">1L</span>L * f[j] * (mu[k] == <span class="hljs-number">1</span>?fib[i]:(mu[k]==<span class="hljs-number">0</span>?<span class="hljs-number">1</span>:inv[i])) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  sum[<span class="hljs-number">0</span>] = sinv[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(inti= <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    sum[i] = <span class="hljs-number">1L</span>L * sum[i<span class="hljs-number">-1</span>] * f[i] % mod;</span><br><span class="line">    sinv[i] = <span class="hljs-number">1L</span>L * sinv[i<span class="hljs-number">-1</span>] * qpow(f[i],mod<span class="hljs-number">-2</span>) % mod;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">calc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> m)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(n &gt; m) swap(n,m);</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> l = <span class="hljs-number">1</span>,r;l&lt;=n;l = r+<span class="hljs-number">1</span>)&#123;</span><br><span class="line">    r = min(n/(n/l),m/(m/l));</span><br><span class="line">    <span class="hljs-keyword">int</span> A = <span class="hljs-number">1L</span>L * sum[r] * sinv[l<span class="hljs-number">-1</span>] % mod;</span><br><span class="line">    <span class="hljs-keyword">int</span> B = <span class="hljs-number">1L</span>L * (n/l) * (m/l) % (mod<span class="hljs-number">-1</span>);</span><br><span class="line">    <span class="hljs-comment">// printf("l:%d A:%d B:%d\n",l,A,B);</span></span><br><span class="line">    ans = <span class="hljs-number">1L</span>L * ans * qpow(A,B) % mod;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  sieve(<span class="hljs-number">1000000</span>);</span><br><span class="line">  <span class="hljs-keyword">int</span> T;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;T);</span><br><span class="line">  <span class="hljs-keyword">for</span>(inti= <span class="hljs-number">1</span>;i&lt;=T;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> n,m;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,calc(n,m));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -235,29 +230,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190331-SDOI2017-product/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -290,7 +262,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -336,29 +308,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2565,9 +2533,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2715,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

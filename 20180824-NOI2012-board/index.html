@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「NOI2012」魔幻棋盘-差分+树套树 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -189,9 +182,12 @@
 <li><p>修改：他会随意挑选棋盘上的一块矩形区域，将这一区域内的所有数同时加上一个给定的整数。</p>
 </li>
 </ol>
-<p>游戏说明书上附有这样一句话“聪明的小朋友，当你连续答对 $19930324$ 次询问后会得到一个惊喜噢！”。小 $Q$ 十分想得到这个惊喜，于是每天都在玩这个玩具。但由于他粗心大意，经常算错数，难以达到这个目标。于是他来向你寻求帮助，希望你帮他写一个程序来回答棋盘守护者的询问，并保证 $100\%$ 的正确率。</p>
+<p>游戏说明书上附有这样一句话“聪明的小朋友，当你连续答对 $19930324$ 次询问后会得到一个惊喜噢！”。小 $Q$ 十分想得到这个惊喜，于是每天都在玩这个玩具。但由于他粗心大意，经常算错数，难以达到这个目标。于是他来向你寻求帮助，希望你帮他写一个程序来回答棋盘守护者的询问，并保证 $100%$ 的正确率。</p>
 <p>为了简化问题，你的程序只需要完成棋盘守护者的 $T$ 次操作，并且问题保证任何时刻棋盘上的数字均为不超过 $2^{62} - 1$ 的正整数。</p>
 <a id="more"></a>
+
+
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P2086" target="_blank" rel="noopener">Luogu P2086</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们发现，如果只有单点修改，这个东西是很好解决的，区间修改（加）就不太好做。</p>
 <hr>
@@ -201,6 +197,7 @@
 <p>在这里，我们不必以中心点为基准差分，事实上可以以任意点差分。</p>
 <p>参考：<a href="https://blog.sengxian.com/solutions/bzoj-2877" target="_blank" rel="noopener">SengXian’s Blog</a></p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io&#123;</span><br><span class="line">    <span class="hljs-comment">//...</span></span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">510000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">gcd</span><span class="hljs-params">(ll a,ll b)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> b==<span class="hljs-number">0</span>?<span class="hljs-built_in">abs</span>(a):gcd(b,a%b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> lson (nown&lt;&lt;1)</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> rson (nown&lt;&lt;1|1)</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> mid ((l+r)&gt;&gt;1)</span></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">SegTree1D</span>&#123;</span></span><br><span class="line">  ll *gg;</span><br><span class="line">  SegTree1D(<span class="hljs-keyword">int</span> m)&#123;gg = <span class="hljs-keyword">new</span> ll[m&lt;&lt;<span class="hljs-number">2</span>];&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">const</span> ll *lt,<span class="hljs-keyword">const</span> ll *rt)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(r &lt; l) <span class="hljs-keyword">return</span> gg[nown] = <span class="hljs-number">0</span>,<span class="hljs-keyword">void</span>();</span><br><span class="line">    <span class="hljs-keyword">if</span>(l == r) gg[nown] = rt == <span class="hljs-literal">NULL</span>?lt[l]: gcd(lt[nown],rt[nown]);</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      build(lson,l,mid,lt,rt),build(rson,mid+<span class="hljs-number">1</span>,r,lt,rt);</span><br><span class="line">      gg[nown] = gcd(gg[lson],gg[rson]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> ql,<span class="hljs-keyword">int</span> qr)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(qr &lt; l || r &lt; ql) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(ql &lt;= l &amp;&amp; r &lt;= qr) <span class="hljs-keyword">return</span> gg[nown];</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      ll ans = <span class="hljs-number">0</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(ql &lt;= mid) ans = gcd(ans,query(lson,l,mid,ql,qr));</span><br><span class="line">      <span class="hljs-comment">//if(ans == 1) return ans;</span></span><br><span class="line">      <span class="hljs-keyword">if</span>(qr &gt;= mid+<span class="hljs-number">1</span>) ans = gcd(ans,query(rson,mid+<span class="hljs-number">1</span>,r,ql,qr));</span><br><span class="line">      <span class="hljs-keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> pos,ll v)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(pos &lt; l || pos &gt; r) <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(l == r) gg[nown] += v;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(pos &lt;= mid) modify(lson,l,mid,pos,v);</span><br><span class="line">      <span class="hljs-keyword">else</span> modify(rson,mid+<span class="hljs-number">1</span>,r,pos,v);</span><br><span class="line">      gg[nown] = gcd(gg[lson],gg[rson]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> pos,<span class="hljs-keyword">const</span> ll *ltree,<span class="hljs-keyword">const</span> ll *rtree)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(pos &lt; l || pos &gt; r) <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(l == r) gg[nown] = gcd(ltree[nown],rtree[nown]);</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(pos &lt;= mid) modify(lson,l,mid,pos,ltree,rtree);</span><br><span class="line">      <span class="hljs-keyword">else</span> modify(rson,mid+<span class="hljs-number">1</span>,r,pos,ltree,rtree);</span><br><span class="line">      gg[nown] = gcd(ltree[nown],rtree[nown]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;*C,*D;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m,xx,yy,t;</span><br><span class="line">ll *a[MAXN],*b[MAXN];</span><br><span class="line">ll c[MAXN],d[MAXN],val;<span class="hljs-comment">//c横d纵</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">SegTree2D</span>&#123;</span></span><br><span class="line">  <span class="hljs-comment">// 每一行建1棵1D线段树</span></span><br><span class="line">  <span class="hljs-comment">// 一共n棵，每棵大小均为m</span></span><br><span class="line">  SegTree1D *t[MAXN&lt;&lt;<span class="hljs-number">2</span>];</span><br><span class="line">  <span class="hljs-keyword">int</span> a,b,c,d;<span class="hljs-comment">//行从 a-&gt;b, 列从 c-&gt;d or (a,b)</span></span><br><span class="line">  ll v;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r,<span class="hljs-keyword">int</span> m,ll **num)</span></span>&#123;</span><br><span class="line">    t[nown] = <span class="hljs-keyword">new</span> SegTree1D(m);</span><br><span class="line">    <span class="hljs-keyword">if</span>(l == r) t[nown]-&gt;build(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,num[l],<span class="hljs-literal">NULL</span>);</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      build(lson,l,mid,m,num),build(rson,mid+<span class="hljs-number">1</span>,r,m,num);</span><br><span class="line">      t[nown]-&gt;build(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,t[lson]-&gt;gg,t[rson]-&gt;gg);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;<span class="hljs-comment">//(a,b) += v</span></span><br><span class="line">    <span class="hljs-keyword">if</span>(r &lt; a || l &gt; a) <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(l == r) t[nown]-&gt;modify(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,b,v);</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(a &lt;= mid) modify(lson,l,mid);</span><br><span class="line">      <span class="hljs-keyword">else</span> modify(rson,mid+<span class="hljs-number">1</span>,r);</span><br><span class="line">      t[nown]-&gt;modify(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,b,t[lson]-&gt;gg,t[rson]-&gt;gg);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> l,<span class="hljs-keyword">int</span> r)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(b &lt; l || r &lt; a) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(a &lt;= l &amp;&amp; r &lt;= b) <span class="hljs-keyword">return</span> t[nown]-&gt;query(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,c,d);</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      ll ans = <span class="hljs-number">0</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(a &lt;= mid) ans = gcd(ans,query(lson,l,mid));</span><br><span class="line">      <span class="hljs-comment">//if(ans == 1) return ans;</span></span><br><span class="line">      <span class="hljs-keyword">if</span>(b &gt;= mid+<span class="hljs-number">1</span>) ans = gcd(ans,query(rson,mid+<span class="hljs-number">1</span>,r));</span><br><span class="line">      <span class="hljs-keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;T;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y,ll v)</span></span>&#123;</span><br><span class="line">  T.a = x,T.b = y,T.v = v;</span><br><span class="line">  <span class="hljs-keyword">if</span>(<span class="hljs-number">1</span> &lt;= x &amp;&amp; x &lt;= n &amp;&amp; <span class="hljs-number">1</span> &lt;= y &amp;&amp; y &lt;= m) T.modify(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> y2)</span></span>&#123;</span><br><span class="line">  ll ans = val;</span><br><span class="line">  x1 = xx - x1,x2 = xx + x2,y1 = yy - y1,y2 = yy + y2;</span><br><span class="line">  ans = gcd(ans,gcd(D-&gt;query(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,n,x1+<span class="hljs-number">1</span>,x2),C-&gt;query(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,y1+<span class="hljs-number">1</span>,y2)));</span><br><span class="line">  T.a = x1+<span class="hljs-number">1</span>,T.b = x2,T.c = y1+<span class="hljs-number">1</span>,T.d = y2;</span><br><span class="line">  ans = gcd(ans,T.query(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,n));</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-built_in">abs</span>(ans);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x1,<span class="hljs-keyword">int</span> x2,<span class="hljs-keyword">int</span> y1,<span class="hljs-keyword">int</span> y2,ll v)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(x1 &lt;= xx &amp;&amp; xx &lt;= x2 &amp;&amp; y1 &lt;= yy &amp;&amp; yy &lt;= y2) val += v;</span><br><span class="line">  <span class="hljs-keyword">if</span>(x1 &lt;= xx &amp;&amp; xx &lt;= x2) C-&gt;modify(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,y1,v),C-&gt;modify(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,y2+<span class="hljs-number">1</span>,-v);</span><br><span class="line">  <span class="hljs-keyword">if</span>(y1 &lt;= yy &amp;&amp; yy &lt;= y2) D-&gt;modify(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,n,x1,v),D-&gt;modify(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,n,x2+<span class="hljs-number">1</span>,-v);</span><br><span class="line">  modify(x1,y1,v),modify(x1,y2+<span class="hljs-number">1</span>,-v),modify(x2+<span class="hljs-number">1</span>,y1,-v),modify(x2+<span class="hljs-number">1</span>,y2+<span class="hljs-number">1</span>,v);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  read(n),read(m),read(xx),read(yy),read(t);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;=n+<span class="hljs-number">10</span>;i++)&#123;</span><br><span class="line">    ll t = m+<span class="hljs-number">10</span>;</span><br><span class="line">    a[i] = <span class="hljs-keyword">new</span> ll[t],b[i] = <span class="hljs-keyword">new</span> ll[t];</span><br><span class="line">    <span class="hljs-built_in">memset</span>(a[i],<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(ll) * t),<span class="hljs-built_in">memset</span>(b[i],<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(ll) * t);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=m;j++)</span><br><span class="line">      read(a[i][j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=m;j++)</span><br><span class="line">      b[i][j] = a[i][j] - a[i<span class="hljs-number">-1</span>][j] - a[i][j<span class="hljs-number">-1</span>] + a[i<span class="hljs-number">-1</span>][j<span class="hljs-number">-1</span>];</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++) c[i] = a[xx][i] - a[xx][i<span class="hljs-number">-1</span>];</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) d[i] = a[i][yy] - a[i<span class="hljs-number">-1</span>][yy];</span><br><span class="line">  val = a[xx][yy];</span><br><span class="line">  C = <span class="hljs-keyword">new</span> SegTree1D(m),D = <span class="hljs-keyword">new</span> SegTree1D(n);</span><br><span class="line">  C-&gt;build(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,m,c,<span class="hljs-literal">NULL</span>),D-&gt;build(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,n,d,<span class="hljs-literal">NULL</span>);</span><br><span class="line">  T.build(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,n,m,b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> op,x1,x2,y1,y2;</span><br><span class="line">  <span class="hljs-keyword">static</span> ll v;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=t;i++)&#123;</span><br><span class="line">    read(op),read(x1),read(y1),read(x2),read(y2);</span><br><span class="line">    <span class="hljs-keyword">if</span>(op == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">      print(query(x1,x2,y1,y2)),print(<span class="hljs-string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      read(v);</span><br><span class="line">      modify(x1,x2,y1,y2,v);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  build();</span><br><span class="line">  solve();</span><br><span class="line">  flush();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -244,29 +241,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180824-NOI2012-board/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -299,7 +273,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -345,29 +319,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2574,9 +2544,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2724,7 +2693,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

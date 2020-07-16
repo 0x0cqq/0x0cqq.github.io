@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CF990G」GCD Counting-并查集/点分治 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -185,6 +178,7 @@
             <p>给定一个 $n$ 个节点的树，每个点有一个正整数权值 $a_i$ 。我们定义 $g(x,y)$ 为 $x,y$ 之间简单路径上所有点（包括端点）的权值的最大公约数。</p>
 <p>现在请求出对于所有的 $i \in [1,2×10^5]$ ，满足 $1 \le x \le y \le n$ 且 $g(x,y) = i$ 的点对 $(x,y)$ 的数目。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="http://codeforces.com/problemset/problem/990/G" target="_blank" rel="noopener">Codeforces 990G</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>一个结论：一个数的约数个数不会很多。<br>在$100000000$之内，约数最多的数是$73513440$，有$768$个因子。这大约不是$log$级别的？令它是一个$O(d(n))$级别的吧。</p>
 <h3 id="Solution-A"><a href="#Solution-A" class="headerlink" title="Solution A:"></a>Solution A:</h3><p>容斥原理：<br>所有以$q$为最大公约数的点对的数目等于所有以$q$为公约数的点对数目减去以$2q,3q,…,kq$为最大公约数的点对数目。</p>
@@ -199,8 +193,10 @@
 <p>然后这个点分治的过程应该是$O(d n log n)$的?复杂度比较迷。</p>
 <p>不过能过，跑的很快。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">300000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">gcd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> y == <span class="hljs-number">0</span>?x:gcd(y,x%y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> BCJ&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> f[MAXN],siz[MAXN];</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> f[x] == x?x:f[x] = find(f[x]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">un</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y,ll &amp;cur)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> fx = find(x),fy = find(y);</span><br><span class="line">        <span class="hljs-keyword">if</span>(fx == fy) <span class="hljs-keyword">return</span>;</span><br><span class="line">        cur -= <span class="hljs-number">1L</span>L*siz[fx]*(siz[fx]+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;</span><br><span class="line">        cur -= <span class="hljs-number">1L</span>L*siz[fy]*(siz[fy]+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;</span><br><span class="line">        f[fy] = fx,siz[fx] += siz[fy];</span><br><span class="line">        cur += <span class="hljs-number">1L</span>L*siz[fx]*(siz[fx]+<span class="hljs-number">1</span>)/<span class="hljs-number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> u,v;</span><br><span class="line">&#125;edge[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; V[MAXN];</span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;<span class="hljs-keyword">int</span>&gt; E[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,a[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;a[i]);</span><br><span class="line">        V[a[i]].push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)&#123;</span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;edge[i].u,&amp;edge[i].v);</span><br><span class="line">        E[gcd(a[edge[i].u],a[edge[i].v])].push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">200000</span>;</span><br><span class="line">    <span class="hljs-keyword">static</span> ll res[MAXN],cur = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = maxn;i&gt;=<span class="hljs-number">1</span>;--i)&#123;</span><br><span class="line">        cur = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = i;j&lt;=maxn;j+=i)&#123;</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;k&lt;V[j].size();k++)&#123;</span><br><span class="line">                <span class="hljs-keyword">int</span> t = V[j][k];</span><br><span class="line">                BCJ::siz[t] = <span class="hljs-number">1</span>,BCJ::f[t] = t;</span><br><span class="line">                cur++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="hljs-keyword">if</span>(j &gt; i)</span><br><span class="line">                res[i] -= res[j];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = i;j&lt;=maxn;j+=i)</span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>;k&lt;E[j].size();k++)</span><br><span class="line">                BCJ::un(edge[E[j][k]].u,edge[E[j][k]].v,cur);</span><br><span class="line">        res[i] += cur;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=maxn;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(res[i])</span><br><span class="line">            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d %lld\n"</span>,i,res[i]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    solve();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <hr>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// 非本人创作</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> gcd(a,b) __gcd(a,b)</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N=<span class="hljs-number">2e5</span>+<span class="hljs-number">7</span>;<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> ll;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">data</span>&#123;</span><span class="hljs-keyword">int</span> to,next;&#125;e[N&lt;&lt;<span class="hljs-number">1</span>];<span class="hljs-keyword">int</span> n,m,i,j,cnt,a[N],d[N],vis[N],head[N],f[N],q[N],qq[N],u,v,root,sum,num[N],Tnum[N],size[N],fr[N],T,tt,tot;ll ans[N];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ins</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u,<span class="hljs-keyword">int</span> v)</span></span>&#123;e[++cnt].to=v;e[cnt].next=head[u];head[u]=cnt;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> u,<span class="hljs-keyword">int</span> v)</span></span>&#123;ins(u,v);ins(v,u);&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getroot</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    size[x]=<span class="hljs-number">1</span>;f[x]=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=head[x];i;i=e[i].next)<span class="hljs-keyword">if</span>(e[i].to!=fa&amp;&amp;!vis[e[i].to])</span><br><span class="line">        getroot(e[i].to,x),size[x]+=size[e[i].to],f[x]=max(f[x],size[e[i].to]);</span><br><span class="line">    f[x]=max(f[x],sum-size[x]);</span><br><span class="line">    <span class="hljs-keyword">if</span>(f[x]&lt;f[root])root=x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getdis</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> fa)</span></span>&#123;</span><br><span class="line">    q[++tt]=d[x];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=head[x];i;i=e[i].next)<span class="hljs-keyword">if</span>(!vis[e[i].to]&amp;&amp;e[i].to!=fa)d[e[i].to]=gcd(d[x],a[e[i].to]),getdis(e[i].to,x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">work</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    vis[x]=<span class="hljs-number">1</span>;T=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=head[x],j,k;i;i=e[i].next)<span class="hljs-keyword">if</span>(!vis[e[i].to])&#123;</span><br><span class="line">        tot=tt=<span class="hljs-number">0</span>;d[e[i].to]=gcd(a[x],a[e[i].to]);getdis(e[i].to,<span class="hljs-number">0</span>);</span><br><span class="line">        <span class="hljs-keyword">for</span>(sort(q+<span class="hljs-number">1</span>,q+tt+<span class="hljs-number">1</span>),j=<span class="hljs-number">1</span>;j&lt;=tt;++j)<span class="hljs-keyword">if</span>(q[j]==q[j<span class="hljs-number">-1</span>])num[tot]++;<span class="hljs-keyword">else</span> q[++tot]=q[j],num[tot]=<span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=tot;++j)<span class="hljs-keyword">for</span>(k=<span class="hljs-number">1</span>;k&lt;=T;++k)ans[gcd(q[j],qq[k])]+=<span class="hljs-number">1l</span>l*num[j]*Tnum[k];</span><br><span class="line">        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=tot;++j)ans[q[j]]+=num[j];</span><br><span class="line">        <span class="hljs-keyword">for</span>(j=<span class="hljs-number">1</span>;j&lt;=tot;++j)<span class="hljs-keyword">if</span>(!fr[q[j]])qq[++T]=q[j],Tnum[T]=num[j],fr[q[j]]=T;</span><br><span class="line">        <span class="hljs-keyword">else</span> Tnum[fr[q[j]]]+=num[j];</span><br><span class="line">    &#125;ans[a[x]]++;<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=T;++i)fr[qq[i]]=<span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=head[x];i;i=e[i].next)<span class="hljs-keyword">if</span>(!vis[e[i].to])</span><br><span class="line">        root=<span class="hljs-number">0</span>,sum=size[e[i].to],getroot(e[i].to,x),work(root);</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n),i=<span class="hljs-number">1</span>;i&lt;=n;++i)<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,a+i);<span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;n;++i)<span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d"</span>,&amp;u,&amp;v),insert(u,v);</span><br><span class="line">    f[<span class="hljs-number">0</span>]=N;sum=n;root=<span class="hljs-number">0</span>;getroot(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>);work(root);</span><br><span class="line">    <span class="hljs-keyword">for</span>(i=<span class="hljs-number">1</span>;i&lt;N;++i)<span class="hljs-keyword">if</span>(ans[i])<span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d %lld\n"</span>,i,ans[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -244,29 +240,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180717-CF990G-GCD-Counting/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -299,7 +272,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -345,29 +318,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2574,9 +2543,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2724,7 +2692,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

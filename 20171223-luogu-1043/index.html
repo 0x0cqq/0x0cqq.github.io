@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「Luogu1043」数字游戏-dp - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -89,7 +89,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -111,26 +111,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -184,15 +177,18 @@
             
         </h1>
         <div class="content">
-            <p>在你面前有一圈整数（一共 $n$ 个），你要按顺序将其分为 $m$ 个部分，各部分内的数字相加，相加所得的 $m$ 个结果对 10 取模后再相乘，最终得到一个数 $k$ 。游戏的要求是使你所得的 $k$ 最大或者最小。<br><a id="more"></a></p>
+            <p>在你面前有一圈整数（一共 $n$ 个），你要按顺序将其分为 $m$ 个部分，各部分内的数字相加，相加所得的 $m$ 个结果对 10 取模后再相乘，最终得到一个数 $k$ 。游戏的要求是使你所得的 $k$ 最大或者最小。</p>
+<a id="more"></a>
+
 <p>例如，对于下面这圈数字（ $n$ =4， $m$ =2）：</p>
-<p><img src="description.png" alt=""></p>
+<p><img src="description.png"></p>
 <p>要求最小值时，$((2-1) mod 10)×((4+3) mod 10)=1×7=7$，要求最大值时，为$((2+4+3) mod 10)×(-1 mod 10)=9×9=81$。特别值得注意的是，无论是负数还是正数，对$10$取模的结果均为非负值。</p>
 <p>丁丁请你编写程序帮他赢得这个游戏。</p>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P1043" target="_blank" rel="noopener">Luogu P1043</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>很水的一道 $dp$ 题目。只要知道断环为链剩下的也都不难。题解洛谷没给通过，现在也找不到了，只有代码还剩了下来。代码里面也有注释，凑活看看也可以。</p>
 <p>update: 这是我写的第一篇题解啦！</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> num[<span class="hljs-number">150</span>],dp_1[<span class="hljs-number">150</span>],dp_2[<span class="hljs-number">150</span>];<span class="hljs-comment">//_1放最大值,_2放最小值</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">int</span> <span class="hljs-title">mod</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> nnn)</span></span>&#123;<span class="hljs-comment">//mod函数</span></span><br><span class="line">    <span class="hljs-keyword">int</span> w = <span class="hljs-keyword">int</span>(<span class="hljs-built_in">floor</span>(<span class="hljs-keyword">double</span>(nnn)/<span class="hljs-number">10</span>));</span><br><span class="line">    <span class="hljs-keyword">return</span> nnn - w*<span class="hljs-number">10</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<span class="hljs-comment">//断环为链的准备</span></span><br><span class="line">        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lld"</span>,&amp;(num[i]));</span><br><span class="line">        num[i+n] = num[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">2</span>*n;i++)<span class="hljs-comment">//前缀和的处理</span></span><br><span class="line">        num[i] = num[i<span class="hljs-number">-1</span>]+num[i];</span><br><span class="line">    <span class="hljs-comment">//正经dp</span></span><br><span class="line">    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> maxn = <span class="hljs-number">-1</span>,minn = <span class="hljs-number">0x3f3f3f3f</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> s = <span class="hljs-number">1</span>;s&lt;=n;s++)&#123;<span class="hljs-comment">//枚举起点</span></span><br><span class="line">        <span class="hljs-built_in">memset</span>(dp_1,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(dp_1));<span class="hljs-comment">//清零dp数组</span></span><br><span class="line">        <span class="hljs-built_in">memset</span>(dp_2,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(dp_2));</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>;j&lt;m;j++)&#123;<span class="hljs-comment">//板子由少到多</span></span><br><span class="line">            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = s;i&lt;=s+n;i++)&#123;<span class="hljs-comment">//上一个插板子的地方</span></span><br><span class="line">                <span class="hljs-keyword">if</span>(j == <span class="hljs-number">0</span>)&#123;<span class="hljs-comment">//j==0的时候的处理，其实也可以叫初始化</span></span><br><span class="line">                    dp_1[i] = dp_2[i] = mod(num[s+n]-num[i]);</span><br><span class="line">                    <span class="hljs-keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> maxtmp = <span class="hljs-number">-1</span>,mintmp = <span class="hljs-number">0x3f3f3f3f</span>;<span class="hljs-comment">//对所有可能下一状态的遍历，并取最大或最小值</span></span><br><span class="line">                <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> x = i+<span class="hljs-number">1</span>;x&lt;=s+n-j<span class="hljs-number">-1</span>;x++)&#123;</span><br><span class="line">                    maxtmp = max(maxtmp,dp_1[x]*mod(num[x]-num[i]));</span><br><span class="line">                    mintmp = min(mintmp,dp_2[x]*mod(num[x]-num[i]));</span><br><span class="line">                &#125;</span><br><span class="line">                dp_1[i] = maxtmp;<span class="hljs-comment">//取最大最小值</span></span><br><span class="line">                dp_2[i] = mintmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        maxn = max(dp_1[s],maxn);<span class="hljs-comment">//对于起点不同的最大最小值进行更新</span></span><br><span class="line">        minn = min(dp_2[s],minn);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n%lld\n"</span>,minn,maxn);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -236,29 +232,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20171223-luogu-1043/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -291,7 +264,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -337,29 +310,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2566,9 +2535,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2716,7 +2684,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

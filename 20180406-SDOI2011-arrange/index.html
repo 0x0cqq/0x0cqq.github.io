@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「SDOI2011」工作安排-费用流 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -183,9 +176,10 @@
         </h1>
         <div class="content">
             <p>你的公司需要提供$n$类产品，其中第$i$类产品共需要$C_{i}$件。公司共有$m$名员工。员工能够制造的产品种类有所区别，我们用一个由$0$和$1$组成的$m\times n$的矩阵$\mathbb {A}$来描述每名员工能够制造哪些产品。</p>
-<p>对于员工$i$，给出$S_i$。定义他的愤怒值与他制作的产品数量之间的函数是一个$S_i+1$段的分段函数。设$T_{i,0}=0$,$T_{i,S_{i+1}}=+\infty$，那么当他制造第$[T_{i,j-1}+1,T_{i,j}]$件产品时，每件产品会使他的愤怒值增加$W_{i,j}$， $1\leq j\leq S_{i+1}$。保证$0&lt;W_{i,j} &lt; W_{i,j+1}, \; 0 &lt; T_{i,j} &lt; T_{i,j+1}$。</p>
+<p>对于员工$i$，给出$S_i$。定义他的愤怒值与他制作的产品数量之间的函数是一个$S_i+1$段的分段函数。设$T_{i,0}=0$,$T_{i,S_{i+1}}=+\infty$，那么当他制造第$[T_{i,j-1}+1,T_{i,j}]$件产品时，每件产品会使他的愤怒值增加$W_{i,j}$， $1\leq j\leq S_{i+1}$。保证$0&lt;W_{i,j} &lt; W_{i,j+1}, ; 0 &lt; T_{i,j} &lt; T_{i,j+1}$。</p>
 <p>你的任务是制定出一个产品的分配方案，使得订单条件被满足，并且所有员工的愤怒值之和最小。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P2488" target="_blank" rel="noopener">Luogu P2488</a></p>
 <p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=2245" target="_blank" rel="noopener">BZOJ 2245</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>一道费用流的题目。</p>
@@ -197,9 +191,10 @@
 <p>对于第$i$个商品种类，我们连一条起点为$m+i$，终点为$t$，容量为$C_{i}$，费用为$0$的边。</p>
 <p>对于第$i$个人，我们连$S_{i}+1$条边，起点均为$s$，终点均为$i$，令第$j$条边的容量为$S_{i,j}-S_{i,j-1}$，$j \in [1,S_{i}+1]$，费用为$W_{i,j}$。</p>
 <p>跑最小费用最大流，得到的费用即为结果。</p>
-<p>注意需要开$long long$…</p>
+<p>注意需要开$long\ long$…</p>
 <p>值得一提的是，由于我有一个$j$写成了$i$，导致我绝望的找了$15$分钟的$bug$…令人窒息。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io &#123;</span><br><span class="line">    <span class="hljs-comment">//...</span></span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAX = <span class="hljs-number">1e9</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1000</span>,MAXM = <span class="hljs-number">200000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> from,to;</span><br><span class="line">    <span class="hljs-keyword">int</span> flow,cap;</span><br><span class="line">    <span class="hljs-keyword">int</span> cost;</span><br><span class="line">    <span class="hljs-keyword">int</span> nex;</span><br><span class="line">&#125;edge[MAXM];</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m,s,t,ecnt = <span class="hljs-number">2</span>;</span><br><span class="line"><span class="hljs-keyword">int</span> fir[MAXN],pree[MAXN];</span><br><span class="line">ll dis[MAXN];<span class="hljs-keyword">int</span> instack[MAXN];</span><br><span class="line"><span class="hljs-built_in">queue</span>&lt;<span class="hljs-keyword">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addedge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b,<span class="hljs-keyword">int</span> c,<span class="hljs-keyword">int</span> d)</span></span>&#123;</span><br><span class="line">    <span class="hljs-comment">//printf("%lld %lld %lld %lld\n",a,b,c,d);</span></span><br><span class="line">    edge[ecnt].from = a,edge[ecnt].to = b;</span><br><span class="line">    edge[ecnt].cap = c,edge[ecnt].flow = <span class="hljs-number">0</span>;</span><br><span class="line">    edge[ecnt].cost = d,edge[ecnt].nex = fir[a];</span><br><span class="line">    fir[a] = ecnt++;</span><br><span class="line">    edge[ecnt].from = b,edge[ecnt].to = a;</span><br><span class="line">    edge[ecnt].cap = <span class="hljs-number">0</span>,edge[ecnt].flow = <span class="hljs-number">0</span>;</span><br><span class="line">    edge[ecnt].cost = -d,edge[ecnt].nex = fir[b];</span><br><span class="line">    fir[b] = ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">spfa</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(!q.empty()) q.pop();</span><br><span class="line">    <span class="hljs-built_in">memset</span>(dis,<span class="hljs-number">0x3f</span>,<span class="hljs-keyword">sizeof</span>(dis));</span><br><span class="line">    dis[s] = <span class="hljs-number">0</span>;q.push(s);</span><br><span class="line">    <span class="hljs-keyword">while</span>(!q.empty())&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> nown = q.front();q.pop();</span><br><span class="line">        instack[nown] = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">            Edge e = edge[nowe];</span><br><span class="line">            <span class="hljs-keyword">if</span>(dis[e.to] &gt; dis[nown] + e.cost &amp;&amp; e.cap &gt; e.flow)&#123;</span><br><span class="line">                dis[e.to] = dis[nown] + e.cost;</span><br><span class="line">                pree[e.to] = nowe;</span><br><span class="line">                <span class="hljs-keyword">if</span>(instack[e.to] == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">                    instack[e.to] = <span class="hljs-number">1</span>;</span><br><span class="line">                    q.push(e.to);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> dis[t] &lt; <span class="hljs-number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">argument</span><span class="hljs-params">(ll &amp;sumf,ll &amp;sumc)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> nown = t,nowe,delta = MAX;</span><br><span class="line">    <span class="hljs-keyword">while</span>(nown!=s)&#123;</span><br><span class="line">        nowe = pree[nown];</span><br><span class="line">        delta = min(delta,edge[nowe].cap - edge[nowe].flow);</span><br><span class="line">        nown = edge[nowe].from;</span><br><span class="line">    &#125;</span><br><span class="line">    nown = t;</span><br><span class="line">    <span class="hljs-keyword">while</span>(nown!=s)&#123;</span><br><span class="line">        nowe = pree[nown];</span><br><span class="line">        edge[nowe].flow+=delta,edge[nowe^<span class="hljs-number">1</span>].flow-=delta;</span><br><span class="line">        nown = edge[nowe].from;</span><br><span class="line">    &#125;</span><br><span class="line">    sumf+=delta,sumc+=delta*dis[t];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">min_cost_flow</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    ll f = <span class="hljs-number">0</span>,c = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(spfa())</span><br><span class="line">        argument(f,c);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,c);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    read(m),read(n);</span><br><span class="line">    s = m+n+<span class="hljs-number">1</span>,t = m+n+<span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> tmp = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        read(tmp);</span><br><span class="line">        addedge(m+i,t,tmp,<span class="hljs-number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            read(tmp);</span><br><span class="line">            <span class="hljs-keyword">if</span>(tmp)</span><br><span class="line">                addedge(i,m+j,MAX,<span class="hljs-number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">int</span> b[<span class="hljs-number">10</span>];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        read(tmp);</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=tmp;j++)</span><br><span class="line">            read(b[j]);</span><br><span class="line">        b[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;b[tmp+<span class="hljs-number">1</span>] = MAX;</span><br><span class="line"></span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=tmp+<span class="hljs-number">1</span>;j++)&#123;</span><br><span class="line">            <span class="hljs-keyword">int</span> w;read(w);</span><br><span class="line">            addedge(s,i,b[j]-b[j<span class="hljs-number">-1</span>],w);</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    min_cost_flow();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -243,29 +238,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180406-SDOI2011-arrange/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -298,7 +270,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -344,29 +316,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2573,9 +2541,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2723,7 +2690,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

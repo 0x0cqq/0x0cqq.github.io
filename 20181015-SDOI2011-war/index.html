@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「SDOI2011」消耗战-虚树+树形dp - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -185,6 +178,7 @@
             <p>给定一个 $n$ 个点，以 $1$ 为根的有根树，砍断第 $i$ 条边的代价为 $c_i$。有 $m$ 次询问，每次给出 $k_i$ 个关键点（保证关键点不含 $1$ 号节点），询问能够使 $1$ 号节点不能到达任何关键点，所要砍断边的代价和最小是多少。</p>
 <p>数据范围：$n,m \leq 250000,\sum {k_i} \leq 5 \times 10^5$</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P2495" target="_blank" rel="noopener">Luogu P2495</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>可以先思考只有一个询问的情况。</p>
 <p>如果设 $i$ 到 $1$ 的路径上所有边代价最小的边的代价为 $w[i]$，使 $i$ 的子树里面的所有点都不能到达 $1$ 节点的最小代价为 $f[i]$ ，那么有如下的转移（ $v$ 是 $i$ 的子节点）：</p>
@@ -192,6 +186,7 @@
 <p>这个 $\text{dp}$ 的正确性好像并不是那么显然…简单证明可以这样：$\min$ 中的第一个是非常显然的一个可行解，第二个有这么几种情况：如果存在某个 $f[v]$ 由 $w[v]$ 转移而来，那么如果存在 $w[v] = w[i]$，那么必然就是第一种情况再加上若干条边，取 $\min$ 之后显然不影响答案。</p>
 <p>我们注意到以上 $\text{dp}$ 的复杂度为 $O(\text{树的节点数})$，而我们的 $\sum{k_i}$ 是 $500000$ 。如果 $O(n)$ 的 $\text{dfs}$ 预处理出树链剖分和 $w[i]$ ，对于每次询问用 $O(k_i \log n)$ 的时间建出虚树（虚树上只需要维护 $w[i]$ ），再 $O(k_i)$ 的做一次树形 $\text{dp}$，最后时间复杂度就是 $O( n + \sum k_i \log n)$ 。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-comment">// Code By Chen Qiqian on 2018.10.13</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;unistd.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> inf 0x3f3f3f3f3f3f</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">610000</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> to,len,nex;</span><br><span class="line">&#125;edge[MAXN];<span class="hljs-keyword">int</span> ecnt = <span class="hljs-number">2</span>,fir[MAXN];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addedge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b,<span class="hljs-keyword">int</span> c)</span></span>&#123;</span><br><span class="line">  edge[ecnt] = (Edge)&#123;b,c,fir[a]&#125;;</span><br><span class="line">  fir[a] = ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line">ll w[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> dep[MAXN],siz[MAXN],son[MAXN],fa[MAXN],top[MAXN],dfn[MAXN],tot;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;n);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> u,v,c;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d"</span>,&amp;u,&amp;v,&amp;c);</span><br><span class="line">    addedge(u,v,c),addedge(v,u,c);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> f,<span class="hljs-keyword">int</span> depth)</span></span>&#123;</span><br><span class="line">  dep[nown] = depth,fa[nown] = f;</span><br><span class="line">  siz[nown] = <span class="hljs-number">1</span>,son[nown] = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> v = edge[nowe].to,l = edge[nowe].len;</span><br><span class="line">    <span class="hljs-keyword">if</span>(v == fa[nown]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">    w[v] = min(w[nown],(ll)l);</span><br><span class="line">    dfs1(v,nown,depth+<span class="hljs-number">1</span>);</span><br><span class="line">    siz[nown] += siz[v];</span><br><span class="line">    <span class="hljs-keyword">if</span>(siz[v] &gt; siz[son[nown]]) son[nown] = v;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> topf)</span></span>&#123;</span><br><span class="line">  dfn[nown] = ++tot;top[nown] = topf;</span><br><span class="line">  <span class="hljs-keyword">if</span>(!son[nown]) <span class="hljs-keyword">return</span>;</span><br><span class="line">  dfs2(son[nown],topf);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = fir[nown];nowe;nowe = edge[nowe].nex)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> v = edge[nowe].to;<span class="hljs-comment">//l = edge[nowe].len;</span></span><br><span class="line">    <span class="hljs-keyword">if</span>(v == fa[nown] || v == son[nown]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">    dfs2(v,v);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lca</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(x == <span class="hljs-number">0</span> || y == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">while</span>(top[x] != top[y])&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(dep[top[x]] &lt; dep[top[y]]) swap(x,y);</span><br><span class="line">    x = fa[top[x]];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">if</span>(dep[x] &gt; dep[y]) swap(x,y);</span><br><span class="line">  <span class="hljs-keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  w[<span class="hljs-number">1</span>] = inf;</span><br><span class="line">  dfs1(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>);</span><br><span class="line">  dfs2(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> k,kp[MAXN],type[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">return</span> dfn[a] &lt; dfn[b];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Edge _edge[MAXN];<span class="hljs-keyword">int</span> _ecnt = <span class="hljs-number">2</span>,_fir[MAXN];</span><br><span class="line"><span class="hljs-keyword">void</span> _addedge(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b,<span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>)&#123;</span><br><span class="line">  _edge[_ecnt] = (Edge)&#123;b,c,_fir[a]&#125;;</span><br><span class="line">  _fir[a] = _ecnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll _dfs(<span class="hljs-keyword">int</span> nown)&#123;</span><br><span class="line">  ll tmp = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">if</span>(type[nown])</span><br><span class="line">    <span class="hljs-keyword">return</span> (ll)w[nown];</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> nowe = _fir[nown];nowe;nowe = _edge[nowe].nex)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> v = _edge[nowe].to;</span><br><span class="line">    tmp += _dfs(v);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> min(tmp,(ll)w[nown]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve_tree</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  sort(kp+<span class="hljs-number">1</span>,kp+k+<span class="hljs-number">1</span>,cmp);</span><br><span class="line">  _ecnt = <span class="hljs-number">2</span>;</span><br><span class="line">  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> stk[MAXN];<span class="hljs-keyword">int</span> top = <span class="hljs-number">0</span>,cnt = k;<span class="hljs-comment">//[0,top]</span></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">    type[kp[i]] = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> L = lca(kp[i],stk[top]);</span><br><span class="line">    <span class="hljs-keyword">if</span>(L == stk[top])</span><br><span class="line">      stk[++top] = kp[i];</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">while</span>(top &gt;= <span class="hljs-number">1</span> &amp;&amp; dep[stk[top<span class="hljs-number">-1</span>]] &gt;= dep[L])&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> nown = stk[top<span class="hljs-number">-1</span>],v = stk[top];</span><br><span class="line">        _addedge(nown,v);</span><br><span class="line">        top--;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">if</span>(stk[top] != L)&#123;</span><br><span class="line">        _addedge(L,stk[top]);</span><br><span class="line">        stk[top] = L;</span><br><span class="line">        kp[++cnt] = L;</span><br><span class="line">      &#125;</span><br><span class="line">      stk[++top] = kp[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">while</span>(top &gt;= <span class="hljs-number">1</span>)</span><br><span class="line">    _addedge(stk[top<span class="hljs-number">-1</span>],stk[top]),top--;</span><br><span class="line">  </span><br><span class="line">  type[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,_dfs(<span class="hljs-number">1</span>));</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=k;i++)</span><br><span class="line">    type[kp[i]] = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=cnt;i++)</span><br><span class="line">    _fir[kp[i]] = <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;k);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=k;j++)</span><br><span class="line">      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;kp[j]);</span><br><span class="line">    kp[++k] = <span class="hljs-number">1</span>;</span><br><span class="line">    solve_tree();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  build();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -235,29 +230,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20181015-SDOI2011-war/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -290,7 +262,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -336,29 +308,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2565,9 +2533,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2715,7 +2682,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「NOI2007」货币兑换-Splay+斜率优化 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="Chen&#39;s Blog">
 <meta property="og:description" content="小 $Y$ 最近在一家金券交易所工作。该金券交易所只发行交易两种金券：$A$ 纪念券（以下简称 $A$ 券）和 $B$ 纪念券（以下简称 $B$ 券）。每个持有金券的顾客都有一个自己的帐户。金券的数目可以是一个实数。每天随着市场的起伏波动，两种金券都有自己当时的价值，即每一单位金券当天可以兑换的人民币数目。我们记录第 $K$ 天中 $A$ 券 和 $B$ 券的价值分别为 $A_K$ 和 $B_K$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://www.lydsy.com/JudgeOnline/upload/201604/dd(1">
-<meta property="og:image" content="https://www.lydsy.com/JudgeOnline/upload/201604/dd(2">
+<meta property="og:image" content="https://www.lydsy.com/JudgeOnline/upload/201604/dd(1).png">
+<meta property="og:image" content="https://www.lydsy.com/JudgeOnline/upload/201604/dd(2).png">
 <meta property="og:updated_time" content="2019-04-06T12:08:37.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「NOI2007」货币兑换-Splay+斜率优化">
 <meta name="twitter:description" content="小 $Y$ 最近在一家金券交易所工作。该金券交易所只发行交易两种金券：$A$ 纪念券（以下简称 $A$ 券）和 $B$ 纪念券（以下简称 $B$ 券）。每个持有金券的顾客都有一个自己的帐户。金券的数目可以是一个实数。每天随着市场的起伏波动，两种金券都有自己当时的价值，即每一单位金券当天可以兑换的人民币数目。我们记录第 $K$ 天中 $A$ 券 和 $B$ 券的价值分别为 $A_K$ 和 $B_K$">
-<meta name="twitter:image" content="https://www.lydsy.com/JudgeOnline/upload/201604/dd(1">
+<meta name="twitter:image" content="https://www.lydsy.com/JudgeOnline/upload/201604/dd(1).png">
 
 
 
@@ -90,7 +90,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -112,26 +112,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -186,14 +179,15 @@
         </h1>
         <div class="content">
             <p>小 $Y$ 最近在一家金券交易所工作。该金券交易所只发行交易两种金券：$A$ 纪念券（以下简称 $A$ 券）和 $B$ 纪念券（以下简称 $B$ 券）。每个持有金券的顾客都有一个自己的帐户。金券的数目可以是一个实数。每天随着市场的起伏波动，两种金券都有自己当时的价值，即每一单位金券当天可以兑换的人民币数目。我们记录第 $K$ 天中 $A$ 券 和 $B$ 券的价值分别为 $A_K$ 和 $B_K$（元/单位金券）。为了方便顾客，金券交易所提供了一种非常方便的交易方式：比例交易法。比例交易法分为两个方面：</p>
-<p>（a）卖出金券：顾客提供一个 $[0,100]$ 内的实数 $OP$ 作为卖出比例，其意义为：将 $OP\%$ 的 $A$ 券和 $OP\%$ 的 $B$ 券以当时的价值兑换为人民币；</p>
+<p>（a）卖出金券：顾客提供一个 $[0,100]$ 内的实数 $OP$ 作为卖出比例，其意义为：将 $OP%$ 的 $A$ 券和 $OP%$ 的 $B$ 券以当时的价值兑换为人民币；</p>
 <p>（b）买入金券：顾客支付 $IP$ 元人民币，交易所将会兑换给用户总价值为 $IP$ 的金券，并且，满足提供给顾客的 $A$ 券和 $B$ 券的比例在第 $K$ 天恰好为 $Rate_K$ ；</p>
 <p>注意到，<strong>同一天内可以进行多次操作</strong>。小 $Y$ 是一个很有经济头脑的员工，通过较长时间的运作和行情测算，他已经知道了未来 $N$ 天内的 $A$ 券和 $B$ 券的价值以及 $Rate$ 。他还希望能够计算出来，如果开始时拥有 $S$ 元钱，那么 $N$ 天后最多能够获得多少元钱。</p>
 <a id="more"></a>
+
 <p>例如，假定接下来 $3$ 天内的 $A_k$、$B_k$、$Rate_K$ 的变化分别为：</p>
-<p><img src="https://www.lydsy.com/JudgeOnline/upload/201604/dd(1" alt="img">.png)</p>
+<p><img src="https://www.lydsy.com/JudgeOnline/upload/201604/dd(1).png" alt="img"></p>
 <p>假定在第一天时，用户手中有 $100$ 元 人民币但是没有任何金券。用户可以执行以下的操作：</p>
-<p><img src="https://www.lydsy.com/JudgeOnline/upload/201604/dd(2" alt="img">.png)</p>
+<p><img src="https://www.lydsy.com/JudgeOnline/upload/201604/dd(2).png" alt="img"></p>
 <p>提示：</p>
 <ul>
 <li>输入文件可能很大，请采用快速的读入方式。</li>
@@ -205,11 +199,11 @@
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>最优策略肯定是只有两种状态：全仓/空仓，然后每天我们只有若干种选择：全买，全卖，全买+全卖，啥都不做。</p>
 <p>注意到我们可以 $dp$ …</p>
 <p>先写暴力转移…注意到我们事实上只需要记录我们有多少钱，在哪天买入的话就会有多少的比例。</p>
-<p>所以我们令 $dp[i]$ 为在第 $i$ 天拥有的最多钱，假设我们上次全部卖出+全部买入在第 $j$ 天，状态转移：<br>$$<br>dp[i] = \max\left(\max_{j=1}^{i-1}(dp[j]\times \frac{r[j]<em>a[i] + b[i]}{r[j]</em>a[j]+b[j]}),dp[i-1]\right)<br>$$<br>很好理解嘛…就是一个决策在哪天全买/全卖的问题。</p>
+<p>所以我们令 $dp[i]$ 为在第 $i$ 天拥有的最多钱，假设我们上次全部卖出+全部买入在第 $j$ 天，状态转移：<br>$$<br>dp[i] = \max\left(\max_{j=1}^{i-1}(dp[j]\times \frac{r[j]*a[i] + b[i]}{r[j]*a[j]+b[j]}),dp[i-1]\right)<br>$$<br>很好理解嘛…就是一个决策在哪天全买/全卖的问题。</p>
 <p>暴力转移可以拿到 $60$ 分…上古时代的暴力分还是很好拿的。</p>
 <hr>
 <p>正解的话，需要我们深入挖掘这个式子。</p>
-<p>我们先忽略最后一个不买不卖的情况，来继续看：<br>$$<br>dp[i] = \max_{j=1}^{i-1}(dp[j]\times \frac{r[j]\cdot a[i] + b[i]}{r[j] \cdot a[j]+b[j]})<br>$$<br>对于给定的决策点 $j$ ，则有：<br>$$<br>dp[i] = dp[j] \times \frac{r[j]\cdot a[i] + b[i]}{r[j]\cdot a[j]+b[j]}\\<br>dp[i] = (r[j]\cdot a[i] + b[i])\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]}\\<br>dp[i] = b[i]\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]} + a[i] \times \frac{r[j]\cdot dp[j]}{r[j]\cdot a[j]+b[j]}<br>$$<br>如果我们令：<br>$$<br>x[j] = \frac{r[j]\cdot dp[j]}{r[j]*a[j]+b[j]}, y[j] = \frac{dp[j]}{r[j]\cdot a[j]+b[j]}<br>$$<br>那么式子就会变成：<br>$$<br>dp[i] = a[i] \times x[j] + b[i] \times y[j]<br>$$<br>略微变换：<br>$$<br>y[j] = - \frac{a[i]}{b[i]} \cdot x[j] + \frac{dp[i]}{b[i]}<br>$$</p>
+<p>我们先忽略最后一个不买不卖的情况，来继续看：<br>$$<br>dp[i] = \max_{j=1}^{i-1}(dp[j]\times \frac{r[j]\cdot a[i] + b[i]}{r[j] \cdot a[j]+b[j]})<br>$$<br>对于给定的决策点 $j$ ，则有：<br>$$<br>dp[i] = dp[j] \times \frac{r[j]\cdot a[i] + b[i]}{r[j]\cdot a[j]+b[j]}\<br>dp[i] = (r[j]\cdot a[i] + b[i])\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]}\<br>dp[i] = b[i]\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]} + a[i] \times \frac{r[j]\cdot dp[j]}{r[j]\cdot a[j]+b[j]}<br>$$<br>如果我们令：<br>$$<br>x[j] = \frac{r[j]\cdot dp[j]}{r[j]*a[j]+b[j]}, y[j] = \frac{dp[j]}{r[j]\cdot a[j]+b[j]}<br>$$<br>那么式子就会变成：<br>$$<br>dp[i] = a[i] \times x[j] + b[i] \times y[j]<br>$$<br>略微变换：<br>$$<br>y[j] = - \frac{a[i]}{b[i]} \cdot x[j] + \frac{dp[i]}{b[i]}<br>$$</p>
 <p>我们注意到，这里面的斜率仅与 $i$ 相关，$x,y$ 均只与 $j$ 相关，最后的截距下面除的是一个常数，那么只要截距最大， $dp[i]$ 就会最大。</p>
 <p>而且，只要 $x[j]$ 和 $y[j]$ 一经确定，便不改变。</p>
 <p>所以现在问题变成：支持插入点，查询某个给定斜率的直线且经过某个点，使得这条直线的截距最大。</p>
@@ -225,6 +219,8 @@
 </ol>
 <p>不知道为啥，BZOJ 上过不了。本地下下来数据、传到 luogu 上都可以过。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> eps 1e-10</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> inf 1e10</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">1100000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,s;</span><br><span class="line"><span class="hljs-keyword">double</span> a[MAXN],b[MAXN],r[MAXN];</span><br><span class="line"><span class="hljs-keyword">double</span> dp[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> last[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">calx</span><span class="hljs-params">(<span class="hljs-keyword">int</span> j)</span></span>&#123;<span class="hljs-keyword">if</span>(j == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> inf;<span class="hljs-keyword">return</span> dp[j]*r[j] / (r[j]*a[j] + b[j]);&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">caly</span><span class="hljs-params">(<span class="hljs-keyword">int</span> j)</span></span>&#123;<span class="hljs-keyword">return</span> dp[j] / (r[j]*a[j]+b[j]);&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">calc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span></span>&#123;<span class="hljs-keyword">return</span> calx(j) * a[i] + caly(j) * b[i]; &#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">cals</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i,<span class="hljs-keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(j == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> -inf;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> inf;</span><br><span class="line">    <span class="hljs-keyword">double</span> _x = calx(i)-calx(j);</span><br><span class="line">    <span class="hljs-keyword">double</span> _y = caly(i)-caly(j);</span><br><span class="line">    <span class="hljs-comment">//if(fabs(_x) &lt; eps) return _y&gt;0?inf:-inf;</span></span><br><span class="line">    <span class="hljs-keyword">return</span> _y/_x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> Splay&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> p[MAXN&lt;&lt;<span class="hljs-number">2</span>];<span class="hljs-keyword">double</span> v[MAXN&lt;&lt;<span class="hljs-number">2</span>];</span><br><span class="line">  <span class="hljs-keyword">int</span> f[MAXN&lt;&lt;<span class="hljs-number">2</span>],c[MAXN&lt;&lt;<span class="hljs-number">2</span>][<span class="hljs-number">2</span>],cnt;</span><br><span class="line">  <span class="hljs-keyword">int</span> root;<span class="hljs-comment">//v 向左连 </span></span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">newnode</span><span class="hljs-params">(<span class="hljs-keyword">int</span> point,<span class="hljs-keyword">double</span> val = <span class="hljs-number">0</span>)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> x = ++cnt;</span><br><span class="line">    v[x] = val,p[x] = point;</span><br><span class="line">    c[x][<span class="hljs-number">0</span>] = c[x][<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> x;</span><br><span class="line">  &#125; </span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">rotate</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!x) <span class="hljs-keyword">return</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> y = f[x],z = f[y],t = c[y][<span class="hljs-number">1</span>] == x,w = c[x][<span class="hljs-number">1</span>-t];</span><br><span class="line">    <span class="hljs-keyword">if</span>(z) c[z][c[z][<span class="hljs-number">1</span>]==y] = x;</span><br><span class="line">    c[y][t] = w,c[x][<span class="hljs-number">1</span>-t] = y;</span><br><span class="line">    <span class="hljs-keyword">if</span>(w) f[w] = y;</span><br><span class="line">    f[x] = z;f[y] = x;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!f[x]) root = x; </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">splay</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> tar = <span class="hljs-number">0</span>)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(f[x]!=tar)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> y = f[x],z = f[y];</span><br><span class="line">      <span class="hljs-keyword">if</span>(f[y] != tar)&#123;</span><br><span class="line">        (c[y][<span class="hljs-number">1</span>]==x)^(c[z][<span class="hljs-number">1</span>]==y)?rotate(x):rotate(y);</span><br><span class="line">      &#125;rotate(x);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">double</span> _v)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!x) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">if</span>(_v &gt; v[x])</span><br><span class="line">      <span class="hljs-keyword">return</span> find(c[x][<span class="hljs-number">0</span>],_v);</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> j = find(c[x][<span class="hljs-number">1</span>],_v);</span><br><span class="line">      <span class="hljs-keyword">return</span> j!=<span class="hljs-number">0</span>?j:x;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">nxt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> tmp)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!x) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>; splay(x);</span><br><span class="line">    <span class="hljs-keyword">int</span> r = c[x][tmp]; <span class="hljs-keyword">if</span>(!r) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(<span class="hljs-number">1</span>)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(c[r][<span class="hljs-number">1</span>-tmp]) r = c[r][<span class="hljs-number">1</span>-tmp];</span><br><span class="line">      <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">insert</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> fa,<span class="hljs-keyword">int</span> point)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!x)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> w = newnode(point);</span><br><span class="line">      <span class="hljs-keyword">if</span>(fa == <span class="hljs-number">0</span>) root = w;</span><br><span class="line">      c[fa][calx(point) &gt; calx(p[fa])] = w,f[w] = fa;</span><br><span class="line">      <span class="hljs-keyword">int</span> _x = nxt(w,<span class="hljs-number">0</span>),_y = nxt(w,<span class="hljs-number">1</span>);</span><br><span class="line">      v[w] = cals(p[_x],p[w]);</span><br><span class="line">      <span class="hljs-keyword">if</span>(_y) v[_y] = cals(p[w],p[_y]);</span><br><span class="line">      <span class="hljs-keyword">return</span> w;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">int</span> tmp = calx(point) &gt; calx(p[x]);</span><br><span class="line">    <span class="hljs-keyword">return</span> insert(c[x][tmp],x,point);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">erase</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> _x = nxt(x,<span class="hljs-number">0</span>),_y = nxt(x,<span class="hljs-number">1</span>);</span><br><span class="line">    <span class="hljs-keyword">if</span>(!_x &amp;&amp; !_y) root = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(!_x || !_y)&#123;</span><br><span class="line">      <span class="hljs-keyword">int</span> t = _x == <span class="hljs-number">0</span>?_y:_x,tmp = _x==<span class="hljs-number">0</span>?<span class="hljs-number">0</span>:<span class="hljs-number">1</span>;</span><br><span class="line">      splay(t),c[t][tmp] = <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">      splay(_x),splay(_y,_x);</span><br><span class="line">      c[_y][<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(_y) v[_y] = cals(p[_x],p[_y]);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> w = insert(root,<span class="hljs-number">0</span>,i);</span><br><span class="line">    <span class="hljs-keyword">int</span> x,y;</span><br><span class="line">    x = nxt(w,<span class="hljs-number">0</span>),y = nxt(w,<span class="hljs-number">1</span>);</span><br><span class="line">    <span class="hljs-keyword">if</span>(y &amp;&amp; cals(p[x],p[y]) &lt; v[y])&#123;</span><br><span class="line">      erase(w);<span class="hljs-keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    x = nxt(w,<span class="hljs-number">1</span>),y = nxt(x,<span class="hljs-number">1</span>);</span><br><span class="line">    <span class="hljs-keyword">while</span>(y!=<span class="hljs-number">0</span>)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(cals(i,p[x]) &gt; cals(i,p[y])) <span class="hljs-keyword">break</span>;</span><br><span class="line">      erase(x);</span><br><span class="line">      x = y;</span><br><span class="line">      y = nxt(x,<span class="hljs-number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    x = nxt(w,<span class="hljs-number">0</span>),y = nxt(x,<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">while</span>(y!=<span class="hljs-number">0</span>)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(cals(p[y],i) &gt; cals(p[x],i)) <span class="hljs-keyword">break</span>;</span><br><span class="line">      erase(x);</span><br><span class="line">      x = y;</span><br><span class="line">      y = nxt(x,<span class="hljs-number">0</span>);</span><br><span class="line">    &#125;    </span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> find(root,-a[i]/b[i]);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;s);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%lf %lf %lf"</span>,&amp;a[i],&amp;b[i],&amp;r[i]);</span><br><span class="line">    </span><br><span class="line">  dp[<span class="hljs-number">1</span>] = s;</span><br><span class="line">  Splay::update(<span class="hljs-number">1</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    dp[i] = dp[i<span class="hljs-number">-1</span>],last[i] = i;</span><br><span class="line">    <span class="hljs-keyword">int</span> j = Splay::query(i);</span><br><span class="line">    <span class="hljs-keyword">if</span>(calc(i,j) &gt; dp[i])</span><br><span class="line">      last[i] = j,dp[i] = calc(i,j);</span><br><span class="line">    Splay::update(i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.6lf\n"</span>,dp[n]);</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 
         </div>
         
@@ -268,29 +264,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180828-NOI2007-cash/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -323,7 +296,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -369,29 +342,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2598,9 +2567,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2748,7 +2716,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

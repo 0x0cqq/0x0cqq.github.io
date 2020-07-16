@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「SDOI2014」数表-数论 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -184,15 +177,17 @@
         <div class="content">
             <p>有一张 $n \times m$ 的数表，其第 $i$ 行第 $j$ 列（ $1 \le i \le n$， $1 \le j \le m$ ）的数值为能同时整除 $i$ 和 $j$ 的所有自然数之和。给定 $a$ ，计算数表中不大于 $a$ 的数之和。</p>
 <a id="more"></a>
+
 <p>$1 \le n,m \le 10^5$ ， $1 \le Q \le 2 \times 10^4$ </p>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3312" target="_blank" rel="noopener">Luogu P3312</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们把这个东西写成公式：<br>$$<br>\sum_{i=1}^n \sum_{j = 1}^m (\sum_{d|\gcd(i,j)} d)[\sum_{d|\gcd(i,j)} d \le a]<br>$$<br>不妨令 $n &lt; m$ ，推推式子…<br>$$<br>\sum_{d=1}^{n} (\sum_{k|d} k)[\sum_{k|d} k \le a] \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]<br>$$<br>我们令<br>$$<br>\sigma_1(n) = \sum_{d|n} d<br>$$<br>这是一个积性函数。</p>
 <hr>
-<p>那么就是<br>$$<br>\sum_{d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]<br>$$<br>我们知道：<br>$$<br>\sum_{i=1}^{n} \sum_{j=1}^{m} [\gcd(i,j) = 1]\\<br>= \sum_{i=1}^{n} \sum_{j=1}^{m} \sum_{k | \gcd(i,j)} \mu(k)\\<br>= \sum_{k = 1}^n \mu(k) \lfloor \frac{n}{k}\rfloor \lfloor \frac{m}{k}\rfloor<br>$$<br>那么代入就是：<br>$$<br>\sum_{d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum_{k = 1}^{\lfloor \frac{n}{d} \rfloor} \mu(k) \lfloor \frac{n}{dk}\rfloor \lfloor \frac{m}{dk}\rfloor<br>$$<br>我们设 $T = dk$ ，就有：<br>$$<br>\sum_{T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor \sum_{d | T} [\sigma_1(d) \le a]\sigma_1(d)  \mu(\frac{T}{d})<br>$$<br>令<br>$$<br>f(T) = \sum_{d|T} \sigma_1(d)[\sigma_1(d) \le a]\mu(\frac{T}{d})<br>$$<br>式子就变成：<br>$$<br>\sum_{T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor f(T)<br>$$<br>我们只要能获得 $f(T)$ 的前缀和，我们就能 $O(\sqrt n)$ 出解了。</p>
+<p>那么就是<br>$$<br>\sum_{d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]<br>$$<br>我们知道：<br>$$<br>\sum_{i=1}^{n} \sum_{j=1}^{m} [\gcd(i,j) = 1]\<br>= \sum_{i=1}^{n} \sum_{j=1}^{m} \sum_{k | \gcd(i,j)} \mu(k)\<br>= \sum_{k = 1}^n \mu(k) \lfloor \frac{n}{k}\rfloor \lfloor \frac{m}{k}\rfloor<br>$$<br>那么代入就是：<br>$$<br>\sum_{d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum_{k = 1}^{\lfloor \frac{n}{d} \rfloor} \mu(k) \lfloor \frac{n}{dk}\rfloor \lfloor \frac{m}{dk}\rfloor<br>$$<br>我们设 $T = dk$ ，就有：<br>$$<br>\sum_{T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor \sum_{d | T} [\sigma_1(d) \le a]\sigma_1(d)  \mu(\frac{T}{d})<br>$$<br>令<br>$$<br>f(T) = \sum_{d|T} \sigma_1(d)[\sigma_1(d) \le a]\mu(\frac{T}{d})<br>$$<br>式子就变成：<br>$$<br>\sum_{T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor f(T)<br>$$<br>我们只要能获得 $f(T)$ 的前缀和，我们就能 $O(\sqrt n)$ 出解了。</p>
 <p>那么我们怎么对不同的 $a$ 维护这个玩意呢？</p>
 <p>我们考虑把 $a$ 从小到大排序，然后我们只需要处理出改变的 $f$，用一个东西维护前缀和即可。</p>
 <p>我们考虑到加入一个 $\sigma_0(x) = a+1$ 的 $a$ 会对 $f$  产生什么影响。有且仅有 $x$ 的倍数会有更改，所以我们直接暴力枚举所有倍数，然后加入到f的前缀和的贡献当中就可以了。因为 $\frac{n}{1} + \frac{n}{2} + \cdots + \frac{n}{n} = O(n \log n) $ ，所以最后的复杂度就是 $O(n \log n + n \log^2 n + q \sqrt n \log n)$   </p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">110000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> N = <span class="hljs-number">110000</span>,T;</span><br><span class="line"><span class="hljs-keyword">int</span> sig[MAXN],prime[MAXN],mu[MAXN],vis[MAXN],ans[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sieve</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;</span><br><span class="line">  mu[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!vis[i])&#123;</span><br><span class="line">      prime[++prime[<span class="hljs-number">0</span>]] = i;</span><br><span class="line">      mu[i] = <span class="hljs-number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j &lt;= prime[<span class="hljs-number">0</span>] &amp;&amp; i * prime[j] &lt;= n;j++)&#123;</span><br><span class="line">      vis[i*prime[j]] = <span class="hljs-number">1</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(i % prime[j] == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        mu[i*prime[j]] = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">else</span> mu[i*prime[j]] = -mu[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = i;j&lt;=n;j+=i) </span><br><span class="line">    sig[j] += i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Node</span>&#123;</span></span><br><span class="line">  <span class="hljs-keyword">int</span> id,n,m,a;</span><br><span class="line">&#125;q[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp1</span><span class="hljs-params">(<span class="hljs-keyword">const</span> Node &amp;x,<span class="hljs-keyword">const</span> Node &amp;y)</span></span>&#123;<span class="hljs-keyword">return</span> x.a &lt; y.a;&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp2</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;a,<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> &amp;b)</span></span>&#123;<span class="hljs-keyword">return</span> sig[a] &lt; sig[b];&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> BIT&#123;<span class="hljs-comment">// 维护 f 的前缀和 </span></span><br><span class="line">  <span class="hljs-keyword">int</span> sumn[MAXN],n;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-keyword">int</span> _n)</span></span>&#123;n = _n;&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">lowbit</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<span class="hljs-keyword">return</span> x &amp; (-x);&#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">query</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(x &gt;= <span class="hljs-number">1</span>) ans += sumn[x],x -= lowbit(x);</span><br><span class="line">    <span class="hljs-keyword">return</span> ans;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">modify</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(x &lt;= n) sumn[x] += v,x += lowbit(x);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">update</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i * x &lt;= N;i++) BIT::modify(i*x,sig[x] * mu[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">calc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> m)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">if</span>(n &gt; m) swap(n,m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> l = <span class="hljs-number">1</span>,r;l&lt;=n;l = r+<span class="hljs-number">1</span>)&#123;</span><br><span class="line">    r = min(n/(n/l),m/(m/l));</span><br><span class="line">    ans = ans + (n/l) * (m/l) * (BIT::query(r) - BIT::query(l<span class="hljs-number">-1</span>));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  sieve(N),BIT::init(N);</span><br><span class="line"></span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;T);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=T;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> a,b,c;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d %d"</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">    q[i] = (Node)&#123;i,a,b,c&#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  sort(q+<span class="hljs-number">1</span>,q+T+<span class="hljs-number">1</span>,cmp1);</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> t[MAXN];</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=N;i++) t[i] = i;</span><br><span class="line">  sort(t+<span class="hljs-number">1</span>,t+N+<span class="hljs-number">1</span>,cmp2);</span><br><span class="line">  </span><br><span class="line">  <span class="hljs-keyword">int</span> now = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=T;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">while</span>(t[now] &lt;= N &amp;&amp; sig[t[now]] &lt;= q[i].a) update(t[now]),now++;</span><br><span class="line">    ans[q[i].id] = calc(q[i].n,q[i].m);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=T;i++) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,ans[i] &amp; <span class="hljs-number">2147483647</span>);</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -236,29 +231,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190406-SDOI2014-table/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -291,7 +263,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -337,29 +309,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2566,9 +2534,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2716,7 +2683,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

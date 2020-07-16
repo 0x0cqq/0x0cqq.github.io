@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CF543C」Remembering Strings-状态压缩dp - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \f">
+    <meta name="description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 ${a_{nm}}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \for">
 <meta name="keywords" content="动态规划,状压dp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「CF543C」Remembering Strings-状态压缩dp">
 <meta property="og:url" content="https://blog.chenqiqian.com/20190215-CF543C/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \f">
+<meta property="og:description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 ${a_{nm}}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \for">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-05T09:19:47.521Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「CF543C」Remembering Strings-状态压缩dp">
-<meta name="twitter:description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \f">
+<meta name="twitter:description" content="给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 ${a_{nm}}$。矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。 现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。 即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \for">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -182,12 +175,13 @@
             
         </h1>
         <div class="content">
-            <p>给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 $\{a_{nm}\}$。<br>矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。</p>
+            <p>给定 $n$ 个长度均为 $m$ 的字符串，再给出一个 $n$ 行 $m$ 列的矩阵 ${a_{nm}}$。<br>矩阵元素 $a_{ij}$ 代表把第 $i$ 个字符串第 j 个字符改成其它任意字符所需要的代价。</p>
 <p>现在要求对于任意一个字符串，总存在某一位置 $j$ 使得该位置上的字符在任意其他字符串该位置的字符不同。</p>
 <p>即为对于第 x 个字符串 ，有 $\exists j \in [1,m] , \forall i \in [1,n],s_{xj} \neq s_{ij}$ 。</p>
 <p>求把所有字符串修改成满足上述要求的字符串的最小代价是多少？</p>
 <p>数据范围： $1 \le n,m \le 20,1\le a_{ij} \le 10^6$ 。</p>
 <a id="more"></a>
+
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们发现，无论其他字符串是什么情况，我们总能找到在这一位没有用过的字符，这也是后面dp正确性的保障。</p>
 <p>我们状态压缩一波，令 $dp[S]$ 表示在 $S$ 中为 $1$ 的这些都已经好记了的情况下，想要好记还需要多少代价。</p>
 <p>我们注意到，它们的更改应当是不会干扰的（我都改到从没人用过的），所以我们每次都考虑最靠左的不是 $1$ 的位置，把它变成 $1$ 。我们依次考虑每列，我们有两种办法：</p>
@@ -198,6 +192,7 @@
 <p>分类讨论转移即可。</p>
 <p>时间复杂度 $O(m 2 ^ n)$ 。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> N = <span class="hljs-number">21</span>,MAXN = (<span class="hljs-number">1</span>&lt;&lt;N);</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> n,m,dp[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> a[N][N];<span class="hljs-keyword">char</span> s[N][N];</span><br><span class="line"><span class="hljs-keyword">int</span> ss[N][N],ms[N][N];<span class="hljs-comment">// ss 与 s[i][j] 同列相同的集合列表, ms ... 减去最大的 </span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) </span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s[i]+<span class="hljs-number">1</span>);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=m;j++)</span><br><span class="line">      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d"</span>,&amp;a[i][j]);</span><br><span class="line"></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">      ss[i][j] = (<span class="hljs-number">1</span>&lt;&lt;(i<span class="hljs-number">-1</span>));</span><br><span class="line">      ms[i][j] = a[i][j];<span class="hljs-keyword">int</span> sum = a[i][j];</span><br><span class="line">      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>;k&lt;=n;k++)<span class="hljs-keyword">if</span>(i != k)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(s[i][j] == s[k][j])&#123;</span><br><span class="line">          ss[i][j] |= (<span class="hljs-number">1</span>&lt;&lt;(k<span class="hljs-number">-1</span>));</span><br><span class="line">          ms[i][j] = max(a[k][j],ms[i][j]);</span><br><span class="line">          sum += a[k][j];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      ms[i][j] = sum - ms[i][j];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> S)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(dp[S] &lt; inf) <span class="hljs-keyword">return</span> dp[S];</span><br><span class="line">  <span class="hljs-keyword">if</span>(S == (<span class="hljs-number">1</span>&lt;&lt;n)<span class="hljs-number">-1</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = inf,low;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>((S &amp; (<span class="hljs-number">1</span>&lt;&lt;(i<span class="hljs-number">-1</span>))) == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">      low = i;<span class="hljs-keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j&lt;=m;j++)</span><br><span class="line">    ans = min(ans,min(</span><br><span class="line">        dfs(S|(<span class="hljs-number">1</span>&lt;&lt;(low<span class="hljs-number">-1</span>))) + a[low][j],</span><br><span class="line">        dfs(S|ss[low][j])   + ms[low][j]));</span><br><span class="line">  <span class="hljs-keyword">return</span> dp[S] = ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  <span class="hljs-built_in">memset</span>(dp,<span class="hljs-number">0x3f</span>,<span class="hljs-keyword">sizeof</span>(dp));</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,dfs(<span class="hljs-number">0</span>));  </span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -241,29 +236,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190215-CF543C/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -296,7 +268,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -342,29 +314,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2571,9 +2539,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2721,7 +2688,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

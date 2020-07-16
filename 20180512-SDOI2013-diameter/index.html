@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「SDOI2013」直径-树的直径 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -185,6 +178,7 @@
             <p>定义一棵树上最长的路径为树的直径。树的直径可能不唯一。</p>
 <p>给定的一棵$n$个结点的树，求其直径的长度，以及有多少条边满足所有的直径都经过该边。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P3304" target="_blank" rel="noopener">Luogu P3304</a></p>
 <p><a href="https://www.lydsy.com/JudgeOnline/problem.php?id=3124" target="_blank" rel="noopener">BZOJ 3124</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>很有趣的一道题</p>
@@ -217,6 +211,7 @@
 <p>时间复杂度大约是一个常数比较大的$O(n)$。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p>懒得写<code>bfs</code>，于是就比较的慢…</p>
 <figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io &#123;<span class="hljs-comment">//快速输入模板</span></span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">char</span> <span class="hljs-title">read</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> IN_LEN=<span class="hljs-number">1000000</span>;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> buf[IN_LEN],*s,*t;</span><br><span class="line">        <span class="hljs-keyword">return</span> s==t?(((t=(s=buf)+fread(buf,<span class="hljs-number">1</span>,IN_LEN,<span class="hljs-built_in">stdin</span>))==s)?<span class="hljs-number">-1</span>:*s++) : *s++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">read</span><span class="hljs-params">(<span class="hljs-keyword">int</span> &amp;x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> iosig;<span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> c;</span><br><span class="line">        <span class="hljs-keyword">for</span> (iosig=<span class="hljs-literal">false</span>,c=read();!<span class="hljs-built_in">isdigit</span>(c);c=read())&#123;</span><br><span class="line">            <span class="hljs-keyword">if</span>(c==<span class="hljs-string">'-'</span>)iosig=<span class="hljs-literal">true</span>;<span class="hljs-keyword">if</span>(c==<span class="hljs-number">-1</span>)<span class="hljs-keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="hljs-keyword">for</span>(x=<span class="hljs-number">0</span>;<span class="hljs-built_in">isdigit</span>(c);c=read())</span><br><span class="line">            x=((x+(x&lt;&lt;<span class="hljs-number">2</span>))&lt;&lt;<span class="hljs-number">1</span>)+(c^<span class="hljs-string">'0'</span>);</span><br><span class="line">        <span class="hljs-keyword">if</span>(iosig)x=-x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">300000</span>;</span><br><span class="line"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">Edge</span>&#123;</span></span><br><span class="line">    <span class="hljs-keyword">int</span> from,to,len;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="hljs-keyword">int</span> n,u=<span class="hljs-number">0</span>,v=<span class="hljs-number">0</span>,fa[MAXN];</span><br><span class="line">ll dis[MAXN],ans1,ans2;</span><br><span class="line"><span class="hljs-built_in">vector</span>&lt;Edge&gt; edge[MAXN];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">addedge</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b,<span class="hljs-keyword">int</span> c)</span></span>&#123;</span><br><span class="line">    edge[a].push_back((Edge)&#123;a,b,c&#125;);</span><br><span class="line">    edge[b].push_back((Edge)&#123;b,a,c&#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    read(n);</span><br><span class="line">    <span class="hljs-keyword">int</span> a,b,c;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)&#123;</span><br><span class="line">        read(a),read(b),read(c);</span><br><span class="line">        addedge(a,b,c);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> f)</span></span>&#123;<span class="hljs-comment">//寻找从nown节点出发的最长路</span></span><br><span class="line">    fa[nown] = f;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;edge[nown].size();i++)&#123;</span><br><span class="line">        Edge e = edge[nown][i];</span><br><span class="line">        <span class="hljs-keyword">if</span>(e.to == f) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        dis[e.to] = dis[nown] + e.len;</span><br><span class="line">        dfs(e.to,nown);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">find</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-built_in">memset</span>(dis,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(dis));</span><br><span class="line">    dfs(<span class="hljs-number">1</span>,<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)<span class="hljs-comment">//第一次搜到的节点记作直径的一个端点u</span></span><br><span class="line">        <span class="hljs-keyword">if</span>(dis[i] &gt; dis[u])</span><br><span class="line">            u = i;</span><br><span class="line">    <span class="hljs-built_in">memset</span>(dis,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span>(dis));</span><br><span class="line">    dfs(u,<span class="hljs-number">0</span>);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)<span class="hljs-comment">//第二次搜到的节点记作直径的另一个端点v</span></span><br><span class="line">        <span class="hljs-keyword">if</span>(dis[i] &gt; dis[v])</span><br><span class="line">            v = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">dfs2</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,ll len)</span></span>&#123;<span class="hljs-comment">//dfs寻找是否从某个节点存在长度为len的路径</span></span><br><span class="line">    <span class="hljs-keyword">if</span>(len == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i &lt; edge[nown].size();i++)&#123;</span><br><span class="line">        Edge e = edge[nown][i];</span><br><span class="line">        <span class="hljs-keyword">if</span>(e.to == fa[nown]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">        <span class="hljs-keyword">if</span>(dfs2(e.to,len - e.len))</span><br><span class="line">            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> nex[MAXN];</span><br><span class="line">    <span class="hljs-keyword">int</span> t = v,tmp = <span class="hljs-number">0</span>;<span class="hljs-comment">//tmp为直径长度</span></span><br><span class="line">    <span class="hljs-keyword">while</span>(t!=u)&#123;<span class="hljs-comment">//记录从u到v的路径</span></span><br><span class="line">        nex[fa[t]] = t;</span><br><span class="line">        t = fa[t];</span><br><span class="line">        tmp++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-comment">//l代表到右节点最近的满足上文性质的点，r代表到左节点最近的满足上文性质的点</span></span><br><span class="line">    <span class="hljs-keyword">int</span> l = <span class="hljs-number">0</span>,r = tmp,nowt = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-comment">//循环中dis[t] = d(u,t)</span></span><br><span class="line">    <span class="hljs-keyword">for</span>(t = u;t!=v;t = nex[t])&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;edge[t].size();i++)&#123;</span><br><span class="line">            Edge e = edge[t][i];</span><br><span class="line">            <span class="hljs-keyword">if</span>(e.to == fa[t] || e.to == nex[t]) <span class="hljs-keyword">continue</span>;</span><br><span class="line">            <span class="hljs-keyword">if</span>(dfs2(e.to,dis[t] - e.len)) </span><br><span class="line">                l = max(nowt,l);<span class="hljs-comment">//寻找离u最远的t,满足d(u',t) = d(u,t),得到即为x,名字叫做l</span></span><br><span class="line">            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(dfs2(e.to,(dis[v] - dis[t])- e.len)) </span><br><span class="line">                r = min(r,nowt);<span class="hljs-comment">//寻找离v最远的t,满足d(t,v') = d(t,v),得到即为y,名字叫做r</span></span><br><span class="line">        &#125;</span><br><span class="line">        nowt++;</span><br><span class="line">    &#125;</span><br><span class="line">    ans1 = dis[v];<span class="hljs-comment">//直径长度</span></span><br><span class="line">    ans2 = r - l;<span class="hljs-comment">//在这里事实上是求了r和l的位置并求出ans2</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    find();</span><br><span class="line">    solve();</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n%lld\n"</span>,ans1,ans2);</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -260,29 +255,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180512-SDOI2013-diameter/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -315,7 +287,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -361,29 +333,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2590,9 +2558,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2740,7 +2707,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

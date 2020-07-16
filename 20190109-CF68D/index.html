@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CF68D」Half-decay tree-期望瞎搞题 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -190,6 +183,7 @@
 <li><code>decay</code> 操作。我们在这个二叉树里面以等概率选择一个叶子节点，将这个叶子节点到根的路径上所有的边都删去。在删除后，树会形成若干个联通块，我们定义某个联通块的的权值为这个联通块内所有节点的权值之和。我们定义删除后的树的权值为形成的所有联通块的权值的最大值。请你求出这个值的期望。<strong>每次删除后会恢复所有删除的边。</strong></li>
 </ol>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://codeforces.com/problemset/problem/68/D" target="_blank" rel="noopener">Codeforces</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>考虑我们在树上随机走出一个路径。我们发现，我们每个地方相当于有两个决策：往左走，往右走，两个的概率是相同的。</p>
 <p>我们如果设当前节点为为 $x$，那么往左走的话就会产生一个完全不会更改的联通块（$sum[rs[x]] +v[x]$）。如果存在 $sum[rs[x]] + v[x]<br>\ge sum[ls[x]]$ 这个时候我们发现，接下来我们怎么走，产生的联通块都不会比已经产生的这个 $sum[rs[x]] + v[x]$ 大。所以我们就不用走 $sum$ 较小的那边了，因为它们的贡献已经可以计算了。</p>
@@ -197,6 +191,7 @@
 <p>加的话直接暴力在树上维护一个子树和即可。</p>
 <p>时间复杂度：$O(q \times h)$</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">110000</span>,LOGN = <span class="hljs-number">31</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> Tree&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> sumn[MAXN*LOGN],ls[MAXN*LOGN],rs[MAXN*LOGN],cnt = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">upd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> nown,<span class="hljs-keyword">int</span> v)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> tmp[<span class="hljs-number">40</span>];<span class="hljs-keyword">int</span> ecnt = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = nown;i;i&gt;&gt;=<span class="hljs-number">1</span>) tmp[++ecnt] = i&amp;<span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">int</span> now = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = ecnt<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">0</span>;--i)&#123;</span><br><span class="line">      sumn[now] += v;</span><br><span class="line">      <span class="hljs-keyword">if</span>(tmp[i] == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(!ls[now]) ls[now] = ++cnt;</span><br><span class="line">        now = ls[now];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(!rs[now]) rs[now] = ++cnt;</span><br><span class="line">        now = rs[now];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-function"><span class="hljs-keyword">double</span> <span class="hljs-title">decay</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> now = <span class="hljs-number">1</span>,nowmax = <span class="hljs-number">-1e9</span>;</span><br><span class="line">    <span class="hljs-keyword">double</span> ans = <span class="hljs-number">0</span>, p = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">while</span>(now != <span class="hljs-number">0</span>)&#123;<span class="hljs-comment">// now 非空</span></span><br><span class="line">      <span class="hljs-keyword">int</span> lson = sumn[ls[now]],rson = sumn[rs[now]],val = sumn[now] - lson - rson;</span><br><span class="line">      p *= <span class="hljs-number">0.5</span>;</span><br><span class="line">      ans += p * max(nowmax,max(lson,rson)+val);</span><br><span class="line">      <span class="hljs-keyword">if</span>(lson &gt; rson)&#123;</span><br><span class="line">        nowmax = max(nowmax,rson+val);</span><br><span class="line">        now = ls[now];</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="hljs-keyword">else</span>&#123;</span><br><span class="line">        nowmax = max(nowmax,lson+val);</span><br><span class="line">        now = rs[now];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    ans += p * nowmax;</span><br><span class="line">    <span class="hljs-keyword">return</span> ans;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> h,q;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;h,&amp;q);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=q;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">char</span> s[<span class="hljs-number">12</span>];</span><br><span class="line">    <span class="hljs-keyword">int</span> a,b;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%s"</span>,s);</span><br><span class="line">    <span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>] == <span class="hljs-string">'a'</span>)&#123;</span><br><span class="line">      <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">      Tree::upd(a,b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(s[<span class="hljs-number">0</span>] == <span class="hljs-string">'d'</span>)&#123;</span><br><span class="line">      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%.8lf\n"</span>,Tree::decay());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  init();</span><br><span class="line">  solve();</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -240,29 +235,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190109-CF68D/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -295,7 +267,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -341,29 +313,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2570,9 +2538,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2720,7 +2687,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

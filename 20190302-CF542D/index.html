@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「CF542D」Superhero&#39;s Job - dp + 数论 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -185,6 +178,7 @@
             <p>我们定义<br>$$<br>J(x) = \sum_{d | x} [\gcd(x,\frac{x}{d}) = 1] d<br>$$</p>
 <p>请你求出 $J(x) = A$ 有多少个 $x$ 满足条件。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="http://codeforces.com/problemset/problem/542/D" target="_blank" rel="noopener">Codeforces</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们可以发现，这个 $J(x)$ 是一个积性函数。</p>
 <p>所以如果 $x = {p_1}^{k_1}{p_2}^{k_2}\cdots{p_m}^{k_m}$ ，那么 $J(x) = J({p_1}^{k_1})J({p_2}^{k_2})\cdots J({p_m}^{k_m}) = ({p_1}^{k_1}+1)({p_2}^{k_2}+1)({p_m}^{k_m}+1)$</p>
@@ -198,6 +192,7 @@
 <p>转移的话，每次加入一个质数，对于所有的 $j$，我们都乘上这个质数若干次，然后更新答案。什么？你说复杂度？不会证不会证，反正能过就行（</p>
 <p>最后 $dp[k][n]$ 就是答案。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">10000</span>;</span><br><span class="line"></span><br><span class="line">ll A;</span><br><span class="line">ll p[MAXN],k,d[MAXN],n;</span><br><span class="line"><span class="hljs-built_in">map</span>&lt;ll,<span class="hljs-keyword">int</span>&gt; div_pos;<span class="hljs-built_in">set</span>&lt;ll&gt; vis;</span><br><span class="line">ll dp[MAXN];<span class="hljs-comment">// 滚动数组</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-built_in">cin</span> &gt;&gt; A;</span><br><span class="line">  <span class="hljs-keyword">for</span>(ll i = <span class="hljs-number">1</span>;i*i&lt;=A;i++) <span class="hljs-keyword">if</span>(A % i == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">    d[++n] = i;</span><br><span class="line">    <span class="hljs-keyword">if</span>(i * i != A) d[++n] = A/i;</span><br><span class="line">  &#125;</span><br><span class="line">  sort(d + <span class="hljs-number">1</span>,d + n + <span class="hljs-number">1</span>);</span><br><span class="line">  <span class="hljs-comment">// for(int i = 1;i&lt;=n;i++)&#123;</span></span><br><span class="line">  <span class="hljs-comment">//   printf("%d:%lld\n",i,d[i]);</span></span><br><span class="line">  <span class="hljs-comment">// &#125;</span></span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> t = <span class="hljs-number">1</span>;t&lt;=n;t++)&#123;</span><br><span class="line">    ll x = d[t]; div_pos[x] = t;x -= <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">bool</span> flag = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(ll i = <span class="hljs-number">2</span>;i * i &lt;= x;i++)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(x % i == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        flag = <span class="hljs-number">1</span>;</span><br><span class="line">        <span class="hljs-keyword">while</span>(x % i == <span class="hljs-number">0</span>) x /= i;</span><br><span class="line">        <span class="hljs-keyword">if</span>(x == <span class="hljs-number">1</span> &amp;&amp; !vis.count(i)) p[++k] = i,vis.insert(i);</span><br><span class="line">        <span class="hljs-keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">if</span>(flag == <span class="hljs-number">0</span> &amp;&amp; x &gt; <span class="hljs-number">1</span> &amp;&amp; !vis.count(x)) p[++k] = x,vis.insert(x);</span><br><span class="line">  &#125;</span><br><span class="line">  sort(p+<span class="hljs-number">1</span>,p+k+<span class="hljs-number">1</span>);</span><br><span class="line">  dp[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = n;j&gt;=<span class="hljs-number">1</span>;j--)&#123;</span><br><span class="line">      <span class="hljs-keyword">if</span>(dp[j] == <span class="hljs-number">0</span>) <span class="hljs-keyword">continue</span>;</span><br><span class="line">      <span class="hljs-keyword">for</span>(ll w = p[i];log2(d[j]) + log2(w+<span class="hljs-number">1</span>) &lt;= log2(<span class="hljs-number">1.5</span>*A);w *= p[i])&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(div_pos.count(d[j]*(w+<span class="hljs-number">1</span>)))&#123;</span><br><span class="line">          dp[div_pos[d[j]*(w+<span class="hljs-number">1</span>)]] += dp[j];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%lld\n"</span>,dp[n]);</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -241,29 +236,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190302-CF542D/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -296,7 +268,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -342,29 +314,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2571,9 +2539,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2721,7 +2688,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

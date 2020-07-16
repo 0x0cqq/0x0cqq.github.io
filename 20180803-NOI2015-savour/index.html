@@ -1,24 +1,24 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「NOI2015」品酒大会-后缀数组 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
-    <meta name="description" content="简单版题意： 给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 $\{a_n\}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &amp;lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）">
+    <meta name="description" content="简单版题意： 给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 ${a_n}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &amp;lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）">
 <meta name="keywords" content="字符串,并查集,后缀数组">
 <meta property="og:type" content="article">
 <meta property="og:title" content="「NOI2015」品酒大会-后缀数组">
 <meta property="og:url" content="https://blog.chenqiqian.com/20180803-NOI2015-savour/index.html">
 <meta property="og:site_name" content="Chen&#39;s Blog">
-<meta property="og:description" content="简单版题意： 给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 $\{a_n\}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &amp;lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）">
+<meta property="og:description" content="简单版题意： 给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 ${a_n}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &amp;lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-06T12:11:15.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="「NOI2015」品酒大会-后缀数组">
-<meta name="twitter:description" content="简单版题意： 给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 $\{a_n\}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &amp;lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）">
+<meta name="twitter:description" content="简单版题意： 给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 ${a_n}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &amp;lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -183,8 +176,9 @@
         </h1>
         <div class="content">
             <p>简单版题意：</p>
-<p>给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 $\{a_n\}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）</p>
+<p>给定一个长度为 $n$ 的字符串，和一个长度为 $n$ 的数列 ${a_n}$ ，求对于 $r$ 从 $0$ 到 $n-1$ ，所有满足 $1 \leq p &lt; q \leq n$ 且 $lcp(p,q) \geq r$ 的数对个数以及满足上述条件的数对中 $a_p \times a_q$ 的最大值。（ $a_i$ 可以为负数）</p>
 <a id="more"></a>
+
 <hr>
 <p>完整版题意：</p>
 <p>一年一度的“幻影阁夏日品酒大会”隆重开幕了。大会包含品尝和趣味挑战 两个环节，分别向优胜者颁发“首席品酒家”和“首席猎手”两个奖项，吸引了众多品酒师参加。</p>
@@ -199,6 +193,7 @@
 <p>因为有负数，所以为了获得最大值，这里我们要同时维护最大、最小值。</p>
 <p>这道题细节挺多的，有一个地方不能合并，要特殊处理$0$相似，令人窒息。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> inf 0x3f3f3f3f</span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">310000</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> fast_io&#123;</span><br><span class="line">    <span class="hljs-comment">//...</span></span><br><span class="line">&#125;<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> fast_io;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> SA&#123;</span><br><span class="line"><span class="hljs-keyword">int</span> s[MAXN],sa[MAXN],ht[MAXN],rk[MAXN],x[MAXN],y[MAXN],cnt[MAXN];</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">get_sa</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> m)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;m;i++) cnt[i] = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) cnt[s[i]]++;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;m;i++) cnt[i] += cnt[i<span class="hljs-number">-1</span>];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = n<span class="hljs-number">-1</span>;~i;--i) sa[--cnt[s[i]]] = i;</span><br><span class="line">    m = rk[sa[<span class="hljs-number">0</span>]] = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;n;i++) rk[sa[i]] = s[sa[i]] != s[sa[i<span class="hljs-number">-1</span>]]?++m:m;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;;j&lt;&lt;=<span class="hljs-number">1</span>)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(++m == n) <span class="hljs-keyword">break</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;j;i++) y[i] = n-j+i;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>,k=j;i&lt;n;i++) <span class="hljs-keyword">if</span>(sa[i] &gt;= j) y[k++] = sa[i]-j;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) x[i] = rk[y[i]];</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;m;i++) cnt[i] = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) cnt[x[i]]++;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;m;i++) cnt[i] += cnt[i<span class="hljs-number">-1</span>];</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = n<span class="hljs-number">-1</span>;~i;--i) sa[--cnt[x[i]]] = y[i],y[i] = rk[i];</span><br><span class="line">        m = rk[sa[<span class="hljs-number">0</span>]] = <span class="hljs-number">0</span>;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;n;i++) rk[sa[i]] =(y[sa[i]]!=y[sa[i<span class="hljs-number">-1</span>]]||y[sa[i]+j]!=y[sa[i<span class="hljs-number">-1</span>]+j])?++m:m;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T&gt;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">mapCharToInt</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">const</span> T *str)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> m = *max_element(str,str+n);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;=m;i++) rk[i] = <span class="hljs-number">0</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) rk[(<span class="hljs-keyword">int</span>)(str[i])] = <span class="hljs-number">1</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=m;i++) rk[i] += rk[i<span class="hljs-number">-1</span>];</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++) s[i] = rk[(<span class="hljs-keyword">int</span>)(str[i])]<span class="hljs-number">-1</span>;</span><br><span class="line">    <span class="hljs-keyword">return</span> rk[m]; </span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getheight</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>,h = ht[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> j = sa[rk[i]<span class="hljs-number">-1</span>];</span><br><span class="line">        <span class="hljs-keyword">while</span>(i+h&lt;n&amp;&amp;j+h&lt;n&amp;&amp;s[i+h]==s[j+h]) h++;</span><br><span class="line">        <span class="hljs-keyword">if</span>(ht[rk[i]] = h) h--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> *str)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> m = mapCharToInt(++n,str);</span><br><span class="line">    get_sa(n,m);</span><br><span class="line">    getheight(n);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">namespace</span> BCJ&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> f[MAXN],siz[MAXN];</span><br><span class="line">    ll maxn[MAXN],minn[MAXN];</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,ll * val)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">            f[i] = i,siz[i] = <span class="hljs-number">1</span>;</span><br><span class="line">            maxn[i] = minn[i] = val[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> f[x] == x?x:f[x] = find(f[x]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">same</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">return</span> find(x) == find(y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-function">ll <span class="hljs-title">unite</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x,<span class="hljs-keyword">int</span> y,ll &amp;ans)</span></span>&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> fx = find(x),fy = find(y);</span><br><span class="line">        <span class="hljs-keyword">if</span>(fx == fy) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">        ans = max(ans,maxn[fx]*maxn[fy]);</span><br><span class="line">        ans = max(ans,minn[fx]*minn[fy]);</span><br><span class="line">        f[fy] = fx;</span><br><span class="line">        minn[fx] = min(minn[fx],minn[fy]);</span><br><span class="line">        maxn[fx] = max(maxn[fx],maxn[fy]);</span><br><span class="line">        ll res = <span class="hljs-number">1L</span>L*siz[fx] * siz[fy];</span><br><span class="line">        siz[fx] += siz[fy];</span><br><span class="line">        <span class="hljs-keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">return</span> SA::ht[a] &gt; SA::ht[b];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">char</span> str[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> n,m;</span><br><span class="line">ll a[MAXN],ans[MAXN],cnt[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> ll min1 = inf,min2 = inf,max1 = -inf,max2 = -inf;</span><br><span class="line">    read(n);</span><br><span class="line">    read(str);</span><br><span class="line">    str[n] = <span class="hljs-string">'a'</span><span class="hljs-number">-1</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        read(a[i]);</span><br><span class="line">        <span class="hljs-keyword">if</span>(a[i] &lt; min1) min1=a[i];</span><br><span class="line">        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a[i] &lt; min2) min2=a[i];</span><br><span class="line">        <span class="hljs-keyword">if</span>(a[i] &gt; max1) max1=a[i];</span><br><span class="line">        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(a[i] &gt; max2) max2=a[i];</span><br><span class="line">        ans[i] = <span class="hljs-number">-1L</span>L*inf*inf;      </span><br><span class="line">    &#125;</span><br><span class="line">    ans[<span class="hljs-number">0</span>] = max(max1*max2,min1*min2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">solve</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> h[MAXN];</span><br><span class="line">    SA::build(n,str);</span><br><span class="line">    BCJ::init(n,a);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) h[i] = i;</span><br><span class="line">    sort(h+<span class="hljs-number">1</span>,h+n+<span class="hljs-number">1</span>,cmp);</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">int</span> x = h[i],ht = SA::ht[x];</span><br><span class="line">        <span class="hljs-keyword">if</span>(x!=<span class="hljs-number">1</span>) cnt[ht] += BCJ::unite(SA::sa[x]+<span class="hljs-number">1</span>,SA::sa[x<span class="hljs-number">-1</span>]+<span class="hljs-number">1</span>,ans[ht]);</span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = n<span class="hljs-number">-2</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;</span><br><span class="line">        cnt[i] += cnt[i+<span class="hljs-number">1</span>];</span><br><span class="line">        ans[i] = max(ans[i],ans[i+<span class="hljs-number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    cnt[<span class="hljs-number">0</span>] = <span class="hljs-number">1L</span>L*n*(n<span class="hljs-number">-1</span>)/<span class="hljs-number">2</span>;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="hljs-keyword">if</span>(!cnt[i]) ans[i] = <span class="hljs-number">0</span>;</span><br><span class="line">        print(cnt[i]),print(<span class="hljs-string">' '</span>),print(ans[i]),print(<span class="hljs-string">'\n'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">signed</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">    init();</span><br><span class="line">    solve();</span><br><span class="line">    flush();</span><br><span class="line">    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -242,29 +237,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180803-NOI2015-savour/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -297,7 +269,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -343,29 +315,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2572,9 +2540,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2722,7 +2689,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

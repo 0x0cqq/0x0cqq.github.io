@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「NOI2015」寿司晚宴-状压dp - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -187,6 +180,7 @@
 <p>现在小 $G$ 和小 $W$ 希望每人选一些寿司种类来品尝，他们规定一种品尝方案为不和谐的当且仅当：小 $G$ 品尝的寿司种类中存在一种美味度为 $x$ 的寿司，小 $W$ 品尝的寿司中存在一种美味度为 $y$ 的寿司，而 $x$ 与 $y$ 不互质。</p>
 <p>现在小 $G$ 和小 $W$ 希望统计一共有多少种和谐的品尝寿司的方案（对给定的正整数 $p$ 取模）。注意一个人可以不吃任何寿司。</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P2150" target="_blank" rel="noopener">Luogu P2150</a></p>
 <h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>难死了qaq</p>
 <p>对于没有什么特殊背景的计数题，很大可能上都是 $dp$ ，所以我们来如何 $dp$ 。</p>
@@ -208,14 +202,15 @@
 </ul>
 <p>那么我们考虑这样分类。</p>
 <p>那么我们分别对每一个大质因数进行讨论（没有大质因数的时候，就是每一个数就相当于大质因数的改变，因为一个数不能被两个人同时选）：</p>
-<p>设 $g[k][0/1][S_i][S_j]$ 为当前已经考虑完该组的前 $k-1$ 个数，由小 $\text{G}$ 或者小 $\text{W}$ 取具有这个大质数的数，目前的小 $\text{G}$ 的小质数集合是 $S_i$ ，小 $\text{W}$ 的小质数集合是 $S_j$ ，第 $k$ 个数的小质数集合为 $N_k$，那么我们有如下的转移：<br>$$<br>g ([k+1])[0][S_i \cap N_k][S_j]  = g([k])[0][S_i \cap N_k][S_j] + g([k])[0][S_i][S_j]\\<br>g ([k+1])[1][S_i][S_j \cap N_k]  = g([k])[1][S_i][S_j \cap N_k] + g([k])[1][S_i][S_j]<br>$$<br>也就是对于两种情况都有两种决策：取或者不取这个数。</p>
+<p>设 $g[k][0/1][S_i][S_j]$ 为当前已经考虑完该组的前 $k-1$ 个数，由小 $\text{G}$ 或者小 $\text{W}$ 取具有这个大质数的数，目前的小 $\text{G}$ 的小质数集合是 $S_i$ ，小 $\text{W}$ 的小质数集合是 $S_j$ ，第 $k$ 个数的小质数集合为 $N_k$，那么我们有如下的转移：<br>$$<br>g ([k+1])[0][S_i \cap N_k][S_j]  = g([k])[0][S_i \cap N_k][S_j] + g([k])[0][S_i][S_j]\<br>g ([k+1])[1][S_i][S_j \cap N_k]  = g([k])[1][S_i][S_j \cap N_k] + g([k])[1][S_i][S_j]<br>$$<br>也就是对于两种情况都有两种决策：取或者不取这个数。</p>
 <p>这里需要用滚动数组，所以第一维都打上了括号，这里需要逆序转移。</p>
 <hr>
 <p>为了从分组计算转换到最后的答案，我们需要再设计一组状态，就是表达在这若干组之间的一个关系。</p>
-<p>比如我们设 $f[k][S_i][S_j]$ 表示考虑完前 $k-1$ 组，由小 $\text{G}$ 或者小 $\text{W}$ 取具有这个大质数的数，目前的小 $\text{G}$ 的小质数集合是 $S_i$ ，小 $\text{W}$ 的小质数集合是 $S_j$ ，第 $k$ 组的数的数目是 $num_{k}$ 那么我们有如下的转移：<br>$$<br>f([k])[S_i][S_j] = g([num_k])[0][S_i][S_j] + g([num_k])[1][S_i][S_j] - f([k-1])[S_i][S_j]<br>$$<br>而且这个时候<strong>$g([0])[0/1][S_i][S-j] = f([k-1])[S_i][S_j]$</strong>  ，这个意思就是：让小 $\text{G}$  选这一组，或者让小 $\text{W}$ 选这一组。但是它们都有可能很谦虚一个都不选，那么我们最后要剪掉一个两个都不选的数目。</p>
+<p>比如我们设 $f[k][S_i][S_j]$ 表示考虑完前 $k-1$ 组，由小 $\text{G}$ 或者小 $\text{W}$ 取具有这个大质数的数，目前的小 $\text{G}$ 的小质数集合是 $S_i$ ，小 $\text{W}$ 的小质数集合是 $S_j$ ，第 $k$ 组的数的数目是 $num_{k}$ 那么我们有如下的转移：<br>$$<br>f([k])[S_i][S_j] = g([num_k])[0][S_i][S_j] + g([num_k])[1][S_i][S_j] - f([k-1])[S_i][S_j]<br>$$<br>而且这个时候**$g([0])[0/1][S_i][S-j] = f([k-1])[S_i][S_j]$**  ，这个意思就是：让小 $\text{G}$  选这一组，或者让小 $\text{W}$ 选这一组。但是它们都有可能很谦虚一个都不选，那么我们最后要剪掉一个两个都不选的数目。</p>
 <p>$f$ 数组也可以用滚动数组优化。</p>
 <p>最后空间复杂度是 $O(n \times 2^{16})$ ，空间复杂度 $O(2\times 2^{16})$ 。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight plain hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define pii pair&lt;int,int&gt;</span><br><span class="line">#define ll long long</span><br><span class="line"></span><br><span class="line">const int MAXN = 256;</span><br><span class="line"></span><br><span class="line">int prime[8] = &#123;2,3,5,7,11,13,17,19&#125;;</span><br><span class="line"></span><br><span class="line">ll n,p;</span><br><span class="line">ll f[MAXN][MAXN],g[2][MAXN][MAXN];</span><br><span class="line">pii s[MAXN*2];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void init()&#123;</span><br><span class="line">    scanf(&quot;%lld %lld&quot;,&amp;n,&amp;p);</span><br><span class="line">    for(int i = 2;i&lt;=n;i++)&#123;</span><br><span class="line">        int t = i;</span><br><span class="line">        for(int j = 0;j&lt;8;j++)&#123;</span><br><span class="line">        while(t % prime[j] == 0)&#123;</span><br><span class="line">                s[i].second |= (1&lt;&lt;j);</span><br><span class="line">                t/=prime[j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        s[i].first = t;</span><br><span class="line">    &#125;</span><br><span class="line">    sort(s+2,s+n+1);</span><br><span class="line">//	for(int i = 2;i&lt;=n;i++)&#123;</span><br><span class="line">//		printf(&quot;%d:%d %d\n&quot;,i,s[i].first,s[i].second);</span><br><span class="line">//	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void calc()&#123;</span><br><span class="line">    f[0][0] = 1;</span><br><span class="line">    for(int i = 2;i&lt;=n;i++)&#123;</span><br><span class="line">        if(i==2||s[i].first==1||s[i].first != s[i-1].first)&#123;</span><br><span class="line">            memcpy(g[0],f,sizeof(f)),memcpy(g[1],f,sizeof(f));</span><br><span class="line">        &#125;</span><br><span class="line">        for(int j = MAXN-1;~j;--j)&#123;</span><br><span class="line">            for(int k = MAXN-1;~k;--k)&#123;</span><br><span class="line">                if((k &amp; s[i].second) == 0)</span><br><span class="line">                    (g[0][j|s[i].second][k] += g[0][j][k])%=p;</span><br><span class="line">                if((j &amp; s[i].second) == 0)</span><br><span class="line">                    (g[1][j][k|s[i].second] += g[1][j][k])%=p;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(i==n || s[i].first==1||s[i].first != s[i+1].first)&#123;</span><br><span class="line">            for(int j = 0;j&lt;MAXN;j++)&#123;</span><br><span class="line">                for(int k = 0;k&lt;MAXN;k++)&#123;</span><br><span class="line">                    if((j&amp;k)==0)</span><br><span class="line">                        f[j][k] = (g[0][j][k] + g[1][j][k] - f[j][k])%p;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void output()&#123;</span><br><span class="line">    ll ans = 0;</span><br><span class="line">    for(int i = 0;i&lt;MAXN;i++)&#123;</span><br><span class="line">        for(int j = 0;j&lt;MAXN;j++)&#123;</span><br><span class="line">            if((i&amp;j)==0) (ans += f[i][j])%=p;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;%lld\n&quot;,(ans%p+p)%p);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()&#123;</span><br><span class="line">    init();</span><br><span class="line">    calc();</span><br><span class="line">    output();</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -259,29 +254,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20180828-NOI2015-dinner/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -314,7 +286,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -360,29 +332,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2589,9 +2557,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2739,7 +2706,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">

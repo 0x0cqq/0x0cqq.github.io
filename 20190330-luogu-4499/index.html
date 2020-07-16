@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html  lang="zh">
-<head>
+<html lang="zh">
+<head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
 <title>「Luogu4449」于神之怒加强版-数学 - Chen&#39;s Blog</title>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 
 
@@ -87,7 +87,7 @@
     
     
     
-        <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
     
@@ -109,26 +109,19 @@
             
             <div class="navbar-start">
                 
-                <a class="navbar-item"
-                href="/">主页</a>
+                <a class="navbar-item" href="/">主页</a>
                 
-                <a class="navbar-item"
-                href="/archives">归档</a>
+                <a class="navbar-item" href="/archives">归档</a>
                 
-                <a class="navbar-item"
-                href="/categories">分类</a>
+                <a class="navbar-item" href="/categories">分类</a>
                 
-                <a class="navbar-item"
-                href="/tags">标签</a>
+                <a class="navbar-item" href="/tags">标签</a>
                 
-                <a class="navbar-item"
-                href="/links">友链</a>
+                <a class="navbar-item" href="/links">友链</a>
                 
-                <a class="navbar-item"
-                href="/board">留言板</a>
+                <a class="navbar-item" href="/board">留言板</a>
                 
-                <a class="navbar-item"
-                href="/about">关于</a>
+                <a class="navbar-item" href="/about">关于</a>
                 
             </div>
             
@@ -184,13 +177,15 @@
         <div class="content">
             <p>给定 $n,m,k$ ，计算<br>$$<br>\sum_{i=1}^n\sum_{j=1}^m {\gcd(i,j)}^k<br>$$<br>对 $1000000007$ 取模的结果</p>
 <a id="more"></a>
+
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p><a href="https://www.luogu.org/problemnew/show/P4449" target="_blank" rel="noopener">Luogu P4449</a></p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们来来来推推推式子吧qwq<br>$$<br>\sum_{i=1}^n\sum_{j=1}^m {\gcd(i,j)}^k<br>$$<br>不妨令 $n&lt;m$ ，枚举 $\gcd(i,j) = d$ ：<br>$$<br>S = \sum_{d=1}^{n} d^k \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{d}\rfloor} [(i,j)=1]\\<br>= \sum_{d=1}^{n} d^k \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{d}\rfloor} \sum_{t | \gcd(i,j)} \mu(t)\\<br>= \sum_{d=1}^{n} d^k \sum_{t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t)\sum_{i=1}^{\lfloor\frac{n}{dt}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{dt}\rfloor} 1\\<br>= \sum_{d=1}^{n} d^k \sum_{t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t) \lfloor\frac{n}{dt}\rfloor \lfloor\frac{m}{dt}\rfloor\\<br>$$<br>令 $dt = T$ ，我们有：<br>$$<br>S = \sum_{T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor\sum_{d|T}d^k\mu(\frac{T}{d})<br>$$<br>我们令 $g(T) = \sum_{d|T}d^k\mu(\frac{T}{d})$，原式变为：<br>$$<br>S = \sum_{T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor g(T)<br>$$<br>很明显这个可以整除分块，很明显 $g$ 是一个积性函数，所以我们考虑如何算出 $g$ 的前缀和。</p>
+<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><p>我们来来来推推推式子吧qwq<br>$$<br>\sum_{i=1}^n\sum_{j=1}^m {\gcd(i,j)}^k<br>$$<br>不妨令 $n&lt;m$ ，枚举 $\gcd(i,j) = d$ ：<br>$$<br>S = \sum_{d=1}^{n} d^k \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{d}\rfloor} [(i,j)=1]\<br>= \sum_{d=1}^{n} d^k \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{d}\rfloor} \sum_{t | \gcd(i,j)} \mu(t)\<br>= \sum_{d=1}^{n} d^k \sum_{t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t)\sum_{i=1}^{\lfloor\frac{n}{dt}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{dt}\rfloor} 1\<br>= \sum_{d=1}^{n} d^k \sum_{t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t) \lfloor\frac{n}{dt}\rfloor \lfloor\frac{m}{dt}\rfloor\<br>$$<br>令 $dt = T$ ，我们有：<br>$$<br>S = \sum_{T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor\sum_{d|T}d^k\mu(\frac{T}{d})<br>$$<br>我们令 $g(T) = \sum_{d|T}d^k\mu(\frac{T}{d})$，原式变为：<br>$$<br>S = \sum_{T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor g(T)<br>$$<br>很明显这个可以整除分块，很明显 $g$ 是一个积性函数，所以我们考虑如何算出 $g$ 的前缀和。</p>
 <p>发现 $n,m$ 的范围比较小，可以考虑用线性筛解决这个问题。</p>
-<p>线性筛的本质是不断加入最小质因子，我们考虑一个质数的<br>$$<br>g(P^t) = \sum_{i=0}^t f(P^i) \mu (P^{t-i})<br>$$<br>凡是有平方因子的数都是的莫比乌斯函数值都是 $0$ ，所以这个式子化成：<br>$$<br>g(P^t) = \mu(1) f(P^t) + \mu(P)f(P^{t-1})\\<br>= f(P^t) - f(P^{t-1})<br>= P^{kt} - P^{k(t-1)}<br>= P^{k(t-1)}(P^{k}-1)<br>$$<br>可以注意到如果没有 $P$ 这个质因子，答案就是直接乘上 $P^k-1$ ，如果有就乘上 $P^k$ 即可。</p>
+<p>线性筛的本质是不断加入最小质因子，我们考虑一个质数的<br>$$<br>g(P^t) = \sum_{i=0}^t f(P^i) \mu (P^{t-i})<br>$$<br>凡是有平方因子的数都是的莫比乌斯函数值都是 $0$ ，所以这个式子化成：<br>$$<br>g(P^t) = \mu(1) f(P^t) + \mu(P)f(P^{t-1})\<br>= f(P^t) - f(P^{t-1})<br>= P^{kt} - P^{k(t-1)}<br>= P^{k(t-1)}(P^{k}-1)<br>$$<br>可以注意到如果没有 $P$ 这个质因子，答案就是直接乘上 $P^k-1$ ，如果有就乘上 $P^k$ 即可。</p>
 <p>这大概也是线性筛筛未知积性函数的套路：算出来 $g(P^t)$  并观察这个东西的性质，当然也可以记录最小质因子的大小。</p>
 <p>时间复杂度： $O(n + T \sqrt n)$ 。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp hljs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MAXN = <span class="hljs-number">5100000</span>,mod = <span class="hljs-number">1e9</span>+<span class="hljs-number">7</span>;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function">ll <span class="hljs-title">pow</span><span class="hljs-params">(ll x,ll k, ll p)</span></span>&#123;</span><br><span class="line">  ll ans = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(ll i = k;i;i&gt;&gt;=<span class="hljs-number">1</span>,x = (x*x)%p) <span class="hljs-keyword">if</span>(i&amp;<span class="hljs-number">1</span>) ans = ans * x % p;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-keyword">int</span> g[MAXN],s[MAXN];</span><br><span class="line"><span class="hljs-keyword">int</span> noprime[MAXN],prime[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">sieve</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> k)</span></span>&#123;</span><br><span class="line">  g[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;i&lt;=n;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">if</span>(!noprime[i])&#123;</span><br><span class="line">      prime[++prime[<span class="hljs-number">0</span>]] = i,g[i] = <span class="hljs-built_in">pow</span>(i,k,mod)<span class="hljs-number">-1</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(g[i] &lt; <span class="hljs-number">0</span>) g[i] += mod;<span class="hljs-comment">//容易出锅...</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>;j &lt;= prime[<span class="hljs-number">0</span>] &amp;&amp; i*prime[j] &lt;= n;j++)&#123;</span><br><span class="line">      noprime[i*prime[j]] = <span class="hljs-number">1</span>;</span><br><span class="line">      <span class="hljs-keyword">if</span>(i % prime[j] == <span class="hljs-number">0</span>)&#123;</span><br><span class="line">        g[i*prime[j]] = <span class="hljs-number">1L</span>L * g[i] * (g[prime[j]]+<span class="hljs-number">1</span>) % mod;</span><br><span class="line">        <span class="hljs-keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      g[i*prime[j]] = <span class="hljs-number">1L</span>L * g[i] * g[prime[j]] % mod;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">    s[i] = s[i<span class="hljs-number">-1</span>] + g[i];</span><br><span class="line">    <span class="hljs-keyword">if</span>(s[i] &gt;= mod) s[i] -= mod;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">calc</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">int</span> m)</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">if</span>(n &gt; m) swap(n,m);</span><br><span class="line">  <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> l = <span class="hljs-number">1</span>,r;l &lt;= n;l = r + <span class="hljs-number">1</span>)&#123;</span><br><span class="line">    r = min(n/(n/l),m/(m/l));</span><br><span class="line">    <span class="hljs-keyword">int</span> tmp = (<span class="hljs-number">1L</span>L * (n/l) * (m/l)) % mod; <span class="hljs-comment">// 多加括号...</span></span><br><span class="line">    <span class="hljs-keyword">int</span> sum = s[r] - s[l<span class="hljs-number">-1</span>];</span><br><span class="line">    <span class="hljs-keyword">if</span>(sum &lt; <span class="hljs-number">0</span>) sum += mod;</span><br><span class="line">    ans = (ans + <span class="hljs-number">1L</span>L * tmp * sum) % mod;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;</span><br><span class="line">  <span class="hljs-keyword">int</span> T,k;</span><br><span class="line">  <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;T,&amp;k);</span><br><span class="line">  sieve(<span class="hljs-number">5000000</span>,k);</span><br><span class="line">  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;i&lt;=T;i++)&#123;</span><br><span class="line">    <span class="hljs-keyword">int</span> n,m;</span><br><span class="line">    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d %d"</span>,&amp;n,&amp;m);</span><br><span class="line">    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d\n"</span>,calc(n,m));</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
         </div>
         
@@ -234,29 +229,6 @@
 </div>
 
 
-
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal">评论</h3>
-        
-<div id="comment-container"></div>
-<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-	var gitment = new Gitment({
-		id: '20190330-luogu-4499/',
-		owner: 'ChenQiqian',
-		repo: 'comments',
-		oauth: {
-			client_id: 'd406e366deef7658dac9',
-			client_secret: '3b814daf25a965305542d0ffc4529f56c1d688a3',
-		},
-	})
-	gitment.render('comment-container')
-</script>
-
-    </div>
-</div>
 </div>
                 
 
@@ -289,7 +261,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>Beijing,China</span>
+                        <span>Beijing, China</span>
                     </p>
                     
                 </div>
@@ -335,29 +307,25 @@
         
         <div class="level is-mobile">
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Github" href="http://github.com/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Github" href="http://github.com/Chenqiqian">
                 
                 <i class="fab fa-github"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Instagram" href="https://www.instagram.com/qiqianchen/">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Instagram" href="https://www.instagram.com/qiqianchen/">
                 
                 <i class="fab fa-instagram"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Luogu" href="https://www.luogu.org/space/show?uid=57601">
                 
                 <i class="fab fa-terminal"></i>
                 
             </a>
             
-            <a class="level-item button is-white is-marginless" target="_blank"
-                title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
+            <a class="level-item button is-white is-marginless" target="_blank" title="Codeforces" href="http://codeforces.com/profile/Chenqiqian">
                 
                 <i class="fab fa-terminal"></i>
                 
@@ -2564,9 +2532,8 @@
                 
                 </a>
                 <p class="is-size-7">
-                &copy; 2019 Chen Qiqian&nbsp;
-                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a
-                        href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
+                &copy; 2020 Chen Qiqian&nbsp;
+                Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> & <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank">Icarus</a>
                 
                 <br>
                 <span id="busuanzi_container_site_uv">
@@ -2714,7 +2681,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="searchbox ins-search">
     <div class="searchbox-container ins-search-container">
         <div class="searchbox-input-wrapper">
-            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="searchbox-input ins-search-input" placeholder="想要查找什么...">
             <span class="searchbox-close ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="searchbox-result-wrapper ins-section-wrapper">
