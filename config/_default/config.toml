@@ -1,0 +1,59 @@
+theme = "zzo"
+
+baseURL = "http://blog.chenqiqian.com"
+title = "cqqqwq的小站"
+
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+hasCJKLanguage = true
+
+summaryLength = 70
+buildFuture = true
+
+copyright = "&copy;cqqqwq 2017-{year}, All Rights Reserved."
+timeout = 50000
+enableEmoji = true
+paginate = 15
+rssLimit = 100
+
+enableRobotsTXT = true
+enableGitInfo = false
+googleAnalytics = ""
+publishDir = "docs"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xHTML = true
+  [markup.highlight]
+    codeFences = true
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = false
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
+  # section = ["HTML", "RSS", "SearchIndex"]
+  # taxonomyTerm = ["HTML", "RSS", "SearchIndex"]
+  # taxonomy = ["HTML", "RSS"]
+
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/json"
+    baseName = "index"
+    isPlainText = true
+    notAlternative = true
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  series = "series"
+
+# [permalinks]
+  # "posts" = "posts/:year:month:day-:slug/"

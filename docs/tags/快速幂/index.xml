@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>快速幂 on cqqqwq的小站</title><link>http://blog.chenqiqian.com/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</link><description>Recent content in 快速幂 on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Tue, 11 Sep 2018 20:54:56 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="http://blog.chenqiqian.com/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/index.xml" rel="self" type="application/rss+xml"/><item><title>「SDOI2011」计算器-快速幂+扩展欧几里得+BSGS算法</title><link>http://blog.chenqiqian.com/posts/sdoi2011-calculator/</link><pubDate>Tue, 11 Sep 2018 20:54:56 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Tue, 11 Sep 2018 20:54:56 +0000</atom:modified><guid>http://blog.chenqiqian.com/posts/sdoi2011-calculator/</guid><description>&lt;p>你被要求设计一个计算器完成以下三项任务：&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>给定 $y,z,p$ ，计算 $y^z \bmod p$ 的值；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给定 $y,z,p$ ，计算满足 $xy \equiv z \pmod p$ 的最小非负整数 $x$；&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>给定 $y,z,p$ ，计算满足 $y^x \equiv z \pmod p$ 的最小非负整数 $x$。&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>保证 $p$ 为质数。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数论</category><category>快速幂</category><category>扩展欧几里得</category><category>BSGS算法</category><category>OI</category><category>题解</category><category>各省省选</category></item></channel></rss>
