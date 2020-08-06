@@ -42,7 +42,7 @@ enableTocContent: false
 
 因为我太弱了，所以写的很痛苦。
 
-关于合并和分裂的主要思想参见{% post_link 非旋Treap学习笔记 学习笔记 %}。
+关于合并和分裂的主要思想参见 [非旋Treap学习笔记]({{< ref "posts/notes-none-rotating-treap/index.md" >}}) 。
 
 - - -
 对于节点，要维护：
@@ -58,7 +58,7 @@ enableTocContent: false
 
 + pushup
 
-更新所有信息，维护三个 $max$ 信息的方式有些特殊，但仔细想想应当能想到。
+更新所有信息，维护三个 $\max$ 信息的方式有些特殊，但仔细想想应当能想到。
 
 这里我被坑了。这个与线段树的区间最大查询有点不太一样，根节点也有代表的数，这个需要记住。
 
@@ -66,7 +66,7 @@ enableTocContent: false
 
 + 建树
 
-构建笛卡尔树。详见{% post_link 非旋Treap学习笔记 学习笔记 %}。
+构建笛卡尔树。详见 [非旋Treap学习笔记]({{< ref "posts/notes-none-rotating-treap/index.md" >}}) 。
 
 + 最大查询连续和
 

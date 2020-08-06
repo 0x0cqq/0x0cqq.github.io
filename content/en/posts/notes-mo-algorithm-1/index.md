@@ -88,7 +88,7 @@ while(qr<r)
 
 ### 例题
 
-{%post_link 「SDOI2009」HH的项链-莫队or树状数组 「SDOI2009」HH的项链  %}
+[「SDOI2009」HH的项链-莫队or树状数组]({{< ref "posts/SDOI2009-necklace/index.md" >}})
 
 [国家集训队]小Z的袜子 （题解待补
 
@@ -114,4 +114,4 @@ while(qr<r)
 
 ### 例题
 
-{%post_link 「国家集训队」数颜色-带修改莫队 「国家集训队」数颜色  %}
+[「国家集训队」数颜色-带修改莫队]({{< ref "posts/luogu-1903/index.md" >}})

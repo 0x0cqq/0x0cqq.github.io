@@ -179,7 +179,7 @@ int main(){
 
 主要就是可并堆嘛。
 
-{% post_link 「JLOI2015」城池攻占-左偏树  「JLOI2015」城池攻占 %}
+[「JLOI2015」城池攻占-左偏树]({{< ref "posts/JLOI2015-fail/index.md" >}})
  
-- - -
-{% post_link 「APIO2012」派遣-左偏树 「APIO2012」派遣 %}
+
+[「APIO2012」派遣-左偏树]({{< ref "posts/APIO2012-dispatching/index.md" >}})

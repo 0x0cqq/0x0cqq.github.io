@@ -3,7 +3,10 @@
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     function checkTheme(local, base) {
-      if (local === "dark" ) {
+      if(local === null){
+        local = base;
+      }
+      if (local === "dark") {
         return "photon-dark";
       } else if (local === "hacker") {
         return "photon-dark";

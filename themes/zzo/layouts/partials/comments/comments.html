@@ -1,5 +1,5 @@
 {{ if $.Param "enableComment" }}
-  <script>console.log("fuck comment2")</script>
+  <p style="font-size: smaller;">评论：</p>
   {{ if $.Param "disqus.disqus_shortname" }}
     {{ partial "comments/disqus.html" . }}
   {{ else if $.Param "commento.enable" }}

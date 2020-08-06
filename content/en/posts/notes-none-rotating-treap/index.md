@@ -19,15 +19,15 @@ enableToc: true
 enableTocContent: true
 ---
 
-非旋 $Treap$ ，是一种不基于旋转的平衡树。它基于 $Treap$ 的树堆思想，并且能够高效的完成某些对区间的操作，而且灵活性比较高。它也可以进行可持久化的操作。
+非旋 Treap ，是一种不基于旋转的平衡树。它基于 Treap 的树堆思想，并且能够高效的完成某些对区间的操作，而且灵活性比较高。它也可以进行可持久化的操作。
 
 <!--more-->
 
-{%post_link Treap学习笔记 这篇文章 %}，介绍了基于旋转的 Treap 的基本概念等等，在这里不再赘述。
+[Treap学习笔记]({{< ref "posts/notes-treap" >}})，介绍了基于旋转的 Treap 的基本概念等等，在这里不再赘述。
 
 ## 代码简述
 
-这里以[这道题](https://www.luogu.org/problemnew/show/P3391)题作为模板。
+这里以 [这道题](https://www.luogu.org/problemnew/show/P3391)题作为模板。
 
 ### 节点的定义
 
@@ -460,7 +460,7 @@ int main(){
 
 ## 例题
 
-{% post_link 「NOI2005」维护数列-非旋Treap 「NOI2005」维护数列 %}
+[「NOI2005」维护数列-非旋Treap]({{< ref "posts/NOI2005-sequence/index.md" >}})
 
 ## 一些参考
 

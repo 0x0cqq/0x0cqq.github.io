@@ -632,4 +632,4 @@ int main(){
 
 ## 例题
 
-{% post_link 「ZJOI2007」报表统计-平衡树 「ZJOI2007」报表统计 %}
+[「ZJOI2007」报表维护]({{< ref "posts/ZJOI2007-count/index.md" >}})

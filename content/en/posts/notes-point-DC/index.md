@@ -238,7 +238,9 @@ int main(){
 
 ## 例题
 
-{% post_link 「国家集训队」聪聪可可-点分治 [国家集训队]聪聪可可 %}
+
+[「NOI2005」维护数列-非旋Treap]({{< ref "posts/luogu-2634/index.md" >}})
+
 
 [[Luogu P2664]树上游戏](https://www.luogu.org/problemnew/show/P2664)
 
