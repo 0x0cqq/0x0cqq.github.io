@@ -1,83 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" 
-  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-  xmlns:dc="http://purl.org/dc/elements/1.1/" 
-  xmlns:atom="http://www.w3.org/2005/Atom" 
-  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
-  xmlns:media="http://search.yahoo.com/mrss/">
-  <channel>
-    <title>拓扑排序 on cqqqwq的小站</title>
-    <link>https://blog.chenqiqian.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link>
-    <description>Recent content in 拓扑排序 on cqqqwq的小站</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
-    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
-    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 18 Aug 2018 19:45:43 +0000</lastBuildDate>
-    <sy:updatePeriod>daily</sy:updatePeriod>
-    
-        <atom:link href="https://blog.chenqiqian.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    
-
-      
-      <item>
-        <title>「NOI2010」航空管制-拓扑排序</title>
-        <link>https://blog.chenqiqian.com/posts/noi2010-airplane/</link>
-        <pubDate>Sat, 18 Aug 2018 19:45:43 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Sat, 18 Aug 2018 19:45:43 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/noi2010-airplane/</guid>
-        <description>&lt;p&gt;假设目前被延误航班共有 $n$ 个，编号为 $1$ 至 $n$ 。机场只有一条起飞跑道，所有的航班需按某个顺序依次起飞（称这个顺序为起飞序列）。定义一个航班的起飞序号为该航班在起飞序列中的位置，即是第几个起飞的航班。&lt;/p&gt;
-&lt;p&gt;起飞序列还存在两类限制条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;第一类（最晚起飞时间限制）：编号为 $i$ 的航班起飞序号不得超过 $k_i$ ;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第二类（相对起飞顺序限制）：存在一些相对起飞顺序限制 $(a, b)$ ，表示航班 $a$ 的起飞时间必须早于航班 $b$ ，即航班 $a$ 的起飞序号必须小于航班 $b$ 的起飞序号。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;小 $\text{X}$ 思考的第一个问题是，若给定以上两类限制条件，是否可以计算出一个可行的起飞序列。第二个问题则是，在考虑两类限制条件的情况下，如何求出每个航班在所有可行的起飞序列中的最小起飞序号。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>图论</category>
-            
-          
-            
-              <category>拓扑排序</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>NOI</category>
-            
-          
-        
-      </item>
-      
-
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>拓扑排序 on cqqqwq的小站</title><link>https://blog.chenqiqian.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/</link><description>Recent content in 拓扑排序 on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Sat, 18 Aug 2018 19:45:43 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml"/><item><title>「NOI2010」航空管制-拓扑排序</title><link>https://blog.chenqiqian.com/posts/noi2010-airplane/</link><pubDate>Sat, 18 Aug 2018 19:45:43 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 18 Aug 2018 19:45:43 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/noi2010-airplane/</guid><description>&lt;p>假设目前被延误航班共有 $n$ 个，编号为 $1$ 至 $n$ 。机场只有一条起飞跑道，所有的航班需按某个顺序依次起飞（称这个顺序为起飞序列）。定义一个航班的起飞序号为该航班在起飞序列中的位置，即是第几个起飞的航班。&lt;/p>
+&lt;p>起飞序列还存在两类限制条件：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>第一类（最晚起飞时间限制）：编号为 $i$ 的航班起飞序号不得超过 $k_i$ ;&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>第二类（相对起飞顺序限制）：存在一些相对起飞顺序限制 $(a, b)$ ，表示航班 $a$ 的起飞时间必须早于航班 $b$ ，即航班 $a$ 的起飞序号必须小于航班 $b$ 的起飞序号。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>小 $\text{X}$ 思考的第一个问题是，若给定以上两类限制条件，是否可以计算出一个可行的起飞序列。第二个问题则是，在考虑两类限制条件的情况下，如何求出每个航班在所有可行的起飞序列中的最小起飞序号。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>图论</category><category>拓扑排序</category><category>OI</category><category>题解</category><category>NOI</category></item></channel></rss>

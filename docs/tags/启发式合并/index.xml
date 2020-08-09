@@ -1,145 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" 
-  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-  xmlns:dc="http://purl.org/dc/elements/1.1/" 
-  xmlns:atom="http://www.w3.org/2005/Atom" 
-  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
-  xmlns:media="http://search.yahoo.com/mrss/">
-  <channel>
-    <title>启发式合并 on cqqqwq的小站</title>
-    <link>https://blog.chenqiqian.com/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/</link>
-    <description>Recent content in 启发式合并 on cqqqwq的小站</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
-    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
-    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
-    <lastBuildDate>Mon, 21 May 2018 20:10:00 +0000</lastBuildDate>
-    <sy:updatePeriod>daily</sy:updatePeriod>
-    
-        <atom:link href="https://blog.chenqiqian.com/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    
-
-      
-      <item>
-        <title>「SDOI2013」森林-主席树&#43;LCA&#43;启发式合并</title>
-        <link>https://blog.chenqiqian.com/posts/sdoi2013-forest/</link>
-        <pubDate>Mon, 21 May 2018 20:10:00 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Mon, 21 May 2018 20:10:00 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/sdoi2013-forest/</guid>
-        <description>&lt;p&gt;小Z有一片森林，含有 $N$ 个节点，每个节点上都有一个非负整数作为权值。初始的时候，森林中有 $M$ 条边。&lt;/p&gt;
-&lt;p&gt;小Z希望执行 $T$ 个操作，操作有两类：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;Q x y k&lt;/code&gt; 查询点 $x$ 到点 $y$ 路径上所有的权值中，第 $k$ 小的权值是多少。此操作保证点 $x$ 和点 $y$ 连通，同时这两个节点的路径上至少有 $k$ 个点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;L x y&lt;/code&gt; 在点 $x$ 和点 $y$ 之间连接一条边。保证完成此操作后，仍然是一片森林。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;强制在线。&lt;/p&gt;
-&lt;p&gt;对于所有的数据 $n,m,T \leq 8 \times 10^4$ 。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>可持久化线段树</category>
-            
-          
-            
-              <category>最近公共祖先</category>
-            
-          
-            
-              <category>启发式合并</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>各省省选</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「HNOI2009」梦幻布丁-set-启发式合并</title>
-        <link>https://blog.chenqiqian.com/posts/hnoi2009-pudding/</link>
-        <pubDate>Mon, 21 May 2018 20:08:18 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Mon, 21 May 2018 20:08:18 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/hnoi2009-pudding/</guid>
-        <description>&lt;p&gt;$n$ 个布丁摆成一行，每个布丁最开始都有一个颜色 $c_i$ ，进行 $m$ 次操作。&lt;/p&gt;
-&lt;p&gt;操作格式：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;1 c d&lt;/code&gt; ：将所有的 $c$ 颜色替换为$d$&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;2&lt;/code&gt; ：查询当前布丁序列一共有多少段颜色。例如颜色分别为 $1,2,2,1$ 的四个布丁一共有3段颜色。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>启发式合并</category>
-            
-          
-            
-              <category>set</category>
-            
-          
-            
-              <category>平衡树</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>各省省选</category>
-            
-          
-        
-      </item>
-      
-
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>启发式合并 on cqqqwq的小站</title><link>https://blog.chenqiqian.com/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/</link><description>Recent content in 启发式合并 on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Mon, 21 May 2018 20:10:00 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/index.xml" rel="self" type="application/rss+xml"/><item><title>「SDOI2013」森林-主席树+LCA+启发式合并</title><link>https://blog.chenqiqian.com/posts/sdoi2013-forest/</link><pubDate>Mon, 21 May 2018 20:10:00 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Mon, 21 May 2018 20:10:00 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/sdoi2013-forest/</guid><description>&lt;p>小Z有一片森林，含有 $N$ 个节点，每个节点上都有一个非负整数作为权值。初始的时候，森林中有 $M$ 条边。&lt;/p>
+&lt;p>小Z希望执行 $T$ 个操作，操作有两类：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>Q x y k&lt;/code> 查询点 $x$ 到点 $y$ 路径上所有的权值中，第 $k$ 小的权值是多少。此操作保证点 $x$ 和点 $y$ 连通，同时这两个节点的路径上至少有 $k$ 个点。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>L x y&lt;/code> 在点 $x$ 和点 $y$ 之间连接一条边。保证完成此操作后，仍然是一片森林。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>强制在线。&lt;/p>
+&lt;p>对于所有的数据 $n,m,T \leq 8 \times 10^4$ 。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>可持久化线段树</category><category>最近公共祖先</category><category>启发式合并</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「HNOI2009」梦幻布丁-set-启发式合并</title><link>https://blog.chenqiqian.com/posts/hnoi2009-pudding/</link><pubDate>Mon, 21 May 2018 20:08:18 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Mon, 21 May 2018 20:08:18 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/hnoi2009-pudding/</guid><description>&lt;p>$n$ 个布丁摆成一行，每个布丁最开始都有一个颜色 $c_i$ ，进行 $m$ 次操作。&lt;/p>
+&lt;p>操作格式：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>1 c d&lt;/code> ：将所有的 $c$ 颜色替换为$d$&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>2&lt;/code> ：查询当前布丁序列一共有多少段颜色。例如颜色分别为 $1,2,2,1$ 的四个布丁一共有3段颜色。&lt;/p>
+&lt;/li>
+&lt;/ul></description><dc:creator>cqqqwq</dc:creator><category>启发式合并</category><category>set</category><category>平衡树</category><category>OI</category><category>题解</category><category>各省省选</category></item></channel></rss>

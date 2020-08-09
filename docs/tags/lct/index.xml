@@ -1,646 +1,74 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" 
-  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
-  xmlns:dc="http://purl.org/dc/elements/1.1/" 
-  xmlns:atom="http://www.w3.org/2005/Atom" 
-  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
-  xmlns:media="http://search.yahoo.com/mrss/">
-  <channel>
-    <title>LCT on cqqqwq的小站</title>
-    <link>https://blog.chenqiqian.com/tags/lct/</link>
-    <description>Recent content in LCT on cqqqwq的小站</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
-    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
-    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
-    <lastBuildDate>Sat, 30 Mar 2019 13:00:28 +0000</lastBuildDate>
-    <sy:updatePeriod>daily</sy:updatePeriod>
-    
-        <atom:link href="https://blog.chenqiqian.com/tags/lct/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    
-
-      
-      <item>
-        <title>「SDOI2017」树点涂色-LCT&#43;树链剖分</title>
-        <link>https://blog.chenqiqian.com/posts/sdoi2017-paint/</link>
-        <pubDate>Sat, 30 Mar 2019 13:00:28 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Sat, 30 Mar 2019 13:00:28 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/sdoi2017-paint/</guid>
-        <description>&lt;p&gt;Bob 有一棵 $n​$ 个点的有根树，其中 $1​$ 号点是根节点。Bob 在每个节点上涂了颜色，并且每个点上的颜色不同。&lt;/p&gt;
-&lt;p&gt;定义一条路径的权值是，这条路径上的点（包括起点和终点）共有多少种不同的颜色。&lt;/p&gt;
-&lt;p&gt;Bob 可能会进行这几种操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;1 x&lt;/code&gt;，把点 $x$ 到根节点的路径上的所有的点染上一种没有用过的新颜色；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2 x y&lt;/code&gt;，求 $x$ 到 $y$ 的路径的权值；&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;3 x&lt;/code&gt;，在以 $x$ 为根的子树中选择一个点，使得这个点到根节点的路径权值最大，求最大权值。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Bob 一共会进行 $m$ 次操作。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>树形结构</category>
-            
-          
-            
-              <category>dfs序</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-            
-              <category>线段树</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>各省省选</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「SPOJ26374」QTREE5-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/spoj26374-qtree5/</link>
-        <pubDate>Mon, 18 Mar 2019 22:36:52 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Mon, 18 Mar 2019 22:36:52 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/spoj26374-qtree5/</guid>
-        <description>&lt;p&gt;你被给定一棵 $n$ 个点的树，点从 $1$ 到 $n$ 编号。每个点可能有两种颜色：黑或白。我们定义 $dist(a,b)$ 为点 $a$ 至点 $b$ 路径上的边个数。一开始所有的点都是黑色的。&lt;/p&gt;
-&lt;p&gt;要求作以下操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;0 i&lt;/code&gt; 将点 $i$ 的颜色反转（黑变白，白变黑）&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;1 v&lt;/code&gt; 询问 $dist(u,v)$ 的最小值。$u$ 点必须为白色（ $u$ 与 $v$ 可以相同），显然如果 $v$ 是白点，查询得到的值一定是 $0$ 。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;特别地，如果作 &lt;code&gt;1&lt;/code&gt; 操作时树上没有白点，输出 $-1$ 。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>QTREE</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「SPOJ16580」QTREE7-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/spoj16580-qtree7/</link>
-        <pubDate>Mon, 18 Mar 2019 20:54:33 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Mon, 18 Mar 2019 20:54:33 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/spoj16580-qtree7/</guid>
-        <description>&lt;p&gt;一棵树,每个点初始有个点权和颜色(输入会给你)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;0 u&lt;/code&gt; : 询问所有 $u,v$ 路径上的最大点权,要满足 $u,v$ 路径上所有点的颜色都相同&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;1 u&lt;/code&gt; : 反转 $u$ 的颜色&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;2 u w&lt;/code&gt; :把 $u$ 的点权改成 $w$&lt;/li&gt;
-&lt;/ul&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>QTREE</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「SPOJ16549」QTREE6-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/spoj16549-qtree6/</link>
-        <pubDate>Sun, 17 Mar 2019 12:58:44 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Sun, 17 Mar 2019 12:58:44 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/spoj16549-qtree6/</guid>
-        <description>&lt;p&gt;给你一棵 $n$ 个点的树，编号 $1$~$n$ 。每个点可以是黑色，可以是白色。初始时所有点都是黑色。有两种操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;0 u&lt;/code&gt; ：询问有多少个节点 $v$ 满足路径 $u$ 到 $v$ 上所有节点（包括端点）都拥有相同的颜色&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;1 u&lt;/code&gt; ：翻转 $u$ 的颜色&lt;/li&gt;
-&lt;/ul&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>QTREE</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「SPOJ913」QTREE2-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/spoj913-qtree2/</link>
-        <pubDate>Sat, 16 Mar 2019 09:01:31 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Sat, 16 Mar 2019 09:01:31 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/spoj913-qtree2/</guid>
-        <description>&lt;p&gt;给定一棵 $n$ 个点的树，边具有边权。要求作以下操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;DIST a b&lt;/code&gt; 询问点 $a$ 至点 $b$ 路径上的边权之和&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;KTH a b k&lt;/code&gt; 询问点 $a$ 至点 $b$ 有向路径上的第k个点的编号&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有多组测试数据，每组数据以 &lt;code&gt;DONE&lt;/code&gt; 结尾。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>LCT</category>
-            
-          
-            
-              <category>数据结构</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>QTREE</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「SPOJ375」QTREE1-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/spoj375-qtree1/</link>
-        <pubDate>Fri, 15 Mar 2019 20:59:53 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Fri, 15 Mar 2019 20:59:53 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/spoj375-qtree1/</guid>
-        <description>&lt;p&gt;给定 $n$ 个点的树，边按输入顺序编号为 $1,2,&amp;hellip;,n-1$，要求作以下操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;CHANGE i v&lt;/code&gt; ：将第 $i$ 条边权值改为 $v$&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;QUERY a b&lt;/code&gt; ：询问从 $a$ 点到 $b$ 点路径上的最大边权&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;有多组测试数据，每组数据以 &lt;code&gt;DONE&lt;/code&gt; 结尾。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>QTREE</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「SPOJ2666」QTREE4-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/spoj2666-qtree4/</link>
-        <pubDate>Tue, 12 Mar 2019 20:51:57 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Tue, 12 Mar 2019 20:51:57 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/spoj2666-qtree4/</guid>
-        <description>&lt;p&gt;你被给定一棵 $n$ 个点的带边权的树（边权可以为负）。每个点可能有两种颜色：黑或白。我们定义 $dist(a,b)$ 为点 $a$ 至点 $b$ 路径上的边权值之和。一开始所有的点都是&lt;strong&gt;白色&lt;/strong&gt;的。&lt;/p&gt;
-&lt;p&gt;要求作以下操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;C a&lt;/code&gt; 将点a的颜色反转（黑变白，白变黑）&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;A&lt;/code&gt; 询问 $dist(a,b)$ 的最大值。$a,b$ 点都必须为白色（ $a$ 与 $b$ 可以相同），显然如果树上仍存在白点，查询得到的值一定是个非负数。&lt;br /&gt;
-特别地，如果进行 &lt;code&gt;A&lt;/code&gt; 操作时树上没有白点，输出 &lt;code&gt;They have disappeared.&lt;/code&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>QTREE</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「BJOI2014」大融合-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/bjoi2014-mixture/</link>
-        <pubDate>Mon, 11 Mar 2019 21:09:49 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Mon, 11 Mar 2019 21:09:49 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/bjoi2014-mixture/</guid>
-        <description>&lt;p&gt;小强要在 $N$ 个孤立的星球上建立起一套通信系统。这套通信系统就是连接 $N$ 个点的一个树。 这个树的边是一条一条添加上去的。在某个时刻，一条边的负载就是它所在的当前能够 联通的树上路过它的简单路径的数量。&lt;/p&gt;
-&lt;p&gt;现在，你的任务就是随着边的添加，动态的回答小强对于某些边的负载的询问。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>各省省选</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「ZJOI2012」网络-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/zjoi2012-network/</link>
-        <pubDate>Fri, 03 Aug 2018 19:41:40 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Fri, 03 Aug 2018 19:41:40 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/zjoi2012-network/</guid>
-        <description>&lt;p&gt;有一个无向图 $G$ ，每个点有个权值，每条边有一个颜色。这个无向图满足以下两个条件：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;对于任意节点连出去的边中，相同颜色的边不超过两条。&lt;/li&gt;
-&lt;li&gt;图中不存在同色的环，同色的环指相同颜色的边构成的环。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;在这个图上，你要支持以下三种操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;修改一个节点的权值。&lt;/li&gt;
-&lt;li&gt;修改一条边的颜色。&lt;/li&gt;
-&lt;li&gt;查询由颜色 $c$ 的边构成的图中， $u$ 到节点 $v$ 之间的简单路径上的节点的权值的最大值。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;对于 100% 的数据，保证颜色不多于 $10$ 种。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>树形结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>各省省选</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「NOI2014」魔法森林-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/noi2014-forest/</link>
-        <pubDate>Sat, 16 Jun 2018 11:36:51 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Sat, 16 Jun 2018 11:36:51 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/noi2014-forest/</guid>
-        <description>&lt;p&gt;给定一个 $n$ 个点 $m$ 条边的无向图，每条边有两个权值 $a_i,b_i$ 。请你找到一条从 $1 \rightarrow n$ 的道路，令道路上所有边的集合为 $S$ ，使 $ans = \max(a_i)+\max(b_j),i,j \in S$ 最小，求出这个最小值 $ans$ 。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>NOI</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「HNOI2010」弹飞绵羊-动态树</title>
-        <link>https://blog.chenqiqian.com/posts/hnoi2010-bounce/</link>
-        <pubDate>Fri, 18 May 2018 18:52:39 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Fri, 18 May 2018 18:52:39 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/hnoi2010-bounce/</guid>
-        <description>&lt;p&gt;游戏一开始，&lt;code&gt;Lostmonkey&lt;/code&gt; 在地上沿着一条直线摆上 $n$ 个装置，每个装置设定初始弹力系数 $K_i$ ，当绵羊达到第 $i$ 个装置时，它会往后弹 $K_i$ 步，达到第 $i+K_i$ 个装置，若不存在第 $i+K_i$ 个装置，则绵羊被弹飞。&lt;/p&gt;
-&lt;p&gt;存在两种操作：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;查询在第 $i$ 个装置起步时，再经多少次会被弹飞。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;修改第 $i$ 个装置的弹力系数为 $K&#39;$ 。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;保证任何时候，任何装置弹力系数均为正整数。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>LCT</category>
-            
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>树形结构</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>各省省选</category>
-            
-          
-        
-      </item>
-      
-      <item>
-        <title>「SDOI2008」洞穴勘测-LCT</title>
-        <link>https://blog.chenqiqian.com/posts/sdoi2008-cave/</link>
-        <pubDate>Sat, 12 May 2018 18:06:09 +0000</pubDate>
-        <author>cqqqwq@outlook.com (cqqqwq)</author>
-        <atom:modified>Sat, 12 May 2018 18:06:09 +0000</atom:modified>
-        <guid>https://blog.chenqiqian.com/posts/sdoi2008-cave/</guid>
-        <description>&lt;p&gt;辉辉热衷于洞穴勘测。&lt;/p&gt;
-&lt;p&gt;辉辉有一台监测仪器可以实时将通道的每一次改变状况，并在辉辉手边的终端机上显示：&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Connect u v&lt;/code&gt;代表监测到洞穴u和洞穴v之间出现了一条通道，&lt;code&gt;Destroy u v&lt;/code&gt;代表监测到洞穴u和洞穴v之间的通道被毁。&lt;code&gt;Query u v&lt;/code&gt;，代表向监测仪询问此时洞穴u和洞穴v是否连通。&lt;/p&gt;
-&lt;p&gt;保证无论通道怎么改变，任意时刻任意两个洞穴之间至多只有一条路径。&lt;/p&gt;
-&lt;p&gt;已知在第一条指令显示之前，洞穴群中没有任何通道存在。&lt;/p&gt;</description>
-        
-        <dc:creator>cqqqwq</dc:creator>
-        
-        
-        
-        
-          
-            
-              <category>数据结构</category>
-            
-          
-            
-              <category>LCT</category>
-            
-          
-        
-        
-          
-            
-              <category>OI</category>
-            
-          
-            
-              <category>题解</category>
-            
-          
-        
-        
-          
-            
-              <category>各省省选</category>
-            
-          
-        
-      </item>
-      
-
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>LCT on cqqqwq的小站</title><link>https://blog.chenqiqian.com/tags/lct/</link><description>Recent content in LCT on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Sat, 30 Mar 2019 13:00:28 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/tags/lct/index.xml" rel="self" type="application/rss+xml"/><item><title>「SDOI2017」树点涂色-LCT+树链剖分</title><link>https://blog.chenqiqian.com/posts/sdoi2017-paint/</link><pubDate>Sat, 30 Mar 2019 13:00:28 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 30 Mar 2019 13:00:28 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/sdoi2017-paint/</guid><description>&lt;p>Bob 有一棵 $n​$ 个点的有根树，其中 $1​$ 号点是根节点。Bob 在每个节点上涂了颜色，并且每个点上的颜色不同。&lt;/p>
+&lt;p>定义一条路径的权值是，这条路径上的点（包括起点和终点）共有多少种不同的颜色。&lt;/p>
+&lt;p>Bob 可能会进行这几种操作：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>1 x&lt;/code>，把点 $x$ 到根节点的路径上的所有的点染上一种没有用过的新颜色；&lt;/li>
+&lt;li>&lt;code>2 x y&lt;/code>，求 $x$ 到 $y$ 的路径的权值；&lt;/li>
+&lt;li>&lt;code>3 x&lt;/code>，在以 $x$ 为根的子树中选择一个点，使得这个点到根节点的路径权值最大，求最大权值。&lt;/li>
+&lt;/ul>
+&lt;p>Bob 一共会进行 $m$ 次操作。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>树形结构</category><category>dfs序</category><category>LCT</category><category>线段树</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「SPOJ26374」QTREE5-LCT</title><link>https://blog.chenqiqian.com/posts/spoj26374-qtree5/</link><pubDate>Mon, 18 Mar 2019 22:36:52 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Mon, 18 Mar 2019 22:36:52 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/spoj26374-qtree5/</guid><description>&lt;p>你被给定一棵 $n$ 个点的树，点从 $1$ 到 $n$ 编号。每个点可能有两种颜色：黑或白。我们定义 $dist(a,b)$ 为点 $a$ 至点 $b$ 路径上的边个数。一开始所有的点都是黑色的。&lt;/p>
+&lt;p>要求作以下操作：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>0 i&lt;/code> 将点 $i$ 的颜色反转（黑变白，白变黑）&lt;/li>
+&lt;li>&lt;code>1 v&lt;/code> 询问 $dist(u,v)$ 的最小值。$u$ 点必须为白色（ $u$ 与 $v$ 可以相同），显然如果 $v$ 是白点，查询得到的值一定是 $0$ 。&lt;/li>
+&lt;/ul>
+&lt;p>特别地，如果作 &lt;code>1&lt;/code> 操作时树上没有白点，输出 $-1$ 。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「SPOJ16580」QTREE7-LCT</title><link>https://blog.chenqiqian.com/posts/spoj16580-qtree7/</link><pubDate>Mon, 18 Mar 2019 20:54:33 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Mon, 18 Mar 2019 20:54:33 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/spoj16580-qtree7/</guid><description>&lt;p>一棵树,每个点初始有个点权和颜色(输入会给你)&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>0 u&lt;/code> : 询问所有 $u,v$ 路径上的最大点权,要满足 $u,v$ 路径上所有点的颜色都相同&lt;/li>
+&lt;li>&lt;code>1 u&lt;/code> : 反转 $u$ 的颜色&lt;/li>
+&lt;li>&lt;code>2 u w&lt;/code> :把 $u$ 的点权改成 $w$&lt;/li>
+&lt;/ul></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「SPOJ16549」QTREE6-LCT</title><link>https://blog.chenqiqian.com/posts/spoj16549-qtree6/</link><pubDate>Sun, 17 Mar 2019 12:58:44 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sun, 17 Mar 2019 12:58:44 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/spoj16549-qtree6/</guid><description>&lt;p>给你一棵 $n$ 个点的树，编号 $1$~$n$ 。每个点可以是黑色，可以是白色。初始时所有点都是黑色。有两种操作：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>0 u&lt;/code> ：询问有多少个节点 $v$ 满足路径 $u$ 到 $v$ 上所有节点（包括端点）都拥有相同的颜色&lt;/li>
+&lt;li>&lt;code>1 u&lt;/code> ：翻转 $u$ 的颜色&lt;/li>
+&lt;/ul></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「SPOJ913」QTREE2-LCT</title><link>https://blog.chenqiqian.com/posts/spoj913-qtree2/</link><pubDate>Sat, 16 Mar 2019 09:01:31 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 16 Mar 2019 09:01:31 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/spoj913-qtree2/</guid><description>&lt;p>给定一棵 $n$ 个点的树，边具有边权。要求作以下操作：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>DIST a b&lt;/code> 询问点 $a$ 至点 $b$ 路径上的边权之和&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>KTH a b k&lt;/code> 询问点 $a$ 至点 $b$ 有向路径上的第k个点的编号&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>有多组测试数据，每组数据以 &lt;code>DONE&lt;/code> 结尾。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>LCT</category><category>数据结构</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「SPOJ375」QTREE1-LCT</title><link>https://blog.chenqiqian.com/posts/spoj375-qtree1/</link><pubDate>Fri, 15 Mar 2019 20:59:53 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 15 Mar 2019 20:59:53 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/spoj375-qtree1/</guid><description>&lt;p>给定 $n$ 个点的树，边按输入顺序编号为 $1,2,&amp;hellip;,n-1$，要求作以下操作：&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>CHANGE i v&lt;/code> ：将第 $i$ 条边权值改为 $v$&lt;/li>
+&lt;li>&lt;code>QUERY a b&lt;/code> ：询问从 $a$ 点到 $b$ 点路径上的最大边权&lt;/li>
+&lt;/ul>
+&lt;p>有多组测试数据，每组数据以 &lt;code>DONE&lt;/code> 结尾。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「SPOJ2666」QTREE4-LCT</title><link>https://blog.chenqiqian.com/posts/spoj2666-qtree4/</link><pubDate>Tue, 12 Mar 2019 20:51:57 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Tue, 12 Mar 2019 20:51:57 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/spoj2666-qtree4/</guid><description>&lt;p>你被给定一棵 $n$ 个点的带边权的树（边权可以为负）。每个点可能有两种颜色：黑或白。我们定义 $dist(a,b)$ 为点 $a$ 至点 $b$ 路径上的边权值之和。一开始所有的点都是&lt;strong>白色&lt;/strong>的。&lt;/p>
+&lt;p>要求作以下操作：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>&lt;code>C a&lt;/code> 将点a的颜色反转（黑变白，白变黑）&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>&lt;code>A&lt;/code> 询问 $dist(a,b)$ 的最大值。$a,b$ 点都必须为白色（ $a$ 与 $b$ 可以相同），显然如果树上仍存在白点，查询得到的值一定是个非负数。&lt;br />
+特别地，如果进行 &lt;code>A&lt;/code> 操作时树上没有白点，输出 &lt;code>They have disappeared.&lt;/code>。&lt;/p>
+&lt;/li>
+&lt;/ul></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「BJOI2014」大融合-LCT</title><link>https://blog.chenqiqian.com/posts/bjoi2014-mixture/</link><pubDate>Mon, 11 Mar 2019 21:09:49 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Mon, 11 Mar 2019 21:09:49 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/bjoi2014-mixture/</guid><description>&lt;p>小强要在 $N$ 个孤立的星球上建立起一套通信系统。这套通信系统就是连接 $N$ 个点的一个树。 这个树的边是一条一条添加上去的。在某个时刻，一条边的负载就是它所在的当前能够 联通的树上路过它的简单路径的数量。&lt;/p>
+&lt;p>现在，你的任务就是随着边的添加，动态的回答小强对于某些边的负载的询问。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「ZJOI2012」网络-LCT</title><link>https://blog.chenqiqian.com/posts/zjoi2012-network/</link><pubDate>Fri, 03 Aug 2018 19:41:40 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 03 Aug 2018 19:41:40 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/zjoi2012-network/</guid><description>&lt;p>有一个无向图 $G$ ，每个点有个权值，每条边有一个颜色。这个无向图满足以下两个条件：&lt;/p>
+&lt;ul>
+&lt;li>对于任意节点连出去的边中，相同颜色的边不超过两条。&lt;/li>
+&lt;li>图中不存在同色的环，同色的环指相同颜色的边构成的环。&lt;/li>
+&lt;/ul>
+&lt;p>在这个图上，你要支持以下三种操作：&lt;/p>
+&lt;ul>
+&lt;li>修改一个节点的权值。&lt;/li>
+&lt;li>修改一条边的颜色。&lt;/li>
+&lt;li>查询由颜色 $c$ 的边构成的图中， $u$ 到节点 $v$ 之间的简单路径上的节点的权值的最大值。&lt;/li>
+&lt;/ul>
+&lt;p>对于 100% 的数据，保证颜色不多于 $10$ 种。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>树形结构</category><category>LCT</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「NOI2014」魔法森林-LCT</title><link>https://blog.chenqiqian.com/posts/noi2014-forest/</link><pubDate>Sat, 16 Jun 2018 11:36:51 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 16 Jun 2018 11:36:51 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/noi2014-forest/</guid><description>&lt;p>给定一个 $n$ 个点 $m$ 条边的无向图，每条边有两个权值 $a_i,b_i$ 。请你找到一条从 $1 \rightarrow n$ 的道路，令道路上所有边的集合为 $S$ ，使 $ans = \max(a_i)+\max(b_j),i,j \in S$ 最小，求出这个最小值 $ans$ 。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>NOI</category></item><item><title>「HNOI2010」弹飞绵羊-动态树</title><link>https://blog.chenqiqian.com/posts/hnoi2010-bounce/</link><pubDate>Fri, 18 May 2018 18:52:39 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 18 May 2018 18:52:39 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/hnoi2010-bounce/</guid><description>&lt;p>游戏一开始，&lt;code>Lostmonkey&lt;/code> 在地上沿着一条直线摆上 $n$ 个装置，每个装置设定初始弹力系数 $K_i$ ，当绵羊达到第 $i$ 个装置时，它会往后弹 $K_i$ 步，达到第 $i+K_i$ 个装置，若不存在第 $i+K_i$ 个装置，则绵羊被弹飞。&lt;/p>
+&lt;p>存在两种操作：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>查询在第 $i$ 个装置起步时，再经多少次会被弹飞。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>修改第 $i$ 个装置的弹力系数为 $K'$ 。&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;p>保证任何时候，任何装置弹力系数均为正整数。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>LCT</category><category>数据结构</category><category>树形结构</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「SDOI2008」洞穴勘测-LCT</title><link>https://blog.chenqiqian.com/posts/sdoi2008-cave/</link><pubDate>Sat, 12 May 2018 18:06:09 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 12 May 2018 18:06:09 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/sdoi2008-cave/</guid><description>&lt;p>辉辉热衷于洞穴勘测。&lt;/p>
+&lt;p>辉辉有一台监测仪器可以实时将通道的每一次改变状况，并在辉辉手边的终端机上显示：&lt;/p>
+&lt;p>&lt;code>Connect u v&lt;/code>代表监测到洞穴u和洞穴v之间出现了一条通道，&lt;code>Destroy u v&lt;/code>代表监测到洞穴u和洞穴v之间的通道被毁。&lt;code>Query u v&lt;/code>，代表向监测仪询问此时洞穴u和洞穴v是否连通。&lt;/p>
+&lt;p>保证无论通道怎么改变，任意时刻任意两个洞穴之间至多只有一条路径。&lt;/p>
+&lt;p>已知在第一条指令显示之前，洞穴群中没有任何通道存在。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数据结构</category><category>LCT</category><category>OI</category><category>题解</category><category>各省省选</category></item></channel></rss>
