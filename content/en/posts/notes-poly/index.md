@@ -10,6 +10,8 @@ categories:
 tags:
 - 数学
 - 多项式
+- 模板
+- 笔记
 series:
 ##-- page setting --##
 pinned: false
@@ -29,6 +31,9 @@ enableTocContent: true
 #   email: ""
 #   facebook: ""
 ---
+
+关于基础的多项式概念及计算。
+<!--more-->
 
 ## 多项式（概念）
 

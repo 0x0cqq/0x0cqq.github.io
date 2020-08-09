@@ -10,6 +10,8 @@ categories:
 tags:
 - 数学
 - 欧几里得算法
+- 模板
+- 笔记
 series:
 ##-- page setting --##
 pinned: false
@@ -20,6 +22,10 @@ hideToc: false
 enableToc: true
 enableTocContent: true
 ---
+
+关于最大公约数的欧几里得算法及其拓展。
+
+<!--more-->
 
 ## 前置知识
 ### 整除
