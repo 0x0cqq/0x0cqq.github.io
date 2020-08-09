@@ -1,16 +1,16 @@
 ---
 ##-- draftstate --##
-draft: true
+draft: false
 ##-- page info --##
 title: "{{ replace .Name "-" " " | title }}"
 description: "{{ replace .Name "-" " " | title }}"
-type: ""
 date: {{ .Date }}
-slug: ""
 categories:
 tags:
 series:
 ##-- page setting --##
+# slug: ""
+# type: ""
 pinned: false
 libraries:
 - mathjax 
@@ -18,14 +18,5 @@ libraries:
 hideToc: false
 enableToc: true
 enableTocContent: true
-##-- author --##
-# author: ""
-# authorEmoji: 
-# authorImageUrl: ""
-# authorImage: ""
-# authorDesc: ""
-# socialOptions:  
-#   email: ""
-#   facebook: ""
 ---
 

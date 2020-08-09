@@ -24,7 +24,7 @@
 {{ $closest := resources.Get "js/helper/closest.js" | resources.Minify }}
 <script defer src="{{ $closest.RelPermalink }}"></script>
   
-{{ if in .Params.Libraries "mathjax" }}
+{{ if in .Site.Params.Libraries "mathjax" }}
 <script>
   window.MathJax = {
     tex: {
