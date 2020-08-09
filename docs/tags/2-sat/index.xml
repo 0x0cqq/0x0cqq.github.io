@@ -1,3 +1,119 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>2-SAT on cqqqwq的小站</title><link>https://blog.chenqiqian.com/tags/2-sat/</link><description>Recent content in 2-SAT on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Tue, 09 Apr 2019 22:51:59 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/tags/2-sat/index.xml" rel="self" type="application/rss+xml"/><item><title>「JSOI2010」满汉全席-2-SAT</title><link>https://blog.chenqiqian.com/posts/jsoi2010-feast/</link><pubDate>Tue, 09 Apr 2019 22:51:59 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Tue, 09 Apr 2019 22:51:59 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/jsoi2010-feast/</guid><description>&lt;p>题意过长，概括如下：&lt;/p>
-&lt;p>你有 $n$ 种食材，评委 $m$ 个要求，你需要加工这 $n$ 种食材，每种从&amp;quot;汉式（&lt;code>h&lt;/code>）&amp;ldquo;或者&amp;quot;满式（&lt;code>m&lt;/code>）&amp;ldquo;中选择&lt;strong>一种&lt;/strong>。每个要求用两个形如 $\text{h} x$ 或者 $\text{m}x$ （ $x$ 为一个 $1 \sim n$ 的正整数），意为第 $x$ 道菜需要用用&amp;quot;汉式（&lt;code>h&lt;/code>）&amp;ldquo;或者&amp;quot;满式（&lt;code>m&lt;/code>）&amp;ldquo;来进行加工，每个要求中的两个条件必须至少满足一个，每种食材最多只能用一种方式来加工。&lt;/p>
-&lt;p>请你判断存不存在一个合法的方式。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>图论</category><category>2-SAT</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「HNOI2010」平面图判定-2-SAT</title><link>https://blog.chenqiqian.com/posts/hnoi2010-planarity/</link><pubDate>Tue, 09 Apr 2019 22:51:53 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Tue, 09 Apr 2019 22:51:53 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/hnoi2010-planarity/</guid><description>&lt;p>若能将无向图 $G=(V, E)$ 画在平面上使得任意两条无重合顶点的边不相交，则称 $G$ 是平面图。判定一个图是否为平面图的问题是图论中的一个重要问题。现在假设你要判定的是一类特殊的图，图中存在一个包含所有顶点的环，即存在哈密顿回路。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>图论</category><category>2-SAT</category><category>OI</category><category>题解</category><category>各省省选</category></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>2-SAT on cqqqwq的小站</title>
+    <link>https://blog.chenqiqian.com/tags/2-sat/</link>
+    <description>Recent content in 2-SAT on cqqqwq的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
+    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
+    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
+    <lastBuildDate>Tue, 09 Apr 2019 22:51:59 +0000</lastBuildDate>
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    
+        <atom:link href="https://blog.chenqiqian.com/tags/2-sat/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>「JSOI2010」满汉全席-2-SAT</title>
+        <link>https://blog.chenqiqian.com/posts/jsoi2010-feast/</link>
+        <pubDate>Tue, 09 Apr 2019 22:51:59 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Tue, 09 Apr 2019 22:51:59 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/jsoi2010-feast/</guid>
+        <description>&lt;p&gt;题意过长，概括如下：&lt;/p&gt;
+&lt;p&gt;你有 $n$ 种食材，评委 $m$ 个要求，你需要加工这 $n$ 种食材，每种从&amp;quot;汉式（&lt;code&gt;h&lt;/code&gt;）&amp;ldquo;或者&amp;quot;满式（&lt;code&gt;m&lt;/code&gt;）&amp;ldquo;中选择&lt;strong&gt;一种&lt;/strong&gt;。每个要求用两个形如 $\text{h} x$ 或者 $\text{m}x$ （ $x$ 为一个 $1 \sim n$ 的正整数），意为第 $x$ 道菜需要用用&amp;quot;汉式（&lt;code&gt;h&lt;/code&gt;）&amp;ldquo;或者&amp;quot;满式（&lt;code&gt;m&lt;/code&gt;）&amp;ldquo;来进行加工，每个要求中的两个条件必须至少满足一个，每种食材最多只能用一种方式来加工。&lt;/p&gt;
+&lt;p&gt;请你判断存不存在一个合法的方式。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>图论</category>
+            
+          
+            
+              <category>2-SAT</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>各省省选</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「HNOI2010」平面图判定-2-SAT</title>
+        <link>https://blog.chenqiqian.com/posts/hnoi2010-planarity/</link>
+        <pubDate>Tue, 09 Apr 2019 22:51:53 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Tue, 09 Apr 2019 22:51:53 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/hnoi2010-planarity/</guid>
+        <description>&lt;p&gt;若能将无向图 $G=(V, E)$ 画在平面上使得任意两条无重合顶点的边不相交，则称 $G$ 是平面图。判定一个图是否为平面图的问题是图论中的一个重要问题。现在假设你要判定的是一类特殊的图，图中存在一个包含所有顶点的环，即存在哈密顿回路。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>图论</category>
+            
+          
+            
+              <category>2-SAT</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>各省省选</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

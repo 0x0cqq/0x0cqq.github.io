@@ -1,15 +1,314 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>WC/CTSC/APIO on cqqqwq的小站</title><link>https://blog.chenqiqian.com/series/wc/ctsc/apio/</link><description>Recent content in WC/CTSC/APIO on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/series/wc/ctsc/apio/index.xml" rel="self" type="application/rss+xml"/><item><title>「CTSC2012」熟悉的文章-广义后缀自动机</title><link>https://blog.chenqiqian.com/posts/ctsc2012-familiar/</link><pubDate>Fri, 18 Jan 2019 22:51:41 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 18 Jan 2019 22:51:41 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/ctsc2012-familiar/</guid><description>&lt;p>为了有说服力地向阿米巴展示阿米巴的作文是多么让人觉得“眼熟”，小强想出了一个评定作文 “熟悉程度”的量化指标：$L_0$ .小强首先将作文转化成一个 $01$ 串。之后，小强搜集了各路名家的文章，同样分别转化成 $01$ 串后，整理出一个包含了 $M$ 个 $01$ 串的“ 标准作文库 ”。&lt;/p>
-&lt;p>小强认为：如果一个 $01$ 串长度不少于 $L$ 且在 标准作文库 中的某个串里出现过（即，它是 标准作文库 的 某个串 的一个 连续子串 ），那么它是“ 熟悉 ”的。对于一篇作文（一个 $01$ 串）A，如果能够把 A 分割成若干段子串，其中“ 熟悉 ” 的子串的 长度总和 不少于 A 总长度的 $90%$，那么称 A 是 “ 熟悉的文章 ”。 $L_0$ 是能够让 $A$ 成为 “ 熟悉的文章 ” 的 所有 $L$ 的最大值 （如果不存在这样的 $L$ ，那么规定 $L_0 = 0$ ）。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>字符串</category><category>后缀自动机</category><category>OI</category><category>题解</category><category>WC/CTSC/APIO</category></item><item><title>「WC2011」最大XOR路径-dfs+线性基</title><link>https://blog.chenqiqian.com/posts/wc2011-xor/</link><pubDate>Tue, 27 Nov 2018 23:12:14 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Tue, 27 Nov 2018 23:12:14 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/wc2011-xor/</guid><description>&lt;p>考虑一个边权为非负整数的无向连通图，节点编号为 $1$ 到 $N$ ，试求出一条从 $1$ 号节点到 $N$ 号节点的路径，使得路径上经过的边的权值的 $\text{XOR}$ 和最大。&lt;/p>
-&lt;p>路径可以重复经过某些点或边，当一条边在路径中出现了多次时，其权值在计算 $\text{XOR}$ 和时也要被计算相应多的次数。&lt;/p>
-&lt;p>图中可能有重边或自环。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数学</category><category>线性基</category><category>OI</category><category>题解</category><category>WC/CTSC/APIO</category></item><item><title>「CTSC2018」混合果汁-整体二分</title><link>https://blog.chenqiqian.com/posts/ctsc2018-mix/</link><pubDate>Wed, 17 Oct 2018 22:54:44 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Wed, 17 Oct 2018 22:54:44 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/ctsc2018-mix/</guid><description>&lt;p>小 R 热衷于做黑暗料理，尤其是混合果汁。&lt;/p>
-&lt;p>商店里有 $n$ 种果汁，编号为 $0,1,\cdots,n-1$ 。$i$ 号果汁的美味度是 $d_i$ ，每升价格为 $p_i$​ 。小 R 在制作混合果汁时，还有一些特殊的规定，即在一瓶混合果汁中，$i$ 号果汁最多只能添加 $l_i$ 升。&lt;/p>
-&lt;p>现在有 $m$ 个小朋友过来找小 R 要混合果汁喝，他们都希望小 R 用商店里的果汁制作成一瓶混合果汁。其中，第 $j$ 个小朋友希望他得到的混合果汁总价格不大于 $g_j$ ，体积不小于 $L_j$​ 。在上述这些限制条件下，小朋友们还希望混合果汁的美味度尽可能地高，一瓶混合果汁的美味度等于所有参与混合的果汁的美味度的最小值。请你计算每个小朋友能喝到的最美味的混合果汁的美味度。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>整体二分</category><category>set</category><category>OI</category><category>题解</category><category>WC/CTSC/APIO</category></item><item><title>「APIO2014」序列分割-动态规划-斜率优化</title><link>https://blog.chenqiqian.com/posts/apio2014-sequence/</link><pubDate>Fri, 24 Aug 2018 13:16:24 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 24 Aug 2018 13:16:24 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/apio2014-sequence/</guid><description>&lt;p>你正在玩一个关于长度为 $n$ 的非负整数序列的游戏。这个游戏中你需要把序列分成 $k + 1$ 个非空的块。为了得到 $k + 1$ 块，你需要重复下面的操作 $k$ 次：&lt;/p>
-&lt;ul>
-&lt;li>选择一个有超过一个元素的块（初始时你只有一块，即整个序列）
-&lt;ul>
-&lt;li>选择两个相邻元素把这个块从中间分开，得到两个非空的块。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>每次操作后你将获得那两个新产生的块的元素和的乘积的分数。你想要最大化最后的总得分。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>动态规划</category><category>斜率优化</category><category>OI</category><category>题解</category><category>WC/CTSC/APIO</category></item><item><title>「APIO2008」免费道路-生成树+并查集</title><link>https://blog.chenqiqian.com/posts/apio2008-road/</link><pubDate>Sat, 18 Aug 2018 20:44:05 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 18 Aug 2018 20:44:05 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/apio2008-road/</guid><description>&lt;p>给定一个 $n$ 个点，$m$ 条边的无向图，每条边有两种权值： $0$ 或者 $1$ 。&lt;/p>
-&lt;p>先询问能不能找出一个生成树，使得其中恰有 $k$ 条 $0$ 边，若存在，输出任意一个方案，否则输出 &lt;code>no solution&lt;/code> 。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>图论</category><category>生成树</category><category>数据结构</category><category>并查集</category><category>OI</category><category>题解</category><category>WC/CTSC/APIO</category></item><item><title>「APIO2012」派遣-左偏树</title><link>https://blog.chenqiqian.com/posts/apio2012-dispatching/</link><pubDate>Sat, 21 Jul 2018 20:45:20 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 21 Jul 2018 20:45:20 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/apio2012-dispatching/</guid><description>&lt;p>给定一棵有根树，每个点有一个代价 $C_i$ ，权值 $L_i$ ，要求从这个树某个节点 $k$ 的子树（包含该节点）选取若干个节点，使得选取节点的个数乘上节点 $k$ 的权值最大，且这若干个节点的代价和不超过给定的限制 $M$ 。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>左偏树</category><category>数据结构</category><category>OI</category><category>题解</category><category>WC/CTSC/APIO</category></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>WC/CTSC/APIO on cqqqwq的小站</title>
+    <link>https://blog.chenqiqian.com/series/wc/ctsc/apio/</link>
+    <description>Recent content in WC/CTSC/APIO on cqqqwq的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
+    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
+    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    
+        <atom:link href="https://blog.chenqiqian.com/series/wc/ctsc/apio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>「CTSC2012」熟悉的文章-广义后缀自动机</title>
+        <link>https://blog.chenqiqian.com/posts/ctsc2012-familiar/</link>
+        <pubDate>Fri, 18 Jan 2019 22:51:41 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Fri, 18 Jan 2019 22:51:41 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/ctsc2012-familiar/</guid>
+        <description>&lt;p&gt;为了有说服力地向阿米巴展示阿米巴的作文是多么让人觉得“眼熟”，小强想出了一个评定作文 “熟悉程度”的量化指标：$L_0$ .小强首先将作文转化成一个 $01$ 串。之后，小强搜集了各路名家的文章，同样分别转化成 $01$ 串后，整理出一个包含了 $M$ 个 $01$ 串的“ 标准作文库 ”。&lt;/p&gt;
+&lt;p&gt;小强认为：如果一个 $01$ 串长度不少于 $L$ 且在 标准作文库 中的某个串里出现过（即，它是 标准作文库 的 某个串 的一个 连续子串 ），那么它是“ 熟悉 ”的。对于一篇作文（一个 $01$ 串）A，如果能够把 A 分割成若干段子串，其中“ 熟悉 ” 的子串的 长度总和 不少于 A 总长度的 $90%$，那么称 A 是 “ 熟悉的文章 ”。 $L_0$ 是能够让 $A$ 成为 “ 熟悉的文章 ” 的 所有 $L$ 的最大值 （如果不存在这样的 $L$ ，那么规定 $L_0 = 0$ ）。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>字符串</category>
+            
+          
+            
+              <category>后缀自动机</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>WC/CTSC/APIO</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「WC2011」最大XOR路径-dfs&#43;线性基</title>
+        <link>https://blog.chenqiqian.com/posts/wc2011-xor/</link>
+        <pubDate>Tue, 27 Nov 2018 23:12:14 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Tue, 27 Nov 2018 23:12:14 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/wc2011-xor/</guid>
+        <description>&lt;p&gt;考虑一个边权为非负整数的无向连通图，节点编号为 $1$ 到 $N$ ，试求出一条从 $1$ 号节点到 $N$ 号节点的路径，使得路径上经过的边的权值的 $\text{XOR}$ 和最大。&lt;/p&gt;
+&lt;p&gt;路径可以重复经过某些点或边，当一条边在路径中出现了多次时，其权值在计算 $\text{XOR}$ 和时也要被计算相应多的次数。&lt;/p&gt;
+&lt;p&gt;图中可能有重边或自环。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>数学</category>
+            
+          
+            
+              <category>线性基</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>WC/CTSC/APIO</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「CTSC2018」混合果汁-整体二分</title>
+        <link>https://blog.chenqiqian.com/posts/ctsc2018-mix/</link>
+        <pubDate>Wed, 17 Oct 2018 22:54:44 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Wed, 17 Oct 2018 22:54:44 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/ctsc2018-mix/</guid>
+        <description>&lt;p&gt;小 R 热衷于做黑暗料理，尤其是混合果汁。&lt;/p&gt;
+&lt;p&gt;商店里有 $n$ 种果汁，编号为 $0,1,\cdots,n-1$ 。$i$  号果汁的美味度是 $d_i$ ，每升价格为 $p_i$​ 。小 R 在制作混合果汁时，还有一些特殊的规定，即在一瓶混合果汁中，$i$  号果汁最多只能添加 $l_i$ 升。&lt;/p&gt;
+&lt;p&gt;现在有 $m$ 个小朋友过来找小 R 要混合果汁喝，他们都希望小 R 用商店里的果汁制作成一瓶混合果汁。其中，第 $j$ 个小朋友希望他得到的混合果汁总价格不大于 $g_j$ ，体积不小于 $L_j$​ 。在上述这些限制条件下，小朋友们还希望混合果汁的美味度尽可能地高，一瓶混合果汁的美味度等于所有参与混合的果汁的美味度的最小值。请你计算每个小朋友能喝到的最美味的混合果汁的美味度。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>整体二分</category>
+            
+          
+            
+              <category>set</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>WC/CTSC/APIO</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「APIO2014」序列分割-动态规划-斜率优化</title>
+        <link>https://blog.chenqiqian.com/posts/apio2014-sequence/</link>
+        <pubDate>Fri, 24 Aug 2018 13:16:24 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Fri, 24 Aug 2018 13:16:24 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/apio2014-sequence/</guid>
+        <description>&lt;p&gt;你正在玩一个关于长度为 $n$ 的非负整数序列的游戏。这个游戏中你需要把序列分成 $k + 1$ 个非空的块。为了得到 $k + 1$ 块，你需要重复下面的操作 $k$ 次：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;选择一个有超过一个元素的块（初始时你只有一块，即整个序列）
+&lt;ul&gt;
+&lt;li&gt;选择两个相邻元素把这个块从中间分开，得到两个非空的块。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;每次操作后你将获得那两个新产生的块的元素和的乘积的分数。你想要最大化最后的总得分。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>动态规划</category>
+            
+          
+            
+              <category>斜率优化</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>WC/CTSC/APIO</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「APIO2008」免费道路-生成树&#43;并查集</title>
+        <link>https://blog.chenqiqian.com/posts/apio2008-road/</link>
+        <pubDate>Sat, 18 Aug 2018 20:44:05 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Sat, 18 Aug 2018 20:44:05 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/apio2008-road/</guid>
+        <description>&lt;p&gt;给定一个 $n$ 个点，$m$ 条边的无向图，每条边有两种权值： $0$ 或者 $1$ 。&lt;/p&gt;
+&lt;p&gt;先询问能不能找出一个生成树，使得其中恰有 $k$ 条 $0$ 边，若存在，输出任意一个方案，否则输出 &lt;code&gt;no solution&lt;/code&gt; 。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>图论</category>
+            
+          
+            
+              <category>生成树</category>
+            
+          
+            
+              <category>数据结构</category>
+            
+          
+            
+              <category>并查集</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>WC/CTSC/APIO</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「APIO2012」派遣-左偏树</title>
+        <link>https://blog.chenqiqian.com/posts/apio2012-dispatching/</link>
+        <pubDate>Sat, 21 Jul 2018 20:45:20 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Sat, 21 Jul 2018 20:45:20 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/apio2012-dispatching/</guid>
+        <description>&lt;p&gt;给定一棵有根树，每个点有一个代价 $C_i$ ，权值 $L_i$ ，要求从这个树某个节点 $k$ 的子树（包含该节点）选取若干个节点，使得选取节点的个数乘上节点 $k$ 的权值最大，且这若干个节点的代价和不超过给定的限制 $M$ 。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>左偏树</category>
+            
+          
+            
+              <category>数据结构</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>WC/CTSC/APIO</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

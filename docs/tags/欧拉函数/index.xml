@@ -1,3 +1,79 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>欧拉函数 on cqqqwq的小站</title><link>https://blog.chenqiqian.com/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</link><description>Recent content in 欧拉函数 on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Sun, 09 Sep 2018 20:29:47 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml"/><item><title>「SDOI2008」仪仗队-欧拉函数</title><link>https://blog.chenqiqian.com/posts/sdoi2008-guard/</link><pubDate>Sun, 09 Sep 2018 20:29:47 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sun, 09 Sep 2018 20:29:47 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/sdoi2008-guard/</guid><description>&lt;p>作为体育委员， $C$ 君负责这次运动会仪仗队的训练。仪仗队是由学生组成的 $N \times N$ 的方阵，为了保证队伍在行进中整齐划一， $C$ 君会跟在仪仗队的左后方，根据其视线所及的学生人数来判断队伍是否整齐(如下图)。&lt;/p>
-&lt;p>&lt;img src="1.jpg" alt="" />&lt;/p>
-&lt;p>现在， $C$ 君希望你告诉他队伍整齐时能看到的学生人数。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数学</category><category>数论</category><category>欧拉函数</category><category>OI</category><category>题解</category><category>各省省选</category></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>欧拉函数 on cqqqwq的小站</title>
+    <link>https://blog.chenqiqian.com/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</link>
+    <description>Recent content in 欧拉函数 on cqqqwq的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
+    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
+    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
+    <lastBuildDate>Sun, 09 Sep 2018 20:29:47 +0000</lastBuildDate>
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    
+        <atom:link href="https://blog.chenqiqian.com/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>「SDOI2008」仪仗队-欧拉函数</title>
+        <link>https://blog.chenqiqian.com/posts/sdoi2008-guard/</link>
+        <pubDate>Sun, 09 Sep 2018 20:29:47 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Sun, 09 Sep 2018 20:29:47 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/sdoi2008-guard/</guid>
+        <description>&lt;p&gt;作为体育委员， $C$ 君负责这次运动会仪仗队的训练。仪仗队是由学生组成的 $N \times N$ 的方阵，为了保证队伍在行进中整齐划一， $C$ 君会跟在仪仗队的左后方，根据其视线所及的学生人数来判断队伍是否整齐(如下图)。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;1.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;现在， $C$ 君希望你告诉他队伍整齐时能看到的学生人数。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>数学</category>
+            
+          
+            
+              <category>数论</category>
+            
+          
+            
+              <category>欧拉函数</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>各省省选</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

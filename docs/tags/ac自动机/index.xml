@@ -1,8 +1,266 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>AC自动机 on cqqqwq的小站</title><link>https://blog.chenqiqian.com/tags/ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</link><description>Recent content in AC自动机 on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Wed, 09 Jan 2019 19:18:07 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/tags/ac%E8%87%AA%E5%8A%A8%E6%9C%BA/index.xml" rel="self" type="application/rss+xml"/><item><title>「CF86C」Genetic engineering-AC自动机+dp</title><link>https://blog.chenqiqian.com/posts/cf86c/</link><pubDate>Wed, 09 Jan 2019 19:18:07 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Wed, 09 Jan 2019 19:18:07 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/cf86c/</guid><description>&lt;p>我们定义一个 DNA 序列为仅有 &lt;code>ATCG&lt;/code> 四个字母的字符串。&lt;/p>
-&lt;p>给出 $m(1 \le m \le 10)$ 个 DNA 序列模式串 $s_i$，每个长度均不超过 $10$ ，我们定义一个 DNA 序列 $w$ 是好的，当且仅当对于 $w$ 的每一个位置 $i$ ，都存在至少一个模式串 $s_j$ ， 使得 $w[l&amp;hellip;r] = s_j$（ $w[l&amp;hellip;r]$ 表示一个原字符串的一个子串） ， 其中 $1 \le l \le i \le r \le |w|$（ $|w|$ 为 DNA序列 $w$ 的长度） 。&lt;/p>
-&lt;p>请你计算出所有长度为 $n(1 \le n \le 1000)$ 的好的 DNA 序列的个数。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>字符串</category><category>动态规划</category><category>AC自动机</category><category>OI</category><category>题解</category><category>Codeforces</category></item><item><title>「HNOI2004」L语言-AC自动机</title><link>https://blog.chenqiqian.com/posts/hnoi2004-language/</link><pubDate>Sun, 09 Sep 2018 20:11:35 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sun, 09 Sep 2018 20:11:35 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/hnoi2004-language/</guid><description>&lt;p>一段文章 $T$ 是由若干小写字母构成。一个单词 $W$ 也是由若干小写字母构成。一个字典 $D$ 是若干个单词的集合。我们称一段文章 $T$ 在某个字典 $D$ 下是可以被理解的，是指如果文章 $T$ 可以被分成若干部分，且每一个部分都是字典 $D$ 中的单词。&lt;/p>
-&lt;p>给定一个字典 $D$ ，你的程序需要判断若干段文章在字典 $D$ 下是否能够被理解。并给出其在字典 $D$ 下能够被理解的最长前缀的位置。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>字符串</category><category>AC自动机</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「JSOI2007」文本生成器-AC自动机+dp</title><link>https://blog.chenqiqian.com/posts/jsoi2007-generator/</link><pubDate>Sat, 11 Aug 2018 19:27:37 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 11 Aug 2018 19:27:37 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/jsoi2007-generator/</guid><description>&lt;p>可读版题意：&lt;/p>
-&lt;p>给定 $n$ 个仅包含大写字母的模板串，求所有的长度为 $M$ 且仅包含大写字母的不同字符串中，有多少个包含至少一个模板串。答案对 $10007$ 取模。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>字符串</category><category>AC自动机</category><category>动态规划</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「POI2000」病毒-AC自动机</title><link>https://blog.chenqiqian.com/posts/poi2000-virus/</link><pubDate>Thu, 09 Aug 2018 11:03:59 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Thu, 09 Aug 2018 11:03:59 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/poi2000-virus/</guid><description>&lt;p>二进制病毒审查委员会最近发现了如下的规律：某些确定的二进制串是病毒的代码。如果某段代码中不存在任何一段病毒代码，那么我们就称这段代码是安全的。现在委员会已经找出了所有的病毒代码段，试问，是否存在一个无限长的安全的二进制代码。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>AC自动机</category><category>字符串</category><category>图论</category><category>OI</category><category>题解</category><category>各国OI</category></item><item><title>AC自动机学习笔记</title><link>https://blog.chenqiqian.com/posts/notes-ac_automaton/</link><pubDate>Thu, 05 Apr 2018 17:10:36 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Thu, 05 Apr 2018 17:10:36 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/notes-ac_automaton/</guid><description>&lt;p>&lt;code>Aho–Corasick&lt;/code>算法，常叫做AC自动机。是一种字符串多模式串匹配算法。能在线性时间内完成多个模式串对一个查询串的匹配。&lt;/p>
-&lt;blockquote>
-&lt;p>能自动AC哦。&lt;/p>
-&lt;/blockquote></description><dc:creator>cqqqwq</dc:creator><category>字符串</category><category>AC自动机</category><category>模板</category><category>OI</category><category>学习笔记</category></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>AC自动机 on cqqqwq的小站</title>
+    <link>https://blog.chenqiqian.com/tags/ac%E8%87%AA%E5%8A%A8%E6%9C%BA/</link>
+    <description>Recent content in AC自动机 on cqqqwq的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
+    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
+    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
+    <lastBuildDate>Wed, 09 Jan 2019 19:18:07 +0000</lastBuildDate>
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    
+        <atom:link href="https://blog.chenqiqian.com/tags/ac%E8%87%AA%E5%8A%A8%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>「CF86C」Genetic engineering-AC自动机&#43;dp</title>
+        <link>https://blog.chenqiqian.com/posts/cf86c/</link>
+        <pubDate>Wed, 09 Jan 2019 19:18:07 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Wed, 09 Jan 2019 19:18:07 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/cf86c/</guid>
+        <description>&lt;p&gt;我们定义一个 DNA 序列为仅有 &lt;code&gt;ATCG&lt;/code&gt; 四个字母的字符串。&lt;/p&gt;
+&lt;p&gt;给出 $m(1 \le m \le 10)$ 个 DNA 序列模式串 $s_i$，每个长度均不超过 $10$ ，我们定义一个 DNA 序列 $w$ 是好的，当且仅当对于 $w$ 的每一个位置 $i$ ，都存在至少一个模式串 $s_j$ ， 使得 $w[l&amp;hellip;r] = s_j$（ $w[l&amp;hellip;r]$ 表示一个原字符串的一个子串） ， 其中 $1 \le l \le i \le r \le |w|$（ $|w|$ 为 DNA序列 $w$ 的长度） 。&lt;/p&gt;
+&lt;p&gt;请你计算出所有长度为 $n(1 \le n \le 1000)$ 的好的 DNA 序列的个数。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>字符串</category>
+            
+          
+            
+              <category>动态规划</category>
+            
+          
+            
+              <category>AC自动机</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>Codeforces</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「HNOI2004」L语言-AC自动机</title>
+        <link>https://blog.chenqiqian.com/posts/hnoi2004-language/</link>
+        <pubDate>Sun, 09 Sep 2018 20:11:35 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Sun, 09 Sep 2018 20:11:35 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/hnoi2004-language/</guid>
+        <description>&lt;p&gt;一段文章 $T$ 是由若干小写字母构成。一个单词 $W$ 也是由若干小写字母构成。一个字典 $D$ 是若干个单词的集合。我们称一段文章 $T$ 在某个字典 $D$ 下是可以被理解的，是指如果文章 $T$ 可以被分成若干部分，且每一个部分都是字典 $D$ 中的单词。&lt;/p&gt;
+&lt;p&gt;给定一个字典 $D$ ，你的程序需要判断若干段文章在字典 $D$ 下是否能够被理解。并给出其在字典 $D$ 下能够被理解的最长前缀的位置。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>字符串</category>
+            
+          
+            
+              <category>AC自动机</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>各省省选</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「JSOI2007」文本生成器-AC自动机&#43;dp</title>
+        <link>https://blog.chenqiqian.com/posts/jsoi2007-generator/</link>
+        <pubDate>Sat, 11 Aug 2018 19:27:37 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Sat, 11 Aug 2018 19:27:37 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/jsoi2007-generator/</guid>
+        <description>&lt;p&gt;可读版题意：&lt;/p&gt;
+&lt;p&gt;给定 $n$ 个仅包含大写字母的模板串，求所有的长度为 $M$ 且仅包含大写字母的不同字符串中，有多少个包含至少一个模板串。答案对 $10007$ 取模。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>字符串</category>
+            
+          
+            
+              <category>AC自动机</category>
+            
+          
+            
+              <category>动态规划</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>各省省选</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「POI2000」病毒-AC自动机</title>
+        <link>https://blog.chenqiqian.com/posts/poi2000-virus/</link>
+        <pubDate>Thu, 09 Aug 2018 11:03:59 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Thu, 09 Aug 2018 11:03:59 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/poi2000-virus/</guid>
+        <description>&lt;p&gt;二进制病毒审查委员会最近发现了如下的规律：某些确定的二进制串是病毒的代码。如果某段代码中不存在任何一段病毒代码，那么我们就称这段代码是安全的。现在委员会已经找出了所有的病毒代码段，试问，是否存在一个无限长的安全的二进制代码。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>AC自动机</category>
+            
+          
+            
+              <category>字符串</category>
+            
+          
+            
+              <category>图论</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>各国OI</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>AC自动机学习笔记</title>
+        <link>https://blog.chenqiqian.com/posts/notes-ac_automaton/</link>
+        <pubDate>Thu, 05 Apr 2018 17:10:36 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Thu, 05 Apr 2018 17:10:36 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/notes-ac_automaton/</guid>
+        <description>&lt;p&gt;&lt;code&gt;Aho–Corasick&lt;/code&gt;算法，常叫做AC自动机。是一种字符串多模式串匹配算法。能在线性时间内完成多个模式串对一个查询串的匹配。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;能自动AC哦。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>字符串</category>
+            
+          
+            
+              <category>AC自动机</category>
+            
+          
+            
+              <category>模板</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>学习笔记</category>
+            
+          
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

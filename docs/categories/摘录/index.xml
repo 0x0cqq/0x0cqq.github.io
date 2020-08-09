@@ -1,1 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>摘录 on cqqqwq的小站</title><link>https://blog.chenqiqian.com/categories/%E6%91%98%E5%BD%95/</link><description>Recent content in 摘录 on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Sun, 03 Jun 2018 21:23:05 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/categories/%E6%91%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml"/><item><title>「摘录」青春设计师-年级范文</title><link>https://blog.chenqiqian.com/posts/essay-youth-designer/</link><pubDate>Sun, 03 Jun 2018 21:23:05 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sun, 03 Jun 2018 21:23:05 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/essay-youth-designer/</guid><description>&lt;p>青春真的是一个非常空泛而又令人迷茫的词汇。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>摘录</category></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>摘录 on cqqqwq的小站</title>
+    <link>https://blog.chenqiqian.com/categories/%E6%91%98%E5%BD%95/</link>
+    <description>Recent content in 摘录 on cqqqwq的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
+    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
+    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
+    <lastBuildDate>Sun, 03 Jun 2018 21:23:05 +0000</lastBuildDate>
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    
+        <atom:link href="https://blog.chenqiqian.com/categories/%E6%91%98%E5%BD%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>「摘录」青春设计师-年级范文</title>
+        <link>https://blog.chenqiqian.com/posts/essay-youth-designer/</link>
+        <pubDate>Sun, 03 Jun 2018 21:23:05 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Sun, 03 Jun 2018 21:23:05 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/essay-youth-designer/</guid>
+        <description>&lt;p&gt;青春真的是一个非常空泛而又令人迷茫的词汇。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+        
+          
+            
+              <category>摘录</category>
+            
+          
+        
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>

@@ -1,8 +1,124 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" xmlns:media="http://search.yahoo.com/mrss/"><channel><title>整体二分 on cqqqwq的小站</title><link>https://blog.chenqiqian.com/tags/%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86/</link><description>Recent content in 整体二分 on cqqqwq的小站</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor><webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster><copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright><lastBuildDate>Wed, 17 Oct 2018 22:54:44 +0000</lastBuildDate><sy:updatePeriod>daily</sy:updatePeriod><atom:link href="https://blog.chenqiqian.com/tags/%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86/index.xml" rel="self" type="application/rss+xml"/><item><title>「CTSC2018」混合果汁-整体二分</title><link>https://blog.chenqiqian.com/posts/ctsc2018-mix/</link><pubDate>Wed, 17 Oct 2018 22:54:44 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Wed, 17 Oct 2018 22:54:44 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/ctsc2018-mix/</guid><description>&lt;p>小 R 热衷于做黑暗料理，尤其是混合果汁。&lt;/p>
-&lt;p>商店里有 $n$ 种果汁，编号为 $0,1,\cdots,n-1$ 。$i$ 号果汁的美味度是 $d_i$ ，每升价格为 $p_i$​ 。小 R 在制作混合果汁时，还有一些特殊的规定，即在一瓶混合果汁中，$i$ 号果汁最多只能添加 $l_i$ 升。&lt;/p>
-&lt;p>现在有 $m$ 个小朋友过来找小 R 要混合果汁喝，他们都希望小 R 用商店里的果汁制作成一瓶混合果汁。其中，第 $j$ 个小朋友希望他得到的混合果汁总价格不大于 $g_j$ ，体积不小于 $L_j$​ 。在上述这些限制条件下，小朋友们还希望混合果汁的美味度尽可能地高，一瓶混合果汁的美味度等于所有参与混合的果汁的美味度的最小值。请你计算每个小朋友能喝到的最美味的混合果汁的美味度。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>整体二分</category><category>set</category><category>OI</category><category>题解</category><category>WC/CTSC/APIO</category></item><item><title>「ZJOI2013」K大数查询-整体二分</title><link>https://blog.chenqiqian.com/posts/zjoi2013-kth/</link><pubDate>Wed, 06 Jun 2018 19:17:02 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Wed, 06 Jun 2018 19:17:02 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/zjoi2013-kth/</guid><description>&lt;p>有 $N$ 个位置， $M$ 个操作。&lt;/p>
-&lt;p>操作有两种：&lt;/p>
-&lt;ul>
-&lt;li>如果是 &lt;code>1 a b c&lt;/code> 的形式表示在第 $a$ 个位置到第 $b$ 个位置，每个位置加入一个数 $c$ ；&lt;/li>
-&lt;li>如果是 &lt;code>2 a b c&lt;/code> 形式，表示询问从第 $a$ 个位置到第 $b$ 个位置，第 $c$ 大的数是多少。&lt;/li>
-&lt;/ul></description><dc:creator>cqqqwq</dc:creator><category>整体二分</category><category>数据结构</category><category>OI</category><category>题解</category><category>各省省选</category></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" 
+  xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+  xmlns:dc="http://purl.org/dc/elements/1.1/" 
+  xmlns:atom="http://www.w3.org/2005/Atom" 
+  xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" 
+  xmlns:media="http://search.yahoo.com/mrss/">
+  <channel>
+    <title>整体二分 on cqqqwq的小站</title>
+    <link>https://blog.chenqiqian.com/tags/%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86/</link>
+    <description>Recent content in 整体二分 on cqqqwq的小站</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>cqqqwq@outlook.com (cqqqwq)</managingEditor>
+    <webMaster>cqqqwq@outlook.com (cqqqwq)</webMaster>
+    <copyright>&amp;copy;cqqqwq 2017-{year}, All Rights Reserved.</copyright>
+    <lastBuildDate>Wed, 17 Oct 2018 22:54:44 +0000</lastBuildDate>
+    <sy:updatePeriod>daily</sy:updatePeriod>
+    
+        <atom:link href="https://blog.chenqiqian.com/tags/%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+
+      
+      <item>
+        <title>「CTSC2018」混合果汁-整体二分</title>
+        <link>https://blog.chenqiqian.com/posts/ctsc2018-mix/</link>
+        <pubDate>Wed, 17 Oct 2018 22:54:44 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Wed, 17 Oct 2018 22:54:44 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/ctsc2018-mix/</guid>
+        <description>&lt;p&gt;小 R 热衷于做黑暗料理，尤其是混合果汁。&lt;/p&gt;
+&lt;p&gt;商店里有 $n$ 种果汁，编号为 $0,1,\cdots,n-1$ 。$i$  号果汁的美味度是 $d_i$ ，每升价格为 $p_i$​ 。小 R 在制作混合果汁时，还有一些特殊的规定，即在一瓶混合果汁中，$i$  号果汁最多只能添加 $l_i$ 升。&lt;/p&gt;
+&lt;p&gt;现在有 $m$ 个小朋友过来找小 R 要混合果汁喝，他们都希望小 R 用商店里的果汁制作成一瓶混合果汁。其中，第 $j$ 个小朋友希望他得到的混合果汁总价格不大于 $g_j$ ，体积不小于 $L_j$​ 。在上述这些限制条件下，小朋友们还希望混合果汁的美味度尽可能地高，一瓶混合果汁的美味度等于所有参与混合的果汁的美味度的最小值。请你计算每个小朋友能喝到的最美味的混合果汁的美味度。&lt;/p&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>整体二分</category>
+            
+          
+            
+              <category>set</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>WC/CTSC/APIO</category>
+            
+          
+        
+      </item>
+      
+      <item>
+        <title>「ZJOI2013」K大数查询-整体二分</title>
+        <link>https://blog.chenqiqian.com/posts/zjoi2013-kth/</link>
+        <pubDate>Wed, 06 Jun 2018 19:17:02 +0000</pubDate>
+        <author>cqqqwq@outlook.com (cqqqwq)</author>
+        <atom:modified>Wed, 06 Jun 2018 19:17:02 +0000</atom:modified>
+        <guid>https://blog.chenqiqian.com/posts/zjoi2013-kth/</guid>
+        <description>&lt;p&gt;有 $N$ 个位置， $M$ 个操作。&lt;/p&gt;
+&lt;p&gt;操作有两种：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果是 &lt;code&gt;1 a b c&lt;/code&gt; 的形式表示在第 $a$ 个位置到第 $b$ 个位置，每个位置加入一个数 $c$ ；&lt;/li&gt;
+&lt;li&gt;如果是 &lt;code&gt;2 a b c&lt;/code&gt; 形式，表示询问从第 $a$ 个位置到第 $b$ 个位置，第 $c$ 大的数是多少。&lt;/li&gt;
+&lt;/ul&gt;</description>
+        
+        <dc:creator>cqqqwq</dc:creator>
+        
+        
+        
+        
+          
+            
+              <category>整体二分</category>
+            
+          
+            
+              <category>数据结构</category>
+            
+          
+        
+        
+          
+            
+              <category>OI</category>
+            
+          
+            
+              <category>题解</category>
+            
+          
+        
+        
+          
+            
+              <category>各省省选</category>
+            
+          
+        
+      </item>
+      
+
+    
+  </channel>
+</rss>
