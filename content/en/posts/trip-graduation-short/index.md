@@ -31,6 +31,8 @@ enableTocContent: false
 
 <!--more-->
 
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=420 height=86 src="//music.163.com/outchain/player?type=2&id=368727&auto=1&height=66"></iframe>
+
 凌晨四点的首都国际机场，寂寥且孤单。发动机的轰鸣似乎还在身后回响，许多大小飞机在停机坪上一架架整齐的停放。
 
 当每个人都拿到行李，沿着笔直而漫长的步道走向停车场；当我走向垂直电梯，所有同行的同学都从视野里消失；当我坐上车的后座，努力四望却只看到钢铁和水泥闪着冰冷的光。
