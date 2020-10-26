@@ -1,3 +1,4 @@
+cd /Users/chenqq/Files/ChenQiqian.github.io
 rm -rf ./Docs
 hugo --minify
 git add .

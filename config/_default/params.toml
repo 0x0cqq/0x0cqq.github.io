@@ -37,7 +37,7 @@ enableGoToTop = true
 enableWhoami = true
 summaryShape = "classic" # card, classic, compact
 archiveGroupByDate = "2006-01" # "2006-01": group by month, "2006": group by year
-archivePaginate = 13
+archivePaginate = 50
 paginateWindow = 1
 talksPaginate = 5
 talksGroupByDate = "2006-01"
@@ -46,7 +46,7 @@ pubPaginate = 20
 # whoami
 myname = "cqqqwq"
 email = "cqqqwq@outlook.com"
-whoami = "A student in Computer Science."
+whoami = "A student in Software Engineering."
 bioImageUrl = ""
 useGravatar = false
 location = "Beijing, China"
