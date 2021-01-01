@@ -77,7 +77,7 @@ enableTocContent: true
 
 即使看过2020年，受过寒风吹彻，我仍将对自己说：“做一朵翻涌的浪花。”
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=420 height=86 src="//music.163.com/outchain/player?type=2&id=1449782341&auto=0&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=310 height=86 src="//music.163.com/outchain/player?type=2&id=1449782341&auto=0&height=66"></iframe>
 
 ## （三）
 
@@ -91,7 +91,7 @@ enableTocContent: true
 
 退一寸，也有退一寸的欢喜。
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=420 height=86 src="//music.163.com/outchain/player?type=2&id=108697&auto=0&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=310 height=86 src="//music.163.com/outchain/player?type=2&id=108697&auto=0&height=66"></iframe>
 
 ## （四）
 
@@ -113,7 +113,7 @@ enableTocContent: true
 
 所以，2021年的人生仍像2020年一样，是一场对不确定性的探索。总结一下吧：多看、多想，无问。
 
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=420 height=86 src="//music.163.com/outchain/player?type=2&id=1425818683&auto=0&height=66"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=310 height=86 src="//music.163.com/outchain/player?type=2&id=1425818683&auto=0&height=66"></iframe>
 
 ## （五）
 
@@ -123,7 +123,7 @@ enableTocContent: true
 
 开年疫情时，觉得这一年很漫长，过不完似的；但当新的一年到来的时候，又觉得上一年新年的记忆还都在脑海，真的仿佛还是昨天。等到人生将尽时，大概也会是这样吧。
 
-无论如何，2021年，世界仍然会用它固有的方式运行着，就像冬天的寒冷不会怀有任何的仁慈。冰凉的冬日，作为有灵的人类，我们更应该相拥取暖。对那些给了我温暖的，无论是我认识还是我不认识的人们，道一句：前行的路上，感谢有你们在。看到这篇献词的朋友或陌生人，请把它当作在新的一年里人与人之间传递的第一缕温暖，并收下我诚恳的祝福吧：
+无论如何，2021年，世界仍然会用它固有的方式运行着，就像冬天的寒冷不会怀有任何的仁慈。冰凉的冬日，作为有灵的人类，我们更应该相拥取暖。对那些给了我温暖的，无论是我认识还是我不认识的人们，说一句：前行的路上，感谢有你们。看到这篇献词的朋友或陌生人，请把它当作在新的一年里人与人之间传递的第一缕温暖，并收下我诚恳的祝福吧：
 
 祝你新年平安，新年快乐！
 
