@@ -1,6 +1,7 @@
 theme = "zzo"
 
 baseURL = "https://blog.chenqiqian.com"
+assetsURL = "https://cdn.jsdelivr.net/gh/chenqiqian/chenqiqian.github.io/docs/"
 title = "cqqqwq的小站"
 
 defaultContentLanguage = "en"
