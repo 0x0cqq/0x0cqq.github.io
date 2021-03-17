@@ -32,10 +32,16 @@
   url = "series"
 
 [[main]]
+  identifier = "notes"
+  name = "Notes"
+  url = "notes"
+  weight = 4
+
+[[main]]
   identifier = "gallery"
   name = "Gallery"
   url = "gallery"
-  weight = 4
+  weight = 5
 
 
 [[main]]
@@ -44,8 +50,9 @@
   url = "showcase"
   weight = 6
 
+
 [[main]]
-  identifier = "contact"
-  name = "Contact"
-  url = "contact"
+  identifier = "friends"
+  name = "Friends"
+  url = "friends"
   weight = 8

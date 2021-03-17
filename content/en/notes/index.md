@@ -4,20 +4,7 @@ draft: false
 ##-- page info --##
 title: "札记"
 date: 2021-03-09T21:54:57+08:00
-categories:
-- 日常
-tags:
-series:
-##-- page setting --##
-# slug: ""
-# type: ""
-pinned: false
-libraries:
-- mathjax 
-##-- toc setting --##
-hideToc: false
-enableToc: true
-enableTocContent: true
+type: notes
 ---
 
 一些简短的思考与感悟。
@@ -61,3 +48,8 @@ enableTocContent: true
 ---
 
 「有敢偶语诗书者弃市，以古非今者族，吏见知不举者与同罪。所不去者，医药卜筮种树之书。若欲有学法令，以吏为师。」
+
+---
+
+就像「人生识字糊涂始」，哲学也一样。
+

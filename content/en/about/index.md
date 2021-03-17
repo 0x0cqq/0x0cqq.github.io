@@ -18,6 +18,7 @@ cqqqwq 是某高中开始学 OI 的蒟蒻，现已跳入计算机天坑。
 
 cqqqwq 不定期更新博客，主要内容包括日常、算法、题解。
 
+## 邮箱
 
-
-
++ [cqqqwq@outlook.com](mailto:cqqqwq@outlook.com)
++ [cqqqwq@gmail.com](mailto:cqqqwq@gmail.com)

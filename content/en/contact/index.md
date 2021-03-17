@@ -8,8 +8,3 @@ service:
 
 This is contact page.
 
-## 邮箱
-
-+ cqqqwq@outlook.com
-+ cqqqwq@gmail.com
-
