@@ -3,7 +3,6 @@
 draft: false
 ##-- page info --##
 title: "计算社会科学中伦理问题探究"
-description: "Ethical Issues in Css"
 date: 2021-03-31T17:44:23+08:00
 categories:
 - 论文
@@ -25,7 +24,7 @@ enableTocContent: true
 
 本文为信息科学技术概论课程论文，写于2020年12月7日。
 
-
+<!--more-->
 
 ## 摘要
 
@@ -45,7 +44,7 @@ This article mainly explores the ethical issues of a new interdisciplinary--Comp
 
 图 1 Google Books Ngram Viewer 中“计算社会科学”条目的出现趋势[^2]
 
-![img](/Users/chenqq/Files/ChenQiqian.github.io/content/en/posts/ethical-issues-in-css/1.png)
+![img](1.png)
 
 
 
