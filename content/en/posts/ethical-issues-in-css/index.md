@@ -6,8 +6,11 @@ title: "计算社会科学中伦理问题探究"
 description: "Ethical Issues in Css"
 date: 2021-03-31T17:44:23+08:00
 categories:
+- 论文
 tags:
+- 计算社会科学
 series:
+- 大一上课程
 ##-- page setting --##
 # slug: ""
 # type: ""
