@@ -15,6 +15,7 @@ series:
 # slug: ""
 # type: ""
 pinned: false
+markup: mmark
 libraries:
 - mathjax 
 ##-- toc setting --##
@@ -162,7 +163,7 @@ enableTocContent: true
 
 首先做一些纯粹数学上的准备。
 
-对于 $A = (a_{ij})_{m \times n},  B = (b_{ij})_{n \times m} (m \leq n)$ ，
+对于 $ A = (a_{ij})_ {m \times n},  B = (b_{ij})_{n \times m} (m \leq n) $ ，
 
 我们有 $\det(AB) = \sum\limits_{S}\det(A_{S}B_S)$ ，其中 $S \subseteq \{1,2,\cdots, n\}, |S| = m$ ；
 
@@ -175,9 +176,11 @@ enableTocContent: true
 利用上面的定理，我们可以巧妙的加速以上运算（或者至少让看起来的形式简洁一点）。
 
 我们令 $B_i$ 为点 $v_i$ 对应（把 $v_i$ 对应的行删掉）的基本关联矩阵。则：
+
 $$
 \det(B_i{B_i}^T) = \sum\limits_S \det({B_i}_S {{B_i}_S}^T) = \sum_\limits{S} \det({B_i}_S)^2
 $$
+
 注意到，这个式子可以和上文的“显然的做法”对应： $\sum\limits_{S}$ 对应中的“枚举 $n-1$ 列”，${B_i}_S$ 对应挑出来的 $n-1$ 列构成的方阵。
 
 于是：$\det(B_i {B_i}^T)$ 即为图的支撑树个数。
@@ -192,7 +195,7 @@ $$
 
 包含 $e$ 的支撑树：
 
-1. 把 e 两边的点缩成一个点，再进行计算
+1. 把 $e$ 两边的点缩成一个点，再进行计算
 2. 所有支撑树 - 不含 $e$ 的支撑树 = 含 $e$ 的支撑树
 
 #### 以特定节点为根的支撑树计数
@@ -211,7 +214,7 @@ $$
 >
 > 以上三个操作都不改变行列式的值，
 
-> 前者不太好说【书上直接“显然”了】：首先如果一棵支撑树，不是以 $v_r$ 为根的有根树，那么必然存在节点 $v_j,v_j \neq v_r$ 的负度为 $0$ （利用 $\sum_\limits{i}{{d^-}(v_i)} = m = n-1$），即 $v_j$ 对应的行全为 $0$ （因为正度的 $1$ 全被删掉了），有全 $0$ 行的矩阵的行列式必然为 $0$。【其实这也有点图论视角。】
+> 前者不太好说【书上直接“显然”了】：首先如果一棵支撑树，不是以 $v_r$ 为根的有根树，那么必然存在节点 $ v_j$ , $v_j \neq v_r$ 的负度为 $0$ （利用 $ \sum _ \limits{i}{{d^-}(v_i)} = m = n-1 $），即 $v_j$ 对应的行全为 $0$ （因为正度的 $1$ 全被删掉了），有全 $0$ 行的矩阵的行列式必然为 $0$。【其实这也有点图论视角。】
 
 > 从图论的视角来看这个问题更加明显一点。去除所有 $1$ 后，（基本）关联矩阵本质上只表示负度，也就是某行的 $-1$ 的个数表示该行对应的点的负度度数，每列有且仅有一个 $-1$ 。而根据有根树的定义，对于一棵树，其以 $v_i$ 为根 当且仅当  $v_i$ 的负度为 $0$ 且剩余所有节点的负度均为 $1$ 。那么转化成数学表示的话，后一个条件就是 $n-1$ 阶方阵每一行、每一列有且仅有一个 $-1$ 。我们知道，这是一个置换矩阵，行列式是  $\pm 1$ 。这样想可以使两方面的推导都更加自然。
 
@@ -230,24 +233,25 @@ $$
 一种较为简便求解支撑树计数问题的方法。
 
 对于**无向图** $G(V,E)$ ，定义拉普拉斯矩阵 $L_{n \times n}$：
+
 $$
-L_{ij} = 
-\left\{\begin{aligned}-m_{ij}&,i \neq j\\\text{deg}(v_i)&,i = j\end{aligned}\right.
+L_{ij} = \left\{\begin{aligned}-m_{ij}&,i \neq j \\ \text{deg}(v_i)&,i = j\end{aligned}\right.
 $$
+
 其中 $m_{ij}$ 表示 $v_i$ 与 $v_j$ 之间的边数。
 
 则该无向图 $G$ 的支撑树个数则为 $t(G) = \det(L_i)$ ，$L_i$ 为去掉第 $i$ 行和第 $i$ 列后得到的矩阵，$i = 1, 2, \cdots, n$。
 
-或者，用特征值表示：找出 $L$ 的 $n-1$ 个非 $0$ 特征值 $\lambda_1 , \cdots,\lambda_{n-1}$， 那么 $t(G) = \frac{1}{n} \prod\limits_{1 \leq i \leq n-1} \lambda_i$
+或者，用特征值表示：找出 $L$ 的 $n-1$ 个非 $0$ 特征值 $ \lambda _ 1 , \cdots, \lambda_{n-1} $， 那么 $t(G) = \frac{1}{n} \prod\limits _ {1 \leq i \leq n-1} \lambda_i$
 
 这一定理的本质是找到了一个对于关联矩阵与其转置乘积结果的简洁表达，因此在 $m$ 较大时能节省出很多的时间。具体证明如下：
 
 > 引理1: $BB^T = L$
 >
-> 证明：$(BB^T)_{ij} = \sum\limits_{e_k \in E} B_{ik} {B^T}_{kj} = \sum\limits_{e_k \in E} B_{ik}B_{jk}$ 
+> 证明： $(BB^T)_{ij} = \sum \limits _ {e_k \in E} B _ {ik} {B^T} _ {kj} = \sum\limits _ {e_k \in E} B _ {ik}B_{jk}$ 。
 >
-> 1. 当 $i=j$ 时，显然只有 $e_k$ 邻接与 $i$ 的时候， $B_{ik} = \pm1$ ，其余时候均为 0 ；故求和即为与 $i$ 邻接的边的个数，即 $deg(v_i)$ 。
-> 2. 当 $i \neq j$  时，$B_{ik} \neq 0$ 且 $B_{jk} \neq 0$ 当且仅当 $e_k$ 连接 $v_i$ 与 $v_j$ ；而 $B_{ik}$ 与 $B_{jk}$ 显然一者为 $1$ ，一者为 $-1$，故乘积为 $-1$ ，求和后即为 $-m_{ij}$ 。 
+> 1. 当 $i=j$ 时，显然只有 $e_k$ 邻接与 $i$ 的时候， $B _ {ik} = \pm1$ ，其余时候均为 0 ；故求和即为与 $i$ 邻接的边的个数，即 $deg(v_i)$ 。
+> 2. 当 $i \neq j$  时，$B _ {ik} \neq 0$ 且 $B _ {jk} \neq 0$ 当且仅当 $e_k$ 连接 $v_i$ 与 $v_j$ ；而 $B _ {ik}$ 与 $B _ {jk}$ 显然一者为 $1$ ，一者为 $-1$，故乘积为 $-1$ ，求和后即为 $-m_{ij}$ 。 
 >
 > 引理2：$B_i{B_i}^T = L_i$ 
 >
@@ -259,8 +263,9 @@ $$
 >
 > $$
 > {L^\text{out}}_{ij} = 
-> \left\{\begin{aligned}-m_{ij}&,i \neq j\\\text{deg}^{\text{out}}(v_i)&,i = j\end{aligned}\right.
+> \left\{\begin{aligned}-m_{ij}&,i \neq j \\ \text{deg}^{\text{out}}(v_i)&,i = j\end{aligned}\right.
 > $$
+> 
 > 其中 $m_{ij}$ 为从 $v_i$ 指向 $v_j$ 的有向边条数。
 >
 > 同理可以定义入度拉普拉斯矩阵 $L^{\text{in}}$ 。

@@ -25,24 +25,28 @@
 <script defer src="{{ $closest.RelPermalink }}"></script>
   
 {{ if in .Site.Params.Libraries "mathjax" }}
-<script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true,
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      ignoreHtmlClass: 'tex2jax_ignore',
-      processHtmlClass: 'tex2jax_process'
-    }
-  };
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [["$", "$"]],
+      },
+      displayMath: [
+        ["$$", "$$"],
+        ["\[\[", "\]\]"],
+      ],
+      svg: {
+        fontCache: "global",
+      },
+    };
   </script>
   {{ $js := .Site.Data.lib.js }}
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script async src="{{ $js.mathjax.url }}" id="MathJax-script"></script>
+  <script
+    id="MathJax-script"
+    async
+    src="{{ $js.mathjax.url }}"
+  ></script>
+  </script>
 {{ end }}
 
 <script>
