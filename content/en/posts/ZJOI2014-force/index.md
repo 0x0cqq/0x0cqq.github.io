@@ -21,7 +21,7 @@ enableTocContent: false
 给出 $n$ 个数 $q_i$ ，给出 $F_j$ 定义为：
 
 $$
-F_j = \sum_{i < j}\frac{q_i q_j}{(i-j)^2} - \sum_{i > j}\frac{q_i q_j}{(i-j)^2}
+F_j = \sum _ {i < j}\frac{q_i q_j}{(i-j)^2} - \sum _ {i > j}\frac{q_i q_j}{(i-j)^2}
 $$
 
 令 $E_i = \frac{F_i}{q_i}$ ，求 $E_i$ 的值。
@@ -37,18 +37,18 @@ $$
 
 先化简：
 $$
-E_j = \sum_{i < j}\frac{q_i}{(i-j)^2} - \sum_{i > j}\frac{q_i}{(i-j)^2}
+E_j = \sum _ {i < j}\frac{q_i}{(i-j)^2} - \sum _ {i > j}\frac{q_i}{(i-j)^2}
 $$
 
 注意到我们只需要求：
 $$
-E_j' = \sum_{i = 1}^{j-1}\frac{q_i}{(i-j)^2} 
+E_j' = \sum _ {i = 1}^{j-1}\frac{q_i}{(i-j)^2} 
 $$
 
 注意到卷积的形式：
 
 $$
-(f * g)[i] = \sum_{j = 0}^{i} f[j]\,g[i-j]
+(f * g)[i] = \sum _ {j = 0}^{i} f[j]\,g[i-j]
 $$
 
 在上式中，令 $f[i] = q_i,g[i] = i^{-2}$ ，由卷积的定义可以发现：

@@ -38,7 +38,7 @@ enableTocContent: false
 我们考虑第一个很好求，设其为 $D$。那么我们的答案就是：
 
 $$
-ans_i = \frac{1}{siz[A] \times siz[B]}\sum_{a \in A,b \in B} max(D,d(a) + d(b) + 1)
+ans_i = \frac{1}{siz[A] \times siz[B]}\sum _ {a \in A,b \in B} max(D,d(a) + d(b) + 1)
 $$
 
 我们令 $d(a) + d(b) + 1 >= D$ 的数对 $(a,b)$ 的数目为 $cnt_i$ ，其（$d(a) + d(b) + 1$）和为 $sum_i$ ，那么化简之后：

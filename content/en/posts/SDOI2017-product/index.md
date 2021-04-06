@@ -35,35 +35,35 @@ Doris 的表格中共有 $n \times m$ 个数，她想知道这些数的乘积是
 
 令 $fib(i)$ 为斐波那契数列的第 $i$ 项，我们要求的是：
 $$
-\prod_{i=1}^n \prod_{j=1}^m fib(\gcd(i,j))
+\prod _ {i=1}^n \prod _ {j=1}^m fib(\gcd(i,j))
 $$
 推推式子（不妨设 $n \le m$）：
 $$
-\prod_{i=1}^n \prod_{j=1}^m fib(\gcd(i,j))\\
-= \prod_{d=1}^n fib(d)^{g(d)}
+\prod _ {i=1}^n \prod _ {j=1}^m fib(\gcd(i,j))\\
+= \prod _ {d=1}^n fib(d)^{g(d)}
 $$
 其中 ：
 $$
-g(d) = \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \sum_{j=1}^{\lfloor\frac{m}{d}\rfloor} [\gcd(i,j) = 1]\\
-= \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \sum_{j=1}^{\lfloor\frac{m}{d}\rfloor} \sum_{k | \gcd(i,j)} \mu(k)\\
-= \sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k) \lfloor \frac{\lfloor\frac{n}{d}\rfloor} {k}\rfloor \lfloor \frac{\lfloor\frac{m}{d}\rfloor} {k}\rfloor\\
-= \sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor\\
+g(d) = \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor} \sum _ {j=1}^{\lfloor\frac{m}{d}\rfloor} [\gcd(i,j) = 1]\\
+= \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor} \sum _ {j=1}^{\lfloor\frac{m}{d}\rfloor} \sum _ {k | \gcd(i,j)} \mu(k)\\
+= \sum _ {k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k) \lfloor \frac{\lfloor\frac{n}{d}\rfloor} {k}\rfloor \lfloor \frac{\lfloor\frac{m}{d}\rfloor} {k}\rfloor\\
+= \sum _ {k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor\\
 $$
 以上是我会的全部...
 
 我们令 $T = kd$ ，然后直接代到最外面：
 $$
-sum = \prod_{d=1}^{n} fib(d)^{\sum_{k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\
-= \prod_{k=1}^{n} \prod_{d = 1}^{\lfloor\frac{n}{k}\rfloor}fib(d)^{\mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\
-=\prod_{T=1}^n \prod_{k | T} fib(\frac{T}{k})^{\mu(k)\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}
+sum = \prod _ {d=1}^{n} fib(d)^{\sum _ {k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\
+= \prod _ {k=1}^{n} \prod _ {d = 1}^{\lfloor\frac{n}{k}\rfloor}fib(d)^{\mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\
+=\prod _ {T=1}^n \prod _ {k | T} fib(\frac{T}{k})^{\mu(k)\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}
 $$
 然后我们如果令：  
 $$
-f(T) = \prod_{k|T} fib(\frac{T}{k})^{\mu(k)}
+f(T) = \prod _ {k|T} fib(\frac{T}{k})^{\mu(k)}
 $$
 原来的式子就表示为：
 $$
-sum = \prod_{T=1}^n {f(T)}^{\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}
+sum = \prod _ {T=1}^n {f(T)}^{\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}
 $$
 $O(n\log n)$ 搞出来 $f$ 的取值，然后胡逼分块即可。
 
@@ -87,8 +87,8 @@ int mu[MAXN],f[MAXN],fib[MAXN],inv[MAXN];
 int sum[MAXN],sinv[MAXN];
 
 void sieve(int n){
-  // \sum_{d | n} \mu(d) = [n=1]
-  // mu(n) = [n=1] - \sum_{d < n,d | n} mu(d)
+  // \sum _ {d | n} \mu(d) = [n=1]
+  // mu(n) = [n=1] - \sum _ {d < n,d | n} mu(d)
   mu[1] = 1;
   for(inti= 1;i<=n;i++){
     for(intj= i+i;j<=n;j+=i) mu[j] -= mu[i];

@@ -39,7 +39,7 @@ enableTocContent: false
 
 设 $dp[i]$ 是前 $i$ 句话的不协调度的最小值，那么我们显然有以下的状态转移方程：
 $$
-dp[i] = \min_{j=0}^{i-1}(dp[j] + {|sum[i]-sum[j]+(i-j-1)-L|}^p)
+dp[i] = \min _ {j=0}^{i-1}(dp[j] + {|sum[i]-sum[j]+(i-j-1)-L|}^p)
 $$
 打表发现决策单调性。
 

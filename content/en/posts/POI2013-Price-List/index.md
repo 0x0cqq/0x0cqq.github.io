@@ -63,7 +63,7 @@ enableTocContent: false
 
 所以对于这个节点 $x$ ，假设和他距离为 $1$ 的点有 $k$ 个（也就是这个节点的度数），那么对于每一次二次遍历，那么最多有 $k^2$ 条边遍历过但没有被删掉，只有这些边有可能在接下来的遍历中被再次遍历，又因为第一次遍历的边总共是 $m$ 条，所以总时间复杂度就是它们的相乘。
 $$
-\sum_{v \in V} \min(deg(v)^2,m) \leq \sum_{v \in V} \sqrt{deg(v)^2 \cdot m} = \sqrt {m} \sum_{v \in V} deg(v) = O(m \sqrt{m})
+\sum _ {v \in V} \min(deg(v)^2,m) \leq \sum _ {v \in V} \sqrt{deg(v)^2 \cdot m} = \sqrt {m} \sum _ {v \in V} deg(v) = O(m \sqrt{m})
 $$
 - - -
 

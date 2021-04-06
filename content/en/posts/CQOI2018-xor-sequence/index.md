@@ -18,7 +18,7 @@ enableToc: true
 enableTocContent: false
 ---
 
-已知一个长度为 $n$ 的整数数列 $a_1,a_2,...,a_n$ ，给定查询参数 $l$ 、 $r$ ，问在 $a_l,a_{l+1},...,a_r$ ​区间内，有多少子序列满足异或和等于 $k$ 。也就是说，对于所有的 $x,y$ $(l \leq x \leq y \leq r)$ ，能够满足 $a_x \bigoplus a_{x+1} \bigoplus ... \bigoplus a_y = k$ 的 $x,y$ 有多少组。
+已知一个长度为 $n$ 的整数数列 $a_1,a_2,...,a_n$ ，给定查询参数 $l$ 、 $r$ ，问在 $a_l,a _ {l+1},...,a_r$ ​区间内，有多少子序列满足异或和等于 $k$ 。也就是说，对于所有的 $x,y$ $(l \leq x \leq y \leq r)$ ，能够满足 $a_x \bigoplus a _ {x+1} \bigoplus ... \bigoplus a_y = k$ 的 $x,y$ 有多少组。
 
 <!--more-->
 
@@ -32,9 +32,9 @@ enableTocContent: false
 
 如果我们用莫队的话，那么应该让这个数对 $(x,y)$ 的数目能够在 $O(1)$ 的时间维护。
 
-因为异或有结合律，以及 $a\bigoplus a = 0$ ，所以如果我们令 $S_i = a_1 \bigoplus a_2 \bigoplus ... \bigoplus a_i$ ，那么 $a_x \bigoplus a_{x+1} \bigoplus ... \bigoplus a_y$ 就等于 $S_y \bigoplus S_{x-1}$。
+因为异或有结合律，以及 $a\bigoplus a = 0$ ，所以如果我们令 $S_i = a_1 \bigoplus a_2 \bigoplus ... \bigoplus a_i$ ，那么 $a_x \bigoplus a _ {x+1} \bigoplus ... \bigoplus a_y$ 就等于 $S_y \bigoplus S _ {x-1}$。
 
-这个时候如果我们令 $T_i = S_{i-1} \bigoplus k(S_0 = 0)$ ， 那么 $(x,y)$ 是合法数对的条件就化作 $S_y = T_x$ 。
+这个时候如果我们令 $T_i = S _ {i-1} \bigoplus k(S_0 = 0)$ ， 那么 $(x,y)$ 是合法数对的条件就化作 $S_y = T_x$ 。
 
 那么问题转化为在 $l \leq x\leq y \leq r$ 的区间内，有多少对 $(x,y)$ 满足 $T_x = S_y$ ，其中的 $\{T_n\}$ 和 $\{S_n\}$ 都可以 $O(n)$ 的计算。
 

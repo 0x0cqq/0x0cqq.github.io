@@ -38,7 +38,7 @@ $$
 
 令 $dp[i][w]$ 为前 $i$ 个数字切割w次能拿到的最小值 所以我们可以写出状态转移方程：
 $$
-dp[i][w] = \max_{j=1}^{i-1}(dp[j][w-1] + sum[j] \times (sum[i]-sum[j]))
+dp[i][w] = \max _ {j=1}^{i-1}(dp[j][w-1] + sum[j] \times (sum[i]-sum[j]))
 $$
 然后如果 $k$ 比 $j$ 优秀，则有：
 $$

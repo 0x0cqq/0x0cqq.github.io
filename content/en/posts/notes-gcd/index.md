@@ -87,15 +87,15 @@ $\lfloor x \rfloor$ 和 $\lceil x \rceil$ 分别代表向下和向上取整。
 （有限性）
 令 $k$ 表示我们计算的步骤数（从 $0$ 开始计数）。
 
-每一步的输入是都是前两次计算的非负余数 $r_{k−1}$ 和 $r_{k−2}$ 。
+每一步的输入是都是前两次计算的非负余数 $r _ {k−1}$ 和 $r _ {k−2}$ 。
 
-因为余数肯定小于除数，所以 $r_{k−1}$ 小于 $r_{k−2}$ 。在第 $k$ 步中，算法计算出满足以下等式的商 $q_k$ 和余数 $r_k$ ：
+因为余数肯定小于除数，所以 $r _ {k−1}$ 小于 $r _ {k−2}$ 。在第 $k$ 步中，算法计算出满足以下等式的商 $q_k$ 和余数 $r_k$ ：
 
 $$
-r_{k−2} = q_{k} \times r_{k−1} + r_k,\; \text{其中}0\leq r_k<r_{k-1}
+r _ {k−2} = q _ {k} \times r _ {k−1} + r_k,\; \text{其中}0\leq r_k<r _ {k-1}
 $$
 
-此时，$r_{k-1}$ 和 $r_k$ 就是下一次递归的输入。
+此时，$r _ {k-1}$ 和 $r_k$ 就是下一次递归的输入。
 
 如果把所有式子都列出来，就会是这个样子：
 
@@ -106,7 +106,7 @@ b =& q_1 \times r_0 + r_1\\
 r_0 =& q_2 \times r_1 + r_2\\
 r_1 =& q_3 \times r_2 + r_3\\
 ...\\
-r_{n-2} =& q_n \times r_{n-1} + r_n\\
+r _ {n-2} =& q_n \times r _ {n-1} + r_n\\
 \end{aligned}
 $$
 
@@ -114,22 +114,22 @@ $$
 
 注意到 $a > b > r_1 > r_2 > r_3 > r_4... > r_n >=0$ ，所以一定能在 $n$ 次递归过后使得递归到边界情形，即 $r_n = 0$ 。
 
-此时 $r_{n-1}$ 就是我们求得的 $\gcd(a,b)$ 。
+此时 $r _ {n-1}$ 就是我们求得的 $\gcd(a,b)$ 。
 
 （正确性）
-设 $\gcd(a,b) = g$ ，我们需要证明 $r_{n-1} = g$ 。
+设 $\gcd(a,b) = g$ ，我们需要证明 $r _ {n-1} = g$ 。
 
 **第一步：**
-因为 $r_n = 0$ ，又 $r_{n-2} = q_n \times r_{n-1} + r_n$ ，所以 $r_{n-2}$ 是 $r_{n-1}$ 的整数倍。 $r_{n-3}$ 由整数倍的 $r_{n-2}$ 和一个 $r_{n-1}$ 构成，所以 $r_{n-3}$ 是 $r_{n-1}$ 的整数倍。同理可得 $a,b$ 都是 $r_{n-1}$ 的整数倍。
+因为 $r_n = 0$ ，又 $r _ {n-2} = q_n \times r _ {n-1} + r_n$ ，所以 $r _ {n-2}$ 是 $r _ {n-1}$ 的整数倍。 $r _ {n-3}$ 由整数倍的 $r _ {n-2}$ 和一个 $r _ {n-1}$ 构成，所以 $r _ {n-3}$ 是 $r _ {n-1}$ 的整数倍。同理可得 $a,b$ 都是 $r _ {n-1}$ 的整数倍。
 
-所以 $r_{n-1}$ 就是 $a,b$ 的公因数，又 $g$ 是 $a,b$ 的最大公因数，所以 $g \geq r_{n-1}$ 。
+所以 $r _ {n-1}$ 就是 $a,b$ 的公因数，又 $g$ 是 $a,b$ 的最大公因数，所以 $g \geq r _ {n-1}$ 。
 
 **第二步：**
 因为 $g = gcd(a,b)$ ，令 $a = mg,b = ng$ ，其中 $n,m$ 均为自然数。
 
-因为 $a = q_0 \times b + r_0$ ，所以 $r_0 = (m - q_0 \times n)g$ ，即 $g$ 也为 $r_0$ 的因数。同理下去就可以得到 $g$ 整除 $r_0,r_1,r_2,...,r_{n-1}$ 。所以 $g \leq r_{n-1}$ 。
+因为 $a = q_0 \times b + r_0$ ，所以 $r_0 = (m - q_0 \times n)g$ ，即 $g$ 也为 $r_0$ 的因数。同理下去就可以得到 $g$ 整除 $r_0,r_1,r_2,...,r _ {n-1}$ 。所以 $g \leq r _ {n-1}$ 。
 
-综上可得： $g = r_{n-1}$ 。
+综上可得： $g = r _ {n-1}$ 。
 
 所以，辗转相除法的正确性可以如上证明。
 
@@ -213,7 +213,7 @@ T exgcd(T a,T b,T &x,T &y){
 ### 类欧几里得算法
 一种用于求解形似
 $$
-\sum_{i = 0}^n{\lfloor\frac{ai+b}{c}\rfloor}
+\sum _ {i = 0}^n{\lfloor\frac{ai+b}{c}\rfloor}
 $$
 的问题的算法。
 
@@ -224,11 +224,11 @@ $$
 
 此时有：
 $$
-\sum_{i = 0}^n{\lfloor\frac{ai+b}{c}\rfloor} \\
-= \sum_{j = 0}^{m-1}\sum_{i = 0}^n[j < \lfloor\frac{ai+b}{c}\rfloor]\\
-= \sum_{j = 0}^{m-1}\sum_{i = 0}^n[i > \lfloor\frac{cj+c-b-1}{a}\rfloor]\\
-= \sum_{j = 0}^{m-1}n - \lfloor\frac{cj+c-b-1}{a}\rfloor\\
-= nm - \sum_{j = 0}^{m-1}\lfloor\frac{cj+c-b-1}{a}\rfloor
+\sum _ {i = 0}^n{\lfloor\frac{ai+b}{c}\rfloor} \\
+= \sum _ {j = 0}^{m-1}\sum _ {i = 0}^n[j < \lfloor\frac{ai+b}{c}\rfloor]\\
+= \sum _ {j = 0}^{m-1}\sum _ {i = 0}^n[i > \lfloor\frac{cj+c-b-1}{a}\rfloor]\\
+= \sum _ {j = 0}^{m-1}n - \lfloor\frac{cj+c-b-1}{a}\rfloor\\
+= nm - \sum _ {j = 0}^{m-1}\lfloor\frac{cj+c-b-1}{a}\rfloor
 $$
 
 注意到这个时候 $a,b$ 都是对 $c$ 取模的，所以这个东西很像欧几里得算法，时间复杂度大约也是 $O(\log n)$ .
@@ -236,7 +236,7 @@ $$
 ### 扩展
 
 $$
-\sum_{i = 0}^n{{\lfloor\frac{ai+b}{c}\rfloor}^2}\\
-\sum_{i = 0}^n{i{\lfloor\frac{ai+b}{c}\rfloor}}
+\sum _ {i = 0}^n{{\lfloor\frac{ai+b}{c}\rfloor}^2}\\
+\sum _ {i = 0}^n{i{\lfloor\frac{ai+b}{c}\rfloor}}
 $$
 

@@ -40,7 +40,7 @@ a & c \\
 \end{matrix}\right]
 \times
 \left[\begin{matrix}
-x_{n}\\
+x _ {n}\\
 1
 \end{matrix} \right]
 =
@@ -50,7 +50,7 @@ a x_n + c \\
 \end{matrix} \right]
 = 
 \left[\begin{matrix}
-x_{n+1} \\
+x _ {n+1} \\
 1
 \end{matrix} \right]
 $$

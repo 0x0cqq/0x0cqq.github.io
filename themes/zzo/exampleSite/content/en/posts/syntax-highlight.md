@@ -219,7 +219,7 @@ public class HelloWorld {
 ### Latex Equation
 
 ```latex
-\frac{d}{dx}\left( \int_{0}^{x} f(u)\,du\right)=f(x).
+\frac{d}{dx}\left( \int _ {0}^{x} f(u)\,du\right)=f(x).
 ```
 
 ```javascript

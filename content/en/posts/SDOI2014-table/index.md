@@ -33,15 +33,15 @@ $1 \le n,m \le 10^5$ ， $1 \le Q \le 2 \times 10^4$
 
 我们把这个东西写成公式：
 $$
-\sum_{i=1}^n \sum_{j = 1}^m (\sum_{d|\gcd(i,j)} d)[\sum_{d|\gcd(i,j)} d \le a]
+\sum _ {i=1}^n \sum _ {j = 1}^m (\sum _ {d|\gcd(i,j)} d)[\sum _ {d|\gcd(i,j)} d \le a]
 $$
 不妨令 $n < m$ ，推推式子...
 $$
-\sum_{d=1}^{n} (\sum_{k|d} k)[\sum_{k|d} k \le a] \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]
+\sum _ {d=1}^{n} (\sum _ {k|d} k)[\sum _ {k|d} k \le a] \sum _ {i=1}^{\lfloor \frac{n}{d} \rfloor} \sum _ {j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]
 $$
 我们令 
 $$
-\sigma_1(n) = \sum_{d|n} d
+\sigma_1(n) = \sum _ {d|n} d
 $$
 这是一个积性函数。
 
@@ -49,29 +49,29 @@ $$
 
 那么就是 
 $$
-\sum_{d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum_{i=1}^{\lfloor \frac{n}{d} \rfloor} \sum_{j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]
+\sum _ {d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum _ {i=1}^{\lfloor \frac{n}{d} \rfloor} \sum _ {j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]
 $$
 我们知道：
 $$
-\sum_{i=1}^{n} \sum_{j=1}^{m} [\gcd(i,j) = 1]\\
-= \sum_{i=1}^{n} \sum_{j=1}^{m} \sum_{k | \gcd(i,j)} \mu(k)\\
-= \sum_{k = 1}^n \mu(k) \lfloor \frac{n}{k}\rfloor \lfloor \frac{m}{k}\rfloor
+\sum _ {i=1}^{n} \sum _ {j=1}^{m} [\gcd(i,j) = 1]\\
+= \sum _ {i=1}^{n} \sum _ {j=1}^{m} \sum _ {k | \gcd(i,j)} \mu(k)\\
+= \sum _ {k = 1}^n \mu(k) \lfloor \frac{n}{k}\rfloor \lfloor \frac{m}{k}\rfloor
 $$
 那么代入就是：
 $$
-\sum_{d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum_{k = 1}^{\lfloor \frac{n}{d} \rfloor} \mu(k) \lfloor \frac{n}{dk}\rfloor \lfloor \frac{m}{dk}\rfloor
+\sum _ {d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum _ {k = 1}^{\lfloor \frac{n}{d} \rfloor} \mu(k) \lfloor \frac{n}{dk}\rfloor \lfloor \frac{m}{dk}\rfloor
 $$
 我们设 $T = dk$ ，就有：
 $$
-\sum_{T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor \sum_{d | T} [\sigma_1(d) \le a]\sigma_1(d)  \mu(\frac{T}{d})
+\sum _ {T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor \sum _ {d | T} [\sigma_1(d) \le a]\sigma_1(d)  \mu(\frac{T}{d})
 $$
 令 
 $$
-f(T) = \sum_{d|T} \sigma_1(d)[\sigma_1(d) \le a]\mu(\frac{T}{d})
+f(T) = \sum _ {d|T} \sigma_1(d)[\sigma_1(d) \le a]\mu(\frac{T}{d})
 $$
 式子就变成：
 $$
-\sum_{T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor f(T)
+\sum _ {T = 1}^n \lfloor \frac{n}{T}\rfloor \lfloor \frac{m}{T}\rfloor f(T)
 $$
 我们只要能获得 $f(T)$ 的前缀和，我们就能 $O(\sqrt n)$ 出解了。
 

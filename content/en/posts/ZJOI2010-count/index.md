@@ -38,9 +38,9 @@ enableTocContent: false
 
 $$dp[1][j] = sum(j,1)$$
 
-$$dp[i][j] = sum(j,10^{i-1}) + \sum_{w = 0}^{9} dp[i-1][w]\; ,0\leq j \leq 9$$
+$$dp[i][j] = sum(j,10^{i-1}) + \sum _ {w = 0}^{9} dp[i-1][w]\; ,0\leq j \leq 9$$
 
-$$dp[i][10] = \sum_{w = 1}^{10} dp[i-1][w]$$
+$$dp[i][10] = \sum _ {w = 1}^{10} dp[i-1][w]$$
 
 计算答案时，这个实在不太好说...看代码的注释会更好理解...
 

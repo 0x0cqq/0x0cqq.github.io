@@ -21,7 +21,7 @@ enableTocContent: false
 
 有 $n$ 条线段，分别为 $[l_i,r_i]$ 。
 
-有 $m$ 个询问，分别为 $cnt_i,p_1,p_2,...,p_{cnt_i}$ 。
+有 $m$ 个询问，分别为 $cnt_i,p_1,p_2,...,p _ {cnt_i}$ 。
 
 对于每个询问，输出有多少线段至少覆盖这 $cnt_i$ ​个点中的一个。（$\sum cnt_i \le 3 \cdot 10^5$）
 

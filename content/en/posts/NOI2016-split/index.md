@@ -42,7 +42,7 @@ enableTocContent: false
 我们如果令 $l[i]$ 为在 $i$ 处开始的 AA 串的个数，$r[i]$ 为在 $i$ 处结束的 AA 串的个数，那么
 
 $$
-ans = \sum_{i = 1}^{n-1} r[i-1] \times l[i]
+ans = \sum _ {i = 1}^{n-1} r[i-1] \times l[i]
 $$
 
 这个过程是 $O(n)$ 的，所以我们需要思考怎么求出 $l[i]$ 和 $r[i]$ 。

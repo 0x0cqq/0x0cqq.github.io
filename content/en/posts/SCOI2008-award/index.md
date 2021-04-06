@@ -35,7 +35,7 @@ enableTocContent: false
 然后状态转移（ $W_i$ 为单独取 $i$ 的集合）：
 
 $$
-dp[i][S] = \frac{1}{n}\sum_{i = 1}^{n} 
+dp[i][S] = \frac{1}{n}\sum _ {i = 1}^{n} 
 \begin{cases}
 min(dp[i+1][S],dp[i+1][S \cup W_i] + P_i),S_i \subset S\\
 dp[i+1][S],S_i \not\subset S

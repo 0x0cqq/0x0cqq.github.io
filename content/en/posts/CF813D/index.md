@@ -31,7 +31,7 @@ enableTocContent: false
 显然 $dp[x][y] = 0$
 3. $x > y$
 $$
-dp[x][y] = \max_{0 \le i < x,i \neq y}(dp[i][y]+1)
+dp[x][y] = \max _ {0 \le i < x,i \neq y}(dp[i][y]+1)
 $$
 其中 $i$ 到 $x$ 满足如上条件。
 

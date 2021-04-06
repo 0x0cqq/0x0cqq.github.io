@@ -62,7 +62,7 @@ enableTocContent: false
 
 所以我们令 $dp[i]$ 为在第 $i$ 天拥有的最多钱，假设我们上次全部卖出+全部买入在第 $j$ 天，状态转移：
 $$
-dp[i] = \max\left(\max_{j=1}^{i-1}(dp[j]\times \frac{r[j]*a[i] + b[i]}{r[j]*a[j]+b[j]}),dp[i-1]\right)
+dp[i] = \max\left(\max _ {j=1}^{i-1}(dp[j]\times \frac{r[j]*a[i] + b[i]}{r[j]*a[j]+b[j]}),dp[i-1]\right)
 $$
 很好理解嘛...就是一个决策在哪天全买/全卖的问题。
 
@@ -74,7 +74,7 @@ $$
 
 我们先忽略最后一个不买不卖的情况，来继续看：
 $$
-dp[i] = \max_{j=1}^{i-1}(dp[j]\times \frac{r[j]\cdot a[i] + b[i]}{r[j] \cdot a[j]+b[j]})
+dp[i] = \max _ {j=1}^{i-1}(dp[j]\times \frac{r[j]\cdot a[i] + b[i]}{r[j] \cdot a[j]+b[j]})
 $$
 对于给定的决策点 $j$ ，则有：
 $$

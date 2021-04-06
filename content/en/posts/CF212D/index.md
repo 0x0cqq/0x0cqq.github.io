@@ -17,7 +17,7 @@ enableToc: true
 enableTocContent: false
 ---
 
-给定一个长度为 $n$ 的数列 $a_1,a_2,...,a_n$，定义 $f(x,k) = \min_{i=0}^{k-1} (a_{x+i})$ ，请对于每一个 $k = 1$ 到 $n$ ，求出 $\sum_{i=1}^{n-k+1} f(i,k)$ 的值。
+给定一个长度为 $n$ 的数列 $a_1,a_2,...,a_n$，定义 $f(x,k) = \min _ {i=0}^{k-1} (a _ {x+i})$ ，请对于每一个 $k = 1$ 到 $n$ ，求出 $\sum _ {i=1}^{n-k+1} f(i,k)$ 的值。
 
 <!--more-->
 

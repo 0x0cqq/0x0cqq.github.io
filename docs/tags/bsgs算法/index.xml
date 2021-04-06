@@ -13,6 +13,6 @@
 &lt;/ol>
 &lt;p>保证 $p$ 为质数。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数论</category><category>快速幂</category><category>扩展欧几里得</category><category>BSGS算法</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「SDOI2013」随机数生成器-BSGS算法</title><link>https://blog.chenqiqian.com/posts/sdoi2013-random/</link><pubDate>Tue, 11 Sep 2018 20:54:20 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Tue, 11 Sep 2018 20:54:20 +0000</atom:modified><guid>https://blog.chenqiqian.com/posts/sdoi2013-random/</guid><description>&lt;p>小 $W$ 喜欢读书，尤其喜欢读《约翰克里斯朵夫》。最近小W准备读一本新书，这本书一共有 $P$ 页，页码范围为 $0 &amp;hellip; P-1$。&lt;/p>
 &lt;p>小 $W$ 很忙，所以每天只能读一页书。为了使事情有趣一些，他打算使用 $\text{NOI2012}$ 上学习的线性同余法生成一个序列，来决定每天具体读哪一页。&lt;/p>
-&lt;p>我们用 $X_i$ 来表示通过这种方法生成出来的第 $i$ 个数，也即小 $W$ 第 $i$ 天会读哪一页。这个方法需要设置 $3$ 个参数 $a,b,X_1$ ，满足 $0 \leq a,b,X_1 \leq p-1$ ，且 $a,b,X_1$ 都是整数。按照下面的公式生成出来一系列的整数：$X_{i+1} =(aX_i+b)\bmod p$ 其中 $\bmod$ 表示取余操作。&lt;/p>
+&lt;p>我们用 $X_i$ 来表示通过这种方法生成出来的第 $i$ 个数，也即小 $W$ 第 $i$ 天会读哪一页。这个方法需要设置 $3$ 个参数 $a,b,X_1$ ，满足 $0 \leq a,b,X_1 \leq p-1$ ，且 $a,b,X_1$ 都是整数。按照下面的公式生成出来一系列的整数：$X _ {i+1} =(aX_i+b)\bmod p$ 其中 $\bmod$ 表示取余操作。&lt;/p>
 &lt;p>但是这种方法可能导致某两天读的页码一样。&lt;/p>
 &lt;p>小 $W$ 要读这本书的第 $t$ 页，所以他想知道最早在哪一天能读到第 $t$ 页，或者指出他永远不会读到第 $t$ 页。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>数论</category><category>BSGS算法</category><category>OI</category><category>题解</category><category>各省省选</category></item></channel></rss>

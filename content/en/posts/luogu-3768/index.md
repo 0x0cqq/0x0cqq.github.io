@@ -21,7 +21,7 @@ enableTocContent: false
 
 求
 $$
-\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))~mod~p
+\sum _ {i=1}^n\sum _ {j=1}^n ij\gcd(i,j))~mod~p
 $$
 其中 $n < 10^{10}$。
 
@@ -31,16 +31,16 @@ $$
 ## 题解
 
 $$
-ans =\sum_{i=1}^n\sum_{j=1}^n ij\gcd(i,j))~mod~p\\
-=\sum_{d=1}^n d\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}ijd^2[\gcd(i,j) == 1]\\
-=\sum_{d=1}^n d^3 \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor}ij[\gcd(i,j) == 1]\\
+ans =\sum _ {i=1}^n\sum _ {j=1}^n ij\gcd(i,j))~mod~p\\
+=\sum _ {d=1}^n d\sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor}ijd^2[\gcd(i,j) == 1]\\
+=\sum _ {d=1}^n d^3 \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor}ij[\gcd(i,j) == 1]\\
 $$
 
 如果我们令
 
 $$
-f(d) = \sum_{i=1}^{n}\sum_{j=1}^{n}ij[\gcd(i,j) == d]\\
-g(d) = \sum_{d|k} f(k) = d^2\sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{j=1}^{\lfloor\frac{n}{d}\rfloor} ij\\
+f(d) = \sum _ {i=1}^{n}\sum _ {j=1}^{n}ij[\gcd(i,j) == d]\\
+g(d) = \sum _ {d|k} f(k) = d^2\sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor} ij\\
 g(d) = d^2{\left[\frac{\lfloor\frac{n}{d}\rfloor(\lfloor\frac{n}{d}\rfloor + 1)}{2}\right]}^2
 $$
 
@@ -53,33 +53,33 @@ $$
 就有：
 
 $$
-f(d) = \sum_{d|k} \mu(k) g(\frac{k}{d})\\
-f(1) = \sum_{i=1}^n \mu (i) g(i)\\
-f(1) = \sum_{i=1}^n \mu (i) i^2 sum(\lfloor\frac{n}{i}\rfloor)^2
+f(d) = \sum _ {d|k} \mu(k) g(\frac{k}{d})\\
+f(1) = \sum _ {i=1}^n \mu (i) g(i)\\
+f(1) = \sum _ {i=1}^n \mu (i) i^2 sum(\lfloor\frac{n}{i}\rfloor)^2
 $$
 
 那么：
 
 $$
-ans = \sum_{d=1}^n d^3 \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor} \mu (i) i^2 sum(\lfloor\frac{n}{di}\rfloor)^2
+ans = \sum _ {d=1}^n d^3 \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor} \mu (i) i^2 sum(\lfloor\frac{n}{di}\rfloor)^2
 $$
 
 枚举 $id = T$，则有
 
 $$
-ans = \sum_{T = 1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 \sum_{d|T} d^3 \mu(\frac{T}{d}) \times {(\frac{T}{d})}^2\\
-= \sum_{T=1}^n T^2 sum(\lfloor\frac{n}{T}\rfloor)^2 \sum_{d|T} d \mu(\frac{T}{d}) \\
+ans = \sum _ {T = 1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 \sum _ {d|T} d^3 \mu(\frac{T}{d}) \times {(\frac{T}{d})}^2\\
+= \sum _ {T=1}^n T^2 sum(\lfloor\frac{n}{T}\rfloor)^2 \sum _ {d|T} d \mu(\frac{T}{d}) \\
 $$
 
 有 $id*\mu = \varphi$ ， 所以
 
 $$
-ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 T^2 \varphi(T) \\
+ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 T^2 \varphi(T) \\
 $$
 
 令 $f(x) = x^2 \varphi(x)$，我们就有
 $$
-ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)
+ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)
 $$
 
 注意到 $\lfloor\frac{n}{T}\rfloor$  只有根号个取值，所以我们想要处理出 $f(T)$ 的前缀和。
@@ -88,34 +88,34 @@ $$
 杜教筛：
 
 $$
-S(n) = \sum_{i=1}^{n} h(i) - \sum_{d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)
+S(n) = \sum _ {i=1}^{n} h(i) - \sum _ {d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)
 $$
 
 如果我们令 $g(n) = n^2$ ，那么 
 
 $$
-h(i) = (g*f)(i)=\sum_{d|i}f(d)g(\frac{i}{d})=\sum_{d|i}d^2\varphi(d){(\frac{i}{d})}^2\\
-= \sum_{d|i}\varphi(d)i^2 = i^3\\
+h(i) = (g*f)(i)=\sum _ {d|i}f(d)g(\frac{i}{d})=\sum _ {d|i}d^2\varphi(d){(\frac{i}{d})}^2\\
+= \sum _ {d|i}\varphi(d)i^2 = i^3\\
 $$
 
 又因为 
 $$
-\sum_{i=1}^n i^3 = \left[\frac{n(n+1)}{2}\right]^2
+\sum _ {i=1}^n i^3 = \left[\frac{n(n+1)}{2}\right]^2
 $$
 
 所以我们就有
 
 $$
-S(n) = \sum_{i=1}^{n} h(i) - \sum_{d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)\\
-= \left[\frac{n(n+1)}{2}\right]^2 - \sum_{d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
+S(n) = \sum _ {i=1}^{n} h(i) - \sum _ {d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)\\
+= \left[\frac{n(n+1)}{2}\right]^2 - \sum _ {d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
 $$
 
 
 综上：
 
 $$
-ans = \sum_{T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)\\
-S(n) = \left[\frac{n(n+1)}{2}\right]^2 - \sum_{d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
+ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)\\
+S(n) = \left[\frac{n(n+1)}{2}\right]^2 - \sum _ {d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
 $$
 
 

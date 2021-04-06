@@ -21,9 +21,9 @@ enableTocContent: false
 
 对于 $i \leq k$ ：$a_i = b_i$
 
-对于 $i > k$  : $a_i = c_1a_{i-1} + c_2a_{i-2} + ... + c_ka_{i-k}$
+对于 $i > k$  : $a_i = c_1a _ {i-1} + c_2a _ {i-2} + ... + c_ka _ {i-k}$
 
-其中 $b_j$ 和 $c_j$ （ $1 \leq j \leq k$）是给定的自然数。写一个程序，给定自然数 $m \leq n$, 计算 $a_m + a_{m+1} + a_{m+2} + ... + a_n$, 并输出它除以给定自然数 $p$ 的余数的值。
+其中 $b_j$ 和 $c_j$ （ $1 \leq j \leq k$）是给定的自然数。写一个程序，给定自然数 $m \leq n$, 计算 $a_m + a _ {m+1} + a _ {m+2} + ... + a_n$, 并输出它除以给定自然数 $p$ 的余数的值。
 
 对于 100% 的测试数据：
 
@@ -38,7 +38,7 @@ $1 \leq k \leq 15,1 \leq m \leq n \leq 10^{18},0 \le b_1, b_2,... b_k, c_1, c_2,
 ## 题解
 
 $$
-a_i = \sum _{j=1}^{k} c_k a_{j-k}
+a_i = \sum  _ {j=1}^{k} c_k a _ {j-k}
 $$
 
 构造一个矩阵
@@ -48,10 +48,10 @@ M_i
 =\begin{bmatrix}
 S_i  \\
 a_i  \\
-a_{i-1}\\
+a _ {i-1}\\
  \vdots\\
-a_{i-k+2}\\
-a_{i-k+1}\\
+a _ {i-k+2}\\
+a _ {i-k+1}\\
 \end{bmatrix}
 $$
 
@@ -60,8 +60,8 @@ $$
 $$
 Z
 =\begin{bmatrix}
-1 & c_{1} & c_{2} & \cdots & c_{k-1}   & c_{k}  \\
-0 & c_{1} & c_{2} & \cdots & c_{k-1}   & c_{k} \\
+1 & c _ {1} & c _ {2} & \cdots & c _ {k-1}   & c _ {k}  \\
+0 & c _ {1} & c _ {2} & \cdots & c _ {k-1}   & c _ {k} \\
 0 & 1 & 0  & \cdots & 0 & 0\\
  \vdots & \vdots & \vdots & \ddots & 0   & 0\\
 0 & 0 & 0 & 1 & 0 & 0 \\
@@ -76,22 +76,22 @@ C
 =\begin{bmatrix}
 S_k\\
 b_k \\
-b_{k-1}\\
+b _ {k-1}\\
  \vdots\\
-b_{2}\\
-b_{1} \\
+b _ {2}\\
+b _ {1} \\
 \end{bmatrix}
 $$
 
 $$
-Z \times C = M_{k+1}\\
-Z \times M_i = M_{i+1}\\
+Z \times C = M _ {k+1}\\
+Z \times M_i = M _ {i+1}\\
 $$
 
 我们有
 
 $$
-Z^{n-k} \times C = M_{n}
+Z^{n-k} \times C = M _ {n}
 $$
 
 矩阵快速幂即可。

@@ -34,7 +34,7 @@ enableTocContent: false
 因为在每个点选定每条边的概率是相同的，所以我们有以下期望方程，设第 $i$ 个点期望经过次数为 $e1_i$ ，度数为 $d_i$ ，第 $i$ 条边期望经过次数为 $e2_i$ ：
 
 $$
-e1_i = \sum_{j} \frac{e1_j}{d_j},\text{(i,j) has a edge}  
+e1_i = \sum _ {j} \frac{e1_j}{d_j},\text{(i,j) has a edge}  
 $$
 
 那么第 $i$ 条边 $(u,v)$ 的经过次数的期望就是：
@@ -45,7 +45,7 @@ $$
 
 其中有一些特殊处理，因为开始一定会经过一次 1 节点，可以理解成起点到 1 号节点只有一条边，所以：
 $$
-e1_1 = 1+\sum_{j} \frac{e1_j}{d_j},\text{(1,j) has a edge}
+e1_1 = 1+\sum _ {j} \frac{e1_j}{d_j},\text{(1,j) has a edge}
 $$
 
 而且这个人走到 $n$ 节点后不会再走回来，所以：$e1_n = 0$。

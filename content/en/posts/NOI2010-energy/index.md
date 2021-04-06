@@ -34,7 +34,7 @@ enableTocContent: false
 所以问题转化为：
 求
 
-$$\sum_{i = 1}^{n} \sum_{j = 1}^{m}2\times gcd(n,m)-1$$
+$$\sum _ {i = 1}^{n} \sum _ {j = 1}^{m}2\times gcd(n,m)-1$$
 
 的值。
 

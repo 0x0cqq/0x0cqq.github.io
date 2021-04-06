@@ -43,14 +43,14 @@ L 公司有 $N$ 个工厂，由高到底分布在一座山上。工厂 $1$ 在�
 暴力搞搞式子：
 
 $$
-dp[i] = \min_{j=0}^{i-1}(dp[j] + c_i +\sum_{w=j+1}^{i} (x_i - x_w)\times p_w)\\
-dp[i] = \min_{j=0}^{i-1}(dp[j] + c_i +\sum_{w=j+1}^{i} (x_i \times p_w - x_w \times p_w) )\\
-dp[i] = \min_{j=0}^{i-1}(dp[j]  +x_i \sum_{w=j+1}^{i}p_w - \sum_{w=j+1}^{i} x_w \times p_w) ) + c_i $$
+dp[i] = \min _ {j=0}^{i-1}(dp[j] + c_i +\sum _ {w=j+1}^{i} (x_i - x_w)\times p_w)\\
+dp[i] = \min _ {j=0}^{i-1}(dp[j] + c_i +\sum _ {w=j+1}^{i} (x_i \times p_w - x_w \times p_w) )\\
+dp[i] = \min _ {j=0}^{i-1}(dp[j]  +x_i \sum _ {w=j+1}^{i}p_w - \sum _ {w=j+1}^{i} x_w \times p_w) ) + c_i $$
 
-令 $a_i = \sum_{w=1}^{i} p_w$ ， $b_i = \sum_{w=1}^{i} x_w \times p_w$，原式化为
+令 $a_i = \sum _ {w=1}^{i} p_w$ ， $b_i = \sum _ {w=1}^{i} x_w \times p_w$，原式化为
 
 $$
-dp[i] = \min_{j=0}^{i-1}(dp[j]  +x_i \times(a_i-a_j) - (b_i-b_j) ) + c_i 
+dp[i] = \min _ {j=0}^{i-1}(dp[j]  +x_i \times(a_i-a_j) - (b_i-b_j) ) + c_i 
 $$
 
 如果令 $j < k < i$ ，则 $k$ 比 $j$ 优等价于：

@@ -24,7 +24,7 @@ enableToc: true
 enableTocContent: true
 ---
 
-《离散数学2》图论部分学习笔记——树部分。
+《离散数学2》图论学习笔记——树部分。
 
 <!--more-->
 
@@ -163,9 +163,9 @@ enableTocContent: true
 
 首先做一些纯粹数学上的准备。
 
-对于 $ A = (a_{ij})_ {m \times n},  B = (b_{ij})_{n \times m} (m \leq n) $ ，
+对于 $ A = (a _ {ij})_ {m \times n},  B = (b _ {ij}) _ {n \times m} (m \leq n) $ ，
 
-我们有 $\det(AB) = \sum\limits_{S}\det(A_{S}B_S)$ ，其中 $S \subseteq \{1,2,\cdots, n\}, |S| = m$ ；
+我们有 $\det(AB) = \sum\limits _ {S}\det(A _ {S}B_S)$ ，其中 $S \subseteq \{1,2,\cdots, n\}, |S| = m$ ；
 
 > 关于记号的说明：$A_S$ 表示从 $A$ 中挑选 $S$ 集合下标的 $m$ 【列】构成的 $m \times m$ 方阵；$B_S$ 同理表示从 $B$ 中挑选同样 $S$ 集合下标的 $m$ 【行】构成的 $m \times m$ 的方阵。
 
@@ -181,7 +181,7 @@ $$
 \det(B_i{B_i}^T) = \sum\limits_S \det({B_i}_S {{B_i}_S}^T) = \sum_\limits{S} \det({B_i}_S)^2
 $$
 
-注意到，这个式子可以和上文的“显然的做法”对应： $\sum\limits_{S}$ 对应中的“枚举 $n-1$ 列”，${B_i}_S$ 对应挑出来的 $n-1$ 列构成的方阵。
+注意到，这个式子可以和上文的“显然的做法”对应： $\sum\limits _ {S}$ 对应中的“枚举 $n-1$ 列”，${B_i}_S$ 对应挑出来的 $n-1$ 列构成的方阵。
 
 于是：$\det(B_i {B_i}^T)$ 即为图的支撑树个数。
 
@@ -232,26 +232,26 @@ $$
 
 一种较为简便求解支撑树计数问题的方法。
 
-对于**无向图** $G(V,E)$ ，定义拉普拉斯矩阵 $L_{n \times n}$：
+对于**无向图** $G(V,E)$ ，定义拉普拉斯矩阵 $L _ {n \times n}$：
 
 $$
-L_{ij} = \left\{\begin{aligned}-m_{ij}&,i \neq j \\ \text{deg}(v_i)&,i = j\end{aligned}\right.
+L _ {ij} = \left\{\begin{aligned}-m _ {ij}&,i \neq j \\ \text{deg}(v_i)&,i = j\end{aligned}\right.
 $$
 
-其中 $m_{ij}$ 表示 $v_i$ 与 $v_j$ 之间的边数。
+其中 $m _ {ij}$ 表示 $v_i$ 与 $v_j$ 之间的边数。
 
 则该无向图 $G$ 的支撑树个数则为 $t(G) = \det(L_i)$ ，$L_i$ 为去掉第 $i$ 行和第 $i$ 列后得到的矩阵，$i = 1, 2, \cdots, n$。
 
-或者，用特征值表示：找出 $L$ 的 $n-1$ 个非 $0$ 特征值 $ \lambda _ 1 , \cdots, \lambda_{n-1} $， 那么 $t(G) = \frac{1}{n} \prod\limits _ {1 \leq i \leq n-1} \lambda_i$
+或者，用特征值表示：找出 $L$ 的 $n-1$ 个非 $0$ 特征值 $ \lambda _ 1 , \cdots, \lambda _ {n-1} $， 那么 $t(G) = \frac{1}{n} \prod\limits _ {1 \leq i \leq n-1} \lambda_i$
 
 这一定理的本质是找到了一个对于关联矩阵与其转置乘积结果的简洁表达，因此在 $m$ 较大时能节省出很多的时间。具体证明如下：
 
 > 引理1: $BB^T = L$
 >
-> 证明： $(BB^T)_{ij} = \sum \limits _ {e_k \in E} B _ {ik} {B^T} _ {kj} = \sum\limits _ {e_k \in E} B _ {ik}B_{jk}$ 。
+> 证明： $(BB^T) _ {ij} = \sum \limits _ {e_k \in E} B _ {ik} {B^T} _ {kj} = \sum\limits _ {e_k \in E} B _ {ik}B _ {jk}$ 。
 >
 > 1. 当 $i=j$ 时，显然只有 $e_k$ 邻接与 $i$ 的时候， $B _ {ik} = \pm1$ ，其余时候均为 0 ；故求和即为与 $i$ 邻接的边的个数，即 $deg(v_i)$ 。
-> 2. 当 $i \neq j$  时，$B _ {ik} \neq 0$ 且 $B _ {jk} \neq 0$ 当且仅当 $e_k$ 连接 $v_i$ 与 $v_j$ ；而 $B _ {ik}$ 与 $B _ {jk}$ 显然一者为 $1$ ，一者为 $-1$，故乘积为 $-1$ ，求和后即为 $-m_{ij}$ 。 
+> 2. 当 $i \neq j$  时，$B _ {ik} \neq 0$ 且 $B _ {jk} \neq 0$ 当且仅当 $e_k$ 连接 $v_i$ 与 $v_j$ ；而 $B _ {ik}$ 与 $B _ {jk}$ 显然一者为 $1$ ，一者为 $-1$，故乘积为 $-1$ ，求和后即为 $-m _ {ij}$ 。 
 >
 > 引理2：$B_i{B_i}^T = L_i$ 
 >
@@ -262,11 +262,11 @@ $$
 > 对于有向图 $G(V,E)$ ，定义出度拉普拉斯矩阵 $L^\text{out}$ ：（$n \times n$）
 >
 > $$
-> {L^\text{out}}_{ij} = 
-> \left\{\begin{aligned}-m_{ij}&,i \neq j \\ \text{deg}^{\text{out}}(v_i)&,i = j\end{aligned}\right.
+> {L^\text{out}} _ {ij} = 
+> \left\{\begin{aligned}-m _ {ij}&,i \neq j \\ \text{deg}^{\text{out}}(v_i)&,i = j\end{aligned}\right.
 > $$
 > 
-> 其中 $m_{ij}$ 为从 $v_i$ 指向 $v_j$ 的有向边条数。
+> 其中 $m _ {ij}$ 为从 $v_i$ 指向 $v_j$ 的有向边条数。
 >
 > 同理可以定义入度拉普拉斯矩阵 $L^{\text{in}}$ 。
 >

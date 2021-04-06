@@ -44,7 +44,7 @@ dp[i] =
 \left\{
 \begin{aligned}{}
 &0&,\;&\text{if } i = 0\\
-&\max_{j=0}^{i-1}{(dp[j] + 1)}&,\;& \text{if } \text{max}_j \leq a_i \text{ and } a_j \leq \text{min}_i
+&\max _ {j=0}^{i-1}{(dp[j] + 1)}&,\;& \text{if } \text{max}_j \leq a_i \text{ and } a_j \leq \text{min}_i
 \end{aligned}
 \right.
 $$

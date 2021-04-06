@@ -36,7 +36,7 @@ $q$ 次询问，每次询问有一个步伐限制 $k$ ，求最少耗费的体�
 
 $$
 \begin{equation}
-dp[i] = \min_{j \geq i-k}
+dp[i] = \min _ {j \geq i-k}
 \begin{cases}
 	dp[j] + 1 & ht[i] \geq ht[j]\\
 	dp[j],    & ht[i] < ht[j]

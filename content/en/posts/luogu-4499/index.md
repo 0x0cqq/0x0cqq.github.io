@@ -20,7 +20,7 @@ enableTocContent: false
 
 给定 $n,m,k$ ，计算
 $$
-\sum_{i=1}^n\sum_{j=1}^m {\gcd(i,j)}^k
+\sum _ {i=1}^n\sum _ {j=1}^m {\gcd(i,j)}^k
 $$
 对 $1000000007$ 取模的结果
 
@@ -34,22 +34,22 @@ $$
 
 我们来来来推推推式子吧qwq
 $$
-\sum_{i=1}^n\sum_{j=1}^m {\gcd(i,j)}^k
+\sum _ {i=1}^n\sum _ {j=1}^m {\gcd(i,j)}^k
 $$
 不妨令 $n<m$ ，枚举 $\gcd(i,j) = d$ ：
 $$
-S = \sum_{d=1}^{n} d^k \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{d}\rfloor} [(i,j)=1]\\
-= \sum_{d=1}^{n} d^k \sum_{i=1}^{\lfloor\frac{n}{d}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{d}\rfloor} \sum_{t | \gcd(i,j)} \mu(t)\\
-= \sum_{d=1}^{n} d^k \sum_{t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t)\sum_{i=1}^{\lfloor\frac{n}{dt}\rfloor}\sum_{i=1}^{\lfloor\frac{m}{dt}\rfloor} 1\\
-= \sum_{d=1}^{n} d^k \sum_{t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t) \lfloor\frac{n}{dt}\rfloor \lfloor\frac{m}{dt}\rfloor\\
+S = \sum _ {d=1}^{n} d^k \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{d}\rfloor} [(i,j)=1]\\
+= \sum _ {d=1}^{n} d^k \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{d}\rfloor} \sum _ {t | \gcd(i,j)} \mu(t)\\
+= \sum _ {d=1}^{n} d^k \sum _ {t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t)\sum _ {i=1}^{\lfloor\frac{n}{dt}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{dt}\rfloor} 1\\
+= \sum _ {d=1}^{n} d^k \sum _ {t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t) \lfloor\frac{n}{dt}\rfloor \lfloor\frac{m}{dt}\rfloor\\
 $$
 令 $dt = T$ ，我们有：
 $$
-S = \sum_{T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor\sum_{d|T}d^k\mu(\frac{T}{d})
+S = \sum _ {T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor\sum _ {d|T}d^k\mu(\frac{T}{d})
 $$
-我们令 $g(T) = \sum_{d|T}d^k\mu(\frac{T}{d})$，原式变为：
+我们令 $g(T) = \sum _ {d|T}d^k\mu(\frac{T}{d})$，原式变为：
 $$
-S = \sum_{T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor g(T)
+S = \sum _ {T=1}^{n} \lfloor\frac{n}{T}\rfloor \lfloor\frac{m}{T}\rfloor g(T)
 $$
 很明显这个可以整除分块，很明显 $g$ 是一个积性函数，所以我们考虑如何算出 $g$ 的前缀和。
 
@@ -57,7 +57,7 @@ $$
 
 线性筛的本质是不断加入最小质因子，我们考虑一个质数的
 $$
-g(P^t) = \sum_{i=0}^t f(P^i) \mu (P^{t-i})
+g(P^t) = \sum _ {i=0}^t f(P^i) \mu (P^{t-i})
 $$
 凡是有平方因子的数都是的莫比乌斯函数值都是 $0$ ，所以这个式子化成：
 $$

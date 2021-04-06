@@ -18,7 +18,7 @@ image: images/feature2/mathbook.png
 
 The following
 
-$$ \int_{a}^{b} x^2 dx $$
+$$ \int _ {a}^{b} x^2 dx $$
 
 Is an integral
 

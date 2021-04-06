@@ -48,7 +48,7 @@ $$
 如果我们令 $dep[v]$ 为 $v$ 的深度，那么我们可以将第一个改写如下：
 
 $$
-f[v] = \max_{v_i \text{ is in the subtree of } v}(dep[v_i]) - dep[v]
+f[v] = \max _ {v_i \text{ is in the subtree of } v}(dep[v_i]) - dep[v]
 $$
 
 我们可以用倍增在 $O(\log n)$ 的时间内找到第一个不需要更新的位置，然后在倍增上用 $O(\log n)$ 的时间内更新 $f$ 值，计算得到 $delta$（每次深度只增加1，所以一定会只有一个delta），然后将 $g$ 修改维护即可。

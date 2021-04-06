@@ -20,7 +20,7 @@ enableTocContent: false
 
 我们定义 
 $$
-J(x) = \sum_{d | x} [\gcd(x,\frac{x}{d}) = 1] d
+J(x) = \sum _ {d | x} [\gcd(x,\frac{x}{d}) = 1] d
 $$
 
 请你求出 $J(x) = A$ 有多少个 $x$ 满足条件。

@@ -37,8 +37,8 @@ enableTocContent: false
 
 $$
 \begin{aligned}{}
-E(l,r) &= \frac{1}{(r-l-1)(r-l)}\sum_{i = l}^{r-1}(i-l+1)(r-i)V_i\\
-&= \frac{1}{(r-l-1)(r-l)}\sum_{i = l}^{r-1}[-i^2 V_i-(l+r-1)i V_i - r(l-1)V_i]
+E(l,r) &= \frac{1}{(r-l-1)(r-l)}\sum _ {i = l}^{r-1}(i-l+1)(r-i)V_i\\
+&= \frac{1}{(r-l-1)(r-l)}\sum _ {i = l}^{r-1}[-i^2 V_i-(l+r-1)i V_i - r(l-1)V_i]
 \end{aligned}
 $$
 

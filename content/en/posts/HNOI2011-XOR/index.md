@@ -36,7 +36,7 @@ $$
 P[i] = 
 \left\{
 \begin{aligned}{}
-&\sum_{\text{i,j have a edge}} \frac{P[j]}{d[i]}&,i \neq N\\
+&\sum _ {\text{i,j have a edge}} \frac{P[j]}{d[i]}&,i \neq N\\
 &1&,i = N
 \end{aligned}
 \right.

@@ -23,7 +23,7 @@ enableTocContent: false
 提示：给出两个定义：
 
 1.  球心：到球面上任意一点距离都相等的点。
-2.  距离：设两个n为空间上的点A, B的坐标为$(a_1, a_2, \cdots , a_n)$ , $(b_1, b_2, \cdots , b_n)$，则 AB 的距离定义为：$dist = \sqrt{ \sum_{i=1}^{n}(a_i - b_i)^2 }$
+2.  距离：设两个n为空间上的点A, B的坐标为$(a_1, a_2, \cdots , a_n)$ , $(b_1, b_2, \cdots , b_n)$，则 AB 的距离定义为：$dist = \sqrt{ \sum _ {i=1}^{n}(a_i - b_i)^2 }$
 
 <!--more-->
 
@@ -38,14 +38,14 @@ enableTocContent: false
 则我们有 $n$ 个式子，形如
 
 $$
-\sum_{i=1}^{n}(p[j][i] - x_i)^2 = \sum_{i=1}^{n}(p[j+1][i] - x_i)^2
+\sum _ {i=1}^{n}(p[j][i] - x_i)^2 = \sum _ {i=1}^{n}(p[j+1][i] - x_i)^2
 $$
 
 化简得到
 
 $$
-\sum_{i=1}^{n}(p[j][i]^2 - 2p[j][i] \cdot x_i) = \sum_{i=1}^{n}(p[j+1][i]^2 - 2p[j+1][i] \cdot x_i)\\
- \sum_{i=1}^{n} [2(p[j+1][i]-p[j][i]) \cdot x_i] = - \sum_{i=1}^{n}(p[j][i]^2 - p[j+1][i]^2)
+\sum _ {i=1}^{n}(p[j][i]^2 - 2p[j][i] \cdot x_i) = \sum _ {i=1}^{n}(p[j+1][i]^2 - 2p[j+1][i] \cdot x_i)\\
+ \sum _ {i=1}^{n} [2(p[j+1][i]-p[j][i]) \cdot x_i] = - \sum _ {i=1}^{n}(p[j][i]^2 - p[j+1][i]^2)
 $$
 
 高斯消元即可...

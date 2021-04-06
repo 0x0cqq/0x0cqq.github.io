@@ -32,6 +32,14 @@
 {{ if in .Params.Libraries "mathjax" }}
 <script>
   MathJax = {
+    requireMap: {
+        AMSmath: 'ams',
+        AMSsymbols: 'ams',
+        AMScd: 'amscd',
+        HTML: 'html',
+        noErrors: 'noerrors',
+        noUndefined: 'noundefined'
+    },
     tex: {
       inlineMath: [["$", "$"]],
     },

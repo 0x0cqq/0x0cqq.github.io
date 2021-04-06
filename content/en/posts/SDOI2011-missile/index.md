@@ -46,7 +46,7 @@ dp[i] =
 \left\{
 \begin{aligned}{}
 &0&,\;&\text{if } i = 0\\
-&\max_{j=0}^{i-1}{(dp[j] + 1)}&,\;& \text{if } a_j \geq a_i \text{ and } b_j \geq b_i
+&\max _ {j=0}^{i-1}{(dp[j] + 1)}&,\;& \text{if } a_j \geq a_i \text{ and } b_j \geq b_i
 \end{aligned}
 \right.
 $$
@@ -56,15 +56,15 @@ sum[i] =
 \left\{
 \begin{aligned}{}
 &1&,\;&\text{if } i = 0\\
-&\sum_{j=0}^{i-1}{sum[j]}&,\;&  \text{if } a_j \geq a_i \text{ and } b_j \geq b_i \text{ and }dp[j] = dp[i]-1
+&\sum _ {j=0}^{i-1}{sum[j]}&,\;&  \text{if } a_j \geq a_i \text{ and } b_j \geq b_i \text{ and }dp[j] = dp[i]-1
 \end{aligned}
 \right.
 $$
 
-我们设 $M = \max_{i=1}^n dp[i]$，那么我们可以计算出所有的长度为最长值的序列的个数，就是：
+我们设 $M = \max _ {i=1}^n dp[i]$，那么我们可以计算出所有的长度为最长值的序列的个数，就是：
 
 $$
-tot = \sum_{i=1}^{n} [dp[i] = M] \times sum[i]
+tot = \sum _ {i=1}^{n} [dp[i] = M] \times sum[i]
 $$
 
 然后我们只要计算出每个点经过的路径条数就可以了。

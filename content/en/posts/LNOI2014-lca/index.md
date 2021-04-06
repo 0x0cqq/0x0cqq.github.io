@@ -19,7 +19,7 @@ enableToc: true
 enableTocContent: false
 ---
 
-给出一个 $n$ 个节点的有根树。有 $q$ 次询问，每次询问给出 $l,r,z$ ，求 $\sum_{l \leq i \leq r}dep[LCA(i,z)]$ 。
+给出一个 $n$ 个节点的有根树。有 $q$ 次询问，每次询问给出 $l,r,z$ ，求 $\sum _ {l \leq i \leq r}dep[LCA(i,z)]$ 。
 
 <!--more-->
 
@@ -41,7 +41,7 @@ enableTocContent: false
 
 而且我们注意到这个问题满足区间可减性：
 
-即设 $sum(l,r) = \sum_{l\leq i\leq r}{dep[LCA(i,z)]}$ ，有 $sum(l,r) = sum(1,r)-sum(1,l-1)$ 。
+即设 $sum(l,r) = \sum _ {l\leq i\leq r}{dep[LCA(i,z)]}$ ，有 $sum(l,r) = sum(1,r)-sum(1,l-1)$ 。
 
 因此，我们将询问 $(l,r,z)$ 分离成 $(l-1,z)$ 和 $(r,z)$ 。
 
