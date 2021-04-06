@@ -31,24 +31,27 @@
 
 {{ if in .Params.Libraries "mathjax" }}
 <script>
-  window.MathJax = {
+  MathJax = {
     tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$', '$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true,
+      inlineMath: [["$", "$"]],
     },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-      ignoreHtmlClass: 'tex2jax_ignore',
-      processHtmlClass: 'tex2jax_process',
-      TeX: { equationNumbers: { autoNumber: "AMS" },
-         extensions: ["AMSmath.js", "AMSsymbols.js"] }
-    }
+    displayMath: [
+      ["$$", "$$"],
+      ["\[\[", "\]\]"],
+    ],
+    svg: {
+      fontCache: "global",
+    },
   };
-  </script>
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script async src="{{ $js.mathjax.url }}" id="MathJax-script"></script>
+</script>
+{{ $js := .Site.Data.lib.js }}
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  id="MathJax-script"
+  async
+  src="{{ $js.mathjax.url }}"
+></script>
+</script>
 {{ end }}
 
 {{ if in .Params.Libraries "msc" }}
