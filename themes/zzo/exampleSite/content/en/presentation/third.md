@@ -46,7 +46,7 @@ reveal:
     - sub: 
       - |
         ## Mathjax 1
-        \\[\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix}
+        \\[\mathbf{V} _ 1 \times \mathbf{V} _ 2 =  \begin{vmatrix}
         \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\
         \frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\
         \frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0

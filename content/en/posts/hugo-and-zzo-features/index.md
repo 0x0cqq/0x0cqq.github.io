@@ -479,18 +479,21 @@ Make it easy to switch between different code
   ⚠️Becareful that the content in the tab should be different from each other. The tab makes unique id hashes depending on the tab contents. So, If you just copy-paste the tabs with multiple times, since it has the same contents, the tab will not work.
 
   {{< /tab >}}
+
   {{< tab >}}
 
   #### MacOS section
 
-  Hello world!
+Hello world!
   {{< /tab >}}
+
   {{< tab >}}
 
   #### Ubuntu section
 
-  Great!
+Great!
   {{< /tab >}}
+
 {{< /tabs >}}
 
 ### Expand

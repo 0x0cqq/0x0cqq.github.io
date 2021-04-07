@@ -32,7 +32,7 @@ enableTocContent: false
 
 可以想到一个简单的 $\text{dp}$  ，用 $dp[i]$ 表示以 $i$ 为结尾的后缀能否被理解：
 $$
-dp[i] = \max(dp[i-\text{len}_j]) ,\text{if} \; \text{str}_j \text{在 i 位置上出现}
+dp[i] = \max(dp[i-\text{len} _ j]) ,\text{if} \; \text{str} _ j \text{在 i 位置上出现}
 $$
 然后用模版串 $\text{AC}$ 自动机跑一遍母串，得到每个模版串在母串中出现的位置，然后刷表 $dp$ 即可。
 

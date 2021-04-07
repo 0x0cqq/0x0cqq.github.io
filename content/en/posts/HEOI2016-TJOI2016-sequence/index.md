@@ -44,12 +44,12 @@ dp[i] =
 \left\{
 \begin{aligned}{}
 &0&,\;&\text{if } i = 0\\
-&\max _ {j=0}^{i-1}{(dp[j] + 1)}&,\;& \text{if } \text{max}_j \leq a_i \text{ and } a_j \leq \text{min}_i
+&\max _ {j=0}^{i-1}{(dp[j] + 1)}&,\;& \text{if } \text{max} _ j \leq a_i \text{ and } a_j \leq \text{min} _ i
 \end{aligned}
 \right.
 $$
 
-发现 $\text{max}_j \leq a_i$ 且 $a_j \leq \text{min}_i$ 事实上是一个二维的偏序关系，所以我们可以用 $\text{CDQ}$ 分治计算满足该条件的 $dp$ 最大值。
+发现 $\text{max} _ j \leq a_i$ 且 $a_j \leq \text{min} _ i$ 事实上是一个二维的偏序关系，所以我们可以用 $\text{CDQ}$ 分治计算满足该条件的 $dp$ 最大值。
 
 但是这里有一个与普通 $\text{CDQ}$ 不相同的地方，我们必须要计算完在 $i$ 前面的 $dp$ 值，才能开始计算 $dp[i]$。
 
