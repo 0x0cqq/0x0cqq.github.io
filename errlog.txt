@@ -1,1 +1,0 @@
-Error: Error building site: [1;36m"/Users/chenqq/Files/ChenQiqian.github.io/content/en/posts/ZJOI2007-semi-connected/index.md:1:1"[0m: [BUG] goldmark: interface conversion: interface {} is nil, not *mathjax.mathBlockData: create an issue on GitHub attaching the file in: /var/folders/sc/vdbql_m12nn310x6qq82f66m0000gn/T/hugo_bugs/goldmark_756c537a28a96adfdb9aa80dd0fea597.txt
