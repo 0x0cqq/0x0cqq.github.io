@@ -15,7 +15,6 @@ series:
 # slug: ""
 # type: ""
 pinned: false
-markup: mmark
 libraries:
 - mathjax 
 ##-- toc setting --##
@@ -27,6 +26,18 @@ enableTocContent: true
 《离散数学2》图论学习笔记——树部分。
 
 <!--more-->
+
+
+
+<https://www.zybuluo.com/chenqiqian/note/1788174>
+
+
+
+由于 Hugo 的 markdown 引擎 goldmark 对于 latex 的支持简直是 ***，本文暂时在上界面发布。
+
+
+
+<!--
 
 ## 写在前面
 
@@ -285,3 +296,5 @@ $$
 1. 戴一奇等：《图论与代数结构》，清华大学出版社。
 2. https://oi-wiki.org/graph/matrix-tree/
 3. https://zhuanlan.zhihu.com/p/108209378
+
+-->
