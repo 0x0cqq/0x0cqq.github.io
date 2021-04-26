@@ -95,11 +95,11 @@ enableTocContent: true
 
 以上是对于我自己过去几年的清算吧。它或许对于读者没有任何意义，且引发不起任何共鸣，且可能都是我的矫揉造作，且都是些已经看了好多遍的无聊死了的故事，但对于我来说，又何必需要读者怎么想呢。
 
+> 我把心剖开了给你看，很疼的...但你也不用回应我或给我安慰，我只求你的理解，理解我为何如此之疼。
+
 ---
 
 P.S. 我很喜欢[这篇文章](https://www.cnblogs.com/CQzhangyu/p/8757042.html)（[Web Archive](http://web.archive.org/web/20210420050600/https://www.cnblogs.com/CQzhangyu/p/8757042.html)） ，我虽然没有他那样厉害，但我和他所面对的那些命运大概是类似的...还有[这一篇](https://blog.csdn.net/weixin_30326745/article/details/99035461)（[Web Archive](http://web.archive.org/web/20210420050444/https://blog.csdn.net/weixin_30326745/article/details/99035461)）。
-
----
 
 [^1]: 或许有读者不知道这里提到的“年级第一”代表着什么...反正就是看起来“很厉害”吧。
 [^2]: 毕竟，每次见到招生老师，也只会又确认一次，计算机类的录取分数线比对外公开的分数线高五分左右。
