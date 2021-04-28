@@ -124,3 +124,12 @@ type: notes
 ---
 
 实际上对于那些我们认为是熟知的函数，例如 $e^x$ ，我们到底知道了多少呢？单调性、凸性、周期性、微分方程而已。
+
+---
+
+Graph theory is a delightful playground for the exploration of proof techniques in discrete mathematics.
+
+---
+
+
+
