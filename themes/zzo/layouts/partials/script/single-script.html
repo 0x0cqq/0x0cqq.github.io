@@ -97,10 +97,10 @@
     var enableBusuanzi = JSON.parse({{ $enableBusuanzi | jsonify }});
     var busuanziPagePV = JSON.parse({{ $busuanziPagePV | jsonify }});
     
-    if (enableBusuanzi && busuanziPagePV) {
-      var pagePvElem = document.querySelector('#busuanzi_value_page_pv');
-      pagePvElem.textContent = pagePvElem.textContent.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
-    }    
+    // if (enableBusuanzi && busuanziPagePV) {
+    //   var pagePvElem = document.querySelector('#busuanzi_value_page_pv');
+    //   pagePvElem.textContent = pagePvElem.textContent.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+    // }    
     // =================================================================
 
 
