@@ -5,7 +5,9 @@ draft: false
 title: "石头记"
 date: 2021-05-03T01:22:46+08:00
 categories:
+- 随笔
 tags:
+- 随笔
 series:
 ##-- page setting --##
 # slug: ""

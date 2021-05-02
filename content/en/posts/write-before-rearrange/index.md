@@ -7,6 +7,7 @@ date: 2021-04-20T07:59:45+08:00
 categories:
 - 随笔
 tags:
+- 随笔
 series:
 ##-- page setting --##
 # slug: ""
