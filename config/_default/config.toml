@@ -25,6 +25,7 @@ publishDir = "docs"
 [markup]
   # defaultMarkdownHandler = "mmark"
   [markup.goldmark]
+    [markup.goldmark.extensions]
     [markup.goldmark.renderer]
       hardWraps = true
       unsafe = true
