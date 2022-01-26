@@ -106,3 +106,6 @@ other = "This page looks best with JavaScript enabled"
 
 [posts-by-order]
 other = "TOP POSTS"
+
+[comment]
+other = "Comments"

@@ -1,5 +1,12 @@
 {{ if $.Param "enableComment" }}
-  <p style="font-size: smaller;">评论：</p>
+  <section class="comment">  
+  <h1 class="comment__title">
+      <hr class="hr-dots"/>
+      <div>
+        {{ i18n "comment" }}
+      </div>
+      <hr class="hr-dots"/>
+  </h1>
   {{ if $.Param "disqus.disqus_shortname" }}
     {{ partial "comments/disqus.html" . }}
   {{ else if $.Param "commento.enable" }}
@@ -21,4 +28,5 @@
   {{ else if $.Param "telegram.enable" }}
     {{ partial "comments/telegram.html" . }}
   {{ end }}
+  </section>
 {{ end }}
