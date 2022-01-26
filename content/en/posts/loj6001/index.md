@@ -124,7 +124,7 @@ void dfs1(int x){
 
 void init(){
   scanf("%d %d",&m,&n);
-  // 1 -> m 实验，m+1 -> m+n 物品
+  // 1 -> m 实验，m+1 -> m+n 物品
   static char s[MAXN*10];
   for(int i = 1;i<=m;i++){
     scanf("%d",&val[i]);
