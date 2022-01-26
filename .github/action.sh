@@ -33,8 +33,9 @@ fi
 git remote rm origin
 git remote add origin "${remote_repo}"
 git fetch
-git stash .github/action.sh
+git stash
 git checkout -b gh-pages origin/gh-pages
+git stash pop
 find . -maxdepth 1 -not -path "./.git" -not -path "." -not -path "./docs" -exec rm -r "{}" \;
 
 mv ./docs/* .
