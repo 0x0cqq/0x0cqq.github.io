@@ -1,0 +1,2126 @@
+<!doctype html><html lang=en dir=ltr>
+<head prefix="og: http://ogp.me/ns#">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>题解 – cqqqwq的小站</title>
+<script defer src=/js/fuse.min.5a6bd8801acd9ac3628f27d0a565eae83d7ef636a7ab60ead7a6da78a6ac7ca5.js></script>
+<script src=/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js></script>
+<script defer src=/js/lazysizes.min.31dd6a2d3a1ec0f78a8df007535cf23f03aeb5c70f026e6d6a19dac3b3acc340.js></script>
+<script defer src=/js/helper/getParents.min.ccd45f158c1b17849307ba913a72beac239c410f2b6e648496a79842da84e55b.js></script>
+<script defer src=/js/helper/fadeinout.min.9fb19682560d5fa5596fffec85da605067c4acc86aad05add4d8fff9d362a446.js></script>
+<script defer src=/js/helper/closest.min.js></script>
+<script>MathJax={requireMap:{AMSmath:'ams',AMSsymbols:'ams',AMScd:'amscd',HTML:'html',noErrors:'noerrors',noUndefined:'noundefined'},tex:{inlineMath:[["$","$"]]},displayMath:[["$$","$$"],["[[","]]"]],svg:{fontCache:"global"}}</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+</script>
+<script>"use strict";window.NodeList&&!NodeList.prototype.forEach&&(NodeList.prototype.forEach=Array.prototype.forEach),String.prototype.includes||(String.prototype.includes=function(b,a){'use strict';if(b instanceof RegExp)throw TypeError('first argument must not be a RegExp');return a===void 0&&(a=0),this.indexOf(b,a)!==-1}),Document.prototype.append=Element.prototype.append=function(){this.appendChild(_mutation(arguments))};function _mutation(a){if(!a.length)throw new Error('DOM Exception 8');if(a.length===1)return typeof a[0]=='string'?document.createTextNode(a[0]):a[0];for(var c=document.createDocumentFragment(),e=a.length,d=-1,b;++d<e;)b=a[d],c.appendChild(typeof b=='string'?document.createTextNode(b):b);return c}String.prototype.startsWith||(String.prototype.startsWith=function(b,a){return a=a||0,this.indexOf(b,a)===a}),document.addEventListener('DOMContentLoaded',function(){var A=document.querySelector('.navbar__burger'),c,d,L,t,ad,M,K,p,g,z,k,q,s,r,R,T,e,C,f,D,B,ac,y,E,Z,W,X,h,i,b,ab,v,I,J,aa,x,l,U,m,ah,ag,a,af,N,o,V,G,H,u,n,w;A?A.addEventListener('click',function(c){var a=document.querySelector('.navbarm__collapse'),b;a&&(b=a.getAttribute('data-open'),b==='true'?(a.setAttribute('data-open','false'),a.style.maxHeight=0,A.classList.remove('is-active')):(a.setAttribute('data-open','true'),a.style.maxHeight=a.scrollHeight+"px",A.classList.add('is-active')))}):null,c=document.querySelector('.summary__container'),d=document.querySelector('.search-result'),L=document.querySelector('.search-result__close'),L?L.addEventListener('click',function(a){d.setAttribute('data-display','none'),c.setAttribute('data-display','block')}):null,document.querySelectorAll('.tab')?document.querySelectorAll('.tab').forEach(function(a,d){var e=a.getAttribute('id'),f=a,b=a.querySelectorAll('.tab__link'),c=a.querySelectorAll('.tab__content'),g=[];b&&b.length>0?b.forEach(function(b,d,a){b.onclick=function(e){for(var b=0;b<a.length;b++)d===parseInt(b,10)?a[b].classList.contains('active')||(a[b].classList.add('active'),c[b].style.display='block'):(a[b].classList.remove('active'),c[b].style.display='none')}}):null}):null,document.querySelectorAll('.codetab')?document.querySelectorAll('.codetab').forEach(function(a,d){var e=a.getAttribute('id'),f=a,b=a.querySelectorAll('.codetab__link'),c=a.querySelectorAll('.codetab__content'),g=[];b&&b.length>0?b.forEach(function(b,d,a){b.onclick=function(e){for(var b=0;b<a.length;b++)d===parseInt(b,10)?a[b].classList.contains('active')||(a[b].classList.add('active'),c[b].style.display='block'):(a[b].classList.remove('active'),c[b].style.display='none')}}):null}):null,t=document.getElementById("gtt"),t.style.display="none",t.addEventListener('click',function(){window.document.documentMode?document.documentElement.scrollTop=0:ae(250)});function ae(a){var b=-window.scrollY/(a/15),c=setInterval(function(){window.scrollY!=0?window.scrollBy(0,b):clearInterval(c)},15)}ad=function(){document.body.scrollTop>250||document.documentElement.scrollTop>250?t.style.display="block":t.style.display="none"},M=document.querySelectorAll('.expand__button');for(let a=0;a<M.length;a++)M[a].addEventListener("click",function(){var a=this.nextElementSibling;a.style.maxHeight?(a.style.maxHeight=null,this.querySelector('svg').classList.add('expand-icon__right'),this.querySelector('svg').classList.remove('expand-icon__down')):(a.style.maxHeight=a.scrollHeight+"px",this.querySelector('svg').classList.remove('expand-icon__right'),this.querySelector('svg').classList.add('expand-icon__down'))});K=window.pageYOffset||document.documentElement.scrollTop,p=document.querySelector('.toc'),g=p?p.querySelector('#TableOfContents'):null,z=document.getElementById('toggle-toc'),k=document.querySelector('.single__contents'),q=document.querySelector('.navbar'),s=document.querySelector('.toc__flexbox'),r=document.querySelector('.toc__flexbox--outer'),R=document.querySelectorAll('.expand__content'),T=document.querySelectorAll('.box'),e=null,C=JSON.parse("true"),f=JSON.parse('["h2","h3","h4"]'),f?f=f.toString():f="h1, h2, h3, h4, h5, h6",k&&k.querySelectorAll(".tab")?k.querySelectorAll(".tab").forEach(function(a){a.querySelectorAll(f).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,R?R.forEach(function(a){a.querySelectorAll(f).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,T?T.forEach(function(a){a.querySelectorAll(f).forEach(function(a){e=Array.isArray(e)?e.concat(a.getAttribute('id')):[a.getAttribute('id')]})}):null,window.onscroll=function(){ad();var a=window.pageYOffset||document.documentElement.scrollTop;if(a>K){if(a<250?t.style.display="none":t.style.display="block",a<45)return null;q.classList.contains('navbar--hide')?q.classList.contains('navbar--show')&&q.classList.remove('navbar--show'):q.classList.add('navbar--hide'),k&&(k.querySelectorAll(f).length>0?k.querySelectorAll(f).forEach(function(c){var b,a;if(z&&!z.checked)return null;if(e&&e.includes(c.getAttribute('id')))return null;document.documentElement.scrollTop>=c.offsetTop&&g&&(b=c.getAttribute('id'),p.querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),p.querySelector('a[href="#'+b+'"]')?p.querySelector('a[href="#'+b+'"]').classList.add('active'):null,!1===C||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),a=g.querySelector("[href='#"+b+"']"),a&&a.nextElementSibling&&(a.nextElementSibling.style.display='block'),getParents(a,'ul')?getParents(a,'ul').forEach(function(a){a.style.display='block'}):null)}):(s&&(s.setAttribute('data-position',''),s.classList.contains('hide')||s.classList.add('hide')),r&&(r.setAttribute('data-position',''),r.classList.contains('hide')||r.classList.add('hide'))))}else a<250&&(t.style.display="none"),q.classList.contains('navbar--hide')?q.classList.remove('navbar--hide'):q.classList.contains('navbar--show')||q.classList.add('navbar--show'),k&&(k.querySelectorAll(f).length>0?k.querySelectorAll(f).forEach(function(c){var b,a;if(z&&!z.checked)return null;if(e&&e.includes(c.getAttribute('id')))return null;document.documentElement.scrollTop>=c.offsetTop&&g&&(b=c.getAttribute('id'),p.querySelectorAll('a').forEach(function(a){a.classList.remove('active')}),p.querySelector('a[href="#'+b+'"]')?p.querySelector('a[href="#'+b+'"]').classList.add('active'):null,!1===C||(g.querySelectorAll('ul')?g.querySelectorAll('ul').forEach(function(a){a.querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})})}):null),a=g.querySelector("[href='#"+b+"']"),a&&a.nextElementSibling&&(a.nextElementSibling.style.display='block'),getParents(a,'ul')?getParents(a,'ul').forEach(function(a){a.style.display='block'}):null)}):(s&&!s.classList.contains('hide')&&s.classList.add('hide'),r&&!r.classList.contains('hide')&&r.classList.add('hide'))),g&&document.documentElement.scrollTop<250&&(!1===C||(g.querySelector('ul')?g.querySelector('ul').querySelectorAll('li').forEach(function(a){a.querySelectorAll('ul').forEach(function(a){a.style.display='none'})}):null));K=a<=0?0:a},D=localStorage.getItem('theme'),B=document.getElementById('root'),ac=document.querySelectorAll('.select-theme'),y=document.querySelectorAll('.select-theme__item'),E=function(a){var b=document.getElementsByName('msapplication-TileColor')[0],c=document.getElementsByName('theme-color')[0],d=document.getElementsByName('msapplication-navbutton-color')[0],e=document.getElementsByName('apple-mobile-web-app-status-bar-style')[0];a.includes('dark')?(b.setAttribute('content','#fcfcfa'),c.setAttribute('content','#403E41'),d.setAttribute('content','#403E41'),e.setAttribute('content','#403E41')):a.includes('light')?(b.setAttribute('content','#555'),c.setAttribute('content','#eee'),d.setAttribute('content','#eee'),e.setAttribute('content','#eee')):a.includes('hacker')?(b.setAttribute('content','#e3cd26'),c.setAttribute('content','#252526'),d.setAttribute('content','#252526'),e.setAttribute('content','#252526')):a.includes('solarized')?(b.setAttribute('content','#d3af86'),c.setAttribute('content','#51412c'),d.setAttribute('content','#51412c'),e.setAttribute('content','#51412c')):a.includes('kimbie')&&(b.setAttribute('content','#586e75'),c.setAttribute('content','#eee8d5'),d.setAttribute('content','#eee8d5'),e.setAttribute('content','#eee8d5'))},D?(y?y.forEach(function(a){a.text.trim()===D?a.classList.add('is-active'):a.classList.remove('is-active')}):null,E(D)):E(B.className),y?y.forEach(function(a,b){a.addEventListener('click',function(c){var a=c.target.text.trim(),b,d;localStorage.setItem('theme',a),E(a),B.removeAttribute('class'),B.classList.add('theme__'+a),ac.forEach(function(b){b.querySelectorAll('a').forEach(function(b){b.classList&&(b.text.trim()===a?b.classList.contains('is-active')||b.classList.add('is-active'):b.classList.contains('is-active')&&b.classList.remove('is-active'))})}),window.mermaid&&(a==="dark"||a==="hacker"?(mermaid.initialize({theme:'dark'}),location.reload()):(mermaid.initialize({theme:'default'}),location.reload())),b=document.getElementById('utterances'),b&&b.querySelector('iframe').contentWindow.postMessage({type:'set-theme',theme:a==="dark"||a==="hacker"?'photon-dark':a==='kimbie'?'github-dark-orange':'github-light'},'https://utteranc.es'),d=document.querySelectorAll('.twitter-timeline'),d&&window.postMessage({type:'set-twitter-theme',theme:a==='light'||a==='solarized'?'light':'dark'})})}):null,Z=JSON.parse('"https://blog.chenqiqian.com"'),W=JSON.parse('"https://blog.chenqiqian.com/categories/%E9%A2%98%E8%A7%A3/"'),X=JSON.parse('""'),h=null,i=null,b=null,ab=JSON.parse("true"),v=JSON.parse("true"),I=JSON.parse('"main"'),J=JSON.parse('"categories"'),aa=JSON.parse('"term"'),x=null,ab&&function(){var a=new XMLHttpRequest;J==="publication"&&aa!=="page"?a.open('GET',W+"index.json"):a.open('GET',Z+X+"/index.json"),a.setRequestHeader('Content-Type','application/json; charset=utf-8'),a.onload=function(){if(a.status===200){var b=JSON.parse(a.response.toString('utf-8'));x=new Fuse(b,{keys:J.includes('publication')?['title','abstract']:['title','description','content'],ignoreLocation:!0,includeMatches:v,shouldSort:!0,findAllMatches:!0,threshold:.1,maxPatternLength:100,minMatchCharLength:1}),window.fuse=x}else console.error('['+a.status+']Error:',a.statusText)},a.send()}();function $(e,a){var b=document.createElement('li'),c,d;b.className='search-result__item',c=document.createElement('a'),c.innerHTML=a.title,c.setAttribute('class','search-result__item--title'),c.setAttribute('href',a.permalink),d=document.createElement('div'),d.setAttribute('class','search-result__item--desc'),a.description?d.innerHTML=a.description:a.content&&(d.innerHTML=a.content.substring(0,225)),b.appendChild(c),b.appendChild(d),e.appendChild(b)}function _(f,a){var e=document.createElement('li'),b,d,c;if(e.className='search-result__item',b=null,d=document.createElement('a'),d.innerHTML=a.item.title,d.setAttribute('class','search-result__item--title'),d.setAttribute('href',a.item.uri),a.matches&&a.matches.length){for(c=0;c<a.matches.length;c++)'title'===a.matches[c].key&&(d=document.createElement('a'),d.innerHTML=j(a.matches[c].value,a.matches[c].indices),d.setAttribute('class','search-result__item--title'),d.setAttribute('href',a.item.uri)),'description'===a.matches[c].key?(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=j(a.item.description,a.matches[c].indices)):'content'===a.matches[c].key?b||(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=j(a.item.content.substring(0,150),a.matches[c].indices)):a.item.description?(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=a.item.description):(b=document.createElement('div'),b.setAttribute('class','search-result__item--desc'),b.innerHTML=a.item.content.substring(0,150));e.appendChild(d),b&&e.appendChild(b),e&&f.appendChild(e)}}function O(d,c){var a,b;for(h=document.getElementById('search-results'),i=document.getElementById('search-menu'),h.setAttribute('class','dropdown is-active'),a=document.createElement('ul'),a.setAttribute('class','dropdown-content search-content'),c.length?c.forEach(function(b){var e=document.createElement('li'),c=document.createElement('a'),f,d;c.setAttribute('href',b.uri),c.setAttribute('class','dropdown-item'),c.appendChild(e),f=document.createElement('div'),f.innerHTML=b.title,f.setAttribute('class','menu-item__title'),d=document.createElement('div'),d.setAttribute('class','menu-item__desc'),b.description?d.innerHTML=b.description:b.content&&(d.innerHTML=b.content.substring(0,150)),e.appendChild(f),e.appendChild(d),a.appendChild(c)}):(b=document.createElement('li'),b.setAttribute('class','dropdown-item'),b.innerText='No results found',a.appendChild(b));i.hasChildNodes();)i.removeChild(i.lastChild);i.appendChild(a)}function P(d,c){var a,b;for(h=document.getElementById('search-results'),i=document.getElementById('search-menu'),h.setAttribute('class','dropdown is-active'),a=document.createElement('ul'),a.setAttribute('class','dropdown-content search-content'),c.length?c.forEach(function(b){var g=document.createElement('li'),e=document.createElement('a'),c=null,f,d;if(e.setAttribute('href',b.item.uri),e.setAttribute('class','dropdown-item'),e.appendChild(g),f=document.createElement('div'),f.innerHTML=b.item.title,f.setAttribute('class','menu-item__title'),b.matches&&b.matches.length){for(d=0;d<b.matches.length;d++)'title'===b.matches[d].key&&(f.innerHTML=j(b.matches[d].value,b.matches[d].indices)),'description'===b.matches[d].key?(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=j(b.item.description,b.matches[d].indices)):'content'===b.matches[d].key?c||(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=j(b.item.content.substring(0,150),b.matches[d].indices)):b.item.description?(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=b.item.description):(c=document.createElement('div'),c.setAttribute('class','menu-item__desc'),c.innerHTML=b.item.content.substring(0,150));g.appendChild(f),c&&g.appendChild(c),a.appendChild(e)}}):(b=document.createElement('li'),b.setAttribute('class','dropdown-item'),b.innerText='No results found',a.appendChild(b));i.hasChildNodes();)i.removeChild(i.lastChild);i.appendChild(a)}function Q(e,c){var a,d;h=document.getElementById('search-mobile-results'),a=document.createElement('div'),a.setAttribute('class','mobile-search__content'),c.length>0?c.forEach(function(b){var c=document.createElement('a');c.setAttribute('href',b.uri),c.innerHTML='<div class="mobile-search__item"><div class="mobile-search__item--title">📄 '+b.title+'</div><div class="mobile-search__item--desc">'+(b.description?b.description:b.content)+'</div></div>',a.appendChild(c)}):(d=document.createElement('span'),a.appendChild(d));let b=document.getElementById('search-mobile-results');while(b.firstChild)b.removeChild(b.firstChild);h.appendChild(a)}function Y(e,c){var a,d;h=document.getElementById('search-mobile-results'),a=document.createElement('div'),a.setAttribute('class','mobile-search__content'),c.length?c.forEach(function(b){var e=document.createElement('li'),g=document.createElement('a'),c=null,f,d;if(g.setAttribute('href',b.item.uri),g.appendChild(e),e.setAttribute('class','mobile-search__item'),f=document.createElement('div'),f.innerHTML=b.item.title,f.setAttribute('class','mobile-search__item--title'),b.matches&&b.matches.length){for(d=0;d<b.matches.length;d++)'title'===b.matches[d].key&&(f.innerHTML=j(b.matches[d].value,b.matches[d].indices)),'description'===b.matches[d].key?(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=j(b.item.description,b.matches[d].indices)):'content'===b.matches[d].key?c||(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=j(b.item.content.substring(0,150),b.matches[d].indices)):b.item.description?(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=b.item.description):(c=document.createElement('div'),c.setAttribute('class','mobile-search__item--desc'),c.innerHTML=b.item.content.substring(0,150));e.appendChild(f),c&&e.appendChild(c),a.appendChild(g)}}):(d=document.createElement('span'),a.appendChild(d));let b=document.getElementById('search-mobile-results');while(b.firstChild)b.removeChild(b.firstChild);h.appendChild(a)}function j(a,d){if(!d)return a;var b='',c=0;return d.forEach(function(d){if(d[0]===d[1])return null;b+=''+a.substring(c,d[0])+'<span class="search__highlight">'+a.substring(d[0],d[1]+1)+'</span>'+'',c=d[1]+1}),b+=a.substring(c),b}l=document.getElementById('search'),U=document.getElementById('search-mobile'),m=document.getElementById('search-results'),l?l.addEventListener('input',function(e){var a,f;if(!e.target.value|window.innerWidth<770)return m?m.setAttribute('class','dropdown'):null,d?d.setAttribute('data-display','none'):null,c?c.setAttribute('data-display','block'):null,null;b=e.target.value,a=x.search(e.target.value),I==="main"?v?F(b,a):S(b,a):(v?P(b,a):O(b,a),f=m.querySelectorAll('.dropdown-item'),f?f.forEach(function(a){a.addEventListener('mousedown',function(a){a.target.click()})}):null)}):null,l?l.addEventListener('blur',function(){if(window.innerWidth<770)return null;m?m.setAttribute('class','dropdown'):null}):null,l?l.addEventListener('click',function(c){var a,d;if(window.innerWidth<770)return null;if(!c.target.value)return m?m.setAttribute('class','dropdown'):null,null;b=c.target.value,a=x.search(c.target.value),I==="main"?v?F(b,a):S(b,a):(v?P(b,a):O(b,a),d=m.querySelectorAll('.dropdown-item'),d?d.forEach(function(a){a.addEventListener('mousedown',function(a){a.target.click()})}):null)}):null,ah=document.getElementById("search-menu"),ag=document.querySelector('#search-menu .dropdown-item.is-active'),a=null,af=null,N=350,l?l.addEventListener('keydown',function(e){var b,f;if(window.innerWidth<770)return null;if(e.key==='Escape'&&(d?d.setAttribute('data-display','none'):null,c?c.setAttribute('data-display','block'):null),b=document.querySelectorAll('#search-menu .dropdown-item'),f=e.which||e.keyCode,!b||!b.length)return null;if(e.key==='ArrowDown'||f===40){a===null?(a=0,b[a].classList.remove('is-active')):(b[a].classList.remove('is-active'),a=a===b.length-1?0:a+1),b[a].classList.add('is-active');let c=b[a].offsetTop+b[a].clientHeight-N;c>0?document.querySelector(".search-content").scrollTop+=b[a].getBoundingClientRect().height:a===0&&(document.querySelector(".search-content").scrollTop=0)}else if(e.key==='ArrowUp'||f===38){a===null?(a=b.length-1,b[a].classList.remove('is-active')):(b[a].classList.remove('is-active'),a=a===0?b.length-1:a-1),b[a].classList.add('is-active');let c=b[a].offsetTop+b[a].clientHeight-N;c<0?document.querySelector(".search-content").scrollTop-=b[a].getBoundingClientRect().height:document.querySelector(".search-content").scrollTop=c+b[a].getBoundingClientRect().height}else e.key==='Enter'||f===13?b[a]&&b[a].getAttribute('href')&&(location.href=b[a].getAttribute('href')):(e.key==='Escape'||f===27)&&(e.target.value=null,h&&h.classList.remove('is-active'))}):null,U?U.addEventListener('input',function(a){if(!a.target.value){let a=document.getElementById('search-mobile-results');while(a.firstChild)a.removeChild(a.firstChild);return null}b=a.target.value;var c=x.search(a.target.value);Q(b,c),v?Y(b,c):Q(b,c)}):null,o=document.querySelector('#search-mobile'),V=document.querySelector('.mobile-search'),G=document.querySelector('#mobileSearchBtn'),H=document.querySelector('#search-mobile-close'),u=document.querySelector('#search-mobile-container'),n=document.querySelector('#search-mobile-results'),w=document.querySelector('html'),V&&(V.style.display='none'),G?G.addEventListener('click',function(){u&&(u.style.display='block'),o&&o.focus(),w&&(w.style.overflowY='hidden')}):null,H?H.addEventListener('click',function(){if(u&&(u.style.display='none'),o&&(o.value=''),n)while(n.firstChild)n.removeChild(n.firstChild);w&&(w.style.overflowY='visible')}):null,o?o.addEventListener('keydown',function(a){var b=a.which||a.keyCode;if(a.key==='Escape'||b===27){if(u&&(u.style.display='none'),o&&(o.value=''),n)while(n.firstChild)n.removeChild(n.firstChild);w&&(w.style.overflowY='visible')}}):null;function S(f,a){var g=document.querySelector('.search-result__body'),b=g.querySelector('ul'),e=document.createElement('ul');f?a&&a&&a.length&&(a.forEach(function(a){$(e,a)}),d?d.setAttribute('data-display','block'):null,c?c.setAttribute('data-display','none'):null):(d?d.setAttribute('data-display','none'):null,c?c.setAttribute('data-display','block'):null),b.parentNode.replaceChild(e,b)}function F(f,a){var g=document.querySelector('.search-result__body'),b=g.querySelector('ul'),e=document.createElement('ul');f?a&&a&&a.length&&(a.forEach(function(a){_(e,a)}),d?d.setAttribute('data-display','block'):null,c?c.setAttribute('data-display','none'):null):(d?d.setAttribute('data-display','none'):null,c?c.setAttribute('data-display','block'):null),b.parentNode.replaceChild(e,b)}})</script>
+<link rel=stylesheet href=/css/main.min.css>
+<link rel=alternate type=application/rss+xml title=RSS href=https://blog.chenqiqian.com/categories/%E9%A2%98%E8%A7%A3/index.xml>
+<meta name=description content="The person who will make himself great again.">
+<meta name=created content="2020-08-09T12:45:20+0800">
+<meta name=modified content="2020-08-09T12:45:20+0800">
+<meta property="article:published_time" content="2020-08-09T12:45:20+0800">
+<meta name=author content="cqqqwq">
+<meta property="og:site_name" content="cqqqwq的小站">
+<meta property="og:title" content="题解">
+<meta property="og:url" content="https://blog.chenqiqian.com/categories/%E9%A2%98%E8%A7%A3/">
+<meta property="og:type" content="website">
+<meta property="og:description" content="The person who will make himself great again.">
+<meta name=generator content="Hugo 0.92.0">
+<meta name=msapplication-TileColor content="#fff">
+<meta name=theme-color content="#fff">
+<meta name=msapplication-navbutton-color content="#fff">
+<meta name=apple-mobile-web-app-status-bar-style content="#fff">
+<link rel=canonical href=https://blog.chenqiqian.com/categories/%E9%A2%98%E8%A7%A3/>
+<link rel=manifest href=/manifest.json>
+<link rel=apple-touch-icon sizes=57x57 href=/favicon/apple-icon-57x57.png>
+<link rel=apple-touch-icon sizes=60x60 href=/favicon/apple-icon-60x60.png>
+<link rel=apple-touch-icon sizes=72x72 href=/favicon/apple-icon-72x72.png>
+<link rel=apple-touch-icon sizes=76x76 href=/favicon/apple-icon-76x76.png>
+<link rel=apple-touch-icon sizes=114x114 href=/favicon/apple-icon-114x114.png>
+<link rel=apple-touch-icon sizes=120x120 href=/favicon/apple-icon-120x120.png>
+<link rel=apple-touch-icon sizes=144x144 href=/favicon/apple-icon-144x144.png>
+<link rel=apple-touch-icon sizes=152x152 href=/favicon/apple-icon-152x152.png>
+<link rel=apple-touch-icon sizes=180x180 href=/favicon/apple-icon-180x180.png>
+<link rel=icon type=image/png sizes=192x192 href=/favicon/android-icon-192x192.png>
+<link rel=icon type=image/png sizes=192x192 href=/favicon/android-icon-512x512.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon/favicon-32x32.png>
+<link rel=icon type=image/png sizes=96x96 href=/favicon/favicon-96x96.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon/favicon-16x16.png>
+<meta name=msapplication-TileColor content="#ffffff">
+<meta name=msapplication-TileImage content="/ms-icon-144x144.png">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"WebPage","url":"https://blog.chenqiqian.com/categories/%E9%A2%98%E8%A7%A3/","name":"题解","description":"The person who will make himself great again.","mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.chenqiqian.com"},"publisher":{"@type":"Organization","name":"cqqqwq\u0008的小站","url":"https://blog.chenqiqian.com"}}</script>
+<script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<style>div.summary-classic__text p{margin:0 0 1.2rem}div.summary-card__text p{margin:0 0 1.2rem}div.summary-compact__text p{margin:0 0 1.2rem}</style>
+</head>
+<body id=root class=theme__dark>
+<script>var localTheme=localStorage.getItem('theme');localTheme&&(document.getElementById('root').className='theme__'+localTheme)</script>
+<div id=container>
+<div class=wrapper data-type=categories data-kind=term>
+<nav class=navbar role=navigation aria-label="main navigation" data-dir=ltr>
+<div class=navbar__brand>
+<a href=/ title=Home rel=home class=navbar__logo-link>
+<img src=/logo.png alt=Home class=navbar__logo>
+</a>
+<a href=/ title=Home rel=home class=navbar__title-link>
+<h6 class=navbar__title>cqqqwq</h6>
+</a>
+</div>
+<div class="theme theme-mobile" data-ani=true>
+<div class=dropdown>
+<button class="dropdown-trigger navbar__slide-down" aria-label="Select Theme Button" data-ani=true><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M24 0H0v24h24V0z"/><path fill="currentcolor" d="M6.34 7.93c-3.12 3.12-3.12 8.19.0 11.31C7.9 20.8 9.95 21.58 12 21.58s4.1-.78 5.66-2.34c3.12-3.12 3.12-8.19.0-11.31l-4.95-4.95c-.39-.39-1.02-.39-1.41.0L6.34 7.93zM12 19.59c-1.6.0-3.11-.62-4.24-1.76C6.62 16.69 6 15.19 6 13.59s.62-3.11 1.76-4.24L12 5.1v14.49z"/></svg>
+</button>
+<div class="dropdown-content select-theme">
+<a href=# class="dropdown-item select-theme__item is-active">
+dark
+</a>
+<a href=# class="dropdown-item select-theme__item">
+light
+</a>
+<a href=# class="dropdown-item select-theme__item">
+hacker
+</a>
+<a href=# class="dropdown-item select-theme__item">
+solarized
+</a>
+<a href=# class="dropdown-item select-theme__item">
+kimbie
+</a>
+</div>
+</div>
+</div>
+<div id=mobileSearchBtn class=mobile-search__btn data-ani=true><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentcolor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49.0s.41-1.08.0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</div>
+<div id=search-mobile-container class="mobile-search hide" data-dir=ltr>
+<div class=mobile-search__top>
+<input id=search-mobile type=text aria-label="Mobile Search" placeholder=Search class=mobile-search__top--input>
+<div id=search-mobile-close class=mobile-search__top--icon><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path opacity=".87" fill="none" d="M0 0h24v24H0V0z"/><path fill="currentcolor" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41.0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg>
+</div>
+</div>
+<div id=search-mobile-results class=mobile-search__body>
+</div>
+</div>
+<a role=button class=navbar__burger aria-label=menu aria-expanded=false data-ani=true>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+<span aria-hidden=true></span>
+</a>
+<div class=navbarm__collapse data-open=false>
+<ul dir=ltr>
+<li class=navbarm__menu--item>
+<a href=/about>About</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/archive>Archive</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/posts>
+Posts<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentcolor" d="M8.12 9.29 12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41.0s.39 1.02.0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41.0L6.7 10.7c-.39-.39-.39-1.02.0-1.41.39-.38 1.03-.39 1.42.0z"/></svg>
+</a>
+</li>
+<li class="navbarm__menu--item navbarm__menu--subitem">
+<a href=/categories>Categories</a>
+</li>
+<li class="navbarm__menu--item navbarm__menu--subitem">
+<a href=/series>Series</a>
+</li>
+<li class="navbarm__menu--item navbarm__menu--subitem">
+<a href=/tags>Tags</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/notes>Notes</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/gallery>Gallery</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/showcase>Showcase</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/friends>Friends</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/tags class=navbarm__menu--term data-index=0>
+Tags
+</a>
+</li>
+<li class="navbarm__menu--item active">
+<a href=/categories class=navbarm__menu--term data-index=1>
+Categories
+</a>
+</li>
+<li class=navbarm__menu--item>
+<a href=/series class=navbarm__menu--term data-index=2>
+Series
+</a>
+</li>
+</ul>
+</div>
+<div class=navbar__menu>
+<div class=theme data-ani=true>
+<div class=dropdown>
+<button class="dropdown-trigger navbar__slide-down" aria-label="Select Theme Button" data-ani=true><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"><path fill="none" d="M24 0H0v24h24V0z"/><path fill="currentcolor" d="M6.34 7.93c-3.12 3.12-3.12 8.19.0 11.31C7.9 20.8 9.95 21.58 12 21.58s4.1-.78 5.66-2.34c3.12-3.12 3.12-8.19.0-11.31l-4.95-4.95c-.39-.39-1.02-.39-1.41.0L6.34 7.93zM12 19.59c-1.6.0-3.11-.62-4.24-1.76C6.62 16.69 6 15.19 6 13.59s.62-3.11 1.76-4.24L12 5.1v14.49z"/></svg>
+</button>
+<div class="dropdown-content select-theme">
+<a href=# class="dropdown-item select-theme__item is-active">
+dark
+</a>
+<a href=# class="dropdown-item select-theme__item">
+light
+</a>
+<a href=# class="dropdown-item select-theme__item">
+hacker
+</a>
+<a href=# class="dropdown-item select-theme__item">
+solarized
+</a>
+<a href=# class="dropdown-item select-theme__item">
+kimbie
+</a>
+</div>
+</div>
+</div>
+<a href=/about class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>About</a>
+<a href=/archive class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Archive</a>
+<div class="navbar__dropdown navbar__slide-down" data-ani=true>
+<a href=/posts class=navbar__menu-item dir=ltr>
+Posts<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path fill="currentcolor" d="M8.12 9.29 12 13.17l3.88-3.88c.39-.39 1.02-.39 1.41.0s.39 1.02.0 1.41l-4.59 4.59c-.39.39-1.02.39-1.41.0L6.7 10.7c-.39-.39-.39-1.02.0-1.41.39-.38 1.03-.39 1.42.0z"/></svg>
+</a>
+<div class=navbar__dropdown--content>
+<a href=/categories class=navbar__dropdown--item dir=ltr>Categories</a>
+<a href=/series class=navbar__dropdown--item dir=ltr>Series</a>
+<a href=/tags class=navbar__dropdown--item dir=ltr>Tags</a>
+</div>
+</div>
+<a href=/notes class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Notes</a>
+<a href=/gallery class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Gallery</a>
+<a href=/showcase class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Showcase</a>
+<a href=/friends class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Friends</a>
+</div>
+</nav>
+<main class="main inner" data-sidebar-position=right>
+<div class="list__main lm">
+<nav class="breadcrumb hide" aria-label=breadcrumbs>
+<script>document.querySelector('.breadcrumb').classList.remove('hide')</script>
+<ol>
+<li>
+<a href=https://blog.chenqiqian.com/ class=capitalize>cqqqwq的小站</a>
+</li>
+<li>
+<a href=https://blog.chenqiqian.com/categories/ class=capitalize>Categories</a>
+</li>
+<li class=is-active>
+<span>题解</span>
+</li>
+</ol>
+</nav>
+<header class=list__header>
+<h5 class="list__header--title capitalize h5">题解</h5>
+</header>
+<div class="list__header--desc p2">
+</div>
+<div class=summary__container data-display=block>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/poi2014-pta/>「POI2014」PTA-单调队列</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 27, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;473&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;1&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>给定 $n$ 个点的高度，规定从 $1$ 点出发，跳到比高度小于当前点的点不消耗体力，否则消耗一点体力，最后到达 $n$ 点。</p>
+<p>$q$ 次询问，每次询问有一个步伐限制 $k$ ，求最少耗费的体力。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/tjoi2017-dna/>「TJOI2017」DNA-后缀数组</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 23, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;784&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>加里敦大学的生物研究所发现了决定人喜不喜欢吃藕的基因序列 $S$ ,有这个序列的碱基序列就会表现出喜欢吃藕的性状，但是研究人员发现对碱基序列 $S$ ,任意修改其中不超过 $3$ 个碱基，依然能够表现出吃藕的性状。现在研究人员想知道这个基因在 DNA 链 $S0$ 上的位置。所以你需要统计在一个表现出吃藕性状的人的 DNA 序列 $S0$ 上，有多少个连续子串可能是该基因，即有多少个 $S0$ 的连续子串修改小于等于三个字母能够变成 $S$ 。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/cqoi2016-phone/>「CQOI2016」手机号码-数位dp</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 19, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;785&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>手机号码是一个有 $11$ 位且不含前导 $0$ 的数。满足条件手机号码的必须<strong>同时</strong>满足：号码中出现至少 $3$ 个相邻的相同数字；号码中不能同时出现 $8$ 和 $4$ 。</p>
+<p>给定两个数 $L$ 和 $R$ ，统计出 $[L,R]$区间内所有满足条件的手机号码的个数。 $L$ 和 $R$ 都是符合定义的手机号码。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/zjoi2010-count/>「ZJOI2010」数字计数-数位dp</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 18, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;689&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>给定两个正整数 $a$ 和 $b$ ，求在 $[a,b]$ 中的所有整数中，每个数码(<code>digit</code>)各出现了多少次。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/jsoi2016-team/>「JSOI2016」最佳团体-树上背包+0/1分数规划</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 18, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;690&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p><code>JSOI</code> 信息学代表队一共有 $N$ 名候选人，这些候选人从 $1$ 到 $N$ 编号。方便起见，<code>JYY</code> 的编号是 $0$ 号。每个候选人都由一位编号比他小的候选人$R_i$推荐。如果 $R_i = 0$ ，则说明这个候选人是 <code>JYY</code> 自己看上的。</p>
+<p>为了保证团队的和谐，<code>JYY</code> 需要保证，如果招募了候选人 $i$，那么候选人 $R_i$ 也一定需要在团队中。当然了，<code>JYY</code> 自己总是在团队里的。每一个候选人都有一个战斗值 $P_i$ ，也有一个招募费用 $S_i$。<code>JYY</code> 希望招募 $K$ 个候选人（<code>JYY</code> 自己不算），组成一个性价比最高的团队。也就是，这 $K$ 个被 <code>JYY</code> 选择的候选人的总战斗值与总招募费用的比值最大。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/noi2010-energy/>「NOI2010」能量采集-简单数学</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 18, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;562&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>给定两个整数 $n,m$ ，对于平面上的整点 ${(x,y)|x \in [1,n],y \in [1,m],x,y \in \mathbb Z}$ 。若 $(x,y)$ 与 $(0,0)$ 的连线上有 $k$ 个整点（不包括 $(0,0),(n,m)$ ），则产生的贡献为 $2k+1$ 。求所有满足条件的点的贡献总和。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/noi2014-forest/>「NOI2014」魔法森林-LCT</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 16, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;1210&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;3&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>给定一个 $n$ 个点 $m$ 条边的无向图，每条边有两个权值 $a_i,b_i$ 。请你找到一条从 $1 \rightarrow n$ 的道路，令道路上所有边的集合为 $S$ ，使 $ans = \max(a_i)+\max(b_j),i,j \in S$ 最小，求出这个最小值 $ans$ 。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/scoi2015-room/>「SCOI2015」小凸玩密室-树形dp</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 8, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;1774&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;4&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>小凸和小方相约玩密室逃脱，这个密室是一棵有 $n$ 个节点的完全二叉树，每个节点有一个灯泡。点亮所有灯泡即可逃出密室。</p>
+<p>每个灯泡有个权值 $a_i$ ，每条边也有个权值 $b_i$ 。点亮第 $1$ 个灯泡不需要花费，之后每点亮 $1$ 个新的灯泡 $v$ 的花费，等于上一个被点亮的灯泡 $u$ 到这个点 $v$ 的距离 $D _ {u,v}$ ，乘以这个点的权值 $a_v$ 。在点灯的过程中，要保证任意时刻所有被点亮的灯泡<strong>必须连通</strong>，在点亮一个灯泡后<strong>必须先点亮其子树所有灯泡才能点亮其他灯泡</strong>。</p>
+<p>请告诉他们，逃出密室的最少花费是多少。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/cqoi2011-inverse/>「CQOI2011」动态逆序对-CDQ分治</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 7, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;973&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>对于序列 $A$ ，它的逆序对数定义为满足 $i&lt;j$ ，且 $A_i>A_j$ 的数对 $(i,j)$ 的个数。<br>
+给出一个 $1$ 到 $n$ 的排列，按照某种顺序依次删除 $m$ 个元素，你的任务是在每次删除一个元素之前统计整个序列的逆序对数。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/zjoi2013-kth/>「ZJOI2013」K大数查询-整体二分</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 6, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;941&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>有 $N$ 个位置， $M$ 个操作。</p>
+<p>操作有两种：</p>
+<ul>
+<li>如果是 <code>1 a b c</code> 的形式表示在第 $a$ 个位置到第 $b$ 个位置，每个位置加入一个数 $c$ ；</li>
+<li>如果是 <code>2 a b c</code> 形式，表示询问从第 $a$ 个位置到第 $b$ 个位置，第 $c$ 大的数是多少。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/luogu-3810/>「模板」陌上花开-CDQ分治+树状数组</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 6, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;1469&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;3&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>有 $n$ 朵花,每朵花有三个属性：花形( $s$ )、颜色( $c$ )、气味( $m$ )，用三个整数表示。显然，两朵花可能有同样的属性。</p>
+<p>定义一朵花 $A$ 比另一朵花 $B$ 要美丽，当且仅当 $S_a\geq S_b$ , $C_a\geq C_b$ , $M_a \geq M_b$ 。定义一朵花的等级是它拥有的美丽能超过的花的数量。</p>
+<p>求出每个等级的花的数量。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/haoi2009-worm/>「HAOI2009」毛毛虫-树形dp</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 6, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;380&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;1&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>对于一棵树，我们可以将某条链和与该链相连的边抽出来，称其为一个“毛毛虫”。求在这个树中点数最多的毛毛虫的点数。</p>
+<p>$n &lt; 300000$</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/lnoi2014-lca/>「LNOI2014」LCA-树链剖分-差分</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 2, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;933&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>给出一个 $n$ 个节点的有根树。有 $q$ 次询问，每次询问给出 $l,r,z$ ，求 $\sum _ {l \leq i \leq r}dep[LCA(i,z)]$ 。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/scoi2013-function/>「SCOI2013」多项式的运算-Splay</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jun 1, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;1023&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;3&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>维护一个动态的关于 $x$的无穷多项式 ，这个多项式初始时对于所有 $i$ 有 $a_i = 0$</p>
+<p>$$<br>
+f(x)=a_0x^0+a_1x^1+a_2x^2&mldr;<br>
+$$</p>
+<p>操作者可以进行四种操作：</p>
+<ul>
+<li>
+<p><code>mul L R V</code> 表示将 $x^L$ 到 $x^R$ 这些项的系数乘上某个定值 $v$ ；</p>
+</li>
+<li>
+<p><code>add L R V</code> 表示将 $x^L$ 到 $x^R$ 这些项的系数加上某个定值 $v$ ；</p>
+</li>
+<li>
+<p><code>mulx L R</code> 表示将 $x^L$ 到 $x^R$ 这些项乘上x变量；</p>
+</li>
+<li>
+<p><code>query V</code> 求 $f(v)$ 的值。</p>
+</li>
+</ul>
+<p>操作集中在前三种，第四种操作不会出现超过 $10$ 次。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.chenqiqian.com/posts/sdoi2014-journey/>「SDOI2014」旅行-树链剖分+动态开点线段树</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;May 24, 2018 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;827&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>给定一棵 $n$ 个节点的树，对于每个点都有两个权值 $w_i,c_i$ 。</p>
+<p>存在 $m$ 个操作，分为4类。</p>
+<ul>
+<li>
+<p>“<code>CC x c</code>”：将 $c_x$ 更改为 $c$ ；</p>
+</li>
+<li>
+<p>“<code>CW x w</code>”：将 $w_x$ 更改为 $w$ ；</p>
+</li>
+<li>
+<p>“<code>QS x y</code>”：对所有满足在 $x$ 到 $y$ 路径上且 $c_i = c_x = c_y$ 的节点 $i$，求 $\sum w_i$ ；</p>
+</li>
+<li>
+<p>“<code>QM x y</code>”：对所有满足在 $x$ 到 $y$ 路径上且 $c_i = c_x = c_y$ 的节点 $i$ ，求 $\max(w_i)$ ；</p>
+</li>
+</ul>
+<p>对于后两个操作，保证 $c_x = c_y$ 。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
+<ul class=pagination>
+<script></script>
+<li><a href=/categories/%E9%A2%98%E8%A7%A3/>1</a></li>
+<script></script>
+<li class=disabled><a>&mldr;</a></li>
+<script></script>
+<script></script>
+<script></script>
+<script></script>
+<script></script>
+<script></script>
+<script></script>
+<li><a href=/categories/%E9%A2%98%E8%A7%A3/page/9/>9</a></li>
+<script></script>
+<li class=active><a href=/categories/%E9%A2%98%E8%A7%A3/page/10/>10</a></li>
+<script></script>
+<li><a href=/categories/%E9%A2%98%E8%A7%A3/page/11/>11</a></li>
+<script></script>
+<li><a href=/categories/%E9%A2%98%E8%A7%A3/page/12/>12</a></li>
+<script></script>
+<li><a href=/categories/%E9%A2%98%E8%A7%A3/page/13/>13</a></li>
+</ul>
+</div>
+<div class=search-result data-display=none>
+<div class=search-result__header>
+<div class=search-result__close data-dir=ltr><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"><path opacity=".87" fill="none" d="M0 0h24v24H0V0z"/><path fill="currentcolor" d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41.0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"/></svg>
+</div>
+</div>
+<div class=search-result__body>
+<ul>
+<li class=search-result__item>
+<div class=search-result__item--title>
+</div>
+<div class=search-result__item--desc>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<aside class="list__sidebar r" data-dir=ltr>
+<ul class=sidebar>
+<div class=search>
+<span class=icon><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentcolor" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path d="M15.5 14h-.79l-.28-.27c1.2-1.4 1.82-3.31 1.48-5.34-.47-2.78-2.79-5-5.59-5.34-4.23-.52-7.79 3.04-7.27 7.27.34 2.8 2.56 5.12 5.34 5.59 2.03.34 3.94-.28 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49.0s.41-1.08.0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</span>
+<input id=search aria-label="Site Search" class=input type=text placeholder=Search autocomplete=off>
+<div id=search-results class=dropdown>
+<div id=search-menu class=dropdown-menu role=menu>
+</div>
+</div>
+</div>
+<li class=sidebar-recent>
+<a href=/posts/cf750e/ class="sidebar-recent__title p1">「CF750E」New Year and Old Subsequence-矩阵+线段树+dp</a>
+</li>
+<li class=sidebar-recent>
+<a href=/posts/scoi2005-knight/ class="sidebar-recent__title p1">「SCOI2005」骑士精神-搜索</a>
+</li>
+<li class=sidebar-recent>
+<a href=/posts/jsoi2010-feast/ class="sidebar-recent__title p1">「JSOI2010」满汉全席-2-SAT</a>
+</li>
+<li class=sidebar-recent>
+<a href=/posts/hnoi2010-planarity/ class="sidebar-recent__title p1">「HNOI2010」平面图判定-2-SAT</a>
+</li>
+<li class=sidebar-recent>
+<a href=/posts/sdoi2014-table/ class="sidebar-recent__title p1">「SDOI2014」数表-数论</a>
+</li>
+<hr class="hr-fade sidebar-hr">
+</ul>
+<div class=taxo-root>
+<div class=taxo>
+<section>
+<span class="title p2">
+<a href=/tags/ class=taxo__title>
+Tags
+</a>
+</span>
+<span class=tag>
+<a href=/tags/0/1%E5%88%86%E6%95%B0%E8%A7%84%E5%88%92/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+0/1分数规划
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/2-sat/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+2-SAT
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/ac%E8%87%AA%E5%8A%A8%E6%9C%BA/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+AC自动机
+</span>
+<span class=taxo__num dir=auto>
+5
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/bsgs%E7%AE%97%E6%B3%95/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+BSGS算法
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/cdq%E5%88%86%E6%B2%BB/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+CDQ分治
+</span>
+<span class=taxo__num dir=auto>
+5
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/dfs%E5%BA%8F/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+dfs序
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/dinic/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+Dinic
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/index/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+index
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/kmp/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+KMP
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/lct/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+LCT
+</span>
+<span class=taxo__num dir=auto>
+12
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/lucas%E5%AE%9A%E7%90%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+Lucas定理
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/set/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+set
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/splay/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+Splay
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/test/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+test
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/treap/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+Treap
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/trie/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+Trie
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/wqs%E4%BA%8C%E5%88%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+wqs二分
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+中国剩余定理
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+主席树
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E4%B9%B1%E6%90%9E/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+乱搞
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E4%BA%8C%E5%88%86%E5%9B%BE/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+二分图
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E4%BA%8C%E5%88%86%E5%9B%BE%E5%8C%B9%E9%85%8D/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+二分图匹配
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+二分查找
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+二分答案
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%86%AC%E4%BB%A4%E8%90%A5/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+冬令营
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%86%B3%E7%AD%96%E5%8D%95%E8%B0%83%E6%80%A7/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+决策单调性
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%88%86%E5%9D%97/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+分块
+</span>
+<span class=taxo__num dir=auto>
+5
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%88%86%E5%B1%82%E5%9B%BE/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+分层图
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+动态规划
+</span>
+<span class=taxo__num dir=auto>
+41
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%8C%BA%E9%97%B4dp/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+区间dp
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%8D%95%E8%B0%83%E6%A0%88/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+单调栈
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+单调队列
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%8E%86%E5%8F%B2%E7%A0%94%E7%A9%B6/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+历史研究
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E4%B8%BB%E5%B8%AD%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+可持久化主席树
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%8F%AF%E6%8C%81%E4%B9%85%E5%8C%96%E7%BA%BF%E6%AE%B5%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+可持久化线段树
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%90%8E%E7%AB%AF/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+后端
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+后缀数组
+</span>
+<span class=taxo__num dir=auto>
+10
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%90%8E%E7%BC%80%E8%87%AA%E5%8A%A8%E6%9C%BA/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+后缀自动机
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%90%AF%E5%8F%91%E5%BC%8F%E5%90%88%E5%B9%B6/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+启发式合并
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%9B%9E%E6%96%87%E8%87%AA%E5%8A%A8%E6%9C%BA/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+回文自动机
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%9B%BE%E8%AE%BA/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+图论
+</span>
+<span class=taxo__num dir=auto>
+33
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%9F%BA%E7%8E%AF%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+基环树
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%A4%9A%E9%A1%B9%E5%BC%8F/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+多项式
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+字符串
+</span>
+<span class=taxo__num dir=auto>
+19
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%AE%B9%E6%96%A5%E5%8E%9F%E7%90%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+容斥原理
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%AF%B9%E5%81%B6%E5%9B%BE/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+对偶图
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%B7%A6%E5%81%8F%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+左偏树
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%B7%AE%E5%88%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+差分
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+平衡树
+</span>
+<span class=taxo__num dir=auto>
+12
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+并查集
+</span>
+<span class=taxo__num dir=auto>
+5
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%BC%BA%E8%BF%9E%E9%80%9A%E5%88%86%E9%87%8F/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+强连通分量
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%BF%AB%E9%80%9F%E5%82%85%E7%AB%8B%E5%8F%B6%E5%8F%98%E6%8D%A2/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+快速傅立叶变换
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+快速幂
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+扩展欧几里得
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+拓扑排序
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%8E%92%E5%BA%8F/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+排序
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%90%9C%E7%B4%A2/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+搜索
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%94%BF%E6%B2%BB/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+政治
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%95%B0%E4%BD%8Ddp/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+数位dp
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%95%B0%E5%AD%A6/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+数学
+</span>
+<span class=taxo__num dir=auto>
+20
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+数据结构
+</span>
+<span class=taxo__num dir=auto>
+68
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%95%B0%E8%AE%BA/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+数论
+</span>
+<span class=taxo__num dir=auto>
+10
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+数论函数
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%95%B4%E4%BD%93%E4%BA%8C%E5%88%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+整体二分
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%96%87%E5%AD%A6/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+文学
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%96%9C%E7%8E%87%E4%BC%98%E5%8C%96/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+斜率优化
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%96%B0%E5%B9%B4%E8%B4%BA%E8%AF%8D/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+新年贺词
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%9C%80%E5%A4%A7%E5%85%AC%E7%BA%A6%E6%95%B0/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+最大公约数
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%9C%80%E5%A4%A7%E6%9D%83%E9%97%AD%E5%90%88%E5%AD%90%E5%9B%BE/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+最大权闭合子图
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%9C%80%E7%9F%AD%E8%B7%AF/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+最短路
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%9C%80%E8%BF%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+最近公共祖先
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%9C%9F%E6%9C%9B/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+期望
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%9C%9F%E6%9C%9Bdp/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+期望dp
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%9D%9C%E6%95%99%E7%AD%9B/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+杜教筛
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+树
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A0%91%E5%A5%97%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+树套树
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A0%91%E5%BD%A2dp/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+树形dp
+</span>
+<span class=taxo__num dir=auto>
+7
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+树形结构
+</span>
+<span class=taxo__num dir=auto>
+19
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+树状数组
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A0%91%E7%9A%84%E7%9B%B4%E5%BE%84/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+树的直径
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A0%91%E9%93%BE%E5%89%96%E5%88%86/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+树链剖分
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%A8%A1%E6%9D%BF/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+模板
+</span>
+<span class=taxo__num dir=auto>
+14
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+欧几里得算法
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+欧拉函数
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E6%AD%8C%E6%9B%B2/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+歌曲
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%82%B9%E5%88%86%E6%B2%BB/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+点分治
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%8A%B6%E5%8E%8Bdp/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+状压dp
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%94%9F%E6%88%90%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+生成树
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%9E%8E%E6%90%9E/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+瞎搞
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%9F%A9%E9%98%B5/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+矩阵
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+矩阵快速幂
+</span>
+<span class=taxo__num dir=auto>
+5
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%AC%94%E8%AE%B0/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+笔记
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%BA%A2%E6%A5%BC%E6%A2%A6/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+红楼梦
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%BA%BF%E6%80%A7%E5%9F%BA/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+线性基
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+线段树
+</span>
+<span class=taxo__num dir=auto>
+23
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%88%86%E6%B2%BB/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+线段树分治
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91%E5%90%88%E5%B9%B6/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+线段树合并
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E7%BD%91%E7%BB%9C%E6%B5%81/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+网络流
+</span>
+<span class=taxo__num dir=auto>
+15
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%83%8C%E5%8C%85/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+背包
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%8E%AB%E6%AF%94%E4%B9%8C%E6%96%AF%E5%8F%8D%E6%BC%94/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+莫比乌斯反演
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%8E%AB%E9%98%9F/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+莫队
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%99%9A%E6%A0%91/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+虚树
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%AE%A1%E7%AE%97%E7%A4%BE%E4%BC%9A%E7%A7%91%E5%AD%A6/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+计算社会科学
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%B4%AA%E5%BF%83/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+贪心
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%B4%B9%E7%94%A8%E6%B5%81/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+费用流
+</span>
+<span class=taxo__num dir=auto>
+7
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+输入输出
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E9%80%92%E6%8E%A8/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+递推
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E9%9A%8F%E7%AC%94/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+随笔
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E9%AB%98%E6%96%AF%E6%B6%88%E5%85%83/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+高斯消元
+</span>
+<span class=taxo__num dir=auto>
+4
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/tags/%E9%AB%98%E8%80%83/ class="is-tags taxo__link" data-dir=ltr>
+<span class=taxo__text>
+高考
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+</section>
+</div>
+<div class=taxo>
+<section>
+<span class="title p2">
+<a href=/categories/ class=taxo__title>
+Categories
+</a>
+</span>
+<span class=tag>
+<a href=/categories/hugo/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+hugo
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/oi/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+OI
+</span>
+<span class=taxo__num dir=auto>
+204
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/test/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+test
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/themes/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+themes
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E5%8D%9A%E5%AE%A2/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+博客
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+学习笔记
+</span>
+<span class=taxo__num dir=auto>
+12
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E5%BC%80%E5%8F%91/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+开发
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E6%80%BB%E7%BB%93/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+总结
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E6%91%98%E5%BD%95/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+摘录
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E6%A8%A1%E6%9D%BF/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+模板
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E6%AD%8C%E6%9B%B2/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+歌曲
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E6%B8%B8%E8%AE%B0/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+游记
+</span>
+<span class=taxo__num dir=auto>
+7
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E8%AE%BA%E6%96%87/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+论文
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+读书笔记
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E9%9A%8F%E7%AC%94/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+随笔
+</span>
+<span class=taxo__num dir=auto>
+18
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/categories/%E9%A2%98%E8%A7%A3/ class="is-categories taxo__link" data-dir=ltr>
+<span class=taxo__text>
+题解
+</span>
+<span class=taxo__num dir=auto>
+185
+</span>
+</a>
+</span>
+</section>
+</div>
+<div class=taxo>
+<section>
+<span class="title p2">
+<a href=/series/ class=taxo__title>
+Series
+</a>
+</span>
+<span class=tag>
+<a href=/series/bzoj/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+BZOJ
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/codeforces/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+Codeforces
+</span>
+<span class=taxo__num dir=auto>
+30
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/ioi/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+IOI
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/luogu/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+Luogu
+</span>
+<span class=taxo__num dir=auto>
+5
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/noi/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+NOI
+</span>
+<span class=taxo__num dir=auto>
+20
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/qtree/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+QTREE
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/themes-guide/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+themes guide
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/wc/ctsc/apio/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+WC/CTSC/APIO
+</span>
+<span class=taxo__num dir=auto>
+6
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/%E5%90%84%E5%9B%BDoi/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+各国OI
+</span>
+<span class=taxo__num dir=auto>
+12
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/%E5%90%84%E7%9C%81%E7%9C%81%E9%80%89/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+各省省选
+</span>
+<span class=taxo__num dir=auto>
+88
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/%E5%9B%BD%E5%AE%B6%E9%9B%86%E8%AE%AD%E9%98%9F/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+国家集训队
+</span>
+<span class=taxo__num dir=auto>
+3
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/%E5%A4%A7%E4%B8%80%E4%B8%8A%E8%AF%BE%E7%A8%8B/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+大一上课程
+</span>
+<span class=taxo__num dir=auto>
+2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/%E7%BD%91%E7%BB%9C%E6%B5%81-24-%E9%A2%98/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+网络流 24 题
+</span>
+<span class=taxo__num dir=auto>
+11
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/%E8%AF%BE%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+课程学习笔记
+</span>
+<span class=taxo__num dir=auto>
+1
+</span>
+</a>
+</span>
+</section>
+</div>
+</div>
+</aside>
+</main>
+<script>var sidebarPosition=JSON.parse('"right"'),enableSidebar=JSON.parse("true"),listMainElem=document.querySelector('.list__main'),listSideElem=document.querySelector('.list__sidebar'),gridSmall='l',gridBig='mr',gridFull='lmr';sidebarPosition==="right"&&(gridSmall='r',gridBig='lm'),enquire.register("screen and (max-width: 769px)",{match:function(){enableSidebar?(listMainElem.classList.remove(gridBig),listMainElem.classList.add(gridFull),listSideElem.classList.remove(gridSmall),listSideElem.classList.add('hide')):(listMainElem&&!listMainElem.classList.contains(gridFull)&&(listMainElem.classList.remove(gridBig),listMainElem.classList.add(gridFull)),listSideElem&&!listSideElem.classList.contains('hide')&&listSideElem.classList.add('hide'))},unmatch:function(){var b,a;enableSidebar?(listMainElem.classList.remove(gridFull),listMainElem.classList.add(gridBig),listSideElem.classList.add(gridSmall),listSideElem.classList.remove('hide')):(listMainElem&&!listMainElem.classList.contains(gridFull)&&(listMainElem.classList.remove(gridBig),listMainElem.classList.add(gridFull)),listSideElem&&!listSideElem.classList.contains('hide')&&listSideElem.classList.add('hide')),b=document.querySelector('.navbar__burger'),a=document.getElementsByClassName('navbarm__collapse')[0],a&&(a.setAttribute('data-open',!1),a.style.maxHeight=0,b.classList.remove('is-active')),document.getElementsByClassName('navbar__menu')[0]&&document.getElementsByClassName('navbar__menu')[0].classList.remove('is-active'),document.getElementsByClassName('mobile-search')[0]&&document.getElementsByClassName('mobile-search')[0].classList.add('hide')},setup:function(){},deferSetup:!0,destroy:function(){}})</script>
+<footer class=footer>
+<div class=footer__social>
+<div class=social>
+<a href=mailto:cqqqwq@outlook.com title=email aria-label=email><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><path fill="currentcolor" d="M20 4H4c-1.1.0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1.0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25-7.07 4.42c-.32.2-.74.2-1.06.0L4.4 8.25c-.25-.16-.4-.43-.4-.72.0-.67.73-1.07 1.3-.72L12 11l6.7-4.19c.57-.35 1.3.05 1.3.72.0.29-.15.56-.4.72z"/></svg>
+</a>
+<a href=xxx title=facebook aria-label=facebook><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 24 24"><g id="surface2747"><path fill="currentcolor" d="M11.664062 2.003906C6.621094 2.171875 2.375 6.25 2.023438 11.289062c-.367188 5.328126 3.445312 9.832032 8.484374 10.589844V14.648438H8.890625C8.164062 14.648438 7.578125 14.0625 7.578125 13.335938c0-.726563000000001.585937-1.3125 1.3125-1.3125h1.613281v-1.75c0-2.894532 1.410156-4.167969 3.820313-4.167969C14.679688 6.105469 14.984375 6.113281 15.242188 6.128906 15.878906 6.15625 16.371094 6.6875 16.371094 7.324219c0 .664062-.535155999999999 1.199219-1.199219 1.199219H14.730469c-1.019531.0-1.378907.96875-1.378907 2.0625v1.4375h1.871094c.589843999999999.0 1.042969.527343.953125 1.109374L16.066406 13.835938C15.992188 14.304688 15.589844 14.652344 15.113281 14.652344H13.351562v7.246094C18.234375 21.234375 22 17.0625 22 12c0-5.632812-4.660156-10.179688-10.335938-9.996094zm0 0"/></g></svg>
+</a>
+<a href=https://github.com/ChenQiqian/ title=github aria-label=github><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 24 24"><g id="surface3680"><path fill="currentcolor" d="M10.898438 2.101562c-4.597657.5-8.296876 4.199219-8.796876 8.699219-.5 4.699219 2.199219 8.898438 6.296876 10.5C8.699219 21.398438 9 21.199219 9 20.800781V19.199219S8.601562 19.300781 8.101562 19.300781c-1.402343.0-2-1.199219-2.101562-1.902343C5.898438 17 5.699219 16.699219 5.398438 16.398438 5.101562 16.300781 5 16.300781 5 16.199219 5 16 5.300781 16 5.398438 16 6 16 6.5 16.699219 6.699219 17c.5.800781000000001 1.101562 1 1.402343 1C8.5 18 8.800781 17.898438 9 17.800781 9.101562 17.101562 9.398438 16.398438 10 16c-2.300781-.5-4-1.800781-4-4 0-1.101562.5-2.199219 1.199219-3C7.101562 8.800781 7 8.300781 7 7.601562c0-.402343.0-1 .300781-1.601562.0.0 1.398438.0 2.800781 1.300781C10.601562 7.101562 11.300781 7 12 7s1.398438.101562 2 .300781C15.300781 6 16.800781 6 16.800781 6 17 6.601562 17 7.199219 17 7.601562 17 8.398438 16.898438 8.800781 16.800781 9 17.5 9.800781 18 10.800781 18 12c0 2.199219-1.699219 3.5-4 4 .601562.5 1 1.398438 1 2.300781v2.597657C15 21.199219 15.300781 21.5 15.699219 21.398438 19.398438 19.898438 22 16.300781 22 12.101562c0-6-5.101562-10.703124-11.101562-10zm0 0"/></g></svg>
+</a>
+<a href=https://instagram.com/qiqianchen/ title=instagram aria-label=instagram><svg fill="#000" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32"><path fill="currentcolor" d="M11.46875 5C7.917969 5 5 7.914063 5 11.46875v9.0625C5 24.082031 7.914063 27 11.46875 27h9.0625C24.082031 27 27 24.085938 27 20.53125v-9.0625C27 7.917969 24.085938 5 20.53125 5zm0 2h9.0625C23.003906 7 25 8.996094 25 11.46875v9.0625C25 23.003906 23.003906 25 20.53125 25h-9.0625C8.996094 25 7 23.003906 7 20.53125v-9.0625C7 8.996094 8.996094 7 11.46875 7zm10.4375 2.1875C21.402344 9.1875 21 9.589844 21 10.09375S21.402344 11 21.90625 11 22.8125 10.597656 22.8125 10.09375 22.410156 9.1875 21.90625 9.1875zM16 10c-3.300781.0-6 2.699219-6 6s2.699219 6 6 6 6-2.699219 6-6-2.699219-6-6-6zm0 2c2.222656.0 4 1.777344 4 4s-1.777344 4-4 4-4-1.777344-4-4 1.777344-4 4-4z"/></svg>
+</a>
+<a href=yyy title=twitter aria-label=twitter><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="32" viewBox="0 0 32 32"><g id="surface676"><path fill="currentcolor" d="M28 8.558594C27.117188 8.949219 26.167969 9.214844 25.171875 9.332031c1.015625-.609375 1.796875-1.574219 2.164063-2.722656-.949218999999999.5625-2.003907.972656-3.125 1.195313C23.3125 6.847656 22.03125 6.246094 20.617188 6.246094c-2.71875.0-4.925782 2.207031-4.925782 4.925781C15.691406 11.558594 15.734375 11.933594 15.820312 12.292969c-4.09375-.203125-7.722656-2.164063-10.148437-5.144531C5.246094 7.875 5.003906 8.722656 5.003906 9.625c0 1.707031.867188000000001 3.214844 2.191406 4.097656C6.386719 13.695312 5.628906 13.476562 4.964844 13.105469c0 .0234370000000013.0.0429690000000011.0.0625.0 2.386719 1.695312 4.378906 3.949218 4.828125C8.5 18.109375 8.066406 18.171875 7.617188 18.171875c-.316407.0-.628907-.03125-.925782-.0898439999999994.625 1.957031 2.445313 3.378907 4.597656 3.421875-1.683593 1.320313-3.808593 2.105469-6.113281 2.105469C4.777344 23.609375 4.386719 23.585938 4 23.539062c2.179688 1.398438 4.765625 2.214844 7.546875 2.214844 9.058594.0 14.011719-7.503906 14.011719-14.011718C25.558594 11.53125 25.550781 11.316406 25.542969 11.105469 26.503906 10.410156 27.339844 9.542969 28 8.558594zm0 0"/></g></svg>
+</a>
+<a href=https://blog.chenqiqian.com/categories/%E9%A2%98%E8%A7%A3//index.xml type=application/rss+xml title=RSS aria-label="RSS Feed Link"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0V0z"/><circle fill="currentcolor" cx="6.18" cy="17.82" r="2.18"/><path fill="currentcolor" d="M5.59 10.23c-.84-.14-1.59.55-1.59 1.4.0.71.53 1.28 1.23 1.4 2.92.51 5.22 2.82 5.74 5.74.12.7.69 1.23 1.4 1.23.85.0 1.54-.75 1.41-1.59-.68-4.2-3.99-7.51-8.19-8.18zm-.03-5.71C4.73 4.43 4 5.1 4 5.93c0 .73.55 1.33 1.27 1.4 6.01.6 10.79 5.38 11.39 11.39.07.73.67 1.28 1.4 1.28.84.0 1.5-.73 1.42-1.56-.73-7.34-6.57-13.19-13.92-13.92z"/></svg>
+</a>
+</div>
+</div>
+<div id=gtt>
+<div class=gtt><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentcolor" d="M8.12 14.71 12 10.83l3.88 3.88c.39.39 1.02.39 1.41.0s.39-1.02.0-1.41L12.7 8.71c-.39-.39-1.02-.39-1.41.0L6.7 13.3c-.39.39-.39 1.02.0 1.41.39.38 1.03.39 1.42.0z"/></svg>
+</div>
+</div>
+<hr>
+<div class=basicflex>
+<a href class=footer__link target=_blank rel=noreferrer></a>
+<a href class=footer__link target=_blank rel=noreferrer></a>
+</div>
+<div class=footer__poweredby>
+<div class=busuanzi>
+<div class=busuanzi__item>
+<span class=busuanzi__item--label>
+Total visitors
+</span>
+<span id=busuanzi_value_site_uv class=busuanzi__item--number>...</span>
+</div>
+<div class=busuanzi__item>
+<span class=busuanzi__item--label>
+Total views
+</span>
+<span id=busuanzi_value_site_pv class=busuanzi__item--number>...</span>
+</div>
+</div>
+<p class=caption>
+©cqqqwq 2017-2022, All Rights Reserved. <a rel=license href=http://creativecommons.org/licenses/by-sa/4.0/>CC BY-SA 4.0</a>
+</p>
+<p class=caption>Powered by <a href=https://gohugo.io/ target=_blank rel=noreferrer>Hugo</a> and the <a href=https://github.com/zzossig/hugo-theme-zzo target=_blank rel=noreferrer>Zzo theme</a></p>
+</div>
+</footer>
+</div>
+<div class="wrapper__right hide" data-pad=false dir=ltr>
+<script>document.querySelector('.wrapper__right').classList.remove('hide')</script>
+</div>
+</div>
+</body>
+</html>
