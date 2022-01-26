@@ -23,11 +23,11 @@ else
 fi
 
 if ! git config --get user.name; then
-    git config --global user.name "${GITHUB_ACTOR}"
+    git config --global user.name "github-actions[bot]"
 fi
 
 if ! git config --get user.email; then
-    git config --global user.email "${GITHUB_ACTOR}@users.noreply.${GITHUB_DOMAIN:-"github.com"}"
+    git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 fi
 
 git remote rm origin
