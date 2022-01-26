@@ -35,7 +35,7 @@ git remote add origin "${remote_repo}"
 
 git checkout -b gh-pages
 git checkout gh-pages
-rm -r !docs
+rm -r !\(docs\)
 mv ./docs/* .
 rm -r docs
 
