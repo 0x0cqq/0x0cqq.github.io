@@ -13,10 +13,9 @@ jobs:
     with:
       extended: true
       hugo-version: 'latest'
-  - name: Build
-    run: hugo --minify
   - name: Deploy on gh-pages branch
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     run: | 
       chmod +x ./.github/action.sh
+      ./.github/action.sh
