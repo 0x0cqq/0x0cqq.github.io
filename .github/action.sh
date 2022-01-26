@@ -42,5 +42,5 @@ rm -r docs
 
 git add .
 git commit -m "Build site on $(date +'%Y-%m-%d')"
-git push --set-upstream origin gh-pages
+git push -f --set-upstream origin gh-pages
 echo "[[Finish Deploy]]"
