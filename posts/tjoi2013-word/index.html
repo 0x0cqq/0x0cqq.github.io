@@ -3,7 +3,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=x-ua-compatible content="IE=edge">
-<title>「TJOI2013」单词-后缀数组+二分 – cqqqwq的小站</title>
+<title>「TJOI2013」单词-后缀数组+二分 – cqqqwq 的小站</title>
 <script defer src=/js/fuse.min.5a6bd8801acd9ac3628f27d0a565eae83d7ef636a7ab60ead7a6da78a6ac7ca5.js></script>
 <script src=/js/enquire.min.dfb99dee1e029d51d6cfb672d847929890b1585402de17f5ed092edd72a688b4.js></script>
 <script defer src=/js/lazysizes.min.31dd6a2d3a1ec0f78a8df007535cf23f03aeb5c70f026e6d6a19dac3b3acc340.js></script>
@@ -22,7 +22,7 @@
 <meta name=modified content="2018-08-11T19:24:27+0000">
 <meta property="article:published_time" content="2018-08-11T19:24:27+0000">
 <meta name=author content="cqqqwq">
-<meta property="og:site_name" content="cqqqwq的小站">
+<meta property="og:site_name" content="cqqqwq 的小站">
 <meta property="og:title" content="「TJOI2013」单词-后缀数组+二分">
 <meta property="og:url" content="https://blog.chenqiqian.com/posts/tjoi2013-word/">
 <meta property="og:type" content="article">
@@ -50,7 +50,7 @@
 <link rel=icon type=image/png sizes=16x16 href=/favicon/favicon-16x16.png>
 <meta name=msapplication-TileColor content="#ffffff">
 <meta name=msapplication-TileImage content="/ms-icon-144x144.png">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"WebPage","headline":"「TJOI2013」单词-后缀数组+二分","datePublished":"2018-08-11T19:24:27Z","dateModified":"2018-08-11T19:24:27Z","url":"https://blog.chenqiqian.com/posts/tjoi2013-word/","description":"\u003cp\u003e可读版题意：\u003c/p\u003e \u003cp\u003e给定 $n$ 个字符串，第 $i$ 个字符串的长度为 $M_i$ ，求每个字符串在所有字符串中出现的次数。\u003c/p\u003e \u003cp\u003e数据范围：$n \\leq 100,\\ M = \\sum M_i \\leq 10^6$.\u003c/p\u003e","keywords":["字符串","后缀数组"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.chenqiqian.com"},"publisher":{"@type":"Organization","name":"cqqqwq\u0008的小站","url":"https://blog.chenqiqian.com"}}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"WebPage","headline":"「TJOI2013」单词-后缀数组+二分","datePublished":"2018-08-11T19:24:27Z","dateModified":"2018-08-11T19:24:27Z","url":"https://blog.chenqiqian.com/posts/tjoi2013-word/","description":"\u003cp\u003e可读版题意：\u003c/p\u003e \u003cp\u003e给定 $n$ 个字符串，第 $i$ 个字符串的长度为 $M_i$ ，求每个字符串在所有字符串中出现的次数。\u003c/p\u003e \u003cp\u003e数据范围：$n \\leq 100,\\ M = \\sum M_i \\leq 10^6$.\u003c/p\u003e","keywords":["字符串","后缀数组"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://blog.chenqiqian.com"},"publisher":{"@type":"Organization","name":"cqqqwq 的小站","url":"https://blog.chenqiqian.com"}}</script>
 <script async src=https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
 <style>div.summary-classic__text p{margin:0 0 1.2rem}div.summary-card__text p{margin:0 0 1.2rem}div.summary-compact__text p{margin:0 0 1.2rem}</style>
 </head>
@@ -204,7 +204,7 @@ Posts<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 <script>document.querySelector('.breadcrumb').classList.remove('hide')</script>
 <ol>
 <li>
-<a href=https://blog.chenqiqian.com/ class=capitalize>cqqqwq的小站</a>
+<a href=https://blog.chenqiqian.com/ class=capitalize>cqqqwq 的小站</a>
 </li>
 <li>
 <a href=https://blog.chenqiqian.com/posts/ class=capitalize>Posts</a>
@@ -221,7 +221,7 @@ Posts<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 <div class=single__meta>
 <div class=single__infos>
 <time class=single__info title="Written At">📅&nbsp;Aug 11, 2018 </time>
-&nbsp;&#183;&nbsp; <span class=single__info title="Words number"> ✏️&nbsp;About &nbsp;816&nbsp;words </span>
+&nbsp;&#183;&nbsp; <span class=single__info title="Words number"> ✏️&nbsp;About &nbsp;809&nbsp;words </span>
 &nbsp;&#183;&nbsp; <span class=single__info title="Reading Time"> ☕&nbsp;2&nbsp;mins read </span>
 <span class=single__info>
 &#183; 👀<span id=busuanzi_value_page_pv>...</span> views
@@ -244,10 +244,10 @@ Posts<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 <p><a href=https://www.luogu.org/problemnew/show/P3966>Luogu P3966</a></p>
 <h2 id=题解>题解</h2>
 <p>首先我们加不同的分隔符，将所有字符串拼成一个整串。</p>
-<p>注意到这个问题，其实可以转化为若干个子串在母串中的出现次数。</p>
-<p>套路题吧&mldr;找到这个子串出现位置的后缀在 $ht$ 数组里面的位置，往两侧延伸（这个地方二分答案），看最多的 $ht \geq len$ 的范围，这个区间里面的所有串都是出现的位置。然后计算一下长度就可以得到答案。</p>
+<p>注意到这个问题，其实可以转化为若干个子串在母串中的出现次数。</p>
+<p>套路题吧&mldr;找到这个子串出现位置的后缀在 $ht$ 数组里面的位置，往两侧延伸（这个地方二分答案），看最多的 $ht \geq len$ 的范围，这个区间里面的所有串都是出现的位置。然后计算一下长度就可以得到答案。</p>
 <p>时间复杂度 $O(M \log {M} + n \log{M})$ 。</p>
-<p>开始写了一个 $O(NM)$ 的暴力死活过不去，还以为自己常数大&mldr;233</p>
+<p>开始写了一个 $O(NM)$ 的暴力死活过不去，还以为自己常数大&mldr;233</p>
 <h2 id=代码>代码</h2>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
