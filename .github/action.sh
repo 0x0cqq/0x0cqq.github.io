@@ -32,7 +32,8 @@ fi
 
 git remote rm origin
 git remote add origin "${remote_repo}"
-git stash
+git fetch
+git stash action.sh
 git checkout -b gh-pages origin/gh-pages
 find . -maxdepth 1 -not -path "./.git" -not -path "." -not -path "./docs" -exec rm -r "{}" \;
 
