@@ -29,7 +29,7 @@
 <meta property="og:url" content="https://blog.cqqqwq.com/posts/">
 <meta property="og:type" content="website">
 <meta property="og:description" content="cqqqwq的博文索引。">
-<meta name=generator content="Hugo 0.92.0">
+<meta name=generator content="Hugo 0.92.1">
 <meta name=msapplication-TileColor content="#fff">
 <meta name=theme-color content="#fff">
 <meta name=msapplication-navbutton-color content="#fff">
@@ -220,6 +220,28 @@ Posts<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0
 <div class="list__header--desc single__contents p2">
 </div>
 <div class=summary__container data-display=block>
+<article class=summary-classic data-ani=true>
+<div class=summary-classic__flex-box>
+<div class=summary-classic__content>
+<header>
+<h5 class="title h5"><a href=https://blog.cqqqwq.com/posts/cf540e/>「CF540E」Infinite Inversions-动态开点线段树</a> </h5>
+<h6 class="subtitle caption">
+<time title="Written At" dir=ltr>📅&nbsp;Jan 1, 2019 </time>
+<span title="Words number" dir=ltr> &#183; ✏️&nbsp;886&nbsp;words </span>
+<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
+</h6>
+</header>
+<div>
+<div class="summary-classic__text p2">
+<p>现在有一个由所有正整数组成的无限递增序列： $p = {1,2,3,&mldr;}$ 。</p>
+<p>对这个序列执行 $n$ 次交换操作。每次一个操作，给出两个整数 $a,b$，交换位置 $a$ 和 $b$ 处的元素。</p>
+<p>你的任务是在所有操作结束后，输出最终序列的逆序对个数，即满足 $i &lt; j$ 且 $p_i > p_j$ 的有序数对 $(i,j)$ 的数量。</p>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</article>
 <article class=summary-classic data-ani=true>
 <div class=summary-classic__flex-box>
 <div class=summary-classic__content>
@@ -555,26 +577,6 @@ $$<br>
 </div>
 <hr>
 </article>
-<article class=summary-classic data-ani=true>
-<div class=summary-classic__flex-box>
-<div class=summary-classic__content>
-<header>
-<h5 class="title h5"><a href=https://blog.cqqqwq.com/posts/poi2015-kinoman/>「POI2015」Kinoman-线段树</a> </h5>
-<h6 class="subtitle caption">
-<time title="Written At" dir=ltr>📅&nbsp;Dec 10, 2018 </time>
-<span title="Words number" dir=ltr> &#183; ✏️&nbsp;521&nbsp;words </span>
-<span title="Reading Time" dir=ltr> &#183; ☕&nbsp;2&nbsp;mins read </span>
-</h6>
-</header>
-<div>
-<div class="summary-classic__text p2">
-<p>共有 $m$ 部电影，编号为 $1$ 到 $m$，第 $i$ 部电影的好看值为 $w[i]$。在 $n$ 天之中（从 $1$ 到 $n$ 编号）每天会放映一部电影，第 $i$ 天放映的是第 $f[i]$ 部。你可以选择 $l,r(1 \leq l \leq r \leq n)$ ，并观看第 $l,l+1,\dots , r$ 天内所有的电影。如果同一部电影你观看多于一次，你会感到无聊，于是无法获得这部电影的好看值。所以你希望最大化观看且仅观看过一次的电影的好看值的总和。</p>
-</div>
-</div>
-</div>
-</div>
-<hr>
-</article>
 <ul class=pagination>
 <script></script>
 <li><a href=/posts/>1</a></li>
@@ -630,6 +632,9 @@ $$<br>
 </div>
 </div>
 <li class=sidebar-recent>
+<a href=/posts/2021-fall-semester/ class="sidebar-recent__title p1">2021秋季学期总结</a>
+</li>
+<li class=sidebar-recent>
 <a href=/posts/2021-spring-semester/ class="sidebar-recent__title p1">2021春季学期总结</a>
 </li>
 <li class=sidebar-recent>
@@ -640,9 +645,6 @@ $$<br>
 </li>
 <li class=sidebar-recent>
 <a href=/posts/essay-20210506/ class="sidebar-recent__title p1">「随笔」五月六日</a>
-</li>
-<li class=sidebar-recent>
-<a href=/posts/write-for-gaokao/ class="sidebar-recent__title p1">高考回忆</a>
 </li>
 <hr class="hr-fade sidebar-hr">
 </ul>
@@ -1495,16 +1497,6 @@ wqs二分
 </a>
 </span>
 <span class=tag>
-<a href=/tags/%E6%AD%8C%E6%9B%B2/ class="is-tags taxo__link" data-dir=ltr>
-<span class=taxo__text>
-歌曲
-</span>
-<span class=taxo__num dir=auto>
-1
-</span>
-</a>
-</span>
-<span class=tag>
 <a href=/tags/%E7%82%B9%E5%88%86%E6%B2%BB/ class="is-tags taxo__link" data-dir=ltr>
 <span class=taxo__text>
 点分治
@@ -1779,7 +1771,7 @@ hugo
 OI
 </span>
 <span class=taxo__num dir=auto>
-204
+203
 </span>
 </a>
 </span>
@@ -1839,7 +1831,7 @@ themes
 总结
 </span>
 <span class=taxo__num dir=auto>
-1
+3
 </span>
 </a>
 </span>
@@ -1857,16 +1849,6 @@ themes
 <a href=/categories/%E6%A8%A1%E6%9D%BF/ class="is-categories taxo__link" data-dir=ltr>
 <span class=taxo__text>
 模板
-</span>
-<span class=taxo__num dir=auto>
-1
-</span>
-</a>
-</span>
-<span class=tag>
-<a href=/categories/%E6%AD%8C%E6%9B%B2/ class="is-categories taxo__link" data-dir=ltr>
-<span class=taxo__text>
-歌曲
 </span>
 <span class=taxo__num dir=auto>
 1
@@ -2049,6 +2031,16 @@ WC/CTSC/APIO
 </span>
 <span class=taxo__num dir=auto>
 2
+</span>
+</a>
+</span>
+<span class=tag>
+<a href=/series/%E5%AD%A6%E6%9C%9F%E6%80%BB%E7%BB%93/ class="is-series taxo__link" data-dir=ltr>
+<span class=taxo__text>
+学期总结
+</span>
+<span class=taxo__num dir=auto>
+3
 </span>
 </a>
 </span>
