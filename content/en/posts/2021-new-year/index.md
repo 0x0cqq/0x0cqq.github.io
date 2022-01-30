@@ -129,4 +129,4 @@ enableTocContent: true
 
 【完】
 
-附：[2020年新年贺词]({{< ref "posts/2020/index.md" >}})
+附：[2020年新年贺词]({{< ref "posts/2020-new-year/index.md" >}})

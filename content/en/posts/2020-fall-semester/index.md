@@ -9,6 +9,7 @@ categories:
 - 总结
 tags:
 series:
+- 学期总结
 ##-- page setting --##
 # slug: ""
 # type: ""

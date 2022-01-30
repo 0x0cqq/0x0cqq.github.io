@@ -5,8 +5,10 @@ draft: false
 title: "2021春季学期总结"
 date: 2022-01-26T13:55:33+08:00
 categories:
+- 总结
 tags:
 series:
+- 学期总结
 ##-- page setting --##
 # slug: ""
 # type: ""
