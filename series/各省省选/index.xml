@@ -253,7 +253,7 @@ $$&lt;/p>
 &lt;p>查询在第 $i$ 个装置起步时，再经多少次会被弹飞。&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>修改第 $i$ 个装置的弹力系数为 $K'$ 。&lt;/p>
+&lt;p>修改第 $i$ 个装置的弹力系数为 $K&amp;rsquo;$ 。&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>保证任何时候，任何装置弹力系数均为正整数。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>LCT</category><category>数据结构</category><category>树形结构</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「HAOI2007」理想的正方形-单调队列</title><link>https://blog.cqqqwq.com/posts/haoi2007-square/</link><pubDate>Fri, 18 May 2018 18:52:06 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 18 May 2018 18:52:06 +0000</atom:modified><guid>https://blog.cqqqwq.com/posts/haoi2007-square/</guid><description>&lt;p>有一个 $a \times b$ 的整数组成的矩阵，现请你从中找出一个 $n\times n$ 的正方形区域，使得该区域所有数中的最大值和最小值的差最小，输出这个最小的差值。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>单调队列</category><category>数据结构</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「CQOI2015」任务查询系统-可持久化线段树</title><link>https://blog.cqqqwq.com/posts/cqoi2015-mission/</link><pubDate>Wed, 16 May 2018 21:16:32 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Wed, 16 May 2018 21:16:32 +0000</atom:modified><guid>https://blog.cqqqwq.com/posts/cqoi2015-mission/</guid><description>&lt;p>超级计算机中的任务用三元组 $(S_i,E_i,P_i)$ 描述， $(S_i,E_i,P_i)$ 表示任务运行区间为 $[S_i,E_i]$ ,其优先级为 $P_i$ 。&lt;/p>

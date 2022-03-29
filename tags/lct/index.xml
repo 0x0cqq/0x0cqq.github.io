@@ -64,7 +64,7 @@
 &lt;p>查询在第 $i$ 个装置起步时，再经多少次会被弹飞。&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>修改第 $i$ 个装置的弹力系数为 $K'$ 。&lt;/p>
+&lt;p>修改第 $i$ 个装置的弹力系数为 $K&amp;rsquo;$ 。&lt;/p>
 &lt;/li>
 &lt;/ul>
 &lt;p>保证任何时候，任何装置弹力系数均为正整数。&lt;/p></description><dc:creator>cqqqwq</dc:creator><category>LCT</category><category>数据结构</category><category>树形结构</category><category>OI</category><category>题解</category><category>各省省选</category></item><item><title>「SDOI2008」洞穴勘测-LCT</title><link>https://blog.cqqqwq.com/posts/sdoi2008-cave/</link><pubDate>Sat, 12 May 2018 18:06:09 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Sat, 12 May 2018 18:06:09 +0000</atom:modified><guid>https://blog.cqqqwq.com/posts/sdoi2008-cave/</guid><description>&lt;p>辉辉热衷于洞穴勘测。&lt;/p>
