@@ -224,11 +224,13 @@ $$
 
 此时有：
 $$
+\begin{gathered}
 \sum _ {i = 0}^n{\lfloor\frac{ai+b}{c}\rfloor} \\
 = \sum _ {j = 0}^{m-1}\sum _ {i = 0}^n[j < \lfloor\frac{ai+b}{c}\rfloor]\\
 = \sum _ {j = 0}^{m-1}\sum _ {i = 0}^n[i > \lfloor\frac{cj+c-b-1}{a}\rfloor]\\
 = \sum _ {j = 0}^{m-1}n - \lfloor\frac{cj+c-b-1}{a}\rfloor\\
 = nm - \sum _ {j = 0}^{m-1}\lfloor\frac{cj+c-b-1}{a}\rfloor
+\end{gathered}
 $$
 
 注意到这个时候 $a,b$ 都是对 $c$ 取模的，所以这个东西很像欧几里得算法，时间复杂度大约也是 $O(\log n)$ .
@@ -236,7 +238,9 @@ $$
 ### 扩展
 
 $$
+\begin{gathered}
 \sum _ {i = 0}^n{{\lfloor\frac{ai+b}{c}\rfloor}^2}\\
 \sum _ {i = 0}^n{i{\lfloor\frac{ai+b}{c}\rfloor}}
+\end{gathered}
 $$
 

@@ -32,13 +32,17 @@ $$
 ### 解法1
 倒一倒式子：
 $$
+\begin{gathered}
 \text{ans} = \sum _ {i=1}^n \sum _ {j=1}^m [\gcd(i,j)=d]\\
 =\sum _ {i=1}^{\lfloor \frac{n}{d} \rfloor} \sum _ {j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j)=1]\\
+\end{gathered}
 $$
 
 设 
 $$
+\begin{gathered}
 f(d) = \sum _ {i=1}^{x}\sum _ {j=1}^{y} [\gcd(i,j)=d]\\
+\end{gathered}
 $$
 
 若：
@@ -60,8 +64,10 @@ $$
 
 所以：
 $$
+\begin{gathered}
 \text{ans} = f(1) = \sum _ {k=1}^{\min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor)} \mu(k) g(k)\\
 = \sum _ {k=1}^{\min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor)} \mu(k) \cdot \lfloor \frac{x}{d} \rfloor \lfloor \frac{y}{d} \rfloor\\
+\end{gathered}
 $$
 
 可以利用整除分块，单次查询时间时间复杂度 $O(\sqrt n)$。所以时间复杂度是 $O(n + T\sqrt n)$ 。
@@ -77,12 +83,16 @@ $$
 ### 解法
 设：
 $$
+\begin{gathered}
 \text{ans} = F(a,b,c,d) = \sum _ {x=a}^b \sum _ {y=c}^d [gcd(x,y)=d],\\
 G(n,m) = \sum _ {x=1}^n \sum _ {y=1}^m [gcd(x,y)=d]
+\end{gathered}
 $$
 利用容斥原理，可以发现这个式子可以转化成
 $$
+\begin{gathered}
 F(a,b,c,d) \\= G(b,d) - G(a-1,d) - G(b,c-1) + G(a-1,c-1)
+\end{gathered}
 $$
 然后每一个 $G(n,m)$ 都可以按照上题的单次 $O(\sqrt n)$ 的做法求出。所以时间复杂度是 $O(n + T\sqrt n)$ 。
 
@@ -90,16 +100,20 @@ $$
 ### 题意
 求：
 $$
+\begin{gathered}
 \sum _ {i=1}^{k} \sum _ {x=1}^n \sum _ {y=1}^m [gcd(i,j)=p_i]\\
+\end{gathered}
 $$
 
 - - -
 
 ### 解法1
 $$
+\begin{gathered}
 \sum _ {i=1}^{k} \sum _ {x=1}^n \sum _ {y=1}^m [gcd(i,j)=p_i]\\
 = \sum _ {i=1}^k \sum _ {x=1}^{\lfloor \frac{n}{p_i} \rfloor} \sum _ {y=1} ^{\lfloor \frac{m}{p_i}\rfloor}
 [gcd(i,j)=1]
+\end{gathered}
 $$
 
 设
@@ -116,9 +130,11 @@ $$
 莫比乌斯反演得
 
 $$
+\begin{gathered}
 f(k) = \sum _ {k|d} \mu(\frac{d}{k}) g(d)
 = \sum _ {i = 1}^{\lfloor \frac{\min(n,m)}{k} \rfloor}\mu(i)g(ik)\\
 = \sum _ {i = 1}^{\lfloor \frac{\min(n,m)}{k} \rfloor}\mu(i) \lfloor \frac{n}{ik} \rfloor \cdot \lfloor \frac{m}{ik} \rfloor
+\end{gathered}
 $$
 
 所以
@@ -130,19 +146,23 @@ $$
 则原式：
 
 $$
+\begin{gathered}
 \sum _ {i=1}^k \sum _ {x=1}^{\lfloor \frac{n}{p_i} \rfloor} \sum _ {y=1} ^{\lfloor \frac{m}{p_i}\rfloor}
 [gcd(i,j)=1]\\
 = \sum _ {i=1}^k \sum _ {d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(d) \cdot \lfloor \frac{n}{d p_i} \rfloor \cdot \lfloor \frac{m}{dp_i} \rfloor\\
+\end{gathered}
 $$
 
 设$T_i = d p_i$，则有：
 原式
 $$
+\begin{gathered}
 \sum _ {i=1}^k \sum _ {d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(d) \cdot \lfloor \frac{n}{d p_i} \rfloor \cdot \lfloor \frac{m}{dp_i} \rfloor\\
 = \sum _ {i=1}^k \sum _ {d=1}^{\min(\lfloor \frac{n}{p_i} \rfloor,\lfloor \frac{m}{p_i} \rfloor )}\mu(\frac{T_i}{p_i}) \cdot \lfloor \frac{n}{T_i} \rfloor \cdot \lfloor \frac{m}{T_i} \rfloor\\
 = \sum _ {i=1}^k \sum _ {p_i | T}\mu(\frac{T}{p_i}) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor\\
 = \sum _ {T=1}^{\min(n,m)} \sum _ {p_i|T} \mu(\frac{T}{p_i}) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor\\
 = \sum _ {T=1}^{\min(n,m)} \lfloor \frac{n}{T} \rfloor \lfloor \frac{m}{T} \rfloor \sum _ {p_i|T} \mu(\frac{T}{p_i}) \\
+\end{gathered}
 $$
 
 令
@@ -153,8 +173,10 @@ $$
 所以原式化为：
 
 $$
+\begin{gathered}
 \sum _ {T=1}^{\min(n,m)} \lfloor \frac{n}{T} \rfloor \lfloor \frac{m}{T} \rfloor \sum _ {p_i|T} \mu(\frac{T}{p_i}) \\
 = \sum _ {i=1}^{\min(n,m)} \lfloor \frac{n}{i} \rfloor \lfloor \frac{m}{i} \rfloor h(i)
+\end{gathered}
 $$
 
 只需要求出 $h(i)$ 的前缀和，我们就可以 $O(\sqrt{n})$ 整除分块算出。
@@ -191,8 +213,10 @@ $$
 我们进行一些微小的变换：
 
 $$
+\begin{gathered}
 \sum _ {i = 1}^{n} \sum _ {j = 1}^{m}2\times \gcd(n,m)-1\\
 = (2 \sum _ {i = 1}^{n} \sum _ {j = 1}^{m}\gcd(n,m)) - n \times m
+\end{gathered}
 $$
 
 问题转化为求：
@@ -203,8 +227,10 @@ $$
 - - -
 
 $$
+\begin{gathered}
 \text{ans} = \sum _ {i = 1}^{n} \sum _ {j = 1}^{m}\gcd(n,m)\\
 = \sum _ {d=1}^{\min(n,m)} d \times (\sum _ {i=1}^{\lfloor \frac{n}{d} \rfloor} \sum _ {j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j)=1])\\
+\end{gathered}
 $$
 
 设：
@@ -222,12 +248,16 @@ $$
 回代得：
 
 $$
+\begin{gathered}
 \text{ans} = \sum _ {d=1}^{\min(n,m)} d \times (\sum _ {i = 1}^{ \min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor) }\mu(i) \cdot \lfloor \frac{n}{id} \rfloor \cdot \lfloor \frac{m}{id} \rfloor)\\
+\end{gathered}
 $$
 
 设 $T = id$，可以得到：
 $$
+\begin{gathered}
 \text{ans} = \sum _ {d=1}^{\min(n,m)} d \times (\sum _ {i = 1}^{ \min(\lfloor \frac{n}{d} \rfloor,\lfloor \frac{m}{d} \rfloor) }\mu(i) \cdot \lfloor \frac{n}{T} \rfloor \cdot \lfloor \frac{m}{T} \rfloor)\\
+\end{gathered}
 $$
 
 改为枚举 $T$，得到：
@@ -265,20 +295,26 @@ $$
 
 ### 解法1 $O(n)$
 $$
+\begin{gathered}
 \sum _ {x=1}^{n} \sum _ {y=1}^{m} \text{lcm}(x,y)\\
 = \sum _ {x=1}^{n} \sum _ {y=1}^{m} \frac{xy}{\gcd(x,y)}
+\end{gathered}
 $$
 
 我们可以枚举 $\gcd(x,y)$ 的值 $d$ ，然后就把式子化成：
 $$
+\begin{gathered}
 \sum _ {x=1}^{n} \sum _ {y=1}^{m} \frac{xy}{\gcd(x,y)}\\
 = \sum _ {d=1}^{\min(n,m)}\sum _ {x=1}^{n} \sum _ {y=1}^m \frac{xy}{d} [\gcd(x,y) = d]\\
 = \sum _ {d=1}^{\min(n,m)} d \; \sum _ {i=1}^{\lfloor \frac{n}{d} \rfloor} \sum _ {j=1}^{\lfloor \frac{m}{d} \rfloor} ij[\gcd(i,j)=1]\\
+\end{gathered}
 $$
 
 设：
 $$
+\begin{gathered}
 F(x,y) = \sum _ {i=1}^{x} \sum _ {j=1}^{y} ij[\gcd(i,j)=1]\\
+\end{gathered}
 $$
 
 则：
@@ -302,7 +338,9 @@ $h(x,y)$ 可以 $O(1)$ 计算得到。
 （以下默认上界分别为 $x,y$）
 设
 $$
+\begin{gathered}
 f(d) = \sum _ {i=1}^{x} \sum _ {j=1}^{y} ij[\gcd(i,j)=d],g(d) = \sum _ {d|k} f(k)\\
+\end{gathered}
 $$
 
 我们发现， $g(d)$ 事实上可以表示为：
@@ -314,8 +352,10 @@ $$
 经过反演：
 
 $$
+\begin{gathered}
 f(d) = \sum _ {d|k} \mu(\frac{k}{d}) g(k)\\
 = \sum _ {d|k} \mu(\frac{k}{d}) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)
+\end{gathered}
 $$
 
 
@@ -347,7 +387,9 @@ $$
 
 又：
 $$
+\begin{gathered}
 F(x,y) = \sum _ {k=1}^{\min(x,y)} \mu(k) \cdot  k^2 \cdot h(\lfloor \frac{x}{k} \rfloor, \lfloor \frac{y}{k} \rfloor)\\
+\end{gathered}
 $$
 
 代入得：
@@ -398,8 +440,10 @@ $$
 
 我们对 $i$ 和 $j$ 两个数做唯一分解 ，得到：
 $$
+\begin{gathered}
 i = {p_1}^{a_1} \times {p_2}^{a_2} \times  \cdots \times {p_n}^{a_n}\\
 j = {p_1}^{b_1} \times {p_2}^{b_2} \times  \cdots \times {p_n}^{b_n}\\
+\end{gathered}
 $$
 
 所以我们知道 
@@ -414,9 +458,11 @@ $$
 因为不能有公共的因子，所以对 $p_1$ 这个质因子来说，我们可以正好找出 $a_1+b_1+1$ 种选取方法，分别为：
 
 $$
+\begin{gathered}
 (1,0),(2,0),\cdots,(a_1,0)\\
 (0,1),(0,2),\cdots,(0,b_1)\\
 (0,0)
+\end{gathered}
 $$
 
 可以证明，这些不同的的选取可以保证我们选择的因数不会完全相同。
@@ -430,16 +476,20 @@ $$
 原式：
 
 $$
+\begin{gathered}
 \sum^N _ {i=1}\sum^M _ {j=1}d(ij)\\
 = \sum^N _ {i=1}\sum^M _ {j=1}\sum _ {x|i} \sum _ {y|j} [\gcd(x,y) = 1]\\
 = \sum _ {x=1}^N\sum _ {y=1}^M\sum _ {x|i} \sum _ {y|j} [\gcd(x,y) = 1]\\
 = \sum _ {x=1}^N\sum _ {y=1}^M [\gcd(x,y) = 1] \sum _ {x|i} \sum _ {y|j} 1\\
 = \sum _ {x=1}^N\sum _ {y=1}^M [\gcd(x,y) = 1] \lfloor \frac{N}{x} \rfloor \lfloor \frac{M}{y} \rfloor\\
+\end{gathered}
 $$
 
 设 
 $$
+\begin{gathered}
 f(d) = \sum _ {x=1}^N\sum _ {y=1}^M [\gcd(x,y) = d] \lfloor \frac{N}{x} \rfloor \lfloor \frac{M}{y} \rfloor\\
+\end{gathered}
 $$
 
 若 
@@ -463,9 +513,11 @@ $$
 则：
 
 $$
+\begin{gathered}
 f(1) = \sum _ {k=1}^{\min(n,m)} \mu(k) g(k)\\
 =  \sum _ {k=1}^{\min(n,m)} \mu(k) \sum _ {i=1}^{\lfloor \frac{N}{k} \rfloor} \sum _ {j=1}^{\lfloor \frac{M}{k} \rfloor} \lfloor \frac{N}{ik} \rfloor \lfloor \frac{M}{jk} \rfloor\\
 = \sum _ {k=1}^{\min(n,m)} \mu(k) (\sum _ {i=1}^{\lfloor \frac{N}{k} \rfloor}\lfloor \frac{N}{ik} \rfloor) (\sum _ {j=1}^{\lfloor \frac{M}{k} \rfloor}  \lfloor \frac{M}{jk} \rfloor)\\
+\end{gathered}
 $$
 
 我们发现：
@@ -477,8 +529,10 @@ $$
 所以：
 
 $$
+\begin{gathered}
 \text{ans} = \sum _ {k=1}^{\min(n,m)} \mu(k) (\sum _ {i=1}^{\lfloor \frac{N}{k} \rfloor}\lfloor \frac{N}{ik} \rfloor) (\sum _ {j=1}^{\lfloor \frac{M}{k} \rfloor}  \lfloor \frac{M}{jk} \rfloor)\\
 = \sum _ {k=1}^{\min(n,m)} \mu(k) \sum _ {i=1}^{\lfloor \frac{N}{k} \rfloor}d(i) \sum _ {j=1}^{\lfloor \frac{M}{k} \rfloor}  d(j)\\
+\end{gathered}
 $$
 
 令：
@@ -490,7 +544,9 @@ $$
 则：
 
 $$
+\begin{gathered}
 \text{ans} = \sum _ {k=1}^{\min(n,m)} \mu(k) \cdot h(\lfloor \frac{N}{k} \rfloor) \cdot h(\lfloor \frac{M}{k} \rfloor)\\
+\end{gathered}
 $$
 
 我们发现 $d(i)$ 是一个积性函数，可以 $O(n)$ 线性筛，然后 $h(x)$ 可以 $O(n)$ 前缀和，然后就可以 $O(\sqrt n)$ 整除分块单次出解。

@@ -44,8 +44,10 @@ $$
 化简得到
 
 $$
+\begin{gathered}
 \sum _ {i=1}^{n}(p[j][i]^2 - 2p[j][i] \cdot x_i) = \sum _ {i=1}^{n}(p[j+1][i]^2 - 2p[j+1][i] \cdot x_i)\\
  \sum _ {i=1}^{n} [2(p[j+1][i]-p[j][i]) \cdot x_i] = - \sum _ {i=1}^{n}(p[j][i]^2 - p[j+1][i]^2)
+\end{gathered}
 $$
 
 高斯消元即可...

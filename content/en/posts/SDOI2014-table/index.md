@@ -53,9 +53,11 @@ $$
 $$
 我们知道：
 $$
+\begin{gathered}
 \sum _ {i=1}^{n} \sum _ {j=1}^{m} [\gcd(i,j) = 1]\\
 = \sum _ {i=1}^{n} \sum _ {j=1}^{m} \sum _ {k | \gcd(i,j)} \mu(k)\\
 = \sum _ {k = 1}^n \mu(k) \lfloor \frac{n}{k}\rfloor \lfloor \frac{m}{k}\rfloor
+\end{gathered}
 $$
 那么代入就是：
 $$

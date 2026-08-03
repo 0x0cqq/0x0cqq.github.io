@@ -272,11 +272,11 @@ $$
 
 > 对于有向图 $G(V,E)$ ，定义出度拉普拉斯矩阵 $L^\text{out}$ ：（$n \times n$）
 >
-> $$
-> {L^\text{out}} _ {ij} = 
-> \left\{\begin{aligned}-m _ {ij}&,i \neq j \\ \text{deg}^{\text{out}}(v_i)&,i = j\end{aligned}\right.
-> $$
-> 
+$$
+{L^\text{out}} _ {ij} = 
+\left\{\begin{aligned}-m _ {ij}&,i \neq j \\ \text{deg}^{\text{out}}(v_i)&,i = j\end{aligned}\right.
+$$
+>
 > 其中 $m _ {ij}$ 为从 $v_i$ 指向 $v_j$ 的有向边条数。
 >
 > 同理可以定义入度拉普拉斯矩阵 $L^{\text{in}}$ 。

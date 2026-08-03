@@ -38,10 +38,12 @@ $$
 $$
 不妨令 $n\lt m$ ，枚举 $\gcd(i,j) = d$ ：
 $$
+\begin{gathered}
 S = \sum _ {d=1}^{n} d^k \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{d}\rfloor} [(i,j)=1]\\
 = \sum _ {d=1}^{n} d^k \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{d}\rfloor} \sum _ {t | \gcd(i,j)} \mu(t)\\
 = \sum _ {d=1}^{n} d^k \sum _ {t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t)\sum _ {i=1}^{\lfloor\frac{n}{dt}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{dt}\rfloor} 1\\
 = \sum _ {d=1}^{n} d^k \sum _ {t = 1}^{\lfloor\frac{n}{d}\rfloor} \mu(t) \lfloor\frac{n}{dt}\rfloor \lfloor\frac{m}{dt}\rfloor\\
+\end{gathered}
 $$
 令 $dt = T$ ，我们有：
 $$
@@ -61,10 +63,12 @@ g(P^t) = \sum _ {i=0}^t f(P^i) \mu (P^{t-i})
 $$
 凡是有平方因子的数都是的莫比乌斯函数值都是 $0$ ，所以这个式子化成：
 $$
+\begin{gathered}
 g(P^t) = \mu(1) f(P^t) + \mu(P)f(P^{t-1})\\
 = f(P^t) - f(P^{t-1})
 = P^{kt} - P^{k(t-1)}
 = P^{k(t-1)}(P^{k}-1)
+\end{gathered}
 $$
 可以注意到如果没有 $P$ 这个质因子，答案就是直接乘上 $P^k-1$ ，如果有就乘上 $P^k$ 即可。
 

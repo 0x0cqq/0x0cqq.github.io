@@ -43,9 +43,12 @@ L 公司有 $N$ 个工厂，由高到底分布在一座山上。工厂 $1$ 在�
 暴力搞搞式子：
 
 $$
+\begin{gathered}
 dp[i] = \min _ {j=0}^{i-1}(dp[j] + c_i +\sum _ {w=j+1}^{i} (x_i - x_w)\times p_w)\\
 dp[i] = \min _ {j=0}^{i-1}(dp[j] + c_i +\sum _ {w=j+1}^{i} (x_i \times p_w - x_w \times p_w) )\\
-dp[i] = \min _ {j=0}^{i-1}(dp[j]  +x_i \sum _ {w=j+1}^{i}p_w - \sum _ {w=j+1}^{i} x_w \times p_w) ) + c_i $$
+dp[i] = \min _ {j=0}^{i-1}(dp[j]  +x_i \sum _ {w=j+1}^{i}p_w - \sum _ {w=j+1}^{i} x_w \times p_w) ) + c_i 
+\end{gathered}
+$$
 
 令 $a_i = \sum _ {w=1}^{i} p_w$ ， $b_i = \sum _ {w=1}^{i} x_w \times p_w$，原式化为
 
@@ -66,14 +69,6 @@ $$
 $$
 \frac{(dp[j]+b_j) - (dp[k] + b_k)}{a_j-a_k} \leq x_i
 $$
-
-注意到 $x_i$ 单调递增，即如果在某个时刻 $k$ 比 $j$ 优，则以后其会一直更优，单调队列维护即可。
-
-## 代码
-
-
 ```cpp
 
 ```
-
-

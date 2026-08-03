@@ -67,8 +67,10 @@ enableTocContent: false
 
 设 $g[k][0/1][S_i][S_j]$ 为当前已经考虑完该组的前 $k-1$ 个数，由小 $\text{G}$ 或者小 $\text{W}$ 取具有这个大质数的数，目前的小 $\text{G}$ 的小质数集合是 $S_i$ ，小 $\text{W}$ 的小质数集合是 $S_j$ ，第 $k$ 个数的小质数集合为 $N_k$，那么我们有如下的转移：
 $$
+\begin{gathered}
 g ([k+1])[0][S_i \cap N_k][S_j]  = g([k])[0][S_i \cap N_k][S_j] + g([k])[0][S_i][S_j]\\
 g ([k+1])[1][S_i][S_j \cap N_k]  = g([k])[1][S_i][S_j \cap N_k] + g([k])[1][S_i][S_j]
+\end{gathered}
 $$
 也就是对于两种情况都有两种决策：取或者不取这个数。
 

@@ -36,21 +36,27 @@ enableTocContent: false
 
 注意到第三个条件可以转化成 
 $$
+\begin{gathered}
 h[l_1 + i + 1] + h[l_2 + i + 1] = h[l_1 + i] + h[l_2 + i],
 \\ i \in [0,r_i-l_i-1]
+\end{gathered}
 $$
 
 也就是
 $$
+\begin{gathered}
 h[l_1 + i + 1] - h[l_1 + i] = - (h[l_2 + i + 1]  - h[l_2 + i])
 \\ i \in [0,r_i-l_i-1]
+\end{gathered}
 $$
 
 我们令 $g[i] = h[i+1] - h[i]$，那么第三个条件的表述就变为：
 
 $$
+\begin{gathered}
 g[l_1+i] =  -g[l_2+i]
 \\ i \in [0,r_i-l_i-1]
+\end{gathered}
 $$
 
 如果我们令 $len = r_i-l_i-1$ ，那么条件变成：

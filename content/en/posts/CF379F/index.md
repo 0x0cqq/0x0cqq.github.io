@@ -41,8 +41,10 @@ enableTocContent: false
 我们如果令 $f[i]$ 为以 $i$ 为根的子树中最长的链的长度，$g[i]$ 为以 $i$ 为根的子树中的直径长度（过根节点），那么就有如下转移：
 
 $$
+\begin{gathered}
 f[v] = \max(f[v_1] + f[v_2]) + 1\\
 g[v] = f[v_1] + f[v_2] + 2
+\end{gathered}
 $$
 
 如果我们令 $dep[v]$ 为 $v$ 的深度，那么我们可以将第一个改写如下：

@@ -78,9 +78,11 @@ dp[i] = \max _ {j=1}^{i-1}(dp[j]\times \frac{r[j]\cdot a[i] + b[i]}{r[j] \cdot a
 $$
 对于给定的决策点 $j$ ，则有：
 $$
+\begin{gathered}
 dp[i] = dp[j] \times \frac{r[j]\cdot a[i] + b[i]}{r[j]\cdot a[j]+b[j]}\\
 dp[i] = (r[j]\cdot a[i] + b[i])\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]}\\
 dp[i] = b[i]\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]} + a[i] \times \frac{r[j]\cdot dp[j]}{r[j]\cdot a[j]+b[j]}
+\end{gathered}
 $$
 如果我们令：
 $$

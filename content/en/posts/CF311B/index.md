@@ -55,12 +55,14 @@ $$
 我们当 $j \le k$时，$k$ 比 $j$ 优等价于：
 
 $$
+\begin{gathered}
 dp[j][w-1] + t[i]\times (i-j) - T[i] + T[j] \ge dp[k][w-1] + t[i]\times (i-k) - T[i] + T[k]\\
 dp[j][w-1] - t[i]\times j  + T[j] \ge dp[k][w-1] - t[i]\times k + T[k]\\
 dp[j][w-1] + T[j] -dp[k][w-1] - T[k]  \ge t[i]\times j - t[i]\times k \\
 dp[j][w-1] + T[j] -dp[k][w-1] - T[k]  \ge t[i]\times (j - k) \\
 \frac{dp[j][w-1] + T[j] -dp[k][w-1] - T[k]}{(j - k)}  \le t[i] \\
 \frac{Y(j) - Y(k)}{X(j)-X(k)} \le t[i]
+\end{gathered}
 $$
 
 $t[i]$ 单调递增，那么我们一旦 $k$ 比 $j$ 优，那么 $k$ 就在之后会一直比 $j$ 优，我们就可以用单调队列（维护一个单调递增的队列？）优化这个问题，事实上是维护一个凸包..？

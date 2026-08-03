@@ -34,9 +34,11 @@ $$
 推一发式子：
 
 $$
+\begin{gathered}
 \sum _ {i=1}^{n} k \bmod i\\
 = \sum _ {i=1}^{n} k - \lfloor \frac{k}{i} \rfloor \cdot i\\
 = n k - \sum _ {i=1}^{n} \lfloor \frac{k}{i} \rfloor \cdot i\\
+\end{gathered}
 $$
 
 那么，问题就变成我们要求出下式的值：

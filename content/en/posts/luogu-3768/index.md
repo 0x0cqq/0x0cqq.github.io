@@ -31,17 +31,21 @@ $$
 ## 题解
 
 $$
+\begin{gathered}
 ans =\sum _ {i=1}^n\sum _ {j=1}^n ij\gcd(i,j))~mod~p\\
 =\sum _ {d=1}^n d\sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor}ijd^2[\gcd(i,j) == 1]\\
 =\sum _ {d=1}^n d^3 \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor}ij[\gcd(i,j) == 1]\\
+\end{gathered}
 $$
 
 如果我们令
 
 $$
+\begin{gathered}
 f(d) = \sum _ {i=1}^{n}\sum _ {j=1}^{n}ij[\gcd(i,j) == d]\\
 g(d) = \sum _ {d|k} f(k) = d^2\sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor} ij\\
 g(d) = d^2{\left[\frac{\lfloor\frac{n}{d}\rfloor(\lfloor\frac{n}{d}\rfloor + 1)}{2}\right]}^2
+\end{gathered}
 $$
 
 令 $sum(x) = \frac{x(x+1)}{2}$，原式化为：
@@ -53,9 +57,11 @@ $$
 就有：
 
 $$
+\begin{gathered}
 f(d) = \sum _ {d|k} \mu(k) g(\frac{k}{d})\\
 f(1) = \sum _ {i=1}^n \mu (i) g(i)\\
 f(1) = \sum _ {i=1}^n \mu (i) i^2 sum(\lfloor\frac{n}{i}\rfloor)^2
+\end{gathered}
 $$
 
 那么：
@@ -67,14 +73,18 @@ $$
 枚举 $id = T$，则有
 
 $$
+\begin{gathered}
 ans = \sum _ {T = 1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 \sum _ {d|T} d^3 \mu(\frac{T}{d}) \times {(\frac{T}{d})}^2\\
 = \sum _ {T=1}^n T^2 sum(\lfloor\frac{n}{T}\rfloor)^2 \sum _ {d|T} d \mu(\frac{T}{d}) \\
+\end{gathered}
 $$
 
 有 $id*\mu = \varphi$ ， 所以
 
 $$
+\begin{gathered}
 ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 T^2 \varphi(T) \\
+\end{gathered}
 $$
 
 令 $f(x) = x^2 \varphi(x)$，我们就有
@@ -94,8 +104,10 @@ $$
 如果我们令 $g(n) = n^2$ ，那么 
 
 $$
+\begin{gathered}
 h(i) = (g*f)(i)=\sum _ {d|i}f(d)g(\frac{i}{d})=\sum _ {d|i}d^2\varphi(d){(\frac{i}{d})}^2\\
 = \sum _ {d|i}\varphi(d)i^2 = i^3\\
+\end{gathered}
 $$
 
 又因为 
@@ -106,16 +118,20 @@ $$
 所以我们就有
 
 $$
+\begin{gathered}
 S(n) = \sum _ {i=1}^{n} h(i) - \sum _ {d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)\\
 = \left[\frac{n(n+1)}{2}\right]^2 - \sum _ {d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
+\end{gathered}
 $$
 
 
 综上：
 
 $$
+\begin{gathered}
 ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)\\
 S(n) = \left[\frac{n(n+1)}{2}\right]^2 - \sum _ {d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
+\end{gathered}
 $$
 
 

@@ -84,8 +84,10 @@ b _ {1} \\
 $$
 
 $$
+\begin{gathered}
 Z \times C = M _ {k+1}\\
 Z \times M_i = M _ {i+1}\\
+\end{gathered}
 $$
 
 我们有

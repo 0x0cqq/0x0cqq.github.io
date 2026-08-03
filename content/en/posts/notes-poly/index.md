@@ -142,8 +142,10 @@ $$
 
 注意到我们如果令：
 $$
+\begin{gathered}
 A_0(x) = (a_0 + a_2x + ... + a _ {n-2}x^{\frac{n}{2}-1})\\
 A_1(x) = (a_1 + a_3x + ... + a _ {n-1}x^{\frac{n}{2}-1})
+\end{gathered}
 $$
 
 那么：
@@ -197,14 +199,18 @@ $$
 
 由于
 $$
+\begin{gathered}
 y_i = \sum _ {j = 0}^{n-1} a_j(\omega_n^i)^j
 =  \sum _ {j = 0}^{n-1} a_j(\omega_n^j)^i\\
+\end{gathered}
 $$
 
 代入之后得：
 $$
+\begin{gathered}
 c_k = \sum _ {i=0}^{n-1} (\sum _ {j=0}^{n-1} a_j(\omega_n^j)^i) (\omega_n^{-k})^i\\
 = \sum _ {j=0}^{n-1} a_j(\sum _ {i=0}^{n-1} (\omega_n^{j-k})^i) \\
+\end{gathered}
 $$
 
 令
@@ -223,7 +229,9 @@ $$
 
 则在上上上式可以写作：
 $$
+\begin{gathered}
 c_k = \sum _ {j=0}^{n-1} a_jS(\omega_n^{j-k}) \\
+\end{gathered}
 $$
 
 当$j = k$时，$S(\omega_n^{j-k})$为$n$，否则该项为$0$。
@@ -428,10 +436,12 @@ $$
 
 我们设（事实上就是把系数反了过来） 
 $$
+\begin{gathered}
 A'(x) = x^n A(\frac{1}{x})\\
 B'(x) = x^m B(\frac{1}{x})\\
 Q'(x) = x^{n-m} Q(\frac{1}{x})\\
 R'(x) = x^{m-1} R(\frac{1}{x})
+\end{gathered}
 $$
 
 那么

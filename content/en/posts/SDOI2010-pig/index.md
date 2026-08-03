@@ -38,8 +38,10 @@ iPig觉得只要符合文献，每一种能整除 $N$ 的 $k$ 都是有可能的
 依据题意推出式子
 
 $$
+\begin{gathered}
 t = \sum _ {k|N} C^{k} _ {N}\\
 ans = G^t
+\end{gathered}
 $$
 
 我们有指数的一个性质

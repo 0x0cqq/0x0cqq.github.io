@@ -31,8 +31,10 @@ enableTocContent: false
 
 [Luogu P3648](https://www.luogu.org/problemnew/show/P3648)
 $$
+\begin{gathered}
 a(b+c) + bc = ab+ac+bc = (a+b)c + ab \rightarrow \text{三个数怎么切结果都一样}\\
 a(b+c+d) + (bc+cd+ad) = ab + ac + ad + bc + bd + cd = (a+b+c)d + (ab+bc+ac)
+\end{gathered}
 $$
 这个式子再推广的话，就告诉我们：切割方案的分数只与切割的位置有关。
 
@@ -42,8 +44,10 @@ dp[i][w] = \max _ {j=1}^{i-1}(dp[j][w-1] + sum[j] \times (sum[i]-sum[j]))
 $$
 然后如果 $k$ 比 $j$ 优秀，则有：
 $$
+\begin{gathered}
 dp[j][w-1] + sum[j] \times (sum[i]-sum[j]) < dp[k][w-1] + sum[k] \times (sum[i]-sum[k])\\
 \frac{(dp[j][w-1]-{sum[j]}^2)-(dp[k][w-1]-{sum[k]}^2)}{sum[j]-sum[k]} > -sum[i]\\
+\end{gathered}
 $$
 现在我们需要考虑 $sum[j] = sum[k]$ 的情况，我们注意到这个时候应该是 $ k$ 一定是不比 $j$ 坏的，但是我们由于要输出方案中，不能切在开头的位置，所以我们要尽量往后切，就必须令 $k$ 比 $j$ 优，就应该让这个式子返回无穷大。
 

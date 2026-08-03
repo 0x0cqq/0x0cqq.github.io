@@ -39,23 +39,29 @@ $$
 $$
 推推式子（不妨设 $n \le m$）：
 $$
+\begin{gathered}
 \prod _ {i=1}^n \prod _ {j=1}^m fib(\gcd(i,j))\\
 = \prod _ {d=1}^n fib(d)^{g(d)}
+\end{gathered}
 $$
 其中 ：
 $$
+\begin{gathered}
 g(d) = \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor} \sum _ {j=1}^{\lfloor\frac{m}{d}\rfloor} [\gcd(i,j) = 1]\\
 = \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor} \sum _ {j=1}^{\lfloor\frac{m}{d}\rfloor} \sum _ {k | \gcd(i,j)} \mu(k)\\
 = \sum _ {k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k) \lfloor \frac{\lfloor\frac{n}{d}\rfloor} {k}\rfloor \lfloor \frac{\lfloor\frac{m}{d}\rfloor} {k}\rfloor\\
 = \sum _ {k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor\\
+\end{gathered}
 $$
 以上是我会的全部...
 
 我们令 $T = kd$ ，然后直接代到最外面：
 $$
+\begin{gathered}
 sum = \prod _ {d=1}^{n} fib(d)^{\sum _ {k=1}^{\lfloor\frac{n}{d}\rfloor} \mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\
 = \prod _ {k=1}^{n} \prod _ {d = 1}^{\lfloor\frac{n}{k}\rfloor}fib(d)^{\mu(k)\lfloor\frac{n}{dk}\rfloor\lfloor\frac{m}{dk}\rfloor}\\
 =\prod _ {T=1}^n \prod _ {k | T} fib(\frac{T}{k})^{\mu(k)\lfloor\frac{n}{T}\rfloor\lfloor\frac{m}{T}\rfloor}
+\end{gathered}
 $$
 然后我们如果令：  
 $$

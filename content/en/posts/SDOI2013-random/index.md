@@ -43,14 +43,18 @@ enableTocContent: false
 因为 $a,b$ 都是常数，所以我们可以设：
 
 $$
+\begin{gathered}
 X _ {i+1} + \lambda= a(X_i + \lambda)\\
 X _ {i+1} = aX_i + \lambda(a-1)\\
+\end{gathered}
 $$
 所以：
 
 $$
+\begin{gathered}
 \lambda(a-1) = b\\
 \lambda = \frac{b}{a-1}
+\end{gathered}
 $$
 
 设 $Y_i = X_i+\lambda$ ，则有：
