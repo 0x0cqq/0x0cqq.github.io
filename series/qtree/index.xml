@@ -22,7 +22,7 @@
 &lt;p&gt;&lt;code&gt;KTH a b k&lt;/code&gt; 询问点 $a$ 至点 $b$ 有向路径上的第k个点的编号&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;有多组测试数据，每组数据以 &lt;code&gt;DONE&lt;/code&gt; 结尾。&lt;/p&gt;</description><dc:creator>cqqqwq</dc:creator><category>LCT</category><category>数据结构</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「SPOJ375」QTREE1-LCT</title><link>https://blog.cqqqwq.com/posts/spoj375-qtree1/</link><pubDate>Fri, 15 Mar 2019 20:59:53 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 15 Mar 2019 20:59:53 +0000</atom:modified><guid>https://blog.cqqqwq.com/posts/spoj375-qtree1/</guid><description>&lt;p&gt;给定 $n$ 个点的树，边按输入顺序编号为 $1,2,&amp;hellip;,n-1$，要求作以下操作：&lt;/p&gt;
+&lt;p&gt;有多组测试数据，每组数据以 &lt;code&gt;DONE&lt;/code&gt; 结尾。&lt;/p&gt;</description><dc:creator>cqqqwq</dc:creator><category>LCT</category><category>数据结构</category><category>OI</category><category>题解</category><category>QTREE</category></item><item><title>「SPOJ375」QTREE1-LCT</title><link>https://blog.cqqqwq.com/posts/spoj375-qtree1/</link><pubDate>Fri, 15 Mar 2019 20:59:53 +0000</pubDate><author>cqqqwq@outlook.com (cqqqwq)</author><atom:modified>Fri, 15 Mar 2019 20:59:53 +0000</atom:modified><guid>https://blog.cqqqwq.com/posts/spoj375-qtree1/</guid><description>&lt;p&gt;给定 $n$ 个点的树，边按输入顺序编号为 $1,2,...,n-1$，要求作以下操作：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;CHANGE i v&lt;/code&gt; ：将第 $i$ 条边权值改为 $v$&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;QUERY a b&lt;/code&gt; ：询问从 $a$ 点到 $b$ 点路径上的最大边权&lt;/li&gt;
