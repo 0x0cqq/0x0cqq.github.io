@@ -1,4 +1,4 @@
-{{ if and (.Site.Params.baiduAnalytics) (not .Site.IsServer) }}
+{{ if and (.Site.Params.baiduAnalytics) (not hugo.IsServer) }}
   <script>
     {{ $baiduAnalyticsId := .Site.Params.baiduAnalytics }}
     var baiduAnalyticsId = JSON.parse({{ $baiduAnalyticsId | jsonify }});

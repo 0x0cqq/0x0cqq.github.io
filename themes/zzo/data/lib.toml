@@ -31,8 +31,8 @@
   url = "https://cdn.jsdelivr.net/npm/snapsvg@0.5.1/dist/snap.svg.min.js"
 
 [js.lodash]
-  sri = "sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ="
-  url = "https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
+  sri = "sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k="
+  url = "https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"
 
 [js.sequence_diagram]
   sri = "sha256-eadHf9g1REH9Wvp2FLV/D9vKNvQUFKuVPgWFvmMQxBE="
