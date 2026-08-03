@@ -36,7 +36,7 @@ $$
 $$
 \sum _ {i=1}^n\sum _ {j=1}^m {\gcd(i,j)}^k
 $$
-不妨令 $n<m$ ，枚举 $\gcd(i,j) = d$ ：
+不妨令 $n\lt m$ ，枚举 $\gcd(i,j) = d$ ：
 $$
 S = \sum _ {d=1}^{n} d^k \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{d}\rfloor} [(i,j)=1]\\
 = \sum _ {d=1}^{n} d^k \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {i=1}^{\lfloor\frac{m}{d}\rfloor} \sum _ {t | \gcd(i,j)} \mu(t)\\

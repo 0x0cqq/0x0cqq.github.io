@@ -92,8 +92,7 @@ M_i\left[\begin{matrix}
     dp[i-1][2]\\
     dp[i-1][3]\\
     dp[i-1][4]\\
-\end{matrix}\right]
-= 
+\end{matrix}\right] = 
 \left[\begin{matrix}
     dp[i][0]\\
     dp[i][1]\\

@@ -92,7 +92,7 @@ $\lfloor x \rfloor$ 和 $\lceil x \rceil$ 分别代表向下和向上取整。
 因为余数肯定小于除数，所以 $r _ {k−1}$ 小于 $r _ {k−2}$ 。在第 $k$ 步中，算法计算出满足以下等式的商 $q_k$ 和余数 $r_k$ ：
 
 $$
-r _ {k−2} = q _ {k} \times r _ {k−1} + r_k,\; \text{其中}0\leq r_k<r _ {k-1}
+r _ {k−2} = q _ {k} \times r _ {k−1} + r_k,\; \text{其中}0\leq r_k\lt r _ {k-1}
 $$
 
 此时，$r _ {k-1}$ 和 $r_k$ 就是下一次递归的输入。
@@ -219,7 +219,7 @@ $$
 
 #### 过程
 
-首先对 $a,b$ 关于 $c$ 取模，使得 $a,b<c$ 。
+首先对 $a,b$ 关于 $c$ 取模，使得 $a,b\lt c$ 。
 令 $m = \lfloor\frac{an+b}{c}\rfloor$ 。
 
 此时有：

@@ -42,13 +42,11 @@ a & c \\
 \left[\begin{matrix}
 x _ {n}\\
 1
-\end{matrix} \right]
-=
+\end{matrix} \right] =
 \left[\begin{matrix}
 a x_n + c \\
 0 + 1
-\end{matrix} \right]
-= 
+\end{matrix} \right] = 
 \left[\begin{matrix}
 x _ {n+1} \\
 1
