@@ -5,10 +5,7 @@ other = "Search"
 other = "Jan 2, 2006"
 
 [reading-time]
-other = "mins read"
-
-[word-count]
-other = "words"
+other = "min read"
 
 [tags]
 other = "Tags"
@@ -91,10 +88,6 @@ other = "Modified At"
 [tooltip-reading-time]
 other = "Reading Time"
 
-[tooltip-word-count]
-other = "Words number"
-
-
 [showcase-overview]
 other = "Overview"
 
@@ -107,5 +100,20 @@ other = "This page looks best with JavaScript enabled"
 [posts-by-order]
 other = "TOP POSTS"
 
-[comment]
-other = "Comments"
+[skin-dark]
+other = "dark"
+
+[skin-light]
+other = "light"
+
+[skin-hacker]
+other = "hacker"
+
+[skin-solarized]
+other = "solarized"
+
+[skin-kimbie]
+other = "kimbie"
+
+[no-contents]
+other = "Nothing to Display"

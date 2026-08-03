@@ -1,15 +1,7 @@
 {{ if $.Param "enableComment" }}
-  <section class="comment">  
-  <h1 class="comment__title">
-      <hr class="hr-dots"/>
-      <div>
-        {{ i18n "comment" }}
-      </div>
-      <hr class="hr-dots"/>
-  </h1>
-  {{ if $.Param "disqus.disqus_shortname" }}
+  {{ if $.Param "disqus_shortname" }}
     {{ partial "comments/disqus.html" . }}
-  {{ else if $.Param "commento.enable" }}
+  {{ else if $.Param "commento" }}
     {{ partial "comments/commento.html" . }}
   {{ else if $.Param "valine.enable" }}
     {{ partial "comments/valine.html" . }}
@@ -28,5 +20,4 @@
   {{ else if $.Param "telegram.enable" }}
     {{ partial "comments/telegram.html" . }}
   {{ end }}
-  </section>
 {{ end }}

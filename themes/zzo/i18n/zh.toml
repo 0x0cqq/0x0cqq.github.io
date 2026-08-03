@@ -4,9 +4,6 @@ other = "搜索"
 [summary-dateformat]
 other = "2006年01月02日"
 
-[word-count]
-other = "字"
-
 [reading-time]
 other = "分钟"
 
@@ -65,10 +62,10 @@ other = "姓名"
 other = "电子邮件"
 
 [contact-tel]
-other = "电话"
+other = "Tel"
 
 [contact-file]
-other = "文件"
+other = "File"
 
 [contact-message]
 other = "消息"
@@ -77,7 +74,7 @@ other = "消息"
 other = "发送"
 
 [contact-browse]
-other = "浏览"
+other = "Browse"
 
 [tooltip-home]
 other = "主页"
@@ -91,9 +88,6 @@ other = "更新日期"
 [tooltip-reading-time]
 other = "阅读时长"
 
-[tooltip-word-count]
-other = "本文字数"
-
 [showcase-overview]
 other = "总览"
 
@@ -105,3 +99,21 @@ other = "Please enable Javascript to view the contents"
 
 [posts-by-order]
 other = "TOP POSTS"
+
+[skin-dark]
+other = "dark"
+
+[skin-light]
+other = "light"
+
+[skin-hacker]
+other = "hacker"
+
+[skin-solarized]
+other = "solarized"
+
+[skin-kimbie]
+other = "kimbie"
+
+[no-contents]
+other = "Nothing to Display"

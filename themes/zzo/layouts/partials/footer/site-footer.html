@@ -4,9 +4,11 @@
     {{ partial "footer/go-to-top" . }}
     <hr />
 
-    <div class="basicflex">
+    <div class="basicflex flexwrap">
         {{ range $.Param "footerLinks" }}
-            <a href="{{ .link }}" class="footer__link" target="_blank" rel="noreferrer">{{ .name }}</a>
+            {{ if .link }}
+                <a href="{{ .link }}" class="footer__link" target="_blank" rel="noreferrer">{{ .name }}</a>
+            {{ end }}
         {{ end }}
     </div>
 
@@ -21,7 +23,7 @@
                     {{ if and ($.Site.Params.copyrightOptions.copyrightLinkImage) ($.Site.Params.copyrightOptions.copyrightLinkText) }}
                         <a rel="license" href="{{ $.Site.Params.copyrightOptions.copyrightLink }}" class="footer__copyright--img"><img alt="{{ $.Site.Params.copyrightOptions.copyrightLinkText }}" style="border-width:0" src="{{ $.Site.Params.copyrightOptions.copyrightLinkImage }}"/></a>{{ $leftString | markdownify }}<a rel="license" href="{{ $.Site.Params.copyrightOptions.copyrightLink }}">{{ $.Site.Params.copyrightOptions.copyrightLinkText }}</a>{{ $rightString | markdownify }}
                     {{ else }}
-                        {{ $leftString | markdownify }} <a rel="license" href="{{ $.Site.Params.copyrightOptions.copyrightLink }}">{{ $.Site.Params.copyrightOptions.copyrightLinkText }}</a>{{ $rightString | markdownify }}
+                        {{ $leftString | markdownify }}<a rel="license" href="{{ $.Site.Params.copyrightOptions.copyrightLink }}">{{ $.Site.Params.copyrightOptions.copyrightLinkText }}</a>{{ $rightString | markdownify }}
                     {{ end }}
                 {{ else }}
                     {{ with $.Site.Copyright }}{{ replace . "{year}" now.Year | markdownify}}{{ end }}

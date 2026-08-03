@@ -18,7 +18,7 @@ Zzo theme을 이용할 시 가장 매력적인 포인트 한가지는, 한글로
 ## Documentation
 
 영문버전 도큐먼트
-[https://zzodocs.netlify.com/docs/](https://zzodocs.netlify.com/docs/)
+[https://zzo-docs.vercel.app/zzo](https://zzo-docs.vercel.app/zzo)
 
 ## Table of contents
 
@@ -254,8 +254,13 @@ enableUiAnimation = true
 hideSingleContentsWhenJSDisabled = false
 minItemsToShowInTagCloud = 1 # Minimum items to show in tag cloud
 
+# appbar
+enableAppbarSearchIcon = false
+enableAppbarLangIcon = false
+
 # header
 homeHeaderType = "text" # text, img, slide, typewriter
+hideHomeHeaderWhenMobile = false
 
 # menu
 showMobileMenuTerms = ["tags", "categories", "series"]
@@ -263,10 +268,15 @@ showMobileMenuTerms = ["tags", "categories", "series"]
 # navbar
 enableThemeChange = true # site color theme
 
-# body
-enableBreadcrumb = true # breadcrumb for list, single page
+# search
 enableSearch = true # site search with fuse
 enableSearchHighlight = true # when true, search keyword will be highlighted
+searchContent = true # include content to search index
+searchDistance = 100 # fuse option: distance
+searchThreshold = 0.4 # 0.0: exact match, 1.0: any match
+
+# body
+enableBreadcrumb = true # breadcrumb for list, single page
 enableGoToTop = true # scroll to top
 enableWhoami = true # at the end of single page
 summaryShape = "classic" # card, classic, compact
