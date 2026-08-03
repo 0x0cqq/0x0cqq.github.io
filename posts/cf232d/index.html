@@ -20,14 +20,20 @@
 <a href=/gallery class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Gallery</a>
 <a href=/showcase class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Showcase</a>
 <a href=/friends class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Friends</a></div></nav><main class="single__main main-main"><nav class="breadcrumb hide" aria-label=breadcrumbs><script>document.querySelector(".breadcrumb").classList.remove("hide")</script><ol><li><a href=https://blog.cqqqwq.com/ class=capitalize>cqqqwq 的小站</a></li><li><a href=https://blog.cqqqwq.com/posts/ class=capitalize>Posts</a></li><li class=is-active><span>「CF232D」Fence-后缀数组+主席树</span></li></ol></nav><div class=single><div class=single__nojs>This page looks best with JavaScript enabled</div><script>document.querySelector(".single").classList.remove("hide"),document.querySelector(".single__nojs").classList.add("hide")</script><h2 class=single__title data-ani=true>「CF232D」Fence-后缀数组+主席树</h2><h3 class=single__subtitle></h3><div class=single__meta><div class=single__infos><time class=single__info title="Written At">📅&nbsp;Feb 4, 2019 </time>&nbsp;&#183;&nbsp; <span class=single__info title="Reading Time">☕&nbsp;2&nbsp;min read </span><span class=single__info>&#183; 👀<span id=busuanzi_value_page_pv>...</span> views</span></div><ul class="single__tags caption">🏷️<li><a href=https://blog.cqqqwq.com/tags/%E5%90%8E%E7%BC%80%E6%95%B0%E7%BB%84/ class=single__tag title=后缀数组>#后缀数组</a></li><li><a href=https://blog.cqqqwq.com/tags/%E4%B8%BB%E5%B8%AD%E6%A0%91/ class=single__tag title=主席树>#主席树</a></li><li><a href=https://blog.cqqqwq.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/ class=single__tag title=字符串>#字符串</a></li><li><a href=https://blog.cqqqwq.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/ class=single__tag title=数据结构>#数据结构</a></li></ul></div><article class=single__contents data-dir=ltr data-ani=true><p>给定长度为 $n$ 的整数序列 $h[n]$ ，有 $Q$ 个询问，每次给出 $l_1,r_1$ ，​询问有多少对 $l_2,r_2$ ，满足以下条件:</p><ol><li>$r_2 – l_2 = r_1 – l_1$</li><li>区间 $[l_1, r_1]$ 与区间 $[l_2, r_2]$ 没有交集</li><li>对于任意 $i \in [0,r_1 – l_1]$ ，满足 $h[l_1 + i] + h[l_2 + i] = h[l_1] + h[l_2]$</li></ol><h2 id=链接>链接</h2><p><a href=http://codeforces.com/problemset/problem/232/D>Codeforces</a></p><h2 id=题解>题解</h2><p>注意到第三个条件可以转化成<br></p>$$
+\begin{gathered}
 h[l_1 + i + 1] + h[l_2 + i + 1] = h[l_1 + i] + h[l_2 + i],
 \\ i \in [0,r_i-l_i-1]
+\end{gathered}
 $$<p>也就是<br></p>$$
+\begin{gathered}
 h[l_1 + i + 1] - h[l_1 + i] = - (h[l_2 + i + 1] - h[l_2 + i])
 \\ i \in [0,r_i-l_i-1]
+\end{gathered}
 $$<p>我们令 $g[i] = h[i+1] - h[i]$，那么第三个条件的表述就变为：</p>$$
+\begin{gathered}
 g[l_1+i] = -g[l_2+i]
 \\ i \in [0,r_i-l_i-1]
+\end{gathered}
 $$<p>如果我们令 $len = r_i-l_i-1$ ，那么条件变成：</p>$$
 g[l_1...l_1+len] = - g[l_2...l_2+len]
 $$<p>后缀数组处理之后，就变成了一个二维数点的问题，随便怎么搞一搞就可以了。</p><p>这里用了主席树实现。要特判 $l = r$ 的情况，答案是 $n-1$ 。注意要排除掉相交的情况，需要加一减一，这个地方比较容易错&mldr;</p><h2 id=代码>代码</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1

@@ -31,8 +31,10 @@ A(x) = \sum _ {j = 0}^{n-1} a_jx^j
 $$<p>将 $n$ 次单位根的 $0$ 到 $n - 1$ 次幂，即 $\omega _n^0,\omega _n^1,...\omega _n^{n-1}$ ，带入多项式的系数表示，所得点值向量 $(y_0,y_1,...,y _ {n-1})$ 称为其系数向量 $(a_0,a_1,...,a _ {n-1})$ 的<strong>离散傅里叶变换</strong>。</p><p>按照朴素算法求得 DFT ，则时间复杂度为 $O(n^2)$ 。</p><h5 id=改进fft>改进：FFT</h5><p>由于我们要对问题进行分治处理，所以我们想办法减小这个问题的规模。</p><p>我们根据次数奇偶对 $A(x)$ 的所有项进行分类。即：<br></p>$$
 A(x) = (a_0 + a_2x^2 + ... + a _ {n-2}x^{n-2}) + (a_1x + a_3x^3 + ... + a _ {n-1}x^{n-1})
 $$<p>注意到我们如果令：<br></p>$$
+\begin{gathered}
 A_0(x) = (a_0 + a_2x + ... + a _ {n-2}x^{\frac{n}{2}-1})\\
 A_1(x) = (a_1 + a_3x + ... + a _ {n-1}x^{\frac{n}{2}-1})
+\end{gathered}
 $$<p>那么：<br></p>$$
 A(x) = A_0(x^2) + xA_1(x^2)
 $$<p>注意到 $A_0$ 和 $A_1$ 都是 $A$ 的子问题，我们试图减小数据范围的同时快速的通过 $A_0$ 和 $A_1$ 得到 $A$ 。</p><p>若 $k<\frac{n}{2}$ （上半圈），将 $\omega _ {n}^{k}$ 代入上式得：<br></p>$$
@@ -47,11 +49,15 @@ B(x) = \sum _ {j = 0}^{n-1} y_jx^j
 $$<p>令其经过一次离散傅立叶变换之后得到在单位根的 $0$ 到 $n-1$ 次幂的<strong>共轭复数</strong>，即 $B(x)$ 在 $w_n^{0},w_n^{-1},...,w_n^{-(n-1)}$ 处的点值向量为 $(c_0,c_1,...,c _ {n-1})$ ，其中：<br></p>$$
 c_k = \sum _ {i=0}^{n-1} y_i (\omega_n^{-k})^i
 $$<p>由于<br></p>$$
+\begin{gathered}
 y_i = \sum _ {j = 0}^{n-1} a_j(\omega_n^i)^j
 = \sum _ {j = 0}^{n-1} a_j(\omega_n^j)^i\\
+\end{gathered}
 $$<p>代入之后得：<br></p>$$
+\begin{gathered}
 c_k = \sum _ {i=0}^{n-1} (\sum _ {j=0}^{n-1} a_j(\omega_n^j)^i) (\omega_n^{-k})^i\\
 = \sum _ {j=0}^{n-1} a_j(\sum _ {i=0}^{n-1} (\omega_n^{j-k})^i) \\
+\end{gathered}
 $$<p>令<br></p>$$
 S(x) = \sum _ {i=0}^{n-1}x^i
 $$<p>则有如下结论（可以通过复数单位根的性质自行证明）:<br></p>$$
@@ -61,7 +67,9 @@ S(\omega_n^k)=
 n,& k=0
 \end{cases}
 $$<p>则在上上上式可以写作：<br></p>$$
+\begin{gathered}
 c_k = \sum _ {j=0}^{n-1} a_jS(\omega_n^{j-k}) \\
+\end{gathered}
 $$<p>当$j = k$时，$S(\omega_n^{j-k})$为$n$，否则该项为$0$。</p><p>所以可以得到结果：<br></p>$$
 c_k = na_k
 $$<hr><p>所以简略总结一下$IDFT$：</p><p>设多项式<br></p>$$
@@ -206,10 +214,12 @@ A(\frac{1}{x}) = Q(\frac{1}{x})B(\frac{1}{x}) + R(\frac{1}{x})
 $$<p>同乘 $x^n$ ，得到:</p>$$
 x^n A(\frac{1}{x}) = (x^{n-m}Q(\frac{1}{x}))(x^m B(\frac{1}{x})) + x^{n-m+1}(x^{m-1}R(\frac{1}{x}))
 $$<p>我们设（事实上就是把系数反了过来）<br></p>$$
+\begin{gathered}
 A'(x) = x^n A(\frac{1}{x})\\
 B'(x) = x^m B(\frac{1}{x})\\
 Q'(x) = x^{n-m} Q(\frac{1}{x})\\
 R'(x) = x^{m-1} R(\frac{1}{x})
+\end{gathered}
 $$<p>那么</p>$$
 A'(x) = Q'(x)B'(x) + x^{n-m+1}R'(x)
 $$<p>两侧对 $x^{n-m+1}$ 取模得到</p>$$

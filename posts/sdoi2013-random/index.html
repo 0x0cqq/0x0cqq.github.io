@@ -20,11 +20,15 @@
 <a href=/gallery class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Gallery</a>
 <a href=/showcase class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Showcase</a>
 <a href=/friends class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Friends</a></div></nav><main class="single__main main-main"><nav class="breadcrumb hide" aria-label=breadcrumbs><script>document.querySelector(".breadcrumb").classList.remove("hide")</script><ol><li><a href=https://blog.cqqqwq.com/ class=capitalize>cqqqwq 的小站</a></li><li><a href=https://blog.cqqqwq.com/posts/ class=capitalize>Posts</a></li><li class=is-active><span>「SDOI2013」随机数生成器-BSGS算法</span></li></ol></nav><div class=single><div class=single__nojs>This page looks best with JavaScript enabled</div><script>document.querySelector(".single").classList.remove("hide"),document.querySelector(".single__nojs").classList.add("hide")</script><h2 class=single__title data-ani=true>「SDOI2013」随机数生成器-BSGS算法</h2><h3 class=single__subtitle></h3><div class=single__meta><div class=single__infos><time class=single__info title="Written At">📅&nbsp;Sep 11, 2018 </time>&nbsp;&#183;&nbsp; <span class=single__info title="Reading Time">☕&nbsp;2&nbsp;min read </span><span class=single__info>&#183; 👀<span id=busuanzi_value_page_pv>...</span> views</span></div><ul class="single__tags caption">🏷️<li><a href=https://blog.cqqqwq.com/tags/%E6%95%B0%E8%AE%BA/ class=single__tag title=数论>#数论</a></li><li><a href=https://blog.cqqqwq.com/tags/bsgs%E7%AE%97%E6%B3%95/ class=single__tag title=BSGS算法>#BSGS算法</a></li></ul></div><article class=single__contents data-dir=ltr data-ani=true><p>小 $W$ 喜欢读书，尤其喜欢读《约翰克里斯朵夫》。最近小W准备读一本新书，这本书一共有 $P$ 页，页码范围为 $0 ... P-1$。</p><p>小 $W$ 很忙，所以每天只能读一页书。为了使事情有趣一些，他打算使用 $\text{NOI2012}$ 上学习的线性同余法生成一个序列，来决定每天具体读哪一页。</p><p>我们用 $X_i$ 来表示通过这种方法生成出来的第 $i$ 个数，也即小 $W$ 第 $i$ 天会读哪一页。这个方法需要设置 $3$ 个参数 $a,b,X_1$ ，满足 $0 \leq a,b,X_1 \leq p-1$ ，且 $a,b,X_1$ 都是整数。按照下面的公式生成出来一系列的整数：$X _ {i+1} =(aX_i+b)\bmod p$ 其中 $\bmod$ 表示取余操作。</p><p>但是这种方法可能导致某两天读的页码一样。</p><p>小 $W$ 要读这本书的第 $t$ 页，所以他想知道最早在哪一天能读到第 $t$ 页，或者指出他永远不会读到第 $t$ 页。</p><h2 id=链接>链接</h2><p><a href=https://www.luogu.org/problemnew/show/P3306>Luogu P3306</a></p><h2 id=题解>题解</h2><p>先忽略模数，求 $X_n$ 的通项公式。</p><p>刚学的高中数学必修五，我们可以知道，这个函数可以变形成类等比数列。</p><p>因为 $a,b$ 都是常数，所以我们可以设：</p>$$
+\begin{gathered}
 X _ {i+1} + \lambda= a(X_i + \lambda)\\
 X _ {i+1} = aX_i + \lambda(a-1)\\
+\end{gathered}
 $$<p><br>所以：</p>$$
+\begin{gathered}
 \lambda(a-1) = b\\
 \lambda = \frac{b}{a-1}
+\end{gathered}
 $$<p>设 $Y_i = X_i+\lambda$ ，则有：<br></p>$$
 Y _ {i+1} = a Y_i
 $$<p>又 $Y_1 = X_1 + \lambda$，所以得到 $Y_i$ 的通项公式：</p>$$

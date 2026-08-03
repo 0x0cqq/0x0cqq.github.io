@@ -26,12 +26,14 @@ T[i] = \sum _ {j = 1}^{i-1} t[j]
 $$<p>我们把猫按照新获得 $t[i]$ 排序之后，我们如果令 $dp[i][j]$ 为恰好取到前 $i$ 只猫，用去 $j$ 个饲养员时候的最小代价。</p><p>很明显有如下转移：</p>$$
 dp[i][w] = \max _ {0 \le j \le i-1}(dp[j][w-1] + t[i]\times (i-j) - (T[i] - T[j]))
 $$<p>我们当 $j \le k$时，$k$ 比 $j$ 优等价于：</p>$$
+\begin{gathered}
 dp[j][w-1] + t[i]\times (i-j) - T[i] + T[j] \ge dp[k][w-1] + t[i]\times (i-k) - T[i] + T[k]\\
 dp[j][w-1] - t[i]\times j + T[j] \ge dp[k][w-1] - t[i]\times k + T[k]\\
 dp[j][w-1] + T[j] -dp[k][w-1] - T[k] \ge t[i]\times j - t[i]\times k \\
 dp[j][w-1] + T[j] -dp[k][w-1] - T[k] \ge t[i]\times (j - k) \\
 \frac{dp[j][w-1] + T[j] -dp[k][w-1] - T[k]}{(j - k)} \le t[i] \\
 \frac{Y(j) - Y(k)}{X(j)-X(k)} \le t[i]
+\end{gathered}
 $$<p>$t[i]$ 单调递增，那么我们一旦 $k$ 比 $j$ 优，那么 $k$ 就在之后会一直比 $j$ 优，我们就可以用单调队列（维护一个单调递增的队列？）优化这个问题，事实上是维护一个凸包..？</p><p>时间复杂度 $O(n + mp)$。</p><h2 id=代码>代码</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3

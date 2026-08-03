@@ -24,9 +24,11 @@ dp[i] = \max\left(\max _ {j=1}^{i-1}(dp[j]\times \frac{r[j]*a[i] + b[i]}{r[j]*a[
 $$<p><br>很好理解嘛&mldr;就是一个决策在哪天全买/全卖的问题。</p><p>暴力转移可以拿到 $60$ 分…上古时代的暴力分还是很好拿的。</p><hr><p>正解的话，需要我们深入挖掘这个式子。</p><p>我们先忽略最后一个不买不卖的情况，来继续看：<br></p>$$
 dp[i] = \max _ {j=1}^{i-1}(dp[j]\times \frac{r[j]\cdot a[i] + b[i]}{r[j] \cdot a[j]+b[j]})
 $$<p><br>对于给定的决策点 $j$ ，则有：<br></p>$$
+\begin{gathered}
 dp[i] = dp[j] \times \frac{r[j]\cdot a[i] + b[i]}{r[j]\cdot a[j]+b[j]}\\
 dp[i] = (r[j]\cdot a[i] + b[i])\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]}\\
 dp[i] = b[i]\times \frac{dp[j]}{r[j]\cdot a[j]+b[j]} + a[i] \times \frac{r[j]\cdot dp[j]}{r[j]\cdot a[j]+b[j]}
+\end{gathered}
 $$<p><br>如果我们令：<br></p>$$
 x[j] = \frac{r[j]\cdot dp[j]}{r[j]*a[j]+b[j]}, y[j] = \frac{dp[j]}{r[j]\cdot a[j]+b[j]}
 $$<p><br>那么式子就会变成：<br></p>$$

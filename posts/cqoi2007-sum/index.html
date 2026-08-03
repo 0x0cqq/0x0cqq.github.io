@@ -22,9 +22,11 @@
 <a href=/friends class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Friends</a></div></nav><main class="single__main main-main"><nav class="breadcrumb hide" aria-label=breadcrumbs><script>document.querySelector(".breadcrumb").classList.remove("hide")</script><ol><li><a href=https://blog.cqqqwq.com/ class=capitalize>cqqqwq 的小站</a></li><li><a href=https://blog.cqqqwq.com/posts/ class=capitalize>Posts</a></li><li class=is-active><span>「CQOI2007」余数求和-数论+分块</span></li></ol></nav><div class=single><div class=single__nojs>This page looks best with JavaScript enabled</div><script>document.querySelector(".single").classList.remove("hide"),document.querySelector(".single__nojs").classList.add("hide")</script><h2 class=single__title data-ani=true>「CQOI2007」余数求和-数论+分块</h2><h3 class=single__subtitle></h3><div class=single__meta><div class=single__infos><time class=single__info title="Written At">📅&nbsp;Sep 15, 2018 </time>&nbsp;&#183;&nbsp; <span class=single__info title="Reading Time">☕&nbsp;1&nbsp;min read </span><span class=single__info>&#183; 👀<span id=busuanzi_value_page_pv>...</span> views</span></div><ul class="single__tags caption">🏷️<li><a href=https://blog.cqqqwq.com/tags/%E6%95%B0%E5%AD%A6/ class=single__tag title=数学>#数学</a></li><li><a href=https://blog.cqqqwq.com/tags/%E5%88%86%E5%9D%97/ class=single__tag title=分块>#分块</a></li></ul></div><article class=single__contents data-dir=ltr data-ani=true><p>给出正整数 $n$ 和 $k$ ，计算<br></p>$$
 \sum _ {i=1}^{n} k \bmod i
 $$<h2 id=链接>链接</h2><p><a href=https://www.luogu.org/problemnew/show/P2261>Luogu P2261</a></p><h2 id=题解>题解</h2><p>推一发式子：</p>$$
+\begin{gathered}
 \sum _ {i=1}^{n} k \bmod i\\
 = \sum _ {i=1}^{n} k - \lfloor \frac{k}{i} \rfloor \cdot i\\
 = n k - \sum _ {i=1}^{n} \lfloor \frac{k}{i} \rfloor \cdot i\\
+\end{gathered}
 $$<p>那么，问题就变成我们要求出下式的值：</p>$$
 \sum _ {i=1}^{n} \lfloor \frac{k}{i} \rfloor \cdot i
 $$<p>我们发现，这个式子当 $i > k$ 时没啥意义，所以化成：</p>$$

@@ -28,9 +28,11 @@ $$<p><br>我们令<br></p>$$
 $$<p><br>这是一个积性函数。</p><hr><p>那么就是<br></p>$$
 \sum _ {d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum _ {i=1}^{\lfloor \frac{n}{d} \rfloor} \sum _ {j=1}^{\lfloor \frac{m}{d} \rfloor} [\gcd(i,j) = 1]
 $$<p><br>我们知道：<br></p>$$
+\begin{gathered}
 \sum _ {i=1}^{n} \sum _ {j=1}^{m} [\gcd(i,j) = 1]\\
 = \sum _ {i=1}^{n} \sum _ {j=1}^{m} \sum _ {k | \gcd(i,j)} \mu(k)\\
 = \sum _ {k = 1}^n \mu(k) \lfloor \frac{n}{k}\rfloor \lfloor \frac{m}{k}\rfloor
+\end{gathered}
 $$<p><br>那么代入就是：<br></p>$$
 \sum _ {d=1}^{n} \sigma_1(d)[\sigma_1(d) \le a] \sum _ {k = 1}^{\lfloor \frac{n}{d} \rfloor} \mu(k) \lfloor \frac{n}{dk}\rfloor \lfloor \frac{m}{dk}\rfloor
 $$<p><br>我们设 $T = dk$ ，就有：<br></p>$$

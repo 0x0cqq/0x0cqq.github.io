@@ -22,41 +22,57 @@
 <a href=/friends class="navbar__menu-item navbar__slide-down" dir=ltr data-ani=true>Friends</a></div></nav><main class="single__main main-main"><nav class="breadcrumb hide" aria-label=breadcrumbs><script>document.querySelector(".breadcrumb").classList.remove("hide")</script><ol><li><a href=https://blog.cqqqwq.com/ class=capitalize>cqqqwq 的小站</a></li><li><a href=https://blog.cqqqwq.com/posts/ class=capitalize>Posts</a></li><li class=is-active><span>「Luogu3768」简单的数学题-杜教筛</span></li></ol></nav><div class=single><div class=single__nojs>This page looks best with JavaScript enabled</div><script>document.querySelector(".single").classList.remove("hide"),document.querySelector(".single__nojs").classList.add("hide")</script><h2 class=single__title data-ani=true>「Luogu3768」简单的数学题-杜教筛</h2><h3 class=single__subtitle></h3><div class=single__meta><div class=single__infos><time class=single__info title="Written At">📅&nbsp;Dec 20, 2018 </time>&nbsp;&#183;&nbsp; <span class=single__info title="Reading Time">☕&nbsp;2&nbsp;min read </span><span class=single__info>&#183; 👀<span id=busuanzi_value_page_pv>...</span> views</span></div><ul class="single__tags caption">🏷️<li><a href=https://blog.cqqqwq.com/tags/%E6%95%B0%E8%AE%BA/ class=single__tag title=数论>#数论</a></li><li><a href=https://blog.cqqqwq.com/tags/%E6%95%B0%E8%AE%BA%E5%87%BD%E6%95%B0/ class=single__tag title=数论函数>#数论函数</a></li><li><a href=https://blog.cqqqwq.com/tags/%E6%9D%9C%E6%95%99%E7%AD%9B/ class=single__tag title=杜教筛>#杜教筛</a></li></ul></div><article class=single__contents data-dir=ltr data-ani=true><p>求<br></p>$$
 \sum _ {i=1}^n\sum _ {j=1}^n ij\gcd(i,j))~mod~p
 $$<p><br>其中 $n < 10^{10}$。</p><h2 id=题解>题解</h2>$$
+\begin{gathered}
 ans =\sum _ {i=1}^n\sum _ {j=1}^n ij\gcd(i,j))~mod~p\\
 =\sum _ {d=1}^n d\sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor}ijd^2[\gcd(i,j) == 1]\\
 =\sum _ {d=1}^n d^3 \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor}ij[\gcd(i,j) == 1]\\
+\end{gathered}
 $$<p>如果我们令</p>$$
+\begin{gathered}
 f(d) = \sum _ {i=1}^{n}\sum _ {j=1}^{n}ij[\gcd(i,j) == d]\\
 g(d) = \sum _ {d|k} f(k) = d^2\sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor}\sum _ {j=1}^{\lfloor\frac{n}{d}\rfloor} ij\\
 g(d) = d^2{\left[\frac{\lfloor\frac{n}{d}\rfloor(\lfloor\frac{n}{d}\rfloor + 1)}{2}\right]}^2
+\end{gathered}
 $$<p>令 $sum(x) = \frac{x(x+1)}{2}$，原式化为：</p>$$
 g(d) = d^2 \cdot sum(\lfloor\frac{n}{d}\rfloor)^2
 $$<p>就有：</p>$$
+\begin{gathered}
 f(d) = \sum _ {d|k} \mu(k) g(\frac{k}{d})\\
 f(1) = \sum _ {i=1}^n \mu (i) g(i)\\
 f(1) = \sum _ {i=1}^n \mu (i) i^2 sum(\lfloor\frac{n}{i}\rfloor)^2
+\end{gathered}
 $$<p>那么：</p>$$
 ans = \sum _ {d=1}^n d^3 \sum _ {i=1}^{\lfloor\frac{n}{d}\rfloor} \mu (i) i^2 sum(\lfloor\frac{n}{di}\rfloor)^2
 $$<p>枚举 $id = T$，则有</p>$$
+\begin{gathered}
 ans = \sum _ {T = 1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 \sum _ {d|T} d^3 \mu(\frac{T}{d}) \times {(\frac{T}{d})}^2\\
 = \sum _ {T=1}^n T^2 sum(\lfloor\frac{n}{T}\rfloor)^2 \sum _ {d|T} d \mu(\frac{T}{d}) \\
+\end{gathered}
 $$<p>有 $id*\mu = \varphi$ ， 所以</p>$$
+\begin{gathered}
 ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 T^2 \varphi(T) \\
+\end{gathered}
 $$<p>令 $f(x) = x^2 \varphi(x)$，我们就有<br></p>$$
 ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)
 $$<p>注意到 $\lfloor\frac{n}{T}\rfloor$ 只有根号个取值，所以我们想要处理出 $f(T)$ 的前缀和。</p><p>杜教筛：</p>$$
 S(n) = \sum _ {i=1}^{n} h(i) - \sum _ {d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)
 $$<p>如果我们令 $g(n) = n^2$ ，那么</p>$$
+\begin{gathered}
 h(i) = (g*f)(i)=\sum _ {d|i}f(d)g(\frac{i}{d})=\sum _ {d|i}d^2\varphi(d){(\frac{i}{d})}^2\\
 = \sum _ {d|i}\varphi(d)i^2 = i^3\\
+\end{gathered}
 $$<p>又因为<br></p>$$
 \sum _ {i=1}^n i^3 = \left[\frac{n(n+1)}{2}\right]^2
 $$<p>所以我们就有</p>$$
+\begin{gathered}
 S(n) = \sum _ {i=1}^{n} h(i) - \sum _ {d = 2}^{n} g(d)S(\lfloor \frac{n}{d} \rfloor)\\
 = \left[\frac{n(n+1)}{2}\right]^2 - \sum _ {d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
+\end{gathered}
 $$<p>综上：</p>$$
+\begin{gathered}
 ans = \sum _ {T=1}^n sum(\lfloor\frac{n}{T}\rfloor)^2 f(T)\\
 S(n) = \left[\frac{n(n+1)}{2}\right]^2 - \sum _ {d = 2}^{n} d^2S(\lfloor \frac{n}{d} \rfloor)\\
+\end{gathered}
 $$<p>代码实现一定要多取模&mldr;</p><h2 id=代码>代码</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
