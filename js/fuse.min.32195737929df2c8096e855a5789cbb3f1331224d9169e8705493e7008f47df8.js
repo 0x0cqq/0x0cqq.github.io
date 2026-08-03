@@ -1,8 +1,4 @@
 /**
- * Skipped minification because the original files appears to be already minified.
- * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
- */
-/**
  * Fuse.js v6.4.1 - Lightweight fuzzy-search (http://fusejs.io)
  *
  * Copyright (c) 2020 Kiro Risk (http://kiro.me)
